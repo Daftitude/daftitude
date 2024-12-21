@@ -171,48 +171,115 @@ section p {
     display: block; /* Show overlay when active */
 }
 
-/* Hero Section */
+/* Hero Section Styling */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(45deg, #003366, #007BFF);
-    color: white;
-    height: 100vh;
+    position: relative;
+    background: url('your-background-image.jpg') no-repeat center center/cover; /* Replace with your image */
+    height: 100vh; /* Full viewport height */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    padding: 20px;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Adjust as needed for spacing */
+    max-width: 1200px;
+}
+
+.hero-left {
+    flex: 1;
+    padding-right: 20px; /* Adds space between the columns */
+}
+
+.hero-left h1 {
+    font-size: 3rem;
     font-weight: bold;
-    animation: fadeIn 1.5s ease;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.hero p {
-    margin: 15px 0;
+.hero-right {
+    flex: 1;
+    padding-left: 20px; /* Adds space between the columns */
+    background: rgba(0, 0, 0, 0.6); /* Optional dark overlay */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner padding for better readability */
+}
+
+.hero-right p {
     font-size: 1.2rem;
     line-height: 1.8;
+    margin: 0;
+}
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-left: 4px solid #FF0000; /* Red border for emphasis */
+    background: rgba(255, 255, 255, 0.1); /* Light overlay on description */
+    text-align: left;
 }
 
 .cta-btn-hero {
-    background: #FFC857;
-    color: #003366;
-    border: none;
+    display: inline-block;
+    background: #FF0000;
+    color: white;
+    font-size: 1rem;
     padding: 12px 20px;
     border-radius: 5px;
-    font-size: 1rem;
     text-transform: uppercase;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta-btn-hero:hover {
-    background: white;
-    color: #003366;
+    background: #cc0000; /* Darker red on hover */
+    transform: scale(1.05);
 }
+
+/* About Section Styling */
+#about-daftitude {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+#about-daftitude h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#about-daftitude h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #FFC857;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+#about-daftitude p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+#about-daftitude .hashtag {
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #555;
+}
+
 
 /* Features Section */
 .features-grid {
@@ -414,6 +481,16 @@ footer a:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left, .hero-right {
+        padding: 10px 0;
     }
 }
 
