@@ -510,113 +510,145 @@ body {
 /* Featured Services Section Styles */
 .services-container {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #000;
-    /* Dark background */
+    padding: 60px 20px;
+    background-color: #000; /* Dark background */
     color: white;
 }
 
 .services-container h2 {
     font-size: 2.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: white;
+    font-weight: bold;
 }
 
 .section-intro {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #ccc;
-    /* Subtle text for descriptions */
+    margin-bottom: 40px;
+    color: #aaa; /* Slightly lighter text for descriptions */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 /* Service Categories */
 .service-category {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .service-category h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #FFC857;
-    /* Highlight color */
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #FFC857; /* Gold highlight */
+    text-transform: uppercase;
 }
 
 /* Featured Grid */
 .featured-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
+    justify-items: center;
 }
 
 /* Featured Items */
 .featured-item {
-    background: #1a1a1a;
-    /* Card background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #1a1a1a; /* Card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 20px;
-    position: relative;
+    padding: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
 }
 
 .featured-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
 
 .featured-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
     color: white;
+    font-weight: bold;
 }
 
 .featured-item p {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
     color: #ccc;
+    line-height: 1.6;
 }
 
 .featured-item .service-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
 }
 
 /* Call-to-Action Button */
 .cta-btn {
     display: inline-block;
-    background-color: #007aff;
-    /* Vibrant button color */
+    background-color: #007aff; /* Vibrant button color */
     color: white;
-    font-size: 0.9rem;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-btn:hover {
-    background-color: #005bb5;
-    /* Darker blue for hover effect */
+    background-color: #005bb5; /* Darker blue for hover effect */
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .featured-grid {
-        grid-template-columns: 1fr;
-        /* Stack items on smaller screens */
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+
+    .service-category h3 {
+        font-size: 1.5rem;
     }
 }
 
+
+/* Call-to-Action Button */
+.cta-btn {
+    display: inline-block;
+    background-color: #007aff; /* Vibrant button color */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005bb5; /* Darker blue for hover effect */
+    transform: scale(1.05);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        /* One card per row */
+    .featured-grid {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+
+    .service-category h3 {
+        font-size: 1.5rem;
     }
 }
+
 
 /* Industries Section Styling */
 #industries {
