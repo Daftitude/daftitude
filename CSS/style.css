@@ -58,8 +58,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #000; /* Dark background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background: #000;
+    /* Dark background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -75,7 +77,8 @@ body {
 }
 
 .logo a:hover {
-    color: #FFC857; /* Highlight on hover */
+    color: #FFC857;
+    /* Highlight on hover */
 }
 
 /* Hamburger Menu */
@@ -124,8 +127,10 @@ body {
 }
 
 .nav-links a:hover {
-    background: #FFC857; /* Highlight background */
-    color: #000; /* Text color on hover */
+    background: #FFC857;
+    /* Highlight background */
+    color: #000;
+    /* Text color on hover */
 }
 
 /* Dropdown Menu */
@@ -150,7 +155,8 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #222; /* Dropdown background */
+    background: #222;
+    /* Dropdown background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 10px 0;
@@ -511,7 +517,8 @@ body {
 .services-container {
     text-align: center;
     padding: 60px 20px;
-    background-color: #000; /* Dark background */
+    background-color: #000;
+    /* Dark background */
     color: white;
 }
 
@@ -525,7 +532,8 @@ body {
 .section-intro {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #aaa; /* Slightly lighter text for descriptions */
+    color: #aaa;
+    /* Slightly lighter text for descriptions */
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -540,7 +548,8 @@ body {
 .service-category h3 {
     font-size: 2rem;
     margin-bottom: 25px;
-    color: #FFC857; /* Gold highlight */
+    color: #FFC857;
+    /* Gold highlight */
     text-transform: uppercase;
 }
 
@@ -554,7 +563,8 @@ body {
 
 /* Featured Items */
 .featured-item {
-    background: #1a1a1a; /* Card background */
+    background: #1a1a1a;
+    /* Card background */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -591,7 +601,8 @@ body {
 /* Call-to-Action Button */
 .cta-btn {
     display: inline-block;
-    background-color: #007aff; /* Vibrant button color */
+    background-color: #007aff;
+    /* Vibrant button color */
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -603,14 +614,16 @@ body {
 }
 
 .cta-btn:hover {
-    background-color: #005bb5; /* Darker blue for hover effect */
+    background-color: #005bb5;
+    /* Darker blue for hover effect */
     transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .featured-grid {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+        grid-template-columns: 1fr;
+        /* Stack items vertically on smaller screens */
     }
 
     .service-category h3 {
@@ -622,7 +635,8 @@ body {
 /* Call-to-Action Button */
 .cta-btn {
     display: inline-block;
-    background-color: #007aff; /* Vibrant button color */
+    background-color: #007aff;
+    /* Vibrant button color */
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -634,14 +648,16 @@ body {
 }
 
 .cta-btn:hover {
-    background-color: #005bb5; /* Darker blue for hover effect */
+    background-color: #005bb5;
+    /* Darker blue for hover effect */
     transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .featured-grid {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+        grid-template-columns: 1fr;
+        /* Stack items vertically on smaller screens */
     }
 
     .service-category h3 {
@@ -652,30 +668,33 @@ body {
 
 /* Industries Section Styling */
 #industries {
+    background: #111;
+    /* Dark background */
+    color: white;
     padding: 50px 20px;
-    background-color: #f4f4f4;
-    /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .industries-container {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     max-width: 1200px;
-    margin: 0 auto;
+    align-items: center;
+    gap: 30px;
+    /* Space between text and image */
+    flex-direction: row-reverse;
+    /* Reverses layout so image is on the left */
 }
 
 .industries-content {
-    flex: 1 1 50%;
-    padding-right: 20px;
-    /* Space between text and image */
+    flex: 2;
 }
 
 .industries-content h2 {
     font-size: 2.5rem;
-    color: #003366;
-    /* Blue color */
+    color: #FFC857;
+    /* Highlight color for header */
     margin-bottom: 20px;
     position: relative;
 }
@@ -685,8 +704,8 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: #FFC857;
-    /* Yellow highlight */
+    background: #FF0000;
+    /* Red underline */
     margin: 10px 0;
     border-radius: 2px;
 }
@@ -695,69 +714,55 @@ body {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #555;
-    /* Grey text */
+    color: #ccc;
+    /* Light text */
 }
 
 .industries-content ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
 }
 
 .industries-content ul li {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 10px;
     position: relative;
-    padding-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 10px;
+    padding-left: 25px;
 }
 
 .industries-content ul li::before {
     content: "✔";
-    /* Checkmark icon */
-    color: #FFC857;
-    /* Yellow color */
     position: absolute;
     left: 0;
+    top: 0;
+    color: #FF0000;
+    /* Red checkmark */
     font-size: 1.2rem;
-    line-height: 1;
 }
 
+/* Industries Image Styling */
 .industries-image {
-    flex: 1 1 50%;
-    text-align: center;
-}
-
-.industries-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    border: 2px solid #FF0000;
+    /* Red border */
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    /* Inner spacing for a clean look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     /* Subtle shadow */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .industries-container {
-        flex-direction: column;
-    }
-
-    .industries-content {
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .industries-content ul li {
-        padding-left: 0;
-    }
-
-    .industries-image {
-        margin-top: 20px;
-    }
+.industries-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Rounded corners inside the border */
 }
+
+
 
 /* Features Section Styling */
 #features {
