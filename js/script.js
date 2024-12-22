@@ -1,3 +1,7 @@
+// ==============================
+// Navigation Menu Functionality
+// ==============================
+
 // Select elements
 const hamburgerToggle = document.querySelector('.hamburger-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -31,7 +35,9 @@ dropdowns.forEach((dropdown) => {
     });
 });
 
+// ==============================
 // Smooth Scrolling for Anchor Links
+// ==============================
 document.querySelectorAll('.nav-links a, .cta-btn-hero, .cta-btn').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1); // Remove the `#`
@@ -53,7 +59,9 @@ document.querySelectorAll('.nav-links a, .cta-btn-hero, .cta-btn').forEach((anch
     });
 });
 
-// Hide Navigation Bar on Scroll Down, Show on Scroll Up
+// ==============================
+// Hide Navigation Bar on Scroll
+// ==============================
 let lastScrollY = window.scrollY;
 const mainHeader = document.querySelector('.main-header');
 
@@ -66,24 +74,57 @@ window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
 });
 
-// Animation for Hero Section on Scroll (using Intersection Observer)
-const heroSection = document.querySelector('.hero h1');
-const heroObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                heroSection.style.transform = 'translateY(0)';
-                heroSection.style.opacity = '1';
-                heroObserver.unobserve(heroSection); // Stop observing once animation runs
-            }
-        });
-    },
-    {
-        threshold: 0.5, // Trigger when 50% of the element is visible
-    }
-);
+// ==============================
+// Hero Section Carousel
+// ==============================
+const carousel = document.querySelector('.hero-carousel');
+const panels = document.querySelectorAll('.carousel-panel');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
 
-document.querySelector('.hamburger-toggle').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
+// Function to update carousel position
+function updateCarousel() {
+    const offset = currentIndex * -100; // Calculate transform offset
+    carousel.style.transform = `translateX(${offset}%)`;
+    carousel.style.transition = 'transform 0.5s ease-in-out'; // Smooth transitions
+}
+
+
+// Navigate to the previous slide
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? panels.length - 1 : currentIndex - 1;
+    updateCarousel();
 });
+
+// Navigate to the next slide
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === panels.length - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
+});
+
+// Auto-scroll functionality (optional)
+const autoScroll = setInterval(() => {
+    currentIndex = (currentIndex === panels.length - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
+}, 5000);
+
+// Optional: Pause auto-scroll on button click
+prevBtn.addEventListener('click', () => clearInterval(autoScroll));
+nextBtn.addEventListener('click', () => clearInterval(autoScroll));
+
+
+// ==============================
+// Hero Panel Hover Effects (Optional)
+// ==============================
+panels.forEach((panel) => {
+    panel.addEventListener('mouseenter', () => {
+        panel.style.transform = 'scale(1.05)';
+    });
+
+    panel.addEventListener('mouseleave', () => {
+        panel.style.transform = 'scale(1)';
+    });
+});
+
 

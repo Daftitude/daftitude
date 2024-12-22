@@ -4,62 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAFTitude - Empowering Digital Success</title>
-
-    <!-- Meta Description (Text preview in messages) -->
     <meta name="description"
-        content="Empowering businesses and individuals with data-driven strategies, analytics, finance, and technology solutions. Join the DAFTitude movement today!">
-
-    <!-- Open Graph (OG) Tags for Social Media -->
-    <meta property="og:title" content="DAFTitude - Empowering Digital Success">
-    <meta property="og:description"
-        content="Empowering businesses and individuals with data-driven strategies, analytics, finance, and technology solutions. Join the DAFTitude movement today!">
-    <meta property="og:image" content="https://www.daftitude.com/images/daftitude-og-image.jpg">
-    <!-- Replace with the correct image URL -->
-    <meta property="og:url" content="https://www.daftitude.com">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DAFTitude - Empowering Digital Success">
-    <meta name="twitter:description"
-        content="Empowering businesses and individuals with data-driven strategies, analytics, finance, and technology solutions. Join the DAFTitude movement today!">
-    <meta name="twitter:image" content="https://www.daftitude.com/images/daftitude-twitter-image.jpg">
-    <!-- Replace with the correct image URL -->
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAFTitude - Empowering Success With Data, Analytics, Finance, & Technology</title>
+        content="DAFTitude - Leading in Data, Analytics, Finance, and Technology. Empowering businesses and individuals with cutting-edge solutions for the digital age.">
+    <meta name="keywords" content="Data, Analytics, Finance, Technology, Innovation">
+    <title>DAFTitude - Empowering Digital Success</title>
     <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="js/script.js" defer></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="main-header">
         <div class="container">
-            <!-- Logo -->
-            <h1 class="logo">
-                <a href="#">DAFTitude</a>
-            </h1>
-
-            <!-- Hamburger Toggle for Mobile -->
+            <h1 class="logo"><a href="index.html">DAFTitude</a></h1>
             <button class="hamburger-toggle" aria-label="Toggle navigation">
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
                 <span class="hamburger-bar"></span>
             </button>
-
-            <!-- Navigation Links -->
             <nav class="nav-links">
                 <ul>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="#mission">Our Mission</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#industries">Industries</a></li>
                     <li class="dropdown">
                         <a href="#industries" class="dropdown-toggle">Industries</a>
                         <ul class="dropdown-menu">
@@ -69,39 +37,63 @@
                             <li><a href="#sustainability">Sustainability</a></li>
                         </ul>
                     </li>
+                    <li><a href="#testimonials">Success Stories</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#faq">FAQs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
     <!-- Hero Section -->
-    <section class="hero" style="background: url('images/hero-left image.webp') no-repeat center center/cover;">
-        <div class="hero-container">
-            <!-- Left Section -->
-            <div class="hero-left">
-                <h1>DAFTitude - "Leading in: Data, Analytics, Finance, and Technology"</h1>
-                <p>
-                    Empowering businesses and individuals to navigate the digital age with innovation, confidence, and
-                    purpose.
-                </p>
-                <a href="#services" class="cta-btn-hero">Explore Our Services</a>
+    <section class="hero">
+        <div class="hero-carousel">
+            <!-- Panels -->
+            <div class="carousel-panel"
+                style="background: url('images/Data-hero-image.webp') no-repeat center center/cover;">
+                <div class="panel-content">
+                    <h1>Data</h1>
+                    <p>Empowering decisions through insightful data solutions.</p>
+                </div>
             </div>
-            <!-- Right Section -->
-            <div class="hero-description">
-                <p>
-                    Daftitude isn't just a name—it's a movement that redefines how we approach success in the digital
-                    age. Combining innovation
-                    with empowerment, Daftitude bridges the gap between complex technology and practical solutions,
-                    offering a fresh perspective
-                    on growth, education, and digital resilience.
-                </p>
+            <div class="carousel-panel"
+                style="background: url('images/Analytics-hero-image.webp') no-repeat center center/cover;">
+                <div class="panel-content">
+                    <h1>Analytics</h1>
+                    <p>Unlock actionable strategies with advanced analytics.</p>
+                </div>
+            </div>
+            <div class="carousel-panel" style="background: url('images/hero-left\ image.webp') no-repeat center center/cover;">
+                <div class="panel-content">
+                    <h1>DAFTitude</h1>
+                    <p>Leading in Data, Analytics, Finance, and Technology.</p>
+                    <a href="#services" class="cta-btn-hero">Explore Our Services</a>
+                </div>
+            </div>
+            <div class="carousel-panel"
+                style="background: url('images/finance-panel.webp') no-repeat center center/cover;">
+                <div class="panel-content">
+                    <h1>Finance</h1>
+                    <p>Transforming growth with innovative financial solutions.</p>
+                </div>
+            </div>
+            <div class="carousel-panel"
+                style="background: url('images/technology-panel.webp') no-repeat center center/cover;">
+                <div class="panel-content">
+                    <h1>Technology</h1>
+                    <p>Innovating the future with cutting-edge tech advancements.</p>
+                </div>
             </div>
         </div>
+
+        <!-- Navigation Arrows -->
+        <div class="carousel-nav">
+            <button class="prev" aria-label="Previous">&#10094;</button>
+            <button class="next" aria-label="Next">&#10095;</button>
+        </div>
     </section>
+
+
 
 
 

@@ -34,6 +34,15 @@ section h2::after {
     margin: 10px auto 0;
     border-radius: 2px;
 }
+/* Hide Non-Hero Sections Initially */
+section:not(.hero) {
+    display: none; /* Hide all sections except the hero */
+}
+
+/* Show Non-Hero Sections When Needed */
+.show-sections section {
+    display: block; /* Override to show sections later */
+}
 
 /* General Styles */
 body {
@@ -57,16 +66,155 @@ body {
 .main-header {
     position: sticky;
     top: 0;
+    background: #003366;
+    color: white;
     z-index: 1000;
-    background: #000;
-    /* Dark background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    /* Subtle shadow */
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Carousel Container */
+.hero-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+/* Carousel Panels */
+.carousel-panel {
+    flex: 0 0 100%; /* Each panel takes up the full viewport width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px; /* Smooth panel edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* Panel Content */
+.panel-content {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    /* Limit content width */
+}
+
+.panel-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.panel-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.cta-btn-hero {
+    display: inline-block;
+    background: #FF0000;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn-hero:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+/* Navigation Buttons */
+.carousel-nav button {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.carousel-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-nav .prev {
+    left: 20px; /* Position on the left */
+}
+
+.carousel-nav .next {
+    right: 20px; /* Position on the right */
+}
+
+
+@media (max-width: 768px) {
+    .carousel-nav button {
+        font-size: 1.2rem; /* Smaller buttons on mobile */
+        padding: 8px 12px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel-content h1 {
+        font-size: 2rem;
+    }
+
+    .panel-content p {
+        font-size: 1rem;
+    }
+
+    .cta-btn-hero {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .carousel-nav button {
+        font-size: 1.5rem;
+        padding: 8px 15px;
+    }
+}
+
+
 
 .logo a {
     font-size: 1.8rem;
@@ -99,6 +247,34 @@ body {
     background: white;
     border-radius: 2px;
     transition: transform 0.3s ease, background 0.3s ease;
+}
+/* Dropdown Menu */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown-menu li {
+    margin: 5px 0;
+}
+
+.nav-links .dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-links .dropdown-menu li a:hover {
+    background: #555;
+    border-radius: 5px;
 }
 
 /* Navigation Links */
@@ -229,43 +405,83 @@ body {
     }
 }
 
+/* Hero Section Styling */
 /* Hero Section */
 .hero {
-    display: flex;
-    align-items: center;
+    position: relative;
     height: 100vh;
-    /* Full viewport height */
-    color: white;
-    padding: 0 5%;
-    /* Add some horizontal padding */
+    overflow: hidden;
+    background: #000;
 }
 
-.hero-container {
+/* Carousel Container */
+.hero-carousel {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
     width: 100%;
 }
 
-.hero-left {
-    flex: 1;
-    padding-right: 20px;
-    /* Space between text and image */
+/* Carousel Panels */
+.carousel-panel {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    min-width: 300px;
+    height: 80%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+/* Carousel Text Overlay */
+.carousel-panel .overlay-text {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.hero-left h1 {
+.carousel-panel .overlay-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.carousel-panel .overlay-text p {
+    font-size: 1.1rem;
+}
+
+
+/* Panel Content */
+.panel-content {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.panel-content h1 {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    /* Subtle text shadow */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-.hero-left p {
+.panel-content p {
     font-size: 1.2rem;
-    line-height: 1.8;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .cta-btn-hero {
@@ -273,45 +489,60 @@ body {
     background: #FF0000;
     color: white;
     font-size: 1rem;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
-    text-transform: uppercase;
     text-decoration: none;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta-btn-hero:hover {
     background: #cc0000;
-    /* Darker red on hover */
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-.hero-description {
-    flex: 1;
-    background: rgba(0, 0, 0, 0.6);
-    /* Optional dark overlay for readability */
-    padding: 20px;
-    border-radius: 10px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+/* Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
-
-.cta-btn-hero {
-    display: inline-block;
-    background: #FF0000;
+.carousel-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
     color: white;
-    font-size: 1rem;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+    transition: background 0.3s ease;
 }
 
-.cta-btn-hero:hover {
-    background: #cc0000;
-    transform: scale(1.05);
+.carousel-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel-content h1 {
+        font-size: 2rem;
+    }
+
+    .panel-content p {
+        font-size: 1rem;
+    }
+
+    .cta-btn-hero {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
+
 
 /* About Section */
 #about-daftitude {
