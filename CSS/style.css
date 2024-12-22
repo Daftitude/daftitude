@@ -35,94 +35,203 @@ section h2::after {
     border-radius: 2px;
 }
 
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Navigation Bar */
 .main-header {
     position: sticky;
     top: 0;
-    background: #003366;
-    color: white;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000; /* Dark background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.cta-btn {
-    background: #FFC857;
-    color: #003366;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
+.logo a:hover {
+    color: #FFC857; /* Highlight on hover */
 }
 
-.cta-btn:hover {
-    background: white;
-    color: #003366;
-}
-
-.nav-links {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    height: 100%;
-    width: 300px;
-    background: #003366;
-    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: flex;
+/* Hamburger Menu */
+.hamburger-toggle {
+    display: none;
     flex-direction: column;
-    gap: 15px;
-    transition: right 0.3s ease;
-    z-index: 999;
-    overflow-y: auto;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
-.nav-links.active {
-    right: 0;
+.hamburger-bar {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
 .nav-links ul {
+    display: flex;
+    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.nav-links li {
-    margin: 10px 0;
-}
-
 .nav-links a {
+    font-size: 1rem;
+    text-transform: uppercase;
     color: white;
     text-decoration: none;
-    font-size: 18px;
     padding: 5px 10px;
-    transition: color 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFC857;
-    background: #004080;
+    background: #FFC857; /* Highlight background */
+    color: #000; /* Text color on hover */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: "▼";
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #222; /* Dropdown background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: #FFC857;
+    color: #000;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100%;
+        width: 250px;
+        background: #000;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
 }
 
 /* Hero Section */
 .hero {
     display: flex;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    /* Full viewport height */
     color: white;
-    padding: 0 5%; /* Add some horizontal padding */
+    padding: 0 5%;
+    /* Add some horizontal padding */
 }
 
 .hero-container {
@@ -135,14 +244,16 @@ section h2::after {
 
 .hero-left {
     flex: 1;
-    padding-right: 20px; /* Space between text and image */
+    padding-right: 20px;
+    /* Space between text and image */
 }
 
 .hero-left h1 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Subtle text shadow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    /* Subtle text shadow */
 }
 
 .hero-left p {
@@ -164,13 +275,15 @@ section h2::after {
 }
 
 .cta-btn-hero:hover {
-    background: #cc0000; /* Darker red on hover */
+    background: #cc0000;
+    /* Darker red on hover */
     transform: scale(1.05);
 }
 
 .hero-description {
     flex: 1;
-    background: rgba(0, 0, 0, 0.6); /* Optional dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6);
+    /* Optional dark overlay for readability */
     padding: 20px;
     border-radius: 10px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
@@ -273,9 +386,11 @@ section h2::after {
     font-style: italic;
     color: #FF0000;
 }
+
 /* Mission Section Styling */
 #mission {
-    background: #111; /* Dark background */
+    background: #111;
+    /* Dark background */
     color: white;
     padding: 50px 20px;
     display: flex;
@@ -287,7 +402,8 @@ section h2::after {
     display: flex;
     max-width: 1200px;
     align-items: center;
-    gap: 30px; /* Space between text and image */
+    gap: 30px;
+    /* Space between text and image */
 }
 
 .mission-content {
@@ -296,7 +412,8 @@ section h2::after {
 
 .mission-content h2 {
     font-size: 2.5rem;
-    color: #FFC857; /* Highlight color for header */
+    color: #FFC857;
+    /* Highlight color for header */
     margin-bottom: 20px;
     position: relative;
 }
@@ -306,7 +423,8 @@ section h2::after {
     display: block;
     width: 80px;
     height: 4px;
-    background: #FF0000; /* Red underline */
+    background: #FF0000;
+    /* Red underline */
     margin: 10px 0;
     border-radius: 2px;
 }
@@ -315,7 +433,8 @@ section h2::after {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #ccc; /* Light text */
+    color: #ccc;
+    /* Light text */
 }
 
 .mission-content ul {
@@ -337,24 +456,29 @@ section h2::after {
     position: absolute;
     left: 0;
     top: 0;
-    color: #FF0000; /* Red checkmark */
+    color: #FF0000;
+    /* Red checkmark */
     font-size: 1.2rem;
 }
 
 /* Mission Image Styling */
 .mission-image {
     flex: 1;
-    border: 2px solid #FF0000; /* Red border */
+    border: 2px solid #FF0000;
+    /* Red border */
     border-radius: 15px;
     overflow: hidden;
-    padding: 10px; /* Inner spacing for a clean look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    padding: 10px;
+    /* Inner spacing for a clean look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow */
 }
 
 .mission-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners inside the border */
+    border-radius: 10px;
+    /* Rounded corners inside the border */
 }
 
 /* Responsive Design */
@@ -364,7 +488,8 @@ section h2::after {
     }
 
     .mission-container {
-        flex-direction: column; /* Stack text and image */
+        flex-direction: column;
+        /* Stack text and image */
         gap: 20px;
     }
 
@@ -377,106 +502,127 @@ section h2::after {
 /* Responsive Design */
 @media (max-width: 768px) {
     .mission-grid {
-        grid-template-columns: 1fr; /* One card per row on smaller screens */
+        grid-template-columns: 1fr;
+        /* One card per row on smaller screens */
     }
 }
-/* Services Section Styling */
-#services, #services-preview {
-    position: relative;
-    background: url('services-background.jpg') no-repeat center center/cover; /* Replace with your image */
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
 
+/* Featured Services Section Styles */
 .services-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #000;
+    /* Dark background */
+    color: white;
 }
 
-#services h2, #services-preview h2 {
+.services-container h2 {
     font-size: 2.5rem;
-    color: #FFC857; /* Highlight color */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    position: relative;
+    margin-bottom: 15px;
+    color: white;
 }
 
-#services h2::after, #services-preview h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #FF0000; /* Red underline */
-    margin: 15px auto;
-    border-radius: 2px;
-}
-
-#services-preview p {
+.section-intro {
     font-size: 1.2rem;
-    color: #ddd;
     margin-bottom: 30px;
-    line-height: 1.8;
+    color: #ccc;
+    /* Subtle text for descriptions */
 }
 
-.services-grid {
+/* Service Categories */
+.service-category {
+    margin-bottom: 50px;
+}
+
+.service-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #FFC857;
+    /* Highlight color */
+}
+
+/* Featured Grid */
+.featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.service-card {
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    border-radius: 15px;
+/* Featured Items */
+.featured-item {
+    background: #1a1a1a;
+    /* Card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+.featured-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
 }
 
-.service-card h3 {
-    font-size: 1.5rem;
-    color: #FFC857; /* Header color */
+.featured-item h4 {
+    font-size: 1.2rem;
     margin-bottom: 10px;
-}
-
-.service-card p {
-    font-size: 1rem;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.service-card .cta-btn {
-    display: inline-block;
-    margin-top: 15px;
-    background: #FF0000; /* Button color */
     color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.service-card .cta-btn:hover {
-    background: #cc0000; /* Darker red on hover */
-    transform: scale(1.05);
+.featured-item p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.featured-item .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Call-to-Action Button */
+.cta-btn {
+    display: inline-block;
+    background-color: #007aff;
+    /* Vibrant button color */
+    color: white;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005bb5;
+    /* Darker blue for hover effect */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr; /* One card per row */
+    .featured-grid {
+        grid-template-columns: 1fr;
+        /* Stack items on smaller screens */
     }
 }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* One card per row */
+    }
+}
+
 /* Industries Section Styling */
 #industries {
     padding: 50px 20px;
-    background-color: #f4f4f4; /* Light background */
+    background-color: #f4f4f4;
+    /* Light background */
 }
 
 .industries-container {
@@ -490,12 +636,14 @@ section h2::after {
 
 .industries-content {
     flex: 1 1 50%;
-    padding-right: 20px; /* Space between text and image */
+    padding-right: 20px;
+    /* Space between text and image */
 }
 
 .industries-content h2 {
     font-size: 2.5rem;
-    color: #003366; /* Blue color */
+    color: #003366;
+    /* Blue color */
     margin-bottom: 20px;
     position: relative;
 }
@@ -505,7 +653,8 @@ section h2::after {
     display: block;
     width: 80px;
     height: 4px;
-    background: #FFC857; /* Yellow highlight */
+    background: #FFC857;
+    /* Yellow highlight */
     margin: 10px 0;
     border-radius: 2px;
 }
@@ -514,7 +663,8 @@ section h2::after {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #555; /* Grey text */
+    color: #555;
+    /* Grey text */
 }
 
 .industries-content ul {
@@ -533,8 +683,10 @@ section h2::after {
 }
 
 .industries-content ul li::before {
-    content: "✔"; /* Checkmark icon */
-    color: #FFC857; /* Yellow color */
+    content: "✔";
+    /* Checkmark icon */
+    color: #FFC857;
+    /* Yellow color */
     position: absolute;
     left: 0;
     font-size: 1.2rem;
@@ -549,8 +701,10 @@ section h2::after {
 .industries-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
 }
 
 /* Responsive Design */
@@ -575,7 +729,8 @@ section h2::after {
 
 /* Features Section Styling */
 #features {
-    background: #111; /* Dark background */
+    background: #111;
+    /* Dark background */
     color: white;
     padding: 50px 20px;
     text-align: center;
@@ -588,7 +743,8 @@ section h2::after {
 
 #features h2 {
     font-size: 2.5rem;
-    color: #FFC857; /* Highlighted header */
+    color: #FFC857;
+    /* Highlighted header */
     margin-bottom: 30px;
     position: relative;
     text-transform: uppercase;
@@ -599,7 +755,8 @@ section h2::after {
     display: block;
     width: 100px;
     height: 4px;
-    background: #FF0000; /* Red underline */
+    background: #FF0000;
+    /* Red underline */
     margin: 15px auto 0;
     border-radius: 2px;
 }
@@ -613,10 +770,12 @@ section h2::after {
 }
 
 .feature {
-    background: #222; /* Slightly lighter for the card */
+    background: #222;
+    /* Slightly lighter for the card */
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Shadow for depth */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -651,7 +810,8 @@ section h2::after {
 
 .feature-content h3 {
     font-size: 1.5rem;
-    color: #FFC857; /* Header highlight */
+    color: #FFC857;
+    /* Header highlight */
     margin-bottom: 10px;
 }
 
@@ -664,7 +824,8 @@ section h2::after {
 /* Responsive Design */
 @media (max-width: 768px) {
     .features-grid {
-        grid-template-columns: 1fr; /* One card per row on smaller screens */
+        grid-template-columns: 1fr;
+        /* One card per row on smaller screens */
     }
 }
 
@@ -721,11 +882,15 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-container, .about-container {
+
+    .hero-container,
+    .about-container {
         flex-direction: column;
     }
 
-    .hero-left, .about-image, .about-content {
+    .hero-left,
+    .about-image,
+    .about-content {
         max-width: 100%;
         padding: 20px;
     }

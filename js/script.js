@@ -83,6 +83,7 @@ const heroObserver = new IntersectionObserver(
     }
 );
 
-heroSection.style.transform = 'translateY(-20px)';
-heroSection.style.opacity = '0';
-heroObserver.observe(heroSection);
+document.querySelector('.hamburger-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
