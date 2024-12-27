@@ -21,20 +21,6 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-// Dropdown Menu Hover Interaction (for desktop)
-const dropdowns = document.querySelectorAll('.dropdown');
-dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('mouseenter', () => {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        dropdownMenu.style.display = 'flex';
-    });
-
-    dropdown.addEventListener('mouseleave', () => {
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        dropdownMenu.style.display = 'none';
-    });
-});
-
 // ==============================
 // Smooth Scrolling for Anchor Links
 // ==============================
@@ -59,72 +45,37 @@ document.querySelectorAll('.nav-links a, .cta-btn-hero, .cta-btn').forEach((anch
     });
 });
 
-// ==============================
-// Hide Navigation Bar on Scroll
-// ==============================
-let lastScrollY = window.scrollY;
-const mainHeader = document.querySelector('.main-header');
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.hero-carousel');
+    const panels = document.querySelectorAll('.carousel-panel');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0; // Start with the first panel
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY) {
-        mainHeader.style.top = '-70px'; // Hide header
-    } else {
-        mainHeader.style.top = '0'; // Show header
+    // Debug logs
+    console.log('Number of panels:', panels.length);
+
+    // Update carousel position
+    function updateCarousel() {
+        const offset = currentIndex * -100;
+        carousel.style.transform = `translateX(${offset}%)`;
+        console.log(`Transform applied: translateX(${offset}%)`);
     }
-    lastScrollY = window.scrollY;
-});
 
-// ==============================
-// Hero Section Carousel
-// ==============================
-const carousel = document.querySelector('.hero-carousel');
-const panels = document.querySelectorAll('.carousel-panel');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentIndex = 0;
-
-// Function to update carousel position
-function updateCarousel() {
-    const offset = currentIndex * -100; // Calculate transform offset
-    carousel.style.transform = `translateX(${offset}%)`;
-    carousel.style.transition = 'transform 0.5s ease-in-out'; // Smooth transitions
-}
-
-
-// Navigate to the previous slide
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? panels.length - 1 : currentIndex - 1;
-    updateCarousel();
-});
-
-// Navigate to the next slide
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === panels.length - 1) ? 0 : currentIndex + 1;
-    updateCarousel();
-});
-
-// Auto-scroll functionality (optional)
-const autoScroll = setInterval(() => {
-    currentIndex = (currentIndex === panels.length - 1) ? 0 : currentIndex + 1;
-    updateCarousel();
-}, 5000);
-
-// Optional: Pause auto-scroll on button click
-prevBtn.addEventListener('click', () => clearInterval(autoScroll));
-nextBtn.addEventListener('click', () => clearInterval(autoScroll));
-
-
-// ==============================
-// Hero Panel Hover Effects (Optional)
-// ==============================
-panels.forEach((panel) => {
-    panel.addEventListener('mouseenter', () => {
-        panel.style.transform = 'scale(1.05)';
+    // Go to the previous panel
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? panels.length - 1 : currentIndex - 1;
+        console.log('Previous clicked, currentIndex:', currentIndex);
+        updateCarousel();
     });
 
-    panel.addEventListener('mouseleave', () => {
-        panel.style.transform = 'scale(1)';
+    // Go to the next panel
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === panels.length - 1) ? 0 : currentIndex + 1;
+        console.log('Next clicked, currentIndex:', currentIndex);
+        updateCarousel();
     });
+
+    // Initialize the carousel
+    updateCarousel();
 });
-
-
