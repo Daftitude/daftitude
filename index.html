@@ -4,249 +4,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Empowering Digital Success with DAFTitude - Innovative Solutions in Data, Analytics, Finance, and Technology">
-    <meta name="keywords" content="Data, Analytics, Finance, Technology, Innovation">
-    <title>DAFTitude - Empower Your Digital Journey</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>DaftItAll – Smart Tech, Simple Solutions</title>
+    <meta name="description" content="Expert Tech Help for Busy Lives & Real People">
+
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="bg-gray-50 text-gray-900" data-theme="light">
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container flex justify-between items-center">
-            <h1 class="logo">
-                <a href="index.html">DAFTitude</a>
-            </h1>
-            <button class="hamburger-toggle" aria-label="Toggle navigation">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="img/DaftitALL Logo3.png" alt="DaftItAll Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#web-development">Web Development</a>
+                        <a href="#digital-business-cards">Digital Business Cards</a>
+                        <a href="#social-media-management">Social Media Management</a>
+                        <a href="#wifi-optimization">WiFi Optimization</a>
+                        <a href="#tech-help">On-Demand Tech Help</a>
+                        <a href="#smart-home">Smart Home & Security</a>
+                        <a href="#home-theater">Home Theater Setup</a>
+                        <a href="#office-tech">Office Tech Support</a>
+                    </div>
+                </li>
+                <li><a href="#pricing-chart">Pricing</a></li>
+                <li><a href="tech-hub.html">Tech Hub</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="contact.html" class="cta-btn">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Icon -->
+            <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Smart Tech, Simple Solutions</h1>
+            <p>Expert Tech Help for Busy Lives & Real People</p>
+            <a href="#services" class="cta-btn">Get Started</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-tv">
-        <div class="tv-frame">
-            <div class="hero-carousel">
-                <!-- Main Hero Panel -->
-                <div class="carousel-panel"
-                    style="background: url('images/Main-hero-image.webp') no-repeat center center / cover;">
-                    <div class="panel-content">
-                        <h1>Welcome to DAFTitude</h1>
-                        <p>Empowering the future through innovation in Data, Analytics, Finance, and Technology.</p>
-                        <a href="#services" class="cta-btn-hero">Get Started</a>
-                    </div>
-                </div>
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2><span>OUR</span> SERVICES.</h2>
+        <p class="services-intro">
+            Expert tech support for smart homes, home theaters, WiFi optimization, and more.
+            Click on a service to learn more.
+        </p>
 
-                <!-- Data Panel -->
-                <div class="carousel-panel"
-                    style="background: url('images/Data-hero-image.webp') no-repeat center center / cover;">
-                    <div class="panel-content">
-                        <h1>Data</h1>
-                        <p>Empowering decisions through insightful data solutions.</p>
-                    </div>
-                </div>
-
-                <!-- Analytics Panel -->
-                <div class="carousel-panel"
-                    style="background: url('images/Analytics-hero-image.webp') no-repeat center center / cover;">
-                    <div class="panel-content">
-                        <h1>Analytics</h1>
-                        <p>Unlock actionable strategies with advanced analytics.</p>
-                    </div>
-                </div>
-
-                <!-- DAFTitude Panel -->
-                <div class="carousel-panel"
-                    style="background: url('images/hero-left-image.webp') no-repeat center center / cover;">
-                    <div class="panel-content">
-                        <h1>DAFTitude</h1>
-                        <p>Leading in Data, Analytics, Finance, and Technology.</p>
-                        <a href="#services" class="cta-btn-hero">Explore Our Services</a>
-                    </div>
-                </div>
-
-                <!-- Technology Panel -->
-                <div class="carousel-panel"
-                    style="background: url('images/technology-panel.webp') no-repeat center center / cover;">
-                    <div class="panel-content">
-                        <h1>Technology</h1>
-                        <p>Innovating the future with cutting-edge tech advancements.</p>
-                    </div>
-                </div>
+        <div class="services-container">
+            <!-- Web Development -->
+            <div class="service-card">
+                <span class="icon">🌐💡</span>
+                <h3>Web Development & Digital Solutions</h3>
+                <p>Empower your business with sleek websites, modern digital business cards, and impactful social media
+                    strategies.</p>
+                <a href="service.html#web-development" class="cta-btn">Learn More</a>
             </div>
 
-            <!-- Navigation Arrows -->
-            <div class="carousel-nav">
-                <button class="prev" aria-label="Previous">&#10094;</button>
-                <button class="next" aria-label="Next">&#10095;</button>
+            <!-- Digital Business Cards -->
+            <div class="service-card">
+                <span class="icon">📱</span>
+                <h3>Digital Business Cards</h3>
+                <p>Modern, interactive cards to elevate your professional image.</p>
+                <a href="/service.html#digital-business-cards" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- Social Media Management -->
+            <div class="service-card">
+                <span class="icon">📣</span>
+                <h3>Social Media Management</h3>
+                <p>Grow your brand's online presence with strategic content and engagement.</p>
+                <a href="/service.html#social-media-management" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- Home WiFi & Network Optimization -->
+            <div class="service-card">
+                <span class="icon">📶🚀</span>
+                <h3>Home WiFi & Network Optimization</h3>
+                <p>Stronger, faster internet with optimized WiFi and mesh networks.</p>
+                <a href="/service.html#wifi-optimization" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- On-Demand Tech Help -->
+            <div class="service-card">
+                <span class="icon">🛠️📱</span>
+                <h3>On-Demand Tech Help</h3>
+                <p>Smart devices, troubleshooting, and expert consulting at your fingertips.</p>
+                <a href="/service.html#tech-help" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- Smart Home & Security -->
+            <div class="service-card">
+                <span class="icon">🏠🔒</span>
+                <h3>Smart Home & Security</h3>
+                <p>Expert setup for cameras, smart locks, automation, and more.</p>
+                <a href="service.html#smart-home" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- Home Theater & TV Mounting -->
+            <div class="service-card">
+                <span class="icon">📺🎶</span>
+                <h3>Home Theater & TV Mounting</h3>
+                <p>TV installation, surround sound, and custom entertainment setups.</p>
+                <a href="service.html#home-theater" class="cta-btn">Learn More</a>
+            </div>
+
+            <!-- Office Tech Support -->
+            <div class="service-card">
+                <span class="icon">🖥️🖨️</span>
+                <h3>Office Tech Support</h3>
+                <p>Comprehensive support for printers, PCs, cloud storage, and remote work.</p>
+                <a href="service.html#office-tech" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Full Services Button -->
+        <a href="service.html" class="full-services-btn">View All Services</a>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <!-- About Image -->
+            <div class="about-image">
+                <img src="img/About Me Section .png" alt="Kyhl Hines - CEO of DaftItAll">
+            </div>
+
+            <!-- About Text Content -->
+            <div class="about-content">
+                <h2>👋 About Me</h2>
+                <h3>Kyhl Hines - CEO of DaftItAll</h3>
+                <p>
+                    With over a decade of experience in IT, engineering optimization, and smart tech solutions, I
+                    founded DaftItAll to bridge the gap between technology and everyday life. My journey from military
+                    IT networks to web development and smart home installations has shaped my passion for simplifying
+                    tech for businesses and individuals alike.
+                </p>
+                <p>
+                    Whether it's optimizing WiFi, setting up smart homes, or crafting sleek digital solutions, my
+                    mission is to make technology accessible, efficient, and stress-free for everyone.
+                </p>
+                <a href="about.html" class="learn-more-btn">Learn More →</a>
             </div>
         </div>
     </section>
 
 
 
-    <!-- Core Areas -->
-    <section id="core-areas" class="py-12 bg-gray-100">
-        <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">Our Vision for the Digital Future</h2>
-        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Data</h3>
-                <p>Building insights through cutting-edge data solutions.</p>
+
+
+
+    <!-- Case Studies -->
+    <section id="case-studies">
+        <h2>📊 Case Studies</h2>
+        <p>Discover how DaftItAll has transformed businesses and homes with smart tech solutions.</p>
+        <div class="case-container">
+            <div class="case-card">
+                <h3>Smart Home Overhaul</h3>
+                <p>How we optimized security and automation for a busy family in under a week.</p>
+                <a href="service.html#smart-home" class="cta-btn">View Details</a>
             </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Analytics</h3>
-                <p>Transforming raw numbers into actionable strategies.</p>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Finance</h3>
-                <p>Empowering businesses with financial innovation.</p>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Technology</h3>
-                <p>Harnessing the power of modern technology for tomorrow.</p>
+            <div class="case-card">
+                <h3>WiFi Rescue Mission</h3>
+                <p>Fixing slow internet issues for a remote team working from home.</p>
+                <a href="service.html#wifi-optimization" class="cta-btn">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section id="mission" class="py-12 bg-gray-50">
-        <div class="container mx-auto flex flex-wrap items-center">
-            <div class="w-full md:w-1/2 px-4">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
-                <p class="text-lg text-gray-700 mb-6">At DAFTitude, we empower businesses and individuals to embrace
-                    technology with confidence by delivering tailored solutions for success.</p>
-                <ul class="list-disc pl-6 text-gray-700">
-                    <li>Deliver data-driven strategies to drive growth.</li>
-                    <li>Simplify complex systems for individuals.</li>
-                    <li>Educate and safeguard clients in the digital landscape.</li>
+    <!-- 🌐 Tech Hub Section -->
+    <section id="tech-hub" class="tech-hub-section">
+        <h2>💡 Tech Hub</h2>
+        <p>Your go-to resource for tech tips, DIY guides, and troubleshooting advice.</p>
+
+        <div class="tech-hub-container">
+            <!-- Card 1: WiFi Optimization -->
+            <div class="tech-card">
+                <div class="tech-icon">📶</div>
+                <h3>Optimize Your WiFi for Faster Speeds</h3>
+                <p>Discover simple tweaks to boost your home WiFi performance without spending extra.</p>
+                <a href="blog.html#optimize-wifi" class="read-more-btn">Read More →</a>
+            </div>
+
+            <!-- Card 2: Smart Home Setup -->
+            <div class="tech-card">
+                <div class="tech-icon">🏡</div>
+                <h3>Setting Up Your First Smart Home System</h3>
+                <p>Learn the basics of smart home automation, from lighting to security devices.</p>
+                <a href="blog.html#smart-home-setup" class="read-more-btn">Read More →</a>
+            </div>
+
+            <!-- Card 3: Remote Work Tips -->
+            <div class="tech-card">
+                <div class="tech-icon">💻</div>
+                <h3>Top Tech Tips for Remote Work Productivity</h3>
+                <p>Boost your productivity with these essential tech hacks for remote work environments.</p>
+                <a href="blog.html#remote-work-tips" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+
+        <!-- Call-to-Action -->
+        <a href="blog.html" class="view-all-btn">Explore More Articles</a>
+    </section>
+
+
+    <!-- Service Packages -->
+    <section id="service-packages">
+        <h2>📦 Service Packages</h2>
+        <p>Bundle and save with our customized tech support plans for homes and businesses.</p>
+        <div class="package-container">
+            <div class="package-card">
+                <h3>Smart Home Starter Pack</h3>
+                <p>Includes security setup, automation integration, and WiFi optimization.</p>
+                <a href="service.html#smart-home" class="cta-btn">Explore Package</a>
+            </div>
+            <div class="package-card">
+                <h3>Business Boost Bundle</h3>
+                <p>Web development + office tech support tailored for growing businesses.</p>
+                <a href="service.html#web-development" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section id="community-impact">
+        <h2>🌍 Community Impact</h2>
+        <p>At DaftItAll, we believe in giving back. Learn how we're making a difference through tech.</p>
+        <div class="impact-container">
+            <div class="impact-card">
+                <h3>Free Tech Workshops</h3>
+                <p>Empowering students with basic coding and cybersecurity skills.</p>
+            </div>
+            <div class="impact-card">
+                <h3>Device Donation Drives</h3>
+                <p>Helping families stay connected with refurbished tech.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section id="tech-updates">
+        <h2>📰 Tech Updates</h2>
+        <p>Stay in the loop with the latest tech trends, news, and updates from DaftItAll.</p>
+        <div class="news-container">
+            <article class="news-item">
+                <h3>DaftItAll Launches New Smart Home Services</h3>
+                <p>Discover how we're revolutionizing home automation with the latest tech innovations.</p>
+                <a href="blog.html#smart-home-launch" class="cta-btn">Read More</a>
+            </article>
+            <article class="news-item">
+                <h3>2024 Tech Trends to Watch</h3>
+                <p>From AI-driven homes to advanced network security, here’s what’s coming next.</p>
+                <a href="blog.html#2024-trends" class="cta-btn">Explore Trends</a>
+            </article>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Need Help? Contact Us</h2>
+        <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
+        <a href="tel:+1234567890" class="contact-btn">Call Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h3>DaftItAll</h3>
+                <p>Smart Tech, Simple Solutions. We provide expert tech support, smart home setups, and digital services
+                    tailored to your needs.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#pricing-chart">Pricing</a></li>
                 </ul>
             </div>
-            <div class="w-full md:w-1/2 px-4">
-                <img src="images/Mission-icon.webp" alt="Mission Visual" class="rounded shadow">
-            </div>
-        </div>
-    </section>
-    <!-- Featured Services -->
-    <section id="services" class="py-12 bg-gray-100">
-        <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">Explore DAFTitude Services</h2>
-        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Data Management</h3>
-                <p>Streamline enterprise datasets with customized data solutions.</p>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Advanced Analytics</h3>
-                <p>Turn big data into strategic insights with predictive modeling tools.</p>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Financial Optimization</h3>
-                <p>Enhance forecasting, minimize risks, and unlock financial growth.</p>
-            </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-2xl font-bold">Technology Integration</h3>
-                <p>Leverage advanced tools to drive innovation and operational efficiency.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Photo Gallery -->
-    <section id="gallery" class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-8">Photo Gallery</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Gallery Items -->
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Military 12.JPG" alt="Military Photo 1" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Serving with honor has shaped my resilience and focus."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Military 3.JPG" alt="Military Photo 2" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Proud moments that reflect discipline and teamwork."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Military 9.JPG" alt="Motorcycle Repair" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Restoring motorcycles has taught me patience and precision."
-                    </p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Computer 1.jpeg" alt="Motorcycle Photo" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Building tech setups fuels my passion for innovation."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Desk Build 4.JPG" alt="Gym Workout" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Creating spaces where creativity thrives."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Dog 1.jpeg" alt="Workout Photo" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Unconditional love from my furry friend."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="images/Kyhl Snowboarding 1.jpeg" alt="Snowboarding Fun" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Adrenaline and freedom on the slopes."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="images/Kyhl Trainie 2.JPG" alt="Snowboard Adventure" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Training hard, staying focused, and achieving goals."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl IRL 4.jpeg" alt="IRL Moment 1" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Everyday life moments that inspire me to keep going."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Pro 1.JPG" alt="IRL Moment 2" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Exploring professional growth with purpose."</p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Video Edit Teach 1.jpeg" alt="Desk Build" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Teaching the art of video editing is incredibly rewarding."
-                    </p>
-                </div>
-                <div class="gallery-item text-center">
-                    <img src="/images/Kyhl Crypto Teaching .JPG" alt="Work Project" class="gallery-img">
-                    <p class="mt-4 text-gray-700 italic">"Crypto education is about empowering others for the future."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-12 bg-gray-50">
-        <h2 class="text-center text-4xl font-bold text-gray-800 mb-8">Success Stories</h2>
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-lg shadow p-6">
-                <p class="text-gray-700 italic">"DAFTitude transformed our data strategy and drove measurable results."
-                </p>
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@daftitall.com">info@daftitall.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>Location: Fayetteville, NC</p>
             </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <p class="text-gray-700 italic">"I learned to optimize my home network with ease thanks to DAFTitude."
-                </p>
+
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">🌐</a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">🐦</a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">📸</a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">💼</a>
             </div>
         </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white text-center p-6">
-        <p>© 2024 DAFTitude. All Rights Reserved.</p>
-        <button id="theme-toggle" class="bg-gray-800 text-yellow-400 p-2 rounded">Toggle Dark Mode</button>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <p>© 2025 DaftItAll. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+
 </body>
 
 </html>

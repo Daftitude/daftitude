@@ -1,119 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAFTitude Services</title>
+    <title>DaftItAll – Smart Tech, Simple Solutions</title>
+    <meta name="description" content="Expert Tech Help for Busy Lives & Real People">
+
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container">
-            <h1 class="logo"><a href="index.html">DAFTitude</a></h1>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="#mission">Our Mission</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="/img/DaftitALL Logo3.png" alt="DaftItAll Logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="navbar">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">DaftItAll</a>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="tech-hub.html">Tech Hub</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </nav>
+
+            <!-- Mobile Menu Icon -->
+            <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
         </div>
-    </header>
+    </nav>
+
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="services-page">
+        <h2><span>OUR</span> SERVICES</h2>
+        <p class="services-intro">Comprehensive tech solutions tailored to your needs. Compare our flexible plans below
+            to find the perfect fit for your home or business.</p>
+
         <div class="services-container">
-            <h2>Explore DAFTitude Services</h2>
-            <p class="section-intro">
-                From scalable business strategies to personalized solutions, DAFTitude delivers actionable insights and
-                transformative technology for every need.
-            </p>
 
-            <!-- Services Grid -->
-            <div class="services-grid">
-                <!-- Business Services -->
-                <div class="service-category">
-                    <h3>For Businesses (Large Scale)</h3>
-                    <div class="featured-grid">
-                        <!-- Data -->
-                        <div class="featured-item">
-                            <img src="images/Data-Icon-2.webp" alt="Data Management Icon" class="service-icon">
-                            <h4>Data Management</h4>
-                            <p>Streamline enterprise datasets with customized data solutions for accuracy, scalability, and security.</p>
-                            <a href="#business-data" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Analytics -->
-                        <div class="featured-item">
-                            <img src="images/Analytics-Icon-2.webp" alt="Advanced Analytics Icon" class="service-icon">
-                            <h4>Advanced Analytics</h4>
-                            <p>Turn big data into strategic insights with predictive modeling and enterprise-grade analytics tools.</p>
-                            <a href="#business-analytics" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Finance -->
-                        <div class="featured-item">
-                            <img src="images/Finance-Icon-2.webp" alt="Financial Optimization Icon" class="service-icon">
-                            <h4>Financial Optimization</h4>
-                            <p>Enhance forecasting, minimize risks, and unlock financial growth with custom business solutions.</p>
-                            <a href="#business-finance" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Technology -->
-                        <div class="featured-item">
-                            <img src="images/Technology-Icon-2.webp" alt="Technology Integration Icon" class="service-icon">
-                            <h4>Technology Integration</h4>
-                            <p>Leverage advanced tools like AI, IoT, and blockchain to drive operational efficiency and innovation.</p>
-                            <a href="#business-technology" class="cta-btn">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Web Development & Digital Solutions -->
+            <section id="web-development" class="service-detail">
+                <h3>🌐 Web Development & Digital Solutions</h3>
+                <p>💡 Empower your business with sleek websites, modern digital business cards, and impactful social
+                    media strategies.</p>
+                <ul>
+                    <li>Custom Website Creation (Responsive & SEO-Optimized)</li>
+                    <li>Digital Business Cards for Professionals & Teams</li>
+                    <li>Social Media Management for Brand Growth</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
 
-                <!-- Individual Services -->
-                <div class="service-category">
-                    <h3>For Individuals (Small Scale)</h3>
-                    <div class="featured-grid">
-                        <!-- Data -->
-                        <div class="featured-item">
-                            <img src="images/Data-Icon-3.webp" alt="Data Simplification Icon" class="service-icon">
-                            <h4>Data Simplification</h4>
-                            <p>Organize personal files and manage digital assets with tools designed for everyday use.</p>
-                            <a href="#individual-data" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Analytics -->
-                        <div class="featured-item">
-                            <img src="images/Analytics-Icon-3.webp" alt="Personal Analytics Icon" class="service-icon">
-                            <h4>Personal Analytics</h4>
-                            <p>Track and improve personal finances, fitness goals, or digital habits with insightful metrics.</p>
-                            <a href="#individual-analytics" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Finance -->
-                        <div class="featured-item">
-                            <img src="images/Finance-Icon-3.webp" alt="Smart Finance Tools Icon" class="service-icon">
-                            <h4>Smart Finance Tools</h4>
-                            <p>Budget smarter, minimize debt, and grow savings with intuitive personal financial management tools.</p>
-                            <a href="#individual-finance" class="cta-btn">Learn More</a>
-                        </div>
-                        <!-- Technology -->
-                        <div class="featured-item">
-                            <img src="images/Technology-Icon-3.webp" alt="Smart Technology Setup Icon" class="service-icon">
-                            <h4>Smart Technology Setup</h4>
-                            <p>Get expert assistance for setting up smart home devices and navigating new technologies.</p>
-                            <a href="#individual-technology" class="cta-btn">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Digital Business Cards Section -->
+            <section id="digital-business-cards" class="service-detail">
+                <h3>📱 Digital Business Cards</h3>
+                <p>💡 Modern, sleek, and interactive digital business cards to elevate your professional image.</p>
+                <ul>
+                    <li>Custom Design with Branding Options</li>
+                    <li>Clickable Contact Links & Social Integrations</li>
+                    <li>QR Code for Easy Sharing</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- Social Media Management Section -->
+            <section id="social-media-management" class="service-detail">
+                <h3>📣 Social Media Management</h3>
+                <p>💡 Grow your brand's online presence with strategic content, engagement, and data-driven campaigns.
+                </p>
+                <ul>
+                    <li>Content Creation & Scheduling</li>
+                    <li>Ad Campaign Management</li>
+                    <li>Analytics & Growth Reports</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- Home WiFi & Network Optimization -->
+            <section id="wifi-optimization" class="service-detail">
+                <h3>📶🚀 Home WiFi & Network Optimization</h3>
+                <p>💡 Optimize your internet speed and coverage for seamless connectivity at home or in the office.</p>
+                <ul>
+                    <li>WiFi Speed Testing & Optimization</li>
+                    <li>Mesh Network Setup for Full Coverage</li>
+                    <li>Advanced Security & Device Management</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- On-Demand Tech Help -->
+            <section id="tech-help" class="service-detail">
+                <h3>🛠️📱 On-Demand Tech Help</h3>
+                <p>💡 Fast, flexible tech support whenever you need it—no waiting for corporate hotlines.</p>
+                <ul>
+                    <li>Device Troubleshooting & Support</li>
+                    <li>Remote Tech Assistance Available</li>
+                    <li>Custom Tech Solutions for Homes & Businesses</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- Smart Home & Security Installation -->
+            <section id="smart-home" class="service-detail">
+                <h3>🏠🔒 Smart Home & Security Installation</h3>
+                <p>💡 Make your home smarter and safer with expert installations.</p>
+                <ul>
+                    <li>Ring & Nest Camera Setup</li>
+                    <li>Smart Lock & Home Automation Integration</li>
+                    <li>Custom Security Solutions for Every Home</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- Home Theater & TV Mounting -->
+            <section id="home-theater" class="service-detail">
+                <h3>📺🎶 Home Theater & TV Mounting</h3>
+                <p>💡 Create the ultimate entertainment experience.</p>
+                <ul>
+                    <li>TV Mounting with Advanced Cable Management</li>
+                    <li>Home Theater & Surround Sound Setup</li>
+                    <li>Custom Multi-Room Audio Solutions</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
+            <!-- Office Tech Support -->
+            <section id="office-tech" class="service-detail">
+                <h3>🖥️🖨️ Office Tech Support</h3>
+                <p>💡 Reliable support for all your office needs.</p>
+                <ul>
+                    <li>Printer & Scanner Setup</li>
+                    <li>Network Security & Remote Work Optimization</li>
+                    <li>Ongoing IT Support for Businesses</li>
+                </ul>
+                <a href="#pricing-chart" class="cta-btn">View Pricing Plans</a>
+            </section>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2024 DAFTitude. All Rights Reserved.</p>
-            <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    <!-- Pricing Chart Section -->
+    <section id="pricing-chart" class="service-detail">
+        <h2>💰 Service Pricing Chart</h2>
+        <p>Compare our flexible plans side-by-side to find the perfect fit for your needs.</p>
+
+        <div class="pricing-table-container">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Starter Plan</th>
+                        <th>Standard Plan</th>
+                        <th>Premium Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Web Development & Digital Solutions -->
+                    <tr>
+                        <td>🌐 Website Development</td>
+                        <td>$499</td>
+                        <td>$999</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- Digital Business Cards -->
+                    <tr>
+                        <td>📱 Digital Business Cards</td>
+                        <td>$99</td>
+                        <td>$199</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- Social Media Management -->
+                    <tr>
+                        <td>📣 Social Media Management</td>
+                        <td>$299/month</td>
+                        <td>$599/month</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- Home WiFi & Network Optimization -->
+                    <tr>
+                        <td>📶 WiFi Optimization</td>
+                        <td>$129</td>
+                        <td>$299</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- On-Demand Tech Help -->
+                    <tr>
+                        <td>🛠️ On-Demand Tech Help</td>
+                        <td>$79</td>
+                        <td>$199</td>
+                        <td>$399/month</td>
+                    </tr>
+
+                    <!-- Smart Home & Security Installation -->
+                    <tr>
+                        <td>🏠 Smart Home & Security</td>
+                        <td>$199</td>
+                        <td>$499</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- Home Theater & TV Mounting -->
+                    <tr>
+                        <td>📺 Home Theater Setup</td>
+                        <td>$149</td>
+                        <td>$399</td>
+                        <td>Custom Quote</td>
+                    </tr>
+
+                    <!-- Office Tech Support -->
+                    <tr>
+                        <td>🖥️ Office Tech Support</td>
+                        <td>$99</td>
+                        <td>$249</td>
+                        <td>$499/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Need Help? Contact Us</h2>
+        <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
+        <a href="tel:+1234567890" class="contact-btn">Call Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h3>DaftItAll</h3>
+                <p>Smart Tech, Simple Solutions. We provide expert tech support, smart home setups, and digital services
+                    tailored to your needs.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#pricing-chart">Pricing</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@daftitall.com">info@daftitall.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p>Location: Fayetteville, NC</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">🌐</a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">🐦</a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">📸</a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">💼</a>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <p>© 2025 DaftItAll. All rights reserved.</p>
         </div>
     </footer>
+
+
+
 </body>
+
 </html>
