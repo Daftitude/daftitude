@@ -1,10 +1,6 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
 export default function Services() {
   return (
     <>
-      <Navbar />
 
       <section id="services" className="services-page">
         <h2><span>OUR</span> SERVICES</h2>
@@ -138,7 +134,6 @@ export default function Services() {
         <a href="tel:+1234567890" className="contact-btn">Call Now</a>
       </section>
 
-      <Footer />
     </>
   );
 }

@@ -1,10 +1,7 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 export default function About() {
   return (
     <>
-      <Navbar />
 
       <header className="about-hero">
         <h1>👋 Meet Kyhl Hines</h1>
@@ -90,7 +87,6 @@ export default function About() {
         <a href="tel:+1234567890" className="contact-btn">Call Now</a>
       </section>
 
-      <Footer />
     </>
   );
 }

@@ -1,10 +1,6 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
 export default function Contact() {
   return (
     <>
-      <Navbar />
 
       <section id="contact" className="contact-section">
         <header className="contact-hero">
@@ -44,7 +40,6 @@ export default function Contact() {
           ></iframe>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

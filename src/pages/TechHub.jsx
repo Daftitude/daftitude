@@ -1,11 +1,8 @@
-import Navbar from '../components/Navbar';
 import ContactCTA from '../components/ContactCTA';
-import Footer from '../components/Footer';
 
 export default function TechHub() {
   return (
     <>
-      <Navbar />
 
       <section className="techhub-hero">
         <h1>🧠 Tech Hub</h1>
@@ -39,7 +36,6 @@ export default function TechHub() {
         <a href="/contact" className="cta-btn">Request a Topic</a>
       </section>
       <ContactCTA />
-      <Footer />
     </>
   );
 }
