@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/",
+  "deploy": "gh-pages -d dist"
+},
   "homepage": "https://www.daftitude.com",
   "dependencies": {
     "react": "^19.1.0",
