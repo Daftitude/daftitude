@@ -7,6 +7,14 @@ export default function ContactCTA() {
         Reach out now or schedule a free consultation.
       </p>
       <a href="/contact" className="cta-btn">Contact Us →</a>
+      <a
+        href="https://daftitude.github.io/digital-card-kyhl"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-primary mt-2"
+      >
+        View My Digital Business Card
+      </a>
     </section>
   );
 }

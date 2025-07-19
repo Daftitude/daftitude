@@ -28,6 +28,14 @@ export default function Contact() {
             </form>
           </div>
         </div>
+        <a
+          href="https://daftitude.github.io/digital-card-kyhl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary mt-2"
+        >
+          View My Digital Business Card
+        </a>
 
         <div className="map-container">
           <iframe
