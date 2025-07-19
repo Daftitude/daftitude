@@ -1,30 +1,22 @@
-import { useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css'; // optional if styling is separate
 
-export default function Navbar() {
-  useEffect(() => {
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (window.location.pathname === link.getAttribute('href')) {
-        link.classList.add('active');
-      }
-    });
-  }, []);
-
+function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <a href="/" className="logo">
-          <img src="/img/DaftitALL Logo3.png" alt="DaFTitude Logo" />
-        </a>
+        <Link to="/" className="logo">DaFTitude</Link>
         <ul className="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/Services">Services</a></li>
-          <li><a href="/tech-hub">Tech Hub</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact" className="cta-btn">Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/tech-hub">Tech Hub</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact" className="cta-btn">Contact</Link></li>
         </ul>
-        <div className="mobile-menu-icon" aria-label="Toggle navigation menu" onClick={() => {}}>☰</div>
       </div>
     </nav>
   );
 }
+
+export default Navbar;
