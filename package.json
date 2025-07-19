@@ -8,7 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://daftitude.github.io/daftitude",
+  "homepage": "https://www.daftitude.com",
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
