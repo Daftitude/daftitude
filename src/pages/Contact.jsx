@@ -4,14 +4,14 @@ export default function Contact() {
 
       <section id="contact" className="contact-section">
         <header className="contact-hero">
-          <h1>📬 Get in Touch with Us</h1>
+          <h1>📬 Get in Touch with Me</h1>
           <p>Have a question, need support, or want to discuss a project? We're here to help!</p>
         </header>
 
         <div className="contact-container">
           <div className="contact-form">
-            <h2>Send Us a Message</h2>
-            <form action="mailto:info@daftitude.com" method="post" enctype="text/plain">
+            <h2>Send Me a Message</h2>
+            <form action="mailto:Kyhl_Hines@daftitude.com" method="post" enctype="text/plain">
               <label htmlFor="name">Your Name:</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required />
 

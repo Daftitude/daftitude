@@ -32,7 +32,7 @@ export default function TechHub() {
 
       <section className="techhub-cta">
         <h2>Got a Topic You Want Covered?</h2>
-        <p>We're always building new content. Let us know what you'd love to see in the Tech Hub.</p>
+        <p>I'm always building new content. Let me know what you'd love to see in the Tech Hub.</p>
         <a href="/contact" className="cta-btn">Request a Topic</a>
       </section>
       <ContactCTA />

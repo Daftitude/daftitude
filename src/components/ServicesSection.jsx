@@ -1,9 +1,9 @@
 export default function Services() {
   return (
     <section id="services" className="services-section">
-      <h2><span>OUR</span> SERVICES</h2>
+      <h2><span>MY</span> SERVICES</h2>
       <p className="services-intro">
-        From websites to WiFi, tech help to home automation — DaFTitude simplifies it all. Here's a quick glimpse at how we help:
+        From websites to WiFi, tech help to home automation — DaFTitude simplifies it all. Here's a quick glimpse at how I help:
       </p>
 
       <div className="services-preview-grid">

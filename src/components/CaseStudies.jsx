@@ -6,7 +6,7 @@ export default function CaseStudies() {
       <div className="case-container">
         <div className="case-card">
           <h3>Smart Home Overhaul</h3>
-          <p>How we optimized security and automation for a busy family in under a week.</p>
+          <p>How I optimized security and automation for a busy family in under a week.</p>
           <a href="/service#smart-home" className="cta-btn">View Details</a>
         </div>
         <div className="case-card">

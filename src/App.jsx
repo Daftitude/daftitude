@@ -5,6 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import TechHub from './pages/TechHub';
+import Crypto from './pages/Crypto'
 import Footer from './components/Footer';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tech-hub" element={<TechHub />} />
+          <Route path="/crypto" element={<Crypto />} />
         </Routes>
       <Footer />
     </>

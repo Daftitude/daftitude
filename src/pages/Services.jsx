@@ -3,9 +3,9 @@ export default function Services() {
     <>
 
       <section id="services" className="services-page">
-        <h2><span>OUR</span> SERVICES</h2>
+        <h2><span>MY</span> SERVICES</h2>
         <p className="services-intro">
-          Comprehensive tech solutions tailored to your needs. Compare our flexible plans below
+          Comprehensive tech solutions tailored to your needs. Compare my flexible plans below
           to find the perfect fit for your home or business.
         </p>
 
@@ -129,7 +129,7 @@ export default function Services() {
       </section>
 
       <section id="contact" className="contact-section">
-        <h2>Need Help? Contact Us</h2>
+        <h2>Need Help? Contact Me</h2>
         <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
         <a href="tel:+1234567890" className="contact-btn">Call Now</a>
       </section>

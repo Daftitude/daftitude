@@ -3,7 +3,7 @@ export default function ServicePackages() {
     <>
       <section id="pricing-chart" className="service-detail">
         <h2>💰 Service Pricing Chart</h2>
-        <p>Compare our flexible plans side-by-side to find the perfect fit for your needs.</p>
+        <p>Compare my flexible plans side-by-side to find the perfect fit for your needs.</p>
 
         <div className="pricing-table-container">
           <table className="pricing-table">

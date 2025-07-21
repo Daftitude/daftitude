@@ -32,21 +32,21 @@ export default function About() {
 
       {/* Mission & Values Section */}
       <section id="mission" className="mission-section">
-        <h2>🌟 Our Mission & Values</h2>
-        <p>At DaFTitude, our mission is simple—make technology work for you, not the other way around.</p>
+        <h2>🌟 My Mission & Values</h2>
+        <p>At DaFTitude, My mission is simple—make technology work for you, not the other way around.</p>
 
         <div className="values-container">
           <div className="value-card">
             <h3>💡 Simplicity</h3>
-            <p>We break down complex tech into simple, manageable solutions for homes and businesses.</p>
+            <p>I break down complex tech into simple, manageable solutions for homes and businesses.</p>
           </div>
           <div className="value-card">
             <h3>🔒 Reliability</h3>
-            <p>Whether it's network security or smart home systems, we deliver reliable, long-lasting results.</p>
+            <p>Whether it's network security or smart home systems, I deliver reliable, long-lasting results.</p>
           </div>
           <div className="value-card">
             <h3>🚀 Innovation</h3>
-            <p>We're always exploring the latest technologies to bring cutting-edge solutions to our clients.</p>
+            <p>I'm always exploring the latest technologies to bring cutting-edge solutions to my clients.</p>
           </div>
         </div>
       </section>
@@ -75,13 +75,13 @@ export default function About() {
       {/* Call to Action */}
       <section className="cta-section">
         <h2>Ready to Simplify Your Tech?</h2>
-        <p>Explore our services and discover how DaFTitude can make your life easier with smart tech solutions.</p>
-        <a href="/services" className="cta-btn">View Our Services</a>
+        <p>Explore my services and discover how DaFTitude can make your life easier with smart tech solutions.</p>
+        <a href="/services" className="cta-btn">View My Services</a>
       </section>
 
       {/* Contact Section */}
       <section id="contact">
-        <h2>Need Help? Contact Us</h2>
+        <h2>Need Help? Contact Me</h2>
         <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
         <a href="tel:+1234567890" className="contact-btn">Call Now</a>
       </section>
