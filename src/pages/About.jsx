@@ -1,11 +1,10 @@
+import React from "react";
+import AboutHero from "../components/AboutHero";
+
 export default function About() {
   return (
     <>
-
-      <header className="about-hero">
-        <h1>👋 Meet Kyhl Hines</h1>
-        <p>Founder & CEO of DaFTitude – Bridging the gap between people and technology.</p>
-      </header>
+      <AboutHero />
 
       {/* About Me Section */}
       <section id="about-me" className="about-me-section">
@@ -83,9 +82,8 @@ export default function About() {
       <section id="contact">
         <h2>Need Help? Contact Me</h2>
         <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
-        <a href="tel:+1234567890" className="contact-btn">Call Now</a>
+        <a href="tel:+12052108012" className="contact-btn">Call Now</a>
       </section>
-
     </>
   );
 }

@@ -2,17 +2,23 @@
   "name": "daftitude",
   "private": true,
   "version": "0.0.0",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/",
-  "deploy:manual": "npm run predeploy && cd dist && rm -rf .git && git init && git checkout -b gh-pages && git remote add origin https://github.com/Daftitude/daftitude.git && git add . && git commit -m 'Manual deploy' && git push -f origin gh-pages && cd .."
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/",
+    "deploy:manual": "npm run predeploy && cd dist && rm -rf .git && git init && git checkout -b gh-pages && git remote add origin https://github.com/Daftitude/daftitude.git && git add . && git commit -m 'Manual deploy' && git push -f origin gh-pages && cd .."
+  },
   "homepage": "https://www.daftitude.com",
   "dependencies": {
+    "axios": "^1.10.0",
+    "framer-motion": "^12.23.6",
+    "particles.js": "^2.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.7.0"
+    "react-router-dom": "^7.7.0",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.8.1",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

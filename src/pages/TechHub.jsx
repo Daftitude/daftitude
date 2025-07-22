@@ -1,15 +1,11 @@
+import HeroTechHub from '../components/HeroTechHub';
 import ContactCTA from '../components/ContactCTA';
 
 export default function TechHub() {
   return (
     <>
 
-      <section className="techhub-hero">
-        <h1>🧠 Tech Hub</h1>
-        <p>
-          Dive into tutorials, product reviews, how-tos, and troubleshooting tips curated to help you master your tech confidently.
-        </p>
-      </section>
+      <HeroTechHub />
 
       <section className="techhub-topics">
         <div className="topic">

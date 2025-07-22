@@ -20,7 +20,7 @@ export default function AboutSection() {
             At DaFTitude, we believe technology should empower you, not overwhelm you. Our values center
             around innovation, reliability, and customer satisfaction.
           </p>
-          <a href="/about" className="learn-more-btn">Learn More →</a>
+          <a href="./pages/about" className="learn-more-btn">Learn More →</a>
         </div>
       </div>
     </section>

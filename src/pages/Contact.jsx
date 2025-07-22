@@ -1,13 +1,11 @@
+import ContactHero from '../components/ContactHero';
+
 export default function Contact() {
   return (
     <>
+      <ContactHero />
 
       <section id="contact" className="contact-section">
-        <header className="contact-hero">
-          <h1>📬 Get in Touch with Me</h1>
-          <p>Have a question, need support, or want to discuss a project? We're here to help!</p>
-        </header>
-
         <div className="contact-container">
           <div className="contact-form">
             <h2>Send Me a Message</h2>
@@ -28,6 +26,7 @@ export default function Contact() {
             </form>
           </div>
         </div>
+
         <a
           href="https://daftitude.github.io/digital-card-kyhl"
           target="_blank"
