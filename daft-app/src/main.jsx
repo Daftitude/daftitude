@@ -5,11 +5,11 @@ import App from './App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { TokenProvider } from './context/TokenContext';
-import { ModeProvider } from './context/modeContext'; // <-- Make sure this is correct
+import { ModeProvider } from './context/modeContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/familyapp">
       <ModeProvider>
         <TokenProvider>
           <App />
