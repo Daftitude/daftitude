@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useToken } from "../../context/TokenContext";
-import TokenSummaryCard from "../../components/TokenSummaryCard";
-import GasLevelSlider from "../../components/GasLevelSlider";
-import AgreementTracker from "../../components/AgreementTracker";
-import ParentBadgeCreator from "../../components/ParentBadgeCreator";
-import DBAForm from "../../components/DBAForm";
-import CheckInScheduler from "../../components/CheckInScheduler";
-import ReminderBoard from "../../components/ReminderBoard";
-import StickyBoard from "../../components/StickyBoard";
-import FamilyVote from "../../components/FamilyVote";
-import TrustContractStatus from "../../components/TrustContractStatus";
+import TokenSummaryCard from "../../components/common/TokenSummaryCard";
+import GasLevelSlider from "../../components/dashboard/GasLevelSlider";
+import AgreementTracker from "../../components/parent/AgreementTracker";
+import ParentBadgeCreator from "../../components/parent/ParentBadgeCreator";
+import DBAForm from "../../components/parent/DBAForm";
+import CheckInScheduler from "../../components/parent/CheckInScheduler";
+import ReminderBoard from "../../components/common/ReminderBoard";
+import StickyBoard from "../../components/common/StickyBoard";
+import FamilyVote from "../../components/dashboard/FamilyVote";
+import TrustContractStatus from "../../components/admin/TrustContractStatus";
 
 export default function Settings() {
   const { tokens, setTokens, gasLevel, setGasLevel, role } = useToken();

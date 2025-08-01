@@ -1,6 +1,15 @@
 // src/components/Calendar.jsx
 import React, { useState } from 'react';
-import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSameMonth, isSameDay } from 'date-fns';
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  startOfWeek,
+  endOfWeek,
+  addDays,
+  isSameMonth,
+  isSameDay,
+} from 'date-fns';
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());

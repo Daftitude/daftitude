@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FamilyNavbar from './FamilyNavbar';
 
 const features = [
   { emoji: '💡', title: 'Token System', desc: 'Earn, track, and spend family tokens like DaFT, KD, and Bonus Coins.' },
@@ -14,7 +15,9 @@ const features = [
 
 const FamilyLanding = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-gray-900 text-white">
+    <>
+      <FamilyNavbar />
+      <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-gray-900 text-white">
       <header className="text-center py-16 px-6">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
           Welcome to the DaFT <span className="text-yellow-400">Family System</span>
@@ -56,7 +59,8 @@ const FamilyLanding = () => {
       <footer className="text-center text-sm text-gray-400 py-8">
         © {new Date().getFullYear()} DaFTitude. Built for your bloodline.
       </footer>
-    </div>
+      </div>
+    </>
   );
 };
 

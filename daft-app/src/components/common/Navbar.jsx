@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useMode } from "../../context/modeContext";
 
-// All navigation items with valid react-router-dom routes
 const navItems = [
   { name: 'Dashboard', path: '/dashboard' },
   { name: 'Planner', path: '/planner' },
@@ -11,36 +11,49 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  // Fallback render check
-  // Commented out icon/dark mode logic for isolated testing
-  // Layout: flex container for all links, spacing, revert placeholder markup removal
+  const { mode, toggleMode } = useMode();
+
   return (
-    <>
-      <div>Navbar Loaded</div>
-      <nav className="flex items-center justify-between px-4 py-2 bg-gray-800 text-white">
-        <div className="text-xl font-bold">DaFT</div>
-        <div className="flex space-x-4">
-          {navItems.map(item => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `px-2 py-1 rounded-md ${isActive ? 'bg-yellow-300 text-black' : ''}`
-              }
+    <nav className="bg-[#1f1f1f]/90 backdrop-blur-md shadow-md sticky top-0 z-50 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Left: Logo */}
+          <Link to="/" className="text-2xl font-extrabold text-orange-500 tracking-tight">
+            DaFT<span className="text-white">itude</span>
+          </Link>
+
+          {/* Center: Navigation links */}
+          <div className="flex gap-2 text-sm font-semibold tracking-wide">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `navbar-link ${isActive ? 'navbar-link-active' : ''}`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </div>
+
+          {/* Right: Mode Display + Toggle */}
+          <div className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-3 py-1 rounded-full shadow transition duration-150">
+            <span
+              className="navbar-link cursor-default text-gray-300"
+              title="Current App Mode"
             >
-              {item.name}
-            </NavLink>
-          ))}
+              Mode: <span className="text-white capitalize">{mode}</span>
+            </span>
+            <button
+              onClick={toggleMode}
+              className="navbar-link hover:navbar-link-active"
+            >
+              Switch to {mode === 'family' ? 'Legacy' : 'Family'}
+            </button>
+          </div>
         </div>
-        {/* 
-        // Dark mode toggle or icon logic temporarily commented for isolated testing
-        <div className="icon-btn">
-          <button aria-label="Toggle Dark Mode">
-            <span role="img" aria-label="moon">🌙</span>
-          </button>
-        </div>
-        */}
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
