@@ -1,6 +1,6 @@
 // src/pages/Crypto.jsx
 import React, { useState, useEffect } from 'react';
-import TokenData from "../../assets/crypto-data.json";
+import TokenData from "../assets/crypto-data.json";
 import { format } from 'date-fns';
 
 const Crypto = () => {
