@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TokenData from '../assets/crypto-data.json'; // Optional: store clean JSON
 import { format } from 'date-fns';
 
-const Crypto = () => {
+const Crypto = ()   => {
   const [transactions, setTransactions] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [filterType, setFilterType] = useState('All');
