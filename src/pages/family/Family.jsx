@@ -7,8 +7,9 @@ import FamilyNavbar from '../../components/FamilyNavbar';
 export default function Family() {
   return (
     <>
-    <FamilyHero />
       <FamilyNavbar />
+      <FamilyHero />
+
       <main className="bg-white">
         {/* Hero section */}
         <div className="relative pt-6 pb-16 sm:pb-24">
