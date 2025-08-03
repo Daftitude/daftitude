@@ -4,8 +4,8 @@ import Home from './pages/Home';
 import Services from './pages/services/Services';
 import About from './pages/about/About';
 import Crypto from './pages/crypto/Crypto';
-import Family from './pages/Family';
-import Contact from './pages/Contact';
+import Family from './pages/family/Family';
+import Contact from './pages/contact/Contact';
 
 export default function App() {
   return (
