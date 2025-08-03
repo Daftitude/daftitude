@@ -11,37 +11,7 @@ export default function Family() {
       <FamilyHero />
 
       <main className="bg-white">
-        {/* Hero section */}
-        <div className="relative pt-6 pb-16 sm:pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                Welcome to DaFTitude Family
-              </h1>
-              <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
-                Join our community and manage your family finances with ease.
-              </p>
-              <div className="mt-8 flex justify-center">
-                <div className="inline-flex rounded-md shadow">
-                  <a
-                    href="/signup"
-                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    Sign Up
-                  </a>
-                </div>
-                <div className="ml-3 inline-flex">
-                  <a
-                    href="/login"
-                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-indigo-100 hover:bg-indigo-200"
-                  >
-                    Log In
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  
 
         {/* Feature grid */}
         <div className="py-12 bg-gray-50">

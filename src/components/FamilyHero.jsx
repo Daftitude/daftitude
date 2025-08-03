@@ -41,25 +41,48 @@ const FamilyHero = () => {
   }, []);
 
   return (
-    <section className="about-hero services-hero">
-      <div id="about-particles"></div>
-      <div className="hero-content">
+    <section className="relative pt-24 pb-32 bg-black text-white overflow-hidden">
+      {/* Particle background */}
+      <div id="about-particles" className="absolute inset-0 z-0" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 text-center">
         <motion.h1
-          className="hero-title"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-400"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          🙋‍♂️ Get to Know DaFTitude Family
+          👪 Welcome to DaFTitude Family
         </motion.h1>
+
         <motion.p
-          className="hero-subtitle"
+          className="mt-6 text-lg sm:text-xl max-w-2xl mx-auto text-gray-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          
+          Join our community and manage your family ecosystem with ease, transparency, and a little bit of DaFT magic.
         </motion.p>
+
+        <motion.div
+          className="mt-8 flex justify-center gap-4 flex-wrap"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <a
+            href="/signup"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
+          >
+            Sign Up
+          </a>
+          <a
+            href="/login"
+            className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold transition"
+          >
+            Log In
+          </a>
+        </motion.div>
       </div>
     </section>
   );
