@@ -1,0 +1,56 @@
+{
+    "walletName": "Kyhl's Portfolio",
+    "lastUpdated": "2025-08-02T14:00:00Z",
+    "holdings": [
+      {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "amount": 0.0321,
+        "avgBuyPrice": 29000,
+        "currentPrice": 29750,
+        "icon": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
+      },
+      {
+        "symbol": "ETH",
+        "name": "Ethereum",
+        "amount": 0.87,
+        "avgBuyPrice": 1800,
+        "currentPrice": 1825,
+        "icon": "https://assets.coingecko.com/coins/images/279/large/ethereum.png"
+      },
+      {
+        "symbol": "SOL",
+        "name": "Solana",
+        "amount": 12.5,
+        "avgBuyPrice": 17.9,
+        "currentPrice": 21.4,
+        "icon": "https://assets.coingecko.com/coins/images/4128/large/solana.png"
+      }
+    ],
+    "transactions": [
+      {
+        "id": "tx001",
+        "type": "buy",
+        "symbol": "BTC",
+        "amount": 0.02,
+        "price": 28500,
+        "date": "2025-07-01"
+      },
+      {
+        "id": "tx002",
+        "type": "buy",
+        "symbol": "ETH",
+        "amount": 0.5,
+        "price": 1750,
+        "date": "2025-07-03"
+      },
+      {
+        "id": "tx003",
+        "type": "sell",
+        "symbol": "SOL",
+        "amount": 5,
+        "price": 22.1,
+        "date": "2025-07-20"
+      }
+    ]
+  }
