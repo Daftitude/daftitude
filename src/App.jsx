@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Services from './pages/services/Services';
 import About from './pages/about/About';
-import Crypto from './pages/crypto/Crypto';
+import Crypto from './pages/Crypto/Crypto';
 import Family from './pages/family/Family';
 import Contact from './pages/contact/Contact';
 
