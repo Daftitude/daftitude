@@ -1,8 +1,40 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import HeroCrypto from '../../components/HeroCrypto';
 import TokenData from "../../assets/crypto-data.json";
 import { format } from "date-fns";
 
 const Crypto = () => {
+  const asOfDate = "July 21, 2025";
+  const portfolioAge = "2y 6m 20d";
+
+  const [prices, setPrices] = useState({
+    eth: null,
+    sol: null,
+    usdc: 1.0,
+    usd: 1.0
+  });
+
+  useEffect(() => {
+    const fetchPrices = async () => {
+      try {
+        const response = await axios.get(
+          'https://api.coingecko.com/api/v3/simple/price?ids=ethereum,solana,usd-coin&vs_currencies=usd'
+        );
+        setPrices({
+          eth: response.data.ethereum.usd,
+          sol: response.data.solana.usd,
+          usdc: response.data['usd-coin'].usd,
+          usd: 1.0
+        });
+      } catch (error) {
+        console.error("Error fetching prices", error);
+      }
+    };
+
+    fetchPrices();
+  }, []);
+
   const [transactions, setTransactions] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [filterType, setFilterType] = useState("All");
@@ -55,6 +87,7 @@ const Crypto = () => {
 
   return (
     <section className="crypto-section">
+      <HeroCrypto />
       <div className="container">
         <h1>📊 My Crypto Portfolio</h1>
 
@@ -109,6 +142,31 @@ const Crypto = () => {
           </tbody>
         </table>
       </div>
+      <>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Portfolio Overview</h2>
+          <p className="mb-2">As of: {asOfDate}</p>
+          <p className="mb-4">Portfolio Age: {portfolioAge}</p>
+          <div className="price-grid grid grid-cols-2 gap-4 max-w-md mx-auto">
+            <div className="price-card bg-gray-100 p-4 rounded shadow">
+              <h3 className="text-xl font-semibold">ETH</h3>
+              <p>{prices.eth ? `$${prices.eth.toFixed(2)}` : "Loading..."}</p>
+            </div>
+            <div className="price-card bg-gray-100 p-4 rounded shadow">
+              <h3 className="text-xl font-semibold">SOL</h3>
+              <p>{prices.sol ? `$${prices.sol.toFixed(2)}` : "Loading..."}</p>
+            </div>
+            <div className="price-card bg-gray-100 p-4 rounded shadow">
+              <h3 className="text-xl font-semibold">USDC</h3>
+              <p>{`$${prices.usdc.toFixed(2)}`}</p>
+            </div>
+            <div className="price-card bg-gray-100 p-4 rounded shadow">
+              <h3 className="text-xl font-semibold">USD</h3>
+              <p>{`$${prices.usd.toFixed(2)}`}</p>
+            </div>
+          </div>
+        </div>
+      </>
     </section>
   );
 };

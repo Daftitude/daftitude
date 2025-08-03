@@ -1,33 +1,35 @@
 // src/App.jsx
-import { Routes, Route, Link } from 'react-router-dom';
+// App.jsx
+import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Services from './pages/services/Services';
 import About from './pages/about/About';
-import Crypto from './pages/crypto/Crypto';
-import Family from './pages/family/Family';
+import Services from './pages/services/Services';
 import Contact from './pages/contact/Contact';
+import TechHub from './pages/techhub/TechHub';
+import Crypto from './pages/crypto/Crypto';
+import Footer from './components/Footer'
+import Family from './pages/family/Family';
+import DaftFamApp from './pages/family/DaftFamApp/src/App'; 
 
-export default function App() {
+
+function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/about">About</Link>
-        <Link to="/crypto">Crypto</Link>
-        <Link to="/family">Family</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/crypto" element={<Crypto />} />
-          <Route path="/family" element={<Family />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/tech-hub" element={<TechHub />} />
+        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/family" element={<Family />} />
+        <Route path="/family/*" element={<DaftFamApp />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
+
+export default App;
