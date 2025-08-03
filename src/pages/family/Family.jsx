@@ -1,11 +1,13 @@
 // src/pages/Family.jsx
 import React from 'react';
+import FamilyHero from "../../components/FamilyHero";
 import FamilyNavbar from '../../components/FamilyNavbar';
-import Footer from '../../components/Footer';
+
 
 export default function Family() {
   return (
     <>
+    <FamilyHero />
       <FamilyNavbar />
       <main className="bg-white">
         {/* Hero section */}
@@ -118,7 +120,6 @@ export default function Family() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

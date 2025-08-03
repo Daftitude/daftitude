@@ -1,70 +1,90 @@
 // src/pages/About.jsx
+import React from "react";
+import AboutHero from "../../components/AboutHero";
+
 export default function About() {
   return (
-    <section id="about" class="about-section">
-      <div class="container">
-        <h1>About DaFTitude</h1>
+    <>
+      <AboutHero />
 
-        <p>
-          <strong>DaFTitude</strong> stands for <strong>Data, Analytics, Finance, and Technology</strong> — but it’s also a mindset. Born from years of real-world experience, military discipline, deep tech obsession, and relentless problem-solving, DaFTitude is more than a brand — it's a movement.
-        </p>
-
-        <h2>👤 Who I Am</h2>
-        <p>
-          I’m <strong>Kyhl B. Hines</strong> — a veteran, full-stack software engineer, crypto analyst, gamer, skater, and creator. I’ve walked the road of discipline and chaos, from combat boots to codebases. I started DaFTitude because I saw how unprepared most people are for the digital future — and I couldn’t unsee it.
-        </p>
-
-        <h2>🎯 The Mission</h2>
-        <p>
-          To empower individuals and families to protect themselves in a world driven by surveillance capitalism, misinformation, and decentralized tools they don’t understand. I build tools, write truth, and teach transparency — so others don’t have to learn it the hard way like I did.
-        </p>
-
-        <h2>⚙️ What We're Building</h2>
-        <ul>
-          <li><strong>🔐 Crypto Transparency:</strong> A live mirror of my own wallet history. Win or lose — it's all visible.</li>
-          <li><strong>📊 DaFT Family Dashboard:</strong> A token-based platform to gamify trust, habits, and communication for families.</li>
-          <li><strong>📚 Tech Hub:</strong> Tutorials, reviews, and breakdowns on AI, hardware, software, and privacy tools.</li>
-          <li><strong>🧠 AI & Security Tools:</strong> Custom tools for learning, managing data, and avoiding scams.</li>
-          <li><strong>🎙️ Podcast & Videos:</strong> The raw, uncensored truth about money, tech, and mental health in a digital world.</li>
-        </ul>
-
-        <h2>💬 From Me to You</h2>
-        <blockquote>
-          "This isn’t a side hustle. It’s my life mission. I lost time, energy, and money learning everything I now give away for free. If you’re here, you’re already part of the shift."
-        </blockquote>
-
-        <h2>🚀 What’s Coming</h2>
-        <ul>
-          <li>Public Trust Pools backed by on-chain transparency</li>
-          <li>Full open-source family token economy (KD, KDM, etc.)</li>
-          <li>Jarvis-style AI Assistant OS for real-time utility and learning</li>
-          <li>Community events, IRL meetups, and free tools for vets, parents, and youth</li>
-        </ul>
-
-        <div class="stats-grid mt-4">
-          <div class="stat-block">
-            <h3>30+</h3>
-            <p>Apps, bots, and tools developed</p>
+      {/* About Me Section */}
+      <section id="about-me" className="about-me-section">
+        <div className="about-container">
+          <div className="about-image">
+            <img src="/img/About Me Section .png" alt="Kyhl Hines - CEO of DaFTitude" />
           </div>
-          <div class="stat-block">
-            <h3>7+ Years</h3>
-            <p>Crypto & automation experience</p>
-          </div>
-          <div class="stat-block">
-            <h3>100%</h3>
-            <p>Transparent portfolio (losses & wins)</p>
+          <div className="about-content">
+            <h2>About Me</h2>
+            <p>
+              Hi, I'm Kyhl Hines, the founder and CEO of DaFTitude. With over a decade of experience in IT,
+              network engineering, and smart tech solutions, I've dedicated my career to making technology simple,
+              accessible, and effective for everyone.
+            </p>
+            <p>
+              My journey began in the military, where I managed complex IT systems within high-stakes environments.
+              From handling secure networks to developing efficient workflows, I learned the importance of precision,
+              adaptability, and resilience. These experiences laid the foundation for DaFTitude — a company built to
+              demystify technology and help people embrace it confidently.
+            </p>
           </div>
         </div>
+      </section>
 
-        <h2>✨ Join the Movement</h2>
-        <p>
-          DaFTitude isn’t just a project — it’s a digital survival kit. The world is shifting fast. We’re building something that keeps up.
-        </p>
+      {/* Mission & Values Section */}
+      <section id="mission" className="mission-section">
+        <h2>🌟 My Mission & Values</h2>
+        <p>At DaFTitude, My mission is simple—make technology work for you, not the other way around.</p>
 
-        <a href="/tech-hub.html" class="btn btn-primary mt-2">Explore the Tech Hub</a>
-        <a href="/crypto.html" class="btn btn-secondary mt-2 ml-2">View My Crypto Portfolio</a>
-      </div>
-    </section>
+        <div className="values-container">
+          <div className="value-card">
+            <h3>💡 Simplicity</h3>
+            <p>I break down complex tech into simple, manageable solutions for homes and businesses.</p>
+          </div>
+          <div className="value-card">
+            <h3>🔒 Reliability</h3>
+            <p>Whether it's network security or smart home systems, I deliver reliable, long-lasting results.</p>
+          </div>
+          <div className="value-card">
+            <h3>🚀 Innovation</h3>
+            <p>I'm always exploring the latest technologies to bring cutting-edge solutions to my clients.</p>
+          </div>
+        </div>
+      </section>
 
-  )
+      {/* Journey Section */}
+      <section id="journey" className="journey-section">
+        <h2>📈 My Professional Journey</h2>
+        <p>From military IT operations to founding DaFTitude, here’s a glimpse of my professional milestones:</p>
+
+        <ul className="timeline">
+          <li>
+            <strong>2010–2016:</strong> Military IT Specialist – Managed secure networks and advanced tech systems
+            in dynamic environments.
+          </li>
+          <li>
+            <strong>2017–2021:</strong> Network Administrator at Jacobs – Specialized in LAN/WAN optimization,
+            server management, and tech consulting.
+          </li>
+          <li>
+            <strong>2022–Present:</strong> Founder of DaFTitude – Providing smart tech solutions, from smart homes
+            to digital consulting, helping businesses and individuals thrive.
+          </li>
+        </ul>
+      </section>
+
+      {/* Call to Action */}
+      <section className="cta-section">
+        <h2>Ready to Simplify Your Tech?</h2>
+        <p>Explore my services and discover how DaFTitude can make your life easier with smart tech solutions.</p>
+        <a href="/services" className="cta-btn">View My Services</a>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <h2>Need Help? Contact Me</h2>
+        <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
+        <a href="tel:+12052108012" className="contact-btn">Call Now</a>
+      </section>
+    </>
+  );
 }
