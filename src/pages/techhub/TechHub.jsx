@@ -1,5 +1,5 @@
-import HeroTechHub from '../components/HeroTechHub';
-import ContactCTA from '../components/ContactCTA';
+import HeroTechHub from "../../components/HeroTechHub";
+import ContactCTA from '../../components/ContactCTA';
 
 export default function TechHub() {
   return (

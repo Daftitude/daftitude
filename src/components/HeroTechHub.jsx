@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "../index.css";
 
-const TechHubHero = () => {
+const HeroTechHub = () => {
   useEffect(() => {
     window.particlesJS?.("techhub-particles", {
       particles: {
@@ -65,4 +65,4 @@ const TechHubHero = () => {
   );
 };
 
-export default TechHubHero;
+export default HeroTechHub;

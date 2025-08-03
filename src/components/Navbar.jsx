@@ -42,10 +42,11 @@ function Navbar() {
         {/* Mobile menu */}
         <ul ref={menuRef} className={`nav-links ${menuOpen ? 'show' : ''}`}>
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
           <li><Link to="/tech-hub" onClick={closeMenu}>Tech Hub</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/crypto" onClick={closeMenu}>Crypto</Link></li>
+          <li><Link to="/family" onClick={closeMenu}>Family</Link></li>
           <li><Link to="/contact" className="cta-btn" onClick={closeMenu}>Contact</Link></li>
         </ul>
       </div>
