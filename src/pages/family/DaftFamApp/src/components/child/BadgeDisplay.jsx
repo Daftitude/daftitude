@@ -1,6 +1,8 @@
 // src/components/BadgeDisplay.jsx
 import React, { useState, useEffect } from 'react';
-import { useToken } from "@/context/TokenContext";
+import { useContext } from 'react';
+import { TokenContext } from '../../context/TokenContext';
+const useToken = () => useContext(TokenContext);
 import useSound from 'use-sound';
 import confetti from 'canvas-confetti';
 import badgeUnlockSound from '../../assets/sounds/unlock.mp3';
