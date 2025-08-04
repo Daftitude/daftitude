@@ -4,15 +4,30 @@ import { Link } from 'react-router-dom';
 
 export default function FamilyNavbar() {
   return (
-    <nav className="w-full bg-gray-900 px-4 py-3 flex justify-between items-center border-b border-orange-400/30">
-      <Link to="/" className="text-white text-xl font-bold drop-shadow-glow hover:text-yellow-300 transition">
-        DaFTitude
+    <nav className="w-full bg-[#111827]/95 backdrop-blur border-b border-yellow-300/30 px-4 py-2 flex justify-between items-center text-sm z-40 relative">
+      {/* Left: Logo */}
+      <Link
+        to="/family"
+        className="text-yellow-300 font-semibold text-lg tracking-wide hover:text-yellow-400 transition"
+      >
+        DaFT<span className="text-white">Fam</span>
       </Link>
-      <div className="flex items-center space-x-4">
-        <Link to="/family/DaftFamApp/login" className="px-4 py-1 rounded bg-transparent border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-gray-900 transition text-sm">Login</Link>
-        <Link to="/family/DaftFamApp/signup" className="px-4 py-1 rounded bg-yellow-300 text-gray-900 hover:bg-yellow-400 transition text-sm">Join Now</Link>
+
+      {/* Right: Auth buttons */}
+      <div className="flex gap-3 items-center">
+        <Link
+          to="/family/login"
+          className="px-3 py-[6px] border border-yellow-300 text-yellow-300 rounded-md hover:bg-yellow-300 hover:text-gray-900 transition duration-200"
+        >
+          Login
+        </Link>
+        <Link
+          to="/family/signup"
+          className="px-3 py-[6px] bg-yellow-300 text-gray-900 font-medium rounded-md hover:bg-yellow-400 transition duration-200"
+        >
+          Join Now
+        </Link>
       </div>
     </nav>
   );
 }
-
