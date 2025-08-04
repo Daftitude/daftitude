@@ -9,8 +9,8 @@ export default function FamilyNavbar() {
         DaFTitude
       </Link>
       <div className="flex items-center space-x-4">
-        <Link to="/login" className="px-4 py-1 rounded bg-transparent border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-gray-900 transition text-sm">Login</Link>
-        <Link to="/signup" className="px-4 py-1 rounded bg-yellow-300 text-gray-900 hover:bg-yellow-400 transition text-sm">Join Now</Link>
+        <Link to="/family/DaftFamApp/login" className="px-4 py-1 rounded bg-transparent border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-gray-900 transition text-sm">Login</Link>
+        <Link to="/family/DaftFamApp/signup" className="px-4 py-1 rounded bg-yellow-300 text-gray-900 hover:bg-yellow-400 transition text-sm">Join Now</Link>
       </div>
     </nav>
   );

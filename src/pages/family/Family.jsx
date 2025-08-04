@@ -9,9 +9,17 @@ export default function Family() {
     <>
       <FamilyNavbar />
       <FamilyHero />
+      <div className="text-center mt-10">
+        <a
+          href="/family/DaftFamApp"
+          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition"
+        >
+          🚀 Enter the Family App
+        </a>
+      </div>
 
       <main className="bg-white">
-  
+
 
         {/* Feature grid */}
         <div className="py-12 bg-gray-50">

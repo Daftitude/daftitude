@@ -10,7 +10,7 @@ import TechHub from './pages/techhub/TechHub';
 import Crypto from './pages/Crypto/Crypto';
 import Footer from './components/Footer'
 import Family from './pages/family/Family';
-import DaftFamApp from './pages/family/DaftFamApp/src/App'; 
+import DaftAppRoutes from './pages/family/DaftFamApp/src/DaftAppRoutes';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/tech-hub" element={<TechHub />} />
         <Route path="/crypto" element={<Crypto />} />
         <Route path="/family" element={<Family />} />
-        <Route path="/family/*" element={<DaftFamApp />} />
+        <Route path="/family/*" element={<DaftAppRoutes />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
