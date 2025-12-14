@@ -1,6 +1,6 @@
 // src/pages/Services.jsx
 import React from "react";
-import ServicesHero from '../../components/ServicesHero';
+import ServicesHero from '../../components/services/ServicesHero';
 
 export default function Services() {
   return (

@@ -1,6 +1,6 @@
 // src/pages/About.jsx
 import React from "react";
-import AboutHero from "../../components/AboutHero";
+import AboutHero from "../../components/about/AboutHero";
 
 export default function About() {
   return (

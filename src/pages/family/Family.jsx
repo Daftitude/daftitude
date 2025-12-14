@@ -1,7 +1,7 @@
 // src/pages/Family.jsx
 import React from 'react';
-import FamilyHero from "../../components/FamilyHero";
-import FamilyNavbar from '../../components/FamilyNavbar';
+import FamilyHero from "../../components/family/FamilyHero";
+import FamilyNavbar from '../../components/family/FamilyNavbar';
 
 
 export default function Family() {

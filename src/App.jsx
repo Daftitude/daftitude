@@ -1,14 +1,13 @@
-// src/App.jsx
 // App.jsx
-import Navbar from './components/Navbar';
+import Navbar from './components/common/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/about/About';
 import Services from './pages/services/Services';
 import Contact from './pages/contact/Contact';
 import TechHub from './pages/techhub/TechHub';
-import Crypto from './pages/Crypto/Crypto';
-import Footer from './components/Footer'
+import Crypto from './pages/crypto/Crypto';
+import Footer from './components/common/Footer'
 import Family from './pages/family/Family';
 import DaftAppRoutes from './pages/family/DaftFamApp/src/DaftAppRoutes';
 

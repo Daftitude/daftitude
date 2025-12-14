@@ -1,5 +1,5 @@
 // src/pages/Contact.jsx
-import ContactHero from '../../components/ContactHero';
+import ContactHero from '../../components/contact/ContactHero';
 
 export default function Contact() {
   return (

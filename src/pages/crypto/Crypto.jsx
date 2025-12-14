@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import HeroCrypto from '../../components/HeroCrypto';
+import HeroCrypto from '../../components/crypto/HeroCrypto';
 import TokenData from "../../assets/crypto-data.json";
 import { format } from "date-fns";
 
