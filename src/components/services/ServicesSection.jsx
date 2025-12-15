@@ -1,31 +1,63 @@
 export default function Services() {
   return (
     <section id="services" className="services-section">
-      <h2><span>MY</span> SERVICES</h2>
+      <h2>What I Help With</h2>
+
       <p className="services-intro">
-        From websites to WiFi, tech help to home automation — DaFTitude simplifies it all. Here's a quick glimpse at how I help:
+        Most tech problems come down to unclear systems, unnecessary complexity,
+        or setups that weren’t built for real-world use.
+        My work focuses on fixing those root issues.
       </p>
 
       <div className="services-preview-grid">
         <div className="service-preview-card">
-          <h3>🌐 Web & Digital</h3>
-          <p>Modern websites, digital business cards, and social strategies that convert.</p>
+          <h3>Clarity</h3>
+          <p>
+            Understanding what’s actually happening inside a system before
+            touching tools or code.
+          </p>
+          <span className="service-meta">
+            Audits • diagnostics • technical breakdowns
+          </span>
         </div>
+
         <div className="service-preview-card">
-          <h3>📶 WiFi & Networks</h3>
-          <p>Speed tests, mesh installs, and full-home connectivity optimization.</p>
+          <h3>Structure</h3>
+          <p>
+            Designing systems that are intentional, explainable, and easy to
+            reason about.
+          </p>
+          <span className="service-meta">
+            Software • networks • smart environments
+          </span>
         </div>
+
         <div className="service-preview-card">
-          <h3>🏠 Smart Home Setup</h3>
-          <p>Automate and secure your home with camera, lock, and voice integrations.</p>
+          <h3>Stability</h3>
+          <p>
+            Making sure things keep working when usage changes, scale increases,
+            or conditions aren’t ideal.
+          </p>
+          <span className="service-meta">
+            Reliability • performance • security
+          </span>
         </div>
+
         <div className="service-preview-card">
-          <h3>🛠️ On-Demand Tech Help</h3>
-          <p>Real support when you need it — no waiting, no BS, just solutions.</p>
+          <h3>Support</h3>
+          <p>
+            Improving, maintaining, and fixing systems over time without
+            introducing chaos.
+          </p>
+          <span className="service-meta">
+            Ongoing help • iteration • refinement
+          </span>
         </div>
       </div>
 
-      <a href="/services" className="cta-btn">See All Services →</a>
+      <a href="/services" className="cta-btn">
+        See concrete examples →
+      </a>
     </section>
   );
 }
