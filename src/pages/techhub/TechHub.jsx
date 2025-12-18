@@ -1,12 +1,13 @@
 import HeroTechHub from "../../components/techhub/HeroTechHub";
 import ContactCTA from '../../components/contact/ContactCTA';
+import CommunityImpact from '../../components/CommunityImpact';
+import CaseStudies from '../../components/techhub/CaseStudies';
 
 export default function TechHub() {
   return (
     <>
 
       <HeroTechHub />
-
       <section className="techhub-topics">
         <div className="topic">
           <h3>📦 Unboxings & Reviews</h3>
@@ -25,12 +26,13 @@ export default function TechHub() {
           <p>Learn how to use AI tools, smart devices, and home automations to make life easier.</p>
         </div>
       </section>
-
+      <CaseStudies />
       <section className="techhub-cta">
         <h2>Got a Topic You Want Covered?</h2>
         <p>I'm always building new content. Let me know what you'd love to see in the Tech Hub.</p>
         <a href="/contact" className="cta-btn">Request a Topic</a>
       </section>
+      <CommunityImpact />
       <ContactCTA />
     </>
   );

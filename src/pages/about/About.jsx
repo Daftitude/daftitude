@@ -9,73 +9,97 @@ export default function About() {
 
       {/* About Me Section */}
       <section id="about-me" className="about-me-section">
-        <div className="about-container">
-          <div className="about-image">
-            <img src="/img/About Me Section .png" alt="Kyhl Hines - CEO of DaFTitude" />
-          </div>
-          <div className="about-content">
-            <h2>About Me</h2>
+        <div className="section-container">
+          <div className="about-container">
+            <div className="about-image">
+              <img src="/img/About Me Section .png" alt="Kyhl Hines - CEO of DaFTitude" />
+            </div>
+            <div className="about-content">
+            <h2>About</h2>
             <p>
-              Hi, I'm Kyhl Hines, the founder and CEO of DaFTitude. With over a decade of experience in IT,
-              network engineering, and smart tech solutions, I've dedicated my career to making technology simple,
-              accessible, and effective for everyone.
+              I focus on understanding systems before changing them.
             </p>
+
             <p>
-              My journey began in the military, where I managed complex IT systems within high-stakes environments.
-              From handling secure networks to developing efficient workflows, I learned the importance of precision,
-              adaptability, and resilience. These experiences laid the foundation for DaFTitude — a company built to
-              demystify technology and help people embrace it confidently.
+              Most technical problems aren’t caused by missing tools. They come from
+              unclear assumptions, misaligned incentives, or systems that grew faster
+              than their understanding.
             </p>
+
+            <p>
+              My work is centered on slowing things down just enough to see what’s
+              actually happening — then designing solutions that make sense under
+              real-world conditions, not ideal ones.
+            </p>
+
           </div>
+        </div>
         </div>
       </section>
 
       {/* Mission & Values Section */}
       <section id="mission" className="mission-section">
-        <h2>🌟 My Mission & Values</h2>
-        <p>At DaFTitude, My mission is simple—make technology work for you, not the other way around.</p>
+        <h2>How I Work</h2>
 
         <div className="values-container">
           <div className="value-card">
-            <h3>💡 Simplicity</h3>
-            <p>I break down complex tech into simple, manageable solutions for homes and businesses.</p>
+            <h3>Clarity Before Action</h3>
+            <p>
+              I don’t touch tools or code until the system is understood.
+              Fast changes without understanding usually create slower problems.
+            </p>
           </div>
+
           <div className="value-card">
-            <h3>🔒 Reliability</h3>
-            <p>Whether it's network security or smart home systems, I deliver reliable, long-lasting results.</p>
+            <h3>Constraints Are Signals</h3>
+            <p>
+              Real environments have limits — budget, time, people, and risk.
+              Good solutions work with those constraints instead of ignoring them.
+            </p>
           </div>
+
           <div className="value-card">
-            <h3>🚀 Innovation</h3>
-            <p>I'm always exploring the latest technologies to bring cutting-edge solutions to my clients.</p>
+            <h3>Simple Beats Clever</h3>
+            <p>
+              Systems that can’t be explained clearly are hard to maintain calmly.
+              Complexity has to earn its place.
+            </p>
           </div>
         </div>
+
       </section>
 
       {/* Journey Section */}
       <section id="journey" className="journey-section">
-        <h2>📈 My Professional Journey</h2>
-        <p>From military IT operations to founding DaFTitude, here’s a glimpse of my professional milestones:</p>
+        <h2>Background</h2>
+        <p>
+          My approach was shaped in environments where systems had to work —
+          not look impressive.
+        </p>
 
         <ul className="timeline">
           <li>
-            <strong>2010–2016:</strong> Military IT Specialist – Managed secure networks and advanced tech systems
-            in dynamic environments.
+            <strong>Military IT:</strong> Supported secure, high-stakes systems
+            where failure had real consequences.
           </li>
           <li>
-            <strong>2017–2021:</strong> Network Administrator at Jacobs – Specialized in LAN/WAN optimization,
-            server management, and tech consulting.
+            <strong>Enterprise & Network Engineering:</strong> Worked on
+            infrastructure, optimization, and reliability across real production
+            environments.
           </li>
           <li>
-            <strong>2022–Present:</strong> Founder of DaFTitude – Providing smart tech solutions, from smart homes
-            to digital consulting, helping businesses and individuals thrive.
+            <strong>DaFTitude:</strong> Applying those lessons to help people and
+            organizations make technology clearer, calmer, and more reliable.
           </li>
         </ul>
+
       </section>
 
       {/* Call to Action */}
       <section className="cta-section">
         <h2>Ready to Simplify Your Tech?</h2>
-        <p>Explore my services and discover how DaFTitude can make your life easier with smart tech solutions.</p>
+        <p>If you’re dealing with systems that feel more complicated than they should,
+          we can start by understanding what’s actually happening.</p>
         <a href="/services" className="cta-btn">View My Services</a>
       </section>
 

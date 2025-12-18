@@ -473,7 +473,8 @@ body {
 /* CTA Button */
 .cta-btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding:  0.6rem 1.2rem;
+  font-size: 0.9rem;
   background: var(--primary-color);
   color: black;
   font-weight: bold;
@@ -688,7 +689,9 @@ body {
   }
 }
 
-
+section {
+  margin-bottom: 4rem;
+}
 /* ========== SECTION: SERVICES ========== */
 #services {
   padding: 60px 20px;
@@ -820,7 +823,14 @@ section {
   text-align: center;
   margin-bottom: 20px;
 }
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 
+section p {
+  max-width: 720px;
+}
 h2 {
   font-size: 2rem;
   color: #ff8c32;
@@ -832,8 +842,90 @@ p {
   opacity: 0.9;
   margin-bottom: 20px;
 }
+.system-briefs {
+  padding: 4rem 1rem;
+}
+
+.system-briefs-header {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.briefs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+
+.brief-card {
+  background: #141414;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.brief-coming-soon {
+  opacity: 0.55;
+}
+
+.coming-soon-text {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.brief-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.brief-excerpt {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0.75rem 0 1rem;
+}
+
+.brief-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  flex-wrap: wrap;
+}
+
+.brief-link {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #0cc7f6;
+  text-decoration: none;
+}
+@media (max-width: 1024px) {
+  .briefs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .briefs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Card Styles */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.impact-card {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .case-card,
 .package-card,
 .impact-card,
@@ -852,6 +944,17 @@ p {
 .impact-card:hover,
 .news-item:hover {
   transform: translateY(-5px);
+}
+@media (max-width: 1024px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========== BUTTONS: CTA & SHARED ========== */
@@ -911,6 +1014,63 @@ p {
   border-bottom: 1px solid #444;
   font-size: 0.95rem;
 }
+.service-preview-card:hover .service-icon {
+  opacity: 1;
+}
+.service-icon {
+  font-size: 1.4rem;
+  color: #0cc7f6;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+.services-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.service-feature-card {
+  display: flex;
+  background: #141414;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-feature-card img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.service-meta {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .service-feature-card {
+    flex-direction: column;
+  }
+
+  .service-feature-card img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
 
 /* ========== SECTION: ABOUT PAGE ========== */
 .about-section {
@@ -921,11 +1081,12 @@ p {
 }
 
 .about-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -933,9 +1094,10 @@ p {
 
 /* About Image */
 .about-image img {
-  width: 300px;
+  width: 100%;
   height: 300px;
-  border-radius: 50%;
+  border-radius: 14px;
+  opacity: 0.9;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease;
@@ -1172,7 +1334,25 @@ p {
   background: var(--accent-color);
   transform: translateY(-3px);
 }
+.timeline {
+  max-width: 720px;
+  margin-top: 1.5rem;
+}
 
+.timeline li {
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+.value-card {
+  background: #141414;
+  border-radius: 12px;
+  padding: 1.25rem;
+  opacity: 0.95;
+}
+.value-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
 /* View All Button */
 /* Use variable for accent color */
 .view-all-btn {
