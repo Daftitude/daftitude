@@ -1,226 +1,252 @@
-export default function ServicePackages() {
+import { useMemo, useState } from "react";
+
+const Field = ({ label, children }) => (
+  <label className="pkg-field">
+    <span className="pkg-field-label">{label}</span>
+    {children}
+  </label>
+);
+
+export default function ServicePackages({ taskType = "basic" }) {
+  const isAdvanced = taskType === "advanced";
+
+  const cards = useMemo(() => {
+    if (isAdvanced) {
+      return [
+        {
+          id: "infra",
+          title: "Network Infrastructure Setup",
+          subtitle: "Office networks, VLANs, routing, clean topology",
+          price: "$400 – $700",
+          points: ["Network design review", "Switch/AP setup", "Documentation basics"],
+        },
+        {
+          id: "security",
+          title: "Cybersecurity Hardening",
+          subtitle: "Reduce risk, lock down endpoints & accounts",
+          price: "$350 – $600",
+          points: ["Baseline hardening", "Access review", "Security defaults + policy guidance"],
+        },
+        {
+          id: "cloud",
+          title: "Cloud & Workspace Setup",
+          subtitle: "Microsoft 365 / Google Workspace foundations",
+          price: "$300 – $500",
+          points: ["Accounts & permissions", "Email/domain alignment", "Team-ready structure"],
+        },
+        {
+          id: "automation",
+          title: "Automation / Workflows",
+          subtitle: "Reduce manual work, improve reliability",
+          price: "$400 – $700",
+          points: ["Workflow mapping", "Automation build", "Maintenance guidance"],
+        },
+        {
+          id: "ai",
+          title: "AI Tool Integration",
+          subtitle: "Practical AI workflows + integrations",
+          price: "$500 – $800",
+          points: ["Use-case assessment", "Setup & guardrails", "Workflow integration"],
+        },
+        {
+          id: "support",
+          title: "Business IT Support",
+          subtitle: "Fast fixes + ongoing improvement",
+          price: "$200 – $350",
+          points: ["Retainer options", "Priority support", "Ongoing optimization"],
+        },
+      ];
+    }
+
+    return [
+      {
+        id: "wifi",
+        title: "Wi-Fi Troubleshooting",
+        subtitle: "Dead zones, drops, buffering, slow speeds",
+        price: "$120 – $180",
+        points: ["Signal & router tuning", "Mesh setup guidance", "Device connectivity issues"],
+      },
+      {
+        id: "smarthome",
+        title: "Smart Home Setup",
+        subtitle: "Alexa / Google Home, smart lights, thermostats",
+        price: "$150 – $220",
+        points: ["Pairing & automation", "App setup + walkthrough", "Basic routines"],
+      },
+      {
+        id: "tv",
+        title: "TV / Home Theater",
+        subtitle: "Smart TV setup, soundbar, streaming, wiring",
+        price: "$150 – $250",
+        points: ["Audio tuning", "Input/device setup", "Clean cable setup"],
+      },
+      {
+        id: "pc",
+        title: "Computer Fix / Tune-Up",
+        subtitle: "Slow PC, cleanup, updates, weird errors",
+        price: "$90 – $140",
+        points: ["Performance cleanup", "OS & driver updates", "Stability checks"],
+      },
+      {
+        id: "cameras",
+        title: "Security Cameras",
+        subtitle: "Ring / Nest / wired systems",
+        price: "$200 – $300",
+        points: ["Placement planning", "App + alerts setup", "Multi-camera troubleshooting"],
+      },
+      {
+        id: "ondemand",
+        title: "On-Demand Tech Help",
+        subtitle: "Remote help or scheduled support",
+        price: "$80 – $120",
+        points: ["Remote session support", "Same-day options (when available)", "Simple fixes fast"],
+      },
+    ];
+  }, [isAdvanced]);
+
+  const badge = isAdvanced
+    ? { label: "Business IT Pricing", hint: "Project ranges • scope-based • business focused" }
+    : { label: "Home Tech Pricing", hint: "Quick fixes • common installs • on-demand help" };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  const openRequest = (card) => {
+    setSelected(card);
+    setIsOpen(true);
+  };
+
+  const closeRequest = () => {
+    setIsOpen(false);
+    setSelected(null);
+  };
+
   return (
-    <section id="pricing-reality" className="service-detail">
-      <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-        What Similar Work Has Cost
-        <span className="info-icon" tabIndex="0">
-          ⓘ
-          <span className="info-tooltip">
-            These numbers reflect past projects and typical scopes.
-            They’re meant to set expectations, not force a fixed price.
-            Actual needs vary.
-          </span>
-        </span>
-      </h2>
+    <section id="pricing-reality" className="service-detail pkg-section">
+      <div className="pkg-head">
+        <div className={`pkg-mode ${isAdvanced ? "is-advanced" : "is-basic"}`}>
+          <span className="pkg-mode-pill">{badge.label}</span>
+          <span className="pkg-mode-hint">{badge.hint}</span>
+        </div>
 
-      <p>
-        The list below shows the kinds of work I do and what similar projects
-        have cost in the past. Think of this as reference data, not a menu.
-      </p>
+        <h2 className="pkg-title">{isAdvanced ? "Typical Project Ranges" : "Typical Service Ranges"}</h2>
 
-      <div className="pricing-table-container">
-        <table className="pricing-table">
-          <thead>
-            <tr>
-              <th>Type of Work</th>
-              <th>Typical</th>
-              <th>Expanded</th>
-              <th>Custom / Ongoing</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>
-                🌐 Website Development{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Planning, structure, build, deployment, and cleanup.
-                    Focused on clarity, performance, and maintainability.
-                  </span>
-                </span>
-                <br />
-                <small>Small business, personal, or landing sites</small>
-              </td>
-              <td>$500 – $800</td>
-              <td>$900 – $1,500</td>
-              <td>Scoped case-by-case</td>
-            </tr>
-
-            <tr>
-              <td>
-                📱 Digital Business Cards{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Lightweight, mobile-first personal or business cards.
-                    Hosted, editable, and easy to share.
-                  </span>
-                </span>
-                <br />
-                <small>Hosted, mobile-friendly, easy to update</small>
-              </td>
-              <td>$100 – $150</td>
-              <td>$200 – $300</td>
-              <td>Rarely needed</td>
-            </tr>
-
-            <tr>
-              <td>
-                📣 Social / Online Presence{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Account setup, cleanup, structure, and strategy —
-                    not content farming or gimmicks.
-                  </span>
-                </span>
-                <br />
-                <small>Setup, cleanup, or light management</small>
-              </td>
-              <td>$300 / month</td>
-              <td>$600 / month</td>
-              <td>Depends on cadence</td>
-            </tr>
-
-            <tr>
-              <td>
-                📶 WiFi & Network Optimization{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Diagnostics, layout analysis, hardware placement,
-                    and performance tuning.
-                  </span>
-                </span>
-                <br />
-                <small>Home, apartment, or small office</small>
-              </td>
-              <td>$120 – $180</td>
-              <td>$250 – $400</td>
-              <td>Complex layouts</td>
-            </tr>
-
-            <tr>
-              <td>
-                🛠️ On-Demand Tech Help{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Troubleshooting, fixes, cleanup, and guidance.
-                    Focused on solving root issues, not quick patches.
-                  </span>
-                </span>
-                <br />
-                <small>Fixes, troubleshooting, cleanup</small>
-              </td>
-              <td>$80 – $120</td>
-              <td>$200 – $300</td>
-              <td>$400 / month</td>
-            </tr>
-
-            <tr>
-              <td>
-                🏠 Smart Home & Security{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Cameras, locks, sensors, automations, and privacy-aware
-                    configuration.
-                  </span>
-                </span>
-                <br />
-                <small>Cameras, locks, automations</small>
-              </td>
-              <td>$200 – $300</td>
-              <td>$400 – $700</td>
-              <td>Custom installs</td>
-            </tr>
-
-            <tr>
-              <td>
-                📺 Home Theater / Media Setup{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Display mounting, audio tuning, cable management,
-                    and device configuration.
-                  </span>
-                </span>
-                <br />
-                <small>TVs, sound, streaming, tuning</small>
-              </td>
-              <td>$150 – $250</td>
-              <td>$350 – $500</td>
-              <td>Room-specific</td>
-            </tr>
-
-            <tr>
-              <td>
-                🖥️ Office / Workspace Tech{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Remote setups, productivity workflows, hardware,
-                    and reliability improvements.
-                  </span>
-                </span>
-                <br />
-                <small>Remote work, hardware, workflows</small>
-              </td>
-              <td>$100 – $150</td>
-              <td>$250 – $400</td>
-              <td>$500 / month</td>
-            </tr>
-
-            <tr>
-              <td>
-                🧠 Consulting & Business Strategy{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    Technical decision support, system planning,
-                    and helping avoid costly mistakes.
-                  </span>
-                </span>
-                <br />
-                <small>Direction, planning, decision-making</small>
-              </td>
-              <td>$150 – $250</td>
-              <td>$400 – $750</td>
-              <td>Ongoing advisory</td>
-            </tr>
-
-            <tr>
-              <td>
-                🤖 AI Integrations & Setup{" "}
-                <span className="info-icon">
-                  ⓘ
-                  <span className="info-tooltip">
-                    AI tools, automations, and integrations tailored to
-                    actual workflows — not hype or generic bots.
-                  </span>
-                </span>
-                <br />
-                <small>LLMs, automations, workflow AI</small>
-              </td>
-              <td>$250 – $400</td>
-              <td>$600 – $1,200</td>
-              <td>Custom systems</td>
-            </tr>
-          </tbody>
-        </table>
+        <p className="pkg-subtitle">
+          {isAdvanced
+            ? "Pick a service to request details and get a scoped estimate."
+            : "Pick a service and request help—remote or scheduled."}
+        </p>
       </div>
 
-      <p style={{ marginTop: "1.5rem", opacity: 0.85 }}>
-        If you’re unsure where your situation fits, that’s normal.
-        A short conversation usually prevents wasted time and money.
-      </p>
+      <div className="pkg-grid">
+        {cards.map((card) => (
+          <article key={card.id} className="pkg-card">
+            <div className="pkg-card-top">
+              <div>
+                <h3 className="pkg-card-title">{card.title}</h3>
+                <p className="pkg-card-sub">{card.subtitle}</p>
+              </div>
 
-      <a href="/contact" className="cta-btn">
-        Talk it through →
-      </a>
+              <div className="pkg-price">
+                <span className="pkg-price-label">Typical</span>
+                <span className="pkg-price-val">{card.price}</span>
+              </div>
+            </div>
+
+            <ul className="pkg-points">
+              {card.points.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+
+            <div className="pkg-actions">
+              <button type="button" className="cta-btn" onClick={() => openRequest(card)}>
+                Request details →
+              </button>
+
+              <a href="/contact" className="cta-btn cta-btn--ghost">
+                Contact
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {isOpen && (
+        <div className="pkg-modal" role="dialog" aria-modal="true" aria-label="Request details">
+          <button type="button" className="pkg-backdrop" onClick={closeRequest} aria-label="Close" />
+
+          <div className="pkg-modal-card">
+            <div className="pkg-modal-head">
+              <div>
+                <div className="pkg-modal-kicker">{isAdvanced ? "Business request" : "Home tech request"}</div>
+                <h3 className="pkg-modal-title">Request details</h3>
+                <p className="pkg-modal-sub">
+                  Service: <strong>{selected?.title}</strong>
+                </p>
+              </div>
+
+              <button type="button" className="pkg-close" onClick={closeRequest} aria-label="Close">
+                ✕
+              </button>
+            </div>
+
+            <form
+              className="pkg-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                // No backend assumptions yet.
+                closeRequest();
+              }}
+            >
+              <div className="pkg-form-grid">
+                <Field label="Name">
+                  <input className="pkg-input" name="name" placeholder="Your name" required />
+                </Field>
+
+                <Field label="Email">
+                  <input className="pkg-input" name="email" type="email" placeholder="you@email.com" required />
+                </Field>
+
+                <Field label="Phone (optional)">
+                  <input className="pkg-input" name="phone" placeholder="(555) 555-5555" />
+                </Field>
+
+                <Field label={isAdvanced ? "Company (optional)" : "City (optional)"}>
+                  <input className="pkg-input" name="context" placeholder={isAdvanced ? "Company name" : "Your city"} />
+                </Field>
+
+                <Field label="What do you need help with?">
+                  <textarea
+                    className="pkg-textarea"
+                    name="details"
+                    rows={4}
+                    placeholder={
+                      isAdvanced
+                        ? "Describe the environment, number of users/devices, tools involved, what’s breaking…"
+                        : "Describe what’s not working, what devices you have, and what you want done…"
+                    }
+                    required
+                  />
+                </Field>
+              </div>
+
+              <div className="pkg-form-actions">
+                <button type="button" className="cta-btn cta-btn--ghost" onClick={closeRequest}>
+                  Cancel
+                </button>
+                <button type="submit" className="cta-btn">
+                  Submit request
+                </button>
+              </div>
+
+              <div className="pkg-form-note">
+                Submitting closes the form for now. Next step: wire this to email, Formspree, or your backend.
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

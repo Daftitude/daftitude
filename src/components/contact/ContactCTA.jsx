@@ -1,12 +1,19 @@
-export default function ContactCTA() {
+export default function ContactCTA({ taskType = "basic" }) {
+  const isAdvanced = taskType === "advanced";
+
   return (
     <section id="contact" className="contact-section compact-contact">
-      <h2>📬 Need Tech Help or Advice?</h2>
+      <h2>{isAdvanced ? "📬 Build / Integrate Something?" : "📬 Need Tech Help or Advice?"}</h2>
       <p>
-        Whether it's WiFi issues, smart home setup, or just some digital direction — I'm here to help!
-        Reach out now or schedule a free consultation.
+        {isAdvanced
+          ? "Automations, AI workflows, security tightening, web builds, or systems cleanup — if it’s messy, I’ll make it make sense."
+          : "WiFi issues, smart home setup, TV/media problems, cameras, or general tech troubleshooting — I’ll get you stable and set up right."}
       </p>
-      <a href="/contact" className="cta-btn">Contact Me →</a>
+
+      <a href="/contact" className="cta-btn">
+        Contact Me →
+      </a>
+
       <a
         href="https://daftitude.github.io/digital-card-kyhl"
         target="_blank"

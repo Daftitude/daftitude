@@ -1,57 +1,73 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar() {
+  const navRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef();
+  const [advOpen, setAdvOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const closeMenu = () => setMenuOpen(false);
-
-  // Close menu on click outside
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuOpen && menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') setMenuOpen(false);
+    const updateHeight = () => {
+      if (!navRef.current) return;
+      const h = navRef.current.offsetHeight;
+      document.documentElement.style.setProperty("--navbar-h", `${h}px`);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscape);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [menuOpen]);
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <Link to="/" className="logo">DaFTitude</Link>
+    <nav ref={navRef} className="navbar">
+      <div className="navbar-logo">
+        <img src="src\images\logos\daftitudelogo.png" alt="DaFTitude" />
+        <span>DaFTitude</span>
+      </div>
 
-        {/* Hamburger */}
-        <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
-          <span className="bar" />
-          <span className="bar" />
-          <span className="bar" />
+      <div className="navbar-links">
+
+        <button
+          className="navbar-hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+          <span />
         </button>
 
-        {/* Mobile menu */}
-        <ul ref={menuRef} className={`nav-links ${menuOpen ? 'show' : ''}`}>
-          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-          <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-          <li><Link to="/tech-hub" onClick={closeMenu}>Tech Hub</Link></li>
-          <li><Link to="/crypto" onClick={closeMenu}>Crypto</Link></li>
-          <li><Link to="/family" onClick={closeMenu}>Family</Link></li>
-          <li><Link to="/contact" className="cta-btn" onClick={closeMenu}>Contact</Link></li>
+        <ul className={menuOpen ? "is-open" : ""}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+
+          <li className="nav-dropdown">
+            <button
+              className="nav-dropbtn"
+              onClick={() => setAdvOpen(!advOpen)}
+            >
+              Advanced
+              <span className="nav-caret">▾</span>
+            </button>
+
+            <div className={`nav-dropdown-menu ${advOpen ? "is-open" : ""}`}>
+              <Link to="/techhub">Tech Hub</Link>
+              <Link to="/crypto">Crypto</Link>
+              <Link to="/ai">AI</Link>
+            </div>
+          </li>
+
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
+
       </div>
     </nav>
   );
 }
-
-export default Navbar;
