@@ -103,9 +103,9 @@ export default function Hero({ logo, taskType, onTaskTypeChange }) {
             transition={{ duration: 0.35, ease: "easeOut" }}
           >
             <h1 className="hero-title hero-title--glow">
-              Welcome to DaFTitude.
+              {isAdvanced ? "DaFTitude" : "DaFT Tech"}
               <br />
-              {isAdvanced ? "Build smarter systems." : "Get tech help — without the headache."}
+              {isAdvanced ? "Helping Build Smarter Systems." : "Tech-Help Without The Headache."}
             </h1>
 
             <p className="hero-subtitle">

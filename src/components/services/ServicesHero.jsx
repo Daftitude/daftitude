@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "../../index.css";
 
-const ServicesHero = () => {
+const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
+  const isAdvanced = taskType === "advanced";
+
   useEffect(() => {
     window.particlesJS?.("services-particles", {
       particles: {
@@ -43,13 +45,19 @@ const ServicesHero = () => {
       const y = window.scrollY;
       const hero = document.querySelector(".services-hero");
       if (hero) {
-        hero.style.background = `radial-gradient(circle at center, rgba(12, 199, 246, ${1 - y / 600}), #0a0a0a)`;
+        hero.style.background = `radial-gradient(circle at center, rgba(12, 199, 246, ${
+          1 - y / 600
+        }), #0a0a0a)`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const subtitle = isAdvanced
+    ? "Business-grade IT: infrastructure, security, cloud, automation, and fast triage."
+    : "Home tech help: Wi-Fi, smart home, TVs, cameras, tune-ups, and on-demand support.";
 
   return (
     <section className="services-hero">
@@ -62,7 +70,10 @@ const ServicesHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span role="img" aria-label="toolbox">🧰</span> My Services
+          <span role="img" aria-label="toolbox">
+            🧰
+          </span>{" "}
+          Services
         </motion.h1>
 
         <motion.p
@@ -71,15 +82,41 @@ const ServicesHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Comprehensive tech solutions tailored to your needs.
+          {subtitle}
         </motion.p>
 
+        {/* Mode Switch */}
+        <motion.div
+          className="hero-actions"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.45 }}
+        >
+          <button
+            type="button"
+            className={`cta-btn ${!isAdvanced ? "" : "cta-btn--ghost"}`}
+            onClick={() => onTaskTypeChange?.("basic")}
+            aria-pressed={!isAdvanced}
+          >
+            Basic Mode
+          </button>
+
+          <button
+            type="button"
+            className={`cta-btn ${isAdvanced ? "" : "cta-btn--ghost"}`}
+            onClick={() => onTaskTypeChange?.("advanced")}
+            aria-pressed={isAdvanced}
+          >
+            Advanced Mode
+          </button>
+        </motion.div>
+
         <motion.a
-          href="#pricing-chart"
+          href="#pricing-reality"
           className="cta-btn"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.65 }}
         >
           View Pricing Plans
         </motion.a>

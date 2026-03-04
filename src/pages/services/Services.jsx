@@ -1,51 +1,37 @@
 // src/pages/Services.jsx
-import React from "react";
-import ServicesHero from '../../components/services/ServicesHero';
+import React, { useEffect, useState } from "react";
+
+import ServicesHero from "../../components/services/ServicesHero";
+import ServicesSection from "../../components/services/ServicesSection";
+import ServicePackages from "../../components/services/ServicePackages";
 
 export default function Services() {
+  const [taskType, setTaskType] = useState("basic"); // "basic" | "advanced"
+
+  // load persisted mode (if present)
+  useEffect(() => {
+    const saved = localStorage.getItem("daft_mode");
+    if (saved === "basic" || saved === "advanced") setTaskType(saved);
+  }, []);
+
+  // persist mode + optional html hook for future theming
+  useEffect(() => {
+    localStorage.setItem("daft_mode", taskType);
+    document.documentElement.setAttribute("data-daft-mode", taskType);
+  }, [taskType]);
+
   return (
     <>
-      <ServicesHero />
+      <ServicesHero taskType={taskType} onTaskTypeChange={setTaskType} />
 
-      {/* Existing detailed services */}
-      <section id="services" className="services-page">
-        {/* Keep the rest of your existing content unchanged here */}
-      </section>
+      {/* Mode-aware services grid */}
+      <ServicesSection taskType={taskType} />
 
-      {/* Pricing Table */}
-      <section id="pricing-chart" className="service-detail">
-        <h2>💰 Service Pricing Chart</h2>
-        <p>Compare our flexible plans side-by-side to find the perfect fit for your needs.</p>
+      {/* Mode-aware pricing/packages */}
+      <ServicePackages taskType={taskType} />
 
-        <div className="pricing-table-container">
-          <table className="pricing-table">
-            <thead>
-              <tr>
-                <th>Service</th>
-                <th>Starter Plan</th>
-                <th>Standard Plan</th>
-                <th>Premium Plan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>🌐 Website Development</td><td>$499</td><td>$999</td><td>Custom Quote</td></tr>
-              <tr><td>📱 Digital Business Cards</td><td>$99</td><td>$199</td><td>Custom Quote</td></tr>
-              <tr><td>📣 Social Media Management</td><td>$299/month</td><td>$599/month</td><td>Custom Quote</td></tr>
-              <tr><td>📶 WiFi Optimization</td><td>$129</td><td>$299</td><td>Custom Quote</td></tr>
-              <tr><td>💪 On-Demand Tech Help</td><td>$79</td><td>$199</td><td>$399/month</td></tr>
-              <tr><td>🏠 Smart Home & Security</td><td>$199</td><td>$499</td><td>Custom Quote</td></tr>
-              <tr><td>📺 Home Theater Setup</td><td>$149</td><td>$399</td><td>Custom Quote</td></tr>
-              <tr><td>🖥️ Office Tech Support</td><td>$99</td><td>$249</td><td>$499/month</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="contact" className="contact-section">
-        <h2>Need Help? Contact Me</h2>
-        <p>Don’t waste time fighting corporate support bots—talk to a real expert today!</p>
-        <a href="tel:+12052108012" className="contact-btn">Call Now</a>
-      </section>
+      {/* Keep your existing ContactCTA component/page section if you have one.
+          I’m not injecting boilerplate contact blocks here. */}
     </>
   );
 }

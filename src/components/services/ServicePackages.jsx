@@ -1,4 +1,18 @@
 import { useMemo, useState } from "react";
+import {
+  Wifi,
+  Home,
+  Tv,
+  Laptop,
+  Camera,
+  Headset,
+  Network,
+  ShieldCheck,
+  Cloud,
+  Workflow,
+  Sparkles,
+  Building2,
+} from "lucide-react";
 
 const Field = ({ label, children }) => (
   <label className="pkg-field">
@@ -15,6 +29,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       return [
         {
           id: "infra",
+          Icon: Network,
           title: "Network Infrastructure Setup",
           subtitle: "Office networks, VLANs, routing, clean topology",
           price: "$400 – $700",
@@ -22,6 +37,7 @@ export default function ServicePackages({ taskType = "basic" }) {
         },
         {
           id: "security",
+          Icon: ShieldCheck,
           title: "Cybersecurity Hardening",
           subtitle: "Reduce risk, lock down endpoints & accounts",
           price: "$350 – $600",
@@ -29,6 +45,7 @@ export default function ServicePackages({ taskType = "basic" }) {
         },
         {
           id: "cloud",
+          Icon: Cloud,
           title: "Cloud & Workspace Setup",
           subtitle: "Microsoft 365 / Google Workspace foundations",
           price: "$300 – $500",
@@ -36,6 +53,7 @@ export default function ServicePackages({ taskType = "basic" }) {
         },
         {
           id: "automation",
+          Icon: Workflow,
           title: "Automation / Workflows",
           subtitle: "Reduce manual work, improve reliability",
           price: "$400 – $700",
@@ -43,6 +61,7 @@ export default function ServicePackages({ taskType = "basic" }) {
         },
         {
           id: "ai",
+          Icon: Sparkles,
           title: "AI Tool Integration",
           subtitle: "Practical AI workflows + integrations",
           price: "$500 – $800",
@@ -50,6 +69,7 @@ export default function ServicePackages({ taskType = "basic" }) {
         },
         {
           id: "support",
+          Icon: Building2,
           title: "Business IT Support",
           subtitle: "Fast fixes + ongoing improvement",
           price: "$200 – $350",
@@ -61,6 +81,7 @@ export default function ServicePackages({ taskType = "basic" }) {
     return [
       {
         id: "wifi",
+        Icon: Wifi,
         title: "Wi-Fi Troubleshooting",
         subtitle: "Dead zones, drops, buffering, slow speeds",
         price: "$120 – $180",
@@ -68,6 +89,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       },
       {
         id: "smarthome",
+        Icon: Home,
         title: "Smart Home Setup",
         subtitle: "Alexa / Google Home, smart lights, thermostats",
         price: "$150 – $220",
@@ -75,6 +97,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       },
       {
         id: "tv",
+        Icon: Tv,
         title: "TV / Home Theater",
         subtitle: "Smart TV setup, soundbar, streaming, wiring",
         price: "$150 – $250",
@@ -82,6 +105,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       },
       {
         id: "pc",
+        Icon: Laptop,
         title: "Computer Fix / Tune-Up",
         subtitle: "Slow PC, cleanup, updates, weird errors",
         price: "$90 – $140",
@@ -89,6 +113,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       },
       {
         id: "cameras",
+        Icon: Camera,
         title: "Security Cameras",
         subtitle: "Ring / Nest / wired systems",
         price: "$200 – $300",
@@ -96,6 +121,7 @@ export default function ServicePackages({ taskType = "basic" }) {
       },
       {
         id: "ondemand",
+        Icon: Headset,
         title: "On-Demand Tech Help",
         subtitle: "Remote help or scheduled support",
         price: "$80 – $120",
@@ -139,37 +165,45 @@ export default function ServicePackages({ taskType = "basic" }) {
       </div>
 
       <div className="pkg-grid">
-        {cards.map((card) => (
-          <article key={card.id} className="pkg-card">
-            <div className="pkg-card-top">
-              <div>
-                <h3 className="pkg-card-title">{card.title}</h3>
-                <p className="pkg-card-sub">{card.subtitle}</p>
+        {cards.map((card) => {
+          const Icon = card.Icon;
+          return (
+            <article key={card.id} className="pkg-card">
+              {/* ICON */}
+              <div className="pkg-card-icon" aria-hidden="true">
+                <Icon size={26} />
               </div>
 
-              <div className="pkg-price">
-                <span className="pkg-price-label">Typical</span>
-                <span className="pkg-price-val">{card.price}</span>
+              <div className="pkg-card-top">
+                <div>
+                  <h3 className="pkg-card-title">{card.title}</h3>
+                  <p className="pkg-card-sub">{card.subtitle}</p>
+                </div>
+
+                <div className="pkg-price">
+                  <span className="pkg-price-label">Typical</span>
+                  <span className="pkg-price-val">{card.price}</span>
+                </div>
               </div>
-            </div>
 
-            <ul className="pkg-points">
-              {card.points.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
+              <ul className="pkg-points">
+                {card.points.map((p) => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
 
-            <div className="pkg-actions">
-              <button type="button" className="cta-btn" onClick={() => openRequest(card)}>
-                Request details →
-              </button>
+              <div className="pkg-actions">
+                <button type="button" className="cta-btn" onClick={() => openRequest(card)}>
+                  Request details →
+                </button>
 
-              <a href="/contact" className="cta-btn cta-btn--ghost">
-                Contact
-              </a>
-            </div>
-          </article>
-        ))}
+                <a href="/contact" className="cta-btn cta-btn--ghost">
+                  Contact
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
       {isOpen && (
@@ -195,7 +229,7 @@ export default function ServicePackages({ taskType = "basic" }) {
               className="pkg-form"
               onSubmit={(e) => {
                 e.preventDefault();
-                // No backend assumptions yet.
+                // no backend assumptions
                 closeRequest();
               }}
             >
