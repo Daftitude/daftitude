@@ -18,7 +18,7 @@ export default function ServiceDetailModal({ open, onClose, service, onRequest }
           <div>
             <div className="modal-eyebrow">{service.category}</div>
             <h3 className="modal-title">{service.title}</h3>
-            <p className="modal-subtitle">{service.longDesc || service.desc}</p>
+            <p className="modal-subtitle">{service.desc}</p>
           </div>
           <button className="modal-close" onClick={onClose} aria-label="Close">
             <X size={18} />
@@ -39,15 +39,13 @@ export default function ServiceDetailModal({ open, onClose, service, onRequest }
             <div className="modal-block">
               <div className="modal-block-title">Typical time</div>
               <div className="modal-meta">{service.timeEstimate || "Varies by scope"}</div>
-              <div className="modal-block-title" style={{ marginTop: 12 }}>Typical pricing</div>
-              <div className="modal-meta">{service.priceReality || service.priceText || "Quoted after details"}</div>
             </div>
           </div>
 
           <div className="modal-block" style={{ marginTop: 18 }}>
             <div className="modal-block-title">What’s included</div>
             <ul className="checklist">
-              {(service.included || service.bullets || []).map((item) => (
+              {(service.included || []).map((item) => (
                 <li key={item}>
                   <CheckCircle2 size={16} />
                   <span>{item}</span>
@@ -55,28 +53,6 @@ export default function ServiceDetailModal({ open, onClose, service, onRequest }
               ))}
             </ul>
           </div>
-
-          {service.notIncluded?.length ? (
-            <div className="modal-block" style={{ marginTop: 18 }}>
-              <div className="modal-block-title">Not included</div>
-              <ul className="muted-list">
-                {service.notIncluded.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-
-          {service.commonFixes?.length ? (
-            <div className="modal-block" style={{ marginTop: 18 }}>
-              <div className="modal-block-title">Common problems solved</div>
-              <ul className="muted-list">
-                {service.commonFixes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
         </div>
 
         <div className="modal-foot">

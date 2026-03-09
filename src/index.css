@@ -1,3 +1,179 @@
+/* =====================================
+   Services (Booking Layout)
+   ServicesSection.jsx uses: .services-section, .services-booking, .services-summary
+===================================== */
+
+/* Keep #services rules, but also support the class-based section */
+.services-section {
+  padding: 60px 20px;
+  background: #1e1e1e;
+  text-align: center;
+}
+
+/* Two-column booking layout: catalog + sticky summary */
+.services-booking {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+  width: min(var(--maxw), 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 980px) {
+  .services-booking {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Right-side summary panel */
+.services-summary {
+  position: sticky;
+  top: calc(var(--navbar-h) + 18px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 15, 30, 0.75);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.60);
+  overflow: hidden;
+  text-align: left;
+}
+
+@media (max-width: 980px) {
+  .services-summary {
+    position: relative;
+    top: auto;
+  }
+}
+
+.services-summary-head {
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+    700px 220px at 50% 0%,
+    rgba(12, 199, 246, 0.12),
+    rgba(12, 199, 246, 0.00) 70%
+  );
+}
+
+.services-summary-kicker {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.services-summary-title {
+  margin: 8px 0 6px;
+  color: #f3f5f7;
+  font-size: 1.15rem;
+}
+
+.services-summary-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.services-summary-empty,
+.services-summary-body {
+  padding: 16px 18px 18px;
+}
+
+.services-summary-empty-title {
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 6px;
+}
+
+.services-summary-empty-text {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
+.services-summary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(243, 245, 247, 0.92);
+  background: rgba(12, 199, 246, 0.12);
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  margin-bottom: 12px;
+}
+
+.services-summary-service {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8px;
+}
+
+.services-summary-desc {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.5;
+}
+
+.services-summary-meta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-summary-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.services-summary-actions {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .services-summary-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services-summary-btn {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 750;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+}
+
+.services-summary-btn.primary {
+  background: var(--primary);
+  color: #061017;
+  box-shadow: 0 14px 40px rgba(12, 199, 246, 0.20);
+}
+
+.services-summary-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 55px rgba(12, 199, 246, 0.30);
+}
+
+.services-summary-btn.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(243, 245, 247, 0.92);
+}
+
+.services-summary-btn.secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -625,7 +801,48 @@ p {
     text-align: center;
   }
 }
+/* =====================================
+   Service Selection State
+===================================== */
+/* =====================================
+   Service Flow Steps
+===================================== */
 
+.service-flow-steps {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin: 18px 0 24px;
+  flex-wrap: wrap;
+}
+
+.service-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.step-number {
+  background: var(--primary);
+  color: black;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.service-card.is-selected {
+  border-color: rgba(12, 199, 246, 0.65);
+  box-shadow: 0 0 0 1px rgba(12, 199, 246, 0.35),
+              0 24px 70px rgba(0, 0, 0, 0.60);
+  transform: translateY(-4px);
+}
+
+.service-card.is-selected h3 {
+  color: var(--primary);
+}
 /* ======================================================
    Sections (Services / Packages / Contact CTA)
 ====================================================== */
@@ -959,12 +1176,13 @@ section {
 
 .services-hero {
   position: relative;
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 2.25rem;
   background-color: #0a0a0a;
   overflow: hidden;
 }
@@ -1083,6 +1301,78 @@ section {
   font-size: 0.85rem;
   opacity: 0.65;
 }
+
+/* Card action row (Details + Select) */
+.service-actions {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .service-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-details-btn,
+.service-select-btn {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 750;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+}
+
+.service-details-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(243, 245, 247, 0.92);
+}
+
+.service-details-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.service-select-btn {
+  background: var(--primary);
+  color: #061017;
+  box-shadow: 0 14px 40px rgba(12, 199, 246, 0.20);
+}
+
+.service-select-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 55px rgba(12, 199, 246, 0.30);
+}
+/* Services Hero Logo + Layout (namespaced to beat global .hero-content) */
+.services-hero > .hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 !important; /* prevents later global .hero-content padding from winning */
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-hero .services-logo {
+  width: min(280px, 70vw);
+  max-height: 140px;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom; /* helps “canvas-heavy” PNGs show the important part */
+  display: block;
+  margin: 10px auto -6px; /* pulls the title closer without breaking flow */
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.35));
+}
 /* =====================================
    Packages (Card Grid + Modal)
 ===================================== */
@@ -1172,6 +1462,7 @@ section {
 
 /* Card */
 .pkg-card {
+  position: relative;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(10, 15, 30, 0.60);
   border-radius: 18px;
@@ -1183,6 +1474,25 @@ section {
   transform: translateY(-6px);
   border-color: rgba(12, 199, 246, 0.40);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.60);
+}
+
+.pkg-popular {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+
+  padding: 5px 10px;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #061017;
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 .pkg-card-top {
@@ -1383,6 +1693,218 @@ section {
   margin-top: 10px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.62);
+}
+
+/* =====================================
+   Packages Modal Funnel (Step 1/2/3)
+   Used by ServicePackages.jsx
+===================================== */
+
+/* Selected package card state */
+.pkg-card.is-selected {
+  border-color: rgba(12, 199, 246, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(12, 199, 246, 0.22),
+    0 24px 70px rgba(0, 0, 0, 0.60);
+}
+
+/* Stepper */
+.pkg-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 6px 8px 14px;
+}
+
+.pkg-step {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(243, 245, 247, 0.82);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.pkg-step.is-active {
+  border-color: rgba(12, 199, 246, 0.35);
+  background: rgba(12, 199, 246, 0.10);
+  color: rgba(243, 245, 247, 0.92);
+}
+
+.pkg-step.is-done {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(243, 245, 247, 0.88);
+}
+
+@media (max-width: 560px) {
+  .pkg-stepper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Panels */
+.pkg-step-panel {
+  padding: 6px 8px 4px;
+}
+
+.pkg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .pkg-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pkg-choice {
+  display: grid;
+  gap: 8px;
+}
+
+.pkg-choice-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.74);
+  letter-spacing: 0.02em;
+}
+
+.pkg-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Chips */
+.pkg-chip {
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 750;
+  font-size: 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(243, 245, 247, 0.92);
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.pkg-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.pkg-chip.is-selected {
+  background: rgba(12, 199, 246, 0.14);
+  border-color: rgba(12, 199, 246, 0.30);
+  box-shadow: 0 0 0 3px rgba(12, 199, 246, 0.10);
+}
+
+/* Tags */
+.pkg-tag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 820px) {
+  .pkg-tag-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .pkg-tag-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pkg-tag {
+  text-align: left;
+  border-radius: 14px;
+  padding: 12px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(243, 245, 247, 0.88);
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.pkg-tag:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.pkg-tag.is-selected {
+  border-color: rgba(12, 199, 246, 0.38);
+  background: rgba(12, 199, 246, 0.10);
+}
+
+/* Review box */
+.pkg-review {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px 14px;
+}
+
+.pkg-review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.pkg-review-row:last-child {
+  border-bottom: 0;
+}
+
+.pkg-review-row b {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Muted helper text */
+.pkg-muted {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* Make textarea match the funnel rhythm */
+.pkg-textarea {
+  margin-top: 4px;
+}
+
+/* Keep actions consistent */
+.pkg-form-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pkg-form-actions .cta-btn {
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .pkg-form-actions {
+    flex-direction: column;
+  }
+  .pkg-form-actions .cta-btn {
+    width: 100%;
+  }
 }
 /* =====================================
    Packages: fix "boxed-in" container + header layout
@@ -1606,6 +2128,128 @@ section {
     rgba(12, 199, 246, 0.00) 72%
   ) !important;
   padding: 96px 20px !important;
+}
+
+/* =====================================
+   Booking / Quote Summary Cart
+   (Used inside package booking modal)
+===================================== */
+
+.booking-cart{
+  margin-top:18px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.04);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  overflow:hidden;
+}
+
+@media (max-width:720px){
+  .booking-cart{
+    grid-template-columns:1fr;
+  }
+}
+
+.booking-cart-left{
+  padding:16px 18px;
+}
+
+.booking-cart-title{
+  font-weight:800;
+  font-size:0.95rem;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+  margin-bottom:12px;
+}
+
+.booking-cart-lines{
+  display:grid;
+  gap:8px;
+}
+
+.booking-cart-line{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.92rem;
+  color:rgba(255,255,255,0.82);
+}
+
+.booking-cart-line .label{
+  opacity:.7;
+}
+
+.booking-cart-line .value{
+  font-weight:600;
+}
+
+.booking-cart-right{
+  border-left:1px solid rgba(255,255,255,0.08);
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:12px;
+}
+
+@media (max-width:720px){
+  .booking-cart-right{
+    border-left:none;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+}
+
+.booking-cart-price{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.price-label{
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.65;
+}
+
+.price-value{
+  font-size:1.45rem;
+  font-weight:800;
+  color:#fff;
+}
+
+.booking-cart-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.booking-cart-btn{
+  min-height:42px;
+  border-radius:10px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,0.14);
+  cursor:pointer;
+}
+
+.booking-cart-btn.primary{
+  background:var(--primary);
+  color:#061017;
+}
+
+.booking-cart-btn.ghost{
+  background:rgba(255,255,255,0.06);
+  color:#fff;
+}
+
+.booking-cart-btn:hover{
+  transform:translateY(-1px);
+}
+
+.booking-cart-hint{
+  font-size:12px;
+  opacity:.6;
 }
 
 /* ========== BASE STYLES: SECTION & TEXT ========== */
@@ -2959,4 +3603,8 @@ p {
   50% {
     transform: translateY(6px);
   }
+}
+.price-note{
+  font-size:12px;
+  opacity:.65;
 }

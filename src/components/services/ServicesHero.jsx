@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import serviceLogo from "../../images/logos/logo-service.png";
 import { motion } from "framer-motion";
 import "../../index.css";
 
@@ -45,9 +46,8 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
       const y = window.scrollY;
       const hero = document.querySelector(".services-hero");
       if (hero) {
-        hero.style.background = `radial-gradient(circle at center, rgba(12, 199, 246, ${
-          1 - y / 600
-        }), #0a0a0a)`;
+        hero.style.background = `radial-gradient(circle at center, rgba(12, 199, 246, ${1 - y / 600
+          }), #0a0a0a)`;
       }
     };
 
@@ -64,6 +64,14 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
       <div id="services-particles"></div>
 
       <div className="hero-content">
+        <motion.img
+          src={serviceLogo}
+          alt="Services"
+          className="services-logo"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        />
         <motion.h1
           className="hero-title"
           initial={{ opacity: 0, y: 40 }}
@@ -84,6 +92,27 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
         >
           {subtitle}
         </motion.p>
+        <motion.div
+          className="service-flow-steps"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.5 }}
+        >
+          <div className="service-step">
+            <span className="step-number">1</span>
+            <span>Select Service</span>
+          </div>
+
+          <div className="service-step">
+            <span className="step-number">2</span>
+            <span>Choose Package</span>
+          </div>
+
+          <div className="service-step">
+            <span className="step-number">3</span>
+            <span>Request Help</span>
+          </div>
+        </motion.div>
 
         {/* Mode Switch */}
         <motion.div
