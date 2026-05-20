@@ -4146,3 +4146,210 @@ p {
     font-size: clamp(2.8rem, 14vw, 4.5rem);
   }
 }
+/* ======================================================
+   Phase 1 Home Refinement: Center Panel + Copy Layout
+====================================================== */
+
+.game-center-panel {
+  top: 50%;
+  left: 50%;
+  width: min(620px, calc(100vw - 2rem));
+  padding: clamp(1.35rem, 3vw, 2.15rem);
+}
+
+.game-center-panel h1 {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+}
+
+.game-center-panel p:not(.game-eyebrow) {
+  max-width: 54ch;
+}
+
+.game-actions-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  width: min(520px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-more-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.95rem auto 0;
+  padding: 0.35rem 0.75rem;
+  border: 0;
+  color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.game-more-info:hover,
+.game-more-info:focus-visible {
+  color: #0cc7f6;
+  transform: translateY(2px);
+}
+
+.game-path {
+  justify-content: center;
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+.game-path-daftitude {
+  padding-right: clamp(14rem, 21vw, 26rem);
+}
+
+.game-path-askdaft {
+  padding-left: clamp(14rem, 21vw, 26rem);
+}
+
+.game-path strong {
+  font-size: clamp(3rem, 5.4vw, 5.3rem);
+}
+
+.game-bottom-hint {
+  bottom: 1.8rem;
+}
+
+@media (max-width: 1100px) {
+  .game-path-daftitude {
+    padding-right: clamp(8rem, 16vw, 14rem);
+  }
+
+  .game-path-askdaft {
+    padding-left: clamp(8rem, 16vw, 14rem);
+  }
+
+  .game-center-panel {
+    width: min(560px, calc(100vw - 2rem));
+  }
+}
+
+@media (max-width: 920px) {
+  .game-center-panel {
+    top: auto;
+    left: auto;
+    width: calc(100% - 2rem);
+  }
+
+  .game-path {
+    justify-content: flex-end;
+    padding-top: 7rem;
+    padding-bottom: clamp(2rem, 7vw, 4rem);
+  }
+
+  .game-path-daftitude,
+  .game-path-askdaft {
+    padding-left: clamp(2rem, 5vw, 5rem);
+    padding-right: clamp(2rem, 5vw, 5rem);
+  }
+
+  .game-actions-main {
+    grid-template-columns: 1fr;
+  }
+}
+/* ======================================================
+   Phase 1 Hero Image Layers
+====================================================== */
+
+.game-path::before {
+  background-image:
+    linear-gradient(90deg, rgba(5, 8, 18, 0.22), rgba(5, 8, 18, 0.62)),
+    var(--hero-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.game-path-daftitude::before {
+  background-position: center left;
+}
+
+.game-path-askdaft::before {
+  background-position: center right;
+}
+
+.game-path:hover::before,
+.game-path:focus-visible::before {
+  opacity: 0.92;
+  transform: scale(1.035);
+  filter: saturate(1.18) contrast(1.04);
+}
+
+.game-start-screen.is-default .game-path::before {
+  opacity: 0.56;
+}
+
+.game-start-screen.is-daftitude .game-path-daftitude::before,
+.game-start-screen.is-askdaft .game-path-askdaft::before {
+  opacity: 0.95;
+}
+
+.game-start-screen.is-daftitude .game-path-askdaft::before,
+.game-start-screen.is-askdaft .game-path-daftitude::before {
+  opacity: 0.38;
+  filter: grayscale(0.25) brightness(0.72);
+}
+
+@media (max-width: 920px) {
+  .game-path::before {
+    opacity: 0.68;
+  }
+
+  .game-path-daftitude::before {
+    background-position: center;
+  }
+
+  .game-path-askdaft::before {
+    background-position: center;
+  }
+}
+/* ======================================================
+   Phase 1 Center Panel Image Layer
+====================================================== */
+
+.game-center-panel {
+  overflow: hidden;
+}
+
+.game-center-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(5, 9, 18, 0.76),
+      rgba(5, 9, 18, 0.88)
+    ),
+    var(--center-hero-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.52;
+  filter: saturate(1.12) contrast(1.06);
+}
+
+.game-center-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(12, 199, 246, 0.20), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,0.045), transparent 45%);
+  pointer-events: none;
+}
+
+.game-center-panel > * {
+  position: relative;
+  z-index: 1;
+}

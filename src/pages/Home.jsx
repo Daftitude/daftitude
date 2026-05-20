@@ -1,21 +1,24 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import daftitudeBusinessHero from "../images/hero/daftitude-business-blue-object.png";
+import askDaftHero from "../images/hero/askdaft-residential-green-object.png";
+import daftitudeCenterHero from "../images/hero/daftitude-center-object.png";
 
 const heroMessages = {
   default: {
-    eyebrow: "DaFTitude Command Screen",
-    title: "Choose your path.",
-    text: "Understand the system. Move smarter. Pick the parent brand command center or jump straight into direct tech help.",
+    eyebrow: "Digital Clarity Starts Here",
+    title: "DaFTitude",
+    text: "Using Data, Analytics, Finance, and Technology to help people, families, creators, students, and businesses move smarter in a digital world.",
   },
   daftitude: {
-    eyebrow: "Parent Brand",
-    title: "Build the system. Understand the game.",
-    text: "DaFTitude is the command center for AI, automation, data, privacy, cybersecurity awareness, crypto education, consulting, and digital systems strategy.",
+    eyebrow: "Business Solutions",
+    title: "Systems that make life easier.",
+    text: "DaFTitude helps with strategy, consulting, automation, AI workflows, digital systems, data, privacy, cybersecurity awareness, crypto education, and project planning.",
   },
   askdaft: {
-    eyebrow: "Client-Service Branch",
-    title: "Tech help without the tech ego.",
-    text: "AskDaft is the direct help doorway for setup, troubleshooting, teaching, scam-message review, AI tools, home tech support, business tech setup, and creator tech setup.",
+    eyebrow: "Tech Services",
+    title: "Tech help for real life.",
+    text: "AskDaft helps residential users, families, creators, students, elderly users, and small businesses with setup, troubleshooting, teaching, smart home help, AI tools, and support.",
   },
 };
 
@@ -105,42 +108,53 @@ export default function Home() {
         <button
           type="button"
           className="game-path game-path-daftitude"
+          style={{ "--hero-image": `url(${daftitudeBusinessHero})` }}
           onMouseEnter={() => setActivePath("daftitude")}
           onFocus={() => setActivePath("daftitude")}
           onClick={scrollToStory}
         >
-          <span className="path-kicker">Parent Brand</span>
+          <span className="path-kicker">Business Solutions</span>
           <strong>DaFTitude</strong>
           <small>Strategy • Systems • Consulting • Education</small>
         </button>
 
         <Link
-          to="/askdaft"
-          className="game-path game-path-askdaft"
+  to="/askdaft"
+  className="game-path game-path-askdaft"
+  style={{ "--hero-image": `url(${askDaftHero})` }}
           onMouseEnter={() => setActivePath("askdaft")}
           onFocus={() => setActivePath("askdaft")}
         >
-          <span className="path-kicker">Service Branch</span>
+          <span className="path-kicker">Tech Services</span>
           <strong>AskDaft</strong>
-          <small>Tech Help • Setup • Troubleshooting • Teaching</small>
+          <small>Residential • Small Business • Setup • Support</small>
         </Link>
 
-        <div className="game-center-panel" aria-live="polite">
+        <div
+
+          className="game-center-panel"
+
+          style={{ "--center-hero-image": `url(${daftitudeCenterHero})` }}
+
+          aria-live="polite"
+
+        >
           <p className="game-eyebrow">{activeMessage.eyebrow}</p>
           <h1>{activeMessage.title}</h1>
           <p>{activeMessage.text}</p>
 
-          <div className="game-actions">
+          <div className="game-actions game-actions-main">
             <button type="button" className="game-btn primary" onClick={scrollToStory}>
-              Explore DaFTitude
+              Learn What DaFTitude Does
             </button>
             <Link className="game-btn secondary" to="/askdaft">
-              Enter AskDaft
+              Get Tech Help with AskDaft
             </Link>
-            <button type="button" className="game-btn ghost" onClick={scrollToStory}>
-              More Info
-            </button>
           </div>
+
+          <button type="button" className="game-more-info" onClick={scrollToStory}>
+            See how it works ↓
+          </button>
         </div>
 
         <div className="game-bottom-hint">Hover a side. Choose a path. Scroll for story mode.</div>
