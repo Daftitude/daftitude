@@ -1,24 +1,57 @@
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import daftitudeBusinessHero from "../images/hero/daftitude-business-blue-object.png";
 import askDaftHero from "../images/hero/askdaft-residential-green-object.png";
 import daftitudeCenterHero from "../images/hero/daftitude-center-object.png";
 
+const BrandName = ({ name }) => {
+  if (name === "AskDaFT") {
+    return (
+      <strong className="brand-word brand-word-askdaft" aria-label="AskDaFT">
+        <span className="brand-ask">Ask</span><span className="brand-daft">DaFT</span>
+      </strong>
+    );
+  }
+
+  return (
+    <strong className="brand-word brand-word-daftitude" aria-label="DaFTitude">
+      <span className="brand-daft">DaFT</span><span className="brand-itude">itude</span>
+    </strong>
+  );
+};
+
 const heroMessages = {
   default: {
-    eyebrow: "Digital Clarity Starts Here",
-    title: "DaFTitude",
-    text: "Using Data, Analytics, Finance, and Technology, we help people stop guessing, understand the system, and move smarter.",
+    eyebrow: (
+      <>
+        Digital Clarity <span className="pricing-emphasis-green">Starts Here</span>
+      </>
+    ),
+    title: <BrandName name="DaFTitude" />,
+    text: (
+      <>
+        We use <strong className="pricing-emphasis-blue">Data</strong>, <strong className="pricing-emphasis-red">Analytics</strong>, <strong className="pricing-emphasis-yellow">Finance</strong>, and <strong style={{ color: "var(--green)", fontWeight: 950 }}>Technology</strong> to turn digital confusion into clearer choices.
+      </>
+    ),
   },
   daftitude: {
     eyebrow: "Business Solutions",
-    title: "Systems that make life easier.",
-    text: "We can help make sense of messy tools, big ideas, and digital problems — then organize them into clearer systems and smarter plans.",
+    title: <BrandName name="DaFTitude" />,
+    text: (
+      <>
+        We turn <strong className="pricing-emphasis-blue">tech confusion</strong> into <strong className="pricing-emphasis-green">clear next steps</strong> — organizing <strong className="pricing-emphasis-red">messy tools</strong>, <strong className="pricing-emphasis-yellow">AI ideas</strong>, and <strong className="pricing-emphasis-red">digital problems</strong> into systems you can <strong className="pricing-emphasis-green">actually use</strong>.
+      </>
+    ),
   },
   askdaft: {
-    eyebrow: "Tech Services",
-    title: "Tech help for real life.",
-    text: "We can help with the real-life tech stuff: setup, troubleshooting, smart homes, AI tools, devices, portals, and plain-English support.",
+    eyebrow: <span className="pricing-emphasis-green">Tech Services</span>,
+    title: <BrandName name="AskDaFT" />,
+    text: (
+      <>
+        Real-life <strong className="pricing-emphasis-blue">tech help</strong> for people <strong className="pricing-emphasis-yellow">tired</strong> of feeling <strong className="pricing-emphasis-red">lost</strong> in it. We <strong className="pricing-emphasis-green">help</strong> you <strong className="pricing-emphasis-blue">set up</strong>, <strong className="pricing-emphasis-yellow">fix</strong>, and <strong className="pricing-emphasis-green">organize</strong> the <strong className="pricing-emphasis-blue">tech</strong> you use <strong className="pricing-emphasis-green">every day</strong> — from <strong className="pricing-emphasis-yellow">smart homes</strong> and <strong className="pricing-emphasis-yellow">AI tools</strong> to <strong className="pricing-emphasis-blue">accounts</strong>, <strong className="pricing-emphasis-yellow">portals</strong>, <strong className="pricing-emphasis-red">apps</strong>, and <strong className="pricing-emphasis-yellow">troubleshooting</strong>.
+      </>
+    ),
   },
 };
 
@@ -76,24 +109,55 @@ const hubCards = [
 
 const modeCtas = {
   daftitude: {
-    kicker: "Ballpark Planning",
-    title: "Need a business tech plan before you spend real money?",
-    text: "DaFTitude business work depends on scope, but the first step should be clarity: what you need, what you already have, what can be automated, and what should not be overbuilt.",
-    primaryText: "View Ballpark Pricing",
-    secondaryText: "Start Business Form",
+    kicker: "Step 1: Pick Your Service Lane",
+    title: (
+      <>
+        Your <span className="pricing-emphasis-red">business</span> has more <span className="pricing-emphasis-green">potential</span> than your <span className="pricing-emphasis-red">current</span> systems <span className="pricing-emphasis-red">show</span>.
+      </>
+    ),
+    text: (
+      <span className="mode-cta-lead-text mode-cta-lead-stack">
+        <span>
+          You <span className="pricing-emphasis-red">do not</span> need more <span className="pricing-emphasis-yellow">random tools</span> or half-built <span className="pricing-emphasis-red">AI ideas</span>.
+        </span>
+        <span>
+          <BrandName name="DaFTitude" /> helps turn <strong className="pricing-emphasis-yellow">messy tech</strong> into
+          <strong className="pricing-emphasis-blue"> business solutions</strong>,
+          <strong className="pricing-emphasis-green"> AI workflows</strong>, and
+          <strong className="pricing-emphasis-yellow"> safer decisions</strong> before <strong className="pricing-emphasis-green">money</strong> gets <strong className="pricing-emphasis-red">wasted</strong>.
+        </span>
+      </span>
+    ),
+    primaryText: "View Pricing Chart",
+    secondaryText: "Business Form",
     primaryAction: "average",
     secondaryTo: "/contact",
-    highlights: ["AI workflow planning", "automation cleanup", "tech stack review", "system buildout planning"],
+    highlights: ["business systems", "AI workflows", "automation cleanup", "tech stack review"],
   },
   askdaft: {
-    kicker: "Quick Help Menu",
-    title: "Need hands-on tech help instead? Start with AskDaft.",
-    text: "AskDaft is for direct help with home tech, small-business setup, creator tools, portals, suspicious messages, smart devices, and plain-English troubleshooting.",
-    primaryText: "Preview Common Help",
-    secondaryText: "Go to AskDaft",
+    kicker: "Step 1: Pick Your Service Lane",
+    title: (
+      <>
+        <span className="pricing-emphasis-yellow"> Need </span> something <span className="pricing-emphasis-green">fixed</span>, <span className="pricing-emphasis-yellow">set up</span>, or <span className="pricing-emphasis-blue">explained</span>?
+      </>
+    ),
+    text: (
+      <span className="mode-cta-lead-text mode-cta-lead-stack">
+        <span>Pick the <span className="pricing-emphasis-green">lane</span> that <span className="pricing-emphasis-blue">matches</span> what you <span className="pricing-emphasis-red">need</span> <span className="pricing-emphasis-yellow">right now</span>.</span>
+        <span>
+          <BrandName name="AskDaFT" /> <strong className="pricing-emphasis-green">helps</strong> with <strong className="pricing-emphasis-blue">Wi-Fi</strong>,
+          <strong className="pricing-emphasis-yellow"> printers</strong>, <strong className="pricing-emphasis-red">phones</strong>,
+          <strong className="pricing-emphasis-blue"> smart-devices</strong>, <strong className="pricing-emphasis-yellow">home security </strong>, <strong className="pricing-emphasis-blue"> IOT</strong>,
+          <strong className="pricing-emphasis-red"> apps</strong>, <strong className="pricing-emphasis-green">accounts</strong>,
+          and <strong className="pricing-emphasis-green">plain</strong><strong className="pricing-emphasis-blue"> - </strong> <strong className="pricing-emphasis-green">english</strong> <strong className="pricing-emphasis-yellow">troubleshooting</strong>.
+        </span>
+      </span>
+    ),
+    primaryText: "View Pricing Chart",
+    secondaryText: "AskDaFT Pricing",
     primaryAction: "askdaft-table",
     secondaryAction: "askdaft-table",
-    highlights: ["Wi-Fi / printer help", "smart-home setup", "AI tools help", "scam message review"],
+    highlights: ["home tech help", "smart-home & IOT setup", "AI tool help", "account safety"],
   },
 };
 
@@ -102,25 +166,25 @@ const businessPricingRows = [
     service: "Clarity Call / Tech Direction",
     range: "$75–$150",
     bestFor: "First step",
-    note: "A focused session to understand the problem, options, and next move.",
+    note: ["Understand the problem", "Review options", "Choose the next move"],
   },
   {
     service: "Business Tech Stack Review",
     range: "$250–$750",
     bestFor: "Cleanup",
-    note: "Review tools, accounts, workflows, gaps, risks, and cleanup opportunities.",
+    note: ["Review tools and accounts", "Find workflow gaps", "Spot cleanup opportunities"],
   },
   {
     service: "AI Workflow / Automation Planning",
     range: "$500–$2,500+",
     bestFor: "Automation",
-    note: "Map repeatable tasks, AI use cases, automation ideas, and realistic implementation steps.",
+    note: ["Map repeatable tasks", "Find AI use cases", "Plan realistic automation steps"],
   },
   {
     service: "Systems Buildout Planning",
     range: "$1,500–$5,000+",
     bestFor: "Larger builds",
-    note: "Planning for larger website, app, dashboard, content, data, or operations systems.",
+    note: ["Plan larger builds", "Map system needs", "Organize app, site, data, or dashboard direction"],
   },
 ];
 
@@ -129,7 +193,7 @@ const askDaftQuickRows = [
     tier: "Quick Help",
     price: "$25–$50",
     label: "Fast Fix",
-    description: "Simple question, quick setting, basic walkthrough.",
+    description: ["Simple question", "Quick setting fix", "Basic walkthrough"],
     features: ["One focused issue", "Plain-English walkthrough", "Best for quick answers"],
     cta: "Start Small",
   },
@@ -137,7 +201,7 @@ const askDaftQuickRows = [
     tier: "Standard Help",
     price: "$60–$125",
     label: "Most Common",
-    description: "Troubleshooting, setup, account/device guidance, app help.",
+    description: ["Troubleshooting", "Setup guidance", "Account, device, or app help"],
     features: ["Device or account help", "Setup guidance", "Clean next-step plan"],
     cta: "Get Help",
     featured: true,
@@ -146,7 +210,7 @@ const askDaftQuickRows = [
     tier: "Setup & Teach",
     price: "$100–$250",
     label: "Hands-On",
-    description: "Smart TV, printer, phone, AI tools, smart-home, creator basics.",
+    description: ["Smart TV, printer, or phone setup", "AI tool help", "Smart-home or creator basics"],
     features: ["Setup plus teaching", "Smart-home basics", "Creator or AI tool help"],
     cta: "Book Setup",
   },
@@ -154,7 +218,7 @@ const askDaftQuickRows = [
     tier: "Full Tech Rescue",
     price: "$250+",
     label: "Deep Cleanup",
-    description: "Messy multi-device/account problem that needs deeper cleanup.",
+    description: ["Multi-device cleanup", "Account sorting", "Deeper tech problem review"],
     features: ["Multi-step cleanup", "Account/device sorting", "Bigger tech messes"],
     cta: "Start Rescue",
   },
@@ -164,25 +228,25 @@ const businessMonthlyRows = [
   {
     tier: "Business Check-In",
     bestFor: "Light guidance",
-    includes: "Best for solo owners or creators who need a recurring strategy touchpoint, light tool review, and simple next-step planning.",
+    includes: ["Recurring strategy check-in", "Light tool review", "Simple next-step planning"],
     price: "$150–$250/mo",
   },
   {
     tier: "Tech Stack Support",
     bestFor: "Ongoing cleanup",
-    includes: "Best for businesses that need recurring help reviewing apps, accounts, workflows, files, automations, and system clutter.",
+    includes: ["Review apps and accounts", "Clean up workflows", "Reduce system clutter"],
     price: "$300–$600/mo",
   },
   {
     tier: "AI Workflow Partner",
     bestFor: "Automation growth",
-    includes: "Best for businesses actively planning AI workflows, repeatable automations, content systems, dashboards, or internal process improvements.",
+    includes: ["Plan AI workflows", "Build automation direction", "Improve content, dashboard, or internal systems"],
     price: "$750–$1,500/mo",
   },
   {
     tier: "Systems Partner",
     bestFor: "Deeper build support",
-    includes: "Best for larger ongoing planning across websites, apps, dashboards, business systems, data, content, and operations support.",
+    includes: ["Ongoing system planning", "Website, app, or dashboard support", "Business operations direction"],
     price: "Custom",
   },
 ];
@@ -191,113 +255,181 @@ const askDaftMonthlyRows = [
   {
     tier: "Monthly Check-In",
     bestFor: "Light upkeep",
-    includes: "Best for small questions, simple account/device checks, update help, and one focused monthly tech issue. Includes 1 visit per month, up to 1 hour.",
+    includes: ["1 visit per month", "Up to 1 hour", "Best for one focused tech issue"],
     price: "$25–$55/mo",
   },
   {
     tier: "Basic Tech Support",
     bestFor: "Ongoing help",
-    includes: "Best for people who need regular help with devices, apps, smart-home basics, portals, and simple troubleshooting. Includes 2 visits per month, up to 1 hour each.",
+    includes: ["2 visits per month", "Up to 1 hour each", "Best for regular device, app, or smart-home help"],
     price: "$100–$150/mo",
   },
   {
     tier: "Priority Tech Support",
     bestFor: "Busy homes",
-    includes: "Best for households, creators, or small teams with recurring setup, cleanup, troubleshooting, and workflow needs. Includes 2 visits per month, up to 3 hours per visit.",
+    includes: ["2 visits per month", "Up to 3 hours per visit", "Best for recurring setup, cleanup, and troubleshooting"],
     price: "$200–$275/mo",
   },
   {
     tier: "Managed Tech Partner",
     bestFor: "Deeper support",
-    includes: "Best for people or small businesses that want a consistent tech partner for planning, setup, cleanup, AI tools, accounts, and systems support. Scope is customized after review.",
+    includes: ["Custom support scope", "Planning, setup, and cleanup", "Best for ongoing tech partner support"],
     price: "Custom",
   },
 ];
 
 const storyboards = {
   daftitude: {
-    kicker: "The Breakdown",
-    title: "Technology is everywhere. Clarity is not.",
-    text: "We use DaFTitude for the bigger system and AskDaft for the hands-on help. The goal is not to sound fancy — it is to make technology make sense for real people.",
+    kicker: "Step 3: What Happens Next",
+    title: (
+      <>
+        <span className="pricing-emphasis-green">Bring</span> the <span className="pricing-emphasis-yellow">messy</span> version. We’ll <span className="pricing-emphasis-yellow">help</span> shape the <span className="pricing-emphasis-blue">real one</span>.
+      </>
+    ),
+    text: (
+      <>
+        Once the <span className="pricing-emphasis-green">price lane</span> makes <span className="pricing-emphasis-yellow">sense</span>, the <span className="pricing-emphasis-blue">next step</span> is simple: show the <span className="pricing-emphasis-yellow">problem</span>, explain what you <span className="pricing-emphasis-green">need working</span>, and let <BrandName name="DaFTitude" /> turn the <span className="pricing-emphasis-yellow">moving pieces</span> into a <span className="pricing-emphasis-blue">cleaner plan</span>.
+      </>
+    ),
     cards: [
       {
         label: "01",
-        icon: "🧠",
-        title: "Make sense of the system.",
-        text: "We help organize tools, risks, ideas, and workflows into a clearer plan.",
-        statement: (
+        icon: "📥",
+        title: (
           <>
-            <strong>Plan before you buy, build, automate, or scale.</strong>
+            <span className="pricing-emphasis-green">Share</span> the <span className="pricing-emphasis-yellow">messy</span> version.
           </>
         ),
-        tags: ["business automation", "AI workflow", "tech strategy", "systems planning"],
+        text: (
+          <>
+            Bring the <span className="pricing-emphasis-red">scattered</span> <span className="pricing-emphasis-yellow">notes</span>, <span className="pricing-emphasis-green">tools</span>, <span className="pricing-emphasis-blue">accounts</span>, <span className="pricing-emphasis-yellow">ideas</span>, <span className="pricing-emphasis-green">screenshots</span>, or <span className="pricing-emphasis-blue">half</span>-built plan.
+          </>
+        ),
+        statement: (
+          <>
+            <strong>
+              <span className="pricing-emphasis-red">No</span> polished <span className="pricing-emphasis-yellow">pitch</span> <span className="pricing-emphasis-red">required</span>.
+            </strong>
+          </>
+        ),
+        tags: ["business ideas", "tool lists", "screenshots", "rough plans"],
       },
       {
         label: "02",
-        icon: "🛠️",
-        title: "Fix the tech friction.",
-        text: "AskDaft helps with Wi-Fi, printers, phones, smart homes, accounts, apps, and setup problems.",
-        statement: (
+        icon: "🧭",
+        title: (
           <>
-            <strong>Clear help without the tech ego.</strong>
+            We <span className="pricing-emphasis-green">sort</span> the <span className="pricing-emphasis-yellow">moving</span> pieces.
           </>
         ),
-        tags: ["Wi-Fi help", "smart home", "printer help", "setup support"],
+        text: (
+          <>
+            We look for what <span className="pricing-emphasis-green">matters</span>, what is <span className="pricing-emphasis-yellow">missing</span>, what is <span className="pricing-emphasis-red">risky</span>, and what should <span className="pricing-emphasis-red">not</span> be <span className="pricing-emphasis-blue">overbuilt</span>.
+          </>
+        ),
+        statement: (
+          <>
+            <strong><span className="pricing-emphasis-red">Less</span> guessing. <span className="pricing-emphasis-green">More</span> structure.</strong>
+          </>
+        ),
+        tags: ["tech stack review", "AI workflow", "risk check", "system planning"],
       },
       {
         label: "03",
-        icon: "✨",
-        title: "Stop guessing.",
-        text: "We explain what matters, cut through the noise, and help people make smarter digital decisions.",
-        statement: (
+        icon: "✅",
+        title: (
           <>
-            <strong>Turn confusion into confidence.</strong>
+            You leave with <span className="pricing-emphasis-green">next steps</span>.
           </>
         ),
-        tags: ["plain English", "digital confidence", "tech learning", "safer habits"],
+        text: (
+          <>
+            The <span className="pricing-emphasis-green">goal</span> is a <span className="pricing-emphasis-blue">cleaner direction</span>: what to <span className="pricing-emphasis-yellow">fix</span>, what to <span className="pricing-emphasis-green">build</span>, what to <span className="pricing-emphasis-red">avoid</span>, and what to do <span className="pricing-emphasis-yellow">first</span>.
+          </>
+        ),
+        statement: (
+          <>
+            <strong>
+              A <span className="pricing-emphasis-yellow">plan</span> you can <span className="pricing-emphasis-green">actually</span> <span className="pricing-emphasis-blue">use</span>.
+            </strong>
+          </>
+        ),
+        tags: ["next steps", "priority list", "cleanup plan", "build direction"],
       },
     ],
   },
   askdaft: {
-    kicker: "AskDaft Mode",
-    title: "Hands-on tech help without the tech ego.",
-    text: "AskDaft is the service doorway for people, families, creators, students, seniors, and small businesses who need practical help getting technology to actually work.",
+    kicker: "Step 3: What Happens Next",
+    title: (
+      <>
+        <span className="pricing-emphasis-green">Bring</span> the <span className="pricing-emphasis-yellow">problem</span>. We’ll <span className="pricing-emphasis-yellow">help</span> turn it <span className="pricing-emphasis-green"> into </span> a <span className="pricing-emphasis-blue">clear fix path</span>.
+      </>
+    ),
+    text: (
+      <>
+        Once the <span className="pricing-emphasis-green">price lane</span> makes <span className="pricing-emphasis-yellow">sense</span>, <BrandName name="AskDaFT" /> keeps it <span className="pricing-emphasis-blue">simple</span>: tell us what is <span className="pricing-emphasis-red">not working</span>, what it <span className="pricing-emphasis-yellow">affects</span>, and how <span className="pricing-emphasis-green">quickly</span> you need it <span className="pricing-emphasis-blue">fixed</span>.
+      </>
+    ),
     cards: [
       {
         label: "01",
-        icon: "🏠",
-        title: "Make home tech simple.",
-        text: "Help with Wi-Fi, printers, smart TVs, phones, apps, accounts, and smart-home devices.",
-        statement: (
+        icon: "📲",
+        title: (
           <>
-            <strong>Get the setup working without the fight.</strong>
+            <span className="pricing-emphasis-green">Tell</span> us what is <span className="pricing-emphasis-red">wrong</span>.
           </>
         ),
-        tags: ["Wi-Fi fixes", "printer setup", "smart TV help", "smart home"],
+        text: (
+          <>
+            Send the <span className="pricing-emphasis-blue">device</span>, <span className="pricing-emphasis-red">app</span>, <span className="pricing-emphasis-green">account</span>, <span className="pricing-emphasis-yellow">setup</span>, or <span className="pricing-emphasis-red">error</span> that keeps getting in the <span className="pricing-emphasis-yellow">way</span>.
+          </>
+        ),
+        statement: (
+          <>
+            <strong><span className="pricing-emphasis-red">No</span> tech <span className="pricing-emphasis-yellow">shame</span>. Just the <span className="pricing-emphasis-blue">issue</span>.</strong>
+          </>
+        ),
+        tags: ["Wi-Fi", "printers", "phones", "accounts"],
       },
       {
         label: "02",
-        icon: "🎙️",
-        title: "Build the right setup.",
-        text: "Help choosing realistic gear, apps, AI tools, streaming setups, study systems, and workflows.",
-        statement: (
+        icon: "🔎",
+        title: (
           <>
-            <strong>Choose smarter before you waste money.</strong>
+            We <span className="pricing-emphasis-green">narrow</span> it <span className="pricing-emphasis-blue">down</span>.
           </>
         ),
-        tags: ["streaming setup", "podcast gear", "AI tools", "study systems"],
+        text: (
+          <>
+            We <span className="pricing-emphasis-green">separate</span> the <span className="pricing-emphasis-red">real problem</span> from the <span className="pricing-emphasis-yellow">noise</span> so you are <span className="pricing-emphasis-red">not stuck</span> clicking <span className="pricing-emphasis-yellow">random fixes</span>.
+          </>
+        ),
+        statement: (
+          <>
+            <strong><span className="pricing-emphasis-green">Plain</span>-<span className="pricing-emphasis-blue">English</span> <span className="pricing-emphasis-yellow">troubleshooting</span>.</strong>
+          </>
+        ),
+        tags: ["apps", "portals", "smart home", "AI tools"],
       },
       {
         label: "03",
-        icon: "🧓",
-        title: "No tech shame.",
-        text: "Slow, clear help for parents, seniors, busy people, portals, suspicious messages, and account safety.",
-        statement: (
+        icon: "🛠️",
+        title: (
           <>
-            <strong>Patient support that helps people feel safer.</strong>
+            You get a <span className="pricing-emphasis-blue">clear fix path</span>.
           </>
         ),
-        tags: ["scam review", "portal help", "account safety", "patient teaching"],
+        text: (
+          <>
+            You leave knowing what to <span className="pricing-emphasis-green">try</span>, what to <span className="pricing-emphasis-red">avoid</span>, what needs <span className="pricing-emphasis-yellow">setup</span>, and when <span className="pricing-emphasis-blue">deeper help</span> makes <span className="pricing-emphasis-green">sense</span>.
+          </>
+        ),
+        statement: (
+          <>
+            <strong><span className="pricing-emphasis-yellow">Less</span> <span className="pricing-emphasis-red">stress</span>. <span className="pricing-emphasis-green">More</span> <span className="pricing-emphasis-blue">control</span>.</strong>
+          </>
+        ),
+        tags: ["setup help", "safety check", "next steps", "tech confidence"],
       },
     ],
   },
@@ -378,19 +510,35 @@ export default function Home() {
       : businessMonthlyRows
     : isOneTimePricing
       ? askDaftQuickRows.map((row) => ({
-          tier: row.tier,
-          bestFor: row.label,
-          includes: row.description,
-          price: row.price,
-        }))
+        tier: row.tier,
+        bestFor: row.label,
+        includes: row.description,
+        price: row.price,
+      }))
       : askDaftMonthlyRows;
   const pricingHeader = isBusinessPricing
     ? isOneTimePricing
-      ? "DaFTitude Business Solutions — One-Time"
-      : "DaFTitude Business Solutions — Monthly"
+      ? "Business Solutions — One-Time"
+      : "Business Solutions — Monthly"
     : isOneTimePricing
-      ? "AskDaFT Tech Help — One-Time"
-      : "AskDaFT Tech Help — Monthly";
+      ? "Tech Help — One-Time"
+      : "Tech Help — Monthly";
+
+  const buildPricingActionLink = (row, action) => {
+    const serviceName = row.service || row.tier;
+    const audience = pricingAudience === "business" ? "business" : "askdaft";
+    const pricingType = subscriptionBilling === "oneTime" ? "one-time" : "monthly";
+    const target = action === "book" ? "availability" : "checkout";
+
+    const params = new URLSearchParams({
+      service: serviceName,
+      audience,
+      type: pricingType,
+      action,
+    });
+
+    return `/askdaft?${params.toString()}#${target}`;
+  };
 
   const previewStoryMode = (mode) => {
     setActivePath(mode);
@@ -401,18 +549,39 @@ export default function Home() {
     setActivePath(mode);
     setStoryMode(mode);
     setLockedStoryMode(mode);
+    setPricingAudience(mode === "askdaft" ? "askdaft" : "business");
+    setSubscriptionBilling("oneTime");
 
     window.requestAnimationFrame(() => {
       document
-        .getElementById("daftitude-story")
+        .getElementById("average-pricing")
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  };
+
+  const selectServiceLane = (mode) => {
+    setActivePath(mode);
+    setStoryMode(mode);
+    setLockedStoryMode(mode);
+    setPricingAudience(mode === "askdaft" ? "askdaft" : "business");
+    setSubscriptionBilling("oneTime");
+  };
+
+  const previewServiceLane = (mode) => {
+    setActivePath(mode);
+    setStoryMode(mode);
+    setLockedStoryMode(mode);
+    setPricingAudience(mode === "askdaft" ? "askdaft" : "business");
   };
 
   const scrollToAveragePricing = () => {
     document
       .getElementById("average-pricing")
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const resetStoryPreview = () => {
@@ -451,7 +620,7 @@ export default function Home() {
           onClick={() => selectStoryMode("daftitude")}
         >
           <span className="path-kicker">Business Solutions</span>
-          <strong>DaFTitude</strong>
+          <strong><BrandName name="DaFTitude" /></strong>
           <small>Strategy • Systems • Consulting • Education</small>
         </button>
 
@@ -464,7 +633,7 @@ export default function Home() {
           onClick={() => selectStoryMode("askdaft")}
         >
           <span className="path-kicker">Tech Services</span>
-          <strong>AskDaft</strong>
+          <strong><BrandName name="AskDaFT" /></strong>
           <small>Residential • Small Business • Setup • Support</small>
         </button>
 
@@ -474,26 +643,29 @@ export default function Home() {
           aria-live="polite"
         >
           <p className="game-eyebrow">{activeMessage.eyebrow}</p>
-          <h1>{activeMessage.title}</h1>
+          <h1 className="hero-brand-title">{activeMessage.title}</h1>
           <p>{activeMessage.text}</p>
 
           <div className="game-actions game-actions-main">
             <button type="button" className="game-btn primary" onClick={() => selectStoryMode("daftitude")}>
-              Learn What DaFTitude Does
+              View Business Pricing
             </button>
             <button type="button" className="game-btn secondary" onClick={() => selectStoryMode("askdaft")}>
-              Preview AskDaft Help
+              View AskDaFT Pricing
             </button>
           </div>
 
           <button type="button" className="game-more-info" onClick={() => selectStoryMode(storyMode)}>
-            See how it works ↓
+            View pricing ↓
           </button>
         </div>
 
-        <div className="game-bottom-hint">Move left or right. Pick a path. Scroll for story mode.</div>
+        <div className="game-bottom-hint">Move left or right. Pick a path. Jump to pricing.</div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
 
       <section className={`story-mode-section mode-cta-section mode-cta-section--${storyMode}`}>
         <div className="mode-cta-panel">
@@ -510,6 +682,29 @@ export default function Home() {
 
             <h2>{selectedCta.title}</h2>
             <p>{selectedCta.text}</p>
+
+            <div className="mode-cta-lane-picker" aria-label="Pick a service lane">
+              <button
+                type="button"
+                className={storyMode === "daftitude" ? "active" : ""}
+                onMouseEnter={() => previewServiceLane("daftitude")}
+                onFocus={() => previewServiceLane("daftitude")}
+                onClick={() => selectStoryMode("daftitude")}
+              >
+                <BrandName name="DaFTitude" />
+                <small>Business systems</small>
+              </button>
+              <button
+                type="button"
+                className={storyMode === "askdaft" ? "active" : ""}
+                onMouseEnter={() => previewServiceLane("askdaft")}
+                onFocus={() => previewServiceLane("askdaft")}
+                onClick={() => selectStoryMode("askdaft")}
+              >
+                <BrandName name="AskDaFT" />
+                <small>Hands-on tech help</small>
+              </button>
+            </div>
 
             <div className="mode-cta-action-row">
               {selectedCta.primaryTo ? (
@@ -536,21 +731,53 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section id="average-pricing" className="story-mode-section subscription-section average-pricing-section">
         <div className="story-mode-header compact pricing-chart-intro">
-          <p className="story-kicker">Ballpark Chart</p>
-          <h2>Pick a service path, then compare the range.</h2>
-          <p>
-            Switch between DaFTitude Business and AskDaFT, then choose One Time or Monthly Service.
-            The chart updates to show the right plan, best use case, scope, and price range.
-          </p>
+          <p className="story-kicker step-pill-kicker">Step 2: Pick Your Price Lane</p>
+          <h2>
+            <span className="pricing-emphasis-blue">Find</span> the <span className="pricing-emphasis-green">price</span> path that <span className="pricing-emphasis-yellow">fits</span> the <span className="pricing-emphasis-blue">help</span> you actually <span className="pricing-emphasis-yellow">need</span>.
+          </h2>
+          <div className="pricing-skim-guide pricing-skim-guide--clean" aria-label="How to use the pricing chart">
+            <article className="pricing-skim-card">
+              <strong className="pricing-skim-number">1</strong>
+              <h3>Pick the lane</h3>
+              <p>
+                <b className="pricing-emphasis-blue">DaFTitude</b> for systems and business planning.
+                <b className="pricing-emphasis-green"> AskDaFT</b> for hands-on tech help.
+              </p>
+            </article>
+
+            <article className="pricing-skim-card">
+              <strong className="pricing-skim-number">2</strong>
+              <h3>Choose the style</h3>
+              <p>
+                <b className="pricing-emphasis-yellow">One Time</b> for one focused problem.
+                <b className="pricing-emphasis-yellow"> Monthly</b> for ongoing support.
+              </p>
+            </article>
+
+            <article className="pricing-skim-card">
+              <strong className="pricing-skim-number">3</strong>
+              <h3>Take the next step</h3>
+              <p>
+                Compare <b className="pricing-emphasis-red">fit, scope, and price</b>, then
+                <b className="pricing-emphasis-blue"> quote, book, or subscribe</b>.
+              </p>
+            </article>
+          </div>
         </div>
 
         <div className="subscription-toggle-card">
           <div className="subscription-toggle-topline">
             <div className="pricing-toggle-heading">
               <span className="subscription-mini-label">Now Viewing</span>
-              <h3>{pricingHeader}</h3>
+              <h3>
+                <BrandName name={isBusinessPricing ? "DaFTitude" : "AskDaFT"} /> {pricingHeader}
+              </h3>
             </div>
 
             <div className="subscription-toggle-stack">
@@ -597,18 +824,39 @@ export default function Home() {
                 <th scope="col">Best For</th>
                 <th scope="col">What It Covers</th>
                 <th scope="col">{isOneTimePricing ? "Ballpark" : "Monthly Range"}</th>
+                <th scope="col">Next Step</th>
               </tr>
             </thead>
 
             <tbody>
               {pricingRows.map((row) => (
-                <tr key={row.service || row.tier} title={`${row.service || row.tier}: ${row.range || row.price}. ${row.note || row.includes}`}>
+                <tr key={row.service || row.tier} title={`${row.service || row.tier}: ${row.range || row.price}. ${(row.note || row.includes).join(", ")}`}>
                   <th scope="row" className="pricing-chart-service">{row.service || row.tier}</th>
                   <td>
                     <span className="pricing-chart-pill">{row.bestFor}</span>
                   </td>
-                  <td className="pricing-chart-note">{row.note || row.includes}</td>
+                  <td className="pricing-chart-note">
+                    <ul className="pricing-chart-bullets">
+                      {(row.note || row.includes).map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </td>
                   <td className="pricing-chart-price">{row.range || row.price}</td>
+                  <td className="pricing-chart-actions">
+                    <Link
+                      className="pricing-action-btn quote"
+                      to={buildPricingActionLink(row, "quote")}
+                    >
+                      Get Quote
+                    </Link>
+                    <Link
+                      className="pricing-action-btn book"
+                      to={buildPricingActionLink(row, "book")}
+                    >
+                      {subscriptionBilling === "monthly" ? "Subscribe" : "Book"}
+                    </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -616,21 +864,85 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
+      <section className="quick-contact-cta" aria-label="Quick contact options">
+        <div className="quick-contact-card">
+          <p className="story-kicker">Need Help Now?</p>
+          <h2>
+            Still have <span className="pricing-emphasis-yellow">questions</span> or need <span className="pricing-emphasis-green">help now</span>?
+          </h2>
+          <p>
+            Text or call, DM me on socials, or email me if you like doing things the dinosaur way.
+          </p>
+
+          <div className="quick-contact-actions">
+            <a className="quick-contact-btn primary" href="sms:+12052108012">
+              Text Me
+              <span>+1 (205) 210-8012</span>
+            </a>
+            <a className="quick-contact-btn secondary" href="tel:+12052108012">
+              Call Now
+              <span>Open phone app</span>
+            </a>
+            <Link className="quick-contact-btn ghost" to="/contact">
+              DM on Socials
+              <span>Find the links</span>
+            </Link>
+            <a className="quick-contact-btn ghost" href="mailto:Kyhl.Hines@daftitude.com?subject=DaFTitude%20Help%20Request">
+              Email
+              <span>Dinosaur mode</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section id="daftitude-story" className={`story-mode-section story-mode-section--${storyMode}`}>
         <div className="story-mode-header">
-          <p className="story-kicker">{selectedStory.kicker}</p>
+          <p className="story-kicker step-pill-kicker">{selectedStory.kicker}</p>
           <h2>{selectedStory.title}</h2>
           <p>{selectedStory.text}</p>
+
+          <div className="story-lane-picker" aria-label="Choose Step 3 service lane">
+            <button
+              type="button"
+              className={storyMode === "daftitude" ? "active" : ""}
+              onMouseEnter={() => previewServiceLane("daftitude")}
+              onFocus={() => previewServiceLane("daftitude")}
+              onClick={() => selectServiceLane("daftitude")}
+            >
+              <BrandName name="DaFTitude" />
+              <span>Business systems</span>
+            </button>
+            <button
+              type="button"
+              className={storyMode === "askdaft" ? "active" : ""}
+              onMouseEnter={() => previewServiceLane("askdaft")}
+              onFocus={() => previewServiceLane("askdaft")}
+              onClick={() => selectServiceLane("askdaft")}
+            >
+              <BrandName name="AskDaFT" />
+              <span>Hands-on tech help</span>
+            </button>
+          </div>
         </div>
 
         <div className="story-board-grid">
           {selectedStory.cards.map((item) => (
             <article className="story-card" key={item.label}>
-              <div className="story-card-topline">
-                <span className="story-card-number">{item.label}</span>
+              <div className="story-card-topline story-card-topline--with-title">
+                <div className="story-card-heading-lockup">
+                  <span className="story-card-number">{item.label}</span>
+                  <h3>{item.title}</h3>
+                </div>
                 <span className="story-card-icon" aria-hidden="true">{item.icon}</span>
               </div>
-              <h3>{item.title}</h3>
               <p>{item.text}</p>
               <p className="story-card-statement">{item.statement}</p>
               <div className="story-specialties" aria-label="Specialties">
@@ -646,13 +958,17 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section className="story-mode-section system-map-section">
         <div className="story-mode-header compact">
-          <p className="story-kicker">System Map</p>
-          <h2>The DaFTitude system map.</h2>
+          <p className="story-kicker">Step 4: System Map</p>
+          <h2>What DaFTitude can connect together.</h2>
           <p>
-            These are the areas we can help explain, organize, plan around, or
-            connect into something useful.
+            Once the path and price range make sense, this map shows the larger areas
+            <BrandName name="DaFTitude" /> can explain, organize, plan around, or connect into something useful.
           </p>
         </div>
 
@@ -663,9 +979,13 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section className="story-mode-section split-identity-section">
         <div className="identity-panel daftitude-panel">
-          <p className="story-kicker">DaFTitude</p>
+          <p className="story-kicker"><BrandName name="DaFTitude" /></p>
           <h2>Business IT solutions, systems thinking, and practical strategy.</h2>
           <p>
             Use DaFTitude when you need the bigger picture. We can help sort out
@@ -681,7 +1001,7 @@ export default function Home() {
         </div>
 
         <div className="identity-panel askdaft-panel">
-          <p className="story-kicker">AskDaft</p>
+          <p className="story-kicker"><BrandName name="AskDaFT" /></p>
           <h2>Residential and personal tech services for real life.</h2>
           <p>
             Use AskDaft when you need help getting something working. We can help
@@ -689,7 +1009,7 @@ export default function Home() {
             up without the tech ego.
           </p>
           <div className="panel-buzz-row" aria-label="Common tech service requests">
-            <span title="Help with routers, Wi-Fi dead zones, printer connections, and home device issues.">Wi-Fi / printer help</span>
+            <span title="Help with routers, Wi-Fi dead zones, printer connections, and home device issues.">wi-fi / printer help</span>
             <span title="Setup for Alexa, smart bulbs, smart TVs, blinds, cameras, speakers, and other smart-home devices.">Smart home setup</span>
             <span title="Help with VA, government, school, business, or account portals from the technical side.">Portal help</span>
           </div>
@@ -697,9 +1017,13 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section className="story-mode-section hub-select-section">
         <div className="story-mode-header compact">
-          <p className="story-kicker">Hub Select</p>
+          <p className="story-kicker">Step 5: Learn More</p>
           <h2>Choose a learning or project hub.</h2>
         </div>
 
@@ -715,12 +1039,16 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-flow-arrow" aria-hidden="true">
+        <span>↓</span>
+      </div>
+
       <section className="story-mode-section final-start-section">
-        <p className="story-kicker">Next Move</p>
+        <p className="story-kicker">Final Step</p>
         <h2>Pick the right doorway.</h2>
         <p>
-          Need hands-on help? Go AskDaft. Need the bigger plan? Contact
-          DaFTitude. Want to learn first? Start with the hubs.
+          Need hands-on help? Go <BrandName name="AskDaFT" />. Need the bigger plan? Contact
+          <BrandName name="DaFTitude" />. Want to learn first? Start with the hubs.
         </p>
         <div className="game-actions centered">
           <Link className="game-btn primary" to="/askdaft">Get Tech Help</Link>
@@ -728,6 +1056,10 @@ export default function Home() {
           <Link className="game-btn ghost" to="/tech">Explore Tech Hub</Link>
         </div>
       </section>
+
+      <button type="button" className="jump-to-top-btn" onClick={scrollToTop} aria-label="Jump back to top">
+        ↑
+      </button>
     </main>
   );
 }
