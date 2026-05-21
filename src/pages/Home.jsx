@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import daftitudeBusinessHero from "../images/hero/daftitude-business-blue-object.png";
 import askDaftHero from "../images/hero/askdaft-residential-green-object.png";
@@ -91,25 +91,129 @@ const modeCtas = {
     text: "AskDaft is for direct help with home tech, small-business setup, creator tools, portals, suspicious messages, smart devices, and plain-English troubleshooting.",
     primaryText: "Preview Common Help",
     secondaryText: "Go to AskDaft",
-    primaryTo: "/askdaft",
+    primaryAction: "askdaft-table",
     secondaryAction: "askdaft-table",
     highlights: ["Wi-Fi / printer help", "smart-home setup", "AI tools help", "scam message review"],
   },
 };
 
 const businessPricingRows = [
-  ["Clarity Call / Tech Direction", "$75–$150", "A focused session to understand the problem, options, and next move."],
-  ["Business Tech Stack Review", "$250–$750", "Review tools, accounts, workflows, gaps, risks, and cleanup opportunities."],
-  ["AI Workflow / Automation Planning", "$500–$2,500+", "Map repeatable tasks, AI use cases, automation ideas, and realistic implementation steps."],
-  ["Systems Buildout Planning", "$1,500–$5,000+", "Planning for larger website, app, dashboard, content, data, or operations systems."],
+  {
+    service: "Clarity Call / Tech Direction",
+    range: "$75–$150",
+    bestFor: "First step",
+    note: "A focused session to understand the problem, options, and next move.",
+  },
+  {
+    service: "Business Tech Stack Review",
+    range: "$250–$750",
+    bestFor: "Cleanup",
+    note: "Review tools, accounts, workflows, gaps, risks, and cleanup opportunities.",
+  },
+  {
+    service: "AI Workflow / Automation Planning",
+    range: "$500–$2,500+",
+    bestFor: "Automation",
+    note: "Map repeatable tasks, AI use cases, automation ideas, and realistic implementation steps.",
+  },
+  {
+    service: "Systems Buildout Planning",
+    range: "$1,500–$5,000+",
+    bestFor: "Larger builds",
+    note: "Planning for larger website, app, dashboard, content, data, or operations systems.",
+  },
 ];
 
 const askDaftQuickRows = [
-  ["Quick Help", "$25–$50", "Simple question, quick setting, basic walkthrough."],
-  ["Standard Help", "$60–$125", "Troubleshooting, setup, account/device guidance, app help."],
-  ["Setup & Teach", "$100–$250", "Smart TV, printer, phone, AI tools, smart-home, creator basics."],
-  ["Full Tech Rescue", "$250+", "Messy multi-device/account problem that needs deeper cleanup."],
+  {
+    tier: "Quick Help",
+    price: "$25–$50",
+    label: "Fast Fix",
+    description: "Simple question, quick setting, basic walkthrough.",
+    features: ["One focused issue", "Plain-English walkthrough", "Best for quick answers"],
+    cta: "Start Small",
+  },
+  {
+    tier: "Standard Help",
+    price: "$60–$125",
+    label: "Most Common",
+    description: "Troubleshooting, setup, account/device guidance, app help.",
+    features: ["Device or account help", "Setup guidance", "Clean next-step plan"],
+    cta: "Get Help",
+    featured: true,
+  },
+  {
+    tier: "Setup & Teach",
+    price: "$100–$250",
+    label: "Hands-On",
+    description: "Smart TV, printer, phone, AI tools, smart-home, creator basics.",
+    features: ["Setup plus teaching", "Smart-home basics", "Creator or AI tool help"],
+    cta: "Book Setup",
+  },
+  {
+    tier: "Full Tech Rescue",
+    price: "$250+",
+    label: "Deep Cleanup",
+    description: "Messy multi-device/account problem that needs deeper cleanup.",
+    features: ["Multi-step cleanup", "Account/device sorting", "Bigger tech messes"],
+    cta: "Start Rescue",
+  },
 ];
+
+const businessMonthlyRows = [
+  {
+    tier: "Business Check-In",
+    bestFor: "Light guidance",
+    includes: "Best for solo owners or creators who need a recurring strategy touchpoint, light tool review, and simple next-step planning.",
+    price: "$150–$250/mo",
+  },
+  {
+    tier: "Tech Stack Support",
+    bestFor: "Ongoing cleanup",
+    includes: "Best for businesses that need recurring help reviewing apps, accounts, workflows, files, automations, and system clutter.",
+    price: "$300–$600/mo",
+  },
+  {
+    tier: "AI Workflow Partner",
+    bestFor: "Automation growth",
+    includes: "Best for businesses actively planning AI workflows, repeatable automations, content systems, dashboards, or internal process improvements.",
+    price: "$750–$1,500/mo",
+  },
+  {
+    tier: "Systems Partner",
+    bestFor: "Deeper build support",
+    includes: "Best for larger ongoing planning across websites, apps, dashboards, business systems, data, content, and operations support.",
+    price: "Custom",
+  },
+];
+
+const askDaftMonthlyRows = [
+  {
+    tier: "Monthly Check-In",
+    bestFor: "Light upkeep",
+    includes: "Best for small questions, simple account/device checks, update help, and one focused monthly tech issue. Includes 1 visit per month, up to 1 hour.",
+    price: "$25–$55/mo",
+  },
+  {
+    tier: "Basic Tech Support",
+    bestFor: "Ongoing help",
+    includes: "Best for people who need regular help with devices, apps, smart-home basics, portals, and simple troubleshooting. Includes 2 visits per month, up to 1 hour each.",
+    price: "$100–$150/mo",
+  },
+  {
+    tier: "Priority Tech Support",
+    bestFor: "Busy homes",
+    includes: "Best for households, creators, or small teams with recurring setup, cleanup, troubleshooting, and workflow needs. Includes 2 visits per month, up to 3 hours per visit.",
+    price: "$200–$275/mo",
+  },
+  {
+    tier: "Managed Tech Partner",
+    bestFor: "Deeper support",
+    includes: "Best for people or small businesses that want a consistent tech partner for planning, setup, cleanup, AI tools, accounts, and systems support. Scope is customized after review.",
+    price: "Custom",
+  },
+];
+
 const storyboards = {
   daftitude: {
     kicker: "The Breakdown",
@@ -203,37 +307,59 @@ export default function Home() {
   const [activePath, setActivePath] = useState("default");
   const [storyMode, setStoryMode] = useState("daftitude");
   const [lockedStoryMode, setLockedStoryMode] = useState("daftitude");
+  const [subscriptionBilling, setSubscriptionBilling] = useState("oneTime");
+  const [pricingAudience, setPricingAudience] = useState("business");
+  const heroSectionRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const particleTarget = document.getElementById("particles-js");
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const coarsePointer = window.matchMedia?.("(pointer: coarse)")?.matches;
+    const narrowScreen = window.matchMedia?.("(max-width: 760px)")?.matches;
+
+    if (!particleTarget || reducedMotion || coarsePointer || narrowScreen) {
+      if (particleTarget) particleTarget.innerHTML = "";
+      return undefined;
+    }
+
     let attempts = 0;
     let cancelled = false;
+    let retryTimer;
 
     const bootParticles = () => {
       if (cancelled) return;
 
-      const particleTarget = document.getElementById("particles-js");
-      const particlesReady = typeof window !== "undefined" && window.particlesJS;
+      const particlesReady = window.particlesJS;
 
-      if (particleTarget && particlesReady) {
+      if (particlesReady) {
         window.particlesJS.load("particles-js", "/particles-config.json");
         return;
       }
 
       attempts += 1;
 
-      if (attempts < 40) {
-        window.setTimeout(bootParticles, 100);
+      if (attempts < 20) {
+        retryTimer = window.setTimeout(bootParticles, 150);
       }
     };
 
-    bootParticles();
+    const bootWhenIdle = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 250));
+    const idleId = bootWhenIdle(bootParticles);
 
     return () => {
       cancelled = true;
-      const particleTarget = document.getElementById("particles-js");
-      if (particleTarget) {
-        particleTarget.innerHTML = "";
+
+      if (retryTimer) {
+        window.clearTimeout(retryTimer);
       }
+
+      if (window.cancelIdleCallback && typeof idleId === "number") {
+        window.cancelIdleCallback(idleId);
+      }
+
+      particleTarget.innerHTML = "";
     };
   }, []);
 
@@ -244,12 +370,35 @@ export default function Home() {
   const selectedStory = storyboards[storyMode] || storyboards.daftitude;
   const selectedCta = modeCtas[storyMode] || modeCtas.daftitude;
 
+  const isBusinessPricing = pricingAudience === "business";
+  const isOneTimePricing = subscriptionBilling === "oneTime";
+  const pricingRows = isBusinessPricing
+    ? isOneTimePricing
+      ? businessPricingRows
+      : businessMonthlyRows
+    : isOneTimePricing
+      ? askDaftQuickRows.map((row) => ({
+          tier: row.tier,
+          bestFor: row.label,
+          includes: row.description,
+          price: row.price,
+        }))
+      : askDaftMonthlyRows;
+  const pricingHeader = isBusinessPricing
+    ? isOneTimePricing
+      ? "DaFTitude Business Solutions — One-Time"
+      : "DaFTitude Business Solutions — Monthly"
+    : isOneTimePricing
+      ? "AskDaFT Tech Help — One-Time"
+      : "AskDaFT Tech Help — Monthly";
+
   const previewStoryMode = (mode) => {
+    setActivePath(mode);
     setStoryMode(mode);
-    setLockedStoryMode(mode);
   };
 
   const selectStoryMode = (mode) => {
+    setActivePath(mode);
     setStoryMode(mode);
     setLockedStoryMode(mode);
 
@@ -267,8 +416,20 @@ export default function Home() {
   };
 
   const resetStoryPreview = () => {
-    setActivePath("default");
+    setActivePath(lockedStoryMode);
     setStoryMode(lockedStoryMode);
+  };
+
+  const handleHeroPointerMove = (event) => {
+    if (event.pointerType !== "mouse" || !heroSectionRef.current) return;
+
+    const bounds = heroSectionRef.current.getBoundingClientRect();
+    const pointerX = event.clientX - bounds.left;
+    const nextPath = pointerX < bounds.width / 2 ? "daftitude" : "askdaft";
+
+    if (nextPath !== activePath) {
+      previewStoryMode(nextPath);
+    }
   };
 
   return (
@@ -276,21 +437,17 @@ export default function Home() {
       <div id="particles-js" className="home-particles" aria-hidden="true" />
 
       <section
+        ref={heroSectionRef}
         className={`game-start-screen is-${activePath} story-${storyMode}`}
-        onMouseLeave={resetStoryPreview}
+        onPointerMove={handleHeroPointerMove}
+        onPointerLeave={resetStoryPreview}
       >
         <button
           type="button"
           className="game-path game-path-daftitude"
           style={{ "--hero-image": `url(${daftitudeBusinessHero})` }}
-          onMouseEnter={() => {
-            setActivePath("daftitude");
-            previewStoryMode("daftitude");
-          }}
-          onFocus={() => {
-            setActivePath("daftitude");
-            previewStoryMode("daftitude");
-          }}
+          onMouseEnter={() => previewStoryMode("daftitude")}
+          onFocus={() => previewStoryMode("daftitude")}
           onClick={() => selectStoryMode("daftitude")}
         >
           <span className="path-kicker">Business Solutions</span>
@@ -302,14 +459,8 @@ export default function Home() {
           type="button"
           className="game-path game-path-askdaft"
           style={{ "--hero-image": `url(${askDaftHero})` }}
-          onMouseEnter={() => {
-            setActivePath("askdaft");
-            previewStoryMode("askdaft");
-          }}
-          onFocus={() => {
-            setActivePath("askdaft");
-            previewStoryMode("askdaft");
-          }}
+          onMouseEnter={() => previewStoryMode("askdaft")}
+          onFocus={() => previewStoryMode("askdaft")}
           onClick={() => selectStoryMode("askdaft")}
         >
           <span className="path-kicker">Tech Services</span>
@@ -340,38 +491,9 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="game-bottom-hint">Hover a side. Choose a path. Scroll for story mode.</div>
+        <div className="game-bottom-hint">Move left or right. Pick a path. Scroll for story mode.</div>
       </section>
 
-      <section id="daftitude-story" className={`story-mode-section story-mode-section--${storyMode}`}>
-        <div className="story-mode-header">
-          <p className="story-kicker">{selectedStory.kicker}</p>
-          <h2>{selectedStory.title}</h2>
-          <p>{selectedStory.text}</p>
-        </div>
-
-        <div className="story-board-grid">
-          {selectedStory.cards.map((item) => (
-            <article className="story-card" key={item.label}>
-              <div className="story-card-topline">
-                <span className="story-card-number">{item.label}</span>
-                <span className="story-card-icon" aria-hidden="true">{item.icon}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <p className="story-card-statement">{item.statement}</p>
-              <div className="story-specialties" aria-label="Specialties">
-                <strong>Specialties</strong>
-                <ul>
-                  {item.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className={`story-mode-section mode-cta-section mode-cta-section--${storyMode}`}>
         <div className="mode-cta-panel">
@@ -414,65 +536,114 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="average-pricing" className={`story-mode-section average-pricing-section average-pricing-section--${storyMode}`}>
-        {storyMode === "daftitude" ? (
-          <>
-            <div className="story-mode-header compact">
-              <p className="story-kicker">On Average</p>
-              <h2>Ballpark pricing for DaFTitude business services.</h2>
-              <p>
-                These are planning ranges, not locked quotes. Final pricing depends on scope,
-                urgency, tools involved, research needed, and whether the work is consulting,
-                implementation, or both.
-              </p>
+      <section id="average-pricing" className="story-mode-section subscription-section average-pricing-section">
+        <div className="story-mode-header compact pricing-chart-intro">
+          <p className="story-kicker">Ballpark Chart</p>
+          <h2>Pick a service path, then compare the range.</h2>
+          <p>
+            Switch between DaFTitude Business and AskDaFT, then choose One Time or Monthly Service.
+            The chart updates to show the right plan, best use case, scope, and price range.
+          </p>
+        </div>
+
+        <div className="subscription-toggle-card">
+          <div className="subscription-toggle-topline">
+            <div className="pricing-toggle-heading">
+              <span className="subscription-mini-label">Now Viewing</span>
+              <h3>{pricingHeader}</h3>
             </div>
 
-            <div className="pricing-table-lite" role="table" aria-label="DaFTitude business service ballpark pricing">
-              {businessPricingRows.map(([service, range, note]) => (
-                <div className="pricing-row" role="row" key={service}>
-                  <div role="cell">
-                    <strong>{service}</strong>
-                    <span>{note}</span>
-                  </div>
-                  <b role="cell">{range}</b>
-                </div>
+            <div className="subscription-toggle-stack">
+              <div className="subscription-toggle" role="group" aria-label="Choose pricing audience">
+                <button
+                  type="button"
+                  className={pricingAudience === "business" ? "active" : ""}
+                  onClick={() => setPricingAudience("business")}
+                >
+                  DaFTitude Business
+                </button>
+                <button
+                  type="button"
+                  className={pricingAudience === "askdaft" ? "active" : ""}
+                  onClick={() => setPricingAudience("askdaft")}
+                >
+                  AskDaFT
+                </button>
+              </div>
+
+              <div className="subscription-toggle" role="group" aria-label="Choose pricing type">
+                <button
+                  type="button"
+                  className={subscriptionBilling === "oneTime" ? "active" : ""}
+                  onClick={() => setSubscriptionBilling("oneTime")}
+                >
+                  One Time
+                </button>
+                <button
+                  type="button"
+                  className={subscriptionBilling === "monthly" ? "active" : ""}
+                  onClick={() => setSubscriptionBilling("monthly")}
+                >
+                  Monthly Service
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <table className="pricing-chart subscription-chart" aria-label={`${pricingHeader} pricing chart`}>
+            <thead>
+              <tr>
+                <th scope="col">{isBusinessPricing && isOneTimePricing ? "Service" : "Plan"}</th>
+                <th scope="col">Best For</th>
+                <th scope="col">What It Covers</th>
+                <th scope="col">{isOneTimePricing ? "Ballpark" : "Monthly Range"}</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {pricingRows.map((row) => (
+                <tr key={row.service || row.tier} title={`${row.service || row.tier}: ${row.range || row.price}. ${row.note || row.includes}`}>
+                  <th scope="row" className="pricing-chart-service">{row.service || row.tier}</th>
+                  <td>
+                    <span className="pricing-chart-pill">{row.bestFor}</span>
+                  </td>
+                  <td className="pricing-chart-note">{row.note || row.includes}</td>
+                  <td className="pricing-chart-price">{row.range || row.price}</td>
+                </tr>
               ))}
-            </div>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-            <div className="game-actions centered">
-              <Link className="game-btn primary" to="/contact">Fill Out Business Form</Link>
-              <Link className="game-btn ghost" to="/mission">Read the Mission</Link>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="story-mode-header compact">
-              <p className="story-kicker">AskDaft Quick Table</p>
-              <h2>Basic tech help starting points.</h2>
-              <p>
-                These are simple starting ranges for common help requests. AskDaft keeps it plain:
-                what is wrong, what you need working, and what the clean next step should be.
-              </p>
-            </div>
+      <section id="daftitude-story" className={`story-mode-section story-mode-section--${storyMode}`}>
+        <div className="story-mode-header">
+          <p className="story-kicker">{selectedStory.kicker}</p>
+          <h2>{selectedStory.title}</h2>
+          <p>{selectedStory.text}</p>
+        </div>
 
-            <div className="pricing-table-lite" role="table" aria-label="AskDaft quick tech help pricing">
-              {askDaftQuickRows.map(([service, range, note]) => (
-                <div className="pricing-row" role="row" key={service}>
-                  <div role="cell">
-                    <strong>{service}</strong>
-                    <span>{note}</span>
-                  </div>
-                  <b role="cell">{range}</b>
-                </div>
-              ))}
-            </div>
-
-            <div className="game-actions centered">
-              <Link className="game-btn primary" to="/askdaft">Start with AskDaft</Link>
-              <Link className="game-btn ghost" to="/contact">Ask a Question First</Link>
-            </div>
-          </>
-        )}
+        <div className="story-board-grid">
+          {selectedStory.cards.map((item) => (
+            <article className="story-card" key={item.label}>
+              <div className="story-card-topline">
+                <span className="story-card-number">{item.label}</span>
+                <span className="story-card-icon" aria-hidden="true">{item.icon}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <p className="story-card-statement">{item.statement}</p>
+              <div className="story-specialties" aria-label="Specialties">
+                <strong>Specialties</strong>
+                <ul>
+                  {item.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="story-mode-section system-map-section">

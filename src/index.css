@@ -957,6 +957,586 @@ p {
 }
 
 /* ======================================================
+   Lightweight Pricing Tables
+   Price-list comparison chart style.
+====================================================== */
+
+.pricing-table-lite {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: min(1040px, calc(100% - 2rem));
+  margin: 2.25rem auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035)),
+    rgba(5, 9, 18, 0.92);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.pricing-table-lite::before {
+  content: "Service\AWhat it covers\ABallpark";
+  display: grid;
+  grid-template-columns: minmax(230px, 0.82fr) minmax(340px, 1.38fr) minmax(190px, 0.5fr);
+  white-space: pre;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.28), rgba(125, 255, 178, 0.11)),
+    rgba(12, 199, 246, 0.12);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pricing-table-lite::before,
+.pricing-row {
+  column-gap: 0;
+}
+
+.pricing-table-lite::before {
+  align-items: stretch;
+}
+
+.pricing-table-lite::before {
+  text-align: left;
+}
+
+.pricing-table-lite::before {
+  padding: 0;
+}
+
+.pricing-table-lite::before {
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
+}
+
+.pricing-table-lite::before {
+  word-spacing: normal;
+}
+
+.pricing-table-lite::before {
+  place-items: stretch;
+}
+
+.pricing-table-lite::before {
+  background-clip: padding-box;
+}
+
+.pricing-table-lite::before {
+  min-height: 54px;
+}
+
+.pricing-row {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.82fr) minmax(340px, 1.38fr) minmax(190px, 0.5fr);
+  min-height: 82px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.pricing-row:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.pricing-row:last-child {
+  border-bottom: 0;
+}
+
+.pricing-row:hover,
+.pricing-row:focus-within {
+  background: rgba(12, 199, 246, 0.085);
+}
+
+.pricing-service,
+.pricing-row > div:first-child {
+  display: contents;
+}
+
+.pricing-service strong,
+.pricing-row > div:first-child strong,
+.pricing-service span,
+.pricing-row > div:first-child span,
+.pricing-range,
+.pricing-row > b:last-child {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 1rem 1.05rem;
+}
+
+.pricing-table-lite::before {
+  align-items: center;
+}
+
+.pricing-table-lite::before {
+  background-color: rgba(12, 199, 246, 0.12);
+}
+
+.pricing-table-lite::before {
+  color: transparent;
+}
+
+.pricing-table-lite::after {
+  content: "Service\AWhat it covers\ABallpark";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.82fr) minmax(340px, 1.38fr) minmax(190px, 0.5fr);
+  white-space: pre;
+  min-height: 54px;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pricing-table-lite::after,
+.pricing-table-lite::before {
+  grid-auto-flow: column;
+}
+
+.pricing-table-lite::after {
+  align-items: stretch;
+}
+
+.pricing-table-lite::after::first-line {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.pricing-table-lite::after {
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
+}
+
+.pricing-table-lite::after,
+.pricing-table-lite::before {
+  overflow: hidden;
+}
+
+.pricing-table-lite::after {
+  background: transparent;
+}
+
+.pricing-table-lite::after {
+  z-index: 2;
+}
+
+.pricing-row:first-child {
+  margin-top: 54px;
+}
+
+.pricing-table-lite::after {
+  padding: 0;
+}
+
+.pricing-table-lite::after {
+  --cell-pad: 1rem 1.05rem;
+}
+
+.pricing-table-lite::after {
+  background-image:
+    linear-gradient(90deg, transparent calc(100% / 3), rgba(255, 255, 255, 0.14) calc(100% / 3), transparent calc((100% / 3) + 1px)),
+    linear-gradient(90deg, transparent calc((100% / 3) * 2), rgba(255, 255, 255, 0.14) calc((100% / 3) * 2), transparent calc(((100% / 3) * 2) + 1px));
+}
+
+.pricing-table-lite::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.pricing-service strong,
+.pricing-row > div:first-child strong {
+  color: #fff;
+  font-size: clamp(0.98rem, 1.25vw, 1.12rem);
+  font-weight: 950;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.pricing-service span,
+.pricing-row > div:first-child span {
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.pricing-range,
+.pricing-row > b:last-child {
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(12, 199, 246, 0.07);
+  color: #061017;
+  font-size: 1rem;
+  font-weight: 950;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.pricing-range::before,
+.pricing-row > b:last-child::before {
+  content: "";
+  position: absolute;
+}
+
+.pricing-range,
+.pricing-row > b:last-child {
+  position: relative;
+}
+
+.pricing-range,
+.pricing-row > b:last-child {
+  color: #061017;
+}
+
+.pricing-range,
+.pricing-row > b:last-child {
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.9));
+}
+
+.pricing-row:nth-child(3n + 1) .pricing-range,
+.pricing-row:nth-child(3n + 1) > b:last-child {
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+.pricing-row:nth-child(3n + 2) .pricing-range,
+.pricing-row:nth-child(3n + 2) > b:last-child {
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.9));
+}
+
+.pricing-row:nth-child(3n + 3) .pricing-range,
+.pricing-row:nth-child(3n + 3) > b:last-child {
+  background: linear-gradient(135deg, rgba(255, 199, 45, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+@media (max-width: 860px) {
+  .pricing-table-lite {
+    gap: 0.8rem;
+    width: min(680px, calc(100% - 2rem));
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .pricing-table-lite::before,
+  .pricing-table-lite::after {
+    display: none;
+  }
+
+  .pricing-row:first-child {
+    margin-top: 0;
+  }
+
+  .pricing-row {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    background: rgba(5, 9, 18, 0.82);
+    box-shadow: 0 16px 54px rgba(0, 0, 0, 0.24);
+  }
+
+  .pricing-service,
+  .pricing-row > div:first-child {
+    display: grid;
+  }
+
+  .pricing-service strong,
+  .pricing-row > div:first-child strong,
+  .pricing-service span,
+  .pricing-row > div:first-child span,
+  .pricing-range,
+  .pricing-row > b:last-child {
+    display: block;
+    padding: 0.9rem 1rem;
+  }
+
+  .pricing-service span,
+  .pricing-row > div:first-child span,
+  .pricing-range,
+  .pricing-row > b:last-child {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .pricing-range,
+  .pricing-row > b:last-child {
+    white-space: normal;
+  }
+}
+
+/* ======================================================
+   AskDaft Pricing Cards
+====================================================== */
+
+.askdaft-pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  width: min(1120px, 100%);
+  margin: 1.75rem auto 0;
+}
+
+.askdaft-pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  overflow: hidden;
+  padding: clamp(1.1rem, 2vw, 1.45rem);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(12, 199, 246, 0.13), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.34);
+  text-align: left;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.askdaft-pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.055), transparent),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 54px);
+  opacity: 0.6;
+}
+
+.askdaft-pricing-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.askdaft-pricing-card:hover,
+.askdaft-pricing-card:focus-within {
+  transform: translateY(-5px);
+  border-color: rgba(12, 199, 246, 0.38);
+  box-shadow:
+    0 24px 85px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(12, 199, 246, 0.11);
+}
+
+.askdaft-pricing-card.featured {
+  border-color: rgba(12, 199, 246, 0.58);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(12, 199, 246, 0.28), transparent 58%),
+    linear-gradient(180deg, rgba(12, 199, 246, 0.15), rgba(255, 255, 255, 0.035)),
+    rgba(5, 9, 18, 0.86);
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.48),
+    0 0 38px rgba(12, 199, 246, 0.18);
+  transform: translateY(-8px);
+}
+
+.askdaft-pricing-card.featured:hover,
+.askdaft-pricing-card.featured:focus-within {
+  transform: translateY(-12px);
+}
+
+.askdaft-pricing-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-height: 30px;
+  margin-bottom: 1rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid rgba(12, 199, 246, 0.34);
+  border-radius: var(--radius-pill);
+  background: rgba(12, 199, 246, 0.10);
+  color: rgba(125, 255, 178, 0.94);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.askdaft-pricing-card.featured .askdaft-pricing-label {
+  color: #061017;
+  border-color: rgba(12, 199, 246, 0.5);
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 0 22px rgba(12, 199, 246, 0.18);
+}
+
+.askdaft-pricing-card h3 {
+  margin: 0 0 0.65rem;
+  color: #fff;
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  letter-spacing: -0.04em;
+}
+
+.askdaft-pricing-description {
+  min-height: 5.2rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.askdaft-pricing-price {
+  margin: 1.15rem 0 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.askdaft-pricing-price strong {
+  display: block;
+  color: #fff;
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.askdaft-pricing-price span {
+  display: block;
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.askdaft-pricing-features {
+  display: grid;
+  gap: 0.62rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.askdaft-pricing-features li {
+  position: relative;
+  padding-left: 1.55rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.askdaft-pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: rgba(125, 255, 178, 0.14);
+  color: rgba(125, 255, 178, 0.96);
+  font-size: 0.68rem;
+  font-weight: 950;
+}
+
+.askdaft-pricing-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.72rem 0.9rem;
+  border: 1px solid rgba(12, 199, 246, 0.34);
+  border-radius: var(--radius-pill);
+  background: rgba(12, 199, 246, 0.10);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 900;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.askdaft-pricing-link:hover,
+.askdaft-pricing-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.55);
+  background: rgba(12, 199, 246, 0.16);
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.14);
+}
+
+.askdaft-pricing-card.featured .askdaft-pricing-link {
+  color: #061017;
+  border-color: rgba(12, 199, 246, 0.48);
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.98), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.20);
+}
+
+@media (max-width: 1100px) {
+  .askdaft-pricing-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-pricing-card.featured {
+    transform: none;
+  }
+
+  .askdaft-pricing-card.featured:hover,
+  .askdaft-pricing-card.featured:focus-within {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 640px) {
+  .askdaft-pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-pricing-card {
+    min-height: auto;
+  }
+
+  .askdaft-pricing-description {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .askdaft-pricing-card,
+  .askdaft-pricing-link {
+    transition: none;
+  }
+
+  .askdaft-pricing-card:hover,
+  .askdaft-pricing-card:focus-within,
+  .askdaft-pricing-card.featured,
+  .askdaft-pricing-card.featured:hover,
+  .askdaft-pricing-card.featured:focus-within,
+  .askdaft-pricing-link:hover,
+  .askdaft-pricing-link:focus-visible {
+    transform: none;
+  }
+}
+
+/* ======================================================
    Mode CTA Mini Bubbles
 ====================================================== */
 
@@ -1558,9 +2138,9 @@ p {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.55;
   mix-blend-mode: screen;
-  animation: daft-particle-color-cycle 9s ease-in-out infinite;
+  animation: daft-particle-color-cycle 14s ease-in-out infinite;
 }
 
 @keyframes daft-particle-color-cycle {
@@ -1585,6 +2165,13 @@ p {
   display: block;
   width: 100% !important;
   height: 100% !important;
+}
+
+@media (max-width: 760px), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .home-particles,
+  #particles-js {
+    display: none;
+  }
 }
 
 .game-start-screen,
@@ -1618,4 +2205,336 @@ p {
 
 .game-path::after {
   z-index: 1;
+}
+
+/* ======================================================
+   FINAL: Real Business Pricing Chart
+   Targets the actual <table className="pricing-chart"> in Home.jsx.
+====================================================== */
+
+.pricing-chart {
+  position: relative;
+  z-index: 20;
+  width: min(1060px, calc(100% - 2rem));
+  margin: 2.35rem auto 0;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(5, 9, 18, 0.94);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.pricing-chart thead {
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(125, 255, 178, 0.68)),
+    rgba(12, 199, 246, 0.88);
+}
+
+.pricing-chart th,
+.pricing-chart td {
+  padding: 1rem 1.05rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  vertical-align: middle;
+  text-align: left;
+}
+
+.pricing-chart th:last-child,
+.pricing-chart td:last-child {
+  border-right: 0;
+}
+
+.pricing-chart thead th {
+  color: #061017;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pricing-chart tbody tr {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.pricing-chart tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pricing-chart tbody tr:hover {
+  background: rgba(12, 199, 246, 0.105);
+}
+
+.pricing-chart-service {
+  width: 25%;
+  color: #ffffff;
+  font-size: clamp(0.98rem, 1.15vw, 1.12rem);
+  font-weight: 950;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.pricing-chart-note {
+  width: 40%;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.pricing-chart-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(125, 255, 178, 0.3);
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.11);
+  color: rgba(125, 255, 178, 0.96);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pricing-chart-price {
+  width: 18%;
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.9));
+  color: #061017;
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  font-weight: 950;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pricing-chart tbody tr:nth-child(2) .pricing-chart-price {
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+.pricing-chart tbody tr:nth-child(3) .pricing-chart-price {
+  background: linear-gradient(135deg, rgba(255, 199, 45, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+.pricing-chart tbody tr:nth-child(4) .pricing-chart-price {
+  background: linear-gradient(135deg, rgba(255, 118, 118, 0.95), rgba(255, 255, 255, 0.88));
+}
+
+@media (max-width: 860px) {
+  .pricing-chart,
+  .pricing-chart thead,
+  .pricing-chart tbody,
+  .pricing-chart tr,
+  .pricing-chart th,
+  .pricing-chart td {
+    display: block;
+    width: 100%;
+  }
+
+  .pricing-chart {
+    border-collapse: separate;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .pricing-chart thead {
+    display: none;
+  }
+
+  .pricing-chart tbody tr {
+    overflow: hidden;
+    margin-bottom: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    background: rgba(5, 9, 18, 0.9);
+    box-shadow: 0 16px 54px rgba(0, 0, 0, 0.24);
+  }
+
+  .pricing-chart th,
+  .pricing-chart td {
+    border-right: 0;
+  }
+
+  .pricing-chart-service::before,
+  .pricing-chart-note::before,
+  .pricing-chart-price::before,
+  .pricing-chart td:first-of-type::before {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: rgba(125, 255, 178, 0.86);
+    font-size: 0.68rem;
+    font-weight: 950;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .pricing-chart-service::before {
+    content: "Service";
+  }
+
+  .pricing-chart td:first-of-type::before {
+    content: "Best For";
+  }
+
+  .pricing-chart-note::before {
+    content: "What It Covers";
+  }
+
+  .pricing-chart-price::before {
+    content: "Ballpark";
+    color: rgba(6, 16, 23, 0.72);
+  }
+
+  .pricing-chart-price {
+    white-space: normal;
+  }
+}
+/* ======================================================
+   Pricing Toggle Cleanup
+====================================================== */
+
+.pricing-chart-intro {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.pricing-chart-intro h2,
+.pricing-chart-intro p {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.subscription-toggle-card {
+  position: relative;
+  z-index: 10;
+  width: min(1060px, calc(100% - 2rem));
+  margin: 2rem auto 0;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(12, 199, 246, 0.15), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+}
+
+.subscription-toggle-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.15rem;
+}
+
+.pricing-toggle-heading {
+  min-width: 260px;
+  text-align: left;
+}
+
+.subscription-mini-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.35rem;
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.pricing-toggle-heading h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.subscription-toggle-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.7rem;
+}
+
+.subscription-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.subscription-toggle button {
+  min-height: 38px;
+  padding: 0.58rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.subscription-toggle button:hover,
+.subscription-toggle button:focus-visible {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.subscription-toggle button.active {
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.98), rgba(255, 255, 255, 0.9));
+  color: #061017;
+  box-shadow: 0 8px 22px rgba(12, 199, 246, 0.18);
+}
+
+.subscription-chart {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .subscription-toggle-topline {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pricing-toggle-heading {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .subscription-toggle-stack {
+    justify-content: center;
+  }
+
+  .subscription-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .subscription-toggle button {
+    flex: 1;
+  }
 }
