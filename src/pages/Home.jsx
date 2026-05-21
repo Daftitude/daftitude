@@ -74,7 +74,6 @@ const hubCards = [
   },
 ];
 
-const storyboards = {
 const modeCtas = {
   daftitude: {
     kicker: "Ballpark Planning",
@@ -90,8 +89,8 @@ const modeCtas = {
     kicker: "Quick Help Menu",
     title: "Need hands-on tech help instead? Start with AskDaft.",
     text: "AskDaft is for direct help with home tech, small-business setup, creator tools, portals, suspicious messages, smart devices, and plain-English troubleshooting.",
-    primaryText: "Go to AskDaft",
-    secondaryText: "Preview Common Help",
+    primaryText: "Preview Common Help",
+    secondaryText: "Go to AskDaft",
     primaryTo: "/askdaft",
     secondaryAction: "askdaft-table",
     highlights: ["Wi-Fi / printer help", "smart-home setup", "AI tools help", "scam message review"],
@@ -111,6 +110,7 @@ const askDaftQuickRows = [
   ["Setup & Teach", "$100–$250", "Smart TV, printer, phone, AI tools, smart-home, creator basics."],
   ["Full Tech Rescue", "$250+", "Messy multi-device/account problem that needs deeper cleanup."],
 ];
+const storyboards = {
   daftitude: {
     kicker: "The Breakdown",
     title: "Technology is everywhere. Clarity is not.",
@@ -119,12 +119,11 @@ const askDaftQuickRows = [
       {
         label: "01",
         icon: "🧠",
-        title: "For the bigger tech picture.",
-        text: "We can help make sense of the tools, systems, risks, and ideas around you — then turn them into a cleaner plan.",
+        title: "Make sense of the system.",
+        text: "We help organize tools, risks, ideas, and workflows into a clearer plan.",
         statement: (
           <>
-            <strong>We can organize a clear plan</strong> before you buy, build,
-            automate, or scale.
+            <strong>Plan before you buy, build, automate, or scale.</strong>
           </>
         ),
         tags: ["business automation", "AI workflow", "tech strategy", "systems planning"],
@@ -132,12 +131,11 @@ const askDaftQuickRows = [
       {
         label: "02",
         icon: "🛠️",
-        title: "For the tech that keeps getting in the way.",
-        text: "We can help with the stuff people actually need working: Wi-Fi, printers, phones, smart homes, accounts, portals, creator setups, and confusing apps.",
+        title: "Fix the tech friction.",
+        text: "AskDaft helps with Wi-Fi, printers, phones, smart homes, accounts, apps, and setup problems.",
         statement: (
           <>
-            <strong>We can walk through it in plain English</strong> so the devices,
-            accounts, apps, and setups people use actually make sense.
+            <strong>Clear help without the tech ego.</strong>
           </>
         ),
         tags: ["Wi-Fi help", "smart home", "printer help", "setup support"],
@@ -145,12 +143,11 @@ const askDaftQuickRows = [
       {
         label: "03",
         icon: "✨",
-        title: "The point is confidence, not confusion.",
-        text: "The goal is simple: explain what matters, cut through the noise, and help people make better decisions with the tech already shaping their lives.",
+        title: "Stop guessing.",
+        text: "We explain what matters, cut through the noise, and help people make smarter digital decisions.",
         statement: (
           <>
-            <strong>We help turn confusion into confidence</strong> with better habits,
-            better questions, and smarter digital decisions.
+            <strong>Turn confusion into confidence.</strong>
           </>
         ),
         tags: ["plain English", "digital confidence", "tech learning", "safer habits"],
@@ -165,11 +162,11 @@ const askDaftQuickRows = [
       {
         label: "01",
         icon: "🏠",
-        title: "For home tech that should be simple.",
-        text: "We can help with the everyday setup problems that waste time: Wi-Fi, printers, smart TVs, phones, updates, apps, accounts, and smart-home devices.",
+        title: "Make home tech simple.",
+        text: "Help with Wi-Fi, printers, smart TVs, phones, apps, accounts, and smart-home devices.",
         statement: (
           <>
-            <strong>We can help make the tech in your house feel less like a fight</strong> and more like something that works for you.
+            <strong>Get the setup working without the fight.</strong>
           </>
         ),
         tags: ["Wi-Fi fixes", "printer setup", "smart TV help", "smart home"],
@@ -177,11 +174,11 @@ const askDaftQuickRows = [
       {
         label: "02",
         icon: "🎙️",
-        title: "For creators, students, and people starting something.",
-        text: "We can help people figure out realistic setups for streaming, podcasting, studying, AI tools, content workflows, online business tools, and beginner-friendly upgrades.",
+        title: "Build the right setup.",
+        text: "Help choosing realistic gear, apps, AI tools, streaming setups, study systems, and workflows.",
         statement: (
           <>
-            <strong>We can help you choose and organize the right setup</strong> before you waste money on the wrong gear or apps.
+            <strong>Choose smarter before you waste money.</strong>
           </>
         ),
         tags: ["streaming setup", "podcast gear", "AI tools", "study systems"],
@@ -189,11 +186,11 @@ const askDaftQuickRows = [
       {
         label: "03",
         icon: "🧓",
-        title: "For people who need patient, plain-English support.",
-        text: "We can help parents, grandparents, seniors, and busy people understand portals, suspicious messages, device settings, smart-home controls, and basic account safety.",
+        title: "No tech shame.",
+        text: "Slow, clear help for parents, seniors, busy people, portals, suspicious messages, and account safety.",
         statement: (
           <>
-            <strong>We can slow it down, explain it clearly, and help people feel safer</strong> without making them feel behind.
+            <strong>Patient support that helps people feel safer.</strong>
           </>
         ),
         tags: ["scam review", "portal help", "account safety", "patient teaching"],
@@ -379,37 +376,40 @@ export default function Home() {
       <section className={`story-mode-section mode-cta-section mode-cta-section--${storyMode}`}>
         <div className="mode-cta-panel">
           <div className="mode-cta-copy">
-            <p className="story-kicker">{selectedCta.kicker}</p>
+            <div className="mode-cta-kicker-row">
+              <p className="story-kicker">{selectedCta.kicker}</p>
+
+              <div className="mode-cta-mini-bubbles" aria-label={`${storyMode} quick focus areas and actions`}>
+                {selectedCta.highlights.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </div>
+
             <h2>{selectedCta.title}</h2>
             <p>{selectedCta.text}</p>
 
-            <div className="panel-buzz-row" aria-label={`${storyMode} quick focus areas`}>
-              {selectedCta.highlights.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
+            <div className="mode-cta-action-row">
+              {selectedCta.primaryTo ? (
+                <Link className="game-btn primary" to={selectedCta.primaryTo}>
+                  {selectedCta.primaryText}
+                </Link>
+              ) : (
+                <button type="button" className="game-btn primary" onClick={scrollToAveragePricing}>
+                  {selectedCta.primaryText}
+                </button>
+              )}
+
+              {selectedCta.secondaryTo ? (
+                <Link className="game-btn secondary" to={selectedCta.secondaryTo}>
+                  {selectedCta.secondaryText}
+                </Link>
+              ) : (
+                <button type="button" className="game-btn secondary" onClick={scrollToAveragePricing}>
+                  {selectedCta.secondaryText}
+                </button>
+              )}
             </div>
-          </div>
-
-          <div className="mode-cta-actions">
-            {selectedCta.primaryTo ? (
-              <Link className="game-btn primary" to={selectedCta.primaryTo}>
-                {selectedCta.primaryText}
-              </Link>
-            ) : (
-              <button type="button" className="game-btn primary" onClick={scrollToAveragePricing}>
-                {selectedCta.primaryText}
-              </button>
-            )}
-
-            {selectedCta.secondaryTo ? (
-              <Link className="game-btn secondary" to={selectedCta.secondaryTo}>
-                {selectedCta.secondaryText}
-              </Link>
-            ) : (
-              <button type="button" className="game-btn secondary" onClick={scrollToAveragePricing}>
-                {selectedCta.secondaryText}
-              </button>
-            )}
           </div>
         </div>
       </section>
