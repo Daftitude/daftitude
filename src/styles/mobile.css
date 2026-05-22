@@ -1,0 +1,312 @@
+
+/* ======================================================
+   DaFTitude Responsive / Mobile Helpers
+====================================================== */
+
+@media (max-width: 920px) {
+  .split-identity-section,
+  .story-board-grid,
+  .hub-card-grid,
+  .card-grid,
+  .hub-grid,
+  .mission-grid,
+  .topic-grid,
+  .contact-section,
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .package-grid,
+  .services-feature-grid,
+  .tech-hub-container,
+  .articles-grid,
+  .briefs-grid,
+  .impact-grid,
+  .pkg-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story-card {
+    min-height: auto;
+  }
+
+  .story-card h3,
+  .story-card > p:not(.story-card-statement),
+  .story-card-statement {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .game-actions,
+  .page-actions,
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .game-btn,
+  .btn,
+  .cta-btn {
+    width: 100%;
+  }
+
+  .story-specialties ul,
+  .services-grid,
+  .package-grid,
+  .services-feature-grid,
+  .tech-hub-container,
+  .articles-grid,
+  .briefs-grid,
+  .impact-grid,
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   Home Section Gap Tightening
+====================================================== */
+
+.home-game-page .story-mode-section {
+  padding-top: clamp(2.6rem, 5vw, 4.25rem);
+  padding-bottom: clamp(2.6rem, 5vw, 4.25rem);
+}
+
+.home-game-page .mode-cta-section {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.home-game-page .average-pricing-section {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.home-game-page .mode-cta-section + .average-pricing-section {
+  margin-top: 0;
+}
+
+.home-game-page .story-mode-header {
+  margin-bottom: clamp(1.15rem, 2.5vw, 1.7rem);
+}
+
+.home-game-page .story-mode-header.compact {
+  margin-bottom: clamp(1rem, 2vw, 1.35rem);
+}
+
+.home-game-page .subscription-toggle-card {
+  margin-top: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 760px) {
+  .home-game-page .story-mode-section {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .home-game-page .mode-cta-section,
+  .home-game-page .average-pricing-section {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+/* ======================================================
+   Section Flow Arrows + Jump To Top
+====================================================== */
+
+.section-flow-arrow {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: min(var(--maxw), calc(100% - 2rem));
+  height: 0;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.section-flow-arrow span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(12, 199, 246, 0.32);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(12, 199, 246, 0.25), transparent 70%),
+    rgba(5, 9, 18, 0.86);
+  color: rgba(125, 255, 178, 0.96);
+  font-size: 1.1rem;
+  font-weight: 950;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 26px rgba(12, 199, 246, 0.16);
+  transform: translateY(-50%);
+  animation: section-arrow-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes section-arrow-pulse {
+  0%, 100% {
+    opacity: 0.72;
+    transform: translateY(-50%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(calc(-50% + 5px));
+  }
+}
+
+.floating-reading-tools {
+  position: fixed;
+  right: clamp(1rem, 2vw, 1.5rem);
+  bottom: clamp(1rem, 2vw, 1.5rem);
+  z-index: 900;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.jump-to-top-btn,
+.reading-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(12, 199, 246, 0.42);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(255, 255, 255, 0.9));
+  color: #061017;
+  cursor: pointer;
+  font-weight: 950;
+  box-shadow: 0 0 26px rgba(12, 199, 246, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.jump-to-top-btn {
+  width: 46px;
+  height: 46px;
+  font-size: 1.2rem;
+}
+
+.reading-mode-toggle {
+  flex-direction: row;
+  gap: 0.42rem;
+  min-width: 132px;
+  height: 46px;
+  padding: 0 0.82rem;
+  background: rgba(5, 9, 18, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.reading-mode-toggle span {
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.reading-mode-toggle strong {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.reading-mode-toggle.active {
+  border-color: rgba(125, 255, 178, 0.48);
+  background: rgba(125, 255, 178, 0.13);
+  box-shadow: 0 0 24px rgba(125, 255, 178, 0.16);
+}
+
+.reading-mode-toggle.active strong {
+  color: var(--green);
+}
+
+.jump-to-top-btn:hover,
+.jump-to-top-btn:focus-visible,
+.reading-mode-toggle:hover,
+.reading-mode-toggle:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 0 34px rgba(12, 199, 246, 0.32);
+}
+
+@media (max-width: 760px) {
+  .section-flow-arrow span {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .floating-reading-tools {
+    right: 0.8rem;
+    bottom: 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .jump-to-top-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .reading-mode-toggle {
+    min-width: 114px;
+    height: 42px;
+    padding: 0 0.62rem;
+    gap: 0.34rem;
+  }
+
+  .reading-mode-toggle span {
+    font-size: 0.5rem;
+  }
+
+  .reading-mode-toggle strong {
+    font-size: 0.64rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-flow-arrow span {
+    animation: none;
+  }
+
+  .jump-to-top-btn,
+  .reading-mode-toggle {
+    transition: none;
+  }
+}
+
+
+/* ======================================================
+   Reading Impairment Mode
+   OFF state reduces color-coded emphasis while preserving hero H1 branding.
+   Kept last so it wins over later card/step-specific color rules.
+====================================================== */
+
+.home-game-page.reading-impairment-mode :where(.pricing-emphasis-yellow, .pricing-emphasis-red, .pricing-emphasis-blue, .pricing-emphasis-green):not(.hero-brand-title *):not(.game-path strong *) {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode :where(.story-card-number, .story-card span, .story-specialties strong, .story-specialties li, .panel-buzz-row span, .system-chip, .chip, .keyword-chip):not(.hero-brand-title *):not(.game-path strong *) {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode .story-specialties li::before {
+  color: rgba(255, 255, 255, 0.62) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-daft,
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-itude,
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-ask {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: none !important;
+}

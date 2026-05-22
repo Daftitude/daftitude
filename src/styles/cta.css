@@ -1,0 +1,648 @@
+
+
+/* ======================================================
+   DaFTitude CTA / Lane Picker Systems
+   Mode selectors, quick contact CTA, and compact service lane pickers.
+====================================================== */
+
+/* ======================================================
+   Mode CTA Mini Bubbles
+====================================================== */
+
+.mode-cta-kicker-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  margin-bottom: 1.1rem;
+}
+
+.mode-cta-kicker-row .story-kicker {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.68rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(12, 199, 246, 0.48);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(12, 199, 246, 0.22), transparent 70%),
+    rgba(12, 199, 246, 0.14);
+  color: #29d9ff;
+  font-size: 0.9rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  box-shadow:
+    0 0 0 1px rgba(12, 199, 246, 0.08),
+    0 0 28px rgba(12, 199, 246, 0.20);
+}
+
+.mode-cta-section--askdaft .mode-cta-kicker-row .story-kicker {
+  border-color: rgba(125, 255, 178, 0.36);
+  background: rgba(125, 255, 178, 0.11);
+  box-shadow: 0 0 22px rgba(125, 255, 178, 0.12);
+}
+
+.mode-cta-mini-bubbles {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.mode-cta-mini-bubbles span,
+.mode-cta-mini-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0.42rem 0.72rem;
+  border: 1px solid rgba(12, 199, 246, 0.26);
+  border-radius: var(--radius-pill);
+  background: rgba(12, 199, 246, 0.09);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.mode-cta-copy {
+  width: min(920px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mode-cta-copy h2,
+.mode-cta-copy > p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mode-cta-copy > p {
+  max-width: 860px;
+}
+
+.mode-cta-action-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.45rem;
+}
+
+.mode-cta-mini-bubble {
+  cursor: pointer;
+  color: #061017;
+  border-color: rgba(12, 199, 246, 0.45);
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 0 18px rgba(12, 199, 246, 0.16);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.mode-cta-mini-bubble:hover,
+.mode-cta-mini-bubble:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.24);
+}
+
+.mode-cta-mini-bubble.is-secondary {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.mode-cta-section--askdaft .mode-cta-mini-bubbles span {
+  border-color: rgba(125, 255, 178, 0.24);
+  background: rgba(125, 255, 178, 0.075);
+}
+
+.mode-cta-section--askdaft .mode-cta-mini-bubble {
+  border-color: rgba(125, 255, 178, 0.42);
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 0 18px rgba(125, 255, 178, 0.14);
+}
+
+.mode-cta-section--askdaft .mode-cta-mini-bubble.is-secondary {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .mode-cta-kicker-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mode-cta-mini-bubbles {
+    justify-content: flex-start;
+  }
+
+  .mode-cta-action-row {
+    flex-direction: column;
+  }
+
+  .mode-cta-action-row .game-btn {
+    width: 100%;
+  }
+}
+
+/* ======================================================
+   Mode CTA Lead Text
+====================================================== */
+
+.mode-cta-lead-text {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  font-weight: 760;
+  line-height: 1.55;
+}
+
+.mode-cta-lead-text .brand-word {
+  font-size: 1.06em;
+}
+
+/* ======================================================
+   Skimmable Decision Copy Polish
+====================================================== */
+
+.mode-cta-copy h2 {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.mode-cta-lead-stack {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.mode-cta-lead-stack > span:first-child {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.05rem, 1.55vw, 1.25rem);
+  font-weight: 900;
+}
+
+.mode-cta-lead-stack > span:last-child {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.98rem, 1.35vw, 1.14rem);
+  font-weight: 760;
+  line-height: 1.58;
+}
+
+.pricing-skim-guide {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(980px, 100%);
+  margin: 1.35rem auto 0;
+}
+
+.pricing-skim-guide span {
+  display: block;
+  min-height: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.62);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 760;
+  line-height: 1.48;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.18);
+}
+
+.pricing-skim-guide span > strong:first-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.15);
+  color: var(--primary);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.pricing-skim-guide .brand-word {
+  font-size: 1.02em;
+}
+
+@media (max-width: 900px) {
+  .pricing-skim-guide {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   Step 1 Service Lane Picker
+====================================================== */
+
+.mode-cta-lane-picker {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(560px, 100%);
+  margin: 0.25rem auto 0.15rem;
+}
+
+.mode-cta-lane-picker button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-height: 76px;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.58);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.mode-cta-lane-picker button:hover,
+.mode-cta-lane-picker button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.4);
+  background: rgba(12, 199, 246, 0.09);
+  box-shadow: 0 0 26px rgba(12, 199, 246, 0.12);
+}
+
+.mode-cta-lane-picker button:nth-child(2):hover,
+.mode-cta-lane-picker button:nth-child(2):focus-visible {
+  border-color: rgba(125, 255, 178, 0.38);
+  background: rgba(125, 255, 178, 0.075);
+  box-shadow: 0 0 26px rgba(125, 255, 178, 0.11);
+}
+
+.mode-cta-lane-picker .brand-word {
+  font-size: clamp(1.18rem, 2.1vw, 1.55rem);
+  line-height: 1;
+}
+
+.mode-cta-lane-picker small {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.mode-cta-action-row {
+  margin-top: 1rem;
+}
+
+.mode-cta-action-row .game-btn {
+  min-height: 38px;
+  padding: 0.62rem 0.9rem;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 640px) {
+  .mode-cta-lane-picker {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   Quick Contact CTA
+====================================================== */
+
+.quick-contact-cta {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+  scroll-margin-top: calc(var(--navbar-h) + 24px);
+}
+
+.quick-contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(12, 199, 246, 0.24);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(12, 199, 246, 0.18), transparent 42%),
+    radial-gradient(circle at 82% 0%, rgba(125, 255, 178, 0.12), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.86);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+  text-align: center;
+}
+
+.quick-contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.055), transparent),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 72px);
+  opacity: 0.45;
+}
+
+.quick-contact-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.quick-contact-card .story-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  margin-bottom: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(125, 255, 178, 0.28);
+  border-radius: var(--radius-pill);
+  background: rgba(125, 255, 178, 0.08);
+  color: var(--green);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+}
+
+.quick-contact-card h2 {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: clamp(1.55rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.quick-contact-card p:not(.story-kicker) {
+  max-width: 680px;
+  margin: 0.75rem auto 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  font-weight: 720;
+  line-height: 1.55;
+}
+
+.quick-contact-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.quick-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-height: 74px;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 0.9rem;
+  font-weight: 950;
+  line-height: 1.1;
+  text-align: center;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.quick-contact-btn span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.quick-contact-btn:hover,
+.quick-contact-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.4);
+  background: rgba(12, 199, 246, 0.1);
+  box-shadow: 0 0 26px rgba(12, 199, 246, 0.13);
+}
+
+.quick-contact-btn.primary {
+  color: #061017;
+  border-color: rgba(12, 199, 246, 0.48);
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.98), rgba(255, 255, 255, 0.92));
+}
+
+.quick-contact-btn.primary span {
+  color: rgba(6, 16, 23, 0.72);
+}
+
+.quick-contact-btn.secondary {
+  color: #061017;
+  border-color: rgba(125, 255, 178, 0.46);
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(255, 255, 255, 0.9));
+}
+
+.quick-contact-btn.secondary span {
+  color: rgba(6, 16, 23, 0.72);
+}
+
+.quick-contact-btn.ghost:hover,
+.quick-contact-btn.ghost:focus-visible {
+  border-color: rgba(125, 255, 178, 0.32);
+  background: rgba(125, 255, 178, 0.075);
+  box-shadow: 0 0 24px rgba(125, 255, 178, 0.1);
+}
+
+@media (max-width: 760px) {
+  .quick-contact-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .quick-contact-cta {
+    width: min(100%, calc(100% - 1rem));
+    padding: 1rem 0;
+  }
+
+  .quick-contact-card {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .quick-contact-actions {
+    gap: 0.5rem;
+  }
+
+  .quick-contact-btn {
+    min-height: 64px;
+    padding: 0.65rem 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .quick-contact-btn span {
+    font-size: 0.6rem;
+  }
+}
+/* ======================================================
+   Quick Contact Service Lane Picker
+====================================================== */
+
+.quick-contact-lane-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(560px, 100%);
+  margin: 1rem auto 0;
+}
+
+.quick-contact-lane-picker button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-height: 72px;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.58);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.quick-contact-lane-picker button:hover,
+.quick-contact-lane-picker button:focus-visible,
+.quick-contact-lane-picker button.active,
+.mode-cta-lane-picker button.active {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.42);
+  background: rgba(12, 199, 246, 0.1);
+  box-shadow: 0 0 26px rgba(12, 199, 246, 0.14);
+}
+
+.quick-contact-lane-picker button:nth-child(2):hover,
+.quick-contact-lane-picker button:nth-child(2):focus-visible,
+.quick-contact-lane-picker button:nth-child(2).active,
+.mode-cta-lane-picker button:nth-child(2).active {
+  border-color: rgba(125, 255, 178, 0.42);
+  background: rgba(125, 255, 178, 0.085);
+  box-shadow: 0 0 26px rgba(125, 255, 178, 0.12);
+}
+
+.quick-contact-lane-picker .brand-word {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1;
+}
+
+.quick-contact-lane-picker button > span:not(.brand-daft):not(.brand-itude):not(.brand-ask) {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 460px) {
+  .quick-contact-lane-picker {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .quick-contact-lane-picker button {
+    min-height: 60px;
+    padding: 0.65rem 0.75rem;
+  }
+}
+/* ======================================================
+   Step 3 Compact Service Lane Picker
+====================================================== */
+
+.story-lane-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  width: min(430px, 100%);
+  margin: 1rem auto 0;
+}
+
+.story-lane-picker button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-height: 54px;
+  padding: 0.55rem 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
+    rgba(5, 9, 18, 0.58);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.story-lane-picker button:hover,
+.story-lane-picker button:focus-visible,
+.story-lane-picker button.active {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.42);
+  background: rgba(12, 199, 246, 0.1);
+  box-shadow: 0 0 22px rgba(12, 199, 246, 0.12);
+}
+
+.story-lane-picker button:nth-child(2):hover,
+.story-lane-picker button:nth-child(2):focus-visible,
+.story-lane-picker button:nth-child(2).active {
+  border-color: rgba(125, 255, 178, 0.42);
+  background: rgba(125, 255, 178, 0.085);
+  box-shadow: 0 0 22px rgba(125, 255, 178, 0.1);
+}
+
+.story-lane-picker .brand-word {
+  font-size: clamp(0.92rem, 1.45vw, 1.15rem);
+  line-height: 1;
+}
+
+.story-lane-picker button > span:not(.brand-daft):not(.brand-itude):not(.brand-ask) {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 460px) {
+  .story-lane-picker {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .story-lane-picker button {
+    min-height: 50px;
+  }
+}

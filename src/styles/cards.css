@@ -1,0 +1,1056 @@
+
+
+
+/* ======================================================
+   DaFTitude Card Systems
+   Step 3 cards, Step 4 resource chips, focus panels, and Step 5 hubs.
+====================================================== */
+
+/* ======================================================
+   Step 3 DaFTitude Secondary Color Override
+   Keeps DaFTitude Step 3 accents blue instead of AskDaFT green.
+====================================================== */
+
+.story-mode-section--daftitude .story-card-number,
+.story-mode-section--daftitude .story-card span {
+  color: rgba(12, 199, 246, 0.92);
+}
+
+.story-mode-section--daftitude .story-card-statement strong {
+  color: var(--primary);
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
+}
+
+.story-mode-section--daftitude .story-specialties strong {
+  color: var(--primary);
+}
+
+.story-mode-section--daftitude .story-specialties li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.story-mode-section--daftitude .story-specialties li::before {
+  color: var(--primary);
+}
+
+.story-mode-section--daftitude .story-card-icon {
+  border-color: rgba(12, 199, 246, 0.24);
+  background: rgba(12, 199, 246, 0.08);
+  box-shadow: 0 0 20px rgba(12, 199, 246, 0.08);
+}
+/* ======================================================
+   Mobile Step 3 Compression
+   Keep Step 3 useful without creating a long scroll wall.
+====================================================== */
+
+@media (max-width: 640px) {
+  #daftitude-story.story-mode-section {
+    width: min(100%, calc(100% - 1rem));
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.4rem !important;
+  }
+
+  #daftitude-story .story-mode-header {
+    max-width: 100%;
+    margin-bottom: 0.85rem !important;
+  }
+
+  #daftitude-story .step-pill-kicker {
+    min-height: 34px !important;
+    margin-bottom: 0.55rem !important;
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.64rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  #daftitude-story .story-mode-header h2 {
+    max-width: 360px;
+    margin-inline: auto;
+    font-size: clamp(1.45rem, 8vw, 2.1rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.065em !important;
+  }
+
+  #daftitude-story .story-mode-header > p:not(.story-kicker) {
+    max-width: 360px;
+    margin-top: 0.6rem !important;
+    font-size: 0.78rem !important;
+    font-weight: 720 !important;
+    line-height: 1.45 !important;
+  }
+
+  #daftitude-story .story-lane-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    width: min(340px, 100%);
+    margin-top: 0.75rem;
+  }
+
+  #daftitude-story .story-lane-picker button {
+    min-height: 44px;
+    padding: 0.45rem 0.5rem;
+    border-radius: 14px;
+  }
+
+  #daftitude-story .story-lane-picker .brand-word {
+    font-size: 0.88rem;
+  }
+
+  #daftitude-story .story-lane-picker button > span:not(.brand-daft):not(.brand-itude):not(.brand-ask) {
+    font-size: 0.48rem;
+    letter-spacing: 0.07em;
+  }
+
+  #daftitude-story .story-board-grid {
+    gap: 0.55rem;
+  }
+
+  #daftitude-story .story-card {
+    min-height: 0 !important;
+    padding: 0.88rem 0.9rem !important;
+    border-radius: 18px !important;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  #daftitude-story .story-card-topline {
+    min-height: 28px !important;
+    margin-bottom: 0.58rem !important;
+  }
+
+  #daftitude-story .story-card-number,
+  #daftitude-story .story-card span {
+    font-size: 0.76rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  #daftitude-story .story-card-icon {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 11px !important;
+    font-size: 0.95rem !important;
+  }
+
+  #daftitude-story .story-card h3 {
+    min-height: 0 !important;
+    margin-bottom: 0.45rem !important;
+    font-size: 1rem !important;
+    line-height: 1.12 !important;
+  }
+
+  #daftitude-story .story-card > p:not(.story-card-statement) {
+    min-height: 0 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.42 !important;
+  }
+
+  #daftitude-story .story-card-statement {
+    min-height: 0 !important;
+    margin-bottom: 0.55rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+  }
+
+  #daftitude-story .story-specialties {
+    padding-top: 0.5rem !important;
+  }
+
+  #daftitude-story .story-specialties strong {
+    margin-bottom: 0.38rem !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.11em !important;
+  }
+
+  #daftitude-story .story-specialties ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.22rem 0.55rem !important;
+  }
+
+  #daftitude-story .story-specialties li {
+    padding-left: 0.58rem !important;
+    font-size: 0.64rem !important;
+    line-height: 1.15 !important;
+  }
+}
+/* ======================================================
+   Step 3 Card Header Cleanup
+   Keep number + title together for easier scanning.
+====================================================== */
+
+.story-card-topline--with-title {
+  align-items: flex-start;
+  min-height: 0;
+  margin-bottom: 0.95rem;
+}
+
+.story-card-heading-lockup {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.story-card-heading-lockup .story-card-number {
+  min-width: 2.1rem;
+  padding-top: 0.18rem;
+}
+
+.story-card-heading-lockup h3 {
+  min-height: 0;
+  margin: 0;
+  line-height: 1.12;
+}
+
+.story-card-topline--with-title + p {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  #daftitude-story .story-card-topline--with-title {
+    margin-bottom: 0.55rem !important;
+  }
+
+  #daftitude-story .story-card-heading-lockup {
+    gap: 0.52rem;
+  }
+
+  #daftitude-story .story-card-heading-lockup .story-card-number {
+    min-width: 1.6rem;
+    padding-top: 0.08rem;
+    font-size: 0.74rem !important;
+  }
+
+  #daftitude-story .story-card-heading-lockup h3 {
+    margin: 0 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.1 !important;
+  }
+}
+/* ======================================================
+   Step 3 Formatting Cleanup
+   Fix colored inline words crowding together in headings.
+====================================================== */
+
+.story-card-heading-lockup h3 {
+  display: block !important;
+  word-spacing: 0.08em;
+}
+
+.story-card-heading-lockup h3 .pricing-emphasis-blue,
+.story-card-heading-lockup h3 .pricing-emphasis-green,
+.story-card-heading-lockup h3 .pricing-emphasis-yellow,
+.story-card-heading-lockup h3 .pricing-emphasis-red,
+.story-card > p .pricing-emphasis-blue,
+.story-card > p .pricing-emphasis-green,
+.story-card > p .pricing-emphasis-yellow,
+.story-card > p .pricing-emphasis-red,
+.story-card-statement .pricing-emphasis-blue,
+.story-card-statement .pricing-emphasis-green,
+.story-card-statement .pricing-emphasis-yellow,
+.story-card-statement .pricing-emphasis-red {
+  display: inline !important;
+  align-items: baseline !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+  white-space: normal !important;
+}
+
+.story-card-heading-lockup h3 span + span,
+.story-card > p span + span,
+.story-card-statement span + span {
+  margin-left: 0.15em;
+}
+
+.story-card-heading-lockup {
+  align-items: baseline;
+}
+
+.story-card-topline--with-title {
+  gap: 0.85rem;
+}
+
+.story-card-topline--with-title .story-card-icon {
+  flex: 0 0 auto;
+}
+
+.story-card > p:not(.story-card-statement),
+.story-card-statement {
+  word-spacing: 0.04em;
+}
+
+@media (min-width: 900px) {
+  .story-card-heading-lockup h3 {
+    font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+  }
+}
+
+@media (max-width: 640px) {
+  #daftitude-story .story-card-heading-lockup {
+    align-items: baseline;
+    grid-template-columns: auto 1fr;
+    gap: 0.45rem;
+  }
+
+  #daftitude-story .story-card-heading-lockup h3 {
+    display: block !important;
+    font-size: 0.9rem !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.025em !important;
+    word-spacing: 0.05em;
+  }
+
+  #daftitude-story .story-card > p:not(.story-card-statement) {
+    font-size: 0.72rem !important;
+    line-height: 1.5 !important;
+    word-spacing: 0.035em;
+  }
+
+  #daftitude-story .story-card-statement {
+    font-size: 0.72rem !important;
+    line-height: 1.42 !important;
+    word-spacing: 0.035em;
+  }
+}
+/* ======================================================
+   AskDaFT Step 3 Specialties Cleanup
+   Keep Specialties label + bullets green, but words white.
+====================================================== */
+
+.story-mode-section--askdaft .story-specialties strong {
+  color: var(--green) !important;
+  text-shadow: 0 0 16px rgba(125, 255, 178, 0.18);
+}
+
+.story-mode-section--askdaft .story-specialties li {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.story-mode-section--askdaft .story-specialties li::before {
+  color: var(--green) !important;
+  text-shadow: 0 0 12px rgba(125, 255, 178, 0.2);
+}
+/* ======================================================
+   Step 4 Resource Toggle Buttons
+   Four compact options with smaller second-line labels.
+====================================================== */
+
+.system-map-resource-actions--four {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.5rem !important;
+  width: min(840px, 100%) !important;
+  margin: 0.9rem auto 1.1rem !important;
+  align-items: stretch !important;
+}
+
+.system-map-resource-actions--four .game-btn {
+  width: 100% !important;
+  min-height: 50px !important;
+  padding: 0.5rem 0.58rem !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.08rem !important;
+  border-radius: 999px !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.05 !important;
+}
+
+.system-map-resource-actions--four .resource-btn-main {
+  display: block !important;
+  width: 100% !important;
+  font-size: clamp(0.64rem, 0.85vw, 0.78rem) !important;
+  font-weight: 950 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.system-map-resource-actions--four .resource-btn-sub {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 0.06rem !important;
+  font-size: clamp(0.48rem, 0.62vw, 0.56rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  opacity: 0.72 !important;
+}
+
+.system-map-resource-actions--four .game-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.18);
+}
+
+@media (max-width: 900px) {
+  .system-map-resource-actions--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(520px, 100%) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .system-map-resource-actions--four {
+    gap: 0.42rem !important;
+  }
+
+  .system-map-resource-actions--four .game-btn {
+    min-height: 46px !important;
+    padding: 0.42rem 0.45rem !important;
+  }
+
+  .system-map-resource-actions--four .resource-btn-main {
+    font-size: 0.58rem !important;
+  }
+
+  .system-map-resource-actions--four .resource-btn-sub {
+    font-size: 0.45rem !important;
+  }
+}
+/* ======================================================
+   Working Now Panels Refinement
+   Better paragraph rhythm and softer action buttons.
+====================================================== */
+
+.split-identity-section .identity-panel p {
+  max-width: 62ch;
+  margin-top: 0.72rem !important;
+  font-size: clamp(0.96rem, 1.08vw, 1.06rem) !important;
+  line-height: 1.68 !important;
+  letter-spacing: -0.01em;
+}
+
+.split-identity-section .identity-panel p + p {
+  margin-top: 0.85rem !important;
+}
+
+.split-identity-section .panel-buzz-row {
+  margin-top: 1.25rem !important;
+  gap: 0.55rem !important;
+}
+
+.split-identity-section .panel-buzz-row span {
+  min-height: 34px !important;
+  padding: 0.48rem 0.82rem !important;
+  border-color: rgba(12, 199, 246, 0.24) !important;
+  background: rgba(12, 199, 246, 0.055) !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-size: 0.74rem !important;
+  font-weight: 850 !important;
+}
+
+.split-identity-section .askdaft-panel .panel-buzz-row span {
+  border-color: rgba(125, 255, 178, 0.22) !important;
+  background: rgba(125, 255, 178, 0.055) !important;
+}
+
+.split-identity-section .panel-action-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.55rem !important;
+  margin-top: 1.35rem !important;
+  padding-top: 0 !important;
+}
+
+.split-identity-section .panel-action-row .game-btn {
+  min-height: 40px !important;
+  padding: 0.58rem 0.86rem !important;
+  border-radius: 999px !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: none !important;
+}
+
+.split-identity-section .panel-action-row .game-btn.primary {
+  color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(12, 199, 246, 0.35) !important;
+  background: rgba(12, 199, 246, 0.14) !important;
+}
+
+.split-identity-section .askdaft-panel .panel-action-row .game-btn.primary {
+  color: rgba(6, 16, 23, 0.92) !important;
+  border-color: rgba(125, 255, 178, 0.32) !important;
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.86), rgba(255, 255, 255, 0.72)) !important;
+}
+
+.split-identity-section .panel-action-row .game-btn.secondary,
+.split-identity-section .panel-action-row .game-btn.ghost {
+  color: rgba(255, 255, 255, 0.84) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+}
+
+.split-identity-section .panel-action-row .game-btn:hover,
+.split-identity-section .panel-action-row .game-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.38) !important;
+  background: rgba(12, 199, 246, 0.11) !important;
+  box-shadow: 0 0 18px rgba(12, 199, 246, 0.1) !important;
+}
+
+.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover,
+.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible {
+  border-color: rgba(125, 255, 178, 0.34) !important;
+  background: rgba(125, 255, 178, 0.1) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 0 18px rgba(125, 255, 178, 0.09) !important;
+}
+
+@media (max-width: 760px) {
+  .split-identity-section .identity-panel p {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .split-identity-section .panel-action-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .split-identity-section .panel-action-row .game-btn {
+    width: 100% !important;
+  }
+}
+/* ======================================================
+   Working Now Panels Final Polish
+   Reduce hero-like weight and improve reading rhythm.
+====================================================== */
+
+.split-identity-section .identity-panel {
+  padding: clamp(1.45rem, 3vw, 2.15rem) !important;
+}
+
+.split-identity-section .identity-panel h2 {
+  max-width: 620px !important;
+  margin-bottom: 1.05rem !important;
+  font-size: clamp(2.05rem, 4.15vw, 3.55rem) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -0.068em !important;
+}
+
+.split-identity-section .identity-panel .brand-word {
+  text-shadow: none;
+}
+
+.split-identity-section .identity-panel p {
+  max-width: 64ch !important;
+  margin-top: 0.72rem !important;
+  color: rgba(255, 255, 255, 0.74) !important;
+  font-size: clamp(0.9rem, 1vw, 1rem) !important;
+  font-weight: 690 !important;
+  line-height: 1.62 !important;
+}
+
+.split-identity-section .identity-panel p .pricing-emphasis-blue,
+.split-identity-section .identity-panel p .pricing-emphasis-green,
+.split-identity-section .identity-panel p .pricing-emphasis-yellow,
+.split-identity-section .identity-panel p .pricing-emphasis-red {
+  text-shadow: 0 0 10px currentColor !important;
+}
+
+.split-identity-section .panel-buzz-row {
+  margin-top: 1.15rem !important;
+}
+
+.split-identity-section .panel-buzz-row span {
+  min-height: 32px !important;
+  padding: 0.42rem 0.76rem !important;
+  border-color: rgba(12, 199, 246, 0.18) !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.7rem !important;
+  font-weight: 820 !important;
+  box-shadow: none !important;
+}
+
+.split-identity-section .askdaft-panel .panel-buzz-row span {
+  border-color: rgba(125, 255, 178, 0.18) !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+}
+
+.split-identity-section .panel-action-row {
+  align-items: center !important;
+  margin-top: 1.15rem !important;
+  gap: 0.5rem !important;
+}
+
+.split-identity-section .panel-action-row .game-btn {
+  min-height: 38px !important;
+  padding: 0.52rem 0.82rem !important;
+  border-radius: 999px !important;
+  font-size: 0.74rem !important;
+  font-weight: 850 !important;
+  box-shadow: none !important;
+}
+
+.split-identity-section .panel-action-row .game-btn.primary,
+.split-identity-section .panel-action-row .game-btn.secondary,
+.split-identity-section .panel-action-row .game-btn.ghost {
+  color: rgba(255, 255, 255, 0.86) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+}
+
+.split-identity-section .daftitude-panel .panel-action-row .game-btn:first-child {
+  color: #061017 !important;
+  border-color: rgba(12, 199, 246, 0.34) !important;
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.88), rgba(255, 255, 255, 0.78)) !important;
+}
+
+.split-identity-section .askdaft-panel .panel-action-row .game-btn:first-child {
+  color: #061017 !important;
+  border-color: rgba(125, 255, 178, 0.32) !important;
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.82), rgba(255, 255, 255, 0.74)) !important;
+}
+
+.split-identity-section .panel-action-row .game-btn:hover,
+.split-identity-section .panel-action-row .game-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(12, 199, 246, 0.32) !important;
+  background: rgba(12, 199, 246, 0.08) !important;
+  color: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 0 16px rgba(12, 199, 246, 0.08) !important;
+}
+
+.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover,
+.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible {
+  border-color: rgba(125, 255, 178, 0.3) !important;
+  background: rgba(125, 255, 178, 0.075) !important;
+  box-shadow: 0 0 16px rgba(125, 255, 178, 0.075) !important;
+}
+
+@media (max-width: 760px) {
+  .split-identity-section .identity-panel h2 {
+    font-size: clamp(1.85rem, 9vw, 2.75rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .split-identity-section .identity-panel p {
+    font-size: 0.82rem !important;
+    line-height: 1.54 !important;
+  }
+
+  .split-identity-section .panel-buzz-row span,
+  .split-identity-section .panel-action-row .game-btn {
+    font-size: 0.72rem !important;
+  }
+}
+/* ======================================================
+   Working Now Panels Layout Reset
+   Make the built/doing/focused panels easier to scan.
+====================================================== */
+
+.split-identity-section {
+  align-items: stretch !important;
+  gap: clamp(1rem, 2.2vw, 1.35rem) !important;
+}
+
+.split-identity-section .identity-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: clamp(1.35rem, 2.6vw, 2rem) !important;
+  min-height: 0 !important;
+}
+
+.split-identity-section .identity-panel .story-kicker {
+  margin-bottom: 0.85rem !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.1em !important;
+}
+
+.split-identity-section .identity-panel h2 {
+  max-width: 640px !important;
+  margin: 0 0 1rem !important;
+  font-size: clamp(1.9rem, 3.55vw, 3.05rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.062em !important;
+}
+
+.split-identity-section .identity-panel h2 .brand-word {
+  font-size: 0.98em !important;
+  line-height: inherit !important;
+}
+
+.split-identity-section .identity-panel p {
+  max-width: 64ch !important;
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: clamp(0.86rem, 0.95vw, 0.96rem) !important;
+  font-weight: 680 !important;
+  line-height: 1.55 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.split-identity-section .identity-panel p + p {
+  margin-top: 0.8rem !important;
+}
+
+.split-identity-section .panel-buzz-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-top: 1.05rem !important;
+}
+
+.split-identity-section .panel-buzz-row span {
+  min-height: 30px !important;
+  padding: 0.4rem 0.7rem !important;
+  border-radius: 999px !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 0.68rem !important;
+  font-weight: 820 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.split-identity-section .panel-action-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.5rem !important;
+  margin-top: 1.1rem !important;
+  padding-top: 0 !important;
+}
+
+.split-identity-section .askdaft-panel .panel-action-row {
+  justify-content: flex-start !important;
+}
+
+.split-identity-section .panel-action-row .game-btn {
+  width: auto !important;
+  min-height: 36px !important;
+  padding: 0.5rem 0.8rem !important;
+  border-radius: 999px !important;
+  font-size: 0.72rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 980px) {
+  .split-identity-section .identity-panel {
+    min-height: 500px !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .split-identity-section .identity-panel h2 {
+    max-width: 100% !important;
+    font-size: clamp(1.75rem, 7.2vw, 2.55rem) !important;
+    line-height: 1.06 !important;
+  }
+
+  .split-identity-section .identity-panel p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .split-identity-section .panel-action-row,
+  .split-identity-section .askdaft-panel .panel-action-row {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .split-identity-section .identity-panel {
+    padding: 1rem !important;
+    border-radius: 20px !important;
+  }
+
+  .split-identity-section .identity-panel .story-kicker {
+    margin-bottom: 0.65rem !important;
+  }
+
+  .split-identity-section .identity-panel h2 {
+    margin-bottom: 0.85rem !important;
+    font-size: clamp(1.55rem, 8.6vw, 2.22rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .split-identity-section .identity-panel p {
+    font-size: 0.74rem !important;
+    line-height: 1.46 !important;
+  }
+
+  .split-identity-section .identity-panel p + p {
+    margin-top: 0.65rem !important;
+  }
+
+  .split-identity-section .panel-buzz-row {
+    gap: 0.38rem !important;
+    margin-top: 0.85rem !important;
+  }
+
+  .split-identity-section .panel-buzz-row span {
+    min-height: 28px !important;
+    padding: 0.36rem 0.55rem !important;
+    font-size: 0.6rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .split-identity-section .panel-action-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.45rem !important;
+    margin-top: 0.9rem !important;
+  }
+
+  .split-identity-section .panel-action-row .game-btn {
+    width: 100% !important;
+    min-height: 34px !important;
+    padding: 0.48rem 0.65rem !important;
+    font-size: 0.66rem !important;
+  }
+}
+/* ======================================================
+   Working Now Focus Chips Cleanup
+   Make focus tags readable without fighting the main CTA buttons.
+====================================================== */
+
+.split-identity-section .panel-buzz-row {
+  width: 100% !important;
+  max-width: 520px !important;
+  margin: 1.15rem 0 0 !important;
+  justify-content: flex-start !important;
+  gap: 0.55rem !important;
+}
+
+.split-identity-section .panel-buzz-row span {
+  min-height: 34px !important;
+  padding: 0.5rem 0.82rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(12, 199, 246, 0.26) !important;
+  background:
+    linear-gradient(180deg, rgba(12, 199, 246, 0.095), rgba(255, 255, 255, 0.035)),
+    rgba(5, 9, 18, 0.5) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.72rem !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+}
+
+.split-identity-section .daftitude-panel .panel-buzz-row span:first-child {
+  border-color: rgba(12, 199, 246, 0.34) !important;
+  color: rgba(205, 247, 255, 0.94) !important;
+}
+
+.split-identity-section .daftitude-panel .panel-buzz-row span:nth-child(2) {
+  border-color: rgba(125, 255, 178, 0.28) !important;
+  color: rgba(218, 255, 232, 0.92) !important;
+}
+
+.split-identity-section .daftitude-panel .panel-buzz-row span:nth-child(3) {
+  border-color: rgba(255, 199, 45, 0.28) !important;
+  color: rgba(255, 244, 205, 0.92) !important;
+}
+
+.split-identity-section .askdaft-panel .panel-buzz-row span {
+  border-color: rgba(125, 255, 178, 0.24) !important;
+  background:
+    linear-gradient(180deg, rgba(125, 255, 178, 0.085), rgba(255, 255, 255, 0.032)),
+    rgba(5, 9, 18, 0.5) !important;
+}
+
+@media (max-width: 920px) {
+  .split-identity-section .panel-buzz-row {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .split-identity-section .panel-buzz-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 0.42rem !important;
+  }
+
+  .split-identity-section .panel-buzz-row span {
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 32px !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+/* ======================================================
+   AskDaFT Focus Chips Alignment Fix
+   Keep the three AskDaFT focus chips balanced and readable.
+====================================================== */
+
+.split-identity-section .askdaft-panel .panel-buzz-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, max-content)) !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 0.52rem !important;
+  max-width: 560px !important;
+  margin-top: 1rem !important;
+}
+
+.split-identity-section .askdaft-panel .panel-buzz-row span {
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 0.48rem 0.78rem !important;
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3) {
+  grid-column: 1 / -1 !important;
+  justify-self: start !important;
+}
+
+@media (max-width: 920px) {
+  .split-identity-section .askdaft-panel .panel-buzz-row {
+    justify-content: center !important;
+  }
+
+  .split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3) {
+    justify-self: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .split-identity-section .askdaft-panel .panel-buzz-row {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+
+  .split-identity-section .askdaft-panel .panel-buzz-row span,
+  .split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3) {
+    justify-self: stretch !important;
+    width: 100% !important;
+    white-space: normal !important;
+  }
+}
+/* ======================================================
+   Step 5 Hub Cards Mobile Compression
+   Keep desktop clean, make all six hubs visible faster on mobile.
+====================================================== */
+
+.hub-select-section .hub-card-grid {
+  align-items: stretch;
+}
+
+.hub-select-section .hub-select-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.hub-select-section .hub-select-card p .pricing-emphasis-blue,
+.hub-select-section .hub-select-card p .pricing-emphasis-green,
+.hub-select-section .hub-select-card p .pricing-emphasis-yellow,
+.hub-select-section .hub-select-card p .pricing-emphasis-red {
+  text-shadow: 0 0 10px currentColor !important;
+}
+
+@media (max-width: 640px) {
+  .hub-select-section {
+    width: min(100%, calc(100% - 0.75rem)) !important;
+    padding-top: 1.55rem !important;
+    padding-bottom: 1.65rem !important;
+  }
+
+  .hub-select-section .story-mode-header.compact {
+    margin-bottom: 0.85rem !important;
+  }
+
+  .hub-select-section .step-pill-kicker {
+    min-height: 34px !important;
+    margin-bottom: 0.55rem !important;
+    padding: 0.52rem 0.9rem !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .hub-select-section .story-mode-header h2 {
+    max-width: 310px !important;
+    margin-inline: auto !important;
+    font-size: clamp(1.55rem, 7.2vw, 2.05rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .hub-select-section .hub-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  .hub-select-section .hub-select-card {
+    min-height: 128px !important;
+    padding: 0.72rem !important;
+    border-radius: 16px !important;
+  }
+
+  .hub-select-section .hub-card-icon {
+    width: 28px !important;
+    height: 28px !important;
+    margin-bottom: 0.42rem !important;
+    border-radius: 10px !important;
+    font-size: 0.92rem !important;
+  }
+
+  .hub-select-section .hub-select-card h3 {
+    margin: 0 0 0.42rem !important;
+    font-size: 0.86rem !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .hub-select-section .hub-select-card p {
+    margin: 0 !important;
+    color: rgba(255, 255, 255, 0.74) !important;
+    font-size: 0.58rem !important;
+    font-weight: 720 !important;
+    line-height: 1.38 !important;
+  }
+
+  .hub-select-section .hub-select-card p .brand-word {
+    font-size: 1em !important;
+  }
+
+  .hub-select-section .hub-select-card span:not(.pricing-emphasis-blue):not(.pricing-emphasis-green):not(.pricing-emphasis-yellow):not(.pricing-emphasis-red):not(.brand-word):not(.brand-daft):not(.brand-itude):not(.brand-ask) {
+    margin-top: auto !important;
+    padding-top: 0.45rem !important;
+    color: var(--primary) !important;
+    font-size: 0.62rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hub-select-section .hub-select-card {
+    min-height: 122px !important;
+    padding: 0.62rem !important;
+  }
+
+  .hub-select-section .hub-select-card p {
+    font-size: 0.54rem !important;
+    line-height: 1.34 !important;
+  }
+
+  .hub-select-section .hub-select-card h3 {
+    font-size: 0.8rem !important;
+  }
+}

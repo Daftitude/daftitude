@@ -1,0 +1,161 @@
+/* ======================================================
+   DaFTitude Generic Page Templates
+   Shared page shells, hero blocks, page sections, and form cards.
+====================================================== */
+
+.page,
+.askdaft-page,
+.hub-page,
+.mission-page,
+.contact-page {
+  min-height: 100vh;
+  padding-top: var(--navbar-h);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(12, 199, 246, 0.12), transparent 28rem),
+    radial-gradient(circle at 80% 12%, rgba(125, 255, 178, 0.08), transparent 26rem),
+    linear-gradient(180deg, #050812 0%, #0a0f1e 52%, #050812 100%);
+}
+
+.page-hero,
+.askdaft-hero,
+.hub-hero,
+.mission-hero,
+.contact-hero,
+.techhub-hero,
+.crypto-hero,
+.about-hero,
+.tech-hero,
+.hero,
+.hero.hero--system {
+  position: relative;
+  min-height: calc(72svh - var(--navbar-h));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8rem) 1rem clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(circle at 50% 16%, rgba(12, 199, 246, 0.18), transparent 34rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 60%);
+  text-align: center;
+}
+
+.page-hero-content,
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100% - 2rem));
+  margin-inline: auto;
+  text-align: center;
+}
+
+.page-hero h1,
+.askdaft-hero h1,
+.hub-hero h1,
+.mission-hero h1,
+.contact-hero h1,
+.techhub-hero h1,
+.crypto-hero h1,
+.about-hero h1,
+.tech-hero h1,
+.hero-title,
+.hero.hero--system .hero-title {
+  color: #fff;
+  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  text-shadow: 0 0 48px rgba(12, 199, 246, 0.20);
+}
+
+.page-hero p,
+.askdaft-hero p,
+.hub-hero p,
+.mission-hero p,
+.contact-hero p,
+.techhub-hero p,
+.crypto-hero p,
+.about-hero p,
+.tech-hero p,
+.hero-subtitle,
+.hero-content p {
+  max-width: 760px;
+  margin: 1rem auto 0;
+  color: var(--text-soft);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.page-section,
+.hub-section,
+.services,
+.packages,
+.contact-section,
+.about-section,
+.tech-hub-section,
+.featured-articles,
+.quick-resources,
+.cta-section,
+.contact-cta,
+.system-briefs {
+  width: min(var(--maxw), calc(100% - 2rem));
+  margin-inline: auto;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  background: transparent;
+}
+
+.contact-section,
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form,
+.contact-info,
+.about-content,
+.about-image,
+.tech-card,
+.article-card,
+.brief-card,
+.impact-card,
+.news-item,
+.package-card,
+.pkg-card,
+.plan,
+.value-card,
+.resource-card,
+.service-detail {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.contact-form label {
+  display: block;
+  margin: 0.8rem 0 0.35rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 800;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea,
+.pkg-input,
+.pkg-textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.pkg-input:focus,
+.pkg-textarea:focus {
+  border-color: rgba(12, 199, 246, 0.4);
+  box-shadow: 0 0 0 3px rgba(12, 199, 246, 0.12);
+}

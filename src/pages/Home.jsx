@@ -1,25 +1,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { BrandName, FinalStartSection, FloatingReadingTools, HomeHero, HubSelectSection, QuickContactCTA, StoryStepsSection, SystemMapSection } from "../components/home";
 import daftitudeBusinessHero from "../images/hero/daftitude-business-blue-object.png";
 import askDaftHero from "../images/hero/askdaft-residential-green-object.png";
 import daftitudeCenterHero from "../images/hero/daftitude-center-object.png";
-
-const BrandName = ({ name }) => {
-  if (name === "AskDaFT") {
-    return (
-      <strong className="brand-word brand-word-askdaft" aria-label="AskDaFT">
-        <span className="brand-ask">Ask</span><span className="brand-daft">DaFT</span>
-      </strong>
-    );
-  }
-
-  return (
-    <strong className="brand-word brand-word-daftitude" aria-label="DaFTitude">
-      <span className="brand-daft">DaFT</span><span className="brand-itude">itude</span>
-    </strong>
-  );
-};
 
 const heroMessages = {
   default: {
@@ -480,7 +465,9 @@ export default function Home() {
   const [subscriptionBilling, setSubscriptionBilling] = useState("oneTime");
   const [pricingAudience, setPricingAudience] = useState("business");
   const [systemResourceView, setSystemResourceView] = useState("businessResources");
+  const [readingImpairmentMode, setReadingImpairmentMode] = useState(false);
   const heroSectionRef = useRef(null);
+  const heroPointerFrameRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -531,6 +518,14 @@ export default function Home() {
       }
 
       particleTarget.innerHTML = "";
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (heroPointerFrameRef.current) {
+        window.cancelAnimationFrame(heroPointerFrameRef.current);
+      }
     };
   }, []);
 
@@ -629,6 +624,11 @@ export default function Home() {
   };
 
   const resetStoryPreview = () => {
+    if (heroPointerFrameRef.current) {
+      window.cancelAnimationFrame(heroPointerFrameRef.current);
+      heroPointerFrameRef.current = null;
+    }
+
     setActivePath(lockedStoryMode);
     setStoryMode(lockedStoryMode);
   };
@@ -636,76 +636,42 @@ export default function Home() {
   const handleHeroPointerMove = (event) => {
     if (event.pointerType !== "mouse" || !heroSectionRef.current) return;
 
-    const bounds = heroSectionRef.current.getBoundingClientRect();
-    const pointerX = event.clientX - bounds.left;
-    const nextPath = pointerX < bounds.width / 2 ? "daftitude" : "askdaft";
+    const clientX = event.clientX;
 
-    if (nextPath !== activePath) {
-      previewStoryMode(nextPath);
+    if (heroPointerFrameRef.current) {
+      window.cancelAnimationFrame(heroPointerFrameRef.current);
     }
+
+    heroPointerFrameRef.current = window.requestAnimationFrame(() => {
+      if (!heroSectionRef.current) return;
+
+      const bounds = heroSectionRef.current.getBoundingClientRect();
+      const pointerX = clientX - bounds.left;
+      const nextPath = pointerX < bounds.width / 2 ? "daftitude" : "askdaft";
+
+      if (nextPath !== activePath) {
+        previewStoryMode(nextPath);
+      }
+    });
   };
 
   return (
-    <main className="home-game-page">
+    <main className={`home-game-page ${readingImpairmentMode ? "" : "reading-impairment-mode"}`}>
       <div id="particles-js" className="home-particles" aria-hidden="true" />
 
-      <section
-        ref={heroSectionRef}
-        className={`game-start-screen is-${activePath} story-${storyMode}`}
-        onPointerMove={handleHeroPointerMove}
-        onPointerLeave={resetStoryPreview}
-      >
-        <button
-          type="button"
-          className="game-path game-path-daftitude"
-          style={{ "--hero-image": `url(${daftitudeBusinessHero})` }}
-          onMouseEnter={() => previewStoryMode("daftitude")}
-          onFocus={() => previewStoryMode("daftitude")}
-          onClick={() => selectStoryMode("daftitude")}
-        >
-          <span className="path-kicker">Business Solutions</span>
-          <strong><BrandName name="DaFTitude" /></strong>
-          <small>Strategy • Systems • Consulting • Education</small>
-        </button>
-
-        <button
-          type="button"
-          className="game-path game-path-askdaft"
-          style={{ "--hero-image": `url(${askDaftHero})` }}
-          onMouseEnter={() => previewStoryMode("askdaft")}
-          onFocus={() => previewStoryMode("askdaft")}
-          onClick={() => selectStoryMode("askdaft")}
-        >
-          <span className="path-kicker">Tech Services</span>
-          <strong><BrandName name="AskDaFT" /></strong>
-          <small>Residential • Small Business • Setup • Support</small>
-        </button>
-
-        <div
-          className="game-center-panel"
-          style={{ "--center-hero-image": `url(${daftitudeCenterHero})` }}
-          aria-live="polite"
-        >
-          <p className="game-eyebrow">{activeMessage.eyebrow}</p>
-          <h1 className="hero-brand-title">{activeMessage.title}</h1>
-          <p>{activeMessage.text}</p>
-
-          <div className="game-actions game-actions-main">
-            <button type="button" className="game-btn primary" onClick={() => selectStoryMode("daftitude")}>
-              View Business Pricing
-            </button>
-            <button type="button" className="game-btn secondary" onClick={() => selectStoryMode("askdaft")}>
-              View AskDaFT Pricing
-            </button>
-          </div>
-
-          <button type="button" className="game-more-info" onClick={() => selectStoryMode(storyMode)}>
-            View pricing ↓
-          </button>
-        </div>
-
-        <div className="game-bottom-hint">Move left or right. Pick a path. Jump to pricing.</div>
-      </section>
+      <HomeHero
+        activePath={activePath}
+        storyMode={storyMode}
+        activeMessage={activeMessage}
+        heroSectionRef={heroSectionRef}
+        handleHeroPointerMove={handleHeroPointerMove}
+        resetStoryPreview={resetStoryPreview}
+        previewStoryMode={previewStoryMode}
+        selectStoryMode={selectStoryMode}
+        daftitudeBusinessHero={daftitudeBusinessHero}
+        askDaftHero={askDaftHero}
+        daftitudeCenterHero={daftitudeCenterHero}
+      />
 
       <div className="section-flow-arrow" aria-hidden="true">
         <span>↓</span>
@@ -912,191 +878,30 @@ export default function Home() {
         <span>↓</span>
       </div>
 
-      <section className="quick-contact-cta" aria-label="Quick contact options">
-        <div className="quick-contact-card">
-          <p className="story-kicker">Need Help Now?</p>
-          <h2>
-            Still have <span className="pricing-emphasis-yellow">questions</span> or need <span className="pricing-emphasis-green">help now</span>?
-          </h2>
-          <p>
-            Text or call, DM me on socials, or email me if you like doing things the dinosaur way.
-          </p>
-
-          <div className="quick-contact-actions">
-            <a className="quick-contact-btn primary" href="sms:+12052108012">
-              Text Me
-              <span>+1 (205) 210-8012</span>
-            </a>
-            <a className="quick-contact-btn secondary" href="tel:+12052108012">
-              Call Now
-              <span>Open phone app</span>
-            </a>
-            <Link className="quick-contact-btn ghost" to="/contact">
-              DM on Socials
-              <span>Find the links</span>
-            </Link>
-            <a className="quick-contact-btn ghost" href="mailto:Kyhl.Hines@daftitude.com?subject=DaFTitude%20Help%20Request">
-              Email
-              <span>Dinosaur mode</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <QuickContactCTA />
 
       <div className="section-flow-arrow" aria-hidden="true">
         <span>↓</span>
       </div>
 
-      <section id="daftitude-story" className={`story-mode-section story-mode-section--${storyMode}`}>
-        <div className="story-mode-header">
-          <p className="story-kicker step-pill-kicker">{selectedStory.kicker}</p>
-          <h2>{selectedStory.title}</h2>
-          <p>{selectedStory.text}</p>
-
-          <div className="story-lane-picker" aria-label="Choose Step 3 service lane">
-            <button
-              type="button"
-              className={storyMode === "daftitude" ? "active" : ""}
-              onMouseEnter={() => previewServiceLane("daftitude")}
-              onFocus={() => previewServiceLane("daftitude")}
-              onClick={() => selectServiceLane("daftitude")}
-            >
-              <BrandName name="DaFTitude" />
-              <span>Business systems</span>
-            </button>
-            <button
-              type="button"
-              className={storyMode === "askdaft" ? "active" : ""}
-              onMouseEnter={() => previewServiceLane("askdaft")}
-              onFocus={() => previewServiceLane("askdaft")}
-              onClick={() => selectServiceLane("askdaft")}
-            >
-              <BrandName name="AskDaFT" />
-              <span>Hands-on tech help</span>
-            </button>
-          </div>
-        </div>
-
-        <div className="story-board-grid">
-          {selectedStory.cards.map((item) => (
-            <article className="story-card" key={item.label}>
-              <div className="story-card-topline story-card-topline--with-title">
-                <div className="story-card-heading-lockup">
-                  <span className="story-card-number">{item.label}</span>
-                  <h3>{item.title}</h3>
-                </div>
-                <span className="story-card-icon" aria-hidden="true">{item.icon}</span>
-              </div>
-              <p>{item.text}</p>
-              <p className="story-card-statement">{item.statement}</p>
-              <div className="story-specialties" aria-label="Specialties">
-                <strong>Specialties</strong>
-                <ul>
-                  {item.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <StoryStepsSection
+        selectedStory={selectedStory}
+        storyMode={storyMode}
+        previewServiceLane={previewServiceLane}
+        selectServiceLane={selectServiceLane}
+      />
 
       <div className="section-flow-arrow" aria-hidden="true">
         <span>↓</span>
       </div>
 
-      <section className="story-mode-section system-map-section">
-        <div className="story-mode-header compact">
-          <p className="story-kicker step-pill-kicker">Step 4: Connect The Dots</p>
-
-          <h2>
-            From <span className="pricing-emphasis-green">everyday help</span> to <span className="pricing-emphasis-blue">deeper learning</span>.
-          </h2>
-
-          <div className="system-map-resource-actions system-map-resource-actions--four" aria-label="Step 4 resource views">
-            <button
-              type="button"
-              className={`game-btn primary ${systemResourceView === "businessResources" ? "active" : ""}`}
-              onClick={() => {
-                setSystemResourceView("businessResources");
-                selectServiceLane("daftitude");
-                setSystemResourceView("businessResources");
-              }}
-            >
-              <span className="resource-btn-main">DaFTitude Business</span>
-              <span className="resource-btn-sub">Resources</span>
-            </button>
-            <button
-              type="button"
-              className={`game-btn secondary ${systemResourceView === "advanced" ? "active" : ""}`}
-              onClick={() => {
-                setSystemResourceView("advanced");
-                selectServiceLane("daftitude");
-                setSystemResourceView("advanced");
-              }}
-            >
-              <span className="resource-btn-main">Advanced Learning</span>
-              <span className="resource-btn-sub">Hub</span>
-            </button>
-            <button
-              type="button"
-              className={`game-btn primary ${systemResourceView === "toolbox" ? "active" : ""}`}
-              onClick={() => {
-                setSystemResourceView("toolbox");
-                selectServiceLane("askdaft");
-                setSystemResourceView("toolbox");
-              }}
-            >
-              <span className="resource-btn-main">AskDaFT Tool Box</span>
-              <span className="resource-btn-sub">Resources</span>
-            </button>
-            <button
-              type="button"
-              className={`game-btn secondary ${systemResourceView === "diy" ? "active" : ""}`}
-              onClick={() => {
-                setSystemResourceView("diy");
-                selectServiceLane("askdaft");
-                setSystemResourceView("diy");
-              }}
-            >
-              <span className="resource-btn-main">AskDaFT</span>
-              <span className="resource-btn-sub">Learn & DIY</span>
-            </button>
-          </div>
-
-          {systemResourceView === "toolbox" ? (
-            <p>
-              This is where <span className="pricing-emphasis-yellow">simple tech questions</span> turn into <span className="pricing-emphasis-green">confidence</span>. <BrandName name="AskDaFT" /> connects real-life problems to plain-English topics like <span className="pricing-emphasis-blue">AI tools</span>, <span className="pricing-emphasis-red">privacy</span>, <span className="pricing-emphasis-yellow">scam safety</span>, <span className="pricing-emphasis-green">home tech</span>, and smarter digital habits.
-            </p>
-          ) : systemResourceView === "diy" ? (
-            <p>
-              This is the <span className="pricing-emphasis-blue">DIY learning</span> side: plain-English guides, cheat sheets, and walkthroughs that help people understand <span className="pricing-emphasis-yellow">what happened</span>, what to <span className="pricing-emphasis-green">try next</span>, and when to ask for help.
-            </p>
-          ) : systemResourceView === "advanced" ? (
-            <p>
-              This is the <span className="pricing-emphasis-blue">advanced learning</span> side: deeper resources for business systems, AI workflows, automation planning, privacy-aware decisions, and the bigger digital systems behind the tools people use every day.
-            </p>
-          ) : (
-            <p>
-              This is where the <span className="pricing-emphasis-yellow">business questions</span> start turning into <span className="pricing-emphasis-green">structured resources</span>. <BrandName name="DaFTitude" /> connects business tech problems to the bigger systems behind them: <span className="pricing-emphasis-blue">AI</span>, <span className="pricing-emphasis-red">privacy</span>, <span className="pricing-emphasis-yellow">crypto</span>, <span className="pricing-emphasis-green">security</span>, and smarter digital decisions.
-            </p>
-          )}
-        </div>
-
-        <div className="system-chip-grid system-chip-grid--links">
-          {selectedSystems.map((system) => (
-            <Link
-              className="system-chip system-chip-link"
-              title={`${storyMode === "askdaft" ? "AskDaFT" : "DaFTitude"} can help explain, organize, or plan around ${system.label}.`}
-              to={system.to}
-              key={system.label}
-            >
-              {system.label}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <SystemMapSection
+        storyMode={storyMode}
+        systemResourceView={systemResourceView}
+        setSystemResourceView={setSystemResourceView}
+        selectServiceLane={selectServiceLane}
+        selectedSystems={selectedSystems}
+      />
 
       <div className="section-flow-arrow" aria-hidden="true">
         <span>↓</span>
@@ -1152,50 +957,19 @@ export default function Home() {
         <span>↓</span>
       </div>
 
-      <section className="story-mode-section hub-select-section">
-        <div className="story-mode-header compact">
-          <p className="story-kicker step-pill-kicker">Step 5: Keep Learning</p>
-          <h2>
-            Pick a <span className="pricing-emphasis-blue">hub</span>. Learn what <span className="pricing-emphasis-green">matters</span>.
-          </h2>
-        </div>
-
-        <div className="hub-card-grid">
-          {hubCards.map((hub) => (
-            <Link className="hub-select-card" to={hub.to} key={hub.title} title={`Open the ${hub.title} section`}>
-              <span className="hub-card-icon" aria-hidden="true">{hub.icon}</span>
-              <h3>{hub.title}</h3>
-              <p>{hub.text}</p>
-              <span>Enter Hub →</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <HubSelectSection hubCards={hubCards} />
 
       <div className="section-flow-arrow" aria-hidden="true">
         <span>↓</span>
       </div>
 
-      <section className="story-mode-section final-start-section">
-        <p className="story-kicker step-pill-kicker">Final Step</p>
-        <h2>
-          Choose the <span className="pricing-emphasis-blue">next move</span> that fits where you are.
-        </h2>
-        <p>
-          Need <span className="pricing-emphasis-green">hands-on tech help</span>? Start with <BrandName name="AskDaFT" />.
-          Need a <span className="pricing-emphasis-blue">bigger plan</span>, research help, or business support? Contact <BrandName name="DaFTitude" />.
-          Want to <span className="pricing-emphasis-yellow">learn first</span>? Start with the hubs and build your understanding before you ask for help.
-        </p>
-        <div className="game-actions centered">
-          <Link className="game-btn primary" to="/askdaft">Get Tech Help</Link>
-          <Link className="game-btn secondary" to="/contact">Contact DaFTitude</Link>
-          <Link className="game-btn ghost" to="/tech">Start Learning</Link>
-        </div>
-      </section>
+      <FinalStartSection />
 
-      <button type="button" className="jump-to-top-btn" onClick={scrollToTop} aria-label="Jump back to top">
-        ↑
-      </button>
+      <FloatingReadingTools
+        readingImpairmentMode={readingImpairmentMode}
+        setReadingImpairmentMode={setReadingImpairmentMode}
+        scrollToTop={scrollToTop}
+      />
     </main>
   );
 }
