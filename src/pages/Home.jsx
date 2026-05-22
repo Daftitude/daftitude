@@ -55,54 +55,92 @@ const heroMessages = {
   },
 };
 
-const daftitudeSystems = [
-  "AI workflows",
-  "Automation",
-  "Data & analytics",
-  "Privacy awareness",
-  "Cybersecurity education",
-  "Crypto education",
-  "Business systems",
-  "Creator systems",
-  "Software planning",
-  "Research & learning",
-];
+const daftitudeSystems = {
+  daftitude: [
+    { label: "AI workflows", to: "/ai" },
+    { label: "Automation", to: "/ai" },
+    { label: "Data & analytics", to: "/tech" },
+    { label: "Privacy awareness", to: "/privacy" },
+    { label: "Cybersecurity education", to: "/cybersecurity" },
+    { label: "Crypto education", to: "/crypto" },
+    { label: "Business systems", to: "/contact" },
+    { label: "Creator systems", to: "/tech" },
+    { label: "Software planning", to: "/tech" },
+    { label: "Research & learning", to: "/mission" },
+  ],
+  askdaft: [
+    { label: "AI tool help", to: "/ai" },
+    { label: "Make repetitive tasks easier", to: "/ai" },
+    { label: "Understand your data", to: "/tech" },
+    { label: "Protect your privacy", to: "/privacy" },
+    { label: "Avoid scams and hackers", to: "/cybersecurity" },
+    { label: "Learn crypto safely", to: "/crypto" },
+    { label: "Organize your business tech", to: "/contact" },
+    { label: "Creator setup help", to: "/tech" },
+    { label: "Plan an app or website", to: "/tech" },
+    { label: "Learn what to do next", to: "/mission" },
+  ],
+};
 
 const hubCards = [
   {
     icon: "🤖",
     title: "AI Hub",
-    text: "Prompting, AI basics, automation ideas, workflows, safety, and practical use cases.",
+    text: (
+      <>
+        <span className="pricing-emphasis-blue">Prompting</span>, <span className="pricing-emphasis-green">AI basics</span>, <span className="pricing-emphasis-yellow">automation ideas</span>, workflows, <span className="pricing-emphasis-red">safety</span>, and practical use cases.
+      </>
+    ),
     to: "/ai",
   },
   {
     icon: "🧩",
     title: "Tech Hub",
-    text: "Digital systems, tools, project updates, and technology explained without the noise.",
+    text: (
+      <>
+        <span className="pricing-emphasis-blue">Digital systems</span>, <span className="pricing-emphasis-green">tools</span>, project updates, and technology explained without the <span className="pricing-emphasis-yellow">noise</span>.
+      </>
+    ),
     to: "/tech",
   },
   {
     icon: "📈",
     title: "Crypto",
-    text: "Risk-aware crypto education, research, market structure, and transparent learning.",
+    text: (
+      <>
+        <span className="pricing-emphasis-red">Risk-aware</span> crypto education, <span className="pricing-emphasis-yellow">research</span>, market structure, and <span className="pricing-emphasis-green">transparent learning</span>.
+      </>
+    ),
     to: "/crypto",
   },
   {
     icon: "🔐",
     title: "Privacy",
-    text: "Data brokers, breach awareness, app tracking, account safety, and privacy habits.",
+    text: (
+      <>
+        <span className="pricing-emphasis-red">Data brokers</span>, breach awareness, <span className="pricing-emphasis-yellow">app tracking</span>, account safety, and <span className="pricing-emphasis-blue">privacy habits</span>.
+      </>
+    ),
     to: "/privacy",
   },
   {
     icon: "🛡️",
     title: "Cybersecurity",
-    text: "Scam awareness, password safety, phishing education, MFA, and defensive habits.",
+    text: (
+      <>
+        <span className="pricing-emphasis-red">Scam awareness</span>, password safety, phishing education, <span className="pricing-emphasis-blue">MFA</span>, and <span className="pricing-emphasis-green">defensive habits</span>.
+      </>
+    ),
     to: "/cybersecurity",
   },
   {
     icon: "🧭",
     title: "Mission",
-    text: "The DaFTitude story, the AskDaft split, and the larger reason behind the build.",
+    text: (
+      <>
+        The <BrandName name="DaFTitude" /> story, the <BrandName name="AskDaFT" /> split, and the larger <span className="pricing-emphasis-green">reason</span> behind the <span className="pricing-emphasis-blue">build</span>.
+      </>
+    ),
     to: "/mission",
   },
 ];
@@ -441,6 +479,7 @@ export default function Home() {
   const [lockedStoryMode, setLockedStoryMode] = useState("daftitude");
   const [subscriptionBilling, setSubscriptionBilling] = useState("oneTime");
   const [pricingAudience, setPricingAudience] = useState("business");
+  const [systemResourceView, setSystemResourceView] = useState("businessResources");
   const heroSectionRef = useRef(null);
 
   useEffect(() => {
@@ -501,6 +540,9 @@ export default function Home() {
 
   const selectedStory = storyboards[storyMode] || storyboards.daftitude;
   const selectedCta = modeCtas[storyMode] || modeCtas.daftitude;
+  const selectedSystems = ["toolbox", "diy"].includes(systemResourceView)
+    ? daftitudeSystems.askdaft
+    : daftitudeSystems.daftitude;
 
   const isBusinessPricing = pricingAudience === "business";
   const isOneTimePricing = subscriptionBilling === "oneTime";
@@ -551,6 +593,7 @@ export default function Home() {
     setLockedStoryMode(mode);
     setPricingAudience(mode === "askdaft" ? "askdaft" : "business");
     setSubscriptionBilling("oneTime");
+    setSystemResourceView(mode === "askdaft" ? "toolbox" : "businessResources");
 
     window.requestAnimationFrame(() => {
       document
@@ -565,6 +608,7 @@ export default function Home() {
     setLockedStoryMode(mode);
     setPricingAudience(mode === "askdaft" ? "askdaft" : "business");
     setSubscriptionBilling("oneTime");
+    setSystemResourceView(mode === "askdaft" ? "toolbox" : "businessResources");
   };
 
   const previewServiceLane = (mode) => {
@@ -964,17 +1008,92 @@ export default function Home() {
 
       <section className="story-mode-section system-map-section">
         <div className="story-mode-header compact">
-          <p className="story-kicker">Step 4: System Map</p>
-          <h2>What DaFTitude can connect together.</h2>
-          <p>
-            Once the path and price range make sense, this map shows the larger areas
-            <BrandName name="DaFTitude" /> can explain, organize, plan around, or connect into something useful.
-          </p>
+          <p className="story-kicker step-pill-kicker">Step 4: Connect The Dots</p>
+
+          <h2>
+            From <span className="pricing-emphasis-green">everyday help</span> to <span className="pricing-emphasis-blue">deeper learning</span>.
+          </h2>
+
+          <div className="system-map-resource-actions system-map-resource-actions--four" aria-label="Step 4 resource views">
+            <button
+              type="button"
+              className={`game-btn primary ${systemResourceView === "businessResources" ? "active" : ""}`}
+              onClick={() => {
+                setSystemResourceView("businessResources");
+                selectServiceLane("daftitude");
+                setSystemResourceView("businessResources");
+              }}
+            >
+              <span className="resource-btn-main">DaFTitude Business</span>
+              <span className="resource-btn-sub">Resources</span>
+            </button>
+            <button
+              type="button"
+              className={`game-btn secondary ${systemResourceView === "advanced" ? "active" : ""}`}
+              onClick={() => {
+                setSystemResourceView("advanced");
+                selectServiceLane("daftitude");
+                setSystemResourceView("advanced");
+              }}
+            >
+              <span className="resource-btn-main">Advanced Learning</span>
+              <span className="resource-btn-sub">Hub</span>
+            </button>
+            <button
+              type="button"
+              className={`game-btn primary ${systemResourceView === "toolbox" ? "active" : ""}`}
+              onClick={() => {
+                setSystemResourceView("toolbox");
+                selectServiceLane("askdaft");
+                setSystemResourceView("toolbox");
+              }}
+            >
+              <span className="resource-btn-main">AskDaFT Tool Box</span>
+              <span className="resource-btn-sub">Resources</span>
+            </button>
+            <button
+              type="button"
+              className={`game-btn secondary ${systemResourceView === "diy" ? "active" : ""}`}
+              onClick={() => {
+                setSystemResourceView("diy");
+                selectServiceLane("askdaft");
+                setSystemResourceView("diy");
+              }}
+            >
+              <span className="resource-btn-main">AskDaFT</span>
+              <span className="resource-btn-sub">Learn & DIY</span>
+            </button>
+          </div>
+
+          {systemResourceView === "toolbox" ? (
+            <p>
+              This is where <span className="pricing-emphasis-yellow">simple tech questions</span> turn into <span className="pricing-emphasis-green">confidence</span>. <BrandName name="AskDaFT" /> connects real-life problems to plain-English topics like <span className="pricing-emphasis-blue">AI tools</span>, <span className="pricing-emphasis-red">privacy</span>, <span className="pricing-emphasis-yellow">scam safety</span>, <span className="pricing-emphasis-green">home tech</span>, and smarter digital habits.
+            </p>
+          ) : systemResourceView === "diy" ? (
+            <p>
+              This is the <span className="pricing-emphasis-blue">DIY learning</span> side: plain-English guides, cheat sheets, and walkthroughs that help people understand <span className="pricing-emphasis-yellow">what happened</span>, what to <span className="pricing-emphasis-green">try next</span>, and when to ask for help.
+            </p>
+          ) : systemResourceView === "advanced" ? (
+            <p>
+              This is the <span className="pricing-emphasis-blue">advanced learning</span> side: deeper resources for business systems, AI workflows, automation planning, privacy-aware decisions, and the bigger digital systems behind the tools people use every day.
+            </p>
+          ) : (
+            <p>
+              This is where the <span className="pricing-emphasis-yellow">business questions</span> start turning into <span className="pricing-emphasis-green">structured resources</span>. <BrandName name="DaFTitude" /> connects business tech problems to the bigger systems behind them: <span className="pricing-emphasis-blue">AI</span>, <span className="pricing-emphasis-red">privacy</span>, <span className="pricing-emphasis-yellow">crypto</span>, <span className="pricing-emphasis-green">security</span>, and smarter digital decisions.
+            </p>
+          )}
         </div>
 
-        <div className="system-chip-grid">
-          {daftitudeSystems.map((system) => (
-            <span className="system-chip" title={`DaFTitude can help explain, organize, or plan around ${system}.`} key={system}>{system}</span>
+        <div className="system-chip-grid system-chip-grid--links">
+          {selectedSystems.map((system) => (
+            <Link
+              className="system-chip system-chip-link"
+              title={`${storyMode === "askdaft" ? "AskDaFT" : "DaFTitude"} can help explain, organize, or plan around ${system.label}.`}
+              to={system.to}
+              key={system.label}
+            >
+              {system.label}
+            </Link>
           ))}
         </div>
       </section>
@@ -986,34 +1105,46 @@ export default function Home() {
       <section className="story-mode-section split-identity-section">
         <div className="identity-panel daftitude-panel">
           <p className="story-kicker"><BrandName name="DaFTitude" /></p>
-          <h2>Business IT solutions, systems thinking, and practical strategy.</h2>
+          <h2>
+            What <BrandName name="DaFTitude" /> has <span className="pricing-emphasis-blue">built</span>, is <span className="pricing-emphasis-green">building</span>, and is <span className="pricing-emphasis-yellow">moving toward</span>.
+          </h2>
           <p>
-            Use DaFTitude when you need the bigger picture. We can help sort out
-            what to build, what to buy, what to avoid, what to automate, and how
-            to turn scattered tools into an actual system.
+            <BrandName name="DaFTitude" /> is focused on <span className="pricing-emphasis-blue">cybersecurity education</span>, <span className="pricing-emphasis-yellow">research</span>, <span className="pricing-emphasis-green">public outreach</span>, and helping people understand the systems behind <span className="pricing-emphasis-blue">modern tech</span>, <span className="pricing-emphasis-green">AI</span>, <span className="pricing-emphasis-red">privacy</span>, <span className="pricing-emphasis-red">scams</span>, and <span className="pricing-emphasis-yellow">digital risk</span>.
           </p>
-          <div className="panel-buzz-row" aria-label="Common business help requests">
-            <span title="Planning AI tools and repeatable workflows for work or content.">AI workflow planning</span>
-            <span title="Cleaning up tools, accounts, files, apps, and systems that became messy over time.">Tech stack cleanup</span>
-            <span title="Helping choose realistic hardware, software, or service options before spending money.">Before-you-buy consulting</span>
+          <p>
+            I am also accepting <span className="pricing-emphasis-green">contracts</span>, <span className="pricing-emphasis-yellow">consulting work</span>, and the right <span className="pricing-emphasis-blue">full-time opportunity</span> where software, cybersecurity, AI, education, and <span className="pricing-emphasis-green">public impact</span> overlap.
+          </p>
+          <div className="panel-buzz-row" aria-label="Current DaFTitude focus areas">
+            <span title="Researching cybersecurity, scams, AI risk, privacy, and public-facing digital safety education.">Cybersecurity research</span>
+            <span title="Building resources that help regular people understand modern digital risks before damage happens.">Public outreach</span>
+            <span title="Open to contracts, consulting, and serious full-time opportunities connected to tech, security, and education.">Contracts / full-time work</span>
           </div>
-          <Link className="game-btn secondary" to="/contact">Contact DaFTitude</Link>
+          <div className="panel-action-row">
+            <Link className="game-btn secondary" to="/contact">Contact DaFTitude</Link>
+            <Link className="game-btn ghost" to="/tech">Research I’m Working On</Link>
+          </div>
         </div>
 
         <div className="identity-panel askdaft-panel">
           <p className="story-kicker"><BrandName name="AskDaFT" /></p>
-          <h2>Residential and personal tech services for real life.</h2>
+          <h2>
+            What <BrandName name="AskDaFT" /> has <span className="pricing-emphasis-blue">helped with</span>, is <span className="pricing-emphasis-green">doing</span>, and is <span className="pricing-emphasis-yellow">focused on </span>.
+          </h2>
           <p>
-            Use AskDaft when you need help getting something working. We can help
-            explain it, update it, connect it, review it, clean it up, or set it
-            up without the tech ego.
+            <BrandName name="AskDaFT" /> is taking on more <span className="pricing-emphasis-yellow">senior</span> and <span className="pricing-emphasis-yellow">elderly</span> clients who need <span className="pricing-emphasis-green">patient</span>, plain-English help staying <span className="pricing-emphasis-green">connected</span>, <span className="pricing-emphasis-blue">safer</span>, and more confident with everyday technology.
           </p>
-          <div className="panel-buzz-row" aria-label="Common tech service requests">
-            <span title="Help with routers, Wi-Fi dead zones, printer connections, and home device issues.">wi-fi / printer help</span>
-            <span title="Setup for Alexa, smart bulbs, smart TVs, blinds, cameras, speakers, and other smart-home devices.">Smart home setup</span>
-            <span title="Help with VA, government, school, business, or account portals from the technical side.">Portal help</span>
+          <p>
+            The goal is to help parents and grandparents stay <span className="pricing-emphasis-green">connected</span> and in the now: <span className="pricing-emphasis-red">phones</span>, <span className="pricing-emphasis-yellow">portals</span>, <span className="pricing-emphasis-red">scams</span>, <span className="pricing-emphasis-green">accounts</span>, <span className="pricing-emphasis-blue">smart devices</span>, home tech, and the tools they depend on but may not feel comfortable using alone.
+          </p>
+          <div className="panel-buzz-row" aria-label="Current AskDaFT focus areas">
+            <span title="Patient tech help for seniors, parents, grandparents, and people who do not want to feel rushed.">Senior-friendly tech help</span>
+            <span title="Helping families stay connected through phones, video calls, portals, accounts, and everyday devices.">Family connection support</span>
+            <span title="Plain-English help with scam awareness, suspicious messages, passwords, portals, and safer digital habits.">Safety and scam support</span>
           </div>
-          <Link className="game-btn primary" to="/askdaft">Visit AskDaft</Link>
+          <div className="panel-action-row">
+            <Link className="game-btn primary" to="/askdaft">Visit AskDaFT</Link>
+            <Link className="game-btn ghost" to="/contact">Ask About Help</Link>
+          </div>
         </div>
       </section>
 
@@ -1023,8 +1154,10 @@ export default function Home() {
 
       <section className="story-mode-section hub-select-section">
         <div className="story-mode-header compact">
-          <p className="story-kicker">Step 5: Learn More</p>
-          <h2>Choose a learning or project hub.</h2>
+          <p className="story-kicker step-pill-kicker">Step 5: Keep Learning</p>
+          <h2>
+            Pick a <span className="pricing-emphasis-blue">hub</span>. Learn what <span className="pricing-emphasis-green">matters</span>.
+          </h2>
         </div>
 
         <div className="hub-card-grid">
@@ -1044,16 +1177,19 @@ export default function Home() {
       </div>
 
       <section className="story-mode-section final-start-section">
-        <p className="story-kicker">Final Step</p>
-        <h2>Pick the right doorway.</h2>
+        <p className="story-kicker step-pill-kicker">Final Step</p>
+        <h2>
+          Choose the <span className="pricing-emphasis-blue">next move</span> that fits where you are.
+        </h2>
         <p>
-          Need hands-on help? Go <BrandName name="AskDaFT" />. Need the bigger plan? Contact
-          <BrandName name="DaFTitude" />. Want to learn first? Start with the hubs.
+          Need <span className="pricing-emphasis-green">hands-on tech help</span>? Start with <BrandName name="AskDaFT" />.
+          Need a <span className="pricing-emphasis-blue">bigger plan</span>, research help, or business support? Contact <BrandName name="DaFTitude" />.
+          Want to <span className="pricing-emphasis-yellow">learn first</span>? Start with the hubs and build your understanding before you ask for help.
         </p>
         <div className="game-actions centered">
           <Link className="game-btn primary" to="/askdaft">Get Tech Help</Link>
           <Link className="game-btn secondary" to="/contact">Contact DaFTitude</Link>
-          <Link className="game-btn ghost" to="/tech">Explore Tech Hub</Link>
+          <Link className="game-btn ghost" to="/tech">Start Learning</Link>
         </div>
       </section>
 
