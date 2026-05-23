@@ -6,3 +6,6 @@ export { default as FinalStartSection } from "./FinalStartSection";
 export { default as HubSelectSection } from "./HubSelectSection";
 export { default as StoryStepsSection } from "./StoryStepsSection";
 export { default as SystemMapSection } from "./SystemMapSection";
+export { default as IdentitySplitSection } from "./IdentitySplitSection";
+export { default as ModeCTASection } from "./ModeCTASection";
+export { default as PricingSection } from "./PricingSection";

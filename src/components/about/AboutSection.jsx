@@ -1,3 +1,6 @@
+// STAGED REUSABLE SECTION
+// Not currently imported by the About page.
+// Keep for future linked/about-preview sections on other pages.
 export default function AboutSection() {
   return (
     <section id="about" className="about-section">

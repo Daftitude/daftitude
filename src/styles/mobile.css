@@ -1,4 +1,297 @@
+/* ======================================================
+   AskDaFT Responsive Support Flow
+====================================================== */
 
+@media (max-width: 1100px) {
+
+  .askdaft-price-grid,
+  .askdaft-subscribe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-summary-grid,
+  .askdaft-estimate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-page .askdaft-mission-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .askdaft-flow-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-request-summary {
+    position: relative;
+    top: auto;
+  }
+
+  .askdaft-dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+
+  .askdaft-progress-tracker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .askdaft-call-fields,
+  .askdaft-typical-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-page .phase-card-grid.three,
+  .askdaft-page .phase-card-grid.four,
+  .askdaft-page .askdaft-mission-grid,
+  .askdaft-issue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-style-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-issue-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+
+  .askdaft-price-grid,
+  .askdaft-subscribe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-price-card,
+  .askdaft-subscribe-card,
+  .askdaft-subscribe-note {
+    border-radius: 18px;
+  }
+
+
+  .askdaft-progress-tracker {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-upload-panel {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-upload-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  .askdaft-detail-picker {
+    gap: 0.42rem;
+  }
+
+  .askdaft-detail-chip {
+    min-height: 34px;
+    padding: 0.46rem 0.58rem;
+    font-size: 0.66rem;
+  }
+
+  .askdaft-call-fields,
+  .askdaft-typical-panel,
+  .askdaft-guest-note {
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-call-fields input {
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+
+  .askdaft-price-breakdown div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .askdaft-summary-grid,
+  .askdaft-estimate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-estimate-topline {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .askdaft-estimate-topline strong {
+    width: max-content;
+  }
+
+  .askdaft-page .askdaft-hero {
+    min-height: auto;
+    padding: 4.5rem 0.8rem 2rem;
+  }
+
+  .askdaft-hero h1::before {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+  }
+
+  .askdaft-hero h1 {
+    font-size: clamp(2.45rem, 12vw, 3.35rem);
+    letter-spacing: -0.075em;
+  }
+
+  .askdaft-hero .phase-lede {
+    font-size: 1rem;
+    line-height: 1.46;
+  }
+
+  .askdaft-hero .phase-sublede {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  .askdaft-page .phase-section {
+    width: min(100%, calc(100% - 0.85rem));
+    padding-top: 1.65rem;
+    padding-bottom: 1.65rem;
+  }
+
+  .askdaft-page .phase-panel,
+  .askdaft-page .askdaft-onboarding-panel,
+  .askdaft-page .phase-warning-panel,
+  .askdaft-page .contact-command,
+  .askdaft-page .askdaft-callout {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+
+  .askdaft-page .phase-section-heading {
+    margin-bottom: 1rem;
+  }
+
+  .askdaft-page .phase-section-heading h2,
+  .askdaft-page .phase-section h2 {
+    font-size: clamp(1.65rem, 8.5vw, 2.3rem);
+    line-height: 1.05;
+  }
+
+  .askdaft-page .phase-section-heading p,
+  .askdaft-page .phase-panel p,
+  .askdaft-page .askdaft-callout p,
+  .askdaft-page .phase-warning-panel p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .askdaft-page .phase-hero-actions,
+  .askdaft-page .askdaft-callout {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-page .phase-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .askdaft-page .phase-card-grid.three,
+  .askdaft-page .phase-card-grid.four,
+  .askdaft-page .askdaft-mission-grid,
+  .askdaft-style-row {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-issue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-page .phase-card {
+    padding: 0.75rem 0.55rem;
+    border-radius: 18px;
+  }
+
+  .askdaft-page .phase-card h3,
+  .askdaft-flow-step h3 {
+    font-size: 0.98rem;
+  }
+
+  .askdaft-page .phase-card p,
+  .askdaft-flow-step p {
+    font-size: 0.76rem;
+    line-height: 1.42;
+  }
+
+  .askdaft-flow-step {
+    grid-template-columns: 38px 1fr;
+    gap: 0.65rem;
+  }
+
+  .askdaft-page .step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 14px;
+    font-size: 0.68rem;
+  }
+
+  .askdaft-issue-card {
+    min-height: 0;
+    padding: 0.9rem;
+    border-radius: 18px;
+  }
+
+  .askdaft-issue-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.58rem;
+    border-radius: 14px;
+    font-size: 1.2rem;
+  }
+
+  .askdaft-request-box {
+    min-height: 150px;
+    padding: 0.85rem;
+    border-radius: 18px;
+    font-size: 0.84rem;
+  }
+
+  .askdaft-style-pill {
+    min-height: 76px;
+    padding: 0.75rem;
+  }
+
+  .askdaft-request-summary {
+    padding: 0.95rem;
+    border-radius: 22px;
+  }
+
+  .askdaft-summary-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    font-size: 1.55rem;
+  }
+
+  .askdaft-entry-strip,
+  .askdaft-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-entry-strip article,
+  .askdaft-dashboard-grid article {
+    border-radius: 18px;
+  }
+}
 /* ======================================================
    DaFTitude Responsive / Mobile Helpers
 ====================================================== */
@@ -39,6 +332,77 @@
 }
 
 @media (max-width: 640px) {
+
+  .askdaft-price-grid,
+  .askdaft-subscribe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-price-card,
+  .askdaft-subscribe-card,
+  .askdaft-subscribe-note {
+    border-radius: 18px;
+  }
+
+
+  .askdaft-progress-tracker {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-upload-panel {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-upload-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  .askdaft-detail-picker {
+    gap: 0.42rem;
+  }
+
+  .askdaft-detail-chip {
+    min-height: 34px;
+    padding: 0.46rem 0.58rem;
+    font-size: 0.66rem;
+  }
+
+  .askdaft-call-fields,
+  .askdaft-typical-panel,
+  .askdaft-guest-note {
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-call-fields input {
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+
+  .askdaft-price-breakdown div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .askdaft-summary-grid,
+  .askdaft-estimate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-estimate-topline {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .askdaft-estimate-topline strong {
+    width: max-content;
+  }
+
   .game-actions,
   .page-actions,
   .hero-actions {
@@ -284,12 +648,97 @@
 
 
 /* ======================================================
+   Mobile Hero Ambience
+   Lightweight CSS-only atmosphere for mobile where particles.js is disabled.
+====================================================== */
+
+@media (max-width: 760px), (pointer: coarse) {
+  .game-start-screen {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(12, 199, 246, 0.20), transparent 16rem),
+      radial-gradient(circle at 82% 28%, rgba(125, 255, 178, 0.14), transparent 15rem),
+      radial-gradient(circle at 50% 88%, rgba(255, 220, 90, 0.08), transparent 18rem),
+      linear-gradient(180deg, rgba(5, 8, 18, 0.92), rgba(7, 12, 24, 0.98));
+  }
+
+  .game-start-screen::before {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(12, 199, 246, 0.12), transparent 16rem),
+      radial-gradient(circle at 80% 20%, rgba(125, 255, 178, 0.09), transparent 15rem),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 68px),
+      repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 68px);
+    opacity: 0.95;
+  }
+
+  .game-start-screen::after {
+    display: block;
+    top: var(--navbar-h);
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: min(72vw, 340px);
+    height: min(72vw, 340px);
+    border-radius: 999px;
+    background:
+      radial-gradient(circle, rgba(12, 199, 246, 0.18), transparent 62%),
+      radial-gradient(circle at 68% 36%, rgba(125, 255, 178, 0.12), transparent 58%);
+    box-shadow:
+      0 0 54px rgba(12, 199, 246, 0.16),
+      0 0 90px rgba(125, 255, 178, 0.08);
+    pointer-events: none;
+    transform: translate(-50%, 8%);
+    animation: mobile-hero-ambient-drift 8s ease-in-out infinite;
+  }
+
+  .game-center-panel::after {
+    background:
+      radial-gradient(circle at 50% 18%, rgba(12, 199, 246, 0.24), transparent 44%),
+      radial-gradient(circle at 20% 80%, rgba(125, 255, 178, 0.13), transparent 46%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 45%);
+  }
+
+  .game-path::after {
+    inset: 8%;
+    opacity: 0.42;
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.07);
+    background:
+      radial-gradient(circle at 20% 20%, rgba(12, 199, 246, 0.08), transparent 46%),
+      radial-gradient(circle at 80% 70%, rgba(125, 255, 178, 0.06), transparent 48%);
+  }
+}
+
+@keyframes mobile-hero-ambient-drift {
+  0%, 100% {
+    opacity: 0.62;
+    transform: translate(-50%, 8%) scale(0.96);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, 14%) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-start-screen::after {
+    animation: none;
+  }
+}
+
+
+/* ======================================================
    Reading Impairment Mode
    OFF state reduces color-coded emphasis while preserving hero H1 branding.
    Kept last so it wins over later card/step-specific color rules.
 ====================================================== */
 
 .home-game-page.reading-impairment-mode :where(.pricing-emphasis-yellow, .pricing-emphasis-red, .pricing-emphasis-blue, .pricing-emphasis-green):not(.hero-brand-title *):not(.game-path strong *) {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: none !important;
+}
+
+.askdaft-page.reading-impairment-mode :where(.pricing-emphasis-yellow, .pricing-emphasis-red, .pricing-emphasis-blue, .pricing-emphasis-green) {
   color: rgba(255, 255, 255, 0.9) !important;
   text-shadow: none !important;
 }
@@ -309,4 +758,23 @@
 .home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-ask {
   color: rgba(255, 255, 255, 0.92) !important;
   text-shadow: none !important;
+}
+
+/* Placeholder rule for mobile hero ambience element */
+.game-start-screen .mobile-hero-ambience {
+  display: none;
+}
+
+/* AskDaFT quick option hint mobile */
+@media (max-width: 640px) {
+  .askdaft-detail-hint {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.65rem;
+  }
+
+  .askdaft-detail-hint p {
+    text-align: left;
+    font-size: 0.72rem;
+  }
 }

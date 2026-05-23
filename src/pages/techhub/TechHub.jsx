@@ -1,6 +1,6 @@
 import HeroTechHub from "../../components/techhub/HeroTechHub";
 import ContactCTA from '../../components/contact/ContactCTA';
-import CommunityImpact from '../../components/CommunityImpact';
+import CommunityImpact from '../../components/techhub/CommunityImpact';
 import CaseStudies from '../../components/techhub/CaseStudies';
 
 export default function TechHub() {
