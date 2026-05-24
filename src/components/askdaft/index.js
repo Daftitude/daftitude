@@ -1,3 +1,10 @@
 export { default as AskDaftHero } from "./AskDaftHero";
 export { default as AskDaftDashboardTeaser } from "./AskDaftDashboardTeaser";
+export { default as AskDaftPricingSection } from "./AskDaftPricingSection";
+export { default as AskDaftSubscribeSection } from "./AskDaftSubscribeSection";
+export { default as AskDaftSummarySection } from "./AskDaftSummarySection";
+export { default as AskDaftEstimateSection } from "./AskDaftEstimateSection";
+export { default as AskDaftInfoSections } from "./AskDaftInfoSections";
+export { default as AskDaftReviewSummary } from "./AskDaftReviewSummary";
+export { default as AskDaftRequestFlow } from "./AskDaftRequestFlow";
 export * from "./askDaftData";

@@ -469,3 +469,2465 @@
 .askdaft-page .contact-command {
   text-align: center;
 }
+
+
+/* ======================================================
+   Account Button System
+   Makes Login, Signup, and Dashboard CTAs use real button styling.
+====================================================== */
+
+.account-page .phase-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 950;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.account-page .phase-btn-primary {
+  border-color: rgba(125, 255, 178, 0.42);
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(205, 247, 255, 0.9));
+  color: #02100b;
+  box-shadow: 0 14px 34px rgba(125, 255, 178, 0.16);
+}
+
+.account-page .phase-btn-secondary,
+.account-page .phase-btn-ghost {
+  border-color: rgba(12, 199, 246, 0.28);
+  background: rgba(12, 199, 246, 0.075);
+  color: rgba(220, 248, 255, 0.95);
+}
+
+.account-page .phase-btn:hover,
+.account-page .phase-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.46);
+  background: rgba(125, 255, 178, 0.12);
+  box-shadow: 0 0 24px rgba(125, 255, 178, 0.14);
+}
+
+.account-page .phase-btn-primary:hover,
+.account-page .phase-btn-primary:focus-visible {
+  color: #02100b;
+  background: linear-gradient(135deg, rgba(125, 255, 178, 1), rgba(255, 255, 255, 0.92));
+}
+
+/* ======================================================
+   Account / Auth / AskDaFT Dashboard Pages
+====================================================== */
+
+.account-page {
+  min-height: calc(100svh - var(--navbar-h));
+  padding: clamp(5rem, 8vw, 7rem) 1rem clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(12, 199, 246, 0.11), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(125, 255, 178, 0.09), transparent 32%),
+    var(--bg, #050914);
+}
+
+.account-auth-shell {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.account-auth-copy,
+.account-auth-panel,
+.account-dashboard-hero,
+.account-dashboard-panel {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.74);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+}
+
+.account-auth-copy {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  position: sticky;
+  top: calc(var(--navbar-h) + 1rem);
+}
+
+.account-auth-copy h1,
+.account-dashboard-hero h1 {
+  margin: 0.45rem 0 0.7rem;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.account-auth-copy p,
+.account-dashboard-hero p,
+.account-dashboard-panel p {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.account-auth-actions,
+.account-dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.account-auth-panel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.account-form-card,
+.account-benefit-card,
+.dashboard-status-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.account-form-card {
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.account-form-heading h2,
+.account-panel-heading h2 {
+  margin: 0.35rem 0 0.3rem;
+  color: #fff;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  letter-spacing: -0.045em;
+}
+
+.account-form-heading p,
+.account-form-note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.account-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.account-form label {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.account-form label span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.account-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  border-radius: 16px;
+  background: rgba(3, 7, 14, 0.74);
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-weight: 700;
+  outline: none;
+}
+
+.account-form input:focus {
+  border-color: rgba(125, 255, 178, 0.45);
+  box-shadow: 0 0 0 3px rgba(125, 255, 178, 0.12);
+}
+
+.account-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.account-benefit-card {
+  padding: 1rem;
+}
+
+.account-benefit-card span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.75rem;
+  border-radius: 16px;
+  background: rgba(12, 199, 246, 0.09);
+  font-size: 1.25rem;
+}
+
+.account-benefit-card h3,
+.dashboard-status-card strong,
+.recent-request-list strong {
+  margin: 0;
+  color: #fff;
+  font-weight: 950;
+}
+
+.account-benefit-card p,
+.dashboard-status-card p,
+.recent-request-list p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.42;
+}
+
+.account-dashboard-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.dashboard-status-grid,
+.account-dashboard-grid {
+  display: grid;
+  gap: 0.9rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.dashboard-status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 0.9rem;
+}
+
+.dashboard-status-card {
+  padding: 1rem;
+}
+
+.dashboard-status-card > span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dashboard-status-card.green {
+  border-color: rgba(125, 255, 178, 0.18);
+}
+
+.dashboard-status-card.blue {
+  border-color: rgba(12, 199, 246, 0.2);
+}
+
+.dashboard-status-card.yellow {
+  border-color: rgba(255, 220, 90, 0.2);
+}
+
+.dashboard-status-card.red {
+  border-color: rgba(255, 112, 112, 0.2);
+}
+
+.account-dashboard-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.account-dashboard-panel {
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.account-dashboard-wide {
+  grid-column: 1 / -1;
+}
+
+.saved-setup-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.saved-setup-list span {
+  padding: 0.45rem 0.62rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.055);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.recent-request-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.recent-request-list div {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.recent-request-list span {
+  display: block;
+  margin-top: 0.2rem;
+  color: rgba(255, 220, 90, 0.92);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* AskDaFT dashboard teaser CTA */
+.askdaft-dashboard-teaser-actions {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* ======================================================
+   AskDaFT Client Dashboard Upgrade
+====================================================== */
+
+.askdaft-client-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.askdaft-client-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 2rem 2rem auto;
+  width: min(260px, 34vw);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 34%),
+    linear-gradient(135deg, rgba(12, 199, 246, 0.2), rgba(125, 255, 178, 0.16));
+  filter: blur(1px);
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.askdaft-client-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.askdaft-client-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 0.9rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.askdaft-active-request-panel,
+.askdaft-plan-panel,
+.account-dashboard-wide {
+  grid-column: 1 / -1;
+}
+
+.askdaft-request-progress {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.askdaft-request-progress span {
+  display: grid;
+  place-items: center;
+  min-height: 38px;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.askdaft-request-progress span.complete {
+  border-color: rgba(125, 255, 178, 0.26);
+  background: rgba(125, 255, 178, 0.075);
+  color: rgba(218, 255, 232, 0.92);
+}
+
+.askdaft-request-progress span.current {
+  border-color: rgba(255, 220, 90, 0.3);
+  background: rgba(255, 220, 90, 0.07);
+  color: rgba(255, 236, 153, 0.94);
+}
+
+.askdaft-next-step-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: dashboard-step;
+}
+
+.askdaft-next-step-list li {
+  counter-increment: dashboard-step;
+  position: relative;
+  padding: 0.75rem 0.85rem 0.75rem 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-next-step-list li::before {
+  content: counter(dashboard-step);
+  position: absolute;
+  left: 0.75rem;
+  top: 0.68rem;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.1);
+  color: rgba(205, 247, 255, 0.95);
+  font-size: 0.74rem;
+  font-weight: 1000;
+}
+
+.saved-setup-list-detailed span {
+  display: grid;
+  gap: 0.15rem;
+  align-content: center;
+  min-width: 132px;
+}
+
+.saved-setup-list-detailed strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.78rem;
+}
+
+.saved-setup-list-detailed small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.66rem;
+  font-weight: 750;
+}
+
+.askdaft-file-list,
+.askdaft-plan-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+
+.askdaft-file-list div,
+.askdaft-plan-list div {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-file-list strong,
+.askdaft-plan-list strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 950;
+}
+
+.askdaft-file-list span,
+.askdaft-plan-list span {
+  display: inline-flex;
+  width: max-content;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.66rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.askdaft-plan-list p {
+  margin: 0.45rem 0 0;
+}
+
+/* ======================================================
+   AskDaFT Dashboard Hierarchy Polish
+====================================================== */
+
+.askdaft-dashboard-page .account-dashboard-hero {
+  align-items: center;
+}
+
+.askdaft-dashboard-page .account-dashboard-hero > div:first-child {
+  max-width: 760px;
+}
+
+.askdaft-dashboard-page .account-dashboard-actions {
+  position: relative;
+  z-index: 2;
+  min-width: 190px;
+  justify-content: flex-start;
+}
+
+.askdaft-dashboard-page .dashboard-status-grid {
+  margin-bottom: 1rem;
+}
+
+.askdaft-dashboard-page .dashboard-status-card {
+  min-height: 128px;
+  padding: 1rem 1.05rem;
+  opacity: 0.92;
+}
+
+.askdaft-dashboard-page .dashboard-status-card strong {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+}
+
+.askdaft-active-request-panel {
+  position: relative;
+  padding: clamp(1.25rem, 2.7vw, 1.8rem);
+  border-color: rgba(125, 255, 178, 0.16);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(125, 255, 178, 0.085), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.026)),
+    rgba(5, 9, 18, 0.78);
+}
+
+.askdaft-active-request-panel .account-panel-heading h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.askdaft-active-request-panel > p {
+  max-width: 860px;
+  margin-top: 1rem;
+  font-size: 0.96rem;
+}
+
+.askdaft-active-request-panel .account-dashboard-actions {
+  margin-top: 1.2rem;
+}
+
+.askdaft-client-layout {
+  row-gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel) {
+  min-height: 260px;
+}
+
+.askdaft-next-steps-panel {
+  border-color: rgba(255, 220, 90, 0.13);
+}
+
+.askdaft-plan-panel {
+  border-color: rgba(125, 255, 178, 0.13);
+}
+
+.askdaft-dashboard-page .account-dashboard-wide {
+  margin-top: 0.2rem;
+}
+
+/* ======================================================
+   AskDaFT Dashboard Grid Balance Polish
+====================================================== */
+
+.askdaft-dashboard-page {
+  --dashboard-card-min: 220px;
+}
+
+.askdaft-client-layout {
+  align-items: stretch;
+}
+
+.askdaft-client-layout .account-dashboard-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.askdaft-client-layout .account-dashboard-panel > p:last-child {
+  margin-top: auto;
+}
+
+.askdaft-active-request-panel {
+  min-height: 260px;
+}
+
+.askdaft-next-steps-panel,
+.askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel):not(.askdaft-plan-panel):not(.account-dashboard-wide) {
+  min-height: var(--dashboard-card-min);
+}
+
+.askdaft-plan-panel {
+  grid-column: auto;
+  min-height: var(--dashboard-card-min);
+}
+
+.account-dashboard-wide {
+  min-height: 210px;
+}
+
+.askdaft-plan-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-plan-list div {
+  display: flex;
+  flex-direction: column;
+}
+
+.askdaft-file-list {
+  gap: 0.55rem;
+}
+
+.askdaft-file-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.askdaft-file-list span,
+.askdaft-plan-list span {
+  flex-shrink: 0;
+}
+
+.recent-request-list div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.askdaft-dashboard-page .account-panel-heading h2 {
+  max-width: 16ch;
+}
+
+.askdaft-dashboard-page .account-dashboard-panel p {
+  max-width: 72ch;
+}
+
+.askdaft-dashboard-page .account-dashboard-wide {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(125, 255, 178, 0.075), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.022)),
+    rgba(5, 9, 18, 0.78);
+}
+
+/* ======================================================
+   AskDaFT Tech Map / Device Board
+====================================================== */
+
+.askdaft-tech-board {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.35fr) minmax(280px, 0.9fr);
+  gap: 0.9rem;
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+}
+
+.askdaft-tech-board .account-dashboard-panel {
+  min-height: 420px;
+}
+
+.askdaft-add-device-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0;
+}
+
+.askdaft-add-device-grid button,
+.device-action {
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.06);
+  color: rgba(220, 248, 255, 0.95);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.askdaft-add-device-grid button {
+  padding: 0.48rem 0.62rem;
+}
+
+.askdaft-add-device-grid button:hover,
+.device-action:hover {
+  border-color: rgba(125, 255, 178, 0.34);
+  background: rgba(125, 255, 178, 0.08);
+}
+
+.askdaft-tech-tree {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tech-tree-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(125, 255, 178, 0.2);
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.07);
+  color: rgba(218, 255, 232, 0.95);
+}
+
+.tech-tree-root span {
+  font-size: 1.25rem;
+}
+
+.tech-tree-root strong {
+  font-size: 0.9rem;
+  font-weight: 1000;
+}
+
+.tech-tree-branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding-left: 1rem;
+}
+
+.tech-tree-branches::before {
+  content: "";
+  position: absolute;
+  left: 0.35rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(125, 255, 178, 0.3), rgba(12, 199, 246, 0.08));
+}
+
+.tech-tree-node {
+  position: relative;
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+  min-height: 108px;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.88);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.tech-tree-node::before {
+  content: "";
+  position: absolute;
+  left: -0.66rem;
+  top: 1.6rem;
+  width: 0.65rem;
+  height: 1px;
+  background: rgba(12, 199, 246, 0.22);
+}
+
+.tech-tree-node:hover,
+.tech-tree-node.is-selected {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.32);
+  background: rgba(125, 255, 178, 0.06);
+}
+
+.tech-tree-node > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  font-size: 1.2rem;
+}
+
+.tech-tree-node strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 1000;
+  line-height: 1.1;
+}
+
+.tech-tree-node small {
+  width: max-content;
+  padding: 0.25rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.tech-tree-node.good small,
+.selected-device-status.good,
+.device-action.is-active {
+  background: rgba(125, 255, 178, 0.09);
+  color: rgba(218, 255, 232, 0.95);
+}
+
+.tech-tree-node.not-working small,
+.selected-device-status.not-working,
+.device-action.danger.is-active {
+  background: rgba(255, 112, 112, 0.1);
+  color: rgba(255, 195, 195, 0.96);
+}
+
+.tech-tree-node.upgrade small,
+.selected-device-status.upgrade,
+.device-action.upgrade.is-active {
+  background: rgba(255, 220, 90, 0.1);
+  color: rgba(255, 236, 153, 0.96);
+}
+
+.askdaft-selected-device-panel {
+  border-color: rgba(125, 255, 178, 0.15);
+}
+
+.selected-device-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+}
+
+.selected-device-status > span {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.055);
+  font-size: 1.3rem;
+}
+
+.selected-device-status strong,
+.selected-device-status small {
+  display: block;
+}
+
+.selected-device-status strong {
+  color: #fff;
+  font-weight: 1000;
+}
+
+.selected-device-status small {
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 750;
+}
+
+.selected-device-details {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.selected-device-details div {
+  padding: 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.selected-device-details dt {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selected-device-details dd {
+  margin: 0.25rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.device-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.device-action {
+  padding: 0.52rem 0.68rem;
+}
+
+.device-action.danger {
+  border-color: rgba(255, 112, 112, 0.18);
+}
+
+.device-action.upgrade {
+  border-color: rgba(255, 220, 90, 0.18);
+}
+
+/* ======================================================
+   AskDaFT Tech Map Detail Upgrade
+====================================================== */
+
+.askdaft-device-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0;
+}
+
+.askdaft-device-category-tabs button {
+  padding: 0.48rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.68);
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.askdaft-device-category-tabs button.is-active {
+  border-color: rgba(125, 255, 178, 0.34);
+  background: rgba(125, 255, 178, 0.09);
+  color: rgba(218, 255, 232, 0.96);
+}
+
+.askdaft-add-device-category > p {
+  margin: 0 0 0.8rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.askdaft-device-field-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.askdaft-device-field-preview strong {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  font-weight: 950;
+}
+
+.askdaft-device-field-preview span {
+  padding: 0.34rem 0.48rem;
+  border: 1px solid rgba(12, 199, 246, 0.14);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.045);
+  color: rgba(205, 247, 255, 0.82);
+  font-size: 0.66rem;
+  font-weight: 850;
+}
+
+.tech-tree-groups {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.tech-tree-group {
+  position: relative;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.tech-tree-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.tech-tree-group-heading > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(12, 199, 246, 0.075);
+}
+
+.tech-tree-group-heading strong,
+.tech-tree-group-heading small {
+  display: block;
+}
+
+.tech-tree-group-heading strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+  font-weight: 1000;
+}
+
+.tech-tree-group-heading small {
+  margin-top: 0.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.tech-tree-group .tech-tree-branches {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: 0;
+}
+
+.tech-tree-group .tech-tree-branches::before,
+.tech-tree-group .tech-tree-node::before {
+  display: none;
+}
+
+.tech-tree-group .tech-tree-node {
+  min-height: 98px;
+}
+
+.selected-device-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.selected-device-details div:nth-last-child(-n + 3) {
+  grid-column: 1 / -1;
+}
+
+.selected-device-checks {
+  margin: 1rem 0;
+  padding: 0.85rem;
+  border: 1px solid rgba(125, 255, 178, 0.12);
+  border-radius: 18px;
+  background: rgba(125, 255, 178, 0.04);
+}
+
+.selected-device-checks strong {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: rgba(218, 255, 232, 0.94);
+  font-size: 0.78rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.selected-device-checks div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.selected-device-checks span {
+  padding: 0.32rem 0.48rem;
+  border: 1px solid rgba(125, 255, 178, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.66rem;
+  font-weight: 850;
+}
+
+/* ======================================================
+   AskDaFT Simple / Pro View Toggle
+====================================================== */
+
+.askdaft-view-mode-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(12, 199, 246, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-view-mode-strip h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.askdaft-view-mode-strip p:not(.phase-kicker) {
+  max-width: 620px;
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.askdaft-view-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 0.28rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(3, 7, 14, 0.5);
+}
+
+.askdaft-view-toggle button {
+  min-height: 38px;
+  padding: 0.55rem 0.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.62);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.askdaft-view-toggle button.is-active {
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(205, 247, 255, 0.86));
+  color: #02100b;
+  box-shadow: 0 10px 24px rgba(125, 255, 178, 0.13);
+}
+
+.selected-device-simple-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.85rem 0;
+}
+
+.selected-device-simple-summary span {
+  padding: 0.42rem 0.55rem;
+  border: 1px solid rgba(12, 199, 246, 0.14);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.05);
+  color: rgba(205, 247, 255, 0.88);
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.selected-device-pro-label {
+  margin: 1rem 0 0.55rem;
+  color: rgba(125, 255, 178, 0.9);
+  font-size: 0.7rem;
+  font-weight: 1000;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Simple mode hides deeper operator information */
+.askdaft-tech-board.is-simple-view .selected-device-pro-details,
+.askdaft-tech-board.is-simple-view .selected-device-checks,
+.askdaft-client-layout.is-simple-view .askdaft-plan-panel,
+.askdaft-client-layout.is-simple-view .recent-request-list,
+.askdaft-client-layout.is-simple-view .account-dashboard-panel:has(.recent-request-list) {
+  display: none;
+}
+
+.askdaft-tech-board.is-simple-view {
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.25fr) minmax(280px, 0.95fr);
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-group-heading small,
+.askdaft-tech-board.is-simple-view .askdaft-device-field-preview {
+  display: none;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-group {
+  padding: 0.7rem;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-node {
+  min-height: 86px;
+}
+
+.askdaft-tech-board.is-simple-view .selected-device-status {
+  margin-bottom: 0.55rem;
+}
+
+/* Pro mode brings deeper board behavior forward */
+.askdaft-tech-board.is-pro-view .askdaft-selected-device-panel {
+  border-color: rgba(125, 255, 178, 0.22);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(125, 255, 178, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+}
+
+.askdaft-client-layout.is-pro-view .askdaft-active-request-panel {
+  border-color: rgba(255, 220, 90, 0.18);
+}
+
+/* ======================================================
+   AskDaFT Simple View Compression
+   Simple View should feel client-friendly, not like Pro View with hidden parts.
+====================================================== */
+
+.askdaft-tech-board.is-simple-view {
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.5fr) minmax(260px, 0.78fr);
+  align-items: start;
+}
+
+.askdaft-tech-board.is-simple-view .account-dashboard-panel {
+  min-height: auto;
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-device-add-panel,
+.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel {
+  position: sticky;
+  top: calc(var(--navbar-h) + 1rem);
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel {
+  padding-bottom: 1rem;
+}
+
+.askdaft-tech-board.is-simple-view .selected-device-status {
+  padding: 0.75rem;
+}
+
+.askdaft-tech-board.is-simple-view .selected-device-status > span {
+  width: 42px;
+  height: 42px;
+}
+
+.askdaft-tech-board.is-simple-view .selected-device-simple-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+
+.askdaft-tech-board.is-simple-view .device-action-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 0.8rem;
+}
+
+.askdaft-tech-board.is-simple-view .device-action {
+  width: 100%;
+  min-height: 38px;
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-add-device-grid {
+  max-height: 150px;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-device-category-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-device-category-tabs button {
+  width: 100%;
+}
+
+.askdaft-tech-board.is-simple-view .askdaft-tech-tree-panel {
+  min-height: auto;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-groups {
+  gap: 0.7rem;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-group {
+  padding: 0.7rem;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-group .tech-tree-branches {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-node {
+  min-height: 92px;
+  padding: 0.7rem;
+}
+
+.askdaft-tech-board.is-simple-view .tech-tree-node > span {
+  width: 34px;
+  height: 34px;
+}
+
+.askdaft-client-layout.is-simple-view {
+  grid-template-columns: 1fr 1fr;
+}
+
+.askdaft-client-layout.is-simple-view .askdaft-active-request-panel,
+.askdaft-client-layout.is-simple-view .account-dashboard-wide {
+  grid-column: 1 / -1;
+}
+
+.askdaft-client-layout.is-simple-view .askdaft-next-steps-panel,
+.askdaft-client-layout.is-simple-view .account-dashboard-panel:has(.askdaft-file-list) {
+  min-height: 260px;
+}
+
+.askdaft-client-layout.is-simple-view .askdaft-request-progress {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ======================================================
+   AskDaFT Get Help Now Launcher
+   Help-first dashboard entry point.
+====================================================== */
+
+.askdaft-help-launcher {
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1.1rem, 2.4vw, 1.45rem);
+  border: 1px solid rgba(125, 255, 178, 0.13);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(125, 255, 178, 0.09), transparent 42%),
+    radial-gradient(circle at 88% 0%, rgba(12, 199, 246, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.askdaft-help-launcher-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.askdaft-help-launcher-heading h2 {
+  margin: 0;
+  max-width: 760px;
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 3.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.askdaft-help-launcher-heading p:not(.phase-kicker) {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.askdaft-help-launcher-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.askdaft-help-launcher-card {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  min-height: 190px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.askdaft-help-launcher-card:hover,
+.askdaft-help-launcher-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(125, 255, 178, 0.32);
+  background: rgba(125, 255, 178, 0.055);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.askdaft-help-launcher-card > span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: rgba(12, 199, 246, 0.08);
+  font-size: 1.35rem;
+}
+
+.askdaft-help-launcher-card strong {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 1000;
+  line-height: 1.08;
+}
+
+.askdaft-help-launcher-card small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-help-launcher-card em {
+  align-self: end;
+  width: max-content;
+  margin-top: auto;
+  padding: 0.42rem 0.55rem;
+  border: 1px solid rgba(125, 255, 178, 0.22);
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.08);
+  color: rgba(218, 255, 232, 0.94);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 950;
+}
+
+/* ======================================================
+   AskDaFT Guided Request Preview
+====================================================== */
+
+.askdaft-guided-request-preview,
+.askdaft-plan-comparison {
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1.1rem, 2.4vw, 1.45rem);
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(12, 199, 246, 0.075), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.022)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+
+.askdaft-guided-request-heading,
+.askdaft-plan-comparison-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.askdaft-guided-request-heading h2,
+.askdaft-plan-comparison-heading h2 {
+  max-width: 780px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.65rem, 3.5vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.askdaft-guided-request-heading p:not(.phase-kicker),
+.askdaft-plan-comparison-heading p:not(.phase-kicker) {
+  max-width: 560px;
+  margin: 0.5rem 0 0;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.48;
+}
+
+.askdaft-guided-device-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.askdaft-guided-device-row button {
+  padding: 0.5rem 0.68rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.055);
+  color: rgba(220, 248, 255, 0.94);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.askdaft-guided-device-row button:hover {
+  border-color: rgba(125, 255, 178, 0.34);
+  background: rgba(125, 255, 178, 0.08);
+}
+
+.askdaft-guided-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.askdaft-guided-step-grid article {
+  min-height: 170px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-guided-step-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0.75rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.09);
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.72rem;
+  font-weight: 1000;
+}
+
+.askdaft-guided-step-grid strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.96rem;
+  font-weight: 1000;
+  line-height: 1.1;
+}
+
+.askdaft-guided-step-grid p {
+  margin: 0.5rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.askdaft-guided-summary-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.16);
+  border-radius: 22px;
+  background: rgba(125, 255, 178, 0.045);
+}
+
+.askdaft-guided-summary-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  letter-spacing: -0.045em;
+}
+
+.askdaft-guided-summary-card p:not(.phase-kicker) {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+/* ======================================================
+   AskDaFT Plan Comparison
+====================================================== */
+
+.askdaft-current-plan-card {
+  min-width: 220px;
+  padding: 0.9rem;
+  border: 1px solid rgba(125, 255, 178, 0.2);
+  border-radius: 20px;
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-current-plan-card span,
+.askdaft-current-plan-card small {
+  display: block;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.askdaft-current-plan-card strong {
+  display: block;
+  margin: 0.25rem 0;
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+
+.askdaft-plan-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.askdaft-plan-comparison-card {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-plan-card-top > span {
+  display: inline-flex;
+  width: max-content;
+  padding: 0.32rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+}
+
+.askdaft-plan-card-top h3 {
+  margin: 0.7rem 0 0.35rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 1000;
+  letter-spacing: -0.04em;
+}
+
+.askdaft-plan-card-top p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-plan-list-block {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.askdaft-plan-list-block strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.askdaft-plan-list-block.included strong {
+  color: rgba(218, 255, 232, 0.96);
+}
+
+.askdaft-plan-list-block.not-included strong {
+  color: rgba(255, 195, 195, 0.9);
+}
+
+.askdaft-plan-list-block ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.askdaft-plan-list-block li {
+  position: relative;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.askdaft-plan-list-block.included li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: rgba(125, 255, 178, 0.92);
+}
+
+.askdaft-plan-list-block.not-included li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 112, 112, 0.9);
+}
+
+/* ======================================================
+   AskDaFT Dashboard Mobile Final Override
+   Kept in pages.css because pages.css loads after mobile.css.
+====================================================== */
+
+@media (max-width: 700px) {
+  .askdaft-dashboard-page {
+    padding: calc(var(--navbar-h) + 1rem) 0.75rem 2rem !important;
+  }
+
+  .askdaft-dashboard-page :where(
+    .account-dashboard-hero,
+    .dashboard-status-grid,
+    .askdaft-help-launcher,
+    .askdaft-guided-request-preview,
+    .askdaft-view-mode-strip,
+    .askdaft-plan-comparison,
+    .askdaft-tech-board,
+    .askdaft-client-layout
+  ) {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .askdaft-dashboard-page .account-dashboard-hero {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    align-items: start !important;
+    padding: 1rem !important;
+  }
+
+  .askdaft-dashboard-page .account-dashboard-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(2.1rem, 12vw, 3rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.075em !important;
+  }
+
+  .askdaft-dashboard-page .account-dashboard-hero p {
+    max-width: 32ch !important;
+    font-size: 0.86rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .askdaft-dashboard-page .account-dashboard-actions {
+    display: grid !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 0.65rem !important;
+  }
+
+  .askdaft-dashboard-page .phase-btn {
+    width: 100% !important;
+  }
+
+  .askdaft-dashboard-page .dashboard-status-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  .askdaft-dashboard-page .dashboard-status-card {
+    min-height: auto !important;
+    padding: 0.9rem !important;
+  }
+
+  .askdaft-help-launcher,
+  .askdaft-guided-request-preview,
+  .askdaft-view-mode-strip,
+  .askdaft-plan-comparison {
+    padding: 1rem !important;
+  }
+
+  .askdaft-help-launcher-heading,
+  .askdaft-guided-request-heading,
+  .askdaft-plan-comparison-heading,
+  .askdaft-guided-summary-card {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    align-items: start !important;
+  }
+
+  .askdaft-help-launcher-heading h2,
+  .askdaft-guided-request-heading h2,
+  .askdaft-plan-comparison-heading h2 {
+    max-width: 100% !important;
+    font-size: clamp(1.9rem, 10vw, 2.55rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.07em !important;
+  }
+
+  .askdaft-help-launcher-heading p:not(.phase-kicker),
+  .askdaft-guided-request-heading p:not(.phase-kicker),
+  .askdaft-plan-comparison-heading p:not(.phase-kicker) {
+    max-width: 100% !important;
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .askdaft-help-launcher-grid,
+  .askdaft-guided-step-grid,
+  .askdaft-plan-comparison-grid,
+  .askdaft-tech-board,
+  .askdaft-tech-board.is-simple-view,
+  .askdaft-tech-board.is-pro-view,
+  .askdaft-client-layout,
+  .askdaft-client-layout.is-simple-view,
+  .askdaft-client-layout.is-pro-view,
+  .askdaft-plan-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .askdaft-help-launcher-card,
+  .askdaft-guided-step-grid article,
+  .askdaft-plan-comparison-card,
+  .askdaft-tech-board .account-dashboard-panel,
+  .askdaft-client-layout .account-dashboard-panel {
+    min-height: auto !important;
+  }
+
+  .askdaft-help-launcher-card {
+    grid-template-columns: auto 1fr !important;
+    align-items: start !important;
+    column-gap: 0.75rem !important;
+    padding: 0.9rem !important;
+  }
+
+  .askdaft-help-launcher-card > span {
+    grid-row: span 3 !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .askdaft-help-launcher-card strong {
+    font-size: 0.95rem !important;
+  }
+
+  .askdaft-help-launcher-card small {
+    font-size: 0.74rem !important;
+  }
+
+  .askdaft-help-launcher-card em {
+    margin-top: 0.2rem !important;
+  }
+
+  .askdaft-guided-device-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.45rem !important;
+  }
+
+  .askdaft-guided-device-row button {
+    width: 100% !important;
+  }
+
+  .askdaft-guided-summary-card .phase-btn {
+    width: 100% !important;
+  }
+
+  .askdaft-view-toggle {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .askdaft-current-plan-card {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .askdaft-plan-comparison-card {
+    padding: 0.9rem !important;
+  }
+
+  .askdaft-plan-card-top h3 {
+    font-size: 1.35rem !important;
+  }
+
+  .askdaft-plan-list-block li {
+    font-size: 0.76rem !important;
+  }
+
+  .askdaft-tech-board.is-simple-view .askdaft-device-add-panel,
+  .askdaft-tech-board.is-simple-view .askdaft-selected-device-panel {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  .askdaft-device-category-tabs {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .askdaft-device-category-tabs button {
+    width: 100% !important;
+  }
+
+  .tech-tree-group .tech-tree-branches,
+  .askdaft-tech-board.is-simple-view .tech-tree-group .tech-tree-branches {
+    grid-template-columns: 1fr !important;
+  }
+
+  .selected-device-details {
+    grid-template-columns: 1fr !important;
+  }
+
+  .device-action-row {
+    display: grid !important;
+  }
+
+  .device-action {
+    width: 100% !important;
+  }
+
+  .askdaft-request-progress,
+  .askdaft-client-layout.is-simple-view .askdaft-request-progress {
+    grid-template-columns: 1fr !important;
+  }
+
+  .askdaft-file-list div {
+    display: grid !important;
+    align-items: start !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .askdaft-dashboard-page .account-dashboard-hero h1,
+  .askdaft-help-launcher-heading h2,
+  .askdaft-guided-request-heading h2,
+  .askdaft-plan-comparison-heading h2 {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .askdaft-dashboard-page .phase-kicker {
+    font-size: 0.66rem !important;
+  }
+
+  .askdaft-dashboard-page .account-dashboard-panel,
+  .askdaft-help-launcher,
+  .askdaft-guided-request-preview,
+  .askdaft-plan-comparison,
+  .askdaft-view-mode-strip {
+    border-radius: 22px !important;
+  }
+}
+
+/* ======================================================
+   AskDaFT Pricing Transparency Blocks
+====================================================== */
+
+.askdaft-pricing-truth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+.askdaft-pricing-truth-grid article,
+.askdaft-price-transparency-note {
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.14);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 52%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-pricing-truth-grid span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: rgba(125, 255, 178, 0.94);
+  font-size: 0.7rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-pricing-truth-grid strong,
+.askdaft-price-transparency-note strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 1000;
+  line-height: 1.15;
+}
+
+.askdaft-pricing-truth-grid p,
+.askdaft-price-transparency-note p {
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.askdaft-price-transparency-note {
+  margin: 0.9rem 0;
+  border-color: rgba(255, 220, 90, 0.2);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 220, 90, 0.08), transparent 52%),
+    rgba(255, 255, 255, 0.035);
+}
+
+@media (max-width: 900px) {
+  .askdaft-pricing-truth-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   AskDaFT Request / Ticket Builder
+====================================================== */
+
+.askdaft-request-page {
+  overflow-x: clip;
+}
+
+.askdaft-request-hero,
+.askdaft-request-layout {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+.askdaft-request-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 86% 20%, rgba(12, 199, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.askdaft-request-hero h1 {
+  max-width: 780px;
+  margin: 0.35rem 0 0.7rem;
+  color: #fff;
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.askdaft-request-hero p:not(.phase-kicker) {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.askdaft-request-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.askdaft-ticket-builder {
+  display: grid;
+  gap: 1rem;
+}
+
+.askdaft-ticket-panel,
+.askdaft-ticket-summary {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.askdaft-ticket-panel {
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.askdaft-ticket-panel .account-panel-heading p:not(.phase-kicker) {
+  max-width: 780px;
+}
+
+.askdaft-mode-grid,
+.askdaft-request-type-grid,
+.askdaft-discovery-promise {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.askdaft-mode-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.askdaft-request-type-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.askdaft-mode-card,
+.askdaft-request-type-card,
+.askdaft-chip-grid button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.askdaft-mode-card,
+.askdaft-request-type-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border-radius: 22px;
+}
+
+.askdaft-mode-card.active,
+.askdaft-request-type-card.active,
+.askdaft-chip-grid button.active {
+  border-color: rgba(125, 255, 178, 0.36);
+  background: rgba(125, 255, 178, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.askdaft-mode-card span,
+.askdaft-request-type-card span {
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-mode-card strong,
+.askdaft-request-type-card strong {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 1000;
+}
+
+.askdaft-mode-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.askdaft-mode-card p,
+.askdaft-mode-card small,
+.askdaft-request-type-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.askdaft-chip-grid button {
+  padding: 0.55rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.askdaft-field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.askdaft-field-grid label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.askdaft-field-grid span,
+.askdaft-inline-check span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.askdaft-field-grid input,
+.askdaft-field-grid select,
+.askdaft-request-description {
+  width: 100%;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  border-radius: 16px;
+  background: rgba(3, 7, 14, 0.72);
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-weight: 750;
+  outline: none;
+}
+
+.askdaft-field-grid input,
+.askdaft-field-grid select {
+  min-height: 46px;
+  padding: 0.75rem 0.85rem;
+}
+
+.askdaft-request-description {
+  min-height: 180px;
+  margin-top: 1rem;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.askdaft-field-grid input:focus,
+.askdaft-field-grid select:focus,
+.askdaft-request-description:focus {
+  border-color: rgba(125, 255, 178, 0.45);
+  box-shadow: 0 0 0 3px rgba(125, 255, 178, 0.12);
+}
+
+.askdaft-inline-check {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-inline-check input,
+.askdaft-agreement-list input {
+  margin-top: 0.18rem;
+  accent-color: #7dffb2;
+}
+
+.askdaft-scope-warning,
+.askdaft-mini-scope,
+.askdaft-summary-note {
+  padding: 0.9rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.askdaft-scope-warning {
+  margin-bottom: 1rem;
+}
+
+.askdaft-scope-warning strong,
+.askdaft-mini-scope strong,
+.askdaft-summary-note strong {
+  display: block;
+  color: #fff;
+  font-weight: 1000;
+}
+
+.askdaft-scope-warning p,
+.askdaft-mini-scope p,
+.askdaft-summary-note p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-scope-warning.green,
+.askdaft-mini-scope.green {
+  border: 1px solid rgba(125, 255, 178, 0.18);
+}
+
+.askdaft-scope-warning.blue,
+.askdaft-mini-scope.blue {
+  border: 1px solid rgba(12, 199, 246, 0.2);
+}
+
+.askdaft-scope-warning.yellow,
+.askdaft-mini-scope.yellow {
+  border: 1px solid rgba(255, 220, 90, 0.2);
+}
+
+.askdaft-scope-warning.red,
+.askdaft-mini-scope.red {
+  border: 1px solid rgba(255, 112, 112, 0.22);
+}
+
+.askdaft-discovery-promise {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-discovery-promise article {
+  padding: 0.9rem;
+  border: 1px solid rgba(125, 255, 178, 0.13);
+  border-radius: 18px;
+  background: rgba(125, 255, 178, 0.04);
+}
+
+.askdaft-discovery-promise span {
+  display: block;
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.askdaft-discovery-promise p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.askdaft-agreement-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.askdaft-agreement-list label {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-agreement-list span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-ticket-summary {
+  position: sticky;
+  top: calc(var(--navbar-h) + 1rem);
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.askdaft-ticket-summary h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.askdaft-summary-price,
+.askdaft-summary-row {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-summary-price {
+  border-color: rgba(255, 220, 90, 0.22);
+}
+
+.askdaft-summary-price span,
+.askdaft-summary-row span {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.askdaft-summary-price strong {
+  color: rgba(255, 236, 153, 0.96);
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+
+.askdaft-summary-row strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.askdaft-ticket-summary .phase-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+}
+
+.askdaft-ticket-summary > small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+  .askdaft-request-layout,
+  .askdaft-request-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-summary {
+    position: relative;
+    top: auto;
+  }
+
+  .askdaft-request-type-grid,
+  .askdaft-discovery-promise,
+  .askdaft-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-mode-grid {
+    grid-template-columns: 1fr;
+  }
+}

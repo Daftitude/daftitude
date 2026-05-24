@@ -14,6 +14,10 @@ import Family from './pages/family/Family';
 import DaftAppRoutes from './pages/family/DaftFamApp/src/DaftAppRoutes';
 
 import AskDaft from './pages/askdaft/AskDaft';
+import AskDaftDashboard from './pages/askdaft/AskDaftDashboard';
+import AskDaftRequest from './pages/askdaft/AskDaftRequest';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
 import AIHub from './pages/ai/AIHub';
 import PrivacyHub from './pages/privacy/PrivacyHub';
 import CybersecurityHub from './pages/cybersecurity/CybersecurityHub';
@@ -28,6 +32,10 @@ function App() {
 
         {/* Phase 1 public brand architecture */}
         <Route path="/askdaft" element={<AskDaft />} />
+        <Route path="/askdaft/dashboard" element={<AskDaftDashboard />} />
+        <Route path="/askdaft/request" element={<AskDaftRequest />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/ai" element={<AIHub />} />
         <Route path="/crypto" element={<Crypto />} />
         <Route path="/privacy" element={<PrivacyHub />} />

@@ -104,8 +104,8 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link to="/login" onClick={closeMenu}>Login</Link>
-            <Link to="/signup" onClick={closeMenu} className="nav-signup-pill">Sign Up</Link>
+            <Link to="/login?source=nav" onClick={closeMenu}>Login</Link>
+            <Link to="/signup?source=nav" onClick={closeMenu} className="nav-signup-pill">Sign Up</Link>
           </div>
         </div>
       </div>

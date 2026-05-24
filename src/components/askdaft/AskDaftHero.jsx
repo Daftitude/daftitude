@@ -13,14 +13,14 @@ export default function AskDaftHero() {
       </p>
 
       <div className="phase-hero-actions">
-        <Link className="phase-btn phase-btn-primary" to="/contact?source=askdaft&mode=guest">
-          Start as Guest
+        <Link className="phase-btn phase-btn-primary" to="/askdaft/request">
+          Start Request
         </Link>
         <Link className="phase-btn phase-btn-secondary" to="/login?source=askdaft">
           Log In
         </Link>
-        <a className="phase-btn phase-btn-ghost" href="#start-request">
-          Choose Issue
+        <a className="phase-btn phase-btn-ghost" href="/askdaft/request">
+          Compare Request Modes
         </a>
       </div>
 

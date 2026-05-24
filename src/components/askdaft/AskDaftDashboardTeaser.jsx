@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AskDaftDashboardTeaser() {
   return (
     <section className="phase-section askdaft-dashboard-teaser">
@@ -9,6 +11,15 @@ export default function AskDaftDashboardTeaser() {
         <p>
           AskDaFT can start as a guest request. Accounts become useful when you want <span className="pricing-emphasis-blue">saved devices</span>, request history, screenshots, notes, subscriptions, and repeat support without explaining everything again.
         </p>
+      </div>
+
+      <div className="phase-hero-actions askdaft-dashboard-teaser-actions">
+        <Link className="phase-btn phase-btn-primary" to="/askdaft/dashboard">
+          Preview Dashboard
+        </Link>
+        <Link className="phase-btn phase-btn-secondary" to="/signup?source=askdaft-dashboard-teaser">
+          Create Account
+        </Link>
       </div>
 
       <div className="askdaft-dashboard-grid">
