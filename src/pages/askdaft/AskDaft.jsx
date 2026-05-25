@@ -21,7 +21,7 @@ import {
   subscribeSavePlans,
   supportStyles,
 } from "../../components/askdaft/askDaftData";
-import { FloatingReadingTools } from "../../components/home";
+import { FloatingPageTools } from "../../components/home";
 
 export default function AskDaft() {
   const [readingImpairmentMode, setReadingImpairmentMode] = useState(false);
@@ -159,7 +159,7 @@ export default function AskDaft() {
             Start with the <span className="pricing-emphasis-yellow">issue</span>.
           </h2>
           <p>
-            Choose the closest issue, add what you know, then review before booking.
+            Pick issue. Add details. Review price.
           </p>
         </div>
         <div className="askdaft-progress-tracker" aria-label="AskDaFT request progress">
@@ -227,7 +227,7 @@ export default function AskDaft() {
 
       <section className="phase-section contact-command">
         <p className="phase-kicker">Ready?</p>
-        <h2>Start with the <span className="pricing-emphasis-yellow">problem</span>. AskDaFT will <span className="pricing-emphasis-green">help</span> translate it.</h2>
+        <h2>Start with the <span className="pricing-emphasis-yellow">problem</span>. AskDaFT handles the <span className="pricing-emphasis-green">translation</span>.</h2>
         <div className="phase-hero-actions">
           <Link className="phase-btn phase-btn-primary" to="/askdaft/request">
             Start Request
@@ -241,10 +241,12 @@ export default function AskDaft() {
         </div>
       </section>
 
-      <FloatingReadingTools
+      <FloatingPageTools
+        mode="basic"
         readingImpairmentMode={readingImpairmentMode}
         setReadingImpairmentMode={setReadingImpairmentMode}
         scrollToTop={scrollToTop}
+        advancedHref="/askdaft/request"
       />
     </main>
   );

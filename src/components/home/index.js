@@ -1,5 +1,6 @@
 export { default as BrandName } from "./BrandName";
 export { default as FloatingReadingTools } from "./FloatingReadingTools";
+export { default as FloatingPageTools } from "./FloatingPageTools";
 export { default as HomeHero } from "./HomeHero";
 export { default as QuickContactCTA } from "./QuickContactCTA";
 export { default as FinalStartSection } from "./FinalStartSection";

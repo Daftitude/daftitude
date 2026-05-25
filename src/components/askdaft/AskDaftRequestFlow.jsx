@@ -25,8 +25,8 @@ export default function AskDaftRequestFlow({
             <div className="askdaft-flow-step">
               <span className="step-number">01</span>
               <div>
-                <h3>Choose an issue</h3>
-                <p>Choose the option that feels closest.</p>
+                <h3>Choose issue</h3>
+                <p>Pick the closest match.</p>
               </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function AskDaftRequestFlow({
               <span className="step-number">02</span>
               <div>
                 <h3>Add details</h3>
-                <p>Type normally. Paste messages, popups, or questions here.</p>
+                <p>Type normally.</p>
               </div>
             </div>
 
@@ -82,7 +82,7 @@ export default function AskDaftRequestFlow({
                 <strong>{selectedIssue.price.base}</strong>
               </div>
               <div>
-                <span>Usually included</span>
+                <span>Includes</span>
                 <p>{selectedIssue.included.join(" • ")}</p>
               </div>
               <div>
@@ -109,8 +109,8 @@ export default function AskDaftRequestFlow({
             {selectedIssue.allowScreenshot && (
               <div className="askdaft-upload-panel">
                 <div>
-                  <strong>Upload screenshot</strong>
-                  <p>Optional. Helpful for texts, popups, error messages, account warnings, or confusing screens.</p>
+                  <strong>Add screenshot</strong>
+                  <p>Optional. Helpful for errors or warnings.</p>
                 </div>
                 <label className="askdaft-upload-btn">
                   <input
@@ -127,7 +127,7 @@ export default function AskDaftRequestFlow({
               <span className="step-number">03</span>
               <div>
                 <h3>Choose help style</h3>
-                <p>Choose how you want to continue.</p>
+                <p>Pick a path.</p>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function AskDaftRequestFlow({
             <div className="askdaft-flow-step">
               <span className="step-number">04</span>
               <div>
-                <h3>Review and book</h3>
+                <h3>Review</h3>
                 <p>{nextStepMessage}</p>
               </div>
             </div>

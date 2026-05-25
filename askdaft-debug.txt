@@ -1,4 +1,5 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+===== src/pages/askdaft/AskDaftRequest.jsx =====
+import { useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FloatingPageTools } from "../../components/home";
 import { createAskDaftTicket, saveAskDaftTicket } from "../../utils/askDaftTickets";
@@ -164,7 +165,6 @@ export default function AskDaftRequest() {
   const [agreementPriceChange, setAgreementPriceChange] = useState(false);
   const [agreementSafety, setAgreementSafety] = useState(false);
   const [submittedTicket, setSubmittedTicket] = useState(null);
-  const submittedPanelRef = useRef(null);
 
   const selectedMode = requestModes[mode];
   const selectedType = requestTypes.find((type) => type.id === requestType) || requestTypes[1];
@@ -348,9 +348,7 @@ export default function AskDaftRequest() {
   };
 
   const scrollToTop = useCallback(() => {
-    setTimeout(() => {
-      submittedPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleSubmitPreview = () => {
@@ -381,9 +379,7 @@ export default function AskDaftRequest() {
     saveAskDaftTicket(ticket);
     setSubmittedTicket(ticket);
     setStep("submit");
-    setTimeout(() => {
-      submittedPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const toggleTried = (item) => {
@@ -394,59 +390,6 @@ export default function AskDaftRequest() {
 
   return (
     <main className={`account-page askdaft-request-page askdaft-compact-copy ${readingImpairmentMode ? "reading-impairment-mode" : ""}`}>
-      {submittedTicket && (
-        <section ref={submittedPanelRef} className="askdaft-ticket-submitted-panel">
-          <div>
-            <p className="phase-kicker">Request Preview Created</p>
-            <h1>
-              Your <span className="pricing-emphasis-green">AskDaFT request</span> is ready.
-            </h1>
-            <p>
-              This preview is saved on this device for now. Backend email, text alerts, and ticket tracking will connect in the next build phase.
-            </p>
-          </div>
-
-          <div className="askdaft-ticket-submitted-grid">
-            <article>
-              <span>Ticket</span>
-              <strong>{submittedTicket.id}</strong>
-            </article>
-            <article>
-              <span>Help type</span>
-              <strong>{submittedTicket.requestLabel || "Tech help"}</strong>
-            </article>
-            <article>
-              <span>Estimate</span>
-              <strong>{submittedTicket.estimate?.range || "Review needed"}</strong>
-            </article>
-            <article>
-              <span>Contact</span>
-              <strong>{submittedTicket.contact?.phone || submittedTicket.contact?.email || "Not provided"}</strong>
-            </article>
-          </div>
-
-          <div className="askdaft-ticket-summary-block">
-            <strong>What you told AskDaFT</strong>
-            <p>{submittedTicket.description}</p>
-          </div>
-
-          <div className="account-dashboard-actions">
-            <Link className="phase-btn phase-btn-primary" to="/askdaft/dashboard">
-              View Dashboard
-            </Link>
-            <button
-              type="button"
-              className="phase-btn phase-btn-secondary"
-              onClick={() => {
-                setSubmittedTicket(null);
-                setStep("mode");
-              }}
-            >
-              Start Another Request
-            </button>
-          </div>
-        </section>
-      )}
       <section className="askdaft-request-hero">
         <div>
           <p className="phase-kicker">AskDaFT Request</p>
@@ -996,3 +939,684 @@ export default function AskDaftRequest() {
     </main>
   );
 }
+
+===== src/utils/askDaftTickets.js =====
+const STORAGE_KEY = "askdaft:tickets:v1";
+
+export const ASKDAFT_TICKET_STATUSES = {
+  DRAFT: "Draft",
+  SUBMITTED: "Submitted",
+  RECEIVED: "Received",
+  NEEDS_INFO: "Needs Info",
+  DISCOVERY: "Discovery",
+  ESTIMATE_READY: "Estimate Ready",
+  APPROVED: "Approved",
+  SCHEDULED: "Scheduled",
+  IN_PROGRESS: "In Progress",
+  WAITING_ON_CLIENT: "Waiting on Client",
+  RESOLVED: "Resolved",
+  FOLLOW_UP_AVAILABLE: "Follow-Up Available",
+  CLOSED: "Closed",
+};
+
+export function createTicketId() {
+  const now = new Date();
+  const datePart = now
+    .toISOString()
+    .slice(2, 10)
+    .replaceAll("-", "");
+
+  const randomPart = Math.random().toString(36).slice(2, 6).toUpperCase();
+
+  return `ASK-${datePart}-${randomPart}`;
+}
+
+export function createAskDaftTicket({
+  mode,
+  requestType,
+  selectedType,
+  issue,
+  device,
+  supportPath,
+  zipCode,
+  description,
+  alreadyTried,
+  multipleDevices,
+  saveContext,
+  estimate,
+  scopeLevel,
+  agreements,
+  contactInfo,
+}) {
+  const now = new Date().toISOString();
+  const ticketId = createTicketId();
+
+  return {
+    id: ticketId,
+    status: ASKDAFT_TICKET_STATUSES.SUBMITTED,
+    mode,
+    requestType,
+    requestLabel: selectedType?.label || "Support Request",
+    issue,
+    device,
+    supportPath,
+    contact: {
+      firstName: contactInfo?.firstName?.trim() || "",
+      lastName: contactInfo?.lastName?.trim() || "",
+      phone: contactInfo?.phone?.trim() || "",
+      email: contactInfo?.email?.trim() || "",
+      preferredContact: contactInfo?.preferredContact || "Text or email",
+      bestTime: contactInfo?.bestTime || "Anytime",
+      consent: Boolean(contactInfo?.consent),
+    },
+    zipCode: zipCode || "",
+    description: description.trim(),
+    alreadyTried: alreadyTried || [],
+    multipleDevices: Boolean(multipleDevices),
+    saveContext: Boolean(saveContext),
+    estimate: {
+      startingCommitment: estimate?.startingCommitment || "",
+      range: estimate?.range || "",
+      confidence: estimate?.confidence || "",
+    },
+    scope: {
+      label: scopeLevel?.label || "",
+      tone: scopeLevel?.tone || "",
+      text: scopeLevel?.text || "",
+    },
+    agreements: {
+      minimum: Boolean(agreements?.minimum),
+      priceChange: Boolean(agreements?.priceChange),
+      safety: Boolean(agreements?.safety),
+    },
+    recommendation: {
+      bandAid: "Lowest-cost practical next step when you need progress fast.",
+      best: "Balanced fix for cost, time, reliability, and long-term usefulness.",
+      askDaft: "AskDaFT will recommend the best path after reviewing the ticket details.",
+    },
+    timeline: [
+      {
+        label: "Submitted",
+        text: "Ticket was created and is ready for AskDaFT review.",
+        at: now,
+      },
+    ],
+    createdAt: now,
+    updatedAt: now,
+  };
+}
+
+export function loadAskDaftTickets() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn("Unable to load AskDaFT tickets:", error);
+    return [];
+  }
+}
+
+export function saveAskDaftTickets(tickets) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tickets));
+    return true;
+  } catch (error) {
+    console.warn("Unable to save AskDaFT tickets:", error);
+    return false;
+  }
+}
+
+export function saveAskDaftTicket(ticket) {
+  const tickets = loadAskDaftTickets();
+  const nextTickets = [ticket, ...tickets.filter((item) => item.id !== ticket.id)];
+
+  saveAskDaftTickets(nextTickets);
+  return nextTickets;
+}
+
+export function getLatestAskDaftTicket() {
+  return loadAskDaftTickets()[0] || null;
+}
+
+===== src/pages/askdaft/AskDaftDashboard.jsx =====
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { DashboardStatusCard } from "../../components/account";
+import { loadAskDaftTickets } from "../../utils/askDaftTickets";
+
+const helpLauncherOptions = [
+  {
+    id: "device-help",
+    icon: "🛠️",
+    title: "Something is not working",
+    text: "Device, app, Wi-Fi, printer, TV, console, or account issue.",
+    action: "Start troubleshooting",
+    route: "/askdaft#start-request",
+  },
+  {
+    id: "safety-check",
+    icon: "🛡️",
+    title: "Paste message / safety check",
+    text: "Texts, emails, popups, links, payment requests, or account warnings.",
+    action: "Check before clicking",
+    route: "/askdaft#start-request",
+  },
+  {
+    id: "setup-help",
+    icon: "📦",
+    title: "Set it up for me",
+    text: "New device, app, account, AI tool, smart-home, or streaming setup.",
+    action: "Start setup request",
+    route: "/askdaft#start-request",
+  },
+  {
+    id: "book-help",
+    icon: "☎️",
+    title: "Book a call / remote help",
+    text: "Talk through the issue or get guided support without guessing.",
+    action: "Choose support path",
+    route: "/contact?source=askdaft-dashboard-help-launcher",
+  },
+];
+
+const guidedRequestSteps = [
+  {
+    number: "01",
+    title: "Choose what needs help",
+    text: "Pick a device, account, service, suspicious message, or choose Not Sure.",
+  },
+  {
+    number: "02",
+    title: "Choose what’s going on",
+    text: "Select the closest issue: not working, login trouble, setup, slow, unsafe, or upgrade.",
+  },
+  {
+    number: "03",
+    title: "Explain it your way",
+    text: "Type normally, paste a message, or upload a screenshot if it helps.",
+  },
+  {
+    number: "04",
+    title: "Review and book",
+    text: "AskDaFT summarizes the request, suggests a support path, and lets you submit or book.",
+  },
+];
+
+const guidedRequestExamples = [
+  "Phone / Tablet",
+  "Computer / Laptop",
+  "TV / Streaming",
+  "Gaming Console",
+  "Printer",
+  "Wi-Fi / Internet",
+  "Email / Login",
+  "Suspicious Message",
+  "Not Sure",
+];
+
+const planComparison = [
+  {
+    name: "Free Account",
+    price: "$0",
+    bestFor: "Trying AskDaFT and saving light context.",
+    included: [
+      "Start help requests",
+      "Save basic contact preferences",
+      "Limited request history",
+      "Save a few devices/accounts",
+      "Basic support notes",
+    ],
+    notIncluded: [
+      "Priority response",
+      "Monthly check-ins",
+      "Managed maintenance",
+      "Deep security review",
+      "Large installs or projects",
+    ],
+  },
+  {
+    name: "Basic",
+    price: "$25–$55/mo",
+    bestFor: "Light monthly support and simple repeat help.",
+    included: [
+      "Everything in Free",
+      "Light monthly support",
+      "Basic message/screenshot review",
+      "Basic device/account notes",
+      "Simple setup guidance",
+    ],
+    notIncluded: [
+      "Urgent priority support",
+      "Large installs",
+      "Full tech management",
+      "Unlimited support",
+      "Hardware or software costs",
+    ],
+  },
+  {
+    name: "Priority",
+    price: "$100–$150+/mo",
+    bestFor: "Faster repeat help and deeper support history.",
+    included: [
+      "Everything in Basic",
+      "Faster response window",
+      "Detailed device/account tracking",
+      "Remote troubleshooting sessions",
+      "Upgrade recommendations",
+    ],
+    notIncluded: [
+      "24/7 emergency support",
+      "Large multi-project implementation",
+      "Hardware purchases",
+      "Paid software subscriptions",
+      "Enterprise IT/security work",
+    ],
+  },
+  {
+    name: "Managed Partner",
+    price: "$200–$275+/mo",
+    bestFor: "Families, creators, or small businesses needing ongoing support.",
+    included: [
+      "Everything in Priority",
+      "Scheduled monthly support",
+      "Managed tech map",
+      "Proactive cleanup recommendations",
+      "Setup and upgrade planning",
+    ],
+    notIncluded: [
+      "Hardware costs",
+      "Paid tools/software",
+      "Major wiring/construction",
+      "Enterprise compliance work",
+      "Guaranteed instant response",
+    ],
+  },
+];
+
+const deviceCategories = [
+  {
+    title: "Network",
+    helper: "Internet, router, modem, extenders.",
+    options: ["Router / Wi-Fi", "Modem", "Mesh Extender", "Ethernet Switch"],
+  },
+  {
+    title: "TV & Gaming",
+    helper: "Entertainment devices and consoles.",
+    options: ["Smart TV", "Xbox", "PlayStation", "Roku / Fire Stick", "Apple TV", "Soundbar"],
+  },
+  {
+    title: "Computers",
+    helper: "Workstations, laptops, printers.",
+    options: ["Computer", "Laptop", "Printer", "Monitor", "External Drive"],
+  },
+  {
+    title: "Phones & Tablets",
+    helper: "Mobile devices and family devices.",
+    options: ["Phone", "Tablet", "Smart Watch", "Kid Device"],
+  },
+  {
+    title: "Accounts",
+    helper: "Email, shopping, streaming, cloud logins.",
+    options: ["Email", "Apple ID", "Google Account", "Amazon", "Netflix", "Bank Portal"],
+  },
+  {
+    title: "Smart Home",
+    helper: "Connected home devices.",
+    options: ["Amazon Alexa", "Security Camera", "Doorbell", "Thermostat", "Smart Lights"],
+  },
+];
+
+const techGroups = [
+  {
+    id: "network",
+    title: "Network",
+    icon: "📡",
+    description: "Everything depends on this first.",
+    devices: [
+      {
+        id: "router",
+        label: "Router / Wi-Fi",
+        type: "Network",
+        icon: "📡",
+        status: "good",
+        priority: "Core",
+        room: "Living room",
+        connectedTo: "Internet provider",
+        issueType: "No current issue",
+        upgradeNote: "Could document provider, Wi-Fi name, and mesh needs.",
+        note: "Main home network. No current issue reported.",
+        nextAction: "Document router name, provider, and basic network notes.",
+        checks: ["Power light", "Internet light", "Wi-Fi name", "Provider outage", "Router placement"],
+      },
+    ],
+  },
+  {
+    id: "living-room",
+    title: "Living Room",
+    icon: "🛋️",
+    description: "Shared entertainment and smart devices.",
+    devices: [
+      {
+        id: "smart-tv",
+        label: "Smart TV",
+        type: "Entertainment",
+        icon: "📺",
+        status: "upgrade",
+        priority: "Medium",
+        room: "Living room",
+        connectedTo: "Router / Wi-Fi",
+        issueType: "Works, but could be improved",
+        upgradeNote: "App cleanup, remote setup, streaming login review, or better streaming device.",
+        note: "Works, but may need app cleanup, login review, or streaming upgrade.",
+        nextAction: "Check apps, storage, remote, and streaming account access.",
+        checks: ["Wi-Fi connection", "App logins", "Storage", "Remote", "Picture / audio"],
+      },
+      {
+        id: "xbox",
+        label: "Xbox",
+        type: "Gaming",
+        icon: "🎮",
+        status: "not-working",
+        priority: "High",
+        room: "Living room",
+        connectedTo: "Router / Wi-Fi",
+        issueType: "Connection or setup issue",
+        upgradeNote: "May need storage expansion, network tuning, or account cleanup.",
+        note: "Reported connection or setup issue. Needs troubleshooting.",
+        nextAction: "Check power, HDMI, network, account login, and storage.",
+        checks: ["Power", "HDMI", "Controller", "Network", "Xbox account", "Storage"],
+      },
+    ],
+  },
+  {
+    id: "office",
+    title: "Office",
+    icon: "🖥️",
+    description: "Work devices, printer, files, and productivity.",
+    devices: [
+      {
+        id: "computer",
+        label: "Computer",
+        type: "Personal device",
+        icon: "💻",
+        status: "good",
+        priority: "Core",
+        room: "Office",
+        connectedTo: "Router / Wi-Fi",
+        issueType: "Healthy / needs documentation",
+        upgradeNote: "Good candidate for backup, password manager, antivirus, or storage upgrade.",
+        note: "Primary computer. Good candidate for saved notes and maintenance plan.",
+        nextAction: "Add model, OS, backup status, and common software.",
+        checks: ["OS version", "Storage", "Updates", "Backup", "Security", "Common apps"],
+      },
+      {
+        id: "printer",
+        label: "Printer",
+        type: "Peripheral",
+        icon: "🖨️",
+        status: "not-working",
+        priority: "Medium",
+        room: "Office",
+        connectedTo: "Computer / Wi-Fi",
+        issueType: "Printing issue",
+        upgradeNote: "May be better to replace if ink/driver issues keep repeating.",
+        note: "Printer issues are usually driver, Wi-Fi, paper, ink, or queue related.",
+        nextAction: "Check printer model, network connection, drivers, and test page.",
+        checks: ["Power", "Ink / toner", "Paper", "Wi-Fi", "Driver", "Print queue"],
+      },
+    ],
+  },
+  {
+    id: "personal",
+    title: "Personal Devices",
+    icon: "📱",
+    description: "Phones, tablets, watches, and everyday access.",
+    devices: [
+      {
+        id: "phone",
+        label: "Phone",
+        type: "Mobile",
+        icon: "📱",
+        status: "good",
+        priority: "Core",
+        room: "Personal",
+        connectedTo: "Cellular / Wi-Fi",
+        issueType: "Healthy / account recovery device",
+        upgradeNote: "Could improve backups, storage, password manager, and account recovery.",
+        note: "Main contact device. Good for account recovery and support communication.",
+        nextAction: "Confirm backup, storage, password manager, and account recovery.",
+        checks: ["Backup", "Storage", "Updates", "Recovery number", "Password manager", "MFA"],
+      },
+    ],
+  },
+  {
+    id: "accounts",
+    title: "Accounts",
+    icon: "🔐",
+    description: "Online accounts that connect everything together.",
+    devices: [
+      {
+        id: "email",
+        label: "Email Account",
+        type: "Account",
+        icon: "✉️",
+        status: "upgrade",
+        priority: "Core",
+        room: "Online",
+        connectedTo: "Phone / Computer",
+        issueType: "Security review recommended",
+        upgradeNote: "Needs MFA, recovery info, suspicious rule check, and password hygiene.",
+        note: "Works, but account security and recovery should be reviewed.",
+        nextAction: "Check recovery email, phone number, MFA, and suspicious rules.",
+        checks: ["Recovery email", "Recovery phone", "MFA", "Forwarding rules", "Recent logins", "Password age"],
+      },
+    ],
+  },
+];
+
+const techDevices = techGroups.flatMap((group) =>
+  group.devices.map((device) => ({
+    ...device,
+    groupId: group.id,
+    groupTitle: group.title,
+  }))
+);
+
+const recentRequests = [
+  {
+    title: "Message / Safety Review",
+    status: "Waiting for review",
+    helper: "Upload screenshot or paste the message before responding.",
+  },
+  {
+    title: "Printer setup",
+    status: "Ready to schedule",
+    helper: "Best path: remote help first, house call if needed.",
+  },
+  {
+    title: "Home tech cleanup",
+    status: "Estimate needed",
+    helper: "Could become House Call / Install or Big / Multi-Project.",
+  },
+
+===== src/App.jsx =====
+// App.jsx
+import { Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
+
+import Home from './pages/Home';
+import About from './pages/about/About';
+import Services from './pages/services/Services';
+import Contact from './pages/contact/Contact';
+import TechHub from './pages/techhub/TechHub';
+import Crypto from './pages/crypto/Crypto';
+import Family from './pages/family/Family';
+import DaftAppRoutes from './pages/family/DaftFamApp/src/DaftAppRoutes';
+
+import AskDaft from './pages/askdaft/AskDaft';
+import AskDaftDashboard from './pages/askdaft/AskDaftDashboard';
+import AskDaftRequest from './pages/askdaft/AskDaftRequest';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import AIHub from './pages/ai/AIHub';
+import PrivacyHub from './pages/privacy/PrivacyHub';
+import CybersecurityHub from './pages/cybersecurity/CybersecurityHub';
+import Mission from './pages/mission/Mission';
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* Phase 1 public brand architecture */}
+        <Route path="/askdaft" element={<AskDaft />} />
+        <Route path="/askdaft/dashboard" element={<AskDaftDashboard />} />
+        <Route path="/askdaft/request" element={<AskDaftRequest />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/ai" element={<AIHub />} />
+        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/privacy" element={<PrivacyHub />} />
+        <Route path="/cybersecurity" element={<CybersecurityHub />} />
+        <Route path="/tech" element={<TechHub />} />
+        <Route path="/techhub" element={<TechHub />} />
+        <Route path="/tech-hub" element={<TechHub />} />
+        <Route path="/mission" element={<Mission />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Existing routes kept alive */}
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/family" element={<Family />} />
+        <Route path="/family/*" element={<DaftAppRoutes />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+===== src/components/home/FloatingPageTools.jsx =====
+import { Link } from "react-router-dom";
+
+export default function FloatingPageTools({
+  mode = "basic",
+  setMode,
+  readingImpairmentMode,
+  setReadingImpairmentMode,
+  scrollToTop,
+  advancedHref = "/askdaft/request",
+  basicHref = "/askdaft",
+}) {
+  const isAdvanced = mode === "advanced";
+
+  const handleModeToggle = () => {
+    if (setMode) {
+      setMode((current) => (current === "advanced" ? "basic" : "advanced"));
+    }
+  };
+
+  return (
+    <div className="floating-page-tools" aria-label="Page tools">
+      {setMode ? (
+        <button
+          type="button"
+          className={`floating-tool-btn mode-tool ${isAdvanced ? "active" : ""}`}
+          onClick={handleModeToggle}
+          aria-label={isAdvanced ? "Switch to basic request view" : "Switch to advanced request view"}
+          title={isAdvanced ? "Advanced view: more detail, better estimate" : "Basic view: faster request path"}
+        >
+          <span>{isAdvanced ? "Advanced" : "Basic"}</span>
+          <strong>{isAdvanced ? "ADV" : "BASIC"}</strong>
+        </button>
+      ) : (
+        <Link
+          className="floating-tool-btn mode-tool"
+          to={advancedHref || basicHref}
+          title="Switch between basic and advanced request paths"
+        >
+          <span>Mode</span>
+          <strong>{advancedHref ? "ADV" : "BASIC"}</strong>
+        </Link>
+      )}
+
+      <button
+        type="button"
+        className="floating-tool-btn page-up-tool"
+        onClick={scrollToTop}
+        aria-label="Jump back to top"
+        title="Page Up"
+      >
+        <span>Page Up</span>
+        <strong>↑</strong>
+      </button>
+
+      <button
+        type="button"
+        className={`floating-tool-btn reading-tool ${readingImpairmentMode ? "active" : ""}`}
+        onClick={() => setReadingImpairmentMode((current) => !current)}
+        aria-label={readingImpairmentMode ? "Turn reading mode off" : "Turn reading mode on"}
+        aria-pressed={readingImpairmentMode}
+        title={readingImpairmentMode ? "Reading Mode: On" : "Reading Mode: Off"}
+      >
+        <span>Reading</span>
+        <strong>{readingImpairmentMode ? "ON" : "OFF"}</strong>
+      </button>
+    </div>
+  );
+}
+
+===== CSS markers =====
+src/styles/pages.css:2515:.askdaft-request-page {
+src/styles/pages.css:2520:.askdaft-request-layout {
+src/styles/pages.css:2558:.askdaft-request-layout {
+src/styles/pages.css:2571:.askdaft-ticket-summary {
+src/styles/pages.css:2848:.askdaft-ticket-summary {
+src/styles/pages.css:2856:.askdaft-ticket-summary h2 {
+src/styles/pages.css:2899:.askdaft-ticket-summary .phase-btn:disabled {
+src/styles/pages.css:2905:.askdaft-ticket-summary > small {
+src/styles/pages.css:2913:  .askdaft-request-layout,
+src/styles/pages.css:2919:  .askdaft-ticket-summary {
+src/styles/pages.css:3104:.askdaft-ticket-summary-block {
+src/styles/pages.css:3122:.askdaft-ticket-summary-block strong {
+src/styles/pages.css:3244:.askdaft-compact-copy .askdaft-ticket-summary p,
+src/styles/pages.css:3283:.askdaft-compact-copy .askdaft-ticket-summary > small,
+src/styles/pages.css:3284:.askdaft-compact-copy .askdaft-ticket-summary .askdaft-muted-detail {
+src/styles/pages.css:3290:.askdaft-compact-copy .askdaft-ticket-summary .phase-btn {
+src/styles/pages.css:3420:.askdaft-request-page {
+src/styles/pages.css:3424:.askdaft-ticket-summary {
+src/styles/pages.css:3434:  .askdaft-ticket-summary {
+src/styles/pages.css:3478:.askdaft-request-page .askdaft-chip-grid button,
+src/styles/pages.css:3479:.askdaft-request-page .askdaft-field-grid input,
+src/styles/pages.css:3480:.askdaft-request-page .askdaft-field-grid select {
+src/styles/pages.css:3484:.askdaft-request-page .askdaft-inline-check span,
+src/styles/pages.css:3485:.askdaft-request-page .askdaft-agreement-list span {
+src/styles/pages.css:3493:  .askdaft-request-page .askdaft-chip-grid {
+src/styles/pages.css:3498:  .askdaft-request-page .askdaft-chip-grid button {
+src/styles/pages.css:3504:  .askdaft-request-page .askdaft-mode-card strong,
+src/styles/pages.css:3505:  .askdaft-request-page .askdaft-request-type-card strong {
+src/styles/pages.css:3509:  .askdaft-request-page .askdaft-field-grid span {
+src/styles/pages.css:3565:.askdaft-submit-preview-btn {
+src/styles/pages.css:3573:.floating-page-tools,
+src/styles/pages.css:3578:.askdaft-ticket-summary {
+src/styles/pages.css:3584:  .floating-page-tools,
+src/styles/pages.css:3592:  .askdaft-request-page {
+src/styles/mobile.css:37:  .askdaft-progress-tracker {
+src/styles/mobile.css:77:  .askdaft-progress-tracker {
+src/styles/mobile.css:348:  .askdaft-progress-tracker {
+src/styles/mobile.css:1481:.floating-page-tools {
+src/styles/mobile.css:1501:.floating-page-tools:hover,
+src/styles/mobile.css:1502:.floating-page-tools:focus-within {
+src/styles/mobile.css:1552:  .floating-page-tools {
+src/styles/mobile.css:1563:  .floating-page-tools:hover,
+src/styles/mobile.css:1564:  .floating-page-tools:focus-within {
+src/styles/cards.css:1712:.askdaft-progress-tracker {
+src/styles/cards.css:1971:.askdaft-progress-tracker {

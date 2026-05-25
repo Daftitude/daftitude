@@ -1472,3 +1472,106 @@
     margin-top: 0.25rem;
   }
 }
+
+/* ======================================================
+   Floating Page Tools
+   Basic / Advanced, Page Up, Reading Mode
+====================================================== */
+
+.floating-page-tools {
+  position: fixed;
+  right: clamp(0.8rem, 2vw, 1.35rem);
+  bottom: clamp(1rem, 2vw, 1.35rem);
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(12, 20, 34, 0.84), rgba(4, 8, 16, 0.74)),
+    rgba(4, 8, 16, 0.74);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+  opacity: 0.58;
+  transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+.floating-page-tools:hover,
+.floating-page-tools:focus-within {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.28);
+}
+
+.floating-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 42px;
+  padding: 0.62rem 0.78rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 950;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.floating-tool-btn span {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.floating-tool-btn strong {
+  color: rgba(125, 255, 178, 0.94);
+  font-weight: 1000;
+}
+
+.floating-tool-btn:hover,
+.floating-tool-btn:focus-visible,
+.floating-tool-btn.active {
+  transform: translateY(-1px);
+  border-color: rgba(125, 255, 178, 0.36);
+  background: rgba(125, 255, 178, 0.12);
+  color: #fff;
+}
+
+.page-up-tool strong {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .floating-page-tools {
+    left: 50%;
+    right: auto;
+    bottom: 0.8rem;
+    transform: translateX(-50%);
+    width: min(94vw, 390px);
+    justify-content: space-between;
+    border-radius: 22px;
+    opacity: 0.86;
+  }
+
+  .floating-page-tools:hover,
+  .floating-page-tools:focus-within {
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .floating-tool-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 0.62rem 0.48rem;
+  }
+
+  .floating-tool-btn span {
+    display: none;
+  }
+}
