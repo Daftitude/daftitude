@@ -277,7 +277,6 @@ export default function AskDaftRequest() {
 
   const hasDescription = description.trim().length >= 3;
   const hasContactMethod = Boolean(contactInfo.phone.trim() || contactInfo.email.trim());
-  const hasContactName = Boolean(contactInfo.firstName.trim() || contactInfo.lastName.trim());
   const zipNeeded = supportPath === "In-person / house call";
   const zipReady = !zipNeeded || zipCode.trim().length === 5;
   const canSubmit =
@@ -458,7 +457,7 @@ export default function AskDaftRequest() {
   };
 
   return (
-    <main className={`account-page askdaft-request-page askdaft-compact-copy ${readingImpairmentMode ? "reading-impairment-mode" : ""}`}>
+    <main className={`account-page askdaft-request-page askdaft-compact-copy ${readingImpairmentMode ? "" : "reading-impairment-mode"}`}>
       {submittedTicket && (
         <section ref={submittedPanelRef} className="askdaft-ticket-submitted-panel">
           <div>

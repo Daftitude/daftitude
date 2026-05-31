@@ -33,23 +33,28 @@
 }
 
 /* Reading ON: semantic highlights */
-.phase-page:not(.reading-impairment-mode) .reading-tech-word {
+.phase-page:not(.reading-impairment-mode) .reading-tech-word,
+.account-page:not(.reading-impairment-mode) .reading-tech-word {
   color: var(--primary) !important;
   text-shadow: 0 0 18px rgba(12, 199, 246, 0.28) !important;
 }
 
-.phase-page:not(.reading-impairment-mode) .reading-action-word {
+.phase-page:not(.reading-impairment-mode) .reading-action-word,
+.account-page:not(.reading-impairment-mode) .reading-action-word {
   color: var(--green) !important;
   text-shadow: 0 0 18px rgba(125, 255, 178, 0.28) !important;
 }
 
-.phase-page:not(.reading-impairment-mode) .reading-risk-word {
+.phase-page:not(.reading-impairment-mode) .reading-risk-word,
+.account-page:not(.reading-impairment-mode) .reading-risk-word {
   color: var(--accent) !important;
   text-shadow: 0 0 18px rgba(255, 77, 109, 0.28) !important;
 }
 
 .phase-page:not(.reading-impairment-mode) .reading-caution-word,
-.phase-page:not(.reading-impairment-mode) .reading-money-word {
+.phase-page:not(.reading-impairment-mode) .reading-money-word,
+.account-page:not(.reading-impairment-mode) .reading-caution-word,
+.account-page:not(.reading-impairment-mode) .reading-money-word {
   color: var(--yellow) !important;
   text-shadow: 0 0 18px rgba(255, 199, 45, 0.28) !important;
 }
@@ -57,6 +62,7 @@
 /* Brand colors are identity, not semantic reading colors */
 .brand-word-askdaft .brand-ask,
 .phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask,
+.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask,
 .reading-impairment-mode .brand-word-askdaft .brand-ask {
   color: var(--green) !important;
   text-shadow: 0 0 18px rgba(125, 255, 178, 0.26) !important;
@@ -64,6 +70,7 @@
 
 .brand-word-askdaft .brand-daft,
 .phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft,
+.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft,
 .reading-impairment-mode .brand-word-askdaft .brand-daft {
   color: #ffffff !important;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.22) !important;
@@ -71,6 +78,7 @@
 
 .brand-word-daftitude .brand-daft,
 .phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft,
+.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft,
 .reading-impairment-mode .brand-word-daftitude .brand-daft {
   color: var(--primary) !important;
   text-shadow: 0 0 18px rgba(12, 199, 246, 0.28) !important;
@@ -78,6 +86,7 @@
 
 .brand-word-daftitude .brand-itude,
 .phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude,
+.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude,
 .reading-impairment-mode .brand-word-daftitude .brand-itude {
   color: #ffffff !important;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.2) !important;
