@@ -4,7 +4,7 @@ export default function AskDaftHero() {
   return (
     <section className="phase-hero askdaft-hero">
       <div className="phase-eyebrow">Powered by DaFTitude</div>
-      <h1>AskDaFT Support</h1>
+      <h1><span className="brand-word brand-word-askdaft"><span className="brand-ask">Ask</span><span className="brand-daft">DaFT</span></span> <span className="askdaft-read-key">Support</span></h1>
       <p className="phase-lede">
         <span className="pricing-emphasis-green">Tech help</span> that starts with the <span className="pricing-emphasis-yellow">problem</span>, not the paperwork.
       </p>

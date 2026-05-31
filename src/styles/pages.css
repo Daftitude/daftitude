@@ -3670,3 +3670,584 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ======================================================
+   AskDaFT Front Door + Ticket Status Pages
+====================================================== */
+
+.askdaft-front-door-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.askdaft-front-door-card,
+.askdaft-support-shortcut,
+.askdaft-ticket-list-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.72);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.askdaft-front-door-card:hover,
+.askdaft-front-door-card:focus-visible,
+.askdaft-support-shortcut:hover,
+.askdaft-support-shortcut:focus-visible,
+.askdaft-ticket-list-card:hover,
+.askdaft-ticket-list-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.28);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 44%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.askdaft-front-door-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(12, 199, 246, 0.08);
+  font-size: 1.45rem;
+}
+
+.askdaft-front-door-card strong,
+.askdaft-support-shortcut strong,
+.askdaft-ticket-list-card strong {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 1000;
+}
+
+.askdaft-front-door-card p,
+.askdaft-support-shortcut small,
+.askdaft-ticket-list-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.askdaft-front-door-card small,
+.askdaft-ticket-list-card span,
+.askdaft-ticket-list-card small {
+  width: max-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.095);
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.askdaft-support-shortcuts {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(12, 199, 246, 0.14);
+  border-radius: 24px;
+  background: rgba(12, 199, 246, 0.04);
+}
+
+.askdaft-support-shortcuts h3 {
+  margin: 0.25rem 0 0;
+  color: #fff;
+}
+
+.askdaft-support-shortcut-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.askdaft-support-shortcut span {
+  font-size: 1.25rem;
+}
+
+.askdaft-ticket-detail-page,
+.askdaft-tickets-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.askdaft-ticket-detail-hero,
+.askdaft-guest-save-panel,
+.askdaft-ticket-detail-panel,
+.askdaft-ticket-list-panel,
+.askdaft-ticket-detail-actions {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.1rem, 3vw, 1.8rem);
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.74);
+}
+
+.askdaft-ticket-detail-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.askdaft-ticket-detail-hero h1,
+.askdaft-guest-save-panel h2,
+.askdaft-ticket-detail-panel h2 {
+  margin: 0.35rem 0 0.55rem;
+  color: #fff;
+}
+
+.askdaft-ticket-detail-hero p,
+.askdaft-guest-save-panel p,
+.askdaft-ticket-detail-panel p {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.askdaft-ticket-id-card {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 220px;
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.22);
+  border-radius: 20px;
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-ticket-id-card span,
+.askdaft-ticket-detail-grid span {
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-ticket-id-card strong {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-id-card small {
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 800;
+}
+
+.askdaft-guest-save-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-color: rgba(255, 220, 90, 0.18);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 220, 90, 0.08), transparent 42%),
+    rgba(5, 9, 18, 0.74);
+}
+
+.askdaft-ticket-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.askdaft-ticket-detail-grid article {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-detail-grid strong {
+  color: #fff;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-status-timeline,
+.askdaft-ticket-recommendation-grid,
+.askdaft-ticket-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.askdaft-ticket-status-timeline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.askdaft-ticket-status-step {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-status-step span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-status-step.complete,
+.askdaft-ticket-status-step.current {
+  border-color: rgba(125, 255, 178, 0.22);
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-ticket-status-step strong {
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+.askdaft-ticket-recommendation-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-ticket-recommendation-grid article {
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-recommendation-grid strong {
+  color: rgba(125, 255, 178, 0.95);
+}
+
+.askdaft-ticket-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.askdaft-ticket-list-card {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.askdaft-ticket-list-card > div:last-child {
+  display: grid;
+  justify-items: end;
+  gap: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .askdaft-front-door-grid,
+  .askdaft-support-shortcut-row,
+  .askdaft-ticket-detail-grid,
+  .askdaft-ticket-recommendation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .askdaft-ticket-detail-hero,
+  .askdaft-guest-save-panel {
+    display: grid;
+  }
+
+  .askdaft-ticket-status-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .askdaft-front-door-grid,
+  .askdaft-support-shortcut-row,
+  .askdaft-ticket-detail-grid,
+  .askdaft-ticket-recommendation-grid,
+  .askdaft-ticket-status-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-list-card {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-list-card > div:last-child {
+    justify-items: start;
+  }
+}
+
+/* ======================================================
+   AskDaFT Front Door Badge Cleanup
+====================================================== */
+
+.askdaft-front-door-icon,
+.askdaft-shortcut-badge {
+  display: inline-grid;
+  place-items: center;
+  width: max-content;
+  min-width: 44px;
+  height: 32px;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(12, 199, 246, 0.16), transparent 58%),
+    rgba(12, 199, 246, 0.075);
+  color: rgba(205, 247, 255, 0.96);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-front-door-card:hover .askdaft-front-door-icon,
+.askdaft-support-shortcut:hover .askdaft-shortcut-badge {
+  border-color: rgba(125, 255, 178, 0.32);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(125, 255, 178, 0.18), transparent 58%),
+    rgba(125, 255, 178, 0.08);
+  color: rgba(224, 255, 236, 0.98);
+}
+
+
+/* ======================================================
+   FINAL AskDaFT Front Door Isolation Patch
+   Keep /askdaft homepage independent from older AskDaFT flow CSS.
+====================================================== */
+
+.askdaft-page .askdaft-front-door {
+  width: min(1180px, calc(100% - 2rem)) !important;
+  margin-inline: auto !important;
+  padding-top: clamp(2.25rem, 4vw, 3.5rem) !important;
+  padding-bottom: clamp(3rem, 5vw, 4.5rem) !important;
+}
+
+.askdaft-page .askdaft-front-door .phase-section-heading {
+  max-width: 780px !important;
+  margin: 0 auto clamp(1.25rem, 2.5vw, 1.8rem) !important;
+  text-align: center !important;
+}
+
+.askdaft-page .askdaft-front-door .phase-section-heading h2 {
+  color: #fff !important;
+  font-size: clamp(2.15rem, 5.2vw, 4.2rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.065em !important;
+  text-wrap: balance !important;
+}
+
+.askdaft-page .askdaft-front-door .phase-section-heading p {
+  max-width: 680px !important;
+  margin: 0.75rem auto 0 !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem) !important;
+  font-weight: 760 !important;
+  line-height: 1.55 !important;
+}
+
+/* Front door card grid should not inherit ticket/dashboard card behavior */
+.askdaft-page .askdaft-front-door-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.9rem !important;
+}
+
+.askdaft-page .askdaft-front-door-card {
+  display: grid !important;
+  align-content: start !important;
+  gap: 0.62rem !important;
+  min-height: 190px !important;
+  padding: 1.05rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.11) !important;
+  border-radius: 24px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.74) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22) !important;
+}
+
+.askdaft-page .askdaft-front-door-card:hover,
+.askdaft-page .askdaft-front-door-card:focus-visible {
+  transform: translateY(-3px) !important;
+  border-color: rgba(125, 255, 178, 0.34) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.09), transparent 46%),
+    rgba(255, 255, 255, 0.045) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Kill old square icon behavior and force clean text badges */
+.askdaft-page .askdaft-front-door-icon,
+.askdaft-page .askdaft-shortcut-badge {
+  display: inline-grid !important;
+  place-items: center !important;
+  width: max-content !important;
+  min-width: 46px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 0.58rem !important;
+  border: 1px solid rgba(12, 199, 246, 0.24) !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(12, 199, 246, 0.18), transparent 58%),
+    rgba(12, 199, 246, 0.075) !important;
+  color: rgba(205, 247, 255, 0.96) !important;
+  font-size: 0.66rem !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+
+.askdaft-page .askdaft-front-door-card strong,
+.askdaft-page .askdaft-support-shortcut strong {
+  color: #fff !important;
+  font-size: 1.02rem !important;
+  font-weight: 1000 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.askdaft-page .askdaft-front-door-card p,
+.askdaft-page .askdaft-support-shortcut small {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: 0.84rem !important;
+  font-weight: 720 !important;
+  line-height: 1.42 !important;
+}
+
+.askdaft-page .askdaft-front-door-card > small {
+  width: max-content !important;
+  margin-top: auto !important;
+  padding: 0.34rem 0.56rem !important;
+  border: 1px solid rgba(125, 255, 178, 0.22) !important;
+  border-radius: 999px !important;
+  background: rgba(125, 255, 178, 0.095) !important;
+  color: rgba(218, 255, 232, 0.96) !important;
+  font-size: 0.68rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+/* Support shortcuts are separate from main problem tiles */
+.askdaft-page .askdaft-support-shortcuts {
+  display: grid !important;
+  gap: 0.95rem !important;
+  margin-top: 1rem !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(12, 199, 246, 0.16) !important;
+  border-radius: 26px !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(12, 199, 246, 0.08), transparent 42%),
+    rgba(12, 199, 246, 0.035) !important;
+}
+
+.askdaft-page .askdaft-support-shortcuts h3 {
+  margin: 0.25rem 0 0 !important;
+  color: #fff !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem) !important;
+  line-height: 1.1 !important;
+}
+
+.askdaft-page .askdaft-support-shortcut-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0.75rem !important;
+}
+
+.askdaft-page .askdaft-support-shortcut {
+  display: grid !important;
+  align-content: start !important;
+  gap: 0.5rem !important;
+  min-height: 128px !important;
+  padding: 0.95rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.105) !important;
+  border-radius: 22px !important;
+  background: rgba(255, 255, 255, 0.035) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.askdaft-page .askdaft-support-shortcut:hover,
+.askdaft-page .askdaft-support-shortcut:focus-visible {
+  transform: translateY(-2px) !important;
+  border-color: rgba(125, 255, 178, 0.3) !important;
+  background: rgba(125, 255, 178, 0.055) !important;
+}
+
+/* Reading mode must beat older pricing-emphasis whiteout rules */
+.askdaft-page.reading-impairment-mode .askdaft-read-key {
+  color: var(--green) !important;
+  text-shadow: 0 0 18px rgba(125, 255, 178, 0.28) !important;
+}
+
+.askdaft-page.reading-impairment-mode .askdaft-read-important {
+  color: var(--primary) !important;
+  text-shadow: 0 0 22px rgba(12, 199, 246, 0.34) !important;
+}
+
+.askdaft-page.reading-impairment-mode .askdaft-front-door-card .askdaft-read-key,
+.askdaft-page.reading-impairment-mode .askdaft-support-shortcut .askdaft-read-key {
+  color: #fff !important;
+  text-shadow: 0 0 16px rgba(12, 199, 246, 0.24) !important;
+}
+
+.askdaft-page.reading-impairment-mode .askdaft-front-door-card:hover .askdaft-read-key,
+.askdaft-page.reading-impairment-mode .askdaft-support-shortcut:hover .askdaft-read-key {
+  color: var(--green) !important;
+}
+
+@media (max-width: 900px) {
+  .askdaft-page .askdaft-front-door-grid,
+  .askdaft-page .askdaft-support-shortcut-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .askdaft-page .askdaft-front-door {
+    width: min(100%, calc(100% - 0.85rem)) !important;
+    padding-top: 1.6rem !important;
+    padding-bottom: 5.5rem !important;
+  }
+
+  .askdaft-page .askdaft-front-door-grid,
+  .askdaft-page .askdaft-support-shortcut-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .askdaft-page .askdaft-front-door-card {
+    min-height: 0 !important;
+    padding: 0.95rem !important;
+    border-radius: 20px !important;
+  }
+
+  .askdaft-page .askdaft-support-shortcut {
+    min-height: 0 !important;
+  }
+}

@@ -1,4 +1,5 @@
 export { default as AskDaftHero } from "./AskDaftHero";
+export { default as AskDaftFrontDoor } from "./AskDaftFrontDoor";
 export { default as AskDaftDashboardTeaser } from "./AskDaftDashboardTeaser";
 export { default as AskDaftPricingSection } from "./AskDaftPricingSection";
 export { default as AskDaftSubscribeSection } from "./AskDaftSubscribeSection";

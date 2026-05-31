@@ -16,6 +16,8 @@ import DaftAppRoutes from './pages/family/DaftFamApp/src/DaftAppRoutes';
 import AskDaft from './pages/askdaft/AskDaft';
 import AskDaftDashboard from './pages/askdaft/AskDaftDashboard';
 import AskDaftRequest from './pages/askdaft/AskDaftRequest';
+import AskDaftTickets from './pages/askdaft/AskDaftTickets';
+import AskDaftTicketDetail from './pages/askdaft/AskDaftTicketDetail';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import AIHub from './pages/ai/AIHub';
@@ -34,6 +36,8 @@ function App() {
         <Route path="/askdaft" element={<AskDaft />} />
         <Route path="/askdaft/dashboard" element={<AskDaftDashboard />} />
         <Route path="/askdaft/request" element={<AskDaftRequest />} />
+        <Route path="/askdaft/tickets" element={<AskDaftTickets />} />
+        <Route path="/askdaft/tickets/:ticketId" element={<AskDaftTicketDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/ai" element={<AIHub />} />

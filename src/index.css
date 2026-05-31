@@ -44,6 +44,9 @@
 /* 13. Footer layout and social link styling. */
 @import "./styles/footer.css";
 
+/* 14. Centralized reading-mode semantic color system. */
+@import "./styles/reading-mode.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

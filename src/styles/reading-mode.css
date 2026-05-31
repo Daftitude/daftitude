@@ -1,0 +1,105 @@
+/* ======================================================
+   Reading Mode System
+   Reading ON  = no .reading-impairment-mode class
+   Reading OFF = .reading-impairment-mode class
+
+   Semantic colors:
+   Blue   = Tech
+   Green  = Good / Help / Action
+   Yellow = Caution
+   Red    = Risk
+====================================================== */
+
+.reading-tech-word,
+.reading-action-word,
+.reading-risk-word,
+.reading-caution-word,
+.reading-money-word {
+  transition:
+    color 180ms ease,
+    text-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+/* Reading OFF: calm text */
+.reading-impairment-mode .reading-tech-word,
+.reading-impairment-mode .reading-action-word,
+.reading-impairment-mode .reading-risk-word,
+.reading-impairment-mode .reading-caution-word,
+.reading-impairment-mode .reading-money-word {
+  color: inherit !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Reading ON: semantic highlights */
+.phase-page:not(.reading-impairment-mode) .reading-tech-word {
+  color: var(--primary) !important;
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.28) !important;
+}
+
+.phase-page:not(.reading-impairment-mode) .reading-action-word {
+  color: var(--green) !important;
+  text-shadow: 0 0 18px rgba(125, 255, 178, 0.28) !important;
+}
+
+.phase-page:not(.reading-impairment-mode) .reading-risk-word {
+  color: var(--accent) !important;
+  text-shadow: 0 0 18px rgba(255, 77, 109, 0.28) !important;
+}
+
+.phase-page:not(.reading-impairment-mode) .reading-caution-word,
+.phase-page:not(.reading-impairment-mode) .reading-money-word {
+  color: var(--yellow) !important;
+  text-shadow: 0 0 18px rgba(255, 199, 45, 0.28) !important;
+}
+
+/* Brand colors are identity, not semantic reading colors */
+.brand-word-askdaft .brand-ask,
+.phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask,
+.reading-impairment-mode .brand-word-askdaft .brand-ask {
+  color: var(--green) !important;
+  text-shadow: 0 0 18px rgba(125, 255, 178, 0.26) !important;
+}
+
+.brand-word-askdaft .brand-daft,
+.phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft,
+.reading-impairment-mode .brand-word-askdaft .brand-daft {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.22) !important;
+}
+
+.brand-word-daftitude .brand-daft,
+.phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft,
+.reading-impairment-mode .brand-word-daftitude .brand-daft {
+  color: var(--primary) !important;
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.28) !important;
+}
+
+.brand-word-daftitude .brand-itude,
+.phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude,
+.reading-impairment-mode .brand-word-daftitude .brand-itude {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.2) !important;
+}
+
+.brand-word .reading-tech-word,
+.brand-word .reading-action-word,
+.brand-word .reading-risk-word,
+.brand-word .reading-caution-word,
+.brand-word .reading-money-word {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}
+
+
+/* Brand words should stay inline */
+.brand-word,
+.brand-word-askdaft,
+.brand-word-daftitude,
+.brand-ask,
+.brand-daft,
+.brand-itude {
+  display: inline !important;
+  white-space: nowrap !important;
+}

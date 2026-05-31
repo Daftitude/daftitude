@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { FloatingPageTools } from "../../components/home";
 import { createAskDaftTicket, saveAskDaftTicket } from "../../utils/askDaftTickets";
 
@@ -106,6 +106,69 @@ const supportPathOptions = [
   "Returning client",
 ];
 
+const intentPresets = {
+  fix: {
+    requestType: "standard-help",
+    issue: "Something is not working",
+    device: "Not sure",
+    supportPath: "Continue as guest",
+  },
+  "setup-new": {
+    requestType: "setup-teach",
+    issue: "I need setup help",
+    device: "Not sure",
+    supportPath: "Continue as guest",
+  },
+  "scam-check": {
+    requestType: "quick-help",
+    issue: "I need a safety/message check",
+    device: "Email / Account",
+    supportPath: "Continue as guest",
+  },
+  teach: {
+    requestType: "setup-teach",
+    issue: "I need setup help",
+    device: "AI Tool",
+    supportPath: "Continue as guest",
+  },
+  maintenance: {
+    requestType: "full-rescue",
+    issue: "I have multiple issues",
+    device: "Not sure",
+    supportPath: "Returning client",
+  },
+  "not-sure": {
+    requestType: "standard-help",
+    issue: "I am not sure",
+    device: "Not sure",
+    supportPath: "Continue as guest",
+  },
+  "in-person": {
+    requestType: "setup-teach",
+    issue: "I need setup help",
+    device: "Not sure",
+    supportPath: "In-person / house call",
+  },
+  call: {
+    requestType: "standard-help",
+    issue: "I am not sure",
+    device: "Not sure",
+    supportPath: "Call me",
+  },
+  remote: {
+    requestType: "standard-help",
+    issue: "Something is not working",
+    device: "Computer / Laptop",
+    supportPath: "Remote help",
+  },
+};
+
+const supportPresets = {
+  "in-person": "In-person / house call",
+  call: "Call me",
+  remote: "Remote help",
+};
+
 function getScopeLevel({ requestType, issue, multipleDevices, supportPath }) {
   if (requestType === "full-rescue" || multipleDevices || issue === "I have multiple issues") {
     return {
@@ -139,13 +202,19 @@ function getScopeLevel({ requestType, issue, multipleDevices, supportPath }) {
 }
 
 export default function AskDaftRequest() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const requestedIntent = searchParams.get("intent") || "not-sure";
+  const requestedMode = searchParams.get("mode") || "simple";
+  const requestedSupport = searchParams.get("support");
+  const preset = intentPresets[requestedIntent] || intentPresets["not-sure"];
   const [readingImpairmentMode, setReadingImpairmentMode] = useState(false);
-  const [mode, setMode] = useState("simple");
+  const [mode, setMode] = useState(requestModes[requestedMode] ? requestedMode : "simple");
   const [activeStep, setActiveStep] = useState("mode");
-  const [requestType, setRequestType] = useState("standard-help");
-  const [issue, setIssue] = useState("Something is not working");
-  const [device, setDevice] = useState("Not sure");
-  const [supportPath, setSupportPath] = useState("Continue as guest");
+  const [requestType, setRequestType] = useState(preset.requestType);
+  const [issue, setIssue] = useState(preset.issue);
+  const [device, setDevice] = useState(preset.device);
+  const [supportPath, setSupportPath] = useState(supportPresets[requestedSupport] || preset.supportPath);
   const [zipCode, setZipCode] = useState("");
   const [description, setDescription] = useState("");
   const [alreadyTried, setAlreadyTried] = useState([]);
@@ -379,11 +448,7 @@ export default function AskDaftRequest() {
     });
 
     saveAskDaftTicket(ticket);
-    setSubmittedTicket(ticket);
-    setStep("submit");
-    setTimeout(() => {
-      submittedPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    navigate(`/askdaft/tickets/${ticket.id}?guest=1`);
   };
 
   const toggleTried = (item) => {
