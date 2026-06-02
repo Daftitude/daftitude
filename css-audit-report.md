@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:10:25 AM
+Generated: 6/2/2026, 1:41:06 AM
 
 ## Summary
 
@@ -8,14 +8,14 @@ Generated: 6/2/2026, 1:10:25 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 178 |
-| Unique CSS selectors | 1378 |
-| Unique CSS classes in CSS | 447 |
+| Unique CSS selectors | 1605 |
+| Unique CSS classes in CSS | 610 |
 | Unique classes found in code | 851 |
-| Duplicate selector groups | 14 |
-| Classes defined in CSS but not found in code | 109 |
-| Classes found in code but missing CSS | 513 |
-| AskDaFT selector locations | 615 |
-| Reading/emphasis selector locations | 103 |
+| Duplicate selector groups | 29 |
+| Classes defined in CSS but not found in code | 111 |
+| Classes found in code but missing CSS | 80 |
+| AskDaFT selector locations | 649 |
+| Reading/emphasis selector locations | 106 |
 
 
 ## Highest !important Counts by File
@@ -46,6 +46,21 @@ Generated: 6/2/2026, 1:10:25 AM
 - `.mode-cta-lead-stack > span:first-child` — 2 times: `src/styles/cta.css:182`, `src/styles/pricing.css:781`
 - `.game-start-screen .mobile-hero-ambience` — 2 times: `src/styles/hero.css:35`, `src/styles/mobile.css:358`
 - `.contact-section` — 2 times: `src/styles/pages.css:85`, `src/styles/pages.css:103`
+- `.pkg-card` — 2 times: `src/styles/pages.css:110`, `src/styles/pages.css:175`
+- `.btn-ghost` — 2 times: `src/styles/pages.css:917`, `src/styles/pages.css:927`
+- `.btn-solid` — 2 times: `src/styles/pages.css:917`, `src/styles/pages.css:933`
+- `.service-details-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1064`
+- `.service-select-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1070`
+- `.section-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1236`
+- `.about-me-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.journey-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.mission-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.values-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.contact-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1321`
+- `.balance-grid` — 2 times: `src/styles/pages.css:1370`, `src/styles/pages.css:1377`
+- `.price-grid` — 2 times: `src/styles/pages.css:1370`, `src/styles/pages.css:1381`
+- `.token-balance-card` — 2 times: `src/styles/pages.css:1385`, `src/styles/pages.css:1398`
+- `.tx-table th` — 2 times: `src/styles/pages.css:1431`, `src/styles/pages.css:1440`
 
 
 ## Classes With Many CSS Definitions
@@ -61,10 +76,10 @@ Generated: 6/2/2026, 1:10:25 AM
 - `.askdaft-request-page` — 20 definitions: `src/styles/askdaft-request.css:5`, `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:49`, `src/styles/askdaft-request.css:82`, `src/styles/askdaft-request.css:86`, `src/styles/askdaft-request.css:101`, `src/styles/askdaft-request.css:101`, `src/styles/askdaft-request.css:199`, `src/styles/askdaft-request.css:199`, `src/styles/askdaft-request.css:205`, +10 more
 - `.story-card` — 20 definitions: `src/styles/cards.css:8`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:244`, `src/styles/cards.css:262`, `src/styles/home.css:37`, `src/styles/home.css:53`, `src/styles/home.css:62`, +10 more
 - `.pricing-row` — 20 definitions: `src/styles/pricing.css:58`, `src/styles/pricing.css:66`, `src/styles/pricing.css:70`, `src/styles/pricing.css:74`, `src/styles/pricing.css:74`, `src/styles/pricing.css:79`, `src/styles/pricing.css:84`, `src/styles/pricing.css:84`, `src/styles/pricing.css:84`, `src/styles/pricing.css:127`, +10 more
+- `.is-active` — 19 definitions: `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, `src/styles/askdaft-dashboard.css:783`, `src/styles/askdaft-dashboard.css:1007`, `src/styles/askdaft-request.css:735`, `src/styles/askdaft-request.css:749`, `src/styles/askdaft-request.css:757`, `src/styles/askdaft-request.css:761`, `src/styles/askdaft-request.css:766`, +9 more
 - `.active` — 19 definitions: `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:109`, `src/styles/cards.css:364`, `src/styles/cards.css:910`, `src/styles/cards.css:921`, `src/styles/cards.css:1015`, `src/styles/cards.css:1023`, `src/styles/cards.css:1259`, `src/styles/cta.css:518`, +9 more
 - `.game-path` — 19 definitions: `src/styles/hero.css:51`, `src/styles/hero.css:75`, `src/styles/hero.css:97`, `src/styles/hero.css:109`, `src/styles/hero.css:109`, `src/styles/hero.css:115`, `src/styles/hero.css:115`, `src/styles/hero.css:122`, `src/styles/hero.css:145`, `src/styles/hero.css:154`, +9 more
 - `.askdaft-client-layout` — 18 definitions: `src/styles/askdaft-dashboard.css:99`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:350`, `src/styles/askdaft-dashboard.css:402`, `src/styles/askdaft-dashboard.css:407`, `src/styles/askdaft-dashboard.css:415`, `src/styles/askdaft-dashboard.css:425`, `src/styles/askdaft-dashboard.css:1040`, +8 more
-- `.is-active` — 18 definitions: `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, `src/styles/askdaft-dashboard.css:783`, `src/styles/askdaft-dashboard.css:1007`, `src/styles/askdaft-request.css:735`, `src/styles/askdaft-request.css:749`, `src/styles/askdaft-request.css:757`, `src/styles/askdaft-request.css:761`, `src/styles/askdaft-request.css:766`, +8 more
 - `.home-game-page` — 18 definitions: `src/styles/hero.css:3`, `src/styles/mobile.css:66`, `src/styles/mobile.css:71`, `src/styles/mobile.css:76`, `src/styles/mobile.css:80`, `src/styles/mobile.css:84`, `src/styles/mobile.css:88`, `src/styles/mobile.css:92`, `src/styles/reading-mode.css:26`, `src/styles/reading-mode.css:36`, +8 more
 - `.askdaft-dashboard-page` — 17 definitions: `src/styles/askdaft-dashboard.css:296`, `src/styles/askdaft-dashboard.css:300`, `src/styles/askdaft-dashboard.css:304`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:315`, `src/styles/askdaft-dashboard.css:321`, `src/styles/askdaft-dashboard.css:362`, `src/styles/askdaft-dashboard.css:397`, `src/styles/askdaft-dashboard.css:411`, `src/styles/askdaft-dashboard.css:415`, +7 more
 - `.tech-tree-node` — 14 definitions: `src/styles/askdaft-dashboard.css:561`, `src/styles/askdaft-dashboard.css:578`, `src/styles/askdaft-dashboard.css:588`, `src/styles/askdaft-dashboard.css:588`, `src/styles/askdaft-dashboard.css:595`, `src/styles/askdaft-dashboard.css:605`, `src/styles/askdaft-dashboard.css:612`, `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, +4 more
@@ -125,6 +140,7 @@ Generated: 6/2/2026, 1:10:25 AM
 - `.askdaft-mini-scope` — 7 definitions: `src/styles/askdaft-request.css:236`, `src/styles/askdaft-request.css:248`, `src/styles/askdaft-request.css:256`, `src/styles/askdaft-request.css:266`, `src/styles/askdaft-request.css:271`, `src/styles/askdaft-request.css:276`, `src/styles/askdaft-request.css:281`
 - `.askdaft-submit-checklist` — 7 definitions: `src/styles/askdaft-request.css:504`, `src/styles/askdaft-request.css:511`, `src/styles/askdaft-request.css:520`, `src/styles/askdaft-request.css:528`, `src/styles/askdaft-request.css:528`, `src/styles/askdaft-request.css:539`, `src/styles/askdaft-request.css:539`
 - `.askdaft-dashboard-ticket-list` — 7 definitions: `src/styles/askdaft-tickets.css:11`, `src/styles/askdaft-tickets.css:17`, `src/styles/askdaft-tickets.css:28`, `src/styles/askdaft-tickets.css:28`, `src/styles/askdaft-tickets.css:42`, `src/styles/askdaft-tickets.css:48`, `src/styles/askdaft-tickets.css:53`
+- `.primary` — 7 definitions: `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/cta.css:431`, `src/styles/cta.css:437`, `src/styles/pages.css:437`, `src/styles/pages.css:1194`
 - `.story-mode-section--daftitude` — 7 definitions: `src/styles/cards.css:8`, `src/styles/cards.css:8`, `src/styles/cards.css:13`, `src/styles/cards.css:18`, `src/styles/cards.css:22`, `src/styles/cards.css:26`, `src/styles/cards.css:30`
 - `.story-kicker` — 7 definitions: `src/styles/cards.css:409`, `src/styles/cta.css:17`, `src/styles/cta.css:38`, `src/styles/cta.css:357`, `src/styles/cta.css:381`, `src/styles/utilities.css:19`, `src/styles/utilities.css:107`
 - `.askdaft-issue-card` — 7 definitions: `src/styles/cards.css:895`, `src/styles/cards.css:910`, `src/styles/cards.css:910`, `src/styles/cards.css:910`, `src/styles/cards.css:921`, `src/styles/cards.css:937`, `src/styles/cards.css:947`
@@ -139,10 +155,14 @@ Generated: 6/2/2026, 1:10:25 AM
 - `.askdaft-plan-list` — 6 definitions: `src/styles/askdaft-dashboard.css:214`, `src/styles/askdaft-dashboard.css:234`, `src/styles/askdaft-dashboard.css:243`, `src/styles/askdaft-dashboard.css:251`, `src/styles/askdaft-dashboard.css:265`, `src/styles/askdaft-dashboard.css:430`
 - `.selected-device-details` — 6 definitions: `src/styles/askdaft-dashboard.css:681`, `src/styles/askdaft-dashboard.css:687`, `src/styles/askdaft-dashboard.css:694`, `src/styles/askdaft-dashboard.css:702`, `src/styles/askdaft-dashboard.css:883`, `src/styles/askdaft-dashboard.css:887`
 - `.tech-tree-group` — 6 definitions: `src/styles/askdaft-dashboard.css:827`, `src/styles/askdaft-dashboard.css:869`, `src/styles/askdaft-dashboard.css:874`, `src/styles/askdaft-dashboard.css:874`, `src/styles/askdaft-dashboard.css:879`, `src/styles/askdaft-dashboard.css:1132`
+- `.askdaft-help-launcher-card` — 6 definitions: `src/styles/askdaft-dashboard.css:1819`, `src/styles/askdaft-dashboard.css:1838`, `src/styles/askdaft-dashboard.css:1838`, `src/styles/askdaft-dashboard.css:1848`, `src/styles/askdaft-dashboard.css:1854`, `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-plan-list-block` — 6 definitions: `src/styles/askdaft-dashboard.css:1916`, `src/styles/askdaft-dashboard.css:1921`, `src/styles/askdaft-dashboard.css:1928`, `src/styles/askdaft-dashboard.css:1933`, `src/styles/askdaft-dashboard.css:1938`, `src/styles/askdaft-dashboard.css:1946`
 - `.askdaft-request-hero` — 6 definitions: `src/styles/askdaft-request.css:10`, `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:32`, `src/styles/askdaft-request.css:41`, `src/styles/askdaft-request.css:644`, `src/styles/askdaft-request.css:649`
 - `.askdaft-chip-grid` — 6 definitions: `src/styles/askdaft-request.css:90`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:151`, `src/styles/askdaft-request.css:158`, `src/styles/askdaft-request.css:687`, `src/styles/askdaft-request.css:851`
 - `.btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
 - `.cta-btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
+- `.secondary` — 6 definitions: `src/styles/buttons.css:42`, `src/styles/buttons.css:42`, `src/styles/buttons.css:42`, `src/styles/cta.css:441`, `src/styles/cta.css:447`, `src/styles/pages.css:1188`
+- `.ghost` — 6 definitions: `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/cta.css:451`, `src/styles/cta.css:451`, `src/styles/pages.css:432`
 - `.askdaft-panel` — 6 definitions: `src/styles/cards.css:482`, `src/styles/cards.css:598`, `src/styles/cards.css:615`, `src/styles/cards.css:626`, `src/styles/cards.css:632`, `src/styles/home.css:231`
 - `.hub-select-section` — 6 definitions: `src/styles/cards.css:661`, `src/styles/cards.css:665`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`
 - `.askdaft-typical-panel` — 6 definitions: `src/styles/cards.css:1268`, `src/styles/cards.css:1276`, `src/styles/cards.css:1284`, `src/styles/cards.css:1290`, `src/styles/cards.css:1299`, `src/styles/cards.css:1306`
@@ -165,13 +185,8 @@ Generated: 6/2/2026, 1:10:25 AM
 - `.askdaft-guided-step-grid` — 5 definitions: `src/styles/askdaft-dashboard.css:1259`, `src/styles/askdaft-dashboard.css:1265`, `src/styles/askdaft-dashboard.css:1273`, `src/styles/askdaft-dashboard.css:1286`, `src/styles/askdaft-dashboard.css:1294`
 - `.askdaft-front-door` — 5 definitions: `src/styles/askdaft-frontdoor.css:186`, `src/styles/askdaft-frontdoor.css:193`, `src/styles/askdaft-frontdoor.css:199`, `src/styles/askdaft-frontdoor.css:207`, `src/styles/askdaft-frontdoor.css:216`
 - `.askdaft-support-shortcut` — 5 definitions: `src/styles/askdaft-frontdoor.css:354`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:394`, `src/styles/askdaft-frontdoor.css:401`
-- `.askdaft-pricing-truth-grid` — 5 definitions: `src/styles/askdaft-pricing.css:5`, `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:22`, `src/styles/askdaft-pricing.css:32`, `src/styles/askdaft-pricing.css:41`
-- `.askdaft-discovery-promise` — 5 definitions: `src/styles/askdaft-request.css:75`, `src/styles/askdaft-request.css:286`, `src/styles/askdaft-request.css:290`, `src/styles/askdaft-request.css:297`, `src/styles/askdaft-request.css:304`
-- `.askdaft-inline-check` — 5 definitions: `src/styles/askdaft-request.css:177`, `src/styles/askdaft-request.css:219`, `src/styles/askdaft-request.css:230`, `src/styles/askdaft-request.css:704`, `src/styles/askdaft-request.css:857`
-- `.askdaft-agreement-list` — 5 definitions: `src/styles/askdaft-request.css:230`, `src/styles/askdaft-request.css:312`, `src/styles/askdaft-request.css:318`, `src/styles/askdaft-request.css:328`, `src/styles/askdaft-request.css:857`
-- `.askdaft-detail-chip` — 5 definitions: `src/styles/askdaft-request.css:687`, `src/styles/cards.css:1241`, `src/styles/cards.css:1259`, `src/styles/cards.css:1259`, `src/styles/cards.css:1259`
 
-_Showing 120 of 185 results._
+_Showing 120 of 194 results._
 
 
 ## AskDaFT Selector Locations
@@ -334,6 +349,31 @@ _Showing 120 of 185 results._
 - `.askdaft-guided-summary-card` — `src/styles/askdaft-dashboard.css:1302`
 - `.askdaft-guided-summary-card h3` — `src/styles/askdaft-dashboard.css:1314`
 - `.askdaft-guided-summary-card p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:1321`
+- `.askdaft-help-launcher` — `src/styles/askdaft-dashboard.css:1777`
+- `.askdaft-help-launcher-heading` — `src/styles/askdaft-dashboard.css:1790`
+- `.askdaft-help-launcher-heading h2` — `src/styles/askdaft-dashboard.css:1798`
+- `.askdaft-help-launcher-heading p` — `src/styles/askdaft-dashboard.css:1806`
+- `.askdaft-help-launcher-grid` — `src/styles/askdaft-dashboard.css:1813`
+- `.askdaft-help-launcher-card` — `src/styles/askdaft-dashboard.css:1819`
+- `.askdaft-help-launcher-card:hover` — `src/styles/askdaft-dashboard.css:1838`
+- `.askdaft-help-launcher-card:focus-visible` — `src/styles/askdaft-dashboard.css:1838`
+- `.askdaft-help-launcher-card strong` — `src/styles/askdaft-dashboard.css:1848`
+- `.askdaft-help-launcher-card span` — `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-help-launcher-card p` — `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-current-plan-card` — `src/styles/askdaft-dashboard.css:1863`
+- `.askdaft-current-plan-card strong` — `src/styles/askdaft-dashboard.css:1874`
+- `.askdaft-current-plan-card span` — `src/styles/askdaft-dashboard.css:1882`
+- `.askdaft-plan-comparison-grid` — `src/styles/askdaft-dashboard.css:1888`
+- `.askdaft-plan-comparison-card` — `src/styles/askdaft-dashboard.css:1895`
+- `.askdaft-plan-card-top` — `src/styles/askdaft-dashboard.css:1904`
+- `.askdaft-plan-card-top strong` — `src/styles/askdaft-dashboard.css:1909`
+- `.askdaft-plan-card-top h3` — `src/styles/askdaft-dashboard.css:1909`
+- `.askdaft-plan-list-block` — `src/styles/askdaft-dashboard.css:1916`
+- `.askdaft-plan-list-block strong` — `src/styles/askdaft-dashboard.css:1921`
+- `.askdaft-plan-list-block.included strong` — `src/styles/askdaft-dashboard.css:1928`
+- `.askdaft-plan-list-block.not-included strong` — `src/styles/askdaft-dashboard.css:1933`
+- `.askdaft-plan-list-block ul` — `src/styles/askdaft-dashboard.css:1938`
+- `.askdaft-plan-list-block li` — `src/styles/askdaft-dashboard.css:1946`
 - `.askdaft-entry-strip` — `src/styles/askdaft-frontdoor.css:5`
 - `.askdaft-entry-strip article` — `src/styles/askdaft-frontdoor.css:13`
 - `.askdaft-entry-strip strong` — `src/styles/askdaft-frontdoor.css:21`
@@ -351,33 +391,8 @@ _Showing 120 of 185 results._
 - `.askdaft-page .phase-btn` — `src/styles/askdaft-frontdoor.css:136`
 - `.askdaft-page .phase-btn-primary` — `src/styles/askdaft-frontdoor.css:152`
 - `.askdaft-page .phase-btn-secondary` — `src/styles/askdaft-frontdoor.css:159`
-- `.askdaft-page .phase-btn-ghost` — `src/styles/askdaft-frontdoor.css:164`
-- `.askdaft-page .phase-btn:hover` — `src/styles/askdaft-frontdoor.css:168`
-- `.askdaft-page .phase-btn:focus-visible` — `src/styles/askdaft-frontdoor.css:168`
-- `.askdaft-page .phase-btn-primary:hover` — `src/styles/askdaft-frontdoor.css:177`
-- `.askdaft-page .phase-btn-primary:focus-visible` — `src/styles/askdaft-frontdoor.css:177`
-- `.askdaft-page .askdaft-front-door` — `src/styles/askdaft-frontdoor.css:186`
-- `.askdaft-page .askdaft-front-door .phase-section-heading` — `src/styles/askdaft-frontdoor.css:193`
-- `.askdaft-page .askdaft-front-door .phase-section-heading h2` — `src/styles/askdaft-frontdoor.css:199`
-- `.askdaft-page .askdaft-front-door .phase-section-heading p` — `src/styles/askdaft-frontdoor.css:207`
-- `.askdaft-front-door` — `src/styles/askdaft-frontdoor.css:216`
-- `.askdaft-front-door-grid` — `src/styles/askdaft-frontdoor.css:220`
-- `.askdaft-front-door-card` — `src/styles/askdaft-frontdoor.css:226`
-- `.askdaft-front-door-card::after` — `src/styles/askdaft-frontdoor.css:249`
-- `.askdaft-front-door-card:hover` — `src/styles/askdaft-frontdoor.css:261`
-- `.askdaft-front-door-card:focus-visible` — `src/styles/askdaft-frontdoor.css:261`
-- `.askdaft-front-door-icon` — `src/styles/askdaft-frontdoor.css:274`
-- `.askdaft-front-door-card strong` — `src/styles/askdaft-frontdoor.css:292`
-- `.askdaft-front-door-card p` — `src/styles/askdaft-frontdoor.css:302`
-- `.askdaft-front-door-card small` — `src/styles/askdaft-frontdoor.css:312`
-- `.askdaft-support-shortcuts` — `src/styles/askdaft-frontdoor.css:328`
-- `.askdaft-support-shortcuts h3` — `src/styles/askdaft-frontdoor.css:340`
-- `.askdaft-support-shortcut-row` — `src/styles/askdaft-frontdoor.css:348`
-- `.askdaft-support-shortcut` — `src/styles/askdaft-frontdoor.css:354`
-- `.askdaft-support-shortcut:hover` — `src/styles/askdaft-frontdoor.css:372`
-- `.askdaft-support-shortcut:focus-visible` — `src/styles/askdaft-frontdoor.css:372`
 
-_Showing 200 of 615 results._
+_Showing 200 of 649 results._
 
 
 ## Reading Mode / Emphasis Selector Locations
@@ -398,6 +413,9 @@ _Showing 200 of 615 results._
 - `.hub-select-section .hub-select-card p .pricing-emphasis-green` — `src/styles/cards.css:671`
 - `.hub-select-section .hub-select-card p .pricing-emphasis-yellow` — `src/styles/cards.css:671`
 - `.hub-select-section .hub-select-card p .pricing-emphasis-red` — `src/styles/cards.css:671`
+- `.reading-tool` — `src/styles/home.css:317`
+- `.reading-tool:hover` — `src/styles/home.css:342`
+- `.reading-tool:focus-visible` — `src/styles/home.css:342`
 - `.floating-reading-tools` — `src/styles/mobile.css:155`
 - `.reading-mode-toggle` — `src/styles/mobile.css:167`
 - `body .reading-mode-toggle` — `src/styles/mobile.css:189`
@@ -632,11 +650,13 @@ _Showing 200 of 615 results._
 - `.in-progress` `src/styles/askdaft-request.css:500`
 - `.info-card` `src/styles/home.css:37`
 - `.is-active` `src/styles/askdaft-dashboard.css:621`
+- `.is-advanced` `src/styles/pages.css:495`
 - `.is-askdaft` `src/styles/hero.css:126`
 - `.is-collapsed` `src/styles/askdaft-request.css:761`
 - `.is-complete` `src/styles/askdaft-request.css:757`
 - `.is-daftitude` `src/styles/hero.css:126`
 - `.is-default` `src/styles/hero.css:122`
+- `.is-done` `src/styles/pages.css:631`
 - `.is-open` `src/styles/navbar.css:202`
 - `.is-pro-view` `src/styles/askdaft-dashboard.css:1058`
 - `.is-secondary` `src/styles/cta.css:110`
@@ -702,30 +722,7 @@ _Showing 200 of 615 results._
 ## Classes Used in Code but Missing CSS
 
 - `.-z-10` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.about-me-section` — `src/pages/about/About.jsx`
-- `.absolute` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`, `src/pages/family/Family.jsx`
 - `.agreed` — `src/pages/family/DaftFamApp/src/components/parent/AgreementStatus.jsx`
-- `.animate-fade-in-slow` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.animate-ping` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.animate-pulse` — `src/pages/family/DaftFamApp/src/components/dashboard/BonusTracker.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
-- `.animate-pulse-slow` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.askdaft-current-plan-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-estimates-section` — `src/components/askdaft/AskDaftEstimateSection.jsx`
-- `.askdaft-help-launcher` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-grid` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-heading` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-card-top` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-comparison-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-comparison-grid` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-list-block` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-pricing-section` — `src/components/askdaft/AskDaftPricingSection.jsx`
-- `.askdaft-read-key` — `src/components/askdaft/AskDaftHero.jsx`
-- `.askdaft-subscribe-section` — `src/components/askdaft/AskDaftSubscribeSection.jsx`
-- `.askdaft-summary-section` — `src/components/askdaft/AskDaftSummarySection.jsx`
-- `.backdrop-blur` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.backdrop-blur-lg` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.backdrop-blur-md` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 - `.badge-cabinet-section` — `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`
 - `.badge-card` — `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`
 - `.badge-category-button` — `src/pages/family/DaftFamApp/src/components/child/BadgeDisplay.jsx`
@@ -738,221 +735,72 @@ _Showing 200 of 615 results._
 - `.badge-name` — `src/pages/family/DaftFamApp/src/components/child/BadgeDisplay.jsx`
 - `.badge-tab` — `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`
 - `.badge-tile` — `src/pages/family/DaftFamApp/src/components/child/BadgeDisplay.jsx`
-- `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.bg-amber-500` — `src/pages/family/DaftFamApp/src/pages/tasks/Tasks.jsx`
-- `.bg-black` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Logout.jsx`
-- `.bg-blue-100` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
-- `.bg-blue-300` — `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`
-- `.bg-blue-50` — `src/pages/family/DaftFamApp/src/components/dashboard/CalendarBoard.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`
-- `.bg-blue-500` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/BonusTracker.jsx`, `src/pages/family/DaftFamApp/src/components/planning/FamilyPlanner.jsx`, `src/pages/family/DaftFamApp/src/components/planning/TaskBoard.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
-- `.bg-blue-600` — `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyBulletin.jsx`, `src/pages/family/DaftFamApp/src/components/planning/CheckInLog.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/ReminderModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
-- `.bg-gradient-to-b` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.bg-gradient-to-br` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.bg-gradient-to-r` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.bg-gray-100` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyBulletin.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/VotesBoard.jsx`
-- `.bg-gray-300` — `src/pages/family/DaftFamApp/src/components/dashboard/GasGauge.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MarketplaceModal.jsx`
-- `.bg-gray-50` — `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`, `src/pages/family/Family.jsx`
-- `.bg-gray-700` — `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
-- `.bg-gray-800` — `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
-- `.bg-gray-900` — `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`
-- `.bg-green-300` — `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`
-- `.bg-green-50` — `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`
-- `.bg-green-500` — `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`, `src/pages/family/DaftFamApp/src/components/marketplace/Marketplace.jsx`
-- `.bg-green-600` — `src/pages/family/DaftFamApp/src/components/popouts/TaskModal.jsx`
-- `.bg-indigo-500` — `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`, `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`, `src/pages/family/Family.jsx`
-- `.bg-indigo-600` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`, `src/pages/family/DaftFamApp/src/pages/tasks/Tasks.jsx`, `src/pages/family/Family.jsx`
-- `.bg-lime-600` — `src/pages/family/DaftFamApp/src/pages/tasks/Tasks.jsx`
-- `.bg-opacity-40` — `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`
-- `.bg-opacity-50` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
-- `.bg-orange-500` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.bg-purple-600` — `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/common/ModeToggle.jsx`, `src/pages/family/DaftFamApp/src/components/parent/DBAForm.jsx`
-- `.bg-red-500` — `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.bg-slate-700` — `src/pages/crypto/Crypto.jsx`
-- `.bg-transparent` — `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`
-- `.bg-white` — `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`
-- `.bg-yellow-100` — `src/pages/family/DaftFamApp/src/components/dashboard/BonusTracker.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/StickyModal.jsx`
-- `.bg-yellow-300` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`
-- `.bg-yellow-50` — `src/pages/family/DaftFamApp/src/components/popouts/StickyModal.jsx`
-- `.bg-yellow-500` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/StickyModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.bg-zinc-100` — `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`
-- `.block` — `src/pages/family/DaftFamApp/src/components/parent/CheckInScheduler.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`
 - `.bonus-tracker` — `src/pages/family/DaftFamApp/src/components/dashboard/BonusTracker.jsx`
-- `.booking-cart` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-actions` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-btn` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-hint` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-left` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-line` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-lines` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-price` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-right` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-title` — `src/components/services/ServicePackages.jsx`
-- `.border` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`
-- `.border-b` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`
-- `.border-blue-500` — `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`
-- `.border-gray-200` — `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
-- `.border-gray-300` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
-- `.border-gray-600` — `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
-- `.border-l-4` — `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`
-- `.border-slate-700` — `src/pages/crypto/Crypto.jsx`
-- `.border-t` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.border-yellow-300` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`
-- `.border-zinc-200` — `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`
-- `.bottom-4` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 - `.break-words` — `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`
-- `.brief-coming-soon` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-excerpt` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-link` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-meta` — `src/components/techhub/CaseStudies.jsx`
-- `.briefs-grid` — `src/components/techhub/CaseStudies.jsx`
 - `.btn-cancel` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
 - `.btn-confirm` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
-- `.btn-ghost` — `src/components/services/ServiceDetailModal.jsx`
-- `.btn-primary` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`
-- `.btn-solid` — `src/components/services/ServiceDetailModal.jsx`
 - `.capitalize` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.card` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentPanel.jsx`, `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`, `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`
 - `.cat` — `src/pages/family/DaftFamApp/src/components/child/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`
-- `.checklist` — `src/components/services/ServiceDetailModal.jsx`
 - `.col-span-1` — `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
 - `.col-span-full` — `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`
-- `.coming-soon-text` — `src/components/techhub/CaseStudies.jsx`
-- `.compact-contact` — `src/components/contact/ContactCTA.jsx`
 - `.confirmingReset` — `src/pages/family/DaftFamApp/src/pages/settings/Settings.jsx`
-- `.contact-btn` — `src/pages/about/About.jsx`
-- `.contact-container` — `src/pages/contact/Contact.jsx`
-- `.container` — `src/pages/crypto/Crypto.jsx`
-- `.crypto-section` — `src/pages/crypto/Crypto.jsx`
-- `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
-- `.cursor-default` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.cursor-move` — `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`
-- `.cursor-pointer` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`
 - `.delay-1000` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 - `.drop-shadow-glow` — `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.duration-150` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.duration-200` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`
-- `.duration-300` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.ease-in-out` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
 - `.fade-in` — `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentPanel.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MarketplaceModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`, `src/pages/family/DaftFamApp/src/pages/admin/Admin.jsx`
-- `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
-- `.fixed` — `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.flex` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`
-- `.flex-1` — `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`, `src/pages/family/DaftFamApp/src/components/planning/FamilyPlanner.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
-- `.flex-col` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`, `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`
-- `.flex-grow` — `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`, `src/pages/family/DaftFamApp/src/components/planning/CheckInLog.jsx`
-- `.flex-wrap` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.font-bold` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`
-- `.font-extrabold` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`, `src/pages/family/Family.jsx`
-- `.font-medium` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/TokenSummaryCard.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/VotesBoard.jsx`, `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`, `src/pages/family/DaftFamApp/src/components/planning/TaskBoard.jsx`
-- `.font-semibold` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`
-- `.from-purple-900` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.from-yellow-400` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.gap-1` — `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`
-- `.gap-2` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`, `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/planning/FamilyPlanner.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`
-- `.gap-3` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`
-- `.gap-4` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/DashboardOverview.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.gap-6` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentPanel.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`
 - `.gas-gauge` — `src/pages/family/DaftFamApp/src/components/dashboard/GasGauge.jsx`
 - `.gas-gauge-fill` — `src/pages/family/DaftFamApp/src/components/dashboard/GasGauge.jsx`
 - `.gas-meter` — `src/pages/family/DaftFamApp/src/components/dashboard/GasMeter.jsx`
 - `.gasLevel` — `src/pages/family/DaftFamApp/src/components/dashboard/GasLevelSlider.jsx`
-- `.grid` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`
-- `.grid-cols-1` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/DashboardOverview.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
-- `.grid-cols-2` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`
-- `.grid-cols-3` — `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`
-- `.grid-cols-7` — `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`
-- `.group` — `src/pages/crypto/Crypto.jsx`
-- `.h-12` — `src/pages/family/Family.jsx`
-- `.h-16` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.h-2` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.h-20` — `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`
-- `.h-5` — `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
-- `.h-6` — `src/pages/family/DaftFamApp/src/components/dashboard/GasGauge.jsx`, `src/pages/family/Family.jsx`
-- `.h-8` — `src/pages/crypto/Crypto.jsx`
-- `.h-full` — `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`
-- `.h-screen` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`
-- `.impact-grid` — `src/components/techhub/CommunityImpact.jsx`
-- `.included` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.inline-block` — `src/pages/family/Family.jsx`
-- `.inline-flex` — `src/pages/crypto/Crypto.jsx`
 - `.input-style` — `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`
-- `.inset-0` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 - `.italic` — `src/pages/family/DaftFamApp/src/components/popouts/DBAModal.jsx`
-- `.items-center` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.journey-section` — `src/pages/about/About.jsx`
-- `.justify-between` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`, `src/pages/family/DaftFamApp/src/components/common/PopoutContainer.jsx`, `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`
-- `.justify-center` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
-- `.leading-6` — `src/pages/family/Family.jsx`
-- `.leading-8` — `src/pages/family/Family.jsx`
-- `.learn-more-btn` — `src/components/about/AboutSection.jsx`
-- `.left-0` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`
-- `.left-10` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`
-- `.left-4` — `src/pages/family/DaftFamApp/src/components/popouts/PopoutContainer.jsx`
 - `.line-through` — `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`
-- `.list-decimal` — `src/pages/family/Family.jsx`
-- `.list-disc` — `src/pages/family/DaftFamApp/src/pages/family/FamilyWall.jsx`, `src/pages/family/DaftFamApp/src/pages/family/LegacyMode.jsx`, `src/pages/family/DaftFamApp/src/pages/family/LocalFamily.jsx`
-- `.list-inside` — `src/pages/family/DaftFamApp/src/pages/family/FamilyWall.jsx`, `src/pages/family/DaftFamApp/src/pages/family/LegacyMode.jsx`, `src/pages/family/DaftFamApp/src/pages/family/LocalFamily.jsx`, `src/pages/family/Family.jsx`
-- `.map-container` — `src/pages/contact/Contact.jsx`
-- `.max-h-40` — `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyBulletin.jsx`, `src/pages/family/DaftFamApp/src/components/parent/DBAForm.jsx`
-- `.max-h-48` — `src/pages/family/DaftFamApp/src/components/planning/CheckInLog.jsx`
-- `.max-h-60` — `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/VotesBoard.jsx`
-- `.max-w-2xl` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`, `src/pages/family/Family.jsx`
-- `.max-w-3xl` — `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/Family.jsx`
-- `.max-w-6xl` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentPanel.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`, `src/pages/family/DaftFamApp/src/pages/settings/Settings.jsx`
-- `.max-w-7xl` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`, `src/pages/family/DaftFamApp/src/pages/tasks/Tasks.jsx`, `src/pages/family/Family.jsx`
-- `.max-w-full` — `src/pages/family/DaftFamApp/src/components/popouts/ReminderModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/StickyModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TaskModal.jsx`
-- `.max-w-md` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MarketplaceModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`
-- `.max-w-sm` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.max-w-xl` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/DashboardOverview.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.mb-1` — `src/pages/family/DaftFamApp/src/components/dashboard/GasLevelSlider.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`
-- `.mb-2` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`
-- `.mb-3` — `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`, `src/pages/family/DaftFamApp/src/components/parent/AgreementStatus.jsx`, `src/pages/family/DaftFamApp/src/components/parent/DBAForm.jsx`
-- `.mb-4` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/ReminderBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`
-- `.mb-6` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MyAchievementsModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`, `src/pages/family/DaftFamApp/src/pages/marketplace/Marketplace.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`, `src/pages/family/DaftFamApp/src/pages/profile/Profile.jsx`
-- `.mb-8` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.min-h-screen` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Logout.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`
-- `.mission-section` — `src/pages/about/About.jsx`
-- `.ml-16` — `src/pages/family/Family.jsx`
-- `.ml-3` — `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`
-- `.modal` — `src/pages/crypto/Crypto.jsx`
-- `.modal-backdrop` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-block` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-block-title` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-body` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-close` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-content` — `src/pages/crypto/Crypto.jsx`
-- `.modal-eyebrow` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-foot` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-grid` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-head` — `src/components/services/ServiceDetailModal.jsx`
 - `.modal-message` — `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
-- `.modal-meta` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-sheet` — `src/components/services/ServiceDetailModal.jsx`
 - `.modal-subtext` — `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
-- `.modal-subtitle` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-title` — `src/components/services/ServiceDetailModal.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
 - `.modal-wrapper` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
-- `.mode-tool` — `src/components/home/FloatingPageTools.jsx`
-- `.mr-1` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.mt-1` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/Badges.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.mt-10` — `src/pages/family/DaftFamApp/src/pages/settings/Settings.jsx`, `src/pages/family/Family.jsx`
-- `.mt-16` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
-- `.mt-2` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/GasGauge.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/GasMeter.jsx`, `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`
-- `.mt-3` — `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/marketplace/Marketplace.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`
-- `.mt-4` — `src/pages/family/DaftFamApp/src/components/admin/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/child/CheckInTimeline.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/BonusTracker.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/FamilyBulletin.jsx`, `src/pages/family/DaftFamApp/src/components/parent/DBAForm.jsx`, `src/pages/family/DaftFamApp/src/components/popouts/MarketplaceModal.jsx`
-- `.mt-6` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/src/components/common/Calendar.jsx`, `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/GasLevelSlider.jsx`, `src/pages/family/DaftFamApp/src/components/dashboard/VotesBoard.jsx`
-- `.mt-8` — `src/components/family/FamilyHero.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/pages/family/FamilyLanding.jsx`, `src/pages/family/Family.jsx`
-- `.mx-auto` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/DaftFamApp/FamilyLanding.jsx`, `src/pages/family/DaftFamApp/src/components/admin/AdminPanel.jsx`, `src/pages/family/DaftFamApp/src/components/child/ChildPanel.jsx`, `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
-- `.my-4` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
 - `.navbar-link` — `src/pages/family/DaftFamApp/src/components/common/Navbar.jsx`
 - `.no-custom-badges` — `src/pages/family/DaftFamApp/src/components/child/BadgeDisplay.jsx`
-- `.not-included` — `src/pages/askdaft/AskDaftDashboard.jsx`
 - `.option` — `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`
-
-_Showing 250 of 513 results._
+- `.popout-modal` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
+- `.popout-modal-title` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
+- `.resize-none` — `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`
+- `.ring-1` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
+- `.ring-2` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
+- `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
+- `.selectedOption` — `src/pages/family/DaftFamApp/src/components/dashboard/FamilyVote.jsx`
+- `.services-logo` — `src/components/services/ServicesHero.jsx`
+- `.stat-balance` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.stat-block` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.stat-burned` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.stat-label` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.stat-value` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.step` — `src/components/services/ServicePackages.jsx`
+- `.system-briefs-header` — `src/components/techhub/CaseStudies.jsx`
+- `.techhub-cta` — `src/pages/techhub/TechHub.jsx`
+- `.techhub-topics` — `src/pages/techhub/TechHub.jsx`
+- `.token-name` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.token-stats-card` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.token-stats-item` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.token-stats-list` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.token-stats-title` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.token-summary-card` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.token-summary-stats` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.token-summary-title` — `src/pages/family/DaftFamApp/src/components/common/TokenSummaryCard.jsx`
+- `.token-value` — `src/pages/family/DaftFamApp/src/components/common/TokenStats.jsx`
+- `.topic` — `src/pages/techhub/TechHub.jsx`
+- `.transform` — `src/pages/family/DaftFamApp/src/components/popouts/TokenModal.jsx`
+- `.trust-modal` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
+- `.trust-modal-description` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
+- `.trust-modal-footer` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
+- `.trust-modal-list` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
+- `.trust-modal-title` — `src/pages/family/DaftFamApp/src/components/popouts/TrustModal.jsx`
+- `.underline` — `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
+- `.userTokens` — `src/pages/family/DaftFamApp/src/components/popouts/MarketplaceModal.jsx`
+- `.value` — `src/components/services/ServicePackages.jsx`
+- `.vote-button` — `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
+- `.vote-modal` — `src/pages/family/DaftFamApp/src/components/popouts/VoteModal.jsx`
 
 
 ## Cleanup Recommendation Order
