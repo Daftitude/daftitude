@@ -303,8 +303,30 @@ const possiblyUnusedCssClasses = [...cssClassMap.keys()]
   .filter((className) => !codeClassMap.has(className))
   .sort();
 
+
+function isUtilityClass(className) {
+  return (
+    /^(absolute|relative|fixed|static|sticky)$/.test(className) ||
+    /^(block|inline-block|inline-flex|flex|grid|hidden)$/.test(className) ||
+    /^(items|justify|content|self)-/.test(className) ||
+    /^(gap|space|p|px|py|pt|pr|pb|pl|m|mx|my|mt|mr|mb|ml)-/.test(className) ||
+    /^(w|h|min-w|min-h|max-w|max-h)-/.test(className) ||
+    /^(top|right|bottom|left|inset|z)-/.test(className) ||
+    /^(bg|text|border|rounded|shadow|opacity)-/.test(className) ||
+    /^(font|leading|tracking)-/.test(className) ||
+    /^(list|overflow|object|cursor|select|pointer)-/.test(className) ||
+    /^(transition|duration|ease|animate|backdrop|blur)-/.test(className) ||
+    /^(from|to|via)-/.test(className) ||
+    /^(hover|focus|active|disabled|sm|md|lg|xl|2xl):/.test(className) ||
+    className === "group" ||
+    className === "border" ||
+    /^(flex|grid)-/.test(className)
+  );
+}
+
 const classesMissingCss = [...codeClassMap.keys()]
   .filter((className) => !cssClassMap.has(className))
+  .filter((className) => !isUtilityClass(className))
   .sort();
 
 const duplicateClassDefinitions = [...cssClassMap.entries()]

@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:13:40 AM
+Generated: 6/2/2026, 1:16:16 AM
 
 ## Summary
 
@@ -13,7 +13,7 @@ Generated: 6/2/2026, 1:13:40 AM
 | Unique classes found in code | 624 |
 | Duplicate selector groups | 14 |
 | Classes defined in CSS but not found in code | 109 |
-| Classes found in code but missing CSS | 286 |
+| Classes found in code but missing CSS | 176 |
 | AskDaFT selector locations | 615 |
 | Reading/emphasis selector locations | 103 |
 
@@ -702,7 +702,6 @@ _Showing 200 of 615 results._
 ## Classes Used in Code but Missing CSS
 
 - `.about-me-section` — `src/pages/about/About.jsx`
-- `.absolute` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
 - `.askdaft-current-plan-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
 - `.askdaft-estimates-section` — `src/components/askdaft/AskDaftEstimateSection.jsx`
 - `.askdaft-help-launcher` — `src/pages/askdaft/AskDaftDashboard.jsx`
@@ -717,17 +716,7 @@ _Showing 200 of 615 results._
 - `.askdaft-read-key` — `src/components/askdaft/AskDaftHero.jsx`
 - `.askdaft-subscribe-section` — `src/components/askdaft/AskDaftSubscribeSection.jsx`
 - `.askdaft-summary-section` — `src/components/askdaft/AskDaftSummarySection.jsx`
-- `.backdrop-blur` — `src/components/family/FamilyNavbar.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.bg-black` — `src/components/family/FamilyHero.jsx`
-- `.bg-blue-500` — `src/components/family/FamilyHero.jsx`
-- `.bg-gray-100` — `src/pages/crypto/Crypto.jsx`
-- `.bg-gray-50` — `src/pages/family/Family.jsx`
-- `.bg-indigo-500` — `src/pages/family/Family.jsx`
-- `.bg-indigo-600` — `src/pages/family/Family.jsx`
-- `.bg-slate-700` — `src/pages/crypto/Crypto.jsx`
-- `.bg-white` — `src/pages/family/Family.jsx`
-- `.bg-yellow-300` — `src/components/family/FamilyNavbar.jsx`
 - `.booking-cart` — `src/components/services/ServicePackages.jsx`
 - `.booking-cart-actions` — `src/components/services/ServicePackages.jsx`
 - `.booking-cart-btn` — `src/components/services/ServicePackages.jsx`
@@ -738,10 +727,6 @@ _Showing 200 of 615 results._
 - `.booking-cart-price` — `src/components/services/ServicePackages.jsx`
 - `.booking-cart-right` — `src/components/services/ServicePackages.jsx`
 - `.booking-cart-title` — `src/components/services/ServicePackages.jsx`
-- `.border` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`
-- `.border-b` — `src/components/family/FamilyNavbar.jsx`
-- `.border-slate-700` — `src/pages/crypto/Crypto.jsx`
-- `.border-yellow-300` — `src/components/family/FamilyNavbar.jsx`
 - `.brief-coming-soon` — `src/components/techhub/CaseStudies.jsx`
 - `.brief-excerpt` — `src/components/techhub/CaseStudies.jsx`
 - `.brief-link` — `src/components/techhub/CaseStudies.jsx`
@@ -759,51 +744,15 @@ _Showing 200 of 615 results._
 - `.container` — `src/pages/crypto/Crypto.jsx`
 - `.crypto-section` — `src/pages/crypto/Crypto.jsx`
 - `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
-- `.cursor-pointer` — `src/pages/crypto/Crypto.jsx`
-- `.duration-150` — `src/pages/crypto/Crypto.jsx`
-- `.duration-200` — `src/components/family/FamilyNavbar.jsx`
 - `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
-- `.flex` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.flex-col` — `src/pages/crypto/Crypto.jsx`
-- `.flex-wrap` — `src/components/family/FamilyHero.jsx`
-- `.font-extrabold` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.font-medium` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/Family.jsx`
-- `.font-semibold` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.gap-3` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`
-- `.gap-4` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`
-- `.grid` — `src/pages/crypto/Crypto.jsx`
-- `.grid-cols-1` — `src/pages/crypto/Crypto.jsx`
-- `.grid-cols-2` — `src/pages/crypto/Crypto.jsx`
-- `.group` — `src/pages/crypto/Crypto.jsx`
-- `.h-12` — `src/pages/family/Family.jsx`
-- `.h-6` — `src/pages/family/Family.jsx`
-- `.h-8` — `src/pages/crypto/Crypto.jsx`
 - `.impact-grid` — `src/components/techhub/CommunityImpact.jsx`
 - `.included` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.inline-block` — `src/pages/family/Family.jsx`
-- `.inline-flex` — `src/pages/crypto/Crypto.jsx`
-- `.inset-0` — `src/components/family/FamilyHero.jsx`
-- `.items-center` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.journey-section` — `src/pages/about/About.jsx`
-- `.justify-between` — `src/components/family/FamilyNavbar.jsx`
-- `.justify-center` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
-- `.leading-6` — `src/pages/family/Family.jsx`
-- `.leading-8` — `src/pages/family/Family.jsx`
 - `.learn-more-btn` — `src/components/about/AboutSection.jsx`
-- `.list-decimal` — `src/pages/family/Family.jsx`
-- `.list-inside` — `src/pages/family/Family.jsx`
 - `.map-container` — `src/pages/contact/Contact.jsx`
-- `.max-w-2xl` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.max-w-3xl` — `src/pages/family/Family.jsx`
-- `.max-w-7xl` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.max-w-md` — `src/pages/crypto/Crypto.jsx`
-- `.mb-2` — `src/pages/crypto/Crypto.jsx`
-- `.mb-4` — `src/pages/crypto/Crypto.jsx`
-- `.mb-6` — `src/pages/crypto/Crypto.jsx`
 - `.mission-section` — `src/pages/about/About.jsx`
-- `.ml-16` — `src/pages/family/Family.jsx`
 - `.modal` — `src/pages/crypto/Crypto.jsx`
 - `.modal-backdrop` — `src/components/services/ServiceDetailModal.jsx`
 - `.modal-block` — `src/components/services/ServiceDetailModal.jsx`
@@ -821,19 +770,7 @@ _Showing 200 of 615 results._
 - `.modal-title` — `src/components/services/ServiceDetailModal.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
 - `.mode-tool` — `src/components/home/FloatingPageTools.jsx`
-- `.mt-1` — `src/pages/crypto/Crypto.jsx`
-- `.mt-10` — `src/pages/family/Family.jsx`
-- `.mt-2` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`, `src/pages/family/Family.jsx`
-- `.mt-4` — `src/pages/family/Family.jsx`
-- `.mt-6` — `src/components/family/FamilyHero.jsx`
-- `.mt-8` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.mx-auto` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.not-included` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.overflow-hidden` — `src/components/family/FamilyHero.jsx`
-- `.p-4` — `src/pages/crypto/Crypto.jsx`
-- `.p-6` — `src/pages/crypto/Crypto.jsx`
-- `.pb-32` — `src/components/family/FamilyHero.jsx`
-- `.pb-8` — `src/pages/crypto/Crypto.jsx`
 - `.phase-hero` — `src/components/askdaft/AskDaftHero.jsx`
 - `.pill` — `src/components/services/ServiceDetailModal.jsx`
 - `.pill-row` — `src/components/services/ServiceDetailModal.jsx`
@@ -885,21 +822,8 @@ _Showing 200 of 615 results._
 - `.price-label` — `src/components/services/ServicePackages.jsx`
 - `.price-note` — `src/components/services/ServicePackages.jsx`
 - `.price-value` — `src/components/services/ServicePackages.jsx`
-- `.pt-24` — `src/components/family/FamilyHero.jsx`
-- `.px-3` — `src/components/family/FamilyNavbar.jsx`
-- `.px-4` — `src/components/family/FamilyNavbar.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.px-6` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.py-12` — `src/pages/family/Family.jsx`
-- `.py-2` — `src/components/family/FamilyNavbar.jsx`
-- `.py-3` — `src/components/family/FamilyHero.jsx`, `src/pages/family/Family.jsx`
-- `.py-8` — `src/pages/crypto/Crypto.jsx`
 - `.reading-tool` — `src/components/home/FloatingPageTools.jsx`
-- `.relative` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/family/Family.jsx`
 - `.rounded` — `src/pages/crypto/Crypto.jsx`
-- `.rounded-2xl` — `src/pages/crypto/Crypto.jsx`
-- `.rounded-lg` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.rounded-md` — `src/components/family/FamilyNavbar.jsx`, `src/pages/family/Family.jsx`
-- `.rounded-xl` — `src/pages/crypto/Crypto.jsx`
 - `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
 - `.section-container` — `src/pages/about/About.jsx`
 - `.service-actions` — `src/components/services/ServicesSection.jsx`
@@ -935,9 +859,6 @@ _Showing 200 of 615 results._
 - `.services-summary-subtitle` — `src/components/services/ServicesSection.jsx`
 - `.services-summary-title` — `src/components/services/ServicesSection.jsx`
 - `.shadow` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.shadow-xl` — `src/pages/crypto/Crypto.jsx`
-- `.space-y-10` — `src/pages/family/Family.jsx`
-- `.space-y-6` — `src/pages/family/Family.jsx`
 - `.step` — `src/components/services/ServicePackages.jsx`
 - `.submit-btn` — `src/pages/contact/Contact.jsx`
 - `.subscription-section` — `src/components/home/PricingSection.jsx`
@@ -948,11 +869,14 @@ _Showing 200 of 615 results._
 - `.system-map-section` — `src/components/home/SystemMapSection.jsx`
 - `.techhub-cta` — `src/pages/techhub/TechHub.jsx`
 - `.techhub-topics` — `src/pages/techhub/TechHub.jsx`
-- `.text-2xl` — `src/pages/crypto/Crypto.jsx`
-- `.text-3xl` — `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
-- `.text-4xl` — `src/components/family/FamilyHero.jsx`
-
-_Showing 250 of 286 results._
+- `.timeline` — `src/pages/about/About.jsx`
+- `.token-balance-card` — `src/pages/crypto/Crypto.jsx`
+- `.topic` — `src/pages/techhub/TechHub.jsx`
+- `.transition` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/family/Family.jsx`
+- `.tx-table` — `src/pages/crypto/Crypto.jsx`
+- `.uppercase` — `src/pages/family/Family.jsx`
+- `.value` — `src/components/services/ServicePackages.jsx`
+- `.values-container` — `src/pages/about/About.jsx`
 
 
 ## Cleanup Recommendation Order
