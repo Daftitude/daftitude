@@ -137,6 +137,21 @@ function extractClassesFromSelector(selector) {
   return classes;
 }
 
+function isLikelyRealClassName(className) {
+  if (!className) return false;
+
+  if (className.startsWith(".")) return false;
+  if (/^[0-9]+$/.test(className)) return false;
+  if (/^[<>=!]+$/.test(className)) return false;
+  if (/[{}"'\`]/.test(className)) return false;
+  if (className.includes("===") || className.includes("<=") || className.includes(">=")) return false;
+
+  if (/^[A-Z][a-z]+(?:-[A-Z][a-z]+)*$/.test(className)) return false;
+  if (className === "Content-Type") return false;
+
+  return /^[a-zA-Z_-][a-zA-Z0-9_:-]*$/.test(className);
+}
+
 function extractCodeClasses(codeText) {
   const classes = new Set();
 
@@ -161,25 +176,15 @@ function extractCodeClasses(codeText) {
         .filter((item) => !item.includes(":"))
         .filter((item) => !item.includes("("))
         .filter((item) => !item.includes(")"))
+        .filter(isLikelyRealClassName)
         .forEach((item) => classes.add(item));
     }
   }
 
-  const stringClassRegex = /["'`]([a-zA-Z_-][a-zA-Z0-9_-]*(?:\s+[a-zA-Z_-][a-zA-Z0-9_-]*)*)["'`]/g;
-  let match;
-
-  while ((match = stringClassRegex.exec(codeText))) {
-    const raw = match[1];
-
-    if (!raw.includes("-")) continue;
-
-    raw
-      .split(/\s+/)
-      .map((item) => item.trim())
-      .filter(Boolean)
-      .filter((item) => item.includes("-"))
-      .forEach((item) => classes.add(item));
-  }
+  // Do not scan arbitrary quoted strings as class names.
+  // That produced false positives from data labels like "Smart-home",
+  // object keys, content strings, and Tailwind utilities outside className.
+  // Keep this audit focused on explicit className usage.
 
   return classes;
 }
