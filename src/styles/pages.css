@@ -177,7 +177,7 @@
   align-items: stretch;
 }
 
-.pkg-card {
+.packages .pkg-card {
   position: relative;
   display: grid;
   gap: 0.9rem;
@@ -925,8 +925,8 @@
   padding: 0 clamp(1.1rem, 3vw, 1.6rem) clamp(1.1rem, 3vw, 1.6rem);
 }
 
-.btn-ghost,
-.btn-solid {
+.modal-foot .btn-ghost,
+.modal-foot .btn-solid {
   border-radius: 999px;
   padding: 0.7rem 1rem;
   font: inherit;
@@ -935,13 +935,13 @@
   cursor: pointer;
 }
 
-.btn-ghost {
+.modal-foot .btn-ghost {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.055);
   color: rgba(255, 255, 255, 0.86);
 }
 
-.btn-solid {
+.modal-foot .btn-solid {
   border: 1px solid rgba(12, 199, 246, 0.42);
   background: linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(255, 255, 255, 0.9));
   color: #061017;
@@ -1064,8 +1064,8 @@
   margin-top: 0.35rem;
 }
 
-.service-details-btn,
-.service-select-btn {
+.service-actions .service-details-btn,
+.service-actions .service-select-btn {
   border-radius: 999px;
   padding: 0.58rem 0.82rem;
   font: inherit;
@@ -1074,13 +1074,13 @@
   cursor: pointer;
 }
 
-.service-details-btn {
+.service-actions .service-details-btn {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.055);
   color: rgba(255, 255, 255, 0.86);
 }
 
-.service-select-btn {
+.service-actions .service-select-btn {
   border: 1px solid rgba(125, 255, 178, 0.34);
   background: linear-gradient(135deg, rgba(125, 255, 178, 0.92), rgba(255, 255, 255, 0.88));
   color: #061017;
@@ -1231,24 +1231,24 @@
    About + Contact Page Details
 ====================================================== */
 
-.section-container,
-.about-me-section,
-.journey-section,
-.mission-section,
-.values-container,
-.contact-container {
+.about-page .section-container,
+.about-page .about-me-section,
+.about-page .journey-section,
+.about-page .mission-section,
+.about-page .values-container,
+.contact-page .contact-container {
   width: min(var(--maxw), calc(100% - 2rem));
   margin-inline: auto;
 }
 
-.about-me-section,
-.journey-section,
-.mission-section,
-.values-container {
+.about-page .about-me-section,
+.about-page .journey-section,
+.about-page .mission-section,
+.about-page .values-container {
   padding: clamp(3.5rem, 7vw, 6rem) 0;
 }
 
-.section-container {
+.about-page .section-container {
   display: grid;
   gap: clamp(1rem, 2vw, 1.4rem);
 }
@@ -1333,7 +1333,7 @@
     rgba(255, 255, 255, 0.04);
 }
 
-.contact-container {
+.contact-page .contact-container {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
   gap: 1rem;
@@ -1361,7 +1361,7 @@
 }
 
 @media (max-width: 860px) {
-  .contact-container {
+  .contact-page .contact-container {
     grid-template-columns: 1fr;
   }
 }
@@ -1384,23 +1384,23 @@
   margin-inline: auto;
 }
 
-.balance-grid,
-.price-grid {
+.crypto-section .balance-grid,
+.crypto-section .price-grid {
   display: grid;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.balance-grid {
+.crypto-section .balance-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.price-grid {
+.crypto-section .price-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.token-balance-card,
-.price-card,
+.crypto-section .token-balance-card,
+.crypto-section .price-card,
 .crypto-section .card {
   padding: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.095);
@@ -1412,7 +1412,7 @@
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.22);
 }
 
-.token-balance-card {
+.crypto-section .token-balance-card {
   display: grid;
   gap: 0.35rem;
 }
@@ -1445,8 +1445,8 @@
   background: rgba(255, 255, 255, 0.035);
 }
 
-.tx-table th,
-.tx-table td {
+.crypto-section .tx-table th,
+.crypto-section .tx-table td {
   padding: 0.75rem 0.85rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.76);
@@ -1454,7 +1454,7 @@
   text-align: left;
 }
 
-.tx-table th {
+.crypto-section .tx-table th {
   color: rgba(220, 248, 255, 0.92);
   font-weight: 1000;
 }
@@ -1493,7 +1493,7 @@
 
 @media (max-width: 620px) {
   .balance-grid,
-  .price-grid {
+  .crypto-section .price-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1570,4 +1570,152 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.055);
   color: rgba(255, 255, 255, 0.86);
+}
+
+/* ======================================================
+   Visual QA Corrective Overrides
+   Scoped fixes only — do not convert these to broad globals.
+====================================================== */
+
+/* ------------------------------
+   Crypto page: restore dark cards and sane spacing
+------------------------------ */
+
+.crypto-section {
+  display: block;
+}
+
+.crypto-section .container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.crypto-section .bg-gray-100,
+.crypto-section .price-card,
+.crypto-section .token-balance-card,
+.crypto-section .card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78) !important;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.crypto-section .price-grid {
+  width: min(720px, 100%);
+  margin-inline: auto;
+}
+
+.crypto-section .balance-grid {
+  width: 100%;
+}
+
+.crypto-section .filter-buttons {
+  justify-content: center;
+}
+
+.crypto-section .tx-table {
+  margin-top: 1rem;
+}
+
+/* ------------------------------
+   AskDaFT dashboard: keep dashboard content centered and prevent left drift
+------------------------------ */
+
+.askdaft-client-layout,
+.askdaft-tech-board,
+.askdaft-dashboard-shell {
+  width: min(1280px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.askdaft-page .askdaft-help-launcher {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.askdaft-page .askdaft-help-launcher-heading {
+  align-items: center;
+}
+
+.askdaft-page .askdaft-help-launcher-grid {
+  align-items: stretch;
+}
+
+/* ------------------------------
+   About page: reduce runaway vertical gaps
+------------------------------ */
+
+.about-page .section-container,
+.about-page .about-me-section,
+.about-page .journey-section,
+.about-page .mission-section,
+.about-page .values-container {
+  padding-block: clamp(2.5rem, 5vw, 4.25rem);
+}
+
+.about-page .about-container {
+  align-items: center;
+}
+
+.about-page .timeline {
+  width: min(920px, 100%);
+  margin-inline: auto;
+}
+
+/* ------------------------------
+   Contact page: fix form/card/map layout and giant CTA pill
+------------------------------ */
+
+.contact-page .contact-container {
+  grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+  align-items: start;
+  justify-content: center;
+  width: min(1120px, calc(100% - 2rem));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.contact-page .contact-form,
+.contact-page .contact-info {
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-page .btn-primary,
+.contact-page .submit-btn,
+.contact-page .contact-btn {
+  width: max-content;
+  max-width: 100%;
+  min-height: 42px;
+  padding: 0.68rem 1rem;
+  border-radius: 999px;
+}
+
+.contact-page a.btn-primary,
+.contact-page .compact-contact a,
+.contact-page .contact-info a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  min-height: 42px;
+  padding: 0.68rem 1rem;
+  border-radius: 999px;
+}
+
+.contact-page .map-container {
+  grid-column: 1 / -1;
+  width: min(720px, 100%);
+  min-height: 300px;
+}
+
+@media (max-width: 860px) {
+  .contact-page .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page .map-container {
+    width: 100%;
+  }
 }
