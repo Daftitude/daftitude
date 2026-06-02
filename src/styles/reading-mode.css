@@ -32,6 +32,34 @@
   filter: none !important;
 }
 
+/* Reading OFF: legacy emphasis fallback cleanup */
+.home-game-page.reading-impairment-mode :where(.pricing-emphasis-yellow, .pricing-emphasis-red, .pricing-emphasis-blue, .pricing-emphasis-green):not(.hero-brand-title *):not(.game-path strong *) {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: none !important;
+}
+
+.askdaft-page.reading-impairment-mode :where(.pricing-emphasis-yellow, .pricing-emphasis-red, .pricing-emphasis-blue, .pricing-emphasis-green) {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode :where(.story-card-number, .story-card span, .story-specialties strong, .story-specialties li, .panel-buzz-row span, .system-chip, .chip, .keyword-chip):not(.hero-brand-title *):not(.game-path strong *) {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode .story-specialties li::before {
+  color: rgba(255, 255, 255, 0.62) !important;
+  text-shadow: none !important;
+}
+
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-daft,
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-itude,
+.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-ask {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: none !important;
+}
+
 /* Reading ON: semantic highlights */
 .phase-page:not(.reading-impairment-mode) .reading-tech-word,
 .account-page:not(.reading-impairment-mode) .reading-tech-word {

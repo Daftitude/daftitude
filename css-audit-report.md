@@ -1,30 +1,30 @@
 # CSS Audit Report
 
-Generated: 5/25/2026, 4:17:03 PM
+Generated: 6/1/2026, 10:28:22 PM
 
 ## Summary
 
 | Metric | Count |
 |---|---:|
-| CSS files scanned | 14 |
+| CSS files scanned | 22 |
 | Code files scanned | 178 |
-| Unique CSS selectors | 1471 |
-| Unique CSS classes in CSS | 470 |
-| Unique classes found in code | 1104 |
-| Duplicate selector groups | 448 |
-| Classes defined in CSS but not found in code | 100 |
-| Classes found in code but missing CSS | 734 |
-| AskDaFT selector locations | 1133 |
-| Reading/emphasis selector locations | 168 |
+| Unique CSS selectors | 1382 |
+| Unique CSS classes in CSS | 464 |
+| Unique classes found in code | 1103 |
+| Duplicate selector groups | 412 |
+| Classes defined in CSS but not found in code | 97 |
+| Classes found in code but missing CSS | 736 |
+| AskDaFT selector locations | 895 |
+| Reading/emphasis selector locations | 109 |
 
 
 ## Highest !important Counts by File
 
-- `src/styles/cards.css` — **416**
-- `src/styles/pages.css` — **260**
+- `src/styles/cards.css` — **294**
 - `src/styles/pricing.css` — **104**
+- `src/styles/askdaft-dashboard.css` — **81**
+- `src/styles/reading-mode.css` — **33**
 - `src/styles/utilities.css` — **12**
-- `src/styles/mobile.css` — **10**
 - `src/styles/footer.css` — **4**
 - `src/styles/cta.css` — **1**
 - `src/styles/home.css` — **1**
@@ -32,460 +32,460 @@ Generated: 5/25/2026, 4:17:03 PM
 
 ## Duplicate Selectors
 
-- `.pricing-table-lite::before` — 17 times: `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`
-- `.pricing-table-lite::after` — 11 times: `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`, `src/styles/pricing.css:135`
-- `.pricing-range` — 8 times: `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`
-- `.pricing-row > b:last-child` — 8 times: `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`, `src/styles/pricing.css:116`
-- `.split-identity-section .identity-panel p` — 7 times: `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`
-- `.split-identity-section .panel-buzz-row` — 7 times: `src/styles/cards.css:432`, `src/styles/cards.css:432`, `src/styles/cards.css:432`, `src/styles/cards.css:432`, `src/styles/cards.css:432`, `src/styles/cards.css:432`, `src/styles/cards.css:432`
-- `.split-identity-section .panel-buzz-row span` — 7 times: `src/styles/cards.css:437`, `src/styles/cards.css:437`, `src/styles/cards.css:437`, `src/styles/cards.css:437`, `src/styles/cards.css:437`, `src/styles/cards.css:437`, `src/styles/cards.css:437`
-- `.askdaft-client-layout` — 7 times: `src/styles/mobile.css:890`, `src/styles/mobile.css:890`, `src/styles/mobile.css:890`, `src/styles/pages.css:840`, `src/styles/pages.css:840`, `src/styles/pages.css:840`, `src/styles/pages.css:840`
-- `.askdaft-view-mode-strip` — 7 times: `src/styles/mobile.css:1019`, `src/styles/mobile.css:1019`, `src/styles/mobile.css:1019`, `src/styles/pages.css:1576`, `src/styles/pages.css:1576`, `src/styles/pages.css:1576`, `src/styles/pages.css:1576`
-- `.askdaft-help-launcher-card` — 7 times: `src/styles/mobile.css:1084`, `src/styles/mobile.css:1084`, `src/styles/mobile.css:1084`, `src/styles/mobile.css:1084`, `src/styles/pages.css:1865`, `src/styles/pages.css:1865`, `src/styles/pages.css:1865`
-- `.askdaft-guided-step-grid` — 7 times: `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/pages.css:2000`, `src/styles/pages.css:2000`
-- `.askdaft-plan-comparison-grid` — 7 times: `src/styles/mobile.css:1102`, `src/styles/mobile.css:1102`, `src/styles/mobile.css:1102`, `src/styles/mobile.css:1102`, `src/styles/mobile.css:1102`, `src/styles/pages.css:2100`, `src/styles/pages.css:2100`
-- `.split-identity-section .panel-action-row` — 6 times: `src/styles/cards.css:452`, `src/styles/cards.css:452`, `src/styles/cards.css:452`, `src/styles/cards.css:452`, `src/styles/cards.css:452`, `src/styles/cards.css:452`
-- `.split-identity-section .panel-action-row .game-btn` — 6 times: `src/styles/cards.css:460`, `src/styles/cards.css:460`, `src/styles/cards.css:460`, `src/styles/cards.css:460`, `src/styles/cards.css:460`, `src/styles/cards.css:460`
-- `.account-dashboard-hero` — 6 times: `src/styles/mobile.css:785`, `src/styles/mobile.css:785`, `src/styles/mobile.css:785`, `src/styles/mobile.css:785`, `src/styles/pages.css:547`, `src/styles/pages.css:547`
-- `.account-auth-copy` — 6 times: `src/styles/mobile.css:793`, `src/styles/mobile.css:793`, `src/styles/mobile.css:793`, `src/styles/mobile.css:793`, `src/styles/pages.css:545`, `src/styles/pages.css:545`
-- `.dashboard-status-grid` — 6 times: `src/styles/mobile.css:802`, `src/styles/mobile.css:802`, `src/styles/mobile.css:802`, `src/styles/pages.css:709`, `src/styles/pages.css:709`, `src/styles/pages.css:709`
-- `.askdaft-tech-board` — 6 times: `src/styles/mobile.css:960`, `src/styles/mobile.css:960`, `src/styles/mobile.css:960`, `src/styles/pages.css:1152`, `src/styles/pages.css:1152`, `src/styles/pages.css:1152`
-- `.askdaft-tech-board.is-simple-view` — 6 times: `src/styles/mobile.css:1031`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1031`, `src/styles/pages.css:1663`, `src/styles/pages.css:1663`, `src/styles/pages.css:1663`
-- `.askdaft-help-launcher` — 6 times: `src/styles/mobile.css:1076`, `src/styles/mobile.css:1076`, `src/styles/pages.css:1819`, `src/styles/pages.css:1819`, `src/styles/pages.css:1819`, `src/styles/pages.css:1819`
-- `.askdaft-guided-request-preview` — 6 times: `src/styles/mobile.css:1234`, `src/styles/mobile.css:1234`, `src/styles/pages.css:1933`, `src/styles/pages.css:1933`, `src/styles/pages.css:1933`, `src/styles/pages.css:1933`
-- `.askdaft-plan-comparison` — 6 times: `src/styles/mobile.css:1102`, `src/styles/mobile.css:1102`, `src/styles/pages.css:1934`, `src/styles/pages.css:1934`, `src/styles/pages.css:1934`, `src/styles/pages.css:1934`
-- `.askdaft-ticket-summary` — 6 times: `src/styles/pages.css:2571`, `src/styles/pages.css:2571`, `src/styles/pages.css:2571`, `src/styles/pages.css:2571`, `src/styles/pages.css:2571`, `src/styles/pages.css:2571`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — 5 times: `src/styles/cards.css:447`, `src/styles/cards.css:447`, `src/styles/cards.css:447`, `src/styles/cards.css:447`, `src/styles/cards.css:447`
-- `.split-identity-section .identity-panel h2` — 5 times: `src/styles/cards.css:529`, `src/styles/cards.css:529`, `src/styles/cards.css:529`, `src/styles/cards.css:529`, `src/styles/cards.css:529`
-- `.askdaft-summary-grid` — 5 times: `src/styles/cards.css:1421`, `src/styles/cards.css:1421`, `src/styles/mobile.css:12`, `src/styles/mobile.css:12`, `src/styles/mobile.css:12`
-- `.askdaft-estimate-grid` — 5 times: `src/styles/cards.css:1422`, `src/styles/cards.css:1422`, `src/styles/mobile.css:13`, `src/styles/mobile.css:13`, `src/styles/mobile.css:13`
-- `.askdaft-typical-panel` — 5 times: `src/styles/cards.css:1565`, `src/styles/cards.css:1565`, `src/styles/mobile.css:43`, `src/styles/mobile.css:43`, `src/styles/mobile.css:43`
-- `.askdaft-call-fields` — 5 times: `src/styles/cards.css:1567`, `src/styles/cards.css:1567`, `src/styles/mobile.css:42`, `src/styles/mobile.css:42`, `src/styles/mobile.css:42`
-- `.askdaft-progress-tracker` — 5 times: `src/styles/cards.css:1712`, `src/styles/cards.css:1712`, `src/styles/mobile.css:37`, `src/styles/mobile.css:37`, `src/styles/mobile.css:37`
-- `.askdaft-price-grid` — 5 times: `src/styles/cards.css:1847`, `src/styles/cards.css:1847`, `src/styles/mobile.css:7`, `src/styles/mobile.css:7`, `src/styles/mobile.css:7`
-- `.askdaft-subscribe-grid` — 5 times: `src/styles/cards.css:1848`, `src/styles/cards.css:1848`, `src/styles/mobile.css:8`, `src/styles/mobile.css:8`, `src/styles/mobile.css:8`
-- `.account-auth-panel` — 5 times: `src/styles/mobile.css:818`, `src/styles/mobile.css:818`, `src/styles/mobile.css:818`, `src/styles/pages.css:546`, `src/styles/pages.css:546`
-- `.askdaft-request-progress` — 5 times: `src/styles/mobile.css:894`, `src/styles/mobile.css:894`, `src/styles/mobile.css:894`, `src/styles/pages.css:854`, `src/styles/pages.css:854`
-- `.askdaft-dashboard-page .dashboard-status-card` — 5 times: `src/styles/mobile.css:923`, `src/styles/mobile.css:923`, `src/styles/mobile.css:923`, `src/styles/pages.css:1009`, `src/styles/pages.css:1009`
-- `.askdaft-dashboard-page .dashboard-status-grid` — 5 times: `src/styles/mobile.css:933`, `src/styles/mobile.css:933`, `src/styles/mobile.css:933`, `src/styles/pages.css:1005`, `src/styles/pages.css:1005`
-- `.askdaft-plan-list` — 5 times: `src/styles/mobile.css:944`, `src/styles/mobile.css:944`, `src/styles/pages.css:946`, `src/styles/pages.css:946`, `src/styles/pages.css:946`
-- `.askdaft-file-list div` — 5 times: `src/styles/mobile.css:952`, `src/styles/mobile.css:952`, `src/styles/pages.css:952`, `src/styles/pages.css:952`, `src/styles/pages.css:952`
-- `.device-action` — 5 times: `src/styles/mobile.css:982`, `src/styles/mobile.css:982`, `src/styles/pages.css:1172`, `src/styles/pages.css:1172`, `src/styles/pages.css:1172`
-- `.selected-device-details` — 5 times: `src/styles/mobile.css:993`, `src/styles/mobile.css:993`, `src/styles/pages.css:1359`, `src/styles/pages.css:1359`, `src/styles/pages.css:1359`
-- `.askdaft-view-toggle` — 5 times: `src/styles/mobile.css:1023`, `src/styles/mobile.css:1023`, `src/styles/mobile.css:1023`, `src/styles/pages.css:1608`, `src/styles/pages.css:1608`
-- `.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel` — 5 times: `src/styles/mobile.css:1054`, `src/styles/mobile.css:1054`, `src/styles/pages.css:1720`, `src/styles/pages.css:1720`, `src/styles/pages.css:1720`
-- `.askdaft-help-launcher-grid` — 5 times: `src/styles/mobile.css:1080`, `src/styles/mobile.css:1080`, `src/styles/mobile.css:1080`, `src/styles/pages.css:1859`, `src/styles/pages.css:1859`
-- `.askdaft-guided-request-heading` — 5 times: `src/styles/mobile.css:1106`, `src/styles/mobile.css:1106`, `src/styles/mobile.css:1106`, `src/styles/pages.css:1947`, `src/styles/pages.css:1947`
-- `.askdaft-plan-comparison-heading` — 5 times: `src/styles/mobile.css:1107`, `src/styles/mobile.css:1107`, `src/styles/mobile.css:1107`, `src/styles/pages.css:1948`, `src/styles/pages.css:1948`
-- `.askdaft-guided-summary-card` — 5 times: `src/styles/mobile.css:1108`, `src/styles/mobile.css:1108`, `src/styles/mobile.css:1108`, `src/styles/pages.css:2043`, `src/styles/pages.css:2043`
-- `.askdaft-current-plan-card` — 5 times: `src/styles/mobile.css:1119`, `src/styles/mobile.css:1119`, `src/styles/mobile.css:1119`, `src/styles/pages.css:2074`, `src/styles/pages.css:2074`
-- `.askdaft-guided-device-row` — 5 times: `src/styles/mobile.css:1123`, `src/styles/mobile.css:1123`, `src/styles/mobile.css:1123`, `src/styles/pages.css:1976`, `src/styles/pages.css:1976`
-- `.askdaft-guided-device-row button` — 5 times: `src/styles/mobile.css:1128`, `src/styles/mobile.css:1128`, `src/styles/mobile.css:1128`, `src/styles/pages.css:1983`, `src/styles/pages.css:1983`
-- `.askdaft-help-launcher-heading h2` — 5 times: `src/styles/mobile.css:1254`, `src/styles/mobile.css:1254`, `src/styles/pages.css:1841`, `src/styles/pages.css:1841`, `src/styles/pages.css:1841`
-- `.askdaft-guided-request-heading h2` — 5 times: `src/styles/mobile.css:1292`, `src/styles/mobile.css:1292`, `src/styles/pages.css:1956`, `src/styles/pages.css:1956`, `src/styles/pages.css:1956`
-- `.askdaft-plan-comparison-heading h2` — 5 times: `src/styles/mobile.css:1349`, `src/styles/mobile.css:1349`, `src/styles/pages.css:1957`, `src/styles/pages.css:1957`, `src/styles/pages.css:1957`
-- `.askdaft-request-progress-shell` — 5 times: `src/styles/pages.css:2939`, `src/styles/pages.css:2939`, `src/styles/pages.css:2939`, `src/styles/pages.css:2939`, `src/styles/pages.css:2939`
-- `.split-identity-section .identity-panel` — 4 times: `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:420`
-- `.split-identity-section` — 4 times: `src/styles/cards.css:420`, `src/styles/home.css:18`, `src/styles/home.css:18`, `src/styles/mobile.css:300`
-- `.askdaft-page .askdaft-mission-grid` — 4 times: `src/styles/cards.css:1076`, `src/styles/mobile.css:17`, `src/styles/mobile.css:17`, `src/styles/mobile.css:17`
-- `.askdaft-issue-grid` — 4 times: `src/styles/cards.css:1180`, `src/styles/mobile.css:50`, `src/styles/mobile.css:50`, `src/styles/mobile.css:50`
-- `.askdaft-guest-note` — 4 times: `src/styles/cards.css:1566`, `src/styles/cards.css:1566`, `src/styles/mobile.css:106`, `src/styles/mobile.css:106`
-- `.askdaft-price-card` — 4 times: `src/styles/cards.css:1861`, `src/styles/cards.css:1861`, `src/styles/mobile.css:70`, `src/styles/mobile.css:70`
-- `.askdaft-subscribe-card` — 4 times: `src/styles/cards.css:1862`, `src/styles/cards.css:1862`, `src/styles/mobile.css:71`, `src/styles/mobile.css:71`
-- `.askdaft-subscribe-note` — 4 times: `src/styles/cards.css:1863`, `src/styles/cards.css:1863`, `src/styles/mobile.css:72`, `src/styles/mobile.css:72`
-- `.mode-cta-copy h2` — 4 times: `src/styles/cta.css:81`, `src/styles/cta.css:81`, `src/styles/pricing.css:898`, `src/styles/pricing.css:898`
+- `.account-auth-copy` — 5 times: `src/styles/account.css:78`, `src/styles/account.css:78`, `src/styles/account.css:78`, `src/styles/account.css:78`, `src/styles/account.css:78`
+- `.account-auth-panel` — 5 times: `src/styles/account.css:79`, `src/styles/account.css:79`, `src/styles/account.css:79`, `src/styles/account.css:79`, `src/styles/account.css:79`
+- `.dashboard-status-grid` — 5 times: `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/askdaft-dashboard.css:318`
+- `.askdaft-request-progress` — 5 times: `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:121`
+- `.askdaft-dashboard-page .dashboard-status-grid` — 5 times: `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`
+- `.askdaft-dashboard-page .dashboard-status-card` — 5 times: `src/styles/askdaft-dashboard.css:322`, `src/styles/askdaft-dashboard.css:322`, `src/styles/askdaft-dashboard.css:322`, `src/styles/askdaft-dashboard.css:322`, `src/styles/askdaft-dashboard.css:322`
+- `.askdaft-tech-board` — 5 times: `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:485`
+- `.device-action` — 5 times: `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:505`
+- `.selected-device-details` — 5 times: `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:692`
+- `.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel` — 5 times: `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`
+- `.pricing-range` — 5 times: `src/styles/pricing.css:93`, `src/styles/pricing.css:93`, `src/styles/pricing.css:93`, `src/styles/pricing.css:93`, `src/styles/pricing.css:93`
+- `.pricing-row > b:last-child` — 5 times: `src/styles/pricing.css:94`, `src/styles/pricing.css:94`, `src/styles/pricing.css:94`, `src/styles/pricing.css:94`, `src/styles/pricing.css:94`
+- `.account-dashboard-hero` — 4 times: `src/styles/account.css:80`, `src/styles/account.css:80`, `src/styles/account.css:80`, `src/styles/account.css:80`
+- `.account-benefit-card` — 4 times: `src/styles/account.css:128`, `src/styles/account.css:128`, `src/styles/account.css:128`, `src/styles/account.css:128`
+- `.askdaft-page .askdaft-callout` — 4 times: `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`
+- `.askdaft-page .contact-command` — 4 times: `src/styles/askdaft-base.css:51`, `src/styles/askdaft-base.css:51`, `src/styles/askdaft-base.css:51`, `src/styles/askdaft-base.css:51`
+- `.askdaft-client-layout` — 4 times: `src/styles/askdaft-dashboard.css:104`, `src/styles/askdaft-dashboard.css:104`, `src/styles/askdaft-dashboard.css:104`, `src/styles/askdaft-dashboard.css:104`
+- `.askdaft-plan-panel` — 4 times: `src/styles/askdaft-dashboard.css:116`, `src/styles/askdaft-dashboard.css:116`, `src/styles/askdaft-dashboard.css:116`, `src/styles/askdaft-dashboard.css:116`
+- `.askdaft-plan-list` — 4 times: `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:219`
+- `.askdaft-file-list div` — 4 times: `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:228`
+- `.askdaft-dashboard-page .account-dashboard-hero` — 4 times: `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:303`
+- `.askdaft-tech-board .account-dashboard-panel` — 4 times: `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:493`
+- `.device-action-row` — 4 times: `src/styles/askdaft-dashboard.css:721`, `src/styles/askdaft-dashboard.css:721`, `src/styles/askdaft-dashboard.css:721`, `src/styles/askdaft-dashboard.css:721`
+- `.tech-tree-group .tech-tree-branches` — 4 times: `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:882`
+- `.askdaft-view-mode-strip` — 4 times: `src/styles/askdaft-dashboard.css:968`, `src/styles/askdaft-dashboard.css:968`, `src/styles/askdaft-dashboard.css:968`, `src/styles/askdaft-dashboard.css:968`
+- `.askdaft-tech-board.is-simple-view` — 4 times: `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1055`
+- `.askdaft-tech-board.is-simple-view .askdaft-device-add-panel` — 4 times: `src/styles/askdaft-dashboard.css:1100`, `src/styles/askdaft-dashboard.css:1100`, `src/styles/askdaft-dashboard.css:1100`, `src/styles/askdaft-dashboard.css:1100`
+- `.askdaft-client-layout.is-simple-view` — 4 times: `src/styles/askdaft-dashboard.css:1057`, `src/styles/askdaft-dashboard.css:1057`, `src/styles/askdaft-dashboard.css:1057`, `src/styles/askdaft-dashboard.css:1057`
+- `.askdaft-guided-request-preview` — 4 times: `src/styles/askdaft-dashboard.css:1212`, `src/styles/askdaft-dashboard.css:1212`, `src/styles/askdaft-dashboard.css:1212`, `src/styles/askdaft-dashboard.css:1212`
+- `.askdaft-plan-comparison` — 4 times: `src/styles/askdaft-dashboard.css:1213`, `src/styles/askdaft-dashboard.css:1213`, `src/styles/askdaft-dashboard.css:1213`, `src/styles/askdaft-dashboard.css:1213`
+- `.askdaft-guided-request-heading h2` — 4 times: `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1235`
+- `.askdaft-plan-comparison-heading h2` — 4 times: `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1236`
+- `.askdaft-guided-step-grid` — 4 times: `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1279`
+- `.askdaft-dashboard-page .account-dashboard-hero h1` — 4 times: `src/styles/askdaft-dashboard.css:1400`, `src/styles/askdaft-dashboard.css:1400`, `src/styles/askdaft-dashboard.css:1400`, `src/styles/askdaft-dashboard.css:1400`
+- `.askdaft-ticket-status-timeline` — 4 times: `src/styles/askdaft-tickets.css:338`, `src/styles/askdaft-tickets.css:338`, `src/styles/askdaft-tickets.css:338`, `src/styles/askdaft-tickets.css:338`
+- `.askdaft-ticket-recommendation-grid` — 4 times: `src/styles/askdaft-tickets.css:339`, `src/styles/askdaft-tickets.css:339`, `src/styles/askdaft-tickets.css:339`, `src/styles/askdaft-tickets.css:339`
+- `.split-identity-section` — 4 times: `src/styles/cards.css:420`, `src/styles/home.css:18`, `src/styles/home.css:18`, `src/styles/mobile.css:6`
+- `.askdaft-page .askdaft-mission-grid` — 4 times: `src/styles/cards.css:821`, `src/styles/cards.css:821`, `src/styles/cards.css:821`, `src/styles/cards.css:821`
+- `.askdaft-typical-panel` — 4 times: `src/styles/cards.css:1308`, `src/styles/cards.css:1308`, `src/styles/cards.css:1308`, `src/styles/cards.css:1308`
+- `.askdaft-call-fields` — 4 times: `src/styles/cards.css:1310`, `src/styles/cards.css:1310`, `src/styles/cards.css:1310`, `src/styles/cards.css:1310`
+- `.askdaft-progress-tracker` — 4 times: `src/styles/cards.css:1455`, `src/styles/cards.css:1455`, `src/styles/cards.css:1455`, `src/styles/cards.css:1455`
+- `.mode-cta-copy h2` — 4 times: `src/styles/cta.css:81`, `src/styles/cta.css:81`, `src/styles/pricing.css:790`, `src/styles/pricing.css:790`
 - `.footer-container` — 4 times: `src/styles/footer.css:28`, `src/styles/footer.css:28`, `src/styles/footer.css:28`, `src/styles/footer.css:28`
-- `.game-start-screen` — 4 times: `src/styles/hero.css:16`, `src/styles/hero.css:16`, `src/styles/mobile.css:656`, `src/styles/utilities.css:254`
-- `.game-start-screen::after` — 4 times: `src/styles/hero.css:41`, `src/styles/hero.css:41`, `src/styles/mobile.css:673`, `src/styles/mobile.css:673`
+- `.game-start-screen` — 4 times: `src/styles/hero.css:16`, `src/styles/hero.css:16`, `src/styles/mobile.css:291`, `src/styles/utilities.css:254`
+- `.game-start-screen::after` — 4 times: `src/styles/hero.css:41`, `src/styles/hero.css:41`, `src/styles/mobile.css:308`, `src/styles/mobile.css:308`
 - `.game-center-panel` — 4 times: `src/styles/hero.css:164`, `src/styles/hero.css:164`, `src/styles/hero.css:164`, `src/styles/utilities.css:130`
-- `.story-card` — 4 times: `src/styles/home.css:39`, `src/styles/home.css:39`, `src/styles/home.css:39`, `src/styles/mobile.css:323`
-- `.askdaft-page .contact-command` — 4 times: `src/styles/mobile.css:171`, `src/styles/pages.css:432`, `src/styles/pages.css:432`, `src/styles/pages.css:432`
-- `.askdaft-page .askdaft-callout` — 4 times: `src/styles/mobile.css:172`, `src/styles/mobile.css:172`, `src/styles/pages.css:421`, `src/styles/pages.css:421`
-- `.floating-reading-tools` — 4 times: `src/styles/mobile.css:526`, `src/styles/mobile.css:526`, `src/styles/pages.css:3574`, `src/styles/pages.css:3574`
-- `.jump-to-top-btn` — 4 times: `src/styles/mobile.css:538`, `src/styles/mobile.css:538`, `src/styles/mobile.css:538`, `src/styles/mobile.css:538`
-- `.reading-mode-toggle` — 4 times: `src/styles/mobile.css:539`, `src/styles/mobile.css:539`, `src/styles/mobile.css:539`, `src/styles/mobile.css:539`
-- `.account-auth-copy h1` — 4 times: `src/styles/mobile.css:824`, `src/styles/mobile.css:824`, `src/styles/mobile.css:824`, `src/styles/pages.css:563`
-- `.account-dashboard-hero h1` — 4 times: `src/styles/mobile.css:825`, `src/styles/mobile.css:825`, `src/styles/mobile.css:825`, `src/styles/pages.css:564`
-- `.account-benefit-card` — 4 times: `src/styles/mobile.css:862`, `src/styles/mobile.css:862`, `src/styles/pages.css:595`, `src/styles/pages.css:595`
-- `.askdaft-dashboard-page .account-dashboard-hero` — 4 times: `src/styles/mobile.css:915`, `src/styles/mobile.css:915`, `src/styles/pages.css:990`, `src/styles/pages.css:990`
-- `.askdaft-plan-panel` — 4 times: `src/styles/mobile.css:948`, `src/styles/pages.css:849`, `src/styles/pages.css:849`, `src/styles/pages.css:849`
-- `.askdaft-tech-board .account-dashboard-panel` — 4 times: `src/styles/mobile.css:964`, `src/styles/mobile.css:964`, `src/styles/pages.css:1160`, `src/styles/pages.css:1160`
-- `.device-action-row` — 4 times: `src/styles/mobile.css:982`, `src/styles/mobile.css:982`, `src/styles/pages.css:1388`, `src/styles/pages.css:1388`
-- `.tech-tree-group .tech-tree-branches` — 4 times: `src/styles/mobile.css:1003`, `src/styles/mobile.css:1003`, `src/styles/pages.css:1516`, `src/styles/pages.css:1516`
-- `.askdaft-tech-board.is-simple-view .askdaft-device-add-panel` — 4 times: `src/styles/mobile.css:1053`, `src/styles/mobile.css:1053`, `src/styles/pages.css:1719`, `src/styles/pages.css:1719`
-- `.askdaft-client-layout.is-simple-view` — 4 times: `src/styles/mobile.css:1059`, `src/styles/mobile.css:1059`, `src/styles/pages.css:1665`, `src/styles/pages.css:1665`
-- `.askdaft-tech-board.is-simple-view .tech-tree-group .tech-tree-branches` — 4 times: `src/styles/mobile.css:1065`, `src/styles/mobile.css:1065`, `src/styles/pages.css:1782`, `src/styles/pages.css:1782`
-- `.askdaft-client-layout.is-simple-view .askdaft-request-progress` — 4 times: `src/styles/mobile.css:1069`, `src/styles/mobile.css:1069`, `src/styles/pages.css:1810`, `src/styles/pages.css:1810`
-- `.askdaft-help-launcher-heading` — 4 times: `src/styles/mobile.css:1076`, `src/styles/mobile.css:1076`, `src/styles/pages.css:1833`, `src/styles/pages.css:1833`
-- `.askdaft-dashboard-page .account-dashboard-hero h1` — 4 times: `src/styles/mobile.css:1184`, `src/styles/mobile.css:1184`, `src/styles/pages.css:2228`, `src/styles/pages.css:2228`
-- `.askdaft-plan-comparison-card` — 4 times: `src/styles/mobile.css:1364`, `src/styles/pages.css:2106`, `src/styles/pages.css:2106`, `src/styles/pages.css:2106`
-- `.floating-page-tools` — 4 times: `src/styles/mobile.css:1481`, `src/styles/mobile.css:1481`, `src/styles/pages.css:3573`, `src/styles/pages.css:3573`
+- `.story-card` — 4 times: `src/styles/home.css:39`, `src/styles/home.css:39`, `src/styles/home.css:39`, `src/styles/mobile.css:29`
+- `.jump-to-top-btn` — 4 times: `src/styles/mobile.css:173`, `src/styles/mobile.css:173`, `src/styles/mobile.css:173`, `src/styles/mobile.css:173`
+- `.reading-mode-toggle` — 4 times: `src/styles/mobile.css:174`, `src/styles/mobile.css:174`, `src/styles/mobile.css:174`, `src/styles/mobile.css:174`
 - `.nav-dropbtn` — 4 times: `src/styles/navbar.css:96`, `src/styles/navbar.css:96`, `src/styles/navbar.css:96`, `src/styles/navbar.css:96`
-- `.askdaft-ticket-status-timeline` — 4 times: `src/styles/pages.css:3888`, `src/styles/pages.css:3888`, `src/styles/pages.css:3888`, `src/styles/pages.css:3888`
-- `.askdaft-ticket-recommendation-grid` — 4 times: `src/styles/pages.css:3889`, `src/styles/pages.css:3889`, `src/styles/pages.css:3889`, `src/styles/pages.css:3889`
-- `.askdaft-page.reading-mode-off :where(.askdaft-read-key` — 4 times: `src/styles/pages.css:4305`, `src/styles/pages.css:4305`, `src/styles/pages.css:4305`, `src/styles/pages.css:4305`
-- `.pricing-service span` — 4 times: `src/styles/pricing.css:113`, `src/styles/pricing.css:113`, `src/styles/pricing.css:113`, `src/styles/pricing.css:113`
-- `.pricing-row > div:first-child span` — 4 times: `src/styles/pricing.css:114`, `src/styles/pricing.css:114`, `src/styles/pricing.css:114`, `src/styles/pricing.css:114`
-- `.pricing-action-btn` — 4 times: `src/styles/pricing.css:680`, `src/styles/pricing.css:680`, `src/styles/pricing.css:680`, `src/styles/pricing.css:680`
+- `.pricing-service span` — 4 times: `src/styles/pricing.css:91`, `src/styles/pricing.css:91`, `src/styles/pricing.css:91`, `src/styles/pricing.css:91`
+- `.pricing-row > div:first-child span` — 4 times: `src/styles/pricing.css:92`, `src/styles/pricing.css:92`, `src/styles/pricing.css:92`, `src/styles/pricing.css:92`
+- `.account-dashboard-panel` — 3 times: `src/styles/account.css:81`, `src/styles/account.css:81`, `src/styles/account.css:81`
+- `.account-auth-copy h1` — 3 times: `src/styles/account.css:96`, `src/styles/account.css:96`, `src/styles/account.css:96`
+- `.account-dashboard-hero h1` — 3 times: `src/styles/account.css:97`, `src/styles/account.css:97`, `src/styles/account.css:97`
+- `.account-form-card` — 3 times: `src/styles/account.css:127`, `src/styles/account.css:127`, `src/styles/account.css:127`
+- `.dashboard-status-card` — 3 times: `src/styles/account.css:129`, `src/styles/account.css:129`, `src/styles/account.css:129`
+- `.account-benefit-grid` — 3 times: `src/styles/account.css:193`, `src/styles/account.css:193`, `src/styles/account.css:193`
+- `.account-dashboard-grid` — 3 times: `src/styles/account.css:243`, `src/styles/account.css:243`, `src/styles/account.css:243`
+- `.account-dashboard-wide` — 3 times: `src/styles/account.css:293`, `src/styles/askdaft-dashboard.css:117`, `src/styles/askdaft-dashboard.css:117`
+- `.askdaft-page .phase-panel` — 3 times: `src/styles/askdaft-base.css:39`, `src/styles/askdaft-base.css:39`, `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-onboarding-panel` — 3 times: `src/styles/askdaft-base.css:48`, `src/styles/askdaft-base.css:48`, `src/styles/askdaft-base.css:48`
+- `.askdaft-page .phase-warning-panel` — 3 times: `src/styles/askdaft-base.css:41`, `src/styles/askdaft-base.css:41`, `src/styles/askdaft-base.css:41`
+- `.askdaft-dashboard-grid` — 3 times: `src/styles/askdaft-dashboard.css:16`, `src/styles/askdaft-dashboard.css:16`, `src/styles/askdaft-dashboard.css:16`
+- `.askdaft-active-request-panel` — 3 times: `src/styles/askdaft-dashboard.css:115`, `src/styles/askdaft-dashboard.css:115`, `src/styles/askdaft-dashboard.css:115`
+- `.askdaft-dashboard-page .account-dashboard-actions` — 3 times: `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:311`
+- `.askdaft-dashboard-page` — 3 times: `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:303`
+- `.askdaft-client-layout .account-dashboard-panel` — 3 times: `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`
+- `.tech-tree-branches` — 3 times: `src/styles/askdaft-dashboard.css:554`, `src/styles/askdaft-dashboard.css:554`, `src/styles/askdaft-dashboard.css:554`
+- `.tech-tree-node` — 3 times: `src/styles/askdaft-dashboard.css:572`, `src/styles/askdaft-dashboard.css:572`, `src/styles/askdaft-dashboard.css:572`
+- `.askdaft-device-category-tabs` — 3 times: `src/styles/askdaft-dashboard.css:777`, `src/styles/askdaft-dashboard.css:777`, `src/styles/askdaft-dashboard.css:777`
+- `.askdaft-device-category-tabs button` — 3 times: `src/styles/askdaft-dashboard.css:784`, `src/styles/askdaft-dashboard.css:784`, `src/styles/askdaft-dashboard.css:784`
+- `.askdaft-tech-board.is-simple-view .tech-tree-group .tech-tree-branches` — 3 times: `src/styles/askdaft-dashboard.css:1197`, `src/styles/askdaft-dashboard.css:1197`, `src/styles/askdaft-dashboard.css:1197`
+- `.askdaft-client-layout.is-simple-view .askdaft-request-progress` — 3 times: `src/styles/askdaft-dashboard.css:1201`, `src/styles/askdaft-dashboard.css:1201`, `src/styles/askdaft-dashboard.css:1201`
+- `.askdaft-guided-request-heading` — 3 times: `src/styles/askdaft-dashboard.css:1226`, `src/styles/askdaft-dashboard.css:1226`, `src/styles/askdaft-dashboard.css:1226`
+- `.askdaft-plan-comparison-heading` — 3 times: `src/styles/askdaft-dashboard.css:1227`, `src/styles/askdaft-dashboard.css:1227`, `src/styles/askdaft-dashboard.css:1227`
+- `.askdaft-guided-device-row` — 3 times: `src/styles/askdaft-dashboard.css:1255`, `src/styles/askdaft-dashboard.css:1255`, `src/styles/askdaft-dashboard.css:1255`
+- `.askdaft-guided-device-row button` — 3 times: `src/styles/askdaft-dashboard.css:1262`, `src/styles/askdaft-dashboard.css:1262`, `src/styles/askdaft-dashboard.css:1262`
+- `.askdaft-guided-summary-card` — 3 times: `src/styles/askdaft-dashboard.css:1322`, `src/styles/askdaft-dashboard.css:1322`, `src/styles/askdaft-dashboard.css:1322`
+- `.askdaft-plan-comparison-grid` — 3 times: `src/styles/askdaft-dashboard.css:1352`, `src/styles/askdaft-dashboard.css:1352`, `src/styles/askdaft-dashboard.css:1352`
+- `.askdaft-help-launcher-heading h2` — 3 times: `src/styles/askdaft-dashboard.css:1519`, `src/styles/askdaft-dashboard.css:1519`, `src/styles/askdaft-dashboard.css:1519`
+- `.askdaft-help-launcher-card` — 3 times: `src/styles/askdaft-dashboard.css:1535`, `src/styles/askdaft-dashboard.css:1535`, `src/styles/askdaft-dashboard.css:1535`
+- `.askdaft-help-launcher` — 3 times: `src/styles/askdaft-dashboard.css:1519`, `src/styles/askdaft-dashboard.css:1519`, `src/styles/askdaft-dashboard.css:1519`
+- `.askdaft-hero h1` — 3 times: `src/styles/askdaft-frontdoor.css:90`, `src/styles/askdaft-frontdoor.css:90`, `src/styles/pages.css:53`
+- `.askdaft-front-door-card` — 3 times: `src/styles/askdaft-frontdoor.css:236`, `src/styles/askdaft-frontdoor.css:236`, `src/styles/askdaft-frontdoor.css:236`
+- `.askdaft-support-shortcut` — 3 times: `src/styles/askdaft-frontdoor.css:338`, `src/styles/askdaft-frontdoor.css:338`, `src/styles/askdaft-frontdoor.css:338`
+- `.askdaft-request-hero` — 3 times: `src/styles/askdaft-request.css:15`, `src/styles/askdaft-request.css:15`, `src/styles/askdaft-request.css:15`
+- `.askdaft-request-layout` — 3 times: `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:16`
+- `.askdaft-mode-grid` — 3 times: `src/styles/askdaft-request.css:80`, `src/styles/askdaft-request.css:80`, `src/styles/askdaft-request.css:80`
+- `.askdaft-request-type-grid` — 3 times: `src/styles/askdaft-request.css:81`, `src/styles/askdaft-request.css:81`, `src/styles/askdaft-request.css:81`
+- `.askdaft-discovery-promise` — 3 times: `src/styles/askdaft-request.css:82`, `src/styles/askdaft-request.css:82`, `src/styles/askdaft-request.css:82`
+- `.askdaft-request-progress-shell` — 3 times: `src/styles/askdaft-request.css:439`, `src/styles/askdaft-request.css:439`, `src/styles/askdaft-request.css:439`
+- `.askdaft-request-progress-step` — 3 times: `src/styles/askdaft-request.css:457`, `src/styles/askdaft-request.css:457`, `src/styles/askdaft-request.css:457`
+- `.askdaft-confirmation-grid` — 3 times: `src/styles/askdaft-request.css:609`, `src/styles/askdaft-request.css:609`, `src/styles/askdaft-request.css:609`
+- `.askdaft-compact-copy .askdaft-mode-card small` — 3 times: `src/styles/askdaft-request.css:664`, `src/styles/askdaft-request.css:664`, `src/styles/askdaft-request.css:664`
+- `.askdaft-compact-copy .askdaft-request-type-card p` — 3 times: `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:665`
+- `.askdaft-contact-field-grid` — 3 times: `src/styles/askdaft-request.css:908`, `src/styles/askdaft-request.css:908`, `src/styles/askdaft-request.css:908`
+- `.askdaft-ticket-submitted-grid` — 3 times: `src/styles/askdaft-tickets.css:130`, `src/styles/askdaft-tickets.css:130`, `src/styles/askdaft-tickets.css:130`
+- `.askdaft-ticket-list-card` — 3 times: `src/styles/askdaft-tickets.css:179`, `src/styles/askdaft-tickets.css:179`, `src/styles/askdaft-tickets.css:179`
+- `.askdaft-ticket-detail-hero` — 3 times: `src/styles/askdaft-tickets.css:236`, `src/styles/askdaft-tickets.css:236`, `src/styles/askdaft-tickets.css:236`
+- `.askdaft-guest-save-panel` — 3 times: `src/styles/askdaft-tickets.css:237`, `src/styles/askdaft-tickets.css:237`, `src/styles/askdaft-tickets.css:237`
+- `.askdaft-ticket-detail-grid` — 3 times: `src/styles/askdaft-tickets.css:286`, `src/styles/askdaft-tickets.css:286`, `src/styles/askdaft-tickets.css:286`
 - `.story-card-heading-lockup h3` — 3 times: `src/styles/cards.css:199`, `src/styles/cards.css:199`, `src/styles/cards.css:199`
-- `.story-card > p:not(.story-card-statement)` — 3 times: `src/styles/cards.css:140`, `src/styles/home.css:106`, `src/styles/mobile.css:328`
-- `.story-card-statement` — 3 times: `src/styles/cards.css:19`, `src/styles/home.css:106`, `src/styles/mobile.css:328`
+- `.story-card > p:not(.story-card-statement)` — 3 times: `src/styles/cards.css:140`, `src/styles/home.css:106`, `src/styles/mobile.css:34`
+- `.story-card-statement` — 3 times: `src/styles/cards.css:19`, `src/styles/home.css:106`, `src/styles/mobile.css:34`
 - `.system-map-resource-actions--four` — 3 times: `src/styles/cards.css:340`, `src/styles/cards.css:340`, `src/styles/cards.css:340`
-- `.split-identity-section .identity-panel p + p` — 3 times: `src/styles/cards.css:428`, `src/styles/cards.css:428`, `src/styles/cards.css:428`
-- `.split-identity-section .askdaft-panel .panel-buzz-row` — 3 times: `src/styles/cards.css:447`, `src/styles/cards.css:447`, `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3)` — 3 times: `src/styles/cards.css:916`, `src/styles/cards.css:916`, `src/styles/cards.css:916`
-- `.hub-select-section .hub-select-card` — 3 times: `src/styles/cards.css:953`, `src/styles/cards.css:953`, `src/styles/cards.css:953`
-- `.askdaft-page .phase-card-grid.three` — 3 times: `src/styles/cards.css:1068`, `src/styles/mobile.css:47`, `src/styles/mobile.css:47`
-- `.askdaft-page .phase-card-grid.four` — 3 times: `src/styles/cards.css:1072`, `src/styles/mobile.css:48`, `src/styles/mobile.css:48`
-- `.askdaft-style-row` — 3 times: `src/styles/cards.css:1268`, `src/styles/mobile.css:54`, `src/styles/mobile.css:54`
-- `.askdaft-request-summary` — 3 times: `src/styles/cards.css:1319`, `src/styles/mobile.css:25`, `src/styles/mobile.css:25`
-- `.askdaft-estimate-topline` — 3 times: `src/styles/cards.css:1484`, `src/styles/mobile.css:126`, `src/styles/mobile.css:126`
-- `.askdaft-estimate-topline strong` — 3 times: `src/styles/cards.css:1496`, `src/styles/mobile.css:131`, `src/styles/mobile.css:131`
-- `.askdaft-detail-picker` — 3 times: `src/styles/cards.css:1531`, `src/styles/mobile.css:94`, `src/styles/mobile.css:94`
-- `.askdaft-detail-chip` — 3 times: `src/styles/cards.css:1538`, `src/styles/mobile.css:98`, `src/styles/mobile.css:98`
-- `.askdaft-call-fields input` — 3 times: `src/styles/cards.css:1624`, `src/styles/mobile.css:111`, `src/styles/mobile.css:111`
-- `.askdaft-price-breakdown div` — 3 times: `src/styles/cards.css:1677`, `src/styles/mobile.css:116`, `src/styles/mobile.css:116`
-- `.askdaft-upload-panel` — 3 times: `src/styles/cards.css:1766`, `src/styles/mobile.css:81`, `src/styles/mobile.css:81`
-- `.askdaft-upload-btn` — 3 times: `src/styles/cards.css:1793`, `src/styles/mobile.css:88`, `src/styles/mobile.css:88`
-- `.mode-cta-action-row` — 3 times: `src/styles/cta.css:92`, `src/styles/cta.css:92`, `src/styles/cta.css:92`
-- `.quick-contact-actions` — 3 times: `src/styles/cta.css:403`, `src/styles/cta.css:403`, `src/styles/cta.css:403`
-- `.footer` — 3 times: `src/styles/footer.css:5`, `src/styles/footer.css:5`, `src/styles/utilities.css:257`
-- `.footer h4` — 3 times: `src/styles/footer.css:59`, `src/styles/footer.css:59`, `src/styles/footer.css:59`
-- `.game-path` — 3 times: `src/styles/hero.css:53`, `src/styles/hero.css:53`, `src/styles/utilities.css:262`
+- `.split-identity-section .identity-panel` — 3 times: `src/styles/cards.css:425`, `src/styles/cards.css:425`, `src/styles/cards.css:425`
+- `.split-identity-section .identity-panel h2` — 3 times: `src/styles/cards.css:439`, `src/styles/cards.css:439`, `src/styles/cards.css:439`
+- `.split-identity-section .identity-panel p` — 3 times: `src/styles/cards.css:452`, `src/styles/cards.css:452`, `src/styles/cards.css:452`
+- `.split-identity-section .panel-buzz-row` — 3 times: `src/styles/cards.css:466`, `src/styles/cards.css:466`, `src/styles/cards.css:466`
+- `.split-identity-section .panel-action-row` — 3 times: `src/styles/cards.css:496`, `src/styles/cards.css:496`, `src/styles/cards.css:496`
+- `.split-identity-section .askdaft-panel .panel-buzz-row span` — 3 times: `src/styles/cards.css:625`, `src/styles/cards.css:625`, `src/styles/cards.css:625`
+- `.split-identity-section .askdaft-panel .panel-buzz-row` — 3 times: `src/styles/cards.css:625`, `src/styles/cards.css:625`, `src/styles/cards.css:625`
+- `.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3)` — 3 times: `src/styles/cards.css:662`, `src/styles/cards.css:662`, `src/styles/cards.css:662`
+- `.hub-select-section .hub-select-card` — 3 times: `src/styles/cards.css:698`, `src/styles/cards.css:698`, `src/styles/cards.css:698`
+- `.askdaft-page .phase-card-grid.three` — 3 times: `src/styles/cards.css:813`, `src/styles/cards.css:813`, `src/styles/cards.css:813`
+- `.askdaft-page .phase-card-grid.four` — 3 times: `src/styles/cards.css:817`, `src/styles/cards.css:817`, `src/styles/cards.css:817`
+- `.askdaft-issue-grid` — 3 times: `src/styles/cards.css:925`, `src/styles/cards.css:925`, `src/styles/cards.css:925`
+- `.askdaft-style-row` — 3 times: `src/styles/cards.css:1013`, `src/styles/cards.css:1013`, `src/styles/cards.css:1013`
+- `.askdaft-request-summary` — 3 times: `src/styles/cards.css:1064`, `src/styles/cards.css:1064`, `src/styles/cards.css:1064`
 
-_Showing 120 of 448 results._
+_Showing 120 of 412 results._
 
 
 ## Classes With Many CSS Definitions
 
-- `.askdaft-page` — 175 definitions: `src/styles/cards.css:1063`, `src/styles/cards.css:1068`, `src/styles/cards.css:1072`, `src/styles/cards.css:1076`, `src/styles/cards.css:1063`, `src/styles/cards.css:1095`, `src/styles/cards.css:1103`, `src/styles/cards.css:1111`, `src/styles/cards.css:1115`, `src/styles/cards.css:1166`, +165 more
-- `.split-identity-section` — 90 definitions: `src/styles/cards.css:420`, `src/styles/cards.css:428`, `src/styles/cards.css:432`, `src/styles/cards.css:437`, `src/styles/cards.css:447`, `src/styles/cards.css:452`, `src/styles/cards.css:460`, `src/styles/cards.css:470`, `src/styles/cards.css:476`, `src/styles/cards.css:482`, +80 more
-- `.reading-impairment-mode` — 59 definitions: `src/styles/mobile.css:736`, `src/styles/mobile.css:741`, `src/styles/mobile.css:746`, `src/styles/mobile.css:751`, `src/styles/mobile.css:756`, `src/styles/mobile.css:757`, `src/styles/mobile.css:758`, `src/styles/pages.css:4013`, `src/styles/pages.css:4018`, `src/styles/pages.css:4023`, +49 more
-- `.is-simple-view` — 57 definitions: `src/styles/mobile.css:1031`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1053`, `src/styles/mobile.css:1054`, `src/styles/mobile.css:1059`, `src/styles/mobile.css:1065`, `src/styles/mobile.css:1069`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1053`, `src/styles/mobile.css:1054`, +47 more
-- `.askdaft-tech-board` — 54 definitions: `src/styles/mobile.css:960`, `src/styles/mobile.css:964`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1053`, `src/styles/mobile.css:1054`, `src/styles/mobile.css:1065`, `src/styles/mobile.css:960`, `src/styles/mobile.css:1031`, `src/styles/mobile.css:1377`, +44 more
-- `.askdaft-dashboard-page` — 41 definitions: `src/styles/mobile.css:915`, `src/styles/mobile.css:919`, `src/styles/mobile.css:923`, `src/styles/mobile.css:933`, `src/styles/mobile.css:915`, `src/styles/mobile.css:915`, `src/styles/mobile.css:1184`, `src/styles/mobile.css:1191`, `src/styles/mobile.css:1197`, `src/styles/mobile.css:1204`, +31 more
-- `.game-btn` — 35 definitions: `src/styles/buttons.css:9`, `src/styles/buttons.css:27`, `src/styles/buttons.css:30`, `src/styles/buttons.css:37`, `src/styles/buttons.css:46`, `src/styles/buttons.css:53`, `src/styles/cards.css:349`, `src/styles/cards.css:385`, `src/styles/cards.css:349`, `src/styles/cards.css:460`, +25 more
-- `.identity-panel` — 35 definitions: `src/styles/cards.css:420`, `src/styles/cards.css:428`, `src/styles/cards.css:420`, `src/styles/cards.css:420`, `src/styles/cards.css:529`, `src/styles/cards.css:537`, `src/styles/cards.css:420`, `src/styles/cards.css:550`, `src/styles/cards.css:551`, `src/styles/cards.css:552`, +25 more
-- `.askdaft-client-layout` — 35 definitions: `src/styles/mobile.css:890`, `src/styles/mobile.css:927`, `src/styles/mobile.css:1059`, `src/styles/mobile.css:1069`, `src/styles/mobile.css:890`, `src/styles/mobile.css:890`, `src/styles/mobile.css:1059`, `src/styles/mobile.css:1419`, `src/styles/mobile.css:927`, `src/styles/mobile.css:1424`, +25 more
-- `.askdaft-read-key` — 33 definitions: `src/styles/pages.css:4004`, `src/styles/pages.css:4013`, `src/styles/pages.css:4023`, `src/styles/pages.css:4024`, `src/styles/pages.css:4029`, `src/styles/pages.css:4030`, `src/styles/pages.css:4245`, `src/styles/pages.css:4255`, `src/styles/pages.css:4256`, `src/styles/pages.css:4261`, +23 more
-- `.pricing-row` — 33 definitions: `src/styles/pricing.css:49`, `src/styles/pricing.css:49`, `src/styles/pricing.css:93`, `src/styles/pricing.css:97`, `src/styles/pricing.css:101`, `src/styles/pricing.css:102`, `src/styles/pricing.css:107`, `src/styles/pricing.css:112`, `src/styles/pricing.css:114`, `src/styles/pricing.css:116`, +23 more
-- `.brand-word` — 32 definitions: `src/styles/cards.css:95`, `src/styles/cards.css:537`, `src/styles/cards.css:676`, `src/styles/cards.css:1028`, `src/styles/cards.css:1032`, `src/styles/cta.css:171`, `src/styles/cta.css:242`, `src/styles/cta.css:298`, `src/styles/cta.css:552`, `src/styles/cta.css:625`, +22 more
-- `.panel-buzz-row` — 31 definitions: `src/styles/cards.css:432`, `src/styles/cards.css:437`, `src/styles/cards.css:447`, `src/styles/cards.css:432`, `src/styles/cards.css:437`, `src/styles/cards.css:447`, `src/styles/cards.css:437`, `src/styles/cards.css:432`, `src/styles/cards.css:437`, `src/styles/cards.css:432`, +21 more
-- `.panel-action-row` — 31 definitions: `src/styles/cards.css:452`, `src/styles/cards.css:460`, `src/styles/cards.css:470`, `src/styles/cards.css:476`, `src/styles/cards.css:482`, `src/styles/cards.css:483`, `src/styles/cards.css:489`, `src/styles/cards.css:490`, `src/styles/cards.css:497`, `src/styles/cards.css:498`, +21 more
-- `.pricing-table-lite` — 31 definitions: `src/styles/pricing.css:13`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, `src/styles/pricing.css:31`, +21 more
+- `.askdaft-page` — 80 definitions: `src/styles/askdaft-base.css:7`, `src/styles/askdaft-base.css:13`, `src/styles/askdaft-base.css:19`, `src/styles/askdaft-base.css:28`, `src/styles/askdaft-base.css:29`, `src/styles/askdaft-base.css:37`, `src/styles/askdaft-base.css:38`, `src/styles/askdaft-base.css:39`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:41`, +70 more
+- `.is-simple-view` — 49 definitions: `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1056`, `src/styles/askdaft-dashboard.css:1057`, `src/styles/askdaft-dashboard.css:1058`, `src/styles/askdaft-dashboard.css:1059`, `src/styles/askdaft-dashboard.css:1063`, `src/styles/askdaft-dashboard.css:1064`, `src/styles/askdaft-dashboard.css:1068`, `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1096`, +39 more
+- `.askdaft-tech-board` — 46 definitions: `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:485`, `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:1055`, `src/styles/askdaft-dashboard.css:1056`, `src/styles/askdaft-dashboard.css:1063`, `src/styles/askdaft-dashboard.css:1064`, `src/styles/askdaft-dashboard.css:1068`, `src/styles/askdaft-dashboard.css:1073`, +36 more
+- `.split-identity-section` — 42 definitions: `src/styles/cards.css:420`, `src/styles/cards.css:425`, `src/styles/cards.css:433`, `src/styles/cards.css:439`, `src/styles/cards.css:447`, `src/styles/cards.css:452`, `src/styles/cards.css:462`, `src/styles/cards.css:466`, `src/styles/cards.css:477`, `src/styles/cards.css:496`, +32 more
+- `.askdaft-dashboard-page` — 41 definitions: `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:307`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:322`, `src/styles/askdaft-dashboard.css:328`, `src/styles/askdaft-dashboard.css:369`, `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:322`, +31 more
+- `.reading-impairment-mode` — 34 definitions: `src/styles/reading-mode.css:25`, `src/styles/reading-mode.css:26`, `src/styles/reading-mode.css:27`, `src/styles/reading-mode.css:28`, `src/styles/reading-mode.css:29`, `src/styles/reading-mode.css:36`, `src/styles/reading-mode.css:41`, `src/styles/reading-mode.css:46`, `src/styles/reading-mode.css:51`, `src/styles/reading-mode.css:56`, +24 more
+- `.brand-word` — 33 definitions: `src/styles/cards.css:95`, `src/styles/cards.css:447`, `src/styles/cards.css:773`, `src/styles/cards.css:777`, `src/styles/cta.css:171`, `src/styles/cta.css:242`, `src/styles/cta.css:298`, `src/styles/cta.css:552`, `src/styles/cta.css:625`, `src/styles/footer.css:71`, +23 more
+- `.askdaft-client-layout` — 31 definitions: `src/styles/askdaft-dashboard.css:104`, `src/styles/askdaft-dashboard.css:104`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:416`, `src/styles/askdaft-dashboard.css:425`, `src/styles/askdaft-dashboard.css:1057`, `src/styles/askdaft-dashboard.css:1058`, `src/styles/askdaft-dashboard.css:1059`, +21 more
+- `.pricing-row` — 29 definitions: `src/styles/pricing.css:63`, `src/styles/pricing.css:71`, `src/styles/pricing.css:75`, `src/styles/pricing.css:79`, `src/styles/pricing.css:80`, `src/styles/pricing.css:85`, `src/styles/pricing.css:90`, `src/styles/pricing.css:92`, `src/styles/pricing.css:94`, `src/styles/pricing.css:132`, +19 more
+- `.askdaft-compact-copy` — 28 definitions: `src/styles/askdaft-request.css:656`, `src/styles/askdaft-request.css:657`, `src/styles/askdaft-request.css:661`, `src/styles/askdaft-request.css:662`, `src/styles/askdaft-request.css:663`, `src/styles/askdaft-request.css:664`, `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:666`, `src/styles/askdaft-request.css:667`, `src/styles/askdaft-request.css:664`, +18 more
 - `.story-card` — 28 definitions: `src/styles/cards.css:15`, `src/styles/cards.css:108`, `src/styles/cards.css:121`, `src/styles/cards.css:133`, `src/styles/cards.css:140`, `src/styles/cards.css:244`, `src/styles/cards.css:245`, `src/styles/cards.css:246`, `src/styles/cards.css:247`, `src/styles/cards.css:260`, +18 more
-- `.askdaft-compact-copy` — 28 definitions: `src/styles/pages.css:3233`, `src/styles/pages.css:3234`, `src/styles/pages.css:3239`, `src/styles/pages.css:3240`, `src/styles/pages.css:3241`, `src/styles/pages.css:3242`, `src/styles/pages.css:3243`, `src/styles/pages.css:3244`, `src/styles/pages.css:3245`, `src/styles/pages.css:3242`, +18 more
-- `.askdaft-front-door-card` — 28 definitions: `src/styles/pages.css:3685`, `src/styles/pages.css:3701`, `src/styles/pages.css:3702`, `src/styles/pages.css:3724`, `src/styles/pages.css:3732`, `src/styles/pages.css:3742`, `src/styles/pages.css:4023`, `src/styles/pages.css:4029`, `src/styles/pages.css:4034`, `src/styles/pages.css:4064`, +18 more
-- `.pricing-chart` — 27 definitions: `src/styles/pricing.css:342`, `src/styles/pricing.css:359`, `src/styles/pricing.css:359`, `src/styles/pricing.css:366`, `src/styles/pricing.css:374`, `src/styles/pricing.css:375`, `src/styles/pricing.css:379`, `src/styles/pricing.css:388`, `src/styles/pricing.css:392`, `src/styles/pricing.css:396`, +17 more
-- `.account-dashboard-hero` — 25 definitions: `src/styles/mobile.css:785`, `src/styles/mobile.css:785`, `src/styles/mobile.css:785`, `src/styles/mobile.css:825`, `src/styles/mobile.css:825`, `src/styles/mobile.css:825`, `src/styles/mobile.css:915`, `src/styles/mobile.css:915`, `src/styles/mobile.css:1184`, `src/styles/mobile.css:1191`, +15 more
-- `.askdaft-support-shortcut` — 25 definitions: `src/styles/pages.css:3686`, `src/styles/pages.css:3703`, `src/styles/pages.css:3704`, `src/styles/pages.css:3725`, `src/styles/pages.css:3733`, `src/styles/pages.css:3776`, `src/styles/pages.css:4024`, `src/styles/pages.css:4030`, `src/styles/pages.css:4065`, `src/styles/pages.css:4167`, +15 more
-- `.askdaft-read-important` — 25 definitions: `src/styles/pages.css:4005`, `src/styles/pages.css:4018`, `src/styles/pages.css:4250`, `src/styles/pages.css:4304`, `src/styles/pages.css:4305`, `src/styles/pages.css:4306`, `src/styles/pages.css:4307`, `src/styles/pages.css:4308`, `src/styles/pages.css:4326`, `src/styles/pages.css:4327`, +15 more
+- `.pricing-chart` — 27 definitions: `src/styles/pricing.css:255`, `src/styles/pricing.css:272`, `src/styles/pricing.css:272`, `src/styles/pricing.css:279`, `src/styles/pricing.css:287`, `src/styles/pricing.css:288`, `src/styles/pricing.css:292`, `src/styles/pricing.css:301`, `src/styles/pricing.css:305`, `src/styles/pricing.css:309`, +17 more
 - `.game-path` — 23 definitions: `src/styles/hero.css:53`, `src/styles/hero.css:77`, `src/styles/hero.css:99`, `src/styles/hero.css:111`, `src/styles/hero.css:112`, `src/styles/hero.css:117`, `src/styles/hero.css:118`, `src/styles/hero.css:124`, `src/styles/hero.css:147`, `src/styles/hero.css:156`, +13 more
-- `.phase-btn` — 22 definitions: `src/styles/cards.css:1111`, `src/styles/cards.css:1945`, `src/styles/mobile.css:201`, `src/styles/mobile.css:839`, `src/styles/mobile.css:840`, `src/styles/mobile.css:868`, `src/styles/mobile.css:1204`, `src/styles/mobile.css:1321`, `src/styles/pages.css:343`, `src/styles/pages.css:375`, +12 more
-- `.home-game-page` — 21 definitions: `src/styles/hero.css:5`, `src/styles/mobile.css:435`, `src/styles/mobile.css:440`, `src/styles/mobile.css:445`, `src/styles/mobile.css:449`, `src/styles/mobile.css:453`, `src/styles/mobile.css:457`, `src/styles/mobile.css:461`, `src/styles/mobile.css:435`, `src/styles/mobile.css:440`, +11 more
-- `.account-dashboard-panel` — 21 definitions: `src/styles/mobile.css:820`, `src/styles/mobile.css:927`, `src/styles/mobile.css:964`, `src/styles/mobile.css:964`, `src/styles/mobile.css:927`, `src/styles/mobile.css:1425`, `src/styles/pages.css:548`, `src/styles/pages.css:574`, `src/styles/pages.css:548`, `src/styles/pages.css:1048`, +11 more
-- `.askdaft-help-launcher-card` — 21 definitions: `src/styles/mobile.css:1084`, `src/styles/mobile.css:1084`, `src/styles/mobile.css:1084`, `src/styles/mobile.css:1275`, `src/styles/mobile.css:1279`, `src/styles/mobile.css:1084`, `src/styles/mobile.css:1467`, `src/styles/mobile.css:1471`, `src/styles/pages.css:1865`, `src/styles/pages.css:1883`, +11 more
-- `.askdaft-panel` — 20 definitions: `src/styles/cards.css:447`, `src/styles/cards.css:476`, `src/styles/cards.css:497`, `src/styles/cards.css:498`, `src/styles/cards.css:447`, `src/styles/cards.css:606`, `src/styles/cards.css:497`, `src/styles/cards.css:498`, `src/styles/cards.css:476`, `src/styles/cards.css:476`, +10 more
-- `.hub-select-section` — 20 definitions: `src/styles/cards.css:949`, `src/styles/cards.css:953`, `src/styles/cards.css:959`, `src/styles/cards.css:960`, `src/styles/cards.css:961`, `src/styles/cards.css:962`, `src/styles/cards.css:949`, `src/styles/cards.css:973`, `src/styles/cards.css:977`, `src/styles/cards.css:985`, +10 more
+- `.account-dashboard-hero` — 22 definitions: `src/styles/account.css:80`, `src/styles/account.css:97`, `src/styles/account.css:106`, `src/styles/account.css:80`, `src/styles/account.css:80`, `src/styles/account.css:97`, `src/styles/account.css:80`, `src/styles/account.css:97`, `src/styles/askdaft-dashboard.css:303`, `src/styles/askdaft-dashboard.css:307`, +12 more
+- `.identity-panel` — 22 definitions: `src/styles/cards.css:425`, `src/styles/cards.css:433`, `src/styles/cards.css:439`, `src/styles/cards.css:447`, `src/styles/cards.css:452`, `src/styles/cards.css:462`, `src/styles/cards.css:425`, `src/styles/cards.css:439`, `src/styles/cards.css:452`, `src/styles/cards.css:425`, +12 more
+- `.account-dashboard-panel` — 21 definitions: `src/styles/account.css:81`, `src/styles/account.css:107`, `src/styles/account.css:81`, `src/styles/account.css:81`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:416`, `src/styles/askdaft-dashboard.css:425`, `src/styles/askdaft-dashboard.css:453`, +11 more
+- `.home-game-page` — 21 definitions: `src/styles/hero.css:5`, `src/styles/mobile.css:70`, `src/styles/mobile.css:75`, `src/styles/mobile.css:80`, `src/styles/mobile.css:84`, `src/styles/mobile.css:88`, `src/styles/mobile.css:92`, `src/styles/mobile.css:96`, `src/styles/mobile.css:70`, `src/styles/mobile.css:75`, +11 more
+- `.account-page` — 20 definitions: `src/styles/account.css:12`, `src/styles/account.css:28`, `src/styles/account.css:35`, `src/styles/account.css:36`, `src/styles/account.css:42`, `src/styles/account.css:43`, `src/styles/account.css:50`, `src/styles/account.css:51`, `src/styles/account.css:12`, `src/styles/account.css:12`, +10 more
+- `.phase-btn` — 20 definitions: `src/styles/account.css:12`, `src/styles/account.css:42`, `src/styles/account.css:43`, `src/styles/account.css:12`, `src/styles/account.css:380`, `src/styles/account.css:381`, `src/styles/askdaft-dashboard.css:1420`, `src/styles/askdaft-dashboard.css:1601`, `src/styles/askdaft-dashboard.css:1708`, `src/styles/askdaft-frontdoor.css:143`, +10 more
+- `.panel-buzz-row` — 20 definitions: `src/styles/cards.css:466`, `src/styles/cards.css:477`, `src/styles/cards.css:466`, `src/styles/cards.css:477`, `src/styles/cards.css:610`, `src/styles/cards.css:615`, `src/styles/cards.css:620`, `src/styles/cards.css:625`, `src/styles/cards.css:466`, `src/styles/cards.css:625`, +10 more
+- `.hub-select-section` — 20 definitions: `src/styles/cards.css:694`, `src/styles/cards.css:698`, `src/styles/cards.css:704`, `src/styles/cards.css:705`, `src/styles/cards.css:706`, `src/styles/cards.css:707`, `src/styles/cards.css:694`, `src/styles/cards.css:718`, `src/styles/cards.css:722`, `src/styles/cards.css:730`, +10 more
+- `.dashboard-status-card` — 19 definitions: `src/styles/account.css:129`, `src/styles/account.css:215`, `src/styles/account.css:223`, `src/styles/account.css:129`, `src/styles/account.css:259`, `src/styles/account.css:269`, `src/styles/account.css:273`, `src/styles/account.css:277`, `src/styles/account.css:281`, `src/styles/account.css:129`, +9 more
+- `.active` — 19 definitions: `src/styles/askdaft-request.css:114`, `src/styles/askdaft-request.css:115`, `src/styles/askdaft-request.css:116`, `src/styles/cards.css:385`, `src/styles/cards.css:948`, `src/styles/cards.css:948`, `src/styles/cards.css:1053`, `src/styles/cards.css:1053`, `src/styles/cards.css:1301`, `src/styles/cta.css:535`, +9 more
 - `.story-specialties` — 19 definitions: `src/styles/cards.css:24`, `src/styles/cards.css:28`, `src/styles/cards.css:32`, `src/styles/cards.css:154`, `src/styles/cards.css:158`, `src/styles/cards.css:164`, `src/styles/cards.css:169`, `src/styles/cards.css:322`, `src/styles/cards.css:327`, `src/styles/cards.css:331`, +9 more
-- `.pricing-emphasis-blue` — 19 definitions: `src/styles/cards.css:240`, `src/styles/cards.css:244`, `src/styles/cards.css:248`, `src/styles/cards.css:550`, `src/styles/cards.css:959`, `src/styles/cards.css:1032`, `src/styles/mobile.css:736`, `src/styles/mobile.css:736`, `src/styles/pages.css:4306`, `src/styles/pages.css:4328`, +9 more
-- `.pricing-emphasis-green` — 19 definitions: `src/styles/cards.css:241`, `src/styles/cards.css:245`, `src/styles/cards.css:249`, `src/styles/cards.css:551`, `src/styles/cards.css:960`, `src/styles/cards.css:1032`, `src/styles/mobile.css:736`, `src/styles/mobile.css:736`, `src/styles/pages.css:4307`, `src/styles/pages.css:4329`, +9 more
-- `.pricing-emphasis-yellow` — 19 definitions: `src/styles/cards.css:242`, `src/styles/cards.css:246`, `src/styles/cards.css:250`, `src/styles/cards.css:552`, `src/styles/cards.css:961`, `src/styles/cards.css:1032`, `src/styles/mobile.css:736`, `src/styles/mobile.css:741`, `src/styles/pages.css:4305`, `src/styles/pages.css:4327`, +9 more
-- `.pricing-emphasis-red` — 19 definitions: `src/styles/cards.css:243`, `src/styles/cards.css:247`, `src/styles/cards.css:251`, `src/styles/cards.css:553`, `src/styles/cards.css:962`, `src/styles/cards.css:1032`, `src/styles/mobile.css:736`, `src/styles/mobile.css:736`, `src/styles/pages.css:4308`, `src/styles/pages.css:4330`, +9 more
-- `.active` — 19 definitions: `src/styles/cards.css:385`, `src/styles/cards.css:1203`, `src/styles/cards.css:1203`, `src/styles/cards.css:1308`, `src/styles/cards.css:1308`, `src/styles/cards.css:1558`, `src/styles/cta.css:535`, `src/styles/cta.css:536`, `src/styles/cta.css:545`, `src/styles/cta.css:546`, +9 more
-- `.hub-select-card` — 19 definitions: `src/styles/cards.css:953`, `src/styles/cards.css:959`, `src/styles/cards.css:960`, `src/styles/cards.css:961`, `src/styles/cards.css:962`, `src/styles/cards.css:953`, `src/styles/cards.css:1013`, `src/styles/cards.css:959`, `src/styles/cards.css:1028`, `src/styles/cards.css:1032`, +9 more
-- `.dashboard-status-card` — 19 definitions: `src/styles/mobile.css:883`, `src/styles/mobile.css:923`, `src/styles/mobile.css:923`, `src/styles/mobile.css:1218`, `src/styles/mobile.css:1223`, `src/styles/mobile.css:1228`, `src/styles/mobile.css:923`, `src/styles/pages.css:596`, `src/styles/pages.css:682`, `src/styles/pages.css:690`, +9 more
-- `.subscription-chart` — 19 definitions: `src/styles/pricing.css:639`, `src/styles/pricing.css:639`, `src/styles/pricing.css:1001`, `src/styles/pricing.css:1005`, `src/styles/pricing.css:1011`, `src/styles/pricing.css:1030`, `src/styles/pricing.css:1038`, `src/styles/pricing.css:1047`, `src/styles/pricing.css:1048`, `src/styles/pricing.css:1049`, +9 more
+- `.hub-select-card` — 19 definitions: `src/styles/cards.css:698`, `src/styles/cards.css:704`, `src/styles/cards.css:705`, `src/styles/cards.css:706`, `src/styles/cards.css:707`, `src/styles/cards.css:698`, `src/styles/cards.css:758`, `src/styles/cards.css:704`, `src/styles/cards.css:773`, `src/styles/cards.css:777`, +9 more
+- `.subscription-chart` — 19 definitions: `src/styles/pricing.css:552`, `src/styles/pricing.css:552`, `src/styles/pricing.css:893`, `src/styles/pricing.css:897`, `src/styles/pricing.css:903`, `src/styles/pricing.css:922`, `src/styles/pricing.css:930`, `src/styles/pricing.css:939`, `src/styles/pricing.css:940`, `src/styles/pricing.css:941`, +9 more
+- `.is-active` — 18 definitions: `src/styles/askdaft-dashboard.css:634`, `src/styles/askdaft-dashboard.css:641`, `src/styles/askdaft-dashboard.css:648`, `src/styles/askdaft-dashboard.css:796`, `src/styles/askdaft-dashboard.css:1022`, `src/styles/askdaft-request.css:749`, `src/styles/askdaft-request.css:763`, `src/styles/askdaft-request.css:771`, `src/styles/askdaft-request.css:775`, `src/styles/askdaft-request.css:780`, +8 more
 - `.story-card-statement` — 18 definitions: `src/styles/cards.css:19`, `src/styles/cards.css:140`, `src/styles/cards.css:147`, `src/styles/cards.css:248`, `src/styles/cards.css:249`, `src/styles/cards.css:250`, `src/styles/cards.css:251`, `src/styles/cards.css:261`, `src/styles/cards.css:140`, `src/styles/cards.css:19`, +8 more
-- `.is-active` — 18 definitions: `src/styles/navbar.css:163`, `src/styles/navbar.css:178`, `src/styles/navbar.css:182`, `src/styles/navbar.css:186`, `src/styles/pages.css:1301`, `src/styles/pages.css:1308`, `src/styles/pages.css:1315`, `src/styles/pages.css:1430`, `src/styles/pages.css:1630`, `src/styles/pages.css:3340`, +8 more
 - `.game-start-screen` — 17 definitions: `src/styles/hero.css:16`, `src/styles/hero.css:26`, `src/styles/hero.css:37`, `src/styles/hero.css:41`, `src/styles/hero.css:124`, `src/styles/hero.css:128`, `src/styles/hero.css:129`, `src/styles/hero.css:133`, `src/styles/hero.css:134`, `src/styles/hero.css:16`, +7 more
-- `.tech-tree-node` — 17 definitions: `src/styles/mobile.css:978`, `src/styles/mobile.css:978`, `src/styles/pages.css:1239`, `src/styles/pages.css:1256`, `src/styles/pages.css:1266`, `src/styles/pages.css:1267`, `src/styles/pages.css:1273`, `src/styles/pages.css:1283`, `src/styles/pages.css:1290`, `src/styles/pages.css:1299`, +7 more
+- `.tech-tree-node` — 16 definitions: `src/styles/askdaft-dashboard.css:572`, `src/styles/askdaft-dashboard.css:589`, `src/styles/askdaft-dashboard.css:599`, `src/styles/askdaft-dashboard.css:600`, `src/styles/askdaft-dashboard.css:606`, `src/styles/askdaft-dashboard.css:616`, `src/styles/askdaft-dashboard.css:623`, `src/styles/askdaft-dashboard.css:632`, `src/styles/askdaft-dashboard.css:639`, `src/styles/askdaft-dashboard.css:646`, +6 more
+- `.askdaft-hero` — 16 definitions: `src/styles/askdaft-frontdoor.css:48`, `src/styles/askdaft-frontdoor.css:58`, `src/styles/askdaft-frontdoor.css:71`, `src/styles/askdaft-frontdoor.css:85`, `src/styles/askdaft-frontdoor.css:90`, `src/styles/askdaft-frontdoor.css:97`, `src/styles/askdaft-frontdoor.css:119`, `src/styles/askdaft-frontdoor.css:127`, `src/styles/askdaft-frontdoor.css:48`, `src/styles/askdaft-frontdoor.css:97`, +6 more
+- `.askdaft-mode-card` — 16 definitions: `src/styles/askdaft-request.css:95`, `src/styles/askdaft-request.css:95`, `src/styles/askdaft-request.css:114`, `src/styles/askdaft-request.css:122`, `src/styles/askdaft-request.css:131`, `src/styles/askdaft-request.css:138`, `src/styles/askdaft-request.css:146`, `src/styles/askdaft-request.css:147`, `src/styles/askdaft-request.css:663`, `src/styles/askdaft-request.css:664`, +6 more
 - `.story-lane-picker` — 16 definitions: `src/styles/cards.css:82`, `src/styles/cards.css:89`, `src/styles/cards.css:95`, `src/styles/cards.css:99`, `src/styles/cta.css:581`, `src/styles/cta.css:589`, `src/styles/cta.css:608`, `src/styles/cta.css:609`, `src/styles/cta.css:610`, `src/styles/cta.css:617`, +6 more
+- `.brand-daft` — 16 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:777`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/reading-mode.css:56`, `src/styles/reading-mode.css:99`, `src/styles/reading-mode.css:100`, `src/styles/reading-mode.css:101`, `src/styles/reading-mode.css:102`, `src/styles/reading-mode.css:107`, +6 more
 - `.story-card-heading-lockup` — 16 definitions: `src/styles/cards.css:186`, `src/styles/cards.css:194`, `src/styles/cards.css:199`, `src/styles/cards.css:214`, `src/styles/cards.css:218`, `src/styles/cards.css:224`, `src/styles/cards.css:199`, `src/styles/cards.css:240`, `src/styles/cards.css:241`, `src/styles/cards.css:242`, +6 more
-- `.askdaft-hero` — 16 definitions: `src/styles/mobile.css:135`, `src/styles/mobile.css:140`, `src/styles/mobile.css:140`, `src/styles/mobile.css:152`, `src/styles/mobile.css:157`, `src/styles/pages.css:95`, `src/styles/pages.css:127`, `src/styles/pages.css:145`, `src/styles/pages.css:248`, `src/styles/pages.css:258`, +6 more
 - `.navbar-links` — 16 definitions: `src/styles/navbar.css:57`, `src/styles/navbar.css:95`, `src/styles/navbar.css:113`, `src/styles/navbar.css:114`, `src/styles/navbar.css:123`, `src/styles/navbar.css:124`, `src/styles/navbar.css:124`, `src/styles/navbar.css:139`, `src/styles/navbar.css:140`, `src/styles/navbar.css:141`, +6 more
-- `.askdaft-mode-card` — 16 definitions: `src/styles/pages.css:2603`, `src/styles/pages.css:2603`, `src/styles/pages.css:2622`, `src/styles/pages.css:2630`, `src/styles/pages.css:2639`, `src/styles/pages.css:2646`, `src/styles/pages.css:2654`, `src/styles/pages.css:2655`, `src/styles/pages.css:3241`, `src/styles/pages.css:3242`, +6 more
-- `.phase-kicker` — 15 definitions: `src/styles/cards.css:1838`, `src/styles/mobile.css:1260`, `src/styles/pages.css:401`, `src/styles/pages.css:1599`, `src/styles/pages.css:1850`, `src/styles/pages.css:1966`, `src/styles/pages.css:1967`, `src/styles/pages.css:2062`, `src/styles/pages.css:1850`, `src/styles/pages.css:1966`, +5 more
 - `.footer` — 15 definitions: `src/styles/footer.css:5`, `src/styles/footer.css:17`, `src/styles/footer.css:58`, `src/styles/footer.css:59`, `src/styles/footer.css:59`, `src/styles/footer.css:76`, `src/styles/footer.css:77`, `src/styles/footer.css:77`, `src/styles/footer.css:87`, `src/styles/footer.css:88`, +5 more
-- `.story-mode-header` — 14 definitions: `src/styles/cards.css:53`, `src/styles/cards.css:66`, `src/styles/cards.css:74`, `src/styles/cards.css:973`, `src/styles/cards.css:985`, `src/styles/home.css:6`, `src/styles/home.css:12`, `src/styles/mobile.css:453`, `src/styles/mobile.css:457`, `src/styles/pricing.css:934`, +4 more
-- `.game-center-panel` — 14 definitions: `src/styles/hero.css:164`, `src/styles/hero.css:181`, `src/styles/hero.css:196`, `src/styles/hero.css:207`, `src/styles/hero.css:212`, `src/styles/hero.css:220`, `src/styles/hero.css:164`, `src/styles/hero.css:164`, `src/styles/mobile.css:693`, `src/styles/utilities.css:130`, +4 more
-- `.tech-tree-group` — 14 definitions: `src/styles/mobile.css:1003`, `src/styles/mobile.css:1065`, `src/styles/mobile.css:1003`, `src/styles/mobile.css:1065`, `src/styles/pages.css:1469`, `src/styles/pages.css:1516`, `src/styles/pages.css:1521`, `src/styles/pages.css:1522`, `src/styles/pages.css:1522`, `src/styles/pages.css:1675`, +4 more
-- `.reading-mode-on` — 14 definitions: `src/styles/pages.css:4321`, `src/styles/pages.css:4326`, `src/styles/pages.css:4327`, `src/styles/pages.css:4328`, `src/styles/pages.css:4329`, `src/styles/pages.css:4330`, `src/styles/pages.css:4336`, `src/styles/pages.css:4337`, `src/styles/pages.css:4342`, `src/styles/pages.css:4343`, +4 more
-- `.brand-daft` — 13 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:1032`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/mobile.css:756`, `src/styles/pages.css:4524`, `src/styles/pages.css:4525`, `src/styles/pages.css:4526`, `src/styles/pages.css:4531`, `src/styles/pages.css:4532`, +3 more
-- `.askdaft-progress-step` — 13 definitions: `src/styles/cards.css:1720`, `src/styles/cards.css:1729`, `src/styles/cards.css:1736`, `src/styles/cards.css:1742`, `src/styles/cards.css:1750`, `src/styles/cards.css:1751`, `src/styles/cards.css:1756`, `src/styles/cards.css:1757`, `src/styles/cards.css:1761`, `src/styles/cards.css:1720`, +3 more
-- `.tech-tree-branches` — 13 definitions: `src/styles/mobile.css:968`, `src/styles/mobile.css:968`, `src/styles/mobile.css:1003`, `src/styles/mobile.css:1065`, `src/styles/mobile.css:1003`, `src/styles/mobile.css:1065`, `src/styles/pages.css:1221`, `src/styles/pages.css:1229`, `src/styles/pages.css:1516`, `src/styles/pages.css:1521`, +3 more
-- `.askdaft-guided-step-grid` — 13 definitions: `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1101`, `src/styles/mobile.css:1312`, `src/styles/pages.css:2000`, `src/styles/pages.css:2006`, `src/styles/pages.css:2014`, `src/styles/pages.css:2027`, +3 more
-- `.askdaft-request-page` — 13 definitions: `src/styles/pages.css:2515`, `src/styles/pages.css:2515`, `src/styles/pages.css:3478`, `src/styles/pages.css:3479`, `src/styles/pages.css:3480`, `src/styles/pages.css:3484`, `src/styles/pages.css:3485`, `src/styles/pages.css:3478`, `src/styles/pages.css:3478`, `src/styles/pages.css:3504`, +3 more
-- `.askdaft-ticket-summary` — 13 definitions: `src/styles/pages.css:2571`, `src/styles/pages.css:2571`, `src/styles/pages.css:2856`, `src/styles/pages.css:2899`, `src/styles/pages.css:2905`, `src/styles/pages.css:2571`, `src/styles/pages.css:3244`, `src/styles/pages.css:3283`, `src/styles/pages.css:3284`, `src/styles/pages.css:3290`, +3 more
-- `.askdaft-field-grid` — 13 definitions: `src/styles/pages.css:2678`, `src/styles/pages.css:2685`, `src/styles/pages.css:2690`, `src/styles/pages.css:2699`, `src/styles/pages.css:2700`, `src/styles/pages.css:2699`, `src/styles/pages.css:2700`, `src/styles/pages.css:2725`, `src/styles/pages.css:2726`, `src/styles/pages.css:2678`, +3 more
-- `.mode-cta-copy` — 12 definitions: `src/styles/cta.css:75`, `src/styles/cta.css:81`, `src/styles/cta.css:82`, `src/styles/cta.css:82`, `src/styles/cta.css:81`, `src/styles/pricing.css:898`, `src/styles/pricing.css:898`, `src/styles/utilities.css:119`, `src/styles/utilities.css:132`, `src/styles/utilities.css:144`, +2 more
+- `.game-btn` — 14 definitions: `src/styles/buttons.css:9`, `src/styles/buttons.css:27`, `src/styles/buttons.css:30`, `src/styles/buttons.css:37`, `src/styles/buttons.css:46`, `src/styles/buttons.css:53`, `src/styles/cards.css:349`, `src/styles/cards.css:385`, `src/styles/cards.css:349`, `src/styles/cards.css:510`, +4 more
+- `.story-mode-header` — 14 definitions: `src/styles/cards.css:53`, `src/styles/cards.css:66`, `src/styles/cards.css:74`, `src/styles/cards.css:718`, `src/styles/cards.css:730`, `src/styles/home.css:6`, `src/styles/home.css:12`, `src/styles/mobile.css:88`, `src/styles/mobile.css:92`, `src/styles/pricing.css:826`, +4 more
+- `.pricing-emphasis-blue` — 14 definitions: `src/styles/cards.css:240`, `src/styles/cards.css:244`, `src/styles/cards.css:248`, `src/styles/cards.css:704`, `src/styles/cards.css:777`, `src/styles/reading-mode.css:36`, `src/styles/reading-mode.css:36`, `src/styles/utilities.css:152`, `src/styles/utilities.css:153`, `src/styles/utilities.css:154`, +4 more
+- `.pricing-emphasis-green` — 14 definitions: `src/styles/cards.css:241`, `src/styles/cards.css:245`, `src/styles/cards.css:249`, `src/styles/cards.css:705`, `src/styles/cards.css:777`, `src/styles/reading-mode.css:36`, `src/styles/reading-mode.css:36`, `src/styles/utilities.css:164`, `src/styles/utilities.css:165`, `src/styles/utilities.css:166`, +4 more
+- `.pricing-emphasis-yellow` — 14 definitions: `src/styles/cards.css:242`, `src/styles/cards.css:246`, `src/styles/cards.css:250`, `src/styles/cards.css:706`, `src/styles/cards.css:777`, `src/styles/reading-mode.css:36`, `src/styles/reading-mode.css:41`, `src/styles/utilities.css:128`, `src/styles/utilities.css:129`, `src/styles/utilities.css:130`, +4 more
+- `.pricing-emphasis-red` — 14 definitions: `src/styles/cards.css:243`, `src/styles/cards.css:247`, `src/styles/cards.css:251`, `src/styles/cards.css:707`, `src/styles/cards.css:777`, `src/styles/reading-mode.css:36`, `src/styles/reading-mode.css:36`, `src/styles/utilities.css:140`, `src/styles/utilities.css:141`, `src/styles/utilities.css:142`, +4 more
+- `.game-center-panel` — 14 definitions: `src/styles/hero.css:164`, `src/styles/hero.css:181`, `src/styles/hero.css:196`, `src/styles/hero.css:207`, `src/styles/hero.css:212`, `src/styles/hero.css:220`, `src/styles/hero.css:164`, `src/styles/hero.css:164`, `src/styles/mobile.css:328`, `src/styles/utilities.css:130`, +4 more
+- `.phase-kicker` — 13 definitions: `src/styles/askdaft-base.css:19`, `src/styles/askdaft-dashboard.css:991`, `src/styles/askdaft-dashboard.css:1245`, `src/styles/askdaft-dashboard.css:1246`, `src/styles/askdaft-dashboard.css:1341`, `src/styles/askdaft-dashboard.css:1642`, `src/styles/askdaft-dashboard.css:1245`, `src/styles/askdaft-dashboard.css:1246`, `src/styles/askdaft-dashboard.css:1788`, `src/styles/askdaft-request.css:46`, +3 more
+- `.askdaft-field-grid` — 13 definitions: `src/styles/askdaft-request.css:170`, `src/styles/askdaft-request.css:177`, `src/styles/askdaft-request.css:182`, `src/styles/askdaft-request.css:191`, `src/styles/askdaft-request.css:192`, `src/styles/askdaft-request.css:191`, `src/styles/askdaft-request.css:192`, `src/styles/askdaft-request.css:217`, `src/styles/askdaft-request.css:218`, `src/styles/askdaft-request.css:170`, +3 more
+- `.askdaft-progress-step` — 13 definitions: `src/styles/cards.css:1463`, `src/styles/cards.css:1472`, `src/styles/cards.css:1479`, `src/styles/cards.css:1485`, `src/styles/cards.css:1493`, `src/styles/cards.css:1494`, `src/styles/cards.css:1499`, `src/styles/cards.css:1500`, `src/styles/cards.css:1504`, `src/styles/cards.css:1463`, +3 more
+- `.account-panel-heading` — 12 definitions: `src/styles/account.css:140`, `src/styles/askdaft-dashboard.css:342`, `src/styles/askdaft-dashboard.css:449`, `src/styles/askdaft-dashboard.css:1465`, `src/styles/askdaft-request.css:76`, `src/styles/askdaft-request.css:657`, `src/styles/askdaft-request.css:662`, `src/styles/askdaft-request.css:662`, `src/styles/askdaft-request.css:780`, `src/styles/askdaft-request.css:784`, +2 more
+- `.askdaft-active-request-panel` — 12 definitions: `src/styles/askdaft-dashboard.css:115`, `src/styles/askdaft-dashboard.css:115`, `src/styles/askdaft-dashboard.css:342`, `src/styles/askdaft-dashboard.css:346`, `src/styles/askdaft-dashboard.css:352`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:357`, `src/styles/askdaft-dashboard.css:352`, `src/styles/askdaft-dashboard.css:115`, `src/styles/askdaft-dashboard.css:425`, +2 more
+- `.device-action` — 12 definitions: `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:521`, `src/styles/askdaft-dashboard.css:634`, `src/styles/askdaft-dashboard.css:641`, `src/styles/askdaft-dashboard.css:648`, `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:641`, `src/styles/askdaft-dashboard.css:648`, `src/styles/askdaft-dashboard.css:505`, `src/styles/askdaft-dashboard.css:1125`, +2 more
+- `.tech-tree-branches` — 12 definitions: `src/styles/askdaft-dashboard.css:554`, `src/styles/askdaft-dashboard.css:562`, `src/styles/askdaft-dashboard.css:554`, `src/styles/askdaft-dashboard.css:554`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:887`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:1197`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:1197`, +2 more
+- `.selected-device-status` — 12 definitions: `src/styles/askdaft-dashboard.css:633`, `src/styles/askdaft-dashboard.css:640`, `src/styles/askdaft-dashboard.css:647`, `src/styles/askdaft-dashboard.css:633`, `src/styles/askdaft-dashboard.css:667`, `src/styles/askdaft-dashboard.css:677`, `src/styles/askdaft-dashboard.css:678`, `src/styles/askdaft-dashboard.css:677`, `src/styles/askdaft-dashboard.css:678`, `src/styles/askdaft-dashboard.css:1068`, +2 more
+- `.tech-tree-group` — 12 definitions: `src/styles/askdaft-dashboard.css:835`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:887`, `src/styles/askdaft-dashboard.css:888`, `src/styles/askdaft-dashboard.css:888`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:1063`, `src/styles/askdaft-dashboard.css:1197`, `src/styles/askdaft-dashboard.css:882`, `src/styles/askdaft-dashboard.css:1197`, +2 more
+- `.askdaft-request-page` — 12 definitions: `src/styles/askdaft-request.css:10`, `src/styles/askdaft-request.css:868`, `src/styles/askdaft-request.css:869`, `src/styles/askdaft-request.css:870`, `src/styles/askdaft-request.css:874`, `src/styles/askdaft-request.css:875`, `src/styles/askdaft-request.css:868`, `src/styles/askdaft-request.css:868`, `src/styles/askdaft-request.css:894`, `src/styles/askdaft-request.css:895`, +2 more
+- `.askdaft-request-progress-step` — 12 definitions: `src/styles/askdaft-request.css:457`, `src/styles/askdaft-request.css:467`, `src/styles/askdaft-request.css:479`, `src/styles/askdaft-request.css:485`, `src/styles/askdaft-request.css:491`, `src/styles/askdaft-request.css:496`, `src/styles/askdaft-request.css:497`, `src/styles/askdaft-request.css:497`, `src/styles/askdaft-request.css:507`, `src/styles/askdaft-request.css:457`, +2 more
+- `.askdaft-panel` — 12 definitions: `src/styles/cards.css:506`, `src/styles/cards.css:506`, `src/styles/cards.css:625`, `src/styles/cards.css:625`, `src/styles/cards.css:625`, `src/styles/cards.css:662`, `src/styles/cards.css:625`, `src/styles/cards.css:662`, `src/styles/cards.css:625`, `src/styles/cards.css:625`, +2 more
+- `.mode-cta-copy` — 12 definitions: `src/styles/cta.css:75`, `src/styles/cta.css:81`, `src/styles/cta.css:82`, `src/styles/cta.css:82`, `src/styles/cta.css:81`, `src/styles/pricing.css:790`, `src/styles/pricing.css:790`, `src/styles/utilities.css:119`, `src/styles/utilities.css:132`, `src/styles/utilities.css:144`, +2 more
 - `.quick-contact-btn` — 12 definitions: `src/styles/cta.css:410`, `src/styles/cta.css:429`, `src/styles/cta.css:436`, `src/styles/cta.css:437`, `src/styles/cta.css:444`, `src/styles/cta.css:450`, `src/styles/cta.css:454`, `src/styles/cta.css:460`, `src/styles/cta.css:464`, `src/styles/cta.css:465`, +2 more
 - `.quick-contact-lane-picker` — 12 definitions: `src/styles/cta.css:506`, `src/styles/cta.css:514`, `src/styles/cta.css:533`, `src/styles/cta.css:534`, `src/styles/cta.css:535`, `src/styles/cta.css:543`, `src/styles/cta.css:544`, `src/styles/cta.css:545`, `src/styles/cta.css:552`, `src/styles/cta.css:557`, +2 more
-- `.reading-mode-toggle` — 12 definitions: `src/styles/mobile.css:539`, `src/styles/mobile.css:539`, `src/styles/mobile.css:571`, `src/styles/mobile.css:579`, `src/styles/mobile.css:586`, `src/styles/mobile.css:592`, `src/styles/mobile.css:598`, `src/styles/mobile.css:599`, `src/styles/mobile.css:539`, `src/styles/mobile.css:571`, +2 more
-- `.askdaft-request-progress` — 12 definitions: `src/styles/mobile.css:894`, `src/styles/mobile.css:894`, `src/styles/mobile.css:1069`, `src/styles/mobile.css:894`, `src/styles/mobile.css:1069`, `src/styles/pages.css:854`, `src/styles/pages.css:861`, `src/styles/pages.css:877`, `src/styles/pages.css:883`, `src/styles/pages.css:1810`, +2 more
-- `.askdaft-active-request-panel` — 12 definitions: `src/styles/mobile.css:927`, `src/styles/mobile.css:937`, `src/styles/pages.css:848`, `src/styles/pages.css:848`, `src/styles/pages.css:1029`, `src/styles/pages.css:1033`, `src/styles/pages.css:1039`, `src/styles/pages.css:1048`, `src/styles/pages.css:848`, `src/styles/pages.css:1090`, +2 more
-- `.askdaft-file-list` — 12 definitions: `src/styles/mobile.css:952`, `src/styles/mobile.css:1425`, `src/styles/mobile.css:952`, `src/styles/pages.css:945`, `src/styles/pages.css:952`, `src/styles/pages.css:960`, `src/styles/pages.css:968`, `src/styles/pages.css:945`, `src/styles/pages.css:952`, `src/styles/pages.css:968`, +2 more
-- `.device-action` — 12 definitions: `src/styles/mobile.css:982`, `src/styles/mobile.css:982`, `src/styles/pages.css:1172`, `src/styles/pages.css:1188`, `src/styles/pages.css:1301`, `src/styles/pages.css:1308`, `src/styles/pages.css:1315`, `src/styles/pages.css:1172`, `src/styles/pages.css:1308`, `src/styles/pages.css:1315`, +2 more
-- `.askdaft-help-launcher-heading` — 12 definitions: `src/styles/mobile.css:1076`, `src/styles/mobile.css:1076`, `src/styles/mobile.css:1254`, `src/styles/mobile.css:1260`, `src/styles/mobile.css:1254`, `src/styles/pages.css:1833`, `src/styles/pages.css:1841`, `src/styles/pages.css:1850`, `src/styles/pages.css:1833`, `src/styles/pages.css:1841`, +2 more
-- `.askdaft-guided-request-heading` — 12 definitions: `src/styles/mobile.css:1106`, `src/styles/mobile.css:1106`, `src/styles/mobile.css:1106`, `src/styles/mobile.css:1292`, `src/styles/mobile.css:1292`, `src/styles/pages.css:1947`, `src/styles/pages.css:1956`, `src/styles/pages.css:1966`, `src/styles/pages.css:1947`, `src/styles/pages.css:1956`, +2 more
-- `.askdaft-plan-comparison-heading` — 12 definitions: `src/styles/mobile.css:1107`, `src/styles/mobile.css:1107`, `src/styles/mobile.css:1107`, `src/styles/mobile.css:1349`, `src/styles/mobile.css:1349`, `src/styles/pages.css:1948`, `src/styles/pages.css:1957`, `src/styles/pages.css:1967`, `src/styles/pages.css:1948`, `src/styles/pages.css:1957`, +2 more
-- `.account-panel-heading` — 12 definitions: `src/styles/mobile.css:1392`, `src/styles/pages.css:607`, `src/styles/pages.css:1029`, `src/styles/pages.css:1133`, `src/styles/pages.css:2584`, `src/styles/pages.css:3234`, `src/styles/pages.css:3240`, `src/styles/pages.css:3240`, `src/styles/pages.css:3371`, `src/styles/pages.css:3375`, +2 more
-- `.floating-page-tools` — 12 definitions: `src/styles/mobile.css:1481`, `src/styles/mobile.css:1501`, `src/styles/mobile.css:1502`, `src/styles/mobile.css:1481`, `src/styles/mobile.css:1501`, `src/styles/mobile.css:1502`, `src/styles/pages.css:3573`, `src/styles/pages.css:3573`, `src/styles/pages.css:4349`, `src/styles/pages.css:4353`, +2 more
-- `.selected-device-status` — 12 definitions: `src/styles/pages.css:1300`, `src/styles/pages.css:1307`, `src/styles/pages.css:1314`, `src/styles/pages.css:1300`, `src/styles/pages.css:1334`, `src/styles/pages.css:1344`, `src/styles/pages.css:1345`, `src/styles/pages.css:1344`, `src/styles/pages.css:1345`, `src/styles/pages.css:1688`, +2 more
-- `.askdaft-request-progress-step` — 12 definitions: `src/styles/pages.css:2947`, `src/styles/pages.css:2957`, `src/styles/pages.css:2969`, `src/styles/pages.css:2975`, `src/styles/pages.css:2981`, `src/styles/pages.css:2986`, `src/styles/pages.css:2987`, `src/styles/pages.css:2987`, `src/styles/pages.css:2997`, `src/styles/pages.css:2947`, +2 more
-- `.pricing-range` — 12 definitions: `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:241`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:115`, `src/styles/pricing.css:263`, `src/styles/pricing.css:268`, `src/styles/pricing.css:273`, `src/styles/pricing.css:115`, +2 more
-- `.pricing-action-btn` — 12 definitions: `src/styles/pricing.css:680`, `src/styles/pricing.css:697`, `src/styles/pricing.css:698`, `src/styles/pricing.css:702`, `src/styles/pricing.css:708`, `src/styles/pricing.css:709`, `src/styles/pricing.css:715`, `src/styles/pricing.css:680`, `src/styles/pricing.css:680`, `src/styles/pricing.css:680`, +2 more
-- `.askdaft-style-pill` — 11 definitions: `src/styles/cards.css:1274`, `src/styles/cards.css:1286`, `src/styles/cards.css:1287`, `src/styles/cards.css:1286`, `src/styles/cards.css:1287`, `src/styles/cards.css:1306`, `src/styles/cards.css:1307`, `src/styles/cards.css:1308`, `src/styles/cards.css:1308`, `src/styles/mobile.css:268`, +1 more
-- `.askdaft-call-fields` — 11 definitions: `src/styles/cards.css:1567`, `src/styles/cards.css:1588`, `src/styles/cards.css:1567`, `src/styles/cards.css:1619`, `src/styles/cards.css:1624`, `src/styles/cards.css:1638`, `src/styles/mobile.css:42`, `src/styles/mobile.css:42`, `src/styles/mobile.css:111`, `src/styles/mobile.css:42`, +1 more
+- `.reading-mode-toggle` — 12 definitions: `src/styles/mobile.css:174`, `src/styles/mobile.css:174`, `src/styles/mobile.css:206`, `src/styles/mobile.css:214`, `src/styles/mobile.css:221`, `src/styles/mobile.css:227`, `src/styles/mobile.css:233`, `src/styles/mobile.css:234`, `src/styles/mobile.css:174`, `src/styles/mobile.css:206`, +2 more
+- `.askdaft-request-progress` — 11 definitions: `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:128`, `src/styles/askdaft-dashboard.css:144`, `src/styles/askdaft-dashboard.css:150`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:1201`, `src/styles/askdaft-dashboard.css:121`, `src/styles/askdaft-dashboard.css:1201`, `src/styles/askdaft-dashboard.css:121`, +1 more
+- `.askdaft-style-pill` — 11 definitions: `src/styles/askdaft-request.css:701`, `src/styles/cards.css:1019`, `src/styles/cards.css:1031`, `src/styles/cards.css:1032`, `src/styles/cards.css:1031`, `src/styles/cards.css:1032`, `src/styles/cards.css:1051`, `src/styles/cards.css:1052`, `src/styles/cards.css:1053`, `src/styles/cards.css:1053`, +1 more
+- `.askdaft-ticket-list-card` — 11 definitions: `src/styles/askdaft-tickets.css:179`, `src/styles/askdaft-tickets.css:193`, `src/styles/askdaft-tickets.css:194`, `src/styles/askdaft-tickets.css:203`, `src/styles/askdaft-tickets.css:209`, `src/styles/askdaft-tickets.css:217`, `src/styles/askdaft-tickets.css:218`, `src/styles/askdaft-tickets.css:179`, `src/styles/askdaft-tickets.css:407`, `src/styles/askdaft-tickets.css:179`, +1 more
+- `.brand-itude` — 11 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:777`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/reading-mode.css:57`, `src/styles/reading-mode.css:115`, `src/styles/reading-mode.css:116`, `src/styles/reading-mode.css:117`, `src/styles/reading-mode.css:118`, `src/styles/reading-mode.css:57`, +1 more
+- `.brand-ask` — 11 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:777`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/reading-mode.css:58`, `src/styles/reading-mode.css:91`, `src/styles/reading-mode.css:92`, `src/styles/reading-mode.css:93`, `src/styles/reading-mode.css:94`, `src/styles/reading-mode.css:58`, +1 more
 - `.mode-cta-lane-picker` — 11 definitions: `src/styles/cta.css:256`, `src/styles/cta.css:264`, `src/styles/cta.css:283`, `src/styles/cta.css:284`, `src/styles/cta.css:291`, `src/styles/cta.css:292`, `src/styles/cta.css:298`, `src/styles/cta.css:303`, `src/styles/cta.css:256`, `src/styles/cta.css:536`, +1 more
-- `.account-auth-copy` — 11 definitions: `src/styles/mobile.css:793`, `src/styles/mobile.css:793`, `src/styles/mobile.css:824`, `src/styles/mobile.css:793`, `src/styles/mobile.css:793`, `src/styles/mobile.css:824`, `src/styles/mobile.css:824`, `src/styles/pages.css:545`, `src/styles/pages.css:545`, `src/styles/pages.css:563`, +1 more
-- `.dashboard-status-grid` — 11 definitions: `src/styles/mobile.css:802`, `src/styles/mobile.css:802`, `src/styles/mobile.css:933`, `src/styles/mobile.css:933`, `src/styles/mobile.css:802`, `src/styles/mobile.css:933`, `src/styles/pages.css:709`, `src/styles/pages.css:709`, `src/styles/pages.css:1005`, `src/styles/pages.css:709`, +1 more
-- `.account-page` — 11 definitions: `src/styles/mobile.css:813`, `src/styles/mobile.css:868`, `src/styles/pages.css:479`, `src/styles/pages.css:495`, `src/styles/pages.css:502`, `src/styles/pages.css:503`, `src/styles/pages.css:509`, `src/styles/pages.css:510`, `src/styles/pages.css:517`, `src/styles/pages.css:518`, +1 more
-- `.askdaft-plan-list` — 11 definitions: `src/styles/mobile.css:944`, `src/styles/mobile.css:944`, `src/styles/pages.css:946`, `src/styles/pages.css:953`, `src/styles/pages.css:961`, `src/styles/pages.css:969`, `src/styles/pages.css:982`, `src/styles/pages.css:946`, `src/styles/pages.css:953`, `src/styles/pages.css:969`, +1 more
-- `.askdaft-guided-device-row` — 11 definitions: `src/styles/mobile.css:1123`, `src/styles/mobile.css:1128`, `src/styles/mobile.css:1123`, `src/styles/mobile.css:1128`, `src/styles/mobile.css:1123`, `src/styles/mobile.css:1128`, `src/styles/pages.css:1976`, `src/styles/pages.css:1983`, `src/styles/pages.css:1995`, `src/styles/pages.css:1976`, +1 more
-- `.askdaft-ticket-list-card` — 11 definitions: `src/styles/pages.css:3687`, `src/styles/pages.css:3705`, `src/styles/pages.css:3706`, `src/styles/pages.css:3726`, `src/styles/pages.css:3734`, `src/styles/pages.css:3743`, `src/styles/pages.css:3744`, `src/styles/pages.css:3687`, `src/styles/pages.css:3957`, `src/styles/pages.css:3687`, +1 more
-- `.reading-mode-off` — 11 definitions: `src/styles/pages.css:4303`, `src/styles/pages.css:4304`, `src/styles/pages.css:4305`, `src/styles/pages.css:4305`, `src/styles/pages.css:4305`, `src/styles/pages.css:4305`, `src/styles/pages.css:4314`, `src/styles/pages.css:4315`, `src/styles/pages.css:4363`, `src/styles/pages.css:4303`, +1 more
+- `.brand-word-askdaft` — 11 definitions: `src/styles/reading-mode.css:91`, `src/styles/reading-mode.css:92`, `src/styles/reading-mode.css:93`, `src/styles/reading-mode.css:94`, `src/styles/reading-mode.css:99`, `src/styles/reading-mode.css:100`, `src/styles/reading-mode.css:101`, `src/styles/reading-mode.css:102`, `src/styles/reading-mode.css:91`, `src/styles/utilities.css:95`, +1 more
+- `.dashboard-status-grid` — 10 definitions: `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/account.css:242`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`, `src/styles/askdaft-dashboard.css:318`
+- `.askdaft-file-list` — 10 definitions: `src/styles/askdaft-dashboard.css:213`, `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:248`, `src/styles/askdaft-dashboard.css:256`, `src/styles/askdaft-dashboard.css:256`, `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:1174`, `src/styles/askdaft-dashboard.css:1174`, `src/styles/askdaft-dashboard.css:228`, `src/styles/askdaft-dashboard.css:228`
+- `.selected-device-details` — 10 definitions: `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:698`, `src/styles/askdaft-dashboard.css:705`, `src/styles/askdaft-dashboard.css:713`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:900`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:900`, `src/styles/askdaft-dashboard.css:692`, `src/styles/askdaft-dashboard.css:692`
+- `.askdaft-request-type-card` — 10 definitions: `src/styles/askdaft-request.css:96`, `src/styles/askdaft-request.css:96`, `src/styles/askdaft-request.css:115`, `src/styles/askdaft-request.css:123`, `src/styles/askdaft-request.css:132`, `src/styles/askdaft-request.css:148`, `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:665`, `src/styles/askdaft-request.css:895`
 - `.system-map-resource-actions--four` — 10 definitions: `src/styles/cards.css:340`, `src/styles/cards.css:349`, `src/styles/cards.css:364`, `src/styles/cards.css:373`, `src/styles/cards.css:385`, `src/styles/cards.css:340`, `src/styles/cards.css:340`, `src/styles/cards.css:349`, `src/styles/cards.css:364`, `src/styles/cards.css:373`
-- `.askdaft-subscribe-card` — 10 definitions: `src/styles/cards.css:1862`, `src/styles/cards.css:1862`, `src/styles/cards.css:1888`, `src/styles/cards.css:1897`, `src/styles/cards.css:1897`, `src/styles/cards.css:1916`, `src/styles/cards.css:1934`, `src/styles/cards.css:1945`, `src/styles/mobile.css:71`, `src/styles/mobile.css:71`
 - `.final-start-section` — 10 definitions: `src/styles/home.css:262`, `src/styles/home.css:267`, `src/styles/utilities.css:53`, `src/styles/utilities.css:65`, `src/styles/utilities.css:120`, `src/styles/utilities.css:134`, `src/styles/utilities.css:146`, `src/styles/utilities.css:158`, `src/styles/utilities.css:170`, `src/styles/utilities.css:53`
-- `.phase-section-heading` — 10 definitions: `src/styles/mobile.css:177`, `src/styles/mobile.css:181`, `src/styles/mobile.css:187`, `src/styles/pages.css:395`, `src/styles/pages.css:410`, `src/styles/pages.css:418`, `src/styles/pages.css:410`, `src/styles/pages.css:4086`, `src/styles/pages.css:4092`, `src/styles/pages.css:4100`
-- `.selected-device-details` — 10 definitions: `src/styles/mobile.css:993`, `src/styles/mobile.css:997`, `src/styles/mobile.css:993`, `src/styles/pages.css:1359`, `src/styles/pages.css:1365`, `src/styles/pages.css:1372`, `src/styles/pages.css:1380`, `src/styles/pages.css:1359`, `src/styles/pages.css:1534`, `src/styles/pages.css:1359`
-- `.askdaft-view-mode-strip` — 10 definitions: `src/styles/mobile.css:1019`, `src/styles/mobile.css:1019`, `src/styles/mobile.css:1019`, `src/styles/mobile.css:1330`, `src/styles/pages.css:1576`, `src/styles/pages.css:1591`, `src/styles/pages.css:1599`, `src/styles/pages.css:1576`, `src/styles/pages.css:1576`, `src/styles/pages.css:1576`
-- `.askdaft-plan-list-block` — 10 definitions: `src/styles/mobile.css:1372`, `src/styles/pages.css:2143`, `src/styles/pages.css:2148`, `src/styles/pages.css:2157`, `src/styles/pages.css:2161`, `src/styles/pages.css:2165`, `src/styles/pages.css:2173`, `src/styles/pages.css:2182`, `src/styles/pages.css:2189`, `src/styles/pages.css:2173`
-- `.askdaft-request-type-card` — 10 definitions: `src/styles/pages.css:2604`, `src/styles/pages.css:2604`, `src/styles/pages.css:2623`, `src/styles/pages.css:2631`, `src/styles/pages.css:2640`, `src/styles/pages.css:2656`, `src/styles/pages.css:3243`, `src/styles/pages.css:3243`, `src/styles/pages.css:3243`, `src/styles/pages.css:3505`
-- `.story-kicker` — 9 definitions: `src/styles/cards.css:74`, `src/styles/cards.css:662`, `src/styles/cards.css:662`, `src/styles/cta.css:22`, `src/styles/cta.css:43`, `src/styles/cta.css:370`, `src/styles/cta.css:394`, `src/styles/utilities.css:22`, `src/styles/utilities.css:111`
-- `.brand-itude` — 9 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:1032`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/mobile.css:757`, `src/styles/pages.css:4538`, `src/styles/pages.css:4539`, `src/styles/pages.css:4540`, `src/styles/utilities.css:90`
-- `.brand-ask` — 9 definitions: `src/styles/cards.css:99`, `src/styles/cards.css:1032`, `src/styles/cta.css:557`, `src/styles/cta.css:630`, `src/styles/mobile.css:758`, `src/styles/pages.css:4517`, `src/styles/pages.css:4518`, `src/styles/pages.css:4519`, `src/styles/utilities.css:95`
-- `.askdaft-typical-panel` — 9 definitions: `src/styles/cards.css:1565`, `src/styles/cards.css:1565`, `src/styles/cards.css:1581`, `src/styles/cards.css:1587`, `src/styles/cards.css:1596`, `src/styles/cards.css:1603`, `src/styles/mobile.css:43`, `src/styles/mobile.css:43`, `src/styles/mobile.css:43`
-- `.average-pricing-section` — 9 definitions: `src/styles/mobile.css:445`, `src/styles/mobile.css:449`, `src/styles/mobile.css:445`, `src/styles/pricing.css:929`, `src/styles/pricing.css:934`, `src/styles/pricing.css:935`, `src/styles/pricing.css:939`, `src/styles/pricing.css:940`, `src/styles/pricing.css:941`
-- `.account-dashboard-actions` — 9 definitions: `src/styles/mobile.css:835`, `src/styles/mobile.css:840`, `src/styles/mobile.css:919`, `src/styles/mobile.css:937`, `src/styles/mobile.css:1197`, `src/styles/pages.css:581`, `src/styles/pages.css:998`, `src/styles/pages.css:1039`, `src/styles/pages.css:998`
-- `.askdaft-device-category-tabs` — 9 definitions: `src/styles/mobile.css:1007`, `src/styles/mobile.css:1012`, `src/styles/pages.css:1411`, `src/styles/pages.css:1418`, `src/styles/pages.css:1430`, `src/styles/pages.css:1761`, `src/styles/pages.css:1766`, `src/styles/pages.css:1411`, `src/styles/pages.css:1418`
-- `.askdaft-guided-summary-card` — 9 definitions: `src/styles/mobile.css:1108`, `src/styles/mobile.css:1108`, `src/styles/mobile.css:1108`, `src/styles/mobile.css:1321`, `src/styles/pages.css:2043`, `src/styles/pages.css:2055`, `src/styles/pages.css:2062`, `src/styles/pages.css:2043`, `src/styles/pages.css:2355`
+- `.pricing-action-btn` — 10 definitions: `src/styles/pricing.css:598`, `src/styles/pricing.css:616`, `src/styles/pricing.css:617`, `src/styles/pricing.css:621`, `src/styles/pricing.css:627`, `src/styles/pricing.css:628`, `src/styles/pricing.css:634`, `src/styles/pricing.css:598`, `src/styles/pricing.css:990`, `src/styles/pricing.css:1000`
+- `.brand-word-daftitude` — 10 definitions: `src/styles/reading-mode.css:107`, `src/styles/reading-mode.css:108`, `src/styles/reading-mode.css:109`, `src/styles/reading-mode.css:110`, `src/styles/reading-mode.css:115`, `src/styles/reading-mode.css:116`, `src/styles/reading-mode.css:117`, `src/styles/reading-mode.css:118`, `src/styles/reading-mode.css:107`, `src/styles/utilities.css:90`
+- `.account-auth-copy` — 9 definitions: `src/styles/account.css:78`, `src/styles/account.css:78`, `src/styles/account.css:96`, `src/styles/account.css:105`, `src/styles/account.css:78`, `src/styles/account.css:78`, `src/styles/account.css:96`, `src/styles/account.css:78`, `src/styles/account.css:96`
+- `.account-dashboard-actions` — 9 definitions: `src/styles/account.css:114`, `src/styles/account.css:381`, `src/styles/account.css:114`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:352`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:352`, `src/styles/askdaft-dashboard.css:1413`, `src/styles/askdaft-dashboard.css:311`
+- `.phase-section-heading` — 9 definitions: `src/styles/askdaft-base.css:13`, `src/styles/askdaft-base.css:28`, `src/styles/askdaft-base.css:37`, `src/styles/askdaft-base.css:13`, `src/styles/askdaft-base.css:28`, `src/styles/askdaft-base.css:37`, `src/styles/askdaft-frontdoor.css:203`, `src/styles/askdaft-frontdoor.css:209`, `src/styles/askdaft-frontdoor.css:217`
+- `.askdaft-plan-list` — 9 definitions: `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:239`, `src/styles/askdaft-dashboard.css:249`, `src/styles/askdaft-dashboard.css:257`, `src/styles/askdaft-dashboard.css:270`, `src/styles/askdaft-dashboard.css:257`, `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:219`, `src/styles/askdaft-dashboard.css:219`
+- `.askdaft-guided-request-heading` — 9 definitions: `src/styles/askdaft-dashboard.css:1226`, `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1245`, `src/styles/askdaft-dashboard.css:1226`, `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1226`, `src/styles/askdaft-dashboard.css:1235`, `src/styles/askdaft-dashboard.css:1245`, `src/styles/askdaft-dashboard.css:1235`
+- `.askdaft-plan-comparison-heading` — 9 definitions: `src/styles/askdaft-dashboard.css:1227`, `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1246`, `src/styles/askdaft-dashboard.css:1227`, `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1227`, `src/styles/askdaft-dashboard.css:1236`, `src/styles/askdaft-dashboard.css:1246`, `src/styles/askdaft-dashboard.css:1236`
+- `.askdaft-guided-step-grid` — 9 definitions: `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1285`, `src/styles/askdaft-dashboard.css:1293`, `src/styles/askdaft-dashboard.css:1306`, `src/styles/askdaft-dashboard.css:1314`, `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1279`, `src/styles/askdaft-dashboard.css:1285`
+- `.askdaft-help-launcher-card` — 9 definitions: `src/styles/askdaft-dashboard.css:1535`, `src/styles/askdaft-dashboard.css:1540`, `src/styles/askdaft-dashboard.css:1544`, `src/styles/askdaft-dashboard.css:1535`, `src/styles/askdaft-dashboard.css:1535`, `src/styles/askdaft-dashboard.css:1540`, `src/styles/askdaft-dashboard.css:1686`, `src/styles/askdaft-dashboard.css:1690`, `src/styles/askdaft-dashboard.css:1544`
+- `.askdaft-front-door-card` — 9 definitions: `src/styles/askdaft-frontdoor.css:236`, `src/styles/askdaft-frontdoor.css:259`, `src/styles/askdaft-frontdoor.css:271`, `src/styles/askdaft-frontdoor.css:272`, `src/styles/askdaft-frontdoor.css:302`, `src/styles/askdaft-frontdoor.css:312`, `src/styles/askdaft-frontdoor.css:322`, `src/styles/askdaft-frontdoor.css:236`, `src/styles/askdaft-frontdoor.css:236`
+- `.askdaft-ticket-summary` — 9 definitions: `src/styles/askdaft-request.css:340`, `src/styles/askdaft-request.css:355`, `src/styles/askdaft-request.css:398`, `src/styles/askdaft-request.css:404`, `src/styles/askdaft-request.css:340`, `src/styles/askdaft-request.css:666`, `src/styles/askdaft-request.css:705`, `src/styles/askdaft-request.css:706`, `src/styles/askdaft-request.css:712`
+- `.askdaft-step-panel` — 9 definitions: `src/styles/askdaft-request.css:754`, `src/styles/askdaft-request.css:763`, `src/styles/askdaft-request.css:771`, `src/styles/askdaft-request.css:775`, `src/styles/askdaft-request.css:780`, `src/styles/askdaft-request.css:784`, `src/styles/askdaft-request.css:788`, `src/styles/askdaft-request.css:792`, `src/styles/askdaft-request.css:814`
+- `.askdaft-dashboard-ticket-list` — 9 definitions: `src/styles/askdaft-tickets.css:16`, `src/styles/askdaft-tickets.css:22`, `src/styles/askdaft-tickets.css:33`, `src/styles/askdaft-tickets.css:34`, `src/styles/askdaft-tickets.css:47`, `src/styles/askdaft-tickets.css:53`, `src/styles/askdaft-tickets.css:58`, `src/styles/askdaft-tickets.css:22`, `src/styles/askdaft-tickets.css:58`
+- `.story-kicker` — 9 definitions: `src/styles/cards.css:74`, `src/styles/cards.css:433`, `src/styles/cards.css:433`, `src/styles/cta.css:22`, `src/styles/cta.css:43`, `src/styles/cta.css:370`, `src/styles/cta.css:394`, `src/styles/utilities.css:22`, `src/styles/utilities.css:111`
+- `.askdaft-call-fields` — 9 definitions: `src/styles/cards.css:1310`, `src/styles/cards.css:1331`, `src/styles/cards.css:1310`, `src/styles/cards.css:1362`, `src/styles/cards.css:1367`, `src/styles/cards.css:1381`, `src/styles/cards.css:1310`, `src/styles/cards.css:1310`, `src/styles/cards.css:1367`
+- `.askdaft-subscribe-card` — 9 definitions: `src/styles/cards.css:1603`, `src/styles/cards.css:1603`, `src/styles/cards.css:1629`, `src/styles/cards.css:1638`, `src/styles/cards.css:1638`, `src/styles/cards.css:1657`, `src/styles/cards.css:1675`, `src/styles/cards.css:1686`, `src/styles/cards.css:1603`
+- `.average-pricing-section` — 9 definitions: `src/styles/mobile.css:80`, `src/styles/mobile.css:84`, `src/styles/mobile.css:80`, `src/styles/pricing.css:821`, `src/styles/pricing.css:826`, `src/styles/pricing.css:827`, `src/styles/pricing.css:831`, `src/styles/pricing.css:832`, `src/styles/pricing.css:833`
 - `.navbar-hamburger` — 9 definitions: `src/styles/navbar.css:148`, `src/styles/navbar.css:161`, `src/styles/navbar.css:162`, `src/styles/navbar.css:163`, `src/styles/navbar.css:169`, `src/styles/navbar.css:178`, `src/styles/navbar.css:182`, `src/styles/navbar.css:186`, `src/styles/navbar.css:148`
-- `.askdaft-dashboard-ticket-list` — 9 definitions: `src/styles/pages.css:3148`, `src/styles/pages.css:3154`, `src/styles/pages.css:3165`, `src/styles/pages.css:3166`, `src/styles/pages.css:3179`, `src/styles/pages.css:3185`, `src/styles/pages.css:3190`, `src/styles/pages.css:3154`, `src/styles/pages.css:3190`
-- `.askdaft-step-panel` — 9 definitions: `src/styles/pages.css:3345`, `src/styles/pages.css:3354`, `src/styles/pages.css:3362`, `src/styles/pages.css:3366`, `src/styles/pages.css:3371`, `src/styles/pages.css:3375`, `src/styles/pages.css:3379`, `src/styles/pages.css:3383`, `src/styles/pages.css:3405`
-- `.pricing-service` — 9 definitions: `src/styles/pricing.css:106`, `src/styles/pricing.css:111`, `src/styles/pricing.css:113`, `src/styles/pricing.css:111`, `src/styles/pricing.css:113`, `src/styles/pricing.css:106`, `src/styles/pricing.css:111`, `src/styles/pricing.css:113`, `src/styles/pricing.css:113`
-- `.pricing-chart-price` — 9 definitions: `src/styles/pricing.css:433`, `src/styles/pricing.css:445`, `src/styles/pricing.css:449`, `src/styles/pricing.css:453`, `src/styles/pricing.css:497`, `src/styles/pricing.css:497`, `src/styles/pricing.css:433`, `src/styles/pricing.css:1050`, `src/styles/pricing.css:1050`
-- `.subscription-toggle` — 9 definitions: `src/styles/pricing.css:544`, `src/styles/pricing.css:611`, `src/styles/pricing.css:627`, `src/styles/pricing.css:628`, `src/styles/pricing.css:633`, `src/styles/pricing.css:544`, `src/styles/pricing.css:611`, `src/styles/pricing.css:544`, `src/styles/pricing.css:611`
-- `.primary` — 8 definitions: `src/styles/buttons.css:35`, `src/styles/buttons.css:36`, `src/styles/buttons.css:37`, `src/styles/cards.css:470`, `src/styles/cards.css:476`, `src/styles/cards.css:470`, `src/styles/cta.css:444`, `src/styles/cta.css:450`
-- `.askdaft-issue-card` — 8 definitions: `src/styles/cards.css:1186`, `src/styles/cards.css:1201`, `src/styles/cards.css:1202`, `src/styles/cards.css:1203`, `src/styles/cards.css:1203`, `src/styles/cards.css:1228`, `src/styles/cards.css:1238`, `src/styles/mobile.css:247`
-- `.askdaft-price-breakdown` — 8 definitions: `src/styles/cards.css:1657`, `src/styles/cards.css:1667`, `src/styles/cards.css:1677`, `src/styles/cards.css:1685`, `src/styles/cards.css:1693`, `src/styles/cards.css:1700`, `src/styles/mobile.css:116`, `src/styles/mobile.css:116`
-- `.askdaft-price-card` — 8 definitions: `src/styles/cards.css:1861`, `src/styles/cards.css:1861`, `src/styles/cards.css:1887`, `src/styles/cards.css:1896`, `src/styles/cards.css:1915`, `src/styles/cards.css:1933`, `src/styles/mobile.css:70`, `src/styles/mobile.css:70`
-- `.askdaft-dashboard-grid` — 8 definitions: `src/styles/mobile.css:30`, `src/styles/mobile.css:30`, `src/styles/mobile.css:291`, `src/styles/pages.css:38`, `src/styles/pages.css:44`, `src/styles/pages.css:54`, `src/styles/pages.css:61`, `src/styles/pages.css:69`
-- `.askdaft-callout` — 8 definitions: `src/styles/mobile.css:172`, `src/styles/mobile.css:189`, `src/styles/mobile.css:172`, `src/styles/pages.css:421`, `src/styles/pages.css:421`, `src/styles/pages.css:421`, `src/styles/pages.css:458`, `src/styles/pages.css:462`
-- `.askdaft-view-toggle` — 8 definitions: `src/styles/mobile.css:1023`, `src/styles/mobile.css:1027`, `src/styles/mobile.css:1023`, `src/styles/mobile.css:1023`, `src/styles/pages.css:1608`, `src/styles/pages.css:1617`, `src/styles/pages.css:1630`, `src/styles/pages.css:1608`
-- `.askdaft-current-plan-card` — 8 definitions: `src/styles/mobile.css:1119`, `src/styles/mobile.css:1119`, `src/styles/mobile.css:1119`, `src/styles/pages.css:2074`, `src/styles/pages.css:2082`, `src/styles/pages.css:2083`, `src/styles/pages.css:2092`, `src/styles/pages.css:2074`
-- `.floating-tool-btn` — 8 definitions: `src/styles/mobile.css:1508`, `src/styles/mobile.css:1528`, `src/styles/mobile.css:1533`, `src/styles/mobile.css:1538`, `src/styles/mobile.css:1539`, `src/styles/mobile.css:1540`, `src/styles/mobile.css:1508`, `src/styles/mobile.css:1528`
-- `.recent-request-list` — 8 definitions: `src/styles/pages.css:683`, `src/styles/pages.css:691`, `src/styles/pages.css:683`, `src/styles/pages.css:787`, `src/styles/pages.css:794`, `src/styles/pages.css:787`, `src/styles/pages.css:1666`, `src/styles/pages.css:1667`
-- `.askdaft-request-hero` — 8 definitions: `src/styles/pages.css:2519`, `src/styles/pages.css:2519`, `src/styles/pages.css:2541`, `src/styles/pages.css:2550`, `src/styles/pages.css:2519`, `src/styles/pages.css:3233`, `src/styles/pages.css:3239`, `src/styles/pages.css:3239`
+- `.pricing-service` — 9 definitions: `src/styles/pricing.css:84`, `src/styles/pricing.css:89`, `src/styles/pricing.css:91`, `src/styles/pricing.css:89`, `src/styles/pricing.css:91`, `src/styles/pricing.css:84`, `src/styles/pricing.css:89`, `src/styles/pricing.css:91`, `src/styles/pricing.css:91`
+- `.pricing-range` — 9 definitions: `src/styles/pricing.css:93`, `src/styles/pricing.css:93`, `src/styles/pricing.css:169`, `src/styles/pricing.css:176`, `src/styles/pricing.css:181`, `src/styles/pricing.css:186`, `src/styles/pricing.css:93`, `src/styles/pricing.css:93`, `src/styles/pricing.css:93`
+- `.pricing-chart-price` — 9 definitions: `src/styles/pricing.css:346`, `src/styles/pricing.css:358`, `src/styles/pricing.css:362`, `src/styles/pricing.css:366`, `src/styles/pricing.css:410`, `src/styles/pricing.css:410`, `src/styles/pricing.css:346`, `src/styles/pricing.css:942`, `src/styles/pricing.css:942`
+- `.subscription-toggle` — 9 definitions: `src/styles/pricing.css:457`, `src/styles/pricing.css:524`, `src/styles/pricing.css:540`, `src/styles/pricing.css:541`, `src/styles/pricing.css:546`, `src/styles/pricing.css:457`, `src/styles/pricing.css:524`, `src/styles/pricing.css:457`, `src/styles/pricing.css:524`
+- `.phase-page` — 9 definitions: `src/styles/reading-mode.css:64`, `src/styles/reading-mode.css:70`, `src/styles/reading-mode.css:76`, `src/styles/reading-mode.css:82`, `src/styles/reading-mode.css:83`, `src/styles/reading-mode.css:92`, `src/styles/reading-mode.css:100`, `src/styles/reading-mode.css:108`, `src/styles/reading-mode.css:116`
+- `.recent-request-list` — 8 definitions: `src/styles/account.css:216`, `src/styles/account.css:224`, `src/styles/account.css:216`, `src/styles/account.css:320`, `src/styles/account.css:327`, `src/styles/askdaft-dashboard.css:444`, `src/styles/askdaft-dashboard.css:1058`, `src/styles/askdaft-dashboard.css:1059`
+- `.askdaft-callout` — 8 definitions: `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:77`, `src/styles/askdaft-base.css:81`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`, `src/styles/askdaft-base.css:40`
+- `.askdaft-dashboard-grid` — 8 definitions: `src/styles/askdaft-dashboard.css:16`, `src/styles/askdaft-dashboard.css:22`, `src/styles/askdaft-dashboard.css:32`, `src/styles/askdaft-dashboard.css:39`, `src/styles/askdaft-dashboard.css:47`, `src/styles/askdaft-dashboard.css:16`, `src/styles/askdaft-dashboard.css:16`, `src/styles/askdaft-dashboard.css:22`
+- `.askdaft-request-hero` — 8 definitions: `src/styles/askdaft-request.css:15`, `src/styles/askdaft-request.css:15`, `src/styles/askdaft-request.css:37`, `src/styles/askdaft-request.css:46`, `src/styles/askdaft-request.css:15`, `src/styles/askdaft-request.css:656`, `src/styles/askdaft-request.css:661`, `src/styles/askdaft-request.css:661`
+- `.askdaft-chip-grid` — 8 definitions: `src/styles/askdaft-request.css:97`, `src/styles/askdaft-request.css:116`, `src/styles/askdaft-request.css:97`, `src/styles/askdaft-request.css:97`, `src/styles/askdaft-request.css:699`, `src/styles/askdaft-request.css:868`, `src/styles/askdaft-request.css:868`, `src/styles/askdaft-request.css:868`
+- `.askdaft-scope-warning` — 8 definitions: `src/styles/askdaft-request.css:241`, `src/styles/askdaft-request.css:241`, `src/styles/askdaft-request.css:253`, `src/styles/askdaft-request.css:261`, `src/styles/askdaft-request.css:271`, `src/styles/askdaft-request.css:276`, `src/styles/askdaft-request.css:281`, `src/styles/askdaft-request.css:286`
+- `.askdaft-issue-card` — 8 definitions: `src/styles/cards.css:931`, `src/styles/cards.css:946`, `src/styles/cards.css:947`, `src/styles/cards.css:948`, `src/styles/cards.css:948`, `src/styles/cards.css:973`, `src/styles/cards.css:983`, `src/styles/cards.css:931`
+- `.askdaft-typical-panel` — 8 definitions: `src/styles/cards.css:1308`, `src/styles/cards.css:1308`, `src/styles/cards.css:1324`, `src/styles/cards.css:1330`, `src/styles/cards.css:1339`, `src/styles/cards.css:1346`, `src/styles/cards.css:1308`, `src/styles/cards.css:1308`
+- `.floating-tool-btn` — 8 definitions: `src/styles/mobile.css:409`, `src/styles/mobile.css:429`, `src/styles/mobile.css:434`, `src/styles/mobile.css:439`, `src/styles/mobile.css:440`, `src/styles/mobile.css:441`, `src/styles/mobile.css:409`, `src/styles/mobile.css:429`
+- `.account-benefit-card` — 7 definitions: `src/styles/account.css:128`, `src/styles/account.css:128`, `src/styles/account.css:203`, `src/styles/account.css:214`, `src/styles/account.css:222`, `src/styles/account.css:128`, `src/styles/account.css:128`
+- `.account-dashboard-wide` — 7 definitions: `src/styles/account.css:293`, `src/styles/askdaft-dashboard.css:117`, `src/styles/askdaft-dashboard.css:369`, `src/styles/askdaft-dashboard.css:425`, `src/styles/askdaft-dashboard.css:117`, `src/styles/askdaft-dashboard.css:369`, `src/styles/askdaft-dashboard.css:1169`
+- `.askdaft-selected-device-panel` — 7 definitions: `src/styles/askdaft-dashboard.css:653`, `src/styles/askdaft-dashboard.css:1073`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`, `src/styles/askdaft-dashboard.css:1101`
+- `.askdaft-device-category-tabs` — 7 definitions: `src/styles/askdaft-dashboard.css:777`, `src/styles/askdaft-dashboard.css:784`, `src/styles/askdaft-dashboard.css:796`, `src/styles/askdaft-dashboard.css:777`, `src/styles/askdaft-dashboard.css:784`, `src/styles/askdaft-dashboard.css:777`, `src/styles/askdaft-dashboard.css:784`
+- `.tech-tree-group-heading` — 7 definitions: `src/styles/askdaft-dashboard.css:848`, `src/styles/askdaft-dashboard.css:855`, `src/styles/askdaft-dashboard.css:864`, `src/styles/askdaft-dashboard.css:865`, `src/styles/askdaft-dashboard.css:864`, `src/styles/askdaft-dashboard.css:865`, `src/styles/askdaft-dashboard.css:1063`
+- `.askdaft-guided-device-row` — 7 definitions: `src/styles/askdaft-dashboard.css:1255`, `src/styles/askdaft-dashboard.css:1262`, `src/styles/askdaft-dashboard.css:1274`, `src/styles/askdaft-dashboard.css:1255`, `src/styles/askdaft-dashboard.css:1262`, `src/styles/askdaft-dashboard.css:1255`, `src/styles/askdaft-dashboard.css:1262`
+- `.askdaft-support-shortcut` — 7 definitions: `src/styles/askdaft-frontdoor.css:338`, `src/styles/askdaft-frontdoor.css:382`, `src/styles/askdaft-frontdoor.css:383`, `src/styles/askdaft-frontdoor.css:404`, `src/styles/askdaft-frontdoor.css:411`, `src/styles/askdaft-frontdoor.css:338`, `src/styles/askdaft-frontdoor.css:338`
+- `.askdaft-mini-scope` — 7 definitions: `src/styles/askdaft-request.css:242`, `src/styles/askdaft-request.css:254`, `src/styles/askdaft-request.css:262`, `src/styles/askdaft-request.css:272`, `src/styles/askdaft-request.css:277`, `src/styles/askdaft-request.css:282`, `src/styles/askdaft-request.css:287`
+- `.askdaft-submit-checklist` — 7 definitions: `src/styles/askdaft-request.css:511`, `src/styles/askdaft-request.css:518`, `src/styles/askdaft-request.css:527`, `src/styles/askdaft-request.css:535`, `src/styles/askdaft-request.css:536`, `src/styles/askdaft-request.css:546`, `src/styles/askdaft-request.css:547`
+- `.btn` — 7 definitions: `src/styles/buttons.css:7`, `src/styles/buttons.css:25`, `src/styles/buttons.css:28`, `src/styles/buttons.css:35`, `src/styles/buttons.css:44`, `src/styles/buttons.css:51`, `src/styles/mobile.css:48`
+- `.cta-btn` — 7 definitions: `src/styles/buttons.css:8`, `src/styles/buttons.css:26`, `src/styles/buttons.css:29`, `src/styles/buttons.css:36`, `src/styles/buttons.css:45`, `src/styles/buttons.css:52`, `src/styles/mobile.css:49`
+- `.story-mode-section--daftitude` — 7 definitions: `src/styles/cards.css:14`, `src/styles/cards.css:15`, `src/styles/cards.css:19`, `src/styles/cards.css:24`, `src/styles/cards.css:28`, `src/styles/cards.css:32`, `src/styles/cards.css:36`
+- `.panel-action-row` — 7 definitions: `src/styles/cards.css:496`, `src/styles/cards.css:506`, `src/styles/cards.css:510`, `src/styles/cards.css:496`, `src/styles/cards.css:506`, `src/styles/cards.css:496`, `src/styles/cards.css:510`
+- `.phase-card-grid` — 7 definitions: `src/styles/cards.css:808`, `src/styles/cards.css:813`, `src/styles/cards.css:817`, `src/styles/cards.css:813`, `src/styles/cards.css:817`, `src/styles/cards.css:813`, `src/styles/cards.css:817`
 
-_Showing 120 of 264 results._
+_Showing 120 of 242 results._
 
 
 ## AskDaFT Selector Locations
 
-- `.story-mode-section--askdaft .story-specialties strong` — `src/styles/cards.css:322`
-- `.story-mode-section--askdaft .story-specialties li` — `src/styles/cards.css:327`
-- `.story-mode-section--askdaft .story-specialties li::before` — `src/styles/cards.css:331`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn.primary` — `src/styles/cards.css:476`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover` — `src/styles/cards.css:497`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible` — `src/styles/cards.css:498`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn:first-child` — `src/styles/cards.css:606`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover` — `src/styles/cards.css:497`
-- `.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible` — `src/styles/cards.css:498`
-- `.split-identity-section .askdaft-panel .panel-action-row` — `src/styles/cards.css:476`
-- `.split-identity-section .askdaft-panel .panel-action-row` — `src/styles/cards.css:476`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3)` — `src/styles/cards.css:916`
-- `.split-identity-section .askdaft-panel .panel-buzz-row` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3)` — `src/styles/cards.css:916`
-- `.split-identity-section .askdaft-panel .panel-buzz-row` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span` — `src/styles/cards.css:447`
-- `.split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3)` — `src/styles/cards.css:916`
-- `.askdaft-page .phase-card-grid` — `src/styles/cards.css:1063`
-- `.askdaft-page .phase-card-grid.three` — `src/styles/cards.css:1068`
-- `.askdaft-page .phase-card-grid.four` — `src/styles/cards.css:1072`
-- `.askdaft-page .askdaft-mission-grid` — `src/styles/cards.css:1076`
-- `.askdaft-page .phase-card` — `src/styles/cards.css:1063`
-- `.askdaft-page .phase-card h3` — `src/styles/cards.css:1095`
-- `.askdaft-page .phase-card p` — `src/styles/cards.css:1103`
-- `.askdaft-page .phase-card .phase-btn` — `src/styles/cards.css:1111`
-- `.askdaft-page .mission-tag` — `src/styles/cards.css:1115`
-- `.askdaft-flow-layout` — `src/styles/cards.css:1131`
-- `.askdaft-flow-main` — `src/styles/cards.css:1138`
-- `.askdaft-flow-step` — `src/styles/cards.css:1143`
-- `.askdaft-flow-step h3` — `src/styles/cards.css:1151`
-- `.askdaft-flow-step p` — `src/styles/cards.css:1158`
-- `.askdaft-page .step-number` — `src/styles/cards.css:1166`
-- `.askdaft-issue-grid` — `src/styles/cards.css:1180`
-- `.askdaft-issue-card` — `src/styles/cards.css:1186`
-- `.askdaft-issue-card:hover` — `src/styles/cards.css:1201`
-- `.askdaft-issue-card:focus-visible` — `src/styles/cards.css:1202`
-- `.askdaft-issue-card.active` — `src/styles/cards.css:1203`
-- `.askdaft-issue-card.active` — `src/styles/cards.css:1203`
-- `.askdaft-issue-icon` — `src/styles/cards.css:1217`
-- `.askdaft-issue-card strong` — `src/styles/cards.css:1228`
-- `.askdaft-issue-card small` — `src/styles/cards.css:1238`
-- `.askdaft-request-box` — `src/styles/cards.css:1242`
-- `.askdaft-request-box::placeholder` — `src/styles/cards.css:1259`
-- `.askdaft-request-box:focus` — `src/styles/cards.css:1263`
-- `.askdaft-style-row` — `src/styles/cards.css:1268`
-- `.askdaft-style-pill` — `src/styles/cards.css:1274`
-- `.askdaft-style-pill strong` — `src/styles/cards.css:1286`
-- `.askdaft-style-pill small` — `src/styles/cards.css:1287`
-- `.askdaft-style-pill strong` — `src/styles/cards.css:1286`
-- `.askdaft-style-pill small` — `src/styles/cards.css:1287`
-- `.askdaft-style-pill:hover` — `src/styles/cards.css:1306`
-- `.askdaft-style-pill:focus-visible` — `src/styles/cards.css:1307`
-- `.askdaft-style-pill.active` — `src/styles/cards.css:1308`
-- `.askdaft-style-pill.active` — `src/styles/cards.css:1308`
-- `.askdaft-request-summary` — `src/styles/cards.css:1319`
-- `.askdaft-summary-icon` — `src/styles/cards.css:1332`
-- `.askdaft-request-summary h3` — `src/styles/cards.css:1343`
-- `.askdaft-request-summary p` — `src/styles/cards.css:1351`
-- `.askdaft-summary-examples` — `src/styles/cards.css:1358`
-- `.askdaft-summary-examples strong` — `src/styles/cards.css:1366`
-- `.askdaft-summary-examples p` — `src/styles/cards.css:1376`
-- `.askdaft-summary-meta` — `src/styles/cards.css:1384`
-- `.askdaft-summary-meta span` — `src/styles/cards.css:1394`
-- `.askdaft-summary-meta strong` — `src/styles/cards.css:1402`
-- `.askdaft-book-now` — `src/styles/cards.css:1409`
-- `.askdaft-summary-note` — `src/styles/cards.css:1414`
-- `.askdaft-summary-grid` — `src/styles/cards.css:1421`
-- `.askdaft-estimate-grid` — `src/styles/cards.css:1422`
-- `.askdaft-summary-grid` — `src/styles/cards.css:1421`
-- `.askdaft-estimate-grid` — `src/styles/cards.css:1422`
-- `.askdaft-summary-card` — `src/styles/cards.css:1435`
-- `.askdaft-estimate-card` — `src/styles/cards.css:1436`
-- `.askdaft-goal-card` — `src/styles/cards.css:1447`
-- `.askdaft-summary-card h3` — `src/styles/cards.css:1454`
-- `.askdaft-estimate-card h3` — `src/styles/cards.css:1455`
-- `.askdaft-summary-card p` — `src/styles/cards.css:1463`
-- `.askdaft-estimate-card p` — `src/styles/cards.css:1464`
-- `.askdaft-summary-card ul` — `src/styles/cards.css:1472`
-- `.askdaft-includes-list ul` — `src/styles/cards.css:1473`
-- `.askdaft-estimate-topline` — `src/styles/cards.css:1484`
-- `.askdaft-estimate-topline h3` — `src/styles/cards.css:1492`
-- `.askdaft-estimate-topline strong` — `src/styles/cards.css:1496`
-- `.askdaft-includes-list` — `src/styles/cards.css:1473`
-- `.askdaft-includes-list span` — `src/styles/cards.css:1514`
-- `.askdaft-detail-picker` — `src/styles/cards.css:1531`
-- `.askdaft-detail-chip` — `src/styles/cards.css:1538`
-- `.askdaft-detail-chip:hover` — `src/styles/cards.css:1556`
-- `.askdaft-detail-chip:focus-visible` — `src/styles/cards.css:1557`
-- `.askdaft-detail-chip.active` — `src/styles/cards.css:1558`
-- `.askdaft-typical-panel` — `src/styles/cards.css:1565`
-- `.askdaft-guest-note` — `src/styles/cards.css:1566`
-- `.askdaft-call-fields` — `src/styles/cards.css:1567`
-- `.askdaft-typical-panel` — `src/styles/cards.css:1565`
-- `.askdaft-typical-panel div` — `src/styles/cards.css:1581`
-- `.askdaft-typical-panel span` — `src/styles/cards.css:1587`
-- `.askdaft-call-fields span` — `src/styles/cards.css:1588`
-- `.askdaft-typical-panel strong` — `src/styles/cards.css:1596`
-- `.askdaft-typical-panel p` — `src/styles/cards.css:1603`
-- `.askdaft-guest-note p` — `src/styles/cards.css:1604`
-- `.askdaft-call-fields` — `src/styles/cards.css:1567`
-- `.askdaft-call-fields label` — `src/styles/cards.css:1619`
-- `.askdaft-call-fields input` — `src/styles/cards.css:1624`
-- `.askdaft-call-fields input:focus` — `src/styles/cards.css:1638`
-- `.askdaft-guest-note` — `src/styles/cards.css:1566`
-- `.askdaft-guest-note strong` — `src/styles/cards.css:1649`
-- `.askdaft-price-breakdown` — `src/styles/cards.css:1657`
-- `.askdaft-price-breakdown > strong` — `src/styles/cards.css:1667`
-- `.askdaft-price-breakdown div` — `src/styles/cards.css:1677`
-- `.askdaft-price-breakdown span` — `src/styles/cards.css:1685`
-- `.askdaft-price-breakdown b` — `src/styles/cards.css:1693`
-- `.askdaft-price-breakdown p` — `src/styles/cards.css:1700`
-- `.askdaft-progress-tracker` — `src/styles/cards.css:1712`
-- `.askdaft-progress-step` — `src/styles/cards.css:1720`
-- `.askdaft-progress-step span` — `src/styles/cards.css:1729`
-- `.askdaft-progress-step strong` — `src/styles/cards.css:1736`
-- `.askdaft-progress-step small` — `src/styles/cards.css:1742`
-- `.askdaft-progress-step.complete` — `src/styles/cards.css:1750`
-- `.askdaft-progress-step.ready` — `src/styles/cards.css:1751`
-- `.askdaft-progress-step.complete small` — `src/styles/cards.css:1756`
-- `.askdaft-progress-step.ready small` — `src/styles/cards.css:1757`
-- `.askdaft-progress-step.in-progress` — `src/styles/cards.css:1761`
-- `.askdaft-upload-panel` — `src/styles/cards.css:1766`
-- `.askdaft-upload-panel strong` — `src/styles/cards.css:1777`
-- `.askdaft-upload-panel p` — `src/styles/cards.css:1785`
-- `.askdaft-upload-btn` — `src/styles/cards.css:1793`
-- `.askdaft-upload-btn input` — `src/styles/cards.css:1811`
-- `.askdaft-upload-btn span` — `src/styles/cards.css:1819`
-- `.askdaft-book-now.disabled` — `src/styles/cards.css:1828`
-- `.askdaft-request-summary .askdaft-summary-icon` — `src/styles/cards.css:1834`
-- `.askdaft-request-summary .phase-kicker` — `src/styles/cards.css:1838`
-- `.askdaft-price-grid` — `src/styles/cards.css:1847`
-- `.askdaft-subscribe-grid` — `src/styles/cards.css:1848`
-- `.askdaft-price-grid` — `src/styles/cards.css:1847`
-- `.askdaft-subscribe-grid` — `src/styles/cards.css:1848`
-- `.askdaft-price-card` — `src/styles/cards.css:1861`
-- `.askdaft-subscribe-card` — `src/styles/cards.css:1862`
-- `.askdaft-subscribe-note` — `src/styles/cards.css:1863`
-- `.askdaft-price-card` — `src/styles/cards.css:1861`
-- `.askdaft-subscribe-card` — `src/styles/cards.css:1862`
-- `.askdaft-price-card-top` — `src/styles/cards.css:1881`
-- `.askdaft-subscribe-top` — `src/styles/cards.css:1882`
-- `.askdaft-price-card h3` — `src/styles/cards.css:1887`
-- `.askdaft-subscribe-card h3` — `src/styles/cards.css:1888`
-- `.askdaft-price-card strong` — `src/styles/cards.css:1896`
-- `.askdaft-subscribe-card strong` — `src/styles/cards.css:1897`
-- `.askdaft-subscribe-card strong` — `src/styles/cards.css:1897`
-- `.askdaft-price-card p` — `src/styles/cards.css:1915`
-- `.askdaft-subscribe-card p` — `src/styles/cards.css:1916`
-- `.askdaft-subscribe-note p` — `src/styles/cards.css:1917`
-- `.askdaft-plan-rhythm` — `src/styles/cards.css:1925`
-- `.askdaft-price-card ul` — `src/styles/cards.css:1933`
-- `.askdaft-subscribe-card ul` — `src/styles/cards.css:1934`
-- `.askdaft-subscribe-card .phase-btn` — `src/styles/cards.css:1945`
-- `.askdaft-subscribe-note` — `src/styles/cards.css:1863`
-- `.askdaft-subscribe-note strong` — `src/styles/cards.css:1960`
-- `.askdaft-progress-tracker` — `src/styles/cards.css:1712`
-- `.askdaft-progress-step` — `src/styles/cards.css:1720`
-- `.askdaft-progress-step span` — `src/styles/cards.css:1729`
-- `.askdaft-progress-step strong` — `src/styles/cards.css:1736`
-- `.askdaft-progress-step small` — `src/styles/cards.css:1742`
-- `.askdaft-detail-hint` — `src/styles/cards.css:2010`
-- `.askdaft-detail-hint span` — `src/styles/cards.css:2022`
-- `.askdaft-detail-hint p` — `src/styles/cards.css:2031`
-- `.mode-cta-section--askdaft .mode-cta-kicker-row .story-kicker` — `src/styles/cta.css:43`
-- `.mode-cta-section--askdaft .mode-cta-mini-bubbles span` — `src/styles/cta.css:122`
-- `.mode-cta-section--askdaft .mode-cta-mini-bubble` — `src/styles/cta.css:122`
-- `.mode-cta-section--askdaft .mode-cta-mini-bubble.is-secondary` — `src/styles/cta.css:133`
-- `.game-path-askdaft` — `src/styles/hero.css:73`
-- `.game-path-askdaft::before` — `src/styles/hero.css:95`
-- `.game-start-screen.is-askdaft .game-path-askdaft::before` — `src/styles/hero.css:129`
-- `.game-start-screen.is-daftitude .game-path-askdaft::before` — `src/styles/hero.css:133`
-- `.game-start-screen.is-askdaft .game-path-daftitude::before` — `src/styles/hero.css:134`
-- `.game-path-askdaft` — `src/styles/hero.css:73`
-- `.game-path-askdaft` — `src/styles/hero.css:73`
-- `.askdaft-panel` — `src/styles/home.css:233`
-- `.askdaft-price-grid` — `src/styles/mobile.css:7`
-- `.askdaft-subscribe-grid` — `src/styles/mobile.css:8`
-- `.askdaft-summary-grid` — `src/styles/mobile.css:12`
-- `.askdaft-estimate-grid` — `src/styles/mobile.css:13`
-- `.askdaft-page .askdaft-mission-grid` — `src/styles/mobile.css:17`
-- `.askdaft-flow-layout` — `src/styles/mobile.css:21`
-- `.askdaft-request-summary` — `src/styles/mobile.css:25`
-- `.askdaft-dashboard-grid` — `src/styles/mobile.css:30`
-- `.askdaft-progress-tracker` — `src/styles/mobile.css:37`
-- `.askdaft-call-fields` — `src/styles/mobile.css:42`
-- `.askdaft-typical-panel` — `src/styles/mobile.css:43`
-- `.askdaft-page .phase-card-grid.three` — `src/styles/mobile.css:47`
-- `.askdaft-page .phase-card-grid.four` — `src/styles/mobile.css:48`
-- `.askdaft-page .askdaft-mission-grid` — `src/styles/mobile.css:17`
-- `.askdaft-issue-grid` — `src/styles/mobile.css:50`
-- `.askdaft-style-row` — `src/styles/mobile.css:54`
-- `.askdaft-issue-grid` — `src/styles/mobile.css:50`
-- `.askdaft-price-grid` — `src/styles/mobile.css:7`
-- `.askdaft-subscribe-grid` — `src/styles/mobile.css:8`
-- `.askdaft-price-card` — `src/styles/mobile.css:70`
+- `.askdaft-page .phase-section` — `src/styles/askdaft-base.css:7`
+- `.askdaft-page .phase-section-heading` — `src/styles/askdaft-base.css:13`
+- `.askdaft-page .phase-kicker` — `src/styles/askdaft-base.css:19`
+- `.askdaft-page .phase-section-heading h2` — `src/styles/askdaft-base.css:28`
+- `.askdaft-page .phase-section h2` — `src/styles/askdaft-base.css:29`
+- `.askdaft-page .phase-section-heading p` — `src/styles/askdaft-base.css:37`
+- `.askdaft-page .phase-section > p` — `src/styles/askdaft-base.css:38`
+- `.askdaft-page .phase-panel p` — `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-callout p` — `src/styles/askdaft-base.css:40`
+- `.askdaft-page .phase-warning-panel p` — `src/styles/askdaft-base.css:41`
+- `.askdaft-page .phase-panel` — `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-onboarding-panel` — `src/styles/askdaft-base.css:48`
+- `.askdaft-page .askdaft-callout` — `src/styles/askdaft-base.css:40`
+- `.askdaft-page .phase-warning-panel` — `src/styles/askdaft-base.css:41`
+- `.askdaft-page .contact-command` — `src/styles/askdaft-base.css:51`
+- `.askdaft-page .phase-panel` — `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-onboarding-panel` — `src/styles/askdaft-base.css:48`
+- `.askdaft-page .phase-warning-panel` — `src/styles/askdaft-base.css:41`
+- `.askdaft-page .contact-command` — `src/styles/askdaft-base.css:51`
+- `.askdaft-page .askdaft-callout` — `src/styles/askdaft-base.css:40`
+- `.askdaft-page .askdaft-callout > div` — `src/styles/askdaft-base.css:77`
+- `.askdaft-page .askdaft-callout h2` — `src/styles/askdaft-base.css:81`
+- `.askdaft-page .contact-command h2` — `src/styles/askdaft-base.css:82`
+- `.askdaft-page .phase-warning-panel h2` — `src/styles/askdaft-base.css:83`
+- `.askdaft-page .contact-command` — `src/styles/askdaft-base.css:51`
+- `.askdaft-page .phase-section` — `src/styles/askdaft-base.css:7`
+- `.askdaft-page .phase-panel` — `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-onboarding-panel` — `src/styles/askdaft-base.css:48`
+- `.askdaft-page .phase-warning-panel` — `src/styles/askdaft-base.css:41`
+- `.askdaft-page .contact-command` — `src/styles/askdaft-base.css:51`
+- `.askdaft-page .askdaft-callout` — `src/styles/askdaft-base.css:40`
+- `.askdaft-page .phase-section-heading` — `src/styles/askdaft-base.css:13`
+- `.askdaft-page .phase-section-heading h2` — `src/styles/askdaft-base.css:28`
+- `.askdaft-page .phase-section h2` — `src/styles/askdaft-base.css:29`
+- `.askdaft-page .phase-section-heading p` — `src/styles/askdaft-base.css:37`
+- `.askdaft-page .phase-panel p` — `src/styles/askdaft-base.css:39`
+- `.askdaft-page .askdaft-callout p` — `src/styles/askdaft-base.css:40`
+- `.askdaft-page .phase-warning-panel p` — `src/styles/askdaft-base.css:41`
+- `.askdaft-page .askdaft-callout` — `src/styles/askdaft-base.css:40`
+- `.askdaft-dashboard-teaser` — `src/styles/askdaft-dashboard.css:7`
+- `.askdaft-dashboard-teaser-actions` — `src/styles/askdaft-dashboard.css:11`
+- `.askdaft-dashboard-grid` — `src/styles/askdaft-dashboard.css:16`
+- `.askdaft-dashboard-grid article` — `src/styles/askdaft-dashboard.css:22`
+- `.askdaft-dashboard-grid span` — `src/styles/askdaft-dashboard.css:32`
+- `.askdaft-dashboard-grid h3` — `src/styles/askdaft-dashboard.css:39`
+- `.askdaft-dashboard-grid p` — `src/styles/askdaft-dashboard.css:47`
+- `.askdaft-dashboard-grid` — `src/styles/askdaft-dashboard.css:16`
+- `.askdaft-dashboard-grid` — `src/styles/askdaft-dashboard.css:16`
+- `.askdaft-dashboard-grid article` — `src/styles/askdaft-dashboard.css:22`
+- `.askdaft-client-hero` — `src/styles/askdaft-dashboard.css:77`
+- `.askdaft-client-hero::after` — `src/styles/askdaft-dashboard.css:83`
+- `.askdaft-client-hero > *` — `src/styles/askdaft-dashboard.css:99`
+- `.askdaft-client-layout` — `src/styles/askdaft-dashboard.css:104`
+- `.askdaft-active-request-panel` — `src/styles/askdaft-dashboard.css:115`
+- `.askdaft-plan-panel` — `src/styles/askdaft-dashboard.css:116`
+- `.askdaft-request-progress` — `src/styles/askdaft-dashboard.css:121`
+- `.askdaft-request-progress span` — `src/styles/askdaft-dashboard.css:128`
+- `.askdaft-request-progress span.complete` — `src/styles/askdaft-dashboard.css:144`
+- `.askdaft-request-progress span.current` — `src/styles/askdaft-dashboard.css:150`
+- `.askdaft-next-step-list` — `src/styles/askdaft-dashboard.css:156`
+- `.askdaft-next-step-list li` — `src/styles/askdaft-dashboard.css:165`
+- `.askdaft-next-step-list li::before` — `src/styles/askdaft-dashboard.css:178`
+- `.askdaft-file-list` — `src/styles/askdaft-dashboard.css:213`
+- `.askdaft-plan-list` — `src/styles/askdaft-dashboard.css:219`
+- `.askdaft-file-list div` — `src/styles/askdaft-dashboard.css:228`
+- `.askdaft-plan-list div` — `src/styles/askdaft-dashboard.css:239`
+- `.askdaft-file-list strong` — `src/styles/askdaft-dashboard.css:248`
+- `.askdaft-plan-list strong` — `src/styles/askdaft-dashboard.css:249`
+- `.askdaft-file-list span` — `src/styles/askdaft-dashboard.css:256`
+- `.askdaft-plan-list span` — `src/styles/askdaft-dashboard.css:257`
+- `.askdaft-plan-list p` — `src/styles/askdaft-dashboard.css:270`
+- `.askdaft-client-layout` — `src/styles/askdaft-dashboard.css:104`
+- `.askdaft-request-progress` — `src/styles/askdaft-dashboard.css:121`
+- `.askdaft-request-progress` — `src/styles/askdaft-dashboard.css:121`
+- `.askdaft-next-step-list li` — `src/styles/askdaft-dashboard.css:165`
+- `.askdaft-dashboard-page .account-dashboard-hero` — `src/styles/askdaft-dashboard.css:303`
+- `.askdaft-dashboard-page .account-dashboard-hero > div:first-child` — `src/styles/askdaft-dashboard.css:307`
+- `.askdaft-dashboard-page .account-dashboard-actions` — `src/styles/askdaft-dashboard.css:311`
+- `.askdaft-dashboard-page .dashboard-status-grid` — `src/styles/askdaft-dashboard.css:318`
+- `.askdaft-dashboard-page .dashboard-status-card` — `src/styles/askdaft-dashboard.css:322`
+- `.askdaft-dashboard-page .dashboard-status-card strong` — `src/styles/askdaft-dashboard.css:328`
+- `.askdaft-active-request-panel` — `src/styles/askdaft-dashboard.css:115`
+- `.askdaft-active-request-panel .account-panel-heading h2` — `src/styles/askdaft-dashboard.css:342`
+- `.askdaft-active-request-panel > p` — `src/styles/askdaft-dashboard.css:346`
+- `.askdaft-active-request-panel .account-dashboard-actions` — `src/styles/askdaft-dashboard.css:352`
+- `.askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel)` — `src/styles/askdaft-dashboard.css:357`
+- `.askdaft-next-steps-panel` — `src/styles/askdaft-dashboard.css:361`
+- `.askdaft-plan-panel` — `src/styles/askdaft-dashboard.css:116`
+- `.askdaft-dashboard-page .account-dashboard-wide` — `src/styles/askdaft-dashboard.css:369`
+- `.askdaft-dashboard-page .account-dashboard-hero` — `src/styles/askdaft-dashboard.css:303`
+- `.askdaft-dashboard-page .account-dashboard-actions` — `src/styles/askdaft-dashboard.css:311`
+- `.askdaft-dashboard-page .dashboard-status-card` — `src/styles/askdaft-dashboard.css:322`
+- `.askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel)` — `src/styles/askdaft-dashboard.css:357`
+- `.askdaft-dashboard-page .dashboard-status-grid` — `src/styles/askdaft-dashboard.css:318`
+- `.askdaft-active-request-panel .account-dashboard-actions` — `src/styles/askdaft-dashboard.css:352`
+- `.askdaft-dashboard-page` — `src/styles/askdaft-dashboard.css:303`
+- `.askdaft-client-layout .account-dashboard-panel` — `src/styles/askdaft-dashboard.css:357`
+- `.askdaft-client-layout .account-dashboard-panel > p:last-child` — `src/styles/askdaft-dashboard.css:416`
+- `.askdaft-active-request-panel` — `src/styles/askdaft-dashboard.css:115`
+- `.askdaft-next-steps-panel` — `src/styles/askdaft-dashboard.css:361`
+- `.askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel):not(.askdaft-plan-panel):not(.account-dashboard-wide)` — `src/styles/askdaft-dashboard.css:425`
+- `.askdaft-plan-panel` — `src/styles/askdaft-dashboard.css:116`
+- `.askdaft-file-list span` — `src/styles/askdaft-dashboard.css:256`
+- `.askdaft-plan-list span` — `src/styles/askdaft-dashboard.css:257`
+- `.askdaft-dashboard-page .account-panel-heading h2` — `src/styles/askdaft-dashboard.css:449`
+- `.askdaft-dashboard-page .account-dashboard-panel p` — `src/styles/askdaft-dashboard.css:453`
+- `.askdaft-dashboard-page .account-dashboard-wide` — `src/styles/askdaft-dashboard.css:369`
+- `.askdaft-plan-list` — `src/styles/askdaft-dashboard.css:219`
+- `.askdaft-plan-panel` — `src/styles/askdaft-dashboard.css:116`
+- `.askdaft-file-list div` — `src/styles/askdaft-dashboard.css:228`
+- `.askdaft-tech-board` — `src/styles/askdaft-dashboard.css:485`
+- `.askdaft-tech-board .account-dashboard-panel` — `src/styles/askdaft-dashboard.css:493`
+- `.askdaft-add-device-grid` — `src/styles/askdaft-dashboard.css:497`
+- `.askdaft-add-device-grid button` — `src/styles/askdaft-dashboard.css:504`
+- `.askdaft-add-device-grid button` — `src/styles/askdaft-dashboard.css:504`
+- `.askdaft-add-device-grid button:hover` — `src/styles/askdaft-dashboard.css:520`
+- `.askdaft-tech-tree` — `src/styles/askdaft-dashboard.css:526`
+- `.askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:653`
+- `.askdaft-tech-board` — `src/styles/askdaft-dashboard.css:485`
+- `.askdaft-tech-board .account-dashboard-panel` — `src/styles/askdaft-dashboard.css:493`
+- `.askdaft-device-category-tabs` — `src/styles/askdaft-dashboard.css:777`
+- `.askdaft-device-category-tabs button` — `src/styles/askdaft-dashboard.css:784`
+- `.askdaft-device-category-tabs button.is-active` — `src/styles/askdaft-dashboard.css:796`
+- `.askdaft-add-device-category > p` — `src/styles/askdaft-dashboard.css:802`
+- `.askdaft-device-field-preview` — `src/styles/askdaft-dashboard.css:809`
+- `.askdaft-device-field-preview strong` — `src/styles/askdaft-dashboard.css:818`
+- `.askdaft-device-field-preview span` — `src/styles/askdaft-dashboard.css:825`
+- `.askdaft-device-category-tabs` — `src/styles/askdaft-dashboard.css:777`
+- `.askdaft-device-category-tabs button` — `src/styles/askdaft-dashboard.css:784`
+- `.askdaft-view-mode-strip` — `src/styles/askdaft-dashboard.css:968`
+- `.askdaft-view-mode-strip h2` — `src/styles/askdaft-dashboard.css:983`
+- `.askdaft-view-mode-strip p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:991`
+- `.askdaft-view-toggle` — `src/styles/askdaft-dashboard.css:1000`
+- `.askdaft-view-toggle button` — `src/styles/askdaft-dashboard.css:1009`
+- `.askdaft-view-toggle button.is-active` — `src/styles/askdaft-dashboard.css:1022`
+- `.askdaft-tech-board.is-simple-view .selected-device-pro-details` — `src/styles/askdaft-dashboard.css:1055`
+- `.askdaft-tech-board.is-simple-view .selected-device-checks` — `src/styles/askdaft-dashboard.css:1056`
+- `.askdaft-client-layout.is-simple-view .askdaft-plan-panel` — `src/styles/askdaft-dashboard.css:1057`
+- `.askdaft-client-layout.is-simple-view .recent-request-list` — `src/styles/askdaft-dashboard.css:1058`
+- `.askdaft-client-layout.is-simple-view .account-dashboard-panel:has(.recent-request-list)` — `src/styles/askdaft-dashboard.css:1059`
+- `.askdaft-tech-board.is-simple-view .tech-tree-group-heading small` — `src/styles/askdaft-dashboard.css:1063`
+- `.askdaft-tech-board.is-simple-view .askdaft-device-field-preview` — `src/styles/askdaft-dashboard.css:1064`
+- `.askdaft-tech-board.is-simple-view .selected-device-status` — `src/styles/askdaft-dashboard.css:1068`
+- `.askdaft-tech-board.is-pro-view .askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:1073`
+- `.askdaft-client-layout.is-pro-view .askdaft-active-request-panel` — `src/styles/askdaft-dashboard.css:1081`
+- `.askdaft-tech-board.is-simple-view` — `src/styles/askdaft-dashboard.css:1055`
+- `.askdaft-tech-board.is-simple-view .account-dashboard-panel` — `src/styles/askdaft-dashboard.css:1096`
+- `.askdaft-tech-board.is-simple-view .askdaft-device-add-panel` — `src/styles/askdaft-dashboard.css:1100`
+- `.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:1101`
+- `.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:1101`
+- `.askdaft-tech-board.is-simple-view .selected-device-status` — `src/styles/askdaft-dashboard.css:1068`
+- `.askdaft-tech-board.is-simple-view .selected-device-status > span` — `src/styles/askdaft-dashboard.css:1114`
+- `.askdaft-tech-board.is-simple-view .selected-device-simple-summary` — `src/styles/askdaft-dashboard.css:1119`
+- `.askdaft-tech-board.is-simple-view .device-action-row` — `src/styles/askdaft-dashboard.css:1125`
+- `.askdaft-tech-board.is-simple-view .device-action` — `src/styles/askdaft-dashboard.css:1125`
+- `.askdaft-tech-board.is-simple-view .askdaft-add-device-grid` — `src/styles/askdaft-dashboard.css:1136`
+- `.askdaft-tech-board.is-simple-view .askdaft-tech-tree-panel` — `src/styles/askdaft-dashboard.css:1142`
+- `.askdaft-tech-board.is-simple-view .tech-tree-groups` — `src/styles/askdaft-dashboard.css:1146`
+- `.askdaft-tech-board.is-simple-view .tech-tree-group` — `src/styles/askdaft-dashboard.css:1063`
+- `.askdaft-tech-board.is-simple-view .tech-tree-node` — `src/styles/askdaft-dashboard.css:1154`
+- `.askdaft-tech-board.is-simple-view .tech-tree-node > span` — `src/styles/askdaft-dashboard.css:1159`
+- `.askdaft-client-layout.is-simple-view` — `src/styles/askdaft-dashboard.css:1057`
+- `.askdaft-client-layout.is-simple-view .askdaft-active-request-panel` — `src/styles/askdaft-dashboard.css:1168`
+- `.askdaft-client-layout.is-simple-view .account-dashboard-wide` — `src/styles/askdaft-dashboard.css:1169`
+- `.askdaft-client-layout.is-simple-view .askdaft-next-steps-panel` — `src/styles/askdaft-dashboard.css:1173`
+- `.askdaft-client-layout.is-simple-view .account-dashboard-panel:has(.askdaft-file-list)` — `src/styles/askdaft-dashboard.css:1174`
+- `.askdaft-tech-board.is-simple-view` — `src/styles/askdaft-dashboard.css:1055`
+- `.askdaft-tech-board.is-simple-view .askdaft-device-add-panel` — `src/styles/askdaft-dashboard.css:1100`
+- `.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:1101`
+- `.askdaft-client-layout.is-simple-view` — `src/styles/askdaft-dashboard.css:1057`
+- `.askdaft-tech-board.is-simple-view .tech-tree-group .tech-tree-branches` — `src/styles/askdaft-dashboard.css:1197`
+- `.askdaft-client-layout.is-simple-view .askdaft-request-progress` — `src/styles/askdaft-dashboard.css:1201`
+- `.askdaft-guided-request-preview` — `src/styles/askdaft-dashboard.css:1212`
+- `.askdaft-plan-comparison` — `src/styles/askdaft-dashboard.css:1213`
+- `.askdaft-guided-request-heading` — `src/styles/askdaft-dashboard.css:1226`
+- `.askdaft-plan-comparison-heading` — `src/styles/askdaft-dashboard.css:1227`
+- `.askdaft-guided-request-heading h2` — `src/styles/askdaft-dashboard.css:1235`
+- `.askdaft-plan-comparison-heading h2` — `src/styles/askdaft-dashboard.css:1236`
+- `.askdaft-guided-request-heading p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:1245`
+- `.askdaft-plan-comparison-heading p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:1246`
+- `.askdaft-guided-device-row` — `src/styles/askdaft-dashboard.css:1255`
+- `.askdaft-guided-device-row button` — `src/styles/askdaft-dashboard.css:1262`
+- `.askdaft-guided-device-row button:hover` — `src/styles/askdaft-dashboard.css:1274`
+- `.askdaft-guided-step-grid` — `src/styles/askdaft-dashboard.css:1279`
+- `.askdaft-guided-step-grid article` — `src/styles/askdaft-dashboard.css:1285`
+- `.askdaft-guided-step-grid span` — `src/styles/askdaft-dashboard.css:1293`
+- `.askdaft-guided-step-grid strong` — `src/styles/askdaft-dashboard.css:1306`
+- `.askdaft-guided-step-grid p` — `src/styles/askdaft-dashboard.css:1314`
+- `.askdaft-guided-summary-card` — `src/styles/askdaft-dashboard.css:1322`
+- `.askdaft-guided-summary-card h3` — `src/styles/askdaft-dashboard.css:1334`
+- `.askdaft-guided-summary-card p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:1341`
+- `.askdaft-guided-step-grid` — `src/styles/askdaft-dashboard.css:1279`
+- `.askdaft-plan-comparison-grid` — `src/styles/askdaft-dashboard.css:1352`
+- `.askdaft-guided-request-heading` — `src/styles/askdaft-dashboard.css:1226`
+- `.askdaft-plan-comparison-heading` — `src/styles/askdaft-dashboard.css:1227`
+- `.askdaft-guided-summary-card` — `src/styles/askdaft-dashboard.css:1322`
+- `.askdaft-guided-step-grid` — `src/styles/askdaft-dashboard.css:1279`
+- `.askdaft-plan-comparison-grid` — `src/styles/askdaft-dashboard.css:1352`
+- `.askdaft-current-plan-card` — `src/styles/askdaft-dashboard.css:1369`
+- `.askdaft-guided-device-row` — `src/styles/askdaft-dashboard.css:1255`
 
-_Showing 200 of 1133 results._
+_Showing 200 of 895 results._
 
 
 ## Reading Mode / Emphasis Selector Locations
@@ -502,134 +502,75 @@ _Showing 200 of 1133 results._
 - `.story-card-statement .pricing-emphasis-green` — `src/styles/cards.css:249`
 - `.story-card-statement .pricing-emphasis-yellow` — `src/styles/cards.css:250`
 - `.story-card-statement .pricing-emphasis-red` — `src/styles/cards.css:251`
-- `.split-identity-section .identity-panel p .pricing-emphasis-blue` — `src/styles/cards.css:550`
-- `.split-identity-section .identity-panel p .pricing-emphasis-green` — `src/styles/cards.css:551`
-- `.split-identity-section .identity-panel p .pricing-emphasis-yellow` — `src/styles/cards.css:552`
-- `.split-identity-section .identity-panel p .pricing-emphasis-red` — `src/styles/cards.css:553`
-- `.hub-select-section .hub-select-card p .pricing-emphasis-blue` — `src/styles/cards.css:959`
-- `.hub-select-section .hub-select-card p .pricing-emphasis-green` — `src/styles/cards.css:960`
-- `.hub-select-section .hub-select-card p .pricing-emphasis-yellow` — `src/styles/cards.css:961`
-- `.hub-select-section .hub-select-card p .pricing-emphasis-red` — `src/styles/cards.css:962`
-- `.hub-select-section .hub-select-card span:not(.pricing-emphasis-blue):not(.pricing-emphasis-green):not(.pricing-emphasis-yellow):not(.pricing-emphasis-red):not(.brand-word):not(.brand-daft):not(.brand-itude):not(.brand-ask)` — `src/styles/cards.css:1032`
-- `.floating-reading-tools` — `src/styles/mobile.css:526`
-- `.reading-mode-toggle` — `src/styles/mobile.css:539`
-- `.reading-mode-toggle` — `src/styles/mobile.css:539`
-- `.reading-mode-toggle span` — `src/styles/mobile.css:571`
-- `.reading-mode-toggle strong` — `src/styles/mobile.css:579`
-- `.reading-mode-toggle.active` — `src/styles/mobile.css:586`
-- `.reading-mode-toggle.active strong` — `src/styles/mobile.css:592`
-- `.reading-mode-toggle:hover` — `src/styles/mobile.css:598`
-- `.reading-mode-toggle:focus-visible` — `src/styles/mobile.css:599`
-- `.floating-reading-tools` — `src/styles/mobile.css:526`
-- `.reading-mode-toggle` — `src/styles/mobile.css:539`
-- `.reading-mode-toggle span` — `src/styles/mobile.css:571`
-- `.reading-mode-toggle strong` — `src/styles/mobile.css:579`
-- `.reading-mode-toggle` — `src/styles/mobile.css:539`
-- `.home-game-page.reading-impairment-mode :where(.pricing-emphasis-yellow` — `src/styles/mobile.css:736`
-- `.pricing-emphasis-red` — `src/styles/mobile.css:736`
-- `.pricing-emphasis-blue` — `src/styles/mobile.css:736`
-- `.pricing-emphasis-green):not(.hero-brand-title *):not(.game-path strong *)` — `src/styles/mobile.css:736`
-- `.askdaft-page.reading-impairment-mode :where(.pricing-emphasis-yellow` — `src/styles/mobile.css:741`
-- `.pricing-emphasis-red` — `src/styles/mobile.css:736`
-- `.pricing-emphasis-blue` — `src/styles/mobile.css:736`
-- `.pricing-emphasis-green)` — `src/styles/mobile.css:736`
-- `.home-game-page.reading-impairment-mode :where(.story-card-number` — `src/styles/mobile.css:746`
-- `.home-game-page.reading-impairment-mode .story-specialties li::before` — `src/styles/mobile.css:751`
-- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-daft` — `src/styles/mobile.css:756`
-- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-itude` — `src/styles/mobile.css:757`
-- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-ask` — `src/styles/mobile.css:758`
-- `.floating-reading-tools` — `src/styles/pages.css:3574`
-- `.floating-reading-tools` — `src/styles/pages.css:3574`
-- `.reading-impairment-mode .askdaft-read-key` — `src/styles/pages.css:4013`
-- `.reading-impairment-mode .askdaft-read-important` — `src/styles/pages.css:4018`
-- `.reading-impairment-mode .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4023`
-- `.reading-impairment-mode .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4024`
-- `.reading-impairment-mode .askdaft-front-door-card:hover .askdaft-read-key` — `src/styles/pages.css:4029`
-- `.reading-impairment-mode .askdaft-support-shortcut:hover .askdaft-read-key` — `src/styles/pages.css:4030`
-- `.reading-impairment-mode .askdaft-front-door-card small` — `src/styles/pages.css:4034`
-- `.askdaft-page.reading-impairment-mode .askdaft-read-key` — `src/styles/pages.css:4245`
-- `.askdaft-page.reading-impairment-mode .askdaft-read-important` — `src/styles/pages.css:4250`
-- `.askdaft-page.reading-impairment-mode .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4255`
-- `.askdaft-page.reading-impairment-mode .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4256`
-- `.askdaft-page.reading-impairment-mode .askdaft-front-door-card:hover .askdaft-read-key` — `src/styles/pages.css:4261`
-- `.askdaft-page.reading-impairment-mode .askdaft-support-shortcut:hover .askdaft-read-key` — `src/styles/pages.css:4262`
-- `.askdaft-page.reading-mode-off .askdaft-read-key` — `src/styles/pages.css:4303`
-- `.askdaft-page.reading-mode-off .askdaft-read-important` — `src/styles/pages.css:4304`
-- `.askdaft-page.reading-mode-off :where(.askdaft-read-key` — `src/styles/pages.css:4305`
-- `.askdaft-read-important).pricing-emphasis-yellow` — `src/styles/pages.css:4305`
-- `.askdaft-page.reading-mode-off :where(.askdaft-read-key` — `src/styles/pages.css:4305`
-- `.askdaft-read-important).pricing-emphasis-blue` — `src/styles/pages.css:4306`
-- `.askdaft-page.reading-mode-off :where(.askdaft-read-key` — `src/styles/pages.css:4305`
-- `.askdaft-read-important).pricing-emphasis-green` — `src/styles/pages.css:4307`
-- `.askdaft-page.reading-mode-off :where(.askdaft-read-key` — `src/styles/pages.css:4305`
-- `.askdaft-read-important).pricing-emphasis-red` — `src/styles/pages.css:4308`
-- `.askdaft-page.reading-mode-off .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4314`
-- `.askdaft-page.reading-mode-off .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4315`
-- `.askdaft-page.reading-mode-on .askdaft-read-key` — `src/styles/pages.css:4321`
-- `.askdaft-page.reading-mode-on .askdaft-read-important` — `src/styles/pages.css:4326`
-- `.askdaft-page.reading-mode-on .pricing-emphasis-yellow.askdaft-read-important` — `src/styles/pages.css:4327`
-- `.askdaft-page.reading-mode-on .pricing-emphasis-blue.askdaft-read-important` — `src/styles/pages.css:4328`
-- `.askdaft-page.reading-mode-on .pricing-emphasis-green.askdaft-read-important` — `src/styles/pages.css:4329`
-- `.askdaft-page.reading-mode-on .pricing-emphasis-red.askdaft-read-important` — `src/styles/pages.css:4330`
-- `.askdaft-page.reading-mode-on .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4336`
-- `.askdaft-page.reading-mode-on .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4337`
-- `.askdaft-page.reading-mode-on .askdaft-front-door-card:hover .askdaft-read-key` — `src/styles/pages.css:4342`
-- `.askdaft-page.reading-mode-on .askdaft-support-shortcut:hover .askdaft-read-key` — `src/styles/pages.css:4343`
-- `.floating-page-tools .reading-tool strong` — `src/styles/pages.css:4349`
-- `.askdaft-page.reading-mode-on .floating-page-tools .reading-tool` — `src/styles/pages.css:4353`
-- `.askdaft-page.reading-mode-on .floating-page-tools .reading-tool strong` — `src/styles/pages.css:4359`
-- `.askdaft-page.reading-mode-off .floating-page-tools .reading-tool strong` — `src/styles/pages.css:4363`
-- `.askdaft-page.reading-impairment-mode .askdaft-read-key` — `src/styles/pages.css:4245`
-- `.askdaft-page.reading-impairment-mode .askdaft-read-important` — `src/styles/pages.css:4250`
-- `.askdaft-page.reading-impairment-mode .pricing-emphasis-yellow.askdaft-read-important` — `src/styles/pages.css:4378`
-- `.askdaft-page.reading-impairment-mode .pricing-emphasis-blue.askdaft-read-important` — `src/styles/pages.css:4379`
-- `.askdaft-page.reading-impairment-mode .pricing-emphasis-green.askdaft-read-important` — `src/styles/pages.css:4380`
-- `.askdaft-page.reading-impairment-mode .pricing-emphasis-red.askdaft-read-important` — `src/styles/pages.css:4381`
-- `.askdaft-page.reading-impairment-mode .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4255`
-- `.askdaft-page.reading-impairment-mode .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4256`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-read-key` — `src/styles/pages.css:4394`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-read-important` — `src/styles/pages.css:4399`
-- `.askdaft-page:not(.reading-impairment-mode) .pricing-emphasis-yellow.askdaft-read-important` — `src/styles/pages.css:4405`
-- `.askdaft-page:not(.reading-impairment-mode) .pricing-emphasis-blue.askdaft-read-important` — `src/styles/pages.css:4410`
-- `.askdaft-page:not(.reading-impairment-mode) .pricing-emphasis-green.askdaft-read-important` — `src/styles/pages.css:4415`
-- `.askdaft-page:not(.reading-impairment-mode) .pricing-emphasis-red.askdaft-read-important` — `src/styles/pages.css:4420`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-front-door-card .askdaft-read-key` — `src/styles/pages.css:4426`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-support-shortcut .askdaft-read-key` — `src/styles/pages.css:4427`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-front-door-card:hover .askdaft-read-key` — `src/styles/pages.css:4432`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-support-shortcut:hover .askdaft-read-key` — `src/styles/pages.css:4433`
-- `.askdaft-page.reading-mode-on .askdaft-read-key` — `src/styles/pages.css:4321`
-- `.askdaft-page.reading-mode-off .askdaft-read-key` — `src/styles/pages.css:4303`
-- `.askdaft-page.reading-mode-on .askdaft-read-important` — `src/styles/pages.css:4326`
-- `.askdaft-page.reading-mode-off .askdaft-read-important` — `src/styles/pages.css:4304`
-- `.reading-tech-word` — `src/styles/pages.css:4453`
-- `.reading-action-word` — `src/styles/pages.css:4454`
-- `.reading-risk-word` — `src/styles/pages.css:4455`
-- `.reading-money-word` — `src/styles/pages.css:4456`
-- `.askdaft-page.reading-impairment-mode .reading-tech-word` — `src/styles/pages.css:4464`
-- `.askdaft-page.reading-impairment-mode .reading-action-word` — `src/styles/pages.css:4465`
-- `.askdaft-page.reading-impairment-mode .reading-risk-word` — `src/styles/pages.css:4466`
-- `.askdaft-page.reading-impairment-mode .reading-money-word` — `src/styles/pages.css:4467`
-- `.askdaft-page:not(.reading-impairment-mode) .reading-tech-word` — `src/styles/pages.css:4474`
-- `.askdaft-page:not(.reading-impairment-mode) .reading-action-word` — `src/styles/pages.css:4479`
-- `.askdaft-page:not(.reading-impairment-mode) .reading-risk-word` — `src/styles/pages.css:4484`
-- `.askdaft-page:not(.reading-impairment-mode) .reading-money-word` — `src/styles/pages.css:4489`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-front-door-card > small .reading-money-word` — `src/styles/pages.css:4495`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-front-door-card strong .reading-action-word` — `src/styles/pages.css:4501`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-support-shortcut strong .reading-action-word` — `src/styles/pages.css:4502`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-front-door-card strong .reading-risk-word` — `src/styles/pages.css:4506`
-- `.askdaft-page:not(.reading-impairment-mode) .askdaft-support-shortcut strong .reading-risk-word` — `src/styles/pages.css:4507`
-- `.askdaft-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask` — `src/styles/pages.css:4518`
-- `.askdaft-page.reading-impairment-mode .brand-word-askdaft .brand-ask` — `src/styles/pages.css:4519`
-- `.askdaft-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft` — `src/styles/pages.css:4525`
-- `.askdaft-page.reading-impairment-mode .brand-word-askdaft .brand-daft` — `src/styles/pages.css:4526`
-- `.askdaft-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft` — `src/styles/pages.css:4532`
-- `.askdaft-page.reading-impairment-mode .brand-word-daftitude .brand-daft` — `src/styles/pages.css:4533`
-- `.askdaft-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude` — `src/styles/pages.css:4539`
-- `.askdaft-page.reading-impairment-mode .brand-word-daftitude .brand-itude` — `src/styles/pages.css:4540`
-- `.brand-word .reading-tech-word` — `src/styles/pages.css:4545`
-- `.brand-word .reading-action-word` — `src/styles/pages.css:4546`
-- `.brand-word .reading-risk-word` — `src/styles/pages.css:4547`
-- `.brand-word .reading-caution-word` — `src/styles/pages.css:4548`
+- `.hub-select-section .hub-select-card p .pricing-emphasis-blue` — `src/styles/cards.css:704`
+- `.hub-select-section .hub-select-card p .pricing-emphasis-green` — `src/styles/cards.css:705`
+- `.hub-select-section .hub-select-card p .pricing-emphasis-yellow` — `src/styles/cards.css:706`
+- `.hub-select-section .hub-select-card p .pricing-emphasis-red` — `src/styles/cards.css:707`
+- `.hub-select-section .hub-select-card span:not(.pricing-emphasis-blue):not(.pricing-emphasis-green):not(.pricing-emphasis-yellow):not(.pricing-emphasis-red):not(.brand-word):not(.brand-daft):not(.brand-itude):not(.brand-ask)` — `src/styles/cards.css:777`
+- `.floating-reading-tools` — `src/styles/mobile.css:161`
+- `.reading-mode-toggle` — `src/styles/mobile.css:174`
+- `.reading-mode-toggle` — `src/styles/mobile.css:174`
+- `.reading-mode-toggle span` — `src/styles/mobile.css:206`
+- `.reading-mode-toggle strong` — `src/styles/mobile.css:214`
+- `.reading-mode-toggle.active` — `src/styles/mobile.css:221`
+- `.reading-mode-toggle.active strong` — `src/styles/mobile.css:227`
+- `.reading-mode-toggle:hover` — `src/styles/mobile.css:233`
+- `.reading-mode-toggle:focus-visible` — `src/styles/mobile.css:234`
+- `.floating-reading-tools` — `src/styles/mobile.css:161`
+- `.reading-mode-toggle` — `src/styles/mobile.css:174`
+- `.reading-mode-toggle span` — `src/styles/mobile.css:206`
+- `.reading-mode-toggle strong` — `src/styles/mobile.css:214`
+- `.reading-mode-toggle` — `src/styles/mobile.css:174`
+- `.reading-tech-word` — `src/styles/reading-mode.css:13`
+- `.reading-action-word` — `src/styles/reading-mode.css:14`
+- `.reading-risk-word` — `src/styles/reading-mode.css:15`
+- `.reading-caution-word` — `src/styles/reading-mode.css:16`
+- `.reading-money-word` — `src/styles/reading-mode.css:17`
+- `.reading-impairment-mode .reading-tech-word` — `src/styles/reading-mode.css:25`
+- `.reading-impairment-mode .reading-action-word` — `src/styles/reading-mode.css:26`
+- `.reading-impairment-mode .reading-risk-word` — `src/styles/reading-mode.css:27`
+- `.reading-impairment-mode .reading-caution-word` — `src/styles/reading-mode.css:28`
+- `.reading-impairment-mode .reading-money-word` — `src/styles/reading-mode.css:29`
+- `.home-game-page.reading-impairment-mode :where(.pricing-emphasis-yellow` — `src/styles/reading-mode.css:36`
+- `.pricing-emphasis-red` — `src/styles/reading-mode.css:36`
+- `.pricing-emphasis-blue` — `src/styles/reading-mode.css:36`
+- `.pricing-emphasis-green):not(.hero-brand-title *):not(.game-path strong *)` — `src/styles/reading-mode.css:36`
+- `.askdaft-page.reading-impairment-mode :where(.pricing-emphasis-yellow` — `src/styles/reading-mode.css:41`
+- `.pricing-emphasis-red` — `src/styles/reading-mode.css:36`
+- `.pricing-emphasis-blue` — `src/styles/reading-mode.css:36`
+- `.pricing-emphasis-green)` — `src/styles/reading-mode.css:36`
+- `.home-game-page.reading-impairment-mode :where(.story-card-number` — `src/styles/reading-mode.css:46`
+- `.home-game-page.reading-impairment-mode .story-specialties li::before` — `src/styles/reading-mode.css:51`
+- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-daft` — `src/styles/reading-mode.css:56`
+- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-itude` — `src/styles/reading-mode.css:57`
+- `.home-game-page.reading-impairment-mode .brand-word:not(.hero-brand-title .brand-word):not(.game-path strong .brand-word) .brand-ask` — `src/styles/reading-mode.css:58`
+- `.phase-page:not(.reading-impairment-mode) .reading-tech-word` — `src/styles/reading-mode.css:64`
+- `.account-page:not(.reading-impairment-mode) .reading-tech-word` — `src/styles/reading-mode.css:65`
+- `.phase-page:not(.reading-impairment-mode) .reading-action-word` — `src/styles/reading-mode.css:70`
+- `.account-page:not(.reading-impairment-mode) .reading-action-word` — `src/styles/reading-mode.css:71`
+- `.phase-page:not(.reading-impairment-mode) .reading-risk-word` — `src/styles/reading-mode.css:76`
+- `.account-page:not(.reading-impairment-mode) .reading-risk-word` — `src/styles/reading-mode.css:77`
+- `.phase-page:not(.reading-impairment-mode) .reading-caution-word` — `src/styles/reading-mode.css:82`
+- `.phase-page:not(.reading-impairment-mode) .reading-money-word` — `src/styles/reading-mode.css:83`
+- `.account-page:not(.reading-impairment-mode) .reading-caution-word` — `src/styles/reading-mode.css:84`
+- `.account-page:not(.reading-impairment-mode) .reading-money-word` — `src/styles/reading-mode.css:85`
+- `.phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask` — `src/styles/reading-mode.css:92`
+- `.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask` — `src/styles/reading-mode.css:93`
+- `.reading-impairment-mode .brand-word-askdaft .brand-ask` — `src/styles/reading-mode.css:94`
+- `.phase-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft` — `src/styles/reading-mode.css:100`
+- `.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft` — `src/styles/reading-mode.css:101`
+- `.reading-impairment-mode .brand-word-askdaft .brand-daft` — `src/styles/reading-mode.css:102`
+- `.phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft` — `src/styles/reading-mode.css:108`
+- `.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft` — `src/styles/reading-mode.css:109`
+- `.reading-impairment-mode .brand-word-daftitude .brand-daft` — `src/styles/reading-mode.css:110`
+- `.phase-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude` — `src/styles/reading-mode.css:116`
+- `.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude` — `src/styles/reading-mode.css:117`
+- `.reading-impairment-mode .brand-word-daftitude .brand-itude` — `src/styles/reading-mode.css:118`
+- `.brand-word .reading-tech-word` — `src/styles/reading-mode.css:123`
+- `.brand-word .reading-action-word` — `src/styles/reading-mode.css:124`
+- `.brand-word .reading-risk-word` — `src/styles/reading-mode.css:125`
+- `.brand-word .reading-caution-word` — `src/styles/reading-mode.css:126`
+- `.brand-word .reading-money-word` — `src/styles/reading-mode.css:127`
 - `.pricing-emphasis-yellow` — `src/styles/utilities.css:128`
 - `.home-game-page .pricing-emphasis-yellow` — `src/styles/utilities.css:129`
 - `.game-center-panel .pricing-emphasis-yellow` — `src/styles/utilities.css:130`
@@ -662,6 +603,50 @@ _Showing 200 of 1133 results._
 
 ## Broad Shared Selectors That May Cause Leaks
 
+- `.account-page .phase-btn` — `src/styles/account.css:12`
+- `.account-page .phase-btn-primary` — `src/styles/account.css:28`
+- `.account-page .phase-btn-secondary` — `src/styles/account.css:35`
+- `.account-page .phase-btn-ghost` — `src/styles/account.css:36`
+- `.account-page .phase-btn:hover` — `src/styles/account.css:42`
+- `.account-page .phase-btn:focus-visible` — `src/styles/account.css:43`
+- `.account-page .phase-btn-primary:hover` — `src/styles/account.css:50`
+- `.account-page .phase-btn-primary:focus-visible` — `src/styles/account.css:51`
+- `.account-page` — `src/styles/account.css:12`
+- `.account-page` — `src/styles/account.css:12`
+- `.account-page .phase-btn` — `src/styles/account.css:12`
+- `.account-auth-actions .phase-btn` — `src/styles/account.css:380`
+- `.account-dashboard-actions .phase-btn` — `src/styles/account.css:381`
+- `.askdaft-page .phase-section` — `src/styles/askdaft-base.css:7`
+- `.askdaft-page .phase-section-heading` — `src/styles/askdaft-base.css:13`
+- `.askdaft-page .phase-section-heading h2` — `src/styles/askdaft-base.css:28`
+- `.askdaft-page .phase-section h2` — `src/styles/askdaft-base.css:29`
+- `.askdaft-page .phase-section-heading p` — `src/styles/askdaft-base.css:37`
+- `.askdaft-page .phase-section > p` — `src/styles/askdaft-base.css:38`
+- `.askdaft-page .phase-section` — `src/styles/askdaft-base.css:7`
+- `.askdaft-page .phase-section-heading` — `src/styles/askdaft-base.css:13`
+- `.askdaft-page .phase-section-heading h2` — `src/styles/askdaft-base.css:28`
+- `.askdaft-page .phase-section h2` — `src/styles/askdaft-base.css:29`
+- `.askdaft-page .phase-section-heading p` — `src/styles/askdaft-base.css:37`
+- `.askdaft-dashboard-page .account-dashboard-hero .phase-btn` — `src/styles/askdaft-dashboard.css:1420`
+- `.askdaft-dashboard-page .phase-btn` — `src/styles/askdaft-dashboard.css:1601`
+- `.askdaft-guided-summary-card .phase-btn` — `src/styles/askdaft-dashboard.css:1708`
+- `.askdaft-page .phase-btn` — `src/styles/askdaft-frontdoor.css:143`
+- `.askdaft-page .phase-btn-primary` — `src/styles/askdaft-frontdoor.css:159`
+- `.askdaft-page .phase-btn-secondary` — `src/styles/askdaft-frontdoor.css:166`
+- `.askdaft-page .phase-btn-ghost` — `src/styles/askdaft-frontdoor.css:171`
+- `.askdaft-page .phase-btn:hover` — `src/styles/askdaft-frontdoor.css:175`
+- `.askdaft-page .phase-btn:focus-visible` — `src/styles/askdaft-frontdoor.css:176`
+- `.askdaft-page .phase-btn-primary:hover` — `src/styles/askdaft-frontdoor.css:184`
+- `.askdaft-page .phase-btn-primary:focus-visible` — `src/styles/askdaft-frontdoor.css:185`
+- `.askdaft-page .askdaft-front-door .phase-section-heading` — `src/styles/askdaft-frontdoor.css:203`
+- `.askdaft-page .askdaft-front-door .phase-section-heading h2` — `src/styles/askdaft-frontdoor.css:209`
+- `.askdaft-page .askdaft-front-door .phase-section-heading p` — `src/styles/askdaft-frontdoor.css:217`
+- `.askdaft-page .phase-btn` — `src/styles/askdaft-frontdoor.css:143`
+- `.askdaft-ticket-summary .phase-btn:disabled` — `src/styles/askdaft-request.css:398`
+- `.askdaft-compact-copy .askdaft-ticket-summary .phase-btn` — `src/styles/askdaft-request.css:712`
+- `.askdaft-step-actions .phase-btn` — `src/styles/askdaft-request.css:839`
+- `.askdaft-step-actions .phase-btn:disabled` — `src/styles/askdaft-request.css:945`
+- `.askdaft-empty-ticket-state .phase-btn` — `src/styles/askdaft-tickets.css:81`
 - `.story-mode-section--daftitude .story-card-number` — `src/styles/cards.css:14`
 - `.story-mode-section--daftitude .story-card span` — `src/styles/cards.css:15`
 - `.story-mode-section--daftitude .story-card-statement strong` — `src/styles/cards.css:19`
@@ -709,8 +694,8 @@ _Showing 200 of 1133 results._
 - `#daftitude-story .story-card-heading-lockup h3` — `src/styles/cards.css:224`
 - `#daftitude-story .story-card > p:not(.story-card-statement)` — `src/styles/cards.css:140`
 - `#daftitude-story .story-card-statement` — `src/styles/cards.css:147`
-- `.askdaft-page .phase-card .phase-btn` — `src/styles/cards.css:1111`
-- `.askdaft-subscribe-card .phase-btn` — `src/styles/cards.css:1945`
+- `.askdaft-page .phase-card .phase-btn` — `src/styles/cards.css:856`
+- `.askdaft-subscribe-card .phase-btn` — `src/styles/cards.css:1686`
 - `.story-card` — `src/styles/home.css:39`
 - `.story-card` — `src/styles/home.css:39`
 - `.story-card` — `src/styles/home.css:39`
@@ -725,59 +710,21 @@ _Showing 200 of 1133 results._
 - `.story-card-statement` — `src/styles/home.css:106`
 - `.story-card-statement strong` — `src/styles/home.css:153`
 - `.story-card-statement strong + *` — `src/styles/home.css:158`
-- `.askdaft-page .phase-section` — `src/styles/mobile.css:162`
-- `.askdaft-page .phase-section-heading` — `src/styles/mobile.css:177`
-- `.askdaft-page .phase-section-heading h2` — `src/styles/mobile.css:181`
-- `.askdaft-page .phase-section h2` — `src/styles/mobile.css:182`
-- `.askdaft-page .phase-section-heading p` — `src/styles/mobile.css:187`
-- `.askdaft-page .phase-btn` — `src/styles/mobile.css:201`
-- `.story-card` — `src/styles/mobile.css:323`
-- `.story-card h3` — `src/styles/mobile.css:327`
-- `.story-card > p:not(.story-card-statement)` — `src/styles/mobile.css:328`
-- `.story-card-statement` — `src/styles/mobile.css:328`
-- `.home-game-page.reading-impairment-mode :where(.story-card-number` — `src/styles/mobile.css:746`
-- `.story-card span` — `src/styles/mobile.css:746`
-- `.account-page` — `src/styles/mobile.css:813`
-- `.account-auth-actions .phase-btn` — `src/styles/mobile.css:839`
-- `.account-dashboard-actions .phase-btn` — `src/styles/mobile.css:840`
-- `.account-page .phase-btn` — `src/styles/mobile.css:868`
-- `.askdaft-dashboard-page .account-dashboard-hero .phase-btn` — `src/styles/mobile.css:1204`
-- `.askdaft-guided-summary-card .phase-btn` — `src/styles/mobile.css:1321`
-- `.askdaft-page .phase-btn` — `src/styles/pages.css:343`
-- `.askdaft-page .phase-btn-primary` — `src/styles/pages.css:359`
-- `.askdaft-page .phase-btn-secondary` — `src/styles/pages.css:366`
-- `.askdaft-page .phase-btn-ghost` — `src/styles/pages.css:371`
-- `.askdaft-page .phase-btn:hover` — `src/styles/pages.css:375`
-- `.askdaft-page .phase-btn:focus-visible` — `src/styles/pages.css:376`
-- `.askdaft-page .phase-btn-primary:hover` — `src/styles/pages.css:383`
-- `.askdaft-page .phase-btn-primary:focus-visible` — `src/styles/pages.css:384`
-- `.askdaft-page .phase-section` — `src/styles/pages.css:389`
-- `.askdaft-page .phase-section-heading` — `src/styles/pages.css:395`
-- `.askdaft-page .phase-section-heading h2` — `src/styles/pages.css:410`
-- `.askdaft-page .phase-section h2` — `src/styles/pages.css:411`
-- `.askdaft-page .phase-section-heading p` — `src/styles/pages.css:418`
-- `.askdaft-page .phase-section > p` — `src/styles/pages.css:419`
-- `.account-page .phase-btn` — `src/styles/pages.css:479`
-- `.account-page .phase-btn-primary` — `src/styles/pages.css:495`
-- `.account-page .phase-btn-secondary` — `src/styles/pages.css:502`
-- `.account-page .phase-btn-ghost` — `src/styles/pages.css:503`
-- `.account-page .phase-btn:hover` — `src/styles/pages.css:509`
-- `.account-page .phase-btn:focus-visible` — `src/styles/pages.css:510`
-- `.account-page .phase-btn-primary:hover` — `src/styles/pages.css:517`
-- `.account-page .phase-btn-primary:focus-visible` — `src/styles/pages.css:518`
-- `.account-page` — `src/styles/pages.css:479`
-- `.askdaft-dashboard-page .phase-btn` — `src/styles/pages.css:2248`
-- `.askdaft-guided-summary-card .phase-btn` — `src/styles/pages.css:2355`
-- `.askdaft-ticket-summary .phase-btn:disabled` — `src/styles/pages.css:2899`
-- `.askdaft-empty-ticket-state .phase-btn` — `src/styles/pages.css:3213`
-- `.askdaft-page .phase-section-heading h2` — `src/styles/pages.css:410`
-- `.askdaft-compact-copy .askdaft-ticket-summary .phase-btn` — `src/styles/pages.css:3290`
-- `.askdaft-step-actions .phase-btn:disabled` — `src/styles/pages.css:3415`
-- `.askdaft-step-actions .phase-btn` — `src/styles/pages.css:3415`
-- `.askdaft-step-actions .phase-btn:disabled` — `src/styles/pages.css:3415`
-- `.askdaft-page .askdaft-front-door .phase-section-heading` — `src/styles/pages.css:4086`
-- `.askdaft-page .askdaft-front-door .phase-section-heading h2` — `src/styles/pages.css:4092`
-- `.askdaft-page .askdaft-front-door .phase-section-heading p` — `src/styles/pages.css:4100`
+- `.story-card` — `src/styles/mobile.css:29`
+- `.story-card h3` — `src/styles/mobile.css:33`
+- `.story-card > p:not(.story-card-statement)` — `src/styles/mobile.css:34`
+- `.story-card-statement` — `src/styles/mobile.css:34`
+- `.home-game-page.reading-impairment-mode :where(.story-card-number` — `src/styles/reading-mode.css:46`
+- `.story-card span` — `src/styles/reading-mode.css:46`
+- `.account-page:not(.reading-impairment-mode) .reading-tech-word` — `src/styles/reading-mode.css:65`
+- `.account-page:not(.reading-impairment-mode) .reading-action-word` — `src/styles/reading-mode.css:71`
+- `.account-page:not(.reading-impairment-mode) .reading-risk-word` — `src/styles/reading-mode.css:77`
+- `.account-page:not(.reading-impairment-mode) .reading-caution-word` — `src/styles/reading-mode.css:84`
+- `.account-page:not(.reading-impairment-mode) .reading-money-word` — `src/styles/reading-mode.css:85`
+- `.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-ask` — `src/styles/reading-mode.css:93`
+- `.account-page:not(.reading-impairment-mode) .brand-word-askdaft .brand-daft` — `src/styles/reading-mode.css:101`
+- `.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-daft` — `src/styles/reading-mode.css:109`
+- `.account-page:not(.reading-impairment-mode) .brand-word-daftitude .brand-itude` — `src/styles/reading-mode.css:117`
 - `.story-card .pricing-emphasis-yellow` — `src/styles/utilities.css:131`
 - `.story-card .pricing-emphasis-red` — `src/styles/utilities.css:143`
 - `.story-card .pricing-emphasis-blue` — `src/styles/utilities.css:155`
@@ -786,47 +733,46 @@ _Showing 200 of 1133 results._
 
 ## Possibly Unused CSS Classes
 
-- `.account-dashboard-grid` `src/styles/mobile.css:807`
-- `.active` `src/styles/cards.css:385`
-- `.article-card` `src/styles/pages.css:192`
-- `.articles-grid` `src/styles/mobile.css:316`
-- `.askdaft-callout` `src/styles/mobile.css:172`
-- `.askdaft-confirmation-grid` `src/styles/pages.css:3097`
-- `.askdaft-dashboard-ticket-list` `src/styles/pages.css:3148`
-- `.askdaft-dashboard-ticket-panel` `src/styles/pages.css:3143`
-- `.askdaft-field-helper` `src/styles/pages.css:3546`
-- `.askdaft-flow-layout` `src/styles/cards.css:1131`
-- `.askdaft-muted-detail` `src/styles/pages.css:3284`
-- `.askdaft-onboarding-panel` `src/styles/mobile.css:169`
-- `.askdaft-progress-step` `src/styles/cards.css:1720`
-- `.askdaft-progress-tracker` `src/styles/cards.css:1712`
-- `.askdaft-read-important` `src/styles/pages.css:4005`
-- `.askdaft-scope-card` `src/styles/pages.css:3245`
-- `.askdaft-summary-examples` `src/styles/cards.css:1358`
-- `.askdaft-ticket-confirmation-card` `src/styles/pages.css:3068`
-- `.askdaft-ticket-confirmation-hero` `src/styles/pages.css:3064`
-- `.blue` `src/styles/pages.css:740`
+- `.account-dashboard-grid` `src/styles/account.css:243`
+- `.active` `src/styles/askdaft-request.css:114`
+- `.article-card` `src/styles/pages.css:118`
+- `.articles-grid` `src/styles/mobile.css:22`
+- `.askdaft-callout` `src/styles/askdaft-base.css:40`
+- `.askdaft-confirmation-grid` `src/styles/askdaft-request.css:609`
+- `.askdaft-dashboard-ticket-list` `src/styles/askdaft-tickets.css:16`
+- `.askdaft-dashboard-ticket-panel` `src/styles/askdaft-tickets.css:11`
+- `.askdaft-field-helper` `src/styles/askdaft-request.css:936`
+- `.askdaft-flow-layout` `src/styles/cards.css:876`
+- `.askdaft-muted-detail` `src/styles/askdaft-request.css:706`
+- `.askdaft-onboarding-panel` `src/styles/askdaft-base.css:48`
+- `.askdaft-progress-step` `src/styles/cards.css:1463`
+- `.askdaft-progress-tracker` `src/styles/cards.css:1455`
+- `.askdaft-scope-card` `src/styles/askdaft-request.css:667`
+- `.askdaft-summary-examples` `src/styles/cards.css:1103`
+- `.askdaft-ticket-confirmation-card` `src/styles/askdaft-request.css:580`
+- `.askdaft-ticket-confirmation-hero` `src/styles/askdaft-request.css:576`
+- `.blue` `src/styles/account.css:273`
 - `.card-actions` `src/styles/buttons.css:62`
 - `.card-grid` `src/styles/home.css:19`
 - `.chip` `src/styles/home.css:204`
 - `.chip-grid` `src/styles/home.css:204`
-- `.contact-command` `src/styles/mobile.css:171`
-- `.contact-cta` `src/styles/pages.css:172`
-- `.contact-info` `src/styles/pages.css:188`
-- `.contact-page` `src/styles/pages.css:85`
-- `.crypto-hero` `src/styles/pages.css:100`
-- `.disabled` `src/styles/cards.css:1828`
+- `.contact-command` `src/styles/askdaft-base.css:51`
+- `.contact-cta` `src/styles/pages.css:98`
+- `.contact-info` `src/styles/pages.css:114`
+- `.contact-page` `src/styles/pages.css:11`
+- `.crypto-hero` `src/styles/pages.css:26`
+- `.disabled` `src/styles/cards.css:1571`
 - `.eyebrow` `src/styles/utilities.css:21`
 - `.feature-card` `src/styles/home.css:46`
-- `.featured-articles` `src/styles/pages.css:169`
+- `.featured-articles` `src/styles/pages.css:95`
 - `.footer-social` `src/styles/footer.css:166`
-- `.good` `src/styles/pages.css:1299`
-- `.green` `src/styles/pages.css:736`
-- `.hero--system` `src/styles/pages.css:104`
+- `.good` `src/styles/askdaft-dashboard.css:632`
+- `.green` `src/styles/account.css:269`
+- `.hero--system` `src/styles/pages.css:30`
 - `.hub-grid` `src/styles/home.css:20`
-- `.hub-hero` `src/styles/pages.css:96`
-- `.hub-page` `src/styles/pages.css:83`
-- `.hub-section` `src/styles/pages.css:163`
+- `.hub-hero` `src/styles/pages.css:22`
+- `.hub-page` `src/styles/pages.css:9`
+- `.hub-section` `src/styles/pages.css:89`
 - `.info-card` `src/styles/home.css:42`
 - `.is-askdaft` `src/styles/hero.css:129`
 - `.is-daftitude` `src/styles/hero.css:128`
@@ -836,61 +782,59 @@ _Showing 200 of 1133 results._
 - `.keyword-row` `src/styles/home.css:205`
 - `.mission-card` `src/styles/home.css:43`
 - `.mission-grid` `src/styles/home.css:21`
-- `.mission-hero` `src/styles/pages.css:97`
-- `.mission-page` `src/styles/pages.css:84`
+- `.mission-hero` `src/styles/pages.css:23`
+- `.mission-page` `src/styles/pages.css:10`
 - `.mobile-hero-ambience` `src/styles/hero.css:37`
 - `.mode-cta-mini-bubble` `src/styles/cta.css:49`
 - `.mode-cta-section--askdaft` `src/styles/cta.css:43`
-- `.news-item` `src/styles/pages.css:195`
-- `.package-card` `src/styles/pages.css:196`
-- `.package-grid` `src/styles/mobile.css:313`
-- `.packages` `src/styles/pages.css:165`
-- `.page` `src/styles/pages.css:81`
+- `.news-item` `src/styles/pages.css:121`
+- `.package-card` `src/styles/pages.css:122`
+- `.package-grid` `src/styles/mobile.css:19`
+- `.packages` `src/styles/pages.css:91`
+- `.page` `src/styles/pages.css:7`
 - `.page-actions` `src/styles/buttons.css:61`
-- `.page-hero` `src/styles/pages.css:94`
-- `.page-hero-content` `src/styles/pages.css:117`
+- `.page-hero` `src/styles/pages.css:20`
+- `.page-hero-content` `src/styles/pages.css:43`
 - `.page-kicker` `src/styles/utilities.css:25`
 - `.page-lede` `src/styles/utilities.css:63`
-- `.page-section` `src/styles/pages.css:162`
+- `.page-section` `src/styles/pages.css:88`
 - `.page-shell` `src/styles/utilities.css:8`
 - `.page-title` `src/styles/utilities.css:51`
-- `.phase-panel` `src/styles/mobile.css:168`
-- `.phase-warning-panel` `src/styles/mobile.css:170`
-- `.plan` `src/styles/pages.css:198`
-- `.pricing-range` `src/styles/pricing.css:115`
-- `.pricing-row` `src/styles/pricing.css:49`
-- `.pricing-service` `src/styles/pricing.css:106`
+- `.phase-panel` `src/styles/askdaft-base.css:39`
+- `.phase-warning-panel` `src/styles/askdaft-base.css:41`
+- `.plan` `src/styles/pages.css:124`
+- `.pricing-range` `src/styles/pricing.css:93`
+- `.pricing-row` `src/styles/pricing.css:63`
+- `.pricing-service` `src/styles/pricing.css:84`
 - `.pricing-table-lite` `src/styles/pricing.css:13`
 - `.quick-contact-lane-picker` `src/styles/cta.css:506`
-- `.quick-resources` `src/styles/pages.css:170`
-- `.reading-mode-off` `src/styles/pages.css:4303`
-- `.reading-mode-on` `src/styles/pages.css:4321`
-- `.reading-money-word` `src/styles/pages.css:4456`
-- `.ready` `src/styles/cards.css:1751`
-- `.red` `src/styles/pages.css:748`
-- `.resource-card` `src/styles/pages.css:200`
-- `.saved-setup-list` `src/styles/pages.css:764`
-- `.saved-setup-list-detailed` `src/styles/mobile.css:908`
+- `.quick-resources` `src/styles/pages.css:96`
+- `.reading-money-word` `src/styles/reading-mode.css:17`
+- `.ready` `src/styles/askdaft-request.css:497`
+- `.red` `src/styles/account.css:281`
+- `.resource-card` `src/styles/pages.css:126`
+- `.saved-setup-list` `src/styles/account.css:297`
+- `.saved-setup-list-detailed` `src/styles/askdaft-dashboard.css:194`
 - `.section-kicker` `src/styles/utilities.css:24`
 - `.section-lede` `src/styles/utilities.css:62`
 - `.section-shell` `src/styles/utilities.css:9`
 - `.section-title` `src/styles/utilities.css:50`
-- `.services` `src/styles/pages.css:164`
-- `.services-grid` `src/styles/mobile.css:312`
+- `.services` `src/styles/pages.css:90`
+- `.services-grid` `src/styles/mobile.css:18`
 - `.story-mode-section--askdaft` `src/styles/cards.css:322`
 - `.story-mode-section--daftitude` `src/styles/cards.css:14`
-- `.tech-card` `src/styles/pages.css:191`
-- `.tech-hero` `src/styles/pages.css:102`
-- `.tech-hub-container` `src/styles/mobile.css:315`
-- `.tech-hub-section` `src/styles/pages.css:168`
+- `.tech-card` `src/styles/pages.css:117`
+- `.tech-hero` `src/styles/pages.css:28`
+- `.tech-hub-container` `src/styles/mobile.css:21`
+- `.tech-hub-section` `src/styles/pages.css:94`
 - `.topic-card` `src/styles/home.css:44`
 - `.topic-grid` `src/styles/home.css:22`
-- `.yellow` `src/styles/pages.css:744`
+- `.yellow` `src/styles/account.css:277`
 
 
 ## Classes Used in Code but Missing CSS
 
-- `.""` — `src/components/askdaft/AskDaftReviewSummary.jsx`, `src/components/services/ServicesHero.jsx`, `src/pages/askdaft/AskDaft.jsx`, `src/pages/Home.jsx`
+- `.""` — `src/components/askdaft/AskDaftReviewSummary.jsx`, `src/components/services/ServicesHero.jsx`, `src/pages/Home.jsx`, `src/pages/askdaft/AskDaft.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.""}` — `src/components/askdaft/AskDaftRequestFlow.jsx`, `src/components/common/Navbar.jsx`, `src/components/home/FloatingPageTools.jsx`, `src/components/home/FloatingReadingTools.jsx`, `src/components/home/SystemMapSection.jsx`, `src/components/services/ServicePackages.jsx`
 - `."active"` — `src/components/askdaft/AskDaftRequestFlow.jsx`, `src/components/home/FloatingPageTools.jsx`, `src/components/home/FloatingReadingTools.jsx`, `src/components/home/SystemMapSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `."advanced"` — `src/components/home/SystemMapSection.jsx`
@@ -921,8 +865,7 @@ _Showing 200 of 1133 results._
 - `."onsite"` — `src/components/services/ServicePackages.jsx`
 - `."phone"` — `src/components/services/ServicePackages.jsx`
 - `."pro"` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `."reading-impairment-mode"` — `src/pages/askdaft/AskDaftRequest.jsx`
-- `."reading-impairment-mode"}` — `src/pages/askdaft/AskDaft.jsx`, `src/pages/Home.jsx`
+- `."reading-impairment-mode"}` — `src/pages/Home.jsx`, `src/pages/askdaft/AskDaft.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `."remote"` — `src/components/services/ServicePackages.jsx`
 - `."soon"` — `src/components/services/ServicePackages.jsx`
 - `."toolbox"` — `src/components/home/SystemMapSection.jsx`
@@ -993,6 +936,7 @@ _Showing 200 of 1133 results._
 - `.animate-pulse-slow` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 - `.askdaft-estimates-section` — `src/components/askdaft/AskDaftEstimateSection.jsx`
 - `.askdaft-pricing-section` — `src/components/askdaft/AskDaftPricingSection.jsx`
+- `.askdaft-read-key` — `src/components/askdaft/AskDaftHero.jsx`
 - `.askdaft-subscribe-section` — `src/components/askdaft/AskDaftSubscribeSection.jsx`
 - `.askdaft-summary-section` — `src/components/askdaft/AskDaftSummarySection.jsx`
 - `.askdaft-table` — `src/components/home/homeData.jsx`
@@ -1032,7 +976,7 @@ _Showing 200 of 1133 results._
 - `.bg-gray-50` — `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Signup.jsx`, `src/pages/family/Family.jsx`
 - `.bg-gray-700` — `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/settings/Settings.jsx`
 - `.bg-gray-800` — `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
-- `.bg-gray-900` — `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`
+- `.bg-gray-900` — `src/pages/family/DaftFamApp/src/components/family/FamilyNavbar.jsx`, `src/pages/family/DaftFamApp/src/components/parent/BadgeDisplay.jsx`, `src/pages/family/DaftFamApp/src/components/parent/ParentBadgeCreator.jsx`, `src/pages/family/DaftFamApp/src/pages/NotFound.jsx`, `src/pages/family/DaftFamApp/src/pages/auth/Login.jsx`
 - `.bg-green-100` — `src/pages/family/DaftFamApp/src/components/admin/TrustContractStatus.jsx`, `src/pages/family/DaftFamApp/src/components/common/TaskList.jsx`, `src/pages/family/DaftFamApp/src/components/parent/AgreementTracker.jsx`
 - `.bg-green-200` — `src/pages/family/DaftFamApp/src/components/common/StickyBoard.jsx`
 - `.bg-green-300` — `src/pages/family/DaftFamApp/src/components/dashboard/GasMeter.jsx`, `src/pages/family/DaftFamApp/src/pages/planning/Planner.jsx`
@@ -1141,7 +1085,7 @@ _Showing 200 of 1133 results._
 - `.datetime-local` — `src/pages/family/DaftFamApp/src/components/parent/CheckInScheduler.jsx`
 - `.delay-1000` — `src/pages/family/DaftFamApp/src/pages/dashboard/Dashboard.jsx`
 
-_Showing 250 of 734 results._
+_Showing 250 of 736 results._
 
 
 ## Cleanup Recommendation Order

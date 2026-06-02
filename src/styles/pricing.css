@@ -30,56 +30,34 @@
 
 .pricing-table-lite::before {
   content: "Service\AWhat it covers\ABallpark";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   display: grid;
+  grid-auto-flow: column;
   grid-template-columns: minmax(230px, 0.82fr) minmax(340px, 1.38fr) minmax(190px, 0.5fr);
-  white-space: pre;
+  place-items: stretch;
+  align-items: center;
+  min-height: 54px;
+  padding: 0;
+  overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background:
     linear-gradient(135deg, rgba(12, 199, 246, 0.28), rgba(125, 255, 178, 0.11)),
     rgba(12, 199, 246, 0.12);
-  color: rgba(255, 255, 255, 0.96);
+  background-clip: padding-box;
+  color: transparent;
+  white-space: pre;
   font-size: 0.78rem;
   font-weight: 950;
   letter-spacing: 0.12em;
   line-height: 1;
-  text-transform: uppercase;
-}
-
-.pricing-table-lite::before,
-.pricing-row {
-  column-gap: 0;
-}
-
-.pricing-table-lite::before {
-  align-items: stretch;
-}
-
-.pricing-table-lite::before {
   text-align: left;
-}
-
-.pricing-table-lite::before {
-  padding: 0;
-}
-
-.pricing-table-lite::before {
   text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
-}
-
-.pricing-table-lite::before {
+  text-transform: uppercase;
   word-spacing: normal;
-}
-
-.pricing-table-lite::before {
-  place-items: stretch;
-}
-
-.pricing-table-lite::before {
-  background-clip: padding-box;
-}
-
-.pricing-table-lite::before {
-  min-height: 54px;
 }
 
 .pricing-row {
@@ -120,17 +98,6 @@
   padding: 1rem 1.05rem;
 }
 
-.pricing-table-lite::before {
-  align-items: center;
-}
-
-.pricing-table-lite::before {
-  background-color: rgba(12, 199, 246, 0.12);
-}
-
-.pricing-table-lite::before {
-  color: transparent;
-}
 
 .pricing-table-lite::after {
   content: "Service\AWhat it covers\ABallpark";
@@ -138,74 +105,34 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
   display: grid;
+  grid-auto-flow: column;
   grid-template-columns: minmax(230px, 0.82fr) minmax(340px, 1.38fr) minmax(190px, 0.5fr);
-  white-space: pre;
+  align-items: stretch;
   min-height: 54px;
+  padding: 0;
+  overflow: hidden;
   pointer-events: none;
+  background: transparent;
+  background-image:
+    linear-gradient(90deg, transparent calc(100% / 3), rgba(255, 255, 255, 0.14) calc(100% / 3), transparent calc((100% / 3) + 1px)),
+    linear-gradient(90deg, transparent calc((100% / 3) * 2), rgba(255, 255, 255, 0.14) calc((100% / 3) * 2), transparent calc(((100% / 3) * 2) + 1px));
   color: rgba(255, 255, 255, 0.96);
+  white-space: pre;
   font-size: 0.78rem;
   font-weight: 950;
   letter-spacing: 0.12em;
   line-height: 1;
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
   text-transform: uppercase;
 }
 
-.pricing-table-lite::after,
-.pricing-table-lite::before {
-  grid-auto-flow: column;
-}
-
-.pricing-table-lite::after {
-  align-items: stretch;
-}
-
-.pricing-table-lite::after::first-line {
-  color: rgba(255, 255, 255, 0.96);
-}
-
-.pricing-table-lite::after {
-  text-shadow: 0 0 18px rgba(12, 199, 246, 0.22);
-}
-
-.pricing-table-lite::after,
-.pricing-table-lite::before {
-  overflow: hidden;
-}
-
-.pricing-table-lite::after {
-  background: transparent;
-}
-
-.pricing-table-lite::after {
-  z-index: 2;
-}
 
 .pricing-row:first-child {
   margin-top: 54px;
 }
 
-.pricing-table-lite::after {
-  padding: 0;
-}
-
-.pricing-table-lite::after {
-  --cell-pad: 1rem 1.05rem;
-}
-
-.pricing-table-lite::after {
-  background-image:
-    linear-gradient(90deg, transparent calc(100% / 3), rgba(255, 255, 255, 0.14) calc(100% / 3), transparent calc((100% / 3) + 1px)),
-    linear-gradient(90deg, transparent calc((100% / 3) * 2), rgba(255, 255, 255, 0.14) calc((100% / 3) * 2), transparent calc(((100% / 3) * 2) + 1px));
-}
-
-.pricing-table-lite::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
 
 .pricing-service strong,
 .pricing-row > div:first-child strong {
@@ -227,9 +154,10 @@
 
 .pricing-range,
 .pricing-row > b:last-child {
+  position: relative;
   justify-content: center;
   border-left: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(12, 199, 246, 0.07);
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.9));
   color: #061017;
   font-size: 1rem;
   font-weight: 950;
@@ -244,21 +172,6 @@
   position: absolute;
 }
 
-.pricing-range,
-.pricing-row > b:last-child {
-  position: relative;
-}
-
-.pricing-range,
-.pricing-row > b:last-child {
-  color: #061017;
-}
-
-.pricing-range,
-.pricing-row > b:last-child {
-  background:
-    linear-gradient(135deg, rgba(12, 199, 246, 0.95), rgba(255, 255, 255, 0.9));
-}
 
 .pricing-row:nth-child(3n + 1) .pricing-range,
 .pricing-row:nth-child(3n + 1) > b:last-child {
@@ -671,9 +584,14 @@
 ====================================================== */
 
 .pricing-chart-actions {
-  width: 18%;
-  min-width: 150px;
+  width: 14%;
+  min-width: 118px;
+  padding: 0.7rem 0.65rem !important;
   background: rgba(255, 255, 255, 0.025);
+  text-align: center;
+}
+
+.pricing-chart thead th:last-child {
   text-align: center;
 }
 
@@ -681,14 +599,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
   width: 100%;
-  margin: 0.18rem 0;
-  padding: 0.48rem 0.65rem;
+  min-height: 30px;
+  margin: 0.12rem 0;
+  padding: 0.42rem 0.55rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  font-size: 0.76rem;
+  font-size: 0.7rem;
   font-weight: 950;
+  letter-spacing: 0.02em;
   line-height: 1;
   white-space: nowrap;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
@@ -719,10 +638,6 @@
   box-shadow: 0 0 18px rgba(125, 255, 178, 0.14);
 }
 
-.pricing-chart thead th:last-child {
-  text-align: center;
-}
-
 @media (max-width: 860px) {
   .pricing-chart-actions {
     width: 100%;
@@ -742,31 +657,8 @@
 
   .pricing-action-btn {
     width: calc(50% - 0.25rem);
-    margin: 0.15rem;
-  }
-}
-/* ======================================================
-   Pricing Action Button Size Tuning
-====================================================== */
-
-.pricing-chart-actions {
-  min-width: 118px;
-  width: 14%;
-  padding: 0.7rem 0.65rem !important;
-}
-
-.pricing-action-btn {
-  min-height: 30px;
-  margin: 0.12rem 0;
-  padding: 0.42rem 0.55rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 860px) {
-  .pricing-action-btn {
     min-height: 34px;
-    width: calc(50% - 0.25rem);
+    margin: 0.15rem;
     font-size: 0.74rem;
   }
 }

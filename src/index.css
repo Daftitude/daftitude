@@ -1,4 +1,3 @@
-
 /* ======================================================
    DaFTitude CSS Import Map
    Keep this order intentional: foundation first, sections next,
@@ -44,7 +43,25 @@
 /* 13. Footer layout and social link styling. */
 @import "./styles/footer.css";
 
-/* 14. Centralized reading-mode semantic color system. */
+/* 14. AskDaFT shared base page, panel, callout, and section styles. */
+@import "./styles/askdaft-base.css";
+
+/* 15. AskDaFT homepage front-door intake styles. */
+@import "./styles/askdaft-frontdoor.css";
+
+/* 16. AskDaFT dashboard, client dashboard, and tech board styles. */
+@import "./styles/askdaft-dashboard.css";
+
+/* 17. AskDaFT request intake, ticket builder, and submitted ticket flow. */
+@import "./styles/askdaft-request.css";
+
+/* 18. AskDaFT ticket lists, ticket status pages, and ticket dashboard styles. */
+@import "./styles/askdaft-tickets.css";
+
+/* 19. AskDaFT pricing transparency and service pricing helpers. */
+@import "./styles/askdaft-pricing.css";
+
+/* 20. Centralized reading-mode semantic color system. */
 @import "./styles/reading-mode.css";
 
 @tailwind base;

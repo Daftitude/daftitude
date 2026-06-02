@@ -1,0 +1,418 @@
+
+/* ======================================================
+   Account Styles
+   Account buttons, auth screens, and shared account dashboard panels.
+====================================================== */
+
+/* ======================================================
+   Account Button System
+   Makes Login, Signup, and Dashboard CTAs use real button styling.
+====================================================== */
+
+.account-page .phase-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.82rem;
+  font-weight: 950;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.account-page .phase-btn-primary {
+  border-color: rgba(125, 255, 178, 0.42);
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(205, 247, 255, 0.9));
+  color: #02100b;
+  box-shadow: 0 14px 34px rgba(125, 255, 178, 0.16);
+}
+
+.account-page .phase-btn-secondary,
+.account-page .phase-btn-ghost {
+  border-color: rgba(12, 199, 246, 0.28);
+  background: rgba(12, 199, 246, 0.075);
+  color: rgba(220, 248, 255, 0.95);
+}
+
+.account-page .phase-btn:hover,
+.account-page .phase-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.46);
+  background: rgba(125, 255, 178, 0.12);
+  box-shadow: 0 0 24px rgba(125, 255, 178, 0.14);
+}
+
+.account-page .phase-btn-primary:hover,
+.account-page .phase-btn-primary:focus-visible {
+  color: #02100b;
+  background: linear-gradient(135deg, rgba(125, 255, 178, 1), rgba(255, 255, 255, 0.92));
+}
+
+/* ======================================================
+   Account / Auth / AskDaFT Dashboard Pages
+====================================================== */
+
+.account-page {
+  min-height: calc(100svh - var(--navbar-h));
+  padding: clamp(5rem, 8vw, 7rem) 1rem clamp(3rem, 6vw, 5rem);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(12, 199, 246, 0.11), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(125, 255, 178, 0.09), transparent 32%),
+    var(--bg, #050914);
+}
+
+.account-auth-shell {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.account-auth-copy,
+.account-auth-panel,
+.account-dashboard-hero,
+.account-dashboard-panel {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.74);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+}
+
+.account-auth-copy {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  position: sticky;
+  top: calc(var(--navbar-h) + 1rem);
+}
+
+.account-auth-copy h1,
+.account-dashboard-hero h1 {
+  margin: 0.45rem 0 0.7rem;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.account-auth-copy p,
+.account-dashboard-hero p,
+.account-dashboard-panel p {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.account-auth-actions,
+.account-dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.account-auth-panel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.account-form-card,
+.account-benefit-card,
+.dashboard-status-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.account-form-card {
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.account-form-heading h2,
+.account-panel-heading h2 {
+  margin: 0.35rem 0 0.3rem;
+  color: #fff;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  letter-spacing: -0.045em;
+}
+
+.account-form-heading p,
+.account-form-note {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.account-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.account-form label {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.account-form label span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.account-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  border-radius: 16px;
+  background: rgba(3, 7, 14, 0.74);
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-weight: 700;
+  outline: none;
+}
+
+.account-form input:focus {
+  border-color: rgba(125, 255, 178, 0.45);
+  box-shadow: 0 0 0 3px rgba(125, 255, 178, 0.12);
+}
+
+.account-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.account-benefit-card {
+  padding: 1rem;
+}
+
+.account-benefit-card span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.75rem;
+  border-radius: 16px;
+  background: rgba(12, 199, 246, 0.09);
+  font-size: 1.25rem;
+}
+
+.account-benefit-card h3,
+.dashboard-status-card strong,
+.recent-request-list strong {
+  margin: 0;
+  color: #fff;
+  font-weight: 950;
+}
+
+.account-benefit-card p,
+.dashboard-status-card p,
+.recent-request-list p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.42;
+}
+
+.account-dashboard-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.dashboard-status-grid,
+.account-dashboard-grid {
+  display: grid;
+  gap: 0.9rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.dashboard-status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 0.9rem;
+}
+
+.dashboard-status-card {
+  padding: 1rem;
+}
+
+.dashboard-status-card > span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dashboard-status-card.green {
+  border-color: rgba(125, 255, 178, 0.18);
+}
+
+.dashboard-status-card.blue {
+  border-color: rgba(12, 199, 246, 0.2);
+}
+
+.dashboard-status-card.yellow {
+  border-color: rgba(255, 220, 90, 0.2);
+}
+
+.dashboard-status-card.red {
+  border-color: rgba(255, 112, 112, 0.2);
+}
+
+.account-dashboard-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.account-dashboard-panel {
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.account-dashboard-wide {
+  grid-column: 1 / -1;
+}
+
+.saved-setup-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.saved-setup-list span {
+  padding: 0.45rem 0.62rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.055);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.recent-request-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.recent-request-list div {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.recent-request-list span {
+  display: block;
+  margin-top: 0.2rem;
+  color: rgba(255, 220, 90, 0.92);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+
+/* ======================================================
+   Account / Auth Mobile
+====================================================== */
+
+@media (max-width: 900px) {
+  .account-auth-shell,
+  .account-dashboard-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .account-auth-copy,
+  .account-auth-panel,
+  .account-benefit-card {
+    min-height: auto;
+  }
+
+  .account-auth-copy {
+    position: relative;
+    top: auto;
+  }
+
+  .account-auth-copy h1,
+  .account-dashboard-hero h1 {
+    max-width: 12ch;
+  }
+
+  .dashboard-status-grid,
+  .account-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .account-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .account-page {
+    padding: 4.5rem 0.75rem 2rem;
+  }
+
+  .account-page .phase-btn,
+  .account-auth-actions .phase-btn,
+  .account-dashboard-actions .phase-btn {
+    width: 100%;
+  }
+
+  .account-auth-copy,
+  .account-auth-panel,
+  .account-dashboard-hero,
+  .account-dashboard-panel {
+    border-radius: 22px;
+  }
+
+  .account-auth-copy h1,
+  .account-dashboard-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 12vw, 3.1rem);
+  }
+
+  .dashboard-status-grid,
+  .account-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-auth-actions,
+  .account-dashboard-actions {
+    display: grid;
+  }
+
+  .account-auth-panel {
+    padding: 0.85rem;
+  }
+
+  .account-form-card,
+  .account-benefit-card,
+  .dashboard-status-card {
+    border-radius: 18px;
+  }
+}
+

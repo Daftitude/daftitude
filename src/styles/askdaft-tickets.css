@@ -1,0 +1,443 @@
+
+/* ======================================================
+   AskDaFT Ticket Styles
+   Dashboard ticket list, submitted ticket preview, and ticket status pages.
+====================================================== */
+
+/* ======================================================
+   AskDaFT Dashboard Tickets
+====================================================== */
+
+.askdaft-dashboard-ticket-panel {
+  width: min(1180px, 100%);
+  margin: 0 auto 0.9rem;
+}
+
+.askdaft-dashboard-ticket-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.askdaft-dashboard-ticket-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-dashboard-ticket-list span,
+.askdaft-dashboard-ticket-list small {
+  display: inline-flex;
+  width: max-content;
+  margin-bottom: 0.35rem;
+  padding: 0.25rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.66rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.askdaft-dashboard-ticket-list strong {
+  display: block;
+  color: #fff;
+  font-weight: 1000;
+}
+
+.askdaft-dashboard-ticket-list p {
+  max-width: 760px;
+  margin: 0.35rem 0 0;
+}
+
+.askdaft-dashboard-ticket-list article > div:last-child {
+  display: grid;
+  justify-items: end;
+  gap: 0.35rem;
+  min-width: 150px;
+}
+
+.askdaft-empty-ticket-state {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed rgba(125, 255, 178, 0.22);
+  border-radius: 20px;
+  background: rgba(125, 255, 178, 0.045);
+}
+
+.askdaft-empty-ticket-state strong {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 1000;
+}
+
+.askdaft-empty-ticket-state .phase-btn {
+  width: max-content;
+}
+
+
+@media (max-width: 700px) {
+  .askdaft-dashboard-ticket-list article {
+    display: grid;
+  }
+
+  .askdaft-dashboard-ticket-list article > div:last-child {
+    justify-items: start;
+    min-width: 0;
+  }
+}
+
+
+/* ======================================================
+   AskDaFT Submitted Ticket Preview
+====================================================== */
+
+.askdaft-ticket-submitted-panel {
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(125, 255, 178, 0.24);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(125, 255, 178, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.askdaft-ticket-submitted-panel h1 {
+  margin: 0.45rem 0 0.7rem;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4.3rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.askdaft-ticket-submitted-panel p {
+  max-width: 780px;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.askdaft-ticket-submitted-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.askdaft-ticket-submitted-grid article,
+.askdaft-ticket-summary-block {
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.askdaft-ticket-submitted-grid span,
+.askdaft-ticket-summary-block strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-ticket-submitted-grid strong {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 950;
+}
+
+@media (max-width: 800px) {
+  .askdaft-ticket-submitted-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .askdaft-ticket-submitted-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ======================================================
+   AskDaFT Ticket Status Pages
+====================================================== */
+
+.askdaft-ticket-list-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.72);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.askdaft-ticket-list-card:hover,
+.askdaft-ticket-list-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(125, 255, 178, 0.28);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 44%),
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.askdaft-ticket-list-card strong {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-list-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.askdaft-ticket-list-card span,
+.askdaft-ticket-list-card small {
+  width: max-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.095);
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+
+.askdaft-ticket-detail-page,
+.askdaft-tickets-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.askdaft-ticket-detail-hero,
+.askdaft-guest-save-panel,
+.askdaft-ticket-detail-panel,
+.askdaft-ticket-list-panel,
+.askdaft-ticket-detail-actions {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.1rem, 3vw, 1.8rem);
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.74);
+}
+
+.askdaft-ticket-detail-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.askdaft-ticket-detail-hero h1,
+.askdaft-guest-save-panel h2,
+.askdaft-ticket-detail-panel h2 {
+  margin: 0.35rem 0 0.55rem;
+  color: #fff;
+}
+
+.askdaft-ticket-detail-hero p,
+.askdaft-guest-save-panel p,
+.askdaft-ticket-detail-panel p {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.askdaft-ticket-id-card {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 220px;
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.22);
+  border-radius: 20px;
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-ticket-id-card span,
+.askdaft-ticket-detail-grid span {
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-ticket-id-card strong {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-id-card small {
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 800;
+}
+
+.askdaft-guest-save-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-color: rgba(255, 220, 90, 0.18);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 220, 90, 0.08), transparent 42%),
+    rgba(5, 9, 18, 0.74);
+}
+
+.askdaft-ticket-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.askdaft-ticket-detail-grid article {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-detail-grid strong {
+  color: #fff;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-status-timeline,
+.askdaft-ticket-recommendation-grid,
+.askdaft-ticket-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.askdaft-ticket-status-timeline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.askdaft-ticket-status-step {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-status-step span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+}
+
+.askdaft-ticket-status-step.complete,
+.askdaft-ticket-status-step.current {
+  border-color: rgba(125, 255, 178, 0.22);
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-ticket-status-step strong {
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+.askdaft-ticket-recommendation-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-ticket-recommendation-grid article {
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-ticket-recommendation-grid strong {
+  color: rgba(125, 255, 178, 0.95);
+}
+
+.askdaft-ticket-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.askdaft-ticket-list-card {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.askdaft-ticket-list-card > div:last-child {
+  display: grid;
+  justify-items: end;
+  gap: 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .askdaft-ticket-detail-grid,
+  .askdaft-ticket-recommendation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .askdaft-ticket-detail-hero,
+  .askdaft-guest-save-panel {
+    display: grid;
+  }
+
+  .askdaft-ticket-status-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .askdaft-ticket-detail-grid,
+  .askdaft-ticket-recommendation-grid,
+  .askdaft-ticket-status-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-list-card {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-list-card > div:last-child {
+    justify-items: start;
+  }
+}

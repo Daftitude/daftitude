@@ -1,0 +1,984 @@
+/* ======================================================
+   AskDaFT Request Styles
+   Request intake, ticket builder, progress tracker, confirmation, and submitted ticket flow.
+====================================================== */
+
+/* ======================================================
+   AskDaFT Request / Ticket Builder
+====================================================== */
+
+.askdaft-request-page {
+  overflow-x: clip;
+  padding-bottom: clamp(7rem, 10vw, 9rem);
+}
+
+.askdaft-request-hero,
+.askdaft-request-layout {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+.askdaft-request-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 86% 20%, rgba(12, 199, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.askdaft-request-hero h1 {
+  max-width: 780px;
+  margin: 0.35rem 0 0.7rem;
+  color: #fff;
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.askdaft-request-hero p:not(.phase-kicker) {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.askdaft-request-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.askdaft-ticket-builder {
+  display: grid;
+  gap: 1rem;
+}
+
+.askdaft-ticket-panel {
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.askdaft-ticket-panel .account-panel-heading p:not(.phase-kicker) {
+  max-width: 780px;
+}
+
+.askdaft-mode-grid,
+.askdaft-request-type-grid,
+.askdaft-discovery-promise {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.askdaft-mode-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.askdaft-request-type-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.askdaft-mode-card,
+.askdaft-request-type-card,
+.askdaft-chip-grid button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.askdaft-mode-card,
+.askdaft-request-type-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border-radius: 22px;
+}
+
+.askdaft-mode-card.active,
+.askdaft-request-type-card.active,
+.askdaft-chip-grid button.active {
+  border-color: rgba(125, 255, 178, 0.36);
+  background: rgba(125, 255, 178, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.askdaft-mode-card span,
+.askdaft-request-type-card span {
+  color: rgba(125, 255, 178, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-mode-card strong,
+.askdaft-request-type-card strong {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 1000;
+}
+
+.askdaft-mode-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.askdaft-mode-card p,
+.askdaft-mode-card small,
+.askdaft-request-type-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.askdaft-chip-grid button {
+  padding: 0.55rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.askdaft-field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.askdaft-field-grid label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.askdaft-field-grid span,
+.askdaft-inline-check span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.askdaft-field-grid input,
+.askdaft-field-grid select,
+.askdaft-request-description {
+  width: 100%;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  border-radius: 16px;
+  background: rgba(3, 7, 14, 0.72);
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-weight: 750;
+  outline: none;
+}
+
+.askdaft-field-grid input,
+.askdaft-field-grid select {
+  min-height: 46px;
+  padding: 0.75rem 0.85rem;
+}
+
+.askdaft-request-description {
+  min-height: 180px;
+  margin-top: 1rem;
+  padding: 1rem;
+  resize: vertical;
+}
+
+.askdaft-field-grid input:focus,
+.askdaft-field-grid select:focus,
+.askdaft-request-description:focus {
+  border-color: rgba(125, 255, 178, 0.45);
+  box-shadow: 0 0 0 3px rgba(125, 255, 178, 0.12);
+}
+
+.askdaft-inline-check {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-inline-check input,
+.askdaft-agreement-list input {
+  margin-top: 0.18rem;
+  accent-color: #7dffb2;
+}
+
+.askdaft-scope-warning,
+.askdaft-mini-scope,
+.askdaft-summary-note {
+  padding: 0.9rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.askdaft-scope-warning {
+  margin-bottom: 1rem;
+}
+
+.askdaft-scope-warning strong,
+.askdaft-mini-scope strong,
+.askdaft-summary-note strong {
+  display: block;
+  color: #fff;
+  font-weight: 1000;
+}
+
+.askdaft-scope-warning p,
+.askdaft-mini-scope p,
+.askdaft-summary-note p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-scope-warning.green,
+.askdaft-mini-scope.green {
+  border: 1px solid rgba(125, 255, 178, 0.18);
+}
+
+.askdaft-scope-warning.blue,
+.askdaft-mini-scope.blue {
+  border: 1px solid rgba(12, 199, 246, 0.2);
+}
+
+.askdaft-scope-warning.yellow,
+.askdaft-mini-scope.yellow {
+  border: 1px solid rgba(255, 220, 90, 0.2);
+}
+
+.askdaft-scope-warning.red,
+.askdaft-mini-scope.red {
+  border: 1px solid rgba(255, 112, 112, 0.22);
+}
+
+.askdaft-discovery-promise {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-discovery-promise article {
+  padding: 0.9rem;
+  border: 1px solid rgba(125, 255, 178, 0.13);
+  border-radius: 18px;
+  background: rgba(125, 255, 178, 0.04);
+}
+
+.askdaft-discovery-promise span {
+  display: block;
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.askdaft-discovery-promise p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.askdaft-agreement-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.askdaft-agreement-list label {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-agreement-list span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.askdaft-ticket-summary {
+  position: sticky;
+  top: calc(var(--navbar-h) + 6rem);
+  z-index: 15;
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024)),
+    rgba(5, 9, 18, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.askdaft-ticket-summary h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.askdaft-summary-price,
+.askdaft-summary-row {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-summary-price {
+  border-color: rgba(255, 220, 90, 0.22);
+}
+
+.askdaft-summary-price span,
+.askdaft-summary-row span {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.askdaft-summary-price strong {
+  color: rgba(255, 236, 153, 0.96);
+  font-size: 1.25rem;
+  font-weight: 1000;
+}
+
+.askdaft-summary-row strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.askdaft-ticket-summary .phase-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+}
+
+.askdaft-ticket-summary > small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 980px) {
+  .askdaft-request-layout,
+  .askdaft-request-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-ticket-summary {
+    position: relative;
+    top: auto;
+  }
+
+  .askdaft-request-type-grid,
+  .askdaft-discovery-promise,
+  .askdaft-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-mode-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ======================================================
+   AskDaFT Request Progress Tracker
+====================================================== */
+
+.askdaft-request-progress-shell {
+  position: sticky;
+  top: calc(var(--navbar-h) + 0.5rem);
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.55rem;
+  width: min(1180px, 100%);
+  margin: 0 auto 1rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(12, 199, 246, 0.12);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 24, 0.9), rgba(4, 8, 16, 0.84)),
+    rgba(4, 8, 16, 0.84);
+  backdrop-filter: blur(16px);
+}
+
+.askdaft-request-progress-step {
+  display: grid;
+  gap: 0.28rem;
+  min-height: 82px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-request-progress-step span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.08);
+  color: rgba(205, 247, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 1000;
+}
+
+.askdaft-request-progress-step strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.askdaft-request-progress-step small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.askdaft-request-progress-step.complete {
+  border-color: rgba(125, 255, 178, 0.22);
+  background: rgba(125, 255, 178, 0.055);
+}
+
+.askdaft-request-progress-step.complete span,
+.askdaft-request-progress-step.ready span {
+  background: rgba(125, 255, 178, 0.12);
+  color: rgba(218, 255, 232, 0.96);
+}
+
+.askdaft-request-progress-step.ready {
+  border-color: rgba(255, 220, 90, 0.24);
+  background: rgba(255, 220, 90, 0.055);
+}
+
+.askdaft-request-progress-step.in-progress {
+  border-color: rgba(12, 199, 246, 0.24);
+}
+
+.askdaft-submit-checklist {
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 220, 90, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 220, 90, 0.045);
+}
+
+.askdaft-submit-checklist strong {
+  display: block;
+  color: rgba(255, 236, 153, 0.96);
+  font-size: 0.8rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.askdaft-submit-checklist ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.askdaft-submit-checklist li,
+.askdaft-submit-checklist p {
+  position: relative;
+  margin: 0;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.askdaft-submit-checklist li::before,
+.askdaft-submit-checklist p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 220, 90, 0.92);
+}
+
+@media (max-width: 980px) {
+  .askdaft-request-progress-shell {
+    position: relative;
+    top: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .askdaft-request-progress-shell {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .askdaft-request-progress-step {
+    min-height: auto;
+  }
+}
+
+/* ======================================================
+   AskDaFT Ticket Confirmation
+====================================================== */
+
+.askdaft-ticket-confirmation-hero {
+  border-color: rgba(125, 255, 178, 0.22);
+}
+
+.askdaft-ticket-confirmation-card {
+  display: grid;
+  gap: 1rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.74);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+}
+
+.askdaft-ticket-confirmation-card h2 {
+  margin: 0.35rem 0;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  letter-spacing: -0.06em;
+}
+
+.askdaft-ticket-confirmation-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.askdaft-confirmation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.askdaft-confirmation-grid article,
+.askdaft-ticket-summary-block {
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-confirmation-grid span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-confirmation-grid strong,
+.askdaft-ticket-summary-block strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 1000;
+}
+
+@media (max-width: 800px) {
+  .askdaft-confirmation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .askdaft-confirmation-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   AskDaFT Compact Copy Pass
+   Keeps screens action-focused and moves detail into hover/advanced context.
+====================================================== */
+
+.askdaft-compact-copy .askdaft-request-hero h1,
+.askdaft-compact-copy .account-panel-heading h2 {
+  text-wrap: balance;
+}
+
+.askdaft-compact-copy .askdaft-request-hero p,
+.askdaft-compact-copy .account-panel-heading p,
+.askdaft-compact-copy .askdaft-mode-card p,
+.askdaft-compact-copy .askdaft-mode-card small,
+.askdaft-compact-copy .askdaft-request-type-card p,
+.askdaft-compact-copy .askdaft-ticket-summary p,
+.askdaft-compact-copy .askdaft-scope-card p {
+  max-width: 68ch;
+}
+
+.askdaft-compact-copy .askdaft-mode-card small {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.65rem;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid rgba(12, 199, 246, 0.16);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.055);
+  color: rgba(205, 247, 255, 0.85);
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.askdaft-compact-copy .askdaft-mode-card p,
+.askdaft-compact-copy .askdaft-request-type-card p {
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.askdaft-compact-copy .askdaft-ticket-panel {
+  gap: 0.85rem;
+}
+
+.askdaft-compact-copy .askdaft-ticket-panel textarea {
+  min-height: 150px;
+}
+
+.askdaft-compact-copy .askdaft-chip-grid button,
+.askdaft-compact-copy .askdaft-detail-chip,
+.askdaft-compact-copy .askdaft-style-pill {
+  line-height: 1.15;
+}
+
+.askdaft-compact-copy .askdaft-ticket-summary > small,
+.askdaft-compact-copy .askdaft-ticket-summary .askdaft-muted-detail {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.askdaft-compact-copy .askdaft-ticket-summary .phase-btn {
+  min-height: 44px;
+}
+
+.askdaft-compact-copy .askdaft-inline-check {
+  padding-block: 0.72rem;
+}
+
+@media (max-width: 720px) {
+  .askdaft-compact-copy .askdaft-request-hero p,
+  .askdaft-compact-copy .account-panel-heading p,
+  .askdaft-compact-copy .askdaft-mode-card small,
+  .askdaft-compact-copy .askdaft-request-type-card p {
+    font-size: 0.78rem;
+  }
+
+  .askdaft-compact-copy .askdaft-mode-grid,
+  .askdaft-compact-copy .askdaft-request-type-grid {
+    gap: 0.65rem;
+  }
+
+  .askdaft-compact-copy .askdaft-ticket-panel {
+    padding: 1rem;
+  }
+}
+
+/* ======================================================
+   AskDaFT Guided Step App Feel
+====================================================== */
+
+.askdaft-request-progress-step {
+  position: relative;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.askdaft-request-progress-step.is-active {
+  border-color: rgba(125, 255, 178, 0.36);
+  background: rgba(125, 255, 178, 0.08);
+}
+
+.askdaft-step-panel {
+  position: relative;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.askdaft-step-panel.is-active {
+  border-color: rgba(125, 255, 178, 0.22);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.06), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.78);
+}
+
+.askdaft-step-panel.is-complete:not(.is-active) {
+  border-color: rgba(125, 255, 178, 0.13);
+}
+
+.askdaft-step-panel.is-collapsed:not(.is-active) {
+  padding-block: 0.9rem;
+  opacity: 0.78;
+}
+
+.askdaft-step-panel.is-collapsed:not(.is-active) > :not(.account-panel-heading):not(.askdaft-step-edit-btn) {
+  display: none;
+}
+
+.askdaft-step-panel.is-collapsed:not(.is-active) .account-panel-heading {
+  margin: 0;
+}
+
+.askdaft-step-panel.is-collapsed:not(.is-active) .account-panel-heading p:not(.phase-kicker) {
+  display: none;
+}
+
+.askdaft-step-panel.is-collapsed:not(.is-active) .account-panel-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.askdaft-step-edit-btn {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  padding: 0.32rem 0.55rem;
+  border: 1px solid rgba(12, 199, 246, 0.16);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.07);
+  color: rgba(205, 247, 255, 0.9);
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.askdaft-step-panel.is-active .askdaft-step-edit-btn {
+  display: none;
+}
+
+.askdaft-step-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+
+
+
+
+
+@media (max-width: 640px) {
+  .askdaft-step-edit-btn {
+    top: 0.7rem;
+    right: 0.7rem;
+  }
+
+  .askdaft-step-actions {
+    justify-content: stretch;
+  }
+
+  .askdaft-step-actions .phase-btn {
+    width: 100%;
+  }
+}
+
+/* ======================================================
+   AskDaFT Simple Help Mode
+   Easier path for older clients and non-technical users.
+====================================================== */
+
+.askdaft-mode-card:first-child {
+  border-color: rgba(125, 255, 178, 0.18);
+}
+
+.askdaft-mode-card:first-child strong::after {
+  content: "  Recommended";
+  display: inline-flex;
+  margin-left: 0.4rem;
+  padding: 0.18rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.1);
+  color: rgba(218, 255, 232, 0.96);
+  font-size: 0.58rem;
+  font-weight: 1000;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.askdaft-request-page .askdaft-chip-grid button,
+.askdaft-request-page .askdaft-field-grid input,
+.askdaft-request-page .askdaft-field-grid select {
+  min-height: 48px;
+}
+
+.askdaft-request-page .askdaft-inline-check span,
+.askdaft-request-page .askdaft-agreement-list span {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+@media (max-width: 720px) {
+  .askdaft-request-page .askdaft-chip-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-request-page .askdaft-chip-grid button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .askdaft-request-page .askdaft-mode-card strong,
+  .askdaft-request-page .askdaft-request-type-card strong {
+    font-size: 1.08rem;
+  }
+
+  .askdaft-request-page .askdaft-field-grid span {
+    font-size: 0.78rem;
+  }
+}
+
+/* ======================================================
+   AskDaFT Contact Info
+====================================================== */
+
+.askdaft-contact-field-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.askdaft-contact-warning {
+  margin-top: 0.85rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(255, 220, 90, 0.24);
+  border-radius: 16px;
+  background: rgba(255, 220, 90, 0.06);
+  color: rgba(255, 236, 153, 0.95);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+@media (max-width: 900px) {
+  .askdaft-contact-field-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .askdaft-contact-field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* AskDaFT disabled action clarity */
+.askdaft-field-helper {
+  margin: 0.55rem 0 0;
+  color: rgba(255, 220, 90, 0.92);
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.askdaft-upload-btn:disabled,
+.askdaft-step-actions .phase-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  filter: grayscale(0.2);
+}
+
+/* ======================================================
+   AskDaFT Submit / Floating Tool Click Safety
+====================================================== */
+
+.askdaft-submit-preview-btn {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  min-height: 52px;
+  pointer-events: auto;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .askdaft-request-page {
+    padding-bottom: 8rem;
+  }
+}
+
+/* AskDaFT quick option hint mobile */
+@media (max-width: 640px) {
+  .askdaft-detail-hint {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.65rem;
+  }
+
+  .askdaft-detail-hint p {
+    text-align: left;
+    font-size: 0.72rem;
+  }
+}

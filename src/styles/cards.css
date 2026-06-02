@@ -413,235 +413,6 @@
   }
 }
 /* ======================================================
-   Working Now Panels Refinement
-   Better paragraph rhythm and softer action buttons.
-====================================================== */
-
-.split-identity-section .identity-panel p {
-  max-width: 62ch;
-  margin-top: 0.72rem !important;
-  font-size: clamp(0.96rem, 1.08vw, 1.06rem) !important;
-  line-height: 1.68 !important;
-  letter-spacing: -0.01em;
-}
-
-.split-identity-section .identity-panel p + p {
-  margin-top: 0.85rem !important;
-}
-
-.split-identity-section .panel-buzz-row {
-  margin-top: 1.25rem !important;
-  gap: 0.55rem !important;
-}
-
-.split-identity-section .panel-buzz-row span {
-  min-height: 34px !important;
-  padding: 0.48rem 0.82rem !important;
-  border-color: rgba(12, 199, 246, 0.24) !important;
-  background: rgba(12, 199, 246, 0.055) !important;
-  color: rgba(255, 255, 255, 0.86) !important;
-  font-size: 0.74rem !important;
-  font-weight: 850 !important;
-}
-
-.split-identity-section .askdaft-panel .panel-buzz-row span {
-  border-color: rgba(125, 255, 178, 0.22) !important;
-  background: rgba(125, 255, 178, 0.055) !important;
-}
-
-.split-identity-section .panel-action-row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.55rem !important;
-  margin-top: 1.35rem !important;
-  padding-top: 0 !important;
-}
-
-.split-identity-section .panel-action-row .game-btn {
-  min-height: 40px !important;
-  padding: 0.58rem 0.86rem !important;
-  border-radius: 999px !important;
-  font-size: 0.78rem !important;
-  font-weight: 850 !important;
-  letter-spacing: -0.01em !important;
-  box-shadow: none !important;
-}
-
-.split-identity-section .panel-action-row .game-btn.primary {
-  color: rgba(255, 255, 255, 0.94) !important;
-  border-color: rgba(12, 199, 246, 0.35) !important;
-  background: rgba(12, 199, 246, 0.14) !important;
-}
-
-.split-identity-section .askdaft-panel .panel-action-row .game-btn.primary {
-  color: rgba(6, 16, 23, 0.92) !important;
-  border-color: rgba(125, 255, 178, 0.32) !important;
-  background: linear-gradient(135deg, rgba(125, 255, 178, 0.86), rgba(255, 255, 255, 0.72)) !important;
-}
-
-.split-identity-section .panel-action-row .game-btn.secondary,
-.split-identity-section .panel-action-row .game-btn.ghost {
-  color: rgba(255, 255, 255, 0.84) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  background: rgba(255, 255, 255, 0.045) !important;
-}
-
-.split-identity-section .panel-action-row .game-btn:hover,
-.split-identity-section .panel-action-row .game-btn:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(12, 199, 246, 0.38) !important;
-  background: rgba(12, 199, 246, 0.11) !important;
-  box-shadow: 0 0 18px rgba(12, 199, 246, 0.1) !important;
-}
-
-.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover,
-.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible {
-  border-color: rgba(125, 255, 178, 0.34) !important;
-  background: rgba(125, 255, 178, 0.1) !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  box-shadow: 0 0 18px rgba(125, 255, 178, 0.09) !important;
-}
-
-@media (max-width: 760px) {
-  .split-identity-section .identity-panel p {
-    font-size: 0.84rem !important;
-    line-height: 1.55 !important;
-  }
-
-  .split-identity-section .panel-action-row {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  .split-identity-section .panel-action-row .game-btn {
-    width: 100% !important;
-  }
-}
-/* ======================================================
-   Working Now Panels Final Polish
-   Reduce hero-like weight and improve reading rhythm.
-====================================================== */
-
-.split-identity-section .identity-panel {
-  padding: clamp(1.45rem, 3vw, 2.15rem) !important;
-}
-
-.split-identity-section .identity-panel h2 {
-  max-width: 620px !important;
-  margin-bottom: 1.05rem !important;
-  font-size: clamp(2.05rem, 4.15vw, 3.55rem) !important;
-  line-height: 1.03 !important;
-  letter-spacing: -0.068em !important;
-}
-
-.split-identity-section .identity-panel .brand-word {
-  text-shadow: none;
-}
-
-.split-identity-section .identity-panel p {
-  max-width: 64ch !important;
-  margin-top: 0.72rem !important;
-  color: rgba(255, 255, 255, 0.74) !important;
-  font-size: clamp(0.9rem, 1vw, 1rem) !important;
-  font-weight: 690 !important;
-  line-height: 1.62 !important;
-}
-
-.split-identity-section .identity-panel p .pricing-emphasis-blue,
-.split-identity-section .identity-panel p .pricing-emphasis-green,
-.split-identity-section .identity-panel p .pricing-emphasis-yellow,
-.split-identity-section .identity-panel p .pricing-emphasis-red {
-  text-shadow: 0 0 10px currentColor !important;
-}
-
-.split-identity-section .panel-buzz-row {
-  margin-top: 1.15rem !important;
-}
-
-.split-identity-section .panel-buzz-row span {
-  min-height: 32px !important;
-  padding: 0.42rem 0.76rem !important;
-  border-color: rgba(12, 199, 246, 0.18) !important;
-  background: rgba(255, 255, 255, 0.035) !important;
-  color: rgba(255, 255, 255, 0.78) !important;
-  font-size: 0.7rem !important;
-  font-weight: 820 !important;
-  box-shadow: none !important;
-}
-
-.split-identity-section .askdaft-panel .panel-buzz-row span {
-  border-color: rgba(125, 255, 178, 0.18) !important;
-  background: rgba(255, 255, 255, 0.035) !important;
-}
-
-.split-identity-section .panel-action-row {
-  align-items: center !important;
-  margin-top: 1.15rem !important;
-  gap: 0.5rem !important;
-}
-
-.split-identity-section .panel-action-row .game-btn {
-  min-height: 38px !important;
-  padding: 0.52rem 0.82rem !important;
-  border-radius: 999px !important;
-  font-size: 0.74rem !important;
-  font-weight: 850 !important;
-  box-shadow: none !important;
-}
-
-.split-identity-section .panel-action-row .game-btn.primary,
-.split-identity-section .panel-action-row .game-btn.secondary,
-.split-identity-section .panel-action-row .game-btn.ghost {
-  color: rgba(255, 255, 255, 0.86) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  background: rgba(255, 255, 255, 0.045) !important;
-}
-
-.split-identity-section .daftitude-panel .panel-action-row .game-btn:first-child {
-  color: #061017 !important;
-  border-color: rgba(12, 199, 246, 0.34) !important;
-  background: linear-gradient(135deg, rgba(12, 199, 246, 0.88), rgba(255, 255, 255, 0.78)) !important;
-}
-
-.split-identity-section .askdaft-panel .panel-action-row .game-btn:first-child {
-  color: #061017 !important;
-  border-color: rgba(125, 255, 178, 0.32) !important;
-  background: linear-gradient(135deg, rgba(125, 255, 178, 0.82), rgba(255, 255, 255, 0.74)) !important;
-}
-
-.split-identity-section .panel-action-row .game-btn:hover,
-.split-identity-section .panel-action-row .game-btn:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(12, 199, 246, 0.32) !important;
-  background: rgba(12, 199, 246, 0.08) !important;
-  color: rgba(255, 255, 255, 0.94) !important;
-  box-shadow: 0 0 16px rgba(12, 199, 246, 0.08) !important;
-}
-
-.split-identity-section .askdaft-panel .panel-action-row .game-btn:hover,
-.split-identity-section .askdaft-panel .panel-action-row .game-btn:focus-visible {
-  border-color: rgba(125, 255, 178, 0.3) !important;
-  background: rgba(125, 255, 178, 0.075) !important;
-  box-shadow: 0 0 16px rgba(125, 255, 178, 0.075) !important;
-}
-
-@media (max-width: 760px) {
-  .split-identity-section .identity-panel h2 {
-    font-size: clamp(1.85rem, 9vw, 2.75rem) !important;
-    line-height: 1.05 !important;
-  }
-
-  .split-identity-section .identity-panel p {
-    font-size: 0.82rem !important;
-    line-height: 1.54 !important;
-  }
-
-  .split-identity-section .panel-buzz-row span,
-  .split-identity-section .panel-action-row .game-btn {
-    font-size: 0.72rem !important;
-  }
-}
-/* ======================================================
    Working Now Panels Layout Reset
    Make the built/doing/focused panels easier to scan.
 ====================================================== */
@@ -692,23 +463,34 @@
   margin-top: 0.8rem !important;
 }
 
+/* REPLACED: Working Now Panels Layout Reset .split-identity-section .panel-buzz-row */
 .split-identity-section .panel-buzz-row {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 0.5rem !important;
-  margin-top: 1.05rem !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  gap: 0.55rem !important;
+  margin: 1.15rem 0 0 !important;
 }
 
+/* REPLACED: Working Now Panels Layout Reset .split-identity-section .panel-buzz-row span */
 .split-identity-section .panel-buzz-row span {
-  min-height: 30px !important;
-  padding: 0.4rem 0.7rem !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  padding: 0.5rem 0.82rem !important;
   border-radius: 999px !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-  font-size: 0.68rem !important;
-  font-weight: 820 !important;
+  border: 1px solid rgba(12, 199, 246, 0.26) !important;
+  background:
+    linear-gradient(180deg, rgba(12, 199, 246, 0.095), rgba(255, 255, 255, 0.035)),
+    rgba(5, 9, 18, 0.5) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.72rem !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
   line-height: 1 !important;
   white-space: nowrap !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
 }
 
 .split-identity-section .panel-action-row {
@@ -786,13 +568,19 @@
     margin-top: 0.65rem !important;
   }
 
+  /* REPLACED: Working Now Panels Layout Reset @media (max-width: 520px) .split-identity-section .panel-buzz-row */
   .split-identity-section .panel-buzz-row {
-    gap: 0.38rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 0.42rem !important;
     margin-top: 0.85rem !important;
   }
 
+  /* REPLACED: Working Now Panels Layout Reset @media (max-width: 520px) .split-identity-section .panel-buzz-row span */
   .split-identity-section .panel-buzz-row span {
-    min-height: 28px !important;
+    width: 100% !important;
+    min-height: 32px !important;
     padding: 0.36rem 0.55rem !important;
     font-size: 0.6rem !important;
     white-space: normal !important;
@@ -818,30 +606,6 @@
    Make focus tags readable without fighting the main CTA buttons.
 ====================================================== */
 
-.split-identity-section .panel-buzz-row {
-  width: 100% !important;
-  max-width: 520px !important;
-  margin: 1.15rem 0 0 !important;
-  justify-content: flex-start !important;
-  gap: 0.55rem !important;
-}
-
-.split-identity-section .panel-buzz-row span {
-  min-height: 34px !important;
-  padding: 0.5rem 0.82rem !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(12, 199, 246, 0.26) !important;
-  background:
-    linear-gradient(180deg, rgba(12, 199, 246, 0.095), rgba(255, 255, 255, 0.035)),
-    rgba(5, 9, 18, 0.5) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  font-size: 0.72rem !important;
-  font-weight: 850 !important;
-  letter-spacing: -0.01em !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
-}
 
 .split-identity-section .daftitude-panel .panel-buzz-row span:first-child {
   border-color: rgba(12, 199, 246, 0.34) !important;
@@ -873,22 +637,6 @@
   }
 }
 
-@media (max-width: 520px) {
-  .split-identity-section .panel-buzz-row {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    max-width: 100% !important;
-    gap: 0.42rem !important;
-  }
-
-  .split-identity-section .panel-buzz-row span {
-    justify-content: center !important;
-    width: 100% !important;
-    min-height: 32px !important;
-    white-space: normal !important;
-    text-align: center !important;
-  }
-}
 /* ======================================================
    AskDaFT Focus Chips Alignment Fix
    Keep the three AskDaFT focus chips balanced and readable.
@@ -904,13 +652,11 @@
   margin-top: 1rem !important;
 }
 
+/* REPLACED: AskDaFT Focus Chips Alignment Fix .split-identity-section .askdaft-panel .panel-buzz-row span */
 .split-identity-section .askdaft-panel .panel-buzz-row span {
-  justify-content: center !important;
   min-height: 34px !important;
   padding: 0.48rem 0.78rem !important;
   font-size: 0.68rem !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
 }
 
 .split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3) {
@@ -934,11 +680,10 @@
     max-width: 100% !important;
   }
 
+  /* REPLACED: AskDaFT Focus Chips Alignment Fix @media (max-width: 520px) .split-identity-section .askdaft-panel .panel-buzz-row span, span:nth-child(3) */
   .split-identity-section .askdaft-panel .panel-buzz-row span,
   .split-identity-section .askdaft-panel .panel-buzz-row span:nth-child(3) {
     justify-self: stretch !important;
-    width: 100% !important;
-    white-space: normal !important;
   }
 }
 /* ======================================================
@@ -1418,18 +1163,16 @@
   line-height: 1.4 !important;
 }
 
-.askdaft-summary-grid,
-.askdaft-estimate-grid {
+.askdaft-summary-grid {
   display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
   gap: 0.9rem;
 }
 
-.askdaft-summary-grid {
-  grid-template-columns: 1.15fr 1fr 1fr;
-}
-
 .askdaft-estimate-grid {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
 .askdaft-summary-card,
@@ -1844,18 +1587,16 @@
    AskDaFT Pricing + Subscribe & Save
 ====================================================== */
 
-.askdaft-price-grid,
-.askdaft-subscribe-grid {
+.askdaft-price-grid {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
-.askdaft-price-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .askdaft-subscribe-grid {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
 .askdaft-price-card,
@@ -2035,4 +1776,238 @@
   font-weight: 650;
   line-height: 1.35;
   text-align: right;
+}
+
+/* ======================================================
+   AskDaFT Pricing Mobile
+====================================================== */
+
+@media (max-width: 1100px) {
+  .askdaft-price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-subscribe-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-estimate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .askdaft-price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-subscribe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-estimate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-price-card,
+  .askdaft-subscribe-card,
+  .askdaft-subscribe-note {
+    border-radius: 18px;
+  }
+
+  .askdaft-price-breakdown div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .askdaft-estimate-topline {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .askdaft-estimate-topline strong {
+    width: max-content;
+  }
+}
+
+
+
+/* ======================================================
+   AskDaFT Responsive Support Flow
+====================================================== */
+
+@media (max-width: 1100px) {
+
+  .askdaft-page .askdaft-mission-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .askdaft-flow-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-request-summary {
+    position: relative;
+    top: auto;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .askdaft-progress-tracker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .askdaft-call-fields,
+  .askdaft-typical-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-page .phase-card-grid.three,
+  .askdaft-page .phase-card-grid.four,
+  .askdaft-page .askdaft-mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-style-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-issue-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+
+
+  .askdaft-progress-tracker {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-upload-panel {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-upload-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  .askdaft-detail-picker {
+    gap: 0.42rem;
+  }
+
+  .askdaft-detail-chip {
+    min-height: 34px;
+    padding: 0.46rem 0.58rem;
+    font-size: 0.66rem;
+  }
+
+  .askdaft-call-fields,
+  .askdaft-typical-panel,
+  .askdaft-guest-note {
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .askdaft-call-fields input {
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+
+
+
+
+  .askdaft-page .phase-card-grid.three,
+  .askdaft-page .phase-card-grid.four,
+  .askdaft-page .askdaft-mission-grid,
+  .askdaft-style-row {
+    grid-template-columns: 1fr;
+  }
+
+  .askdaft-issue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .askdaft-page .phase-card {
+    padding: 0.75rem 0.55rem;
+    border-radius: 18px;
+  }
+
+  .askdaft-page .phase-card h3,
+  .askdaft-flow-step h3 {
+    font-size: 0.98rem;
+  }
+
+  .askdaft-page .phase-card p,
+  .askdaft-flow-step p {
+    font-size: 0.76rem;
+    line-height: 1.42;
+  }
+
+  .askdaft-flow-step {
+    grid-template-columns: 38px 1fr;
+    gap: 0.65rem;
+  }
+
+  .askdaft-page .step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 14px;
+    font-size: 0.68rem;
+  }
+
+  .askdaft-issue-card {
+    min-height: 0;
+    padding: 0.9rem;
+    border-radius: 18px;
+  }
+
+  .askdaft-issue-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.58rem;
+    border-radius: 14px;
+    font-size: 1.2rem;
+  }
+
+  .askdaft-request-box {
+    min-height: 150px;
+    padding: 0.85rem;
+    border-radius: 18px;
+    font-size: 0.84rem;
+  }
+
+  .askdaft-style-pill {
+    min-height: 76px;
+    padding: 0.75rem;
+  }
+
+  .askdaft-request-summary {
+    padding: 0.95rem;
+    border-radius: 22px;
+  }
+
+  .askdaft-summary-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    font-size: 1.55rem;
+  }
+
 }

@@ -1,0 +1,67 @@
+/* ======================================================
+   AskDaFT Pricing Styles
+   Pricing transparency blocks and AskDaFT service pricing helpers.
+====================================================== */
+
+/* ======================================================
+   AskDaFT Pricing Transparency Blocks
+====================================================== */
+
+.askdaft-pricing-truth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+.askdaft-pricing-truth-grid article,
+.askdaft-price-transparency-note {
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.14);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 52%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.askdaft-pricing-truth-grid span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: rgba(125, 255, 178, 0.94);
+  font-size: 0.7rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.askdaft-pricing-truth-grid strong,
+.askdaft-price-transparency-note strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 1rem;
+  font-weight: 1000;
+  line-height: 1.15;
+}
+
+.askdaft-pricing-truth-grid p,
+.askdaft-price-transparency-note p {
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.askdaft-price-transparency-note {
+  margin: 0.9rem 0;
+  border-color: rgba(255, 220, 90, 0.2);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 220, 90, 0.08), transparent 52%),
+    rgba(255, 255, 255, 0.035);
+}
+
+@media (max-width: 900px) {
+  .askdaft-pricing-truth-grid {
+    grid-template-columns: 1fr;
+  }
+}
