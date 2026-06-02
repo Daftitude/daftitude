@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:36:11 AM
+Generated: 6/2/2026, 1:38:21 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:36:11 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1583 |
-| Unique CSS classes in CSS | 591 |
+| Unique CSS selectors | 1597 |
+| Unique CSS classes in CSS | 602 |
 | Unique classes found in code | 624 |
-| Duplicate selector groups | 25 |
+| Duplicate selector groups | 29 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 30 |
+| Classes found in code but missing CSS | 19 |
 | AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 106 |
 
@@ -57,6 +57,10 @@ Generated: 6/2/2026, 1:36:11 AM
 - `.mission-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
 - `.values-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
 - `.contact-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1321`
+- `.balance-grid` — 2 times: `src/styles/pages.css:1370`, `src/styles/pages.css:1377`
+- `.price-grid` — 2 times: `src/styles/pages.css:1370`, `src/styles/pages.css:1381`
+- `.token-balance-card` — 2 times: `src/styles/pages.css:1385`, `src/styles/pages.css:1398`
+- `.tx-table th` — 2 times: `src/styles/pages.css:1431`, `src/styles/pages.css:1440`
 
 
 ## Classes With Many CSS Definitions
@@ -182,7 +186,7 @@ Generated: 6/2/2026, 1:36:11 AM
 - `.askdaft-front-door` — 5 definitions: `src/styles/askdaft-frontdoor.css:186`, `src/styles/askdaft-frontdoor.css:193`, `src/styles/askdaft-frontdoor.css:199`, `src/styles/askdaft-frontdoor.css:207`, `src/styles/askdaft-frontdoor.css:216`
 - `.askdaft-support-shortcut` — 5 definitions: `src/styles/askdaft-frontdoor.css:354`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:394`, `src/styles/askdaft-frontdoor.css:401`
 
-_Showing 120 of 192 results._
+_Showing 120 of 194 results._
 
 
 ## AskDaFT Selector Locations
@@ -717,23 +721,14 @@ _Showing 200 of 649 results._
 
 ## Classes Used in Code but Missing CSS
 
-- `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.card` — `src/pages/crypto/Crypto.jsx`
-- `.container` — `src/pages/crypto/Crypto.jsx`
-- `.crypto-section` — `src/pages/crypto/Crypto.jsx`
 - `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
-- `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
-- `.modal` — `src/pages/crypto/Crypto.jsx`
-- `.modal-content` — `src/pages/crypto/Crypto.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
 - `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag-grid` — `src/components/services/ServicePackages.jsx`
 - `.pkg-title` — `src/components/services/ServicePackages.jsx`
-- `.price-card` — `src/pages/crypto/Crypto.jsx`
-- `.price-grid` — `src/pages/crypto/Crypto.jsx`
 - `.price-label` — `src/components/services/ServicePackages.jsx`
 - `.price-note` — `src/components/services/ServicePackages.jsx`
 - `.price-value` — `src/components/services/ServicePackages.jsx`
@@ -743,9 +738,7 @@ _Showing 200 of 649 results._
 - `.system-briefs-header` — `src/components/techhub/CaseStudies.jsx`
 - `.techhub-cta` — `src/pages/techhub/TechHub.jsx`
 - `.techhub-topics` — `src/pages/techhub/TechHub.jsx`
-- `.token-balance-card` — `src/pages/crypto/Crypto.jsx`
 - `.topic` — `src/pages/techhub/TechHub.jsx`
-- `.tx-table` — `src/pages/crypto/Crypto.jsx`
 - `.value` — `src/components/services/ServicePackages.jsx`
 
 
