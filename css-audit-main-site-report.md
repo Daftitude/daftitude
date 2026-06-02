@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:38:21 AM
+Generated: 6/2/2026, 1:40:24 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:38:21 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1597 |
-| Unique CSS classes in CSS | 602 |
+| Unique CSS selectors | 1605 |
+| Unique CSS classes in CSS | 610 |
 | Unique classes found in code | 624 |
 | Duplicate selector groups | 29 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 19 |
+| Classes found in code but missing CSS | 11 |
 | AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 106 |
 
@@ -721,17 +721,9 @@ _Showing 200 of 649 results._
 
 ## Classes Used in Code but Missing CSS
 
-- `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
-- `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`
-- `.pkg-tag` — `src/components/services/ServicePackages.jsx`
-- `.pkg-tag-grid` — `src/components/services/ServicePackages.jsx`
-- `.pkg-title` — `src/components/services/ServicePackages.jsx`
-- `.price-label` — `src/components/services/ServicePackages.jsx`
-- `.price-note` — `src/components/services/ServicePackages.jsx`
-- `.price-value` — `src/components/services/ServicePackages.jsx`
 - `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
 - `.services-logo` — `src/components/services/ServicesHero.jsx`
 - `.step` — `src/components/services/ServicePackages.jsx`
