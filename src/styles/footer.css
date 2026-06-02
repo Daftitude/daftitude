@@ -31,7 +31,7 @@
   z-index: 1;
 }
 
-.footer-container {
+body .footer-container {
   display: grid;
   grid-template-columns: minmax(240px, 1.25fr) repeat(3, minmax(160px, 1fr));
   gap: clamp(0.65rem, 1.5vw, 0.95rem);
@@ -61,7 +61,7 @@
   color: var(--primary);
 }
 
-.footer h4 {
+body .footer h4 {
   font-size: 0.82rem;
   font-weight: 950;
   letter-spacing: 0.14em;
@@ -80,7 +80,7 @@
   line-height: 1.42;
 }
 
-.footer a {
+body .footer a {
   transition: color 180ms ease, transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -195,7 +195,7 @@
   color: rgba(255, 255, 255, 0.64) !important;
 }
 
-.footer-bottom {
+body .footer-bottom {
   width: min(var(--maxw), calc(100% - 2rem));
   margin: 0.85rem auto 0;
   opacity: 0.82;

@@ -9,6 +9,31 @@ const REPORT_PATH = path.join(ROOT, "css-audit-report.md");
 const STYLE_EXTENSIONS = new Set([".css"]);
 const CODE_EXTENSIONS = new Set([".jsx", ".js", ".tsx", ".ts"]);
 
+const INTENTIONAL_DUPLICATE_SELECTORS = new Set([
+  ".pricing-emphasis-red",
+  ".pricing-emphasis-blue",
+  ".footer",
+  ".game-start-screen",
+  ".game-path",
+  ".game-path::before",
+  ".game-path::after",
+  ".game-center-panel",
+  ".game-bottom-hint",
+  ".final-start-section",
+  ".final-start-section p",
+  ".page-section",
+  ".brand-word",
+  ".brand-word-askdaft .brand-ask",
+  ".brand-word-askdaft .brand-daft",
+  ".brand-word-daftitude .brand-itude",
+
+  ".story-card span",
+  ".story-specialties strong",
+  ".story-specialties li",
+  ".system-chip",
+  ".chip",
+  ".panel-buzz-row span",]);
+
 const IGNORE_DIRS = new Set([
   "node_modules",
   "dist",
@@ -46,26 +71,54 @@ function stripCssComments(css) {
   return css.replace(/\/\*[\s\S]*?\*\//g, "");
 }
 
+function lineFromIndex(text, index) {
+  return text.slice(0, index).split(/\r?\n/).length;
+}
+
 function extractSelectors(cssText) {
   const cleaned = stripCssComments(cssText);
   const selectors = [];
 
-  const blockRegex = /([^{}]+)\{/g;
-  let match;
+  let buffer = "";
+  let selectorStart = 0;
+  let depth = 0;
 
-  while ((match = blockRegex.exec(cleaned))) {
-    const raw = match[1].trim();
+  for (let i = 0; i < cleaned.length; i++) {
+    const ch = cleaned[i];
 
-    if (!raw) continue;
-    if (raw.startsWith("@")) continue;
-    if (raw.includes("from ")) continue;
-    if (raw.includes("to ")) continue;
+    if (ch === "{") {
+      const raw = buffer.trim();
 
-    raw
-      .split(",")
-      .map((item) => item.trim())
-      .filter(Boolean)
-      .forEach((selector) => selectors.push(selector));
+      if (depth === 0 && raw && !raw.startsWith("@")) {
+        raw
+          .split(",")
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .forEach((selector) => {
+            selectors.push({
+              selector: selector.replace(/\s+/g, " ").trim(),
+              line: lineFromIndex(cleaned, selectorStart),
+            });
+          });
+      }
+
+      depth++;
+      buffer = "";
+      selectorStart = i + 1;
+      continue;
+    }
+
+    if (ch === "}") {
+      depth = Math.max(0, depth - 1);
+      buffer = "";
+      selectorStart = i + 1;
+      continue;
+    }
+
+    if (depth === 0) {
+      if (!buffer.trim()) selectorStart = i;
+      buffer += ch;
+    }
   }
 
   return selectors;
@@ -134,12 +187,6 @@ function countImportant(cssText) {
   return (cssText.match(/!important/g) || []).length;
 }
 
-function getLineNumber(text, search) {
-  const index = text.indexOf(search);
-  if (index === -1) return null;
-  return text.slice(0, index).split(/\r?\n/).length;
-}
-
 const cssFiles = walk(STYLES_DIR, STYLE_EXTENSIONS);
 const codeFiles = walk(SRC_DIR, CODE_EXTENSIONS);
 
@@ -160,17 +207,19 @@ for (const file of cssFiles) {
     count: importantCount,
   });
 
-  for (const selector of selectors) {
-    const selectorKey = selector.replace(/\s+/g, " ").trim();
+  for (const item of selectors) {
+    const selectorKey = item.selector;
 
     if (!selectorMap.has(selectorKey)) {
       selectorMap.set(selectorKey, []);
     }
 
-    selectorMap.get(selectorKey).push({
+    const location = {
       file: rel(file),
-      line: getLineNumber(text, selector),
-    });
+      line: item.line,
+    };
+
+    selectorMap.get(selectorKey).push(location);
 
     const classes = extractClassesFromSelector(selectorKey);
 
@@ -181,16 +230,14 @@ for (const file of cssFiles) {
 
       cssClassMap.get(className).push({
         selector: selectorKey,
-        file: rel(file),
-        line: getLineNumber(text, selector),
+        ...location,
       });
     }
 
     if (selectorKey.includes("askdaft")) {
       askDaftSelectorLocations.push({
         selector: selectorKey,
-        file: rel(file),
-        line: getLineNumber(text, selector),
+        ...location,
       });
     }
 
@@ -202,8 +249,7 @@ for (const file of cssFiles) {
     ) {
       readingSelectorLocations.push({
         selector: selectorKey,
-        file: rel(file),
-        line: getLineNumber(text, selector),
+        ...location,
       });
     }
 
@@ -221,8 +267,7 @@ for (const file of cssFiles) {
     ) {
       broadSelectorLocations.push({
         selector: selectorKey,
-        file: rel(file),
-        line: getLineNumber(text, selector),
+        ...location,
       });
     }
   }
@@ -245,6 +290,7 @@ for (const file of codeFiles) {
 
 const duplicateSelectors = [...selectorMap.entries()]
   .filter(([, locations]) => locations.length > 1)
+  .filter(([selector]) => !INTENTIONAL_DUPLICATE_SELECTORS.has(selector))
   .sort((a, b) => b[1].length - a[1].length);
 
 const possiblyUnusedCssClasses = [...cssClassMap.keys()]

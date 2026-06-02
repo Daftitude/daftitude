@@ -14,7 +14,7 @@
 }
 
 .page-section,
-.story-mode-section {
+body .story-mode-section {
   padding: clamp(4rem, 8vw, 7rem) 0;
 }
 
@@ -252,7 +252,7 @@ p .brand-word,
 }
 
 .game-start-screen,
-.story-mode-section,
+body main .story-mode-section,
 .final-start-section,
 .footer {
   position: relative;

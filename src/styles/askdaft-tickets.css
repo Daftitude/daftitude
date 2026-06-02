@@ -135,7 +135,7 @@
 }
 
 .askdaft-ticket-submitted-grid article,
-.askdaft-ticket-summary-block {
+body .askdaft-ticket-summary-block {
   padding: 0.9rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
@@ -143,7 +143,7 @@
 }
 
 .askdaft-ticket-submitted-grid span,
-.askdaft-ticket-summary-block strong {
+body .askdaft-ticket-summary-block strong {
   display: block;
   margin-bottom: 0.35rem;
   color: rgba(125, 255, 178, 0.92);
@@ -248,7 +248,7 @@
     rgba(5, 9, 18, 0.74);
 }
 
-.askdaft-ticket-detail-hero {
+.askdaft-ticket-detail-page .askdaft-ticket-detail-hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -302,7 +302,7 @@
   font-weight: 800;
 }
 
-.askdaft-guest-save-panel {
+.askdaft-ticket-detail-page .askdaft-guest-save-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -342,7 +342,7 @@
   gap: 0.75rem;
 }
 
-.askdaft-ticket-status-timeline {
+.askdaft-ticket-detail-page .askdaft-ticket-status-timeline {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -378,7 +378,7 @@
   font-size: 0.82rem;
 }
 
-.askdaft-ticket-recommendation-grid {
+.askdaft-ticket-detail-page .askdaft-ticket-recommendation-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 

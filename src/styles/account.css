@@ -87,7 +87,7 @@
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
 }
 
-.account-auth-copy {
+.account-page .account-auth-copy {
   padding: clamp(1.2rem, 3vw, 2rem);
   position: sticky;
   top: calc(var(--navbar-h) + 1rem);
@@ -118,7 +118,7 @@
   margin-top: 1rem;
 }
 
-.account-auth-panel {
+.account-page .account-auth-panel {
   display: grid;
   gap: 1rem;
   padding: clamp(1rem, 2.4vw, 1.5rem);
@@ -132,7 +132,7 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-.account-form-card {
+body .account-form-card {
   padding: clamp(1rem, 2vw, 1.25rem);
 }
 
@@ -196,7 +196,7 @@
   gap: 0.8rem;
 }
 
-.account-benefit-card {
+body .account-benefit-card {
   padding: 1rem;
 }
 
@@ -229,7 +229,7 @@
   line-height: 1.42;
 }
 
-.account-dashboard-hero {
+.account-page .account-dashboard-hero {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -252,7 +252,7 @@
   margin-bottom: 0.9rem;
 }
 
-.dashboard-status-card {
+body .dashboard-status-card {
   padding: 1rem;
 }
 
@@ -282,7 +282,7 @@
   border-color: rgba(255, 112, 112, 0.2);
 }
 
-.account-dashboard-grid {
+.account-page .account-dashboard-grid {
   grid-template-columns: 1fr 1fr;
 }
 

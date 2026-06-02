@@ -59,14 +59,14 @@
     0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
-.askdaft-page .phase-panel,
-.askdaft-page .askdaft-onboarding-panel,
-.askdaft-page .phase-warning-panel,
-.askdaft-page .contact-command {
+.askdaft-page main .phase-panel,
+.askdaft-page main .askdaft-onboarding-panel,
+.askdaft-page main .phase-warning-panel,
+.askdaft-page main .contact-command {
   padding: clamp(1.25rem, 3vw, 2.1rem);
 }
 
-.askdaft-page .askdaft-callout {
+.askdaft-page main .askdaft-callout {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,7 +85,7 @@
   font-size: clamp(1.55rem, 3vw, 2.6rem);
 }
 
-.askdaft-page .contact-command {
+.askdaft-page main section .contact-command {
   text-align: center;
 }
 

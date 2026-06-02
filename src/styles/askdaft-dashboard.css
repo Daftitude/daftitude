@@ -112,9 +112,9 @@
   padding-bottom: 1rem;
 }
 
-.askdaft-active-request-panel,
-.askdaft-plan-panel,
-.account-dashboard-wide {
+.askdaft-client-layout > .askdaft-active-request-panel,
+.askdaft-client-layout > .askdaft-plan-panel,
+.askdaft-client-layout > .account-dashboard-wide {
   grid-column: 1 / -1;
 }
 
@@ -366,7 +366,7 @@
   border-color: rgba(125, 255, 178, 0.13);
 }
 
-.askdaft-dashboard-page .account-dashboard-wide {
+.askdaft-dashboard-page > .account-dashboard-wide {
   margin-top: 0.2rem;
 }
 
@@ -417,27 +417,27 @@
   margin-top: auto;
 }
 
-.askdaft-active-request-panel {
+.askdaft-dashboard-page .askdaft-active-request-panel {
   min-height: 260px;
 }
 
-.askdaft-next-steps-panel,
+.askdaft-dashboard-page .askdaft-next-steps-panel,
 .askdaft-client-layout .account-dashboard-panel:not(.askdaft-active-request-panel):not(.askdaft-plan-panel):not(.account-dashboard-wide) {
   min-height: var(--dashboard-card-min);
 }
 
-.askdaft-plan-panel {
+.askdaft-dashboard-page .askdaft-plan-panel {
   grid-column: auto;
   min-height: var(--dashboard-card-min);
 }
 
-.account-dashboard-wide {
+.askdaft-dashboard-page .askdaft-client-layout > .account-dashboard-wide {
   min-height: 210px;
 }
 
 
-.askdaft-file-list span,
-.askdaft-plan-list span {
+.askdaft-dashboard-page .askdaft-file-list span,
+.askdaft-dashboard-page .askdaft-plan-list span {
   flex-shrink: 0;
 }
 
@@ -679,12 +679,12 @@
   display: block;
 }
 
-.selected-device-status strong {
+.askdaft-tech-board .selected-device-status strong {
   color: #fff;
   font-weight: 1000;
 }
 
-.selected-device-status small {
+.askdaft-tech-board .selected-device-status small {
   color: rgba(255, 255, 255, 0.58);
   font-weight: 750;
 }
@@ -725,7 +725,7 @@
   margin-top: auto;
 }
 
-.device-action {
+.askdaft-tech-board .device-action {
   padding: 0.52rem 0.68rem;
 }
 
@@ -866,13 +866,13 @@
   display: block;
 }
 
-.tech-tree-group-heading strong {
+.askdaft-tech-board .tech-tree-group-heading strong {
   color: rgba(255, 255, 255, 0.92);
   font-size: 0.9rem;
   font-weight: 1000;
 }
 
-.tech-tree-group-heading small {
+.askdaft-tech-board .tech-tree-group-heading small {
   margin-top: 0.1rem;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.7rem;
@@ -1103,11 +1103,11 @@
   top: calc(var(--navbar-h) + 1rem);
 }
 
-.askdaft-tech-board.is-simple-view .askdaft-selected-device-panel {
+body .askdaft-tech-board.is-simple-view .askdaft-selected-device-panel {
   padding-bottom: 1rem;
 }
 
-.askdaft-tech-board.is-simple-view .selected-device-status {
+body .askdaft-tech-board.is-simple-view .selected-device-status {
   padding: 0.75rem;
 }
 

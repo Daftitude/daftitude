@@ -196,7 +196,7 @@
   padding-top: 0.18rem;
 }
 
-.story-card-heading-lockup h3 {
+#daftitude-story .story-card-heading-lockup h3 {
   min-height: 0;
   margin: 0;
   line-height: 1.12;
@@ -262,11 +262,11 @@
   margin-left: 0.15em;
 }
 
-.story-card-heading-lockup {
+#daftitude-story .story-card-heading-lockup {
   align-items: baseline;
 }
 
-.story-card-topline--with-title {
+#daftitude-story .story-card-topline--with-title {
   gap: 0.85rem;
 }
 
@@ -653,7 +653,7 @@
 }
 
 /* REPLACED: AskDaFT Focus Chips Alignment Fix .split-identity-section .askdaft-panel .panel-buzz-row span */
-.split-identity-section .askdaft-panel .panel-buzz-row span {
+body .split-identity-section .askdaft-panel .panel-buzz-row span {
   min-height: 34px !important;
   padding: 0.48rem 0.78rem !important;
   font-size: 0.68rem !important;
@@ -954,7 +954,7 @@
   box-shadow: 0 20px 58px rgba(0, 0, 0, 0.24), 0 0 28px rgba(125, 255, 178, 0.09);
 }
 
-.askdaft-issue-card.active {
+.askdaft-page .askdaft-issue-card.active {
   outline: 2px solid rgba(125, 255, 178, 0.22);
   outline-offset: 2px;
 }
@@ -1033,14 +1033,14 @@
   display: block;
 }
 
-.askdaft-style-pill strong {
+.askdaft-page .askdaft-style-pill strong {
   color: #fff;
   font-size: 0.86rem;
   font-weight: 950;
   line-height: 1.1;
 }
 
-.askdaft-style-pill small {
+.askdaft-page .askdaft-style-pill small {
   margin-top: 0.35rem;
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.7rem;
@@ -1056,7 +1056,7 @@
   background: rgba(12, 199, 246, 0.08);
 }
 
-.askdaft-style-pill.active {
+.askdaft-page .askdaft-style-pill.active {
   border-color: rgba(125, 255, 178, 0.42);
   background: rgba(125, 255, 178, 0.1);
 }
@@ -1313,7 +1313,7 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-.askdaft-typical-panel {
+.askdaft-page .askdaft-typical-panel {
   display: grid;
   grid-template-columns: 0.45fr 1fr;
   gap: 0.85rem;
@@ -1352,7 +1352,7 @@
   line-height: 1.4;
 }
 
-.askdaft-call-fields {
+.askdaft-page .askdaft-call-fields {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
@@ -1383,7 +1383,7 @@
   box-shadow: 0 0 0 3px rgba(125, 255, 178, 0.12);
 }
 
-.askdaft-guest-note {
+.askdaft-page .askdaft-guest-note {
   padding: 0.85rem;
   border-color: rgba(125, 255, 178, 0.18);
   background: rgba(125, 255, 178, 0.055);
@@ -1610,8 +1610,8 @@
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.22);
 }
 
-.askdaft-price-card,
-.askdaft-subscribe-card {
+.askdaft-page .askdaft-price-card,
+.askdaft-page .askdaft-subscribe-card {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -1647,7 +1647,7 @@
   white-space: nowrap;
 }
 
-.askdaft-subscribe-card strong {
+.askdaft-page .askdaft-subscribe-card strong {
   border-color: rgba(125, 255, 178, 0.3);
   background: rgba(125, 255, 178, 0.08);
   color: rgba(218, 255, 232, 0.96);
@@ -1709,7 +1709,7 @@
    Keeps the flow status useful without making it feel like another card section.
 ====================================================== */
 
-.askdaft-progress-tracker {
+.askdaft-page .askdaft-progress-tracker {
   grid-template-columns: repeat(4, auto);
   justify-content: center;
   gap: 0.45rem;
@@ -1717,7 +1717,7 @@
   margin-bottom: clamp(0.85rem, 1.8vw, 1.15rem);
 }
 
-.askdaft-progress-step {
+.askdaft-page .askdaft-progress-step {
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
@@ -1726,7 +1726,7 @@
   border-radius: 999px;
 }
 
-.askdaft-progress-step span {
+.askdaft-page .askdaft-progress-step span {
   display: grid;
   place-items: center;
   width: 22px;
@@ -1736,13 +1736,13 @@
   font-size: 0.58rem;
 }
 
-.askdaft-progress-step strong {
+.askdaft-page .askdaft-progress-step strong {
   font-size: 0.72rem;
   line-height: 1;
   white-space: nowrap;
 }
 
-.askdaft-progress-step small {
+.askdaft-page .askdaft-progress-step small {
   display: none;
 }
 

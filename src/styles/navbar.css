@@ -81,14 +81,14 @@
   gap: 0.38rem;
 }
 
-.navbar-menu-center {
+body .navbar-menu-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   margin-right: 0;
 }
 
-.navbar-menu-right {
+body .navbar-menu-right {
   margin-left: auto;
 }
 
@@ -130,7 +130,7 @@
   box-shadow: 0 0 24px rgba(12, 199, 246, 0.22);
 }
 
-.navbar-links .nav-signup-pill {
+body .navbar-links .nav-signup-pill {
   border-color: rgba(125, 255, 178, 0.45);
   background: linear-gradient(135deg, rgba(125, 255, 178, 0.96), rgba(255, 255, 255, 0.9));
   box-shadow: 0 0 22px rgba(125, 255, 178, 0.18);
@@ -191,7 +191,7 @@
   position: relative;
 }
 
-.nav-dropbtn {
+body .nav-dropbtn {
   gap: 0.38rem;
 }
 

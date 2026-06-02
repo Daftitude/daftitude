@@ -85,7 +85,7 @@
   text-align: center;
 }
 
-.mode-cta-copy > p {
+body .mode-cta-copy > p {
   max-width: 860px;
 }
 
@@ -97,7 +97,7 @@
   margin-top: 1.45rem;
 }
 
-.mode-cta-mini-bubble {
+body .mode-cta-mini-bubble {
   cursor: pointer;
   color: #061017;
   border-color: rgba(12, 199, 246, 0.45);

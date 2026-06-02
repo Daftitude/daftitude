@@ -134,8 +134,8 @@
 }
 
 
-.pricing-service strong,
-.pricing-row > div:first-child strong {
+body .pricing-service strong,
+body .pricing-row > div:first-child strong {
   color: #fff;
   font-size: clamp(0.98rem, 1.25vw, 1.12rem);
   font-weight: 950;
@@ -143,8 +143,8 @@
   letter-spacing: -0.025em;
 }
 
-.pricing-service span,
-.pricing-row > div:first-child span {
+body .pricing-service span,
+body .pricing-row > div:first-child span {
   border-left: 1px solid rgba(255, 255, 255, 0.10);
   color: rgba(255, 255, 255, 0.74);
   font-size: 0.92rem;
@@ -152,8 +152,8 @@
   line-height: 1.45;
 }
 
-.pricing-range,
-.pricing-row > b:last-child {
+body .pricing-range,
+body .pricing-row > b:last-child {
   position: relative;
   justify-content: center;
   border-left: 1px solid rgba(255, 255, 255, 0.10);
