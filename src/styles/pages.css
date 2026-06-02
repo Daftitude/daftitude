@@ -692,3 +692,78 @@
     flex-wrap: wrap;
   }
 }
+
+/* ======================================================
+   TechHub Briefs + Impact Layout
+====================================================== */
+
+.briefs-grid,
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+  margin-top: 1.25rem;
+}
+
+.brief-excerpt {
+  margin: 0.75rem 0 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.58;
+}
+
+.brief-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  color: rgba(125, 255, 178, 0.82);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.brief-link {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  margin-top: 1rem;
+  color: rgba(12, 199, 246, 0.95);
+  font-size: 0.84rem;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.brief-link:hover,
+.brief-link:focus-visible {
+  color: #fff;
+  text-shadow: 0 0 18px rgba(12, 199, 246, 0.28);
+}
+
+.brief-coming-soon {
+  opacity: 0.82;
+}
+
+.brief-coming-soon .brief-link {
+  pointer-events: none;
+  opacity: 0.48;
+}
+
+.coming-soon-text {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+@media (max-width: 900px) {
+  .briefs-grid,
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .briefs-grid,
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:25:15 AM
+Generated: 6/2/2026, 1:26:48 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:25:15 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1483 |
-| Unique CSS classes in CSS | 515 |
+| Unique CSS selectors | 1493 |
+| Unique CSS classes in CSS | 522 |
 | Unique classes found in code | 624 |
 | Duplicate selector groups | 15 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 110 |
+| Classes found in code but missing CSS | 103 |
 | AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 103 |
 
@@ -172,7 +172,7 @@ Generated: 6/2/2026, 1:25:15 AM
 - `.askdaft-support-shortcut` — 5 definitions: `src/styles/askdaft-frontdoor.css:354`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:394`, `src/styles/askdaft-frontdoor.css:401`
 - `.askdaft-pricing-truth-grid` — 5 definitions: `src/styles/askdaft-pricing.css:5`, `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:22`, `src/styles/askdaft-pricing.css:32`, `src/styles/askdaft-pricing.css:41`
 
-_Showing 120 of 191 results._
+_Showing 120 of 192 results._
 
 
 ## AskDaFT Selector Locations
@@ -706,17 +706,11 @@ _Showing 200 of 649 results._
 
 - `.about-me-section` — `src/pages/about/About.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.brief-coming-soon` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-excerpt` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-link` — `src/components/techhub/CaseStudies.jsx`
-- `.brief-meta` — `src/components/techhub/CaseStudies.jsx`
-- `.briefs-grid` — `src/components/techhub/CaseStudies.jsx`
 - `.btn-ghost` — `src/components/services/ServiceDetailModal.jsx`
 - `.btn-primary` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`
 - `.btn-solid` — `src/components/services/ServiceDetailModal.jsx`
 - `.card` — `src/pages/crypto/Crypto.jsx`
 - `.checklist` — `src/components/services/ServiceDetailModal.jsx`
-- `.coming-soon-text` — `src/components/techhub/CaseStudies.jsx`
 - `.compact-contact` — `src/components/contact/ContactCTA.jsx`
 - `.contact-btn` — `src/pages/about/About.jsx`
 - `.contact-container` — `src/pages/contact/Contact.jsx`
@@ -724,7 +718,6 @@ _Showing 200 of 649 results._
 - `.crypto-section` — `src/pages/crypto/Crypto.jsx`
 - `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
 - `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
-- `.impact-grid` — `src/components/techhub/CommunityImpact.jsx`
 - `.journey-section` — `src/pages/about/About.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
