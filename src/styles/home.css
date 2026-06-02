@@ -268,3 +268,92 @@ body .hub-select-card {
   max-width: 720px;
   margin: 1rem auto 0;
 }
+/* ======================================================
+   Home System Map + Floating Tools
+====================================================== */
+
+.system-map-section {
+  width: min(var(--maxw), calc(100% - 2rem));
+  margin-inline: auto;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.system-chip-grid--links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.system-chip-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.48rem 0.75rem;
+  border: 1px solid rgba(12, 199, 246, 0.2);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.065);
+  color: rgba(220, 248, 255, 0.95);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.system-chip-link:hover,
+.system-chip-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(125, 255, 178, 0.34);
+  background: rgba(125, 255, 178, 0.085);
+  box-shadow: 0 0 22px rgba(125, 255, 178, 0.08);
+}
+
+.system-map-resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.mode-tool,
+.reading-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.62rem 0.9rem;
+  border: 1px solid rgba(12, 199, 246, 0.28);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(12, 199, 246, 0.12), rgba(255, 255, 255, 0.055)),
+    rgba(5, 9, 18, 0.78);
+  color: rgba(255, 255, 255, 0.88);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.08);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.mode-tool:hover,
+.mode-tool:focus-visible,
+.reading-tool:hover,
+.reading-tool:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(125, 255, 178, 0.32);
+  box-shadow: 0 0 28px rgba(125, 255, 178, 0.1);
+}
+
+.subscription-section {
+  width: min(var(--maxw), calc(100% - 2rem));
+  margin-inline: auto;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}

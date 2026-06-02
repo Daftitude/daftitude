@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:30:35 AM
+Generated: 6/2/2026, 1:33:18 AM
 
 ## Summary
 
@@ -8,14 +8,14 @@ Generated: 6/2/2026, 1:30:35 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1546 |
-| Unique CSS classes in CSS | 570 |
+| Unique CSS selectors | 1559 |
+| Unique CSS classes in CSS | 577 |
 | Unique classes found in code | 624 |
 | Duplicate selector groups | 19 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 55 |
+| Classes found in code but missing CSS | 48 |
 | AskDaFT selector locations | 649 |
-| Reading/emphasis selector locations | 103 |
+| Reading/emphasis selector locations | 106 |
 
 
 ## Highest !important Counts by File
@@ -403,6 +403,9 @@ _Showing 200 of 649 results._
 - `.hub-select-section .hub-select-card p .pricing-emphasis-green` — `src/styles/cards.css:671`
 - `.hub-select-section .hub-select-card p .pricing-emphasis-yellow` — `src/styles/cards.css:671`
 - `.hub-select-section .hub-select-card p .pricing-emphasis-red` — `src/styles/cards.css:671`
+- `.reading-tool` — `src/styles/home.css:317`
+- `.reading-tool:hover` — `src/styles/home.css:342`
+- `.reading-tool:focus-visible` — `src/styles/home.css:342`
 - `.floating-reading-tools` — `src/styles/mobile.css:155`
 - `.reading-mode-toggle` — `src/styles/mobile.css:167`
 - `body .reading-mode-toggle` — `src/styles/mobile.css:189`
@@ -728,7 +731,6 @@ _Showing 200 of 649 results._
 - `.modal` — `src/pages/crypto/Crypto.jsx`
 - `.modal-content` — `src/pages/crypto/Crypto.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
-- `.mode-tool` — `src/components/home/FloatingPageTools.jsx`
 - `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag-grid` — `src/components/services/ServicePackages.jsx`
@@ -738,7 +740,6 @@ _Showing 200 of 649 results._
 - `.price-label` — `src/components/services/ServicePackages.jsx`
 - `.price-note` — `src/components/services/ServicePackages.jsx`
 - `.price-value` — `src/components/services/ServicePackages.jsx`
-- `.reading-tool` — `src/components/home/FloatingPageTools.jsx`
 - `.rounded` — `src/pages/crypto/Crypto.jsx`
 - `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
 - `.section-container` — `src/pages/about/About.jsx`
@@ -747,12 +748,7 @@ _Showing 200 of 649 results._
 - `.shadow` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.step` — `src/components/services/ServicePackages.jsx`
 - `.submit-btn` — `src/pages/contact/Contact.jsx`
-- `.subscription-section` — `src/components/home/PricingSection.jsx`
 - `.system-briefs-header` — `src/components/techhub/CaseStudies.jsx`
-- `.system-chip-grid--links` — `src/components/home/SystemMapSection.jsx`
-- `.system-chip-link` — `src/components/home/SystemMapSection.jsx`
-- `.system-map-resource-actions` — `src/components/home/SystemMapSection.jsx`
-- `.system-map-section` — `src/components/home/SystemMapSection.jsx`
 - `.techhub-cta` — `src/pages/techhub/TechHub.jsx`
 - `.techhub-topics` — `src/pages/techhub/TechHub.jsx`
 - `.timeline` — `src/pages/about/About.jsx`
