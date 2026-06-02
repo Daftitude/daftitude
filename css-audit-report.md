@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 12:39:13 AM
+Generated: 6/2/2026, 12:56:59 AM
 
 ## Summary
 
@@ -8,10 +8,10 @@ Generated: 6/2/2026, 12:39:13 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 178 |
-| Unique CSS selectors | 1365 |
+| Unique CSS selectors | 1378 |
 | Unique CSS classes in CSS | 447 |
 | Unique classes found in code | 1103 |
-| Duplicate selector groups | 27 |
+| Duplicate selector groups | 14 |
 | Classes defined in CSS but not found in code | 93 |
 | Classes found in code but missing CSS | 749 |
 | AskDaFT selector locations | 615 |
@@ -33,32 +33,19 @@ Generated: 6/2/2026, 12:39:13 AM
 ## Duplicate Selectors
 
 - `.mode-cta-copy h2` — 3 times: `src/styles/cta.css:76`, `src/styles/cta.css:170`, `src/styles/pricing.css:772`
-- `.account-dashboard-panel` — 2 times: `src/styles/account.css:70`, `src/styles/account.css:281`
-- `.dashboard-status-grid` — 2 times: `src/styles/account.css:234`, `src/styles/account.css:242`
 - `.recent-request-list div` — 2 times: `src/styles/account.css:312`, `src/styles/askdaft-dashboard.css:435`
-- `.askdaft-add-device-grid button` — 2 times: `src/styles/askdaft-dashboard.css:493`, `src/styles/askdaft-dashboard.css:505`
-- `.selected-device-details` — 2 times: `src/styles/askdaft-dashboard.css:681`, `src/styles/askdaft-dashboard.css:883`
 - `.askdaft-page` — 2 times: `src/styles/askdaft-frontdoor.css:37`, `src/styles/pages.css:4`
 - `.askdaft-hero h1` — 2 times: `src/styles/askdaft-frontdoor.css:83`, `src/styles/pages.css:49`
 - `.askdaft-price-transparency-note` — 2 times: `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:50`
-- `.askdaft-discovery-promise` — 2 times: `src/styles/askdaft-request.css:75`, `src/styles/askdaft-request.css:286`
 - `.askdaft-summary-note` — 2 times: `src/styles/askdaft-request.css:236`, `src/styles/cards.css:1123`
-- `.askdaft-request-progress-step` — 2 times: `src/styles/askdaft-request.css:450`, `src/styles/askdaft-request.css:728`
-- `.askdaft-ticket-list-card` — 2 times: `src/styles/askdaft-tickets.css:170`, `src/styles/askdaft-tickets.css:393`
-- `.askdaft-ticket-detail-actions` — 2 times: `src/styles/askdaft-tickets.css:227`, `src/styles/askdaft-tickets.css:387`
 - `button` — 2 times: `src/styles/base.css:37`, `src/styles/base.css:44`
 - `.story-card > p:not(.story-card-statement)` — 2 times: `src/styles/cards.css:262`, `src/styles/home.css:104`
 - `.story-card-statement` — 2 times: `src/styles/cards.css:262`, `src/styles/home.css:141`
 - `.split-identity-section` — 2 times: `src/styles/cards.css:396`, `src/styles/home.css:14`
 - `.askdaft-subscribe-note` — 2 times: `src/styles/cards.css:1558`, `src/styles/cards.css:1646`
-- `.mode-cta-action-row` — 2 times: `src/styles/cta.css:87`, `src/styles/cta.css:301`
 - `.mode-cta-lead-stack > span:first-child` — 2 times: `src/styles/cta.css:182`, `src/styles/pricing.css:781`
 - `.game-start-screen .mobile-hero-ambience` — 2 times: `src/styles/hero.css:35`, `src/styles/mobile.css:358`
-- `.jump-to-top-btn` — 2 times: `src/styles/mobile.css:167`, `src/styles/mobile.css:183`
-- `.reading-mode-toggle` — 2 times: `src/styles/mobile.css:167`, `src/styles/mobile.css:189`
 - `.contact-section` — 2 times: `src/styles/pages.css:85`, `src/styles/pages.css:103`
-- `.pricing-chart-intro h2` — 2 times: `src/styles/pricing.css:441`, `src/styles/pricing.css:772`
-- `.pricing-skim-guide--clean` — 2 times: `src/styles/pricing.css:682`, `src/styles/pricing.css:786`
 
 
 ## Classes With Many CSS Definitions
@@ -275,7 +262,7 @@ _Showing 120 of 185 results._
 - `.askdaft-tech-board .account-dashboard-panel` — `src/styles/askdaft-dashboard.css:482`
 - `.askdaft-add-device-grid` — `src/styles/askdaft-dashboard.css:486`
 - `.askdaft-add-device-grid button` — `src/styles/askdaft-dashboard.css:493`
-- `.askdaft-add-device-grid button` — `src/styles/askdaft-dashboard.css:505`
+- `body .askdaft-add-device-grid button` — `src/styles/askdaft-dashboard.css:505`
 - `.askdaft-add-device-grid button:hover` — `src/styles/askdaft-dashboard.css:509`
 - `.askdaft-tech-tree` — `src/styles/askdaft-dashboard.css:515`
 - `.askdaft-selected-device-panel` — `src/styles/askdaft-dashboard.css:642`
@@ -413,7 +400,7 @@ _Showing 200 of 615 results._
 - `.hub-select-section .hub-select-card p .pricing-emphasis-red` — `src/styles/cards.css:671`
 - `.floating-reading-tools` — `src/styles/mobile.css:155`
 - `.reading-mode-toggle` — `src/styles/mobile.css:167`
-- `.reading-mode-toggle` — `src/styles/mobile.css:189`
+- `body .reading-mode-toggle` — `src/styles/mobile.css:189`
 - `.reading-mode-toggle span` — `src/styles/mobile.css:200`
 - `.reading-mode-toggle strong` — `src/styles/mobile.css:208`
 - `.reading-mode-toggle.active` — `src/styles/mobile.css:215`
