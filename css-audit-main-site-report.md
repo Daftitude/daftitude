@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:22:11 AM
+Generated: 6/2/2026, 1:25:15 AM
 
 ## Summary
 
@@ -8,13 +8,13 @@ Generated: 6/2/2026, 1:22:11 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1445 |
-| Unique CSS classes in CSS | 498 |
+| Unique CSS selectors | 1483 |
+| Unique CSS classes in CSS | 515 |
 | Unique classes found in code | 624 |
 | Duplicate selector groups | 15 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 127 |
-| AskDaFT selector locations | 615 |
+| Classes found in code but missing CSS | 110 |
+| AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 103 |
 
 
@@ -140,6 +140,8 @@ Generated: 6/2/2026, 1:22:11 AM
 - `.askdaft-plan-list` — 6 definitions: `src/styles/askdaft-dashboard.css:214`, `src/styles/askdaft-dashboard.css:234`, `src/styles/askdaft-dashboard.css:243`, `src/styles/askdaft-dashboard.css:251`, `src/styles/askdaft-dashboard.css:265`, `src/styles/askdaft-dashboard.css:430`
 - `.selected-device-details` — 6 definitions: `src/styles/askdaft-dashboard.css:681`, `src/styles/askdaft-dashboard.css:687`, `src/styles/askdaft-dashboard.css:694`, `src/styles/askdaft-dashboard.css:702`, `src/styles/askdaft-dashboard.css:883`, `src/styles/askdaft-dashboard.css:887`
 - `.tech-tree-group` — 6 definitions: `src/styles/askdaft-dashboard.css:827`, `src/styles/askdaft-dashboard.css:869`, `src/styles/askdaft-dashboard.css:874`, `src/styles/askdaft-dashboard.css:874`, `src/styles/askdaft-dashboard.css:879`, `src/styles/askdaft-dashboard.css:1132`
+- `.askdaft-help-launcher-card` — 6 definitions: `src/styles/askdaft-dashboard.css:1819`, `src/styles/askdaft-dashboard.css:1838`, `src/styles/askdaft-dashboard.css:1838`, `src/styles/askdaft-dashboard.css:1848`, `src/styles/askdaft-dashboard.css:1854`, `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-plan-list-block` — 6 definitions: `src/styles/askdaft-dashboard.css:1916`, `src/styles/askdaft-dashboard.css:1921`, `src/styles/askdaft-dashboard.css:1928`, `src/styles/askdaft-dashboard.css:1933`, `src/styles/askdaft-dashboard.css:1938`, `src/styles/askdaft-dashboard.css:1946`
 - `.askdaft-request-hero` — 6 definitions: `src/styles/askdaft-request.css:10`, `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:32`, `src/styles/askdaft-request.css:41`, `src/styles/askdaft-request.css:644`, `src/styles/askdaft-request.css:649`
 - `.askdaft-chip-grid` — 6 definitions: `src/styles/askdaft-request.css:90`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:151`, `src/styles/askdaft-request.css:158`, `src/styles/askdaft-request.css:687`, `src/styles/askdaft-request.css:851`
 - `.btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
@@ -169,10 +171,8 @@ Generated: 6/2/2026, 1:22:11 AM
 - `.askdaft-front-door` — 5 definitions: `src/styles/askdaft-frontdoor.css:186`, `src/styles/askdaft-frontdoor.css:193`, `src/styles/askdaft-frontdoor.css:199`, `src/styles/askdaft-frontdoor.css:207`, `src/styles/askdaft-frontdoor.css:216`
 - `.askdaft-support-shortcut` — 5 definitions: `src/styles/askdaft-frontdoor.css:354`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:394`, `src/styles/askdaft-frontdoor.css:401`
 - `.askdaft-pricing-truth-grid` — 5 definitions: `src/styles/askdaft-pricing.css:5`, `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:22`, `src/styles/askdaft-pricing.css:32`, `src/styles/askdaft-pricing.css:41`
-- `.askdaft-discovery-promise` — 5 definitions: `src/styles/askdaft-request.css:75`, `src/styles/askdaft-request.css:286`, `src/styles/askdaft-request.css:290`, `src/styles/askdaft-request.css:297`, `src/styles/askdaft-request.css:304`
-- `.askdaft-inline-check` — 5 definitions: `src/styles/askdaft-request.css:177`, `src/styles/askdaft-request.css:219`, `src/styles/askdaft-request.css:230`, `src/styles/askdaft-request.css:704`, `src/styles/askdaft-request.css:857`
 
-_Showing 120 of 189 results._
+_Showing 120 of 191 results._
 
 
 ## AskDaFT Selector Locations
@@ -335,6 +335,31 @@ _Showing 120 of 189 results._
 - `.askdaft-guided-summary-card` — `src/styles/askdaft-dashboard.css:1302`
 - `.askdaft-guided-summary-card h3` — `src/styles/askdaft-dashboard.css:1314`
 - `.askdaft-guided-summary-card p:not(.phase-kicker)` — `src/styles/askdaft-dashboard.css:1321`
+- `.askdaft-help-launcher` — `src/styles/askdaft-dashboard.css:1777`
+- `.askdaft-help-launcher-heading` — `src/styles/askdaft-dashboard.css:1790`
+- `.askdaft-help-launcher-heading h2` — `src/styles/askdaft-dashboard.css:1798`
+- `.askdaft-help-launcher-heading p` — `src/styles/askdaft-dashboard.css:1806`
+- `.askdaft-help-launcher-grid` — `src/styles/askdaft-dashboard.css:1813`
+- `.askdaft-help-launcher-card` — `src/styles/askdaft-dashboard.css:1819`
+- `.askdaft-help-launcher-card:hover` — `src/styles/askdaft-dashboard.css:1838`
+- `.askdaft-help-launcher-card:focus-visible` — `src/styles/askdaft-dashboard.css:1838`
+- `.askdaft-help-launcher-card strong` — `src/styles/askdaft-dashboard.css:1848`
+- `.askdaft-help-launcher-card span` — `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-help-launcher-card p` — `src/styles/askdaft-dashboard.css:1854`
+- `.askdaft-current-plan-card` — `src/styles/askdaft-dashboard.css:1863`
+- `.askdaft-current-plan-card strong` — `src/styles/askdaft-dashboard.css:1874`
+- `.askdaft-current-plan-card span` — `src/styles/askdaft-dashboard.css:1882`
+- `.askdaft-plan-comparison-grid` — `src/styles/askdaft-dashboard.css:1888`
+- `.askdaft-plan-comparison-card` — `src/styles/askdaft-dashboard.css:1895`
+- `.askdaft-plan-card-top` — `src/styles/askdaft-dashboard.css:1904`
+- `.askdaft-plan-card-top strong` — `src/styles/askdaft-dashboard.css:1909`
+- `.askdaft-plan-card-top h3` — `src/styles/askdaft-dashboard.css:1909`
+- `.askdaft-plan-list-block` — `src/styles/askdaft-dashboard.css:1916`
+- `.askdaft-plan-list-block strong` — `src/styles/askdaft-dashboard.css:1921`
+- `.askdaft-plan-list-block.included strong` — `src/styles/askdaft-dashboard.css:1928`
+- `.askdaft-plan-list-block.not-included strong` — `src/styles/askdaft-dashboard.css:1933`
+- `.askdaft-plan-list-block ul` — `src/styles/askdaft-dashboard.css:1938`
+- `.askdaft-plan-list-block li` — `src/styles/askdaft-dashboard.css:1946`
 - `.askdaft-entry-strip` — `src/styles/askdaft-frontdoor.css:5`
 - `.askdaft-entry-strip article` — `src/styles/askdaft-frontdoor.css:13`
 - `.askdaft-entry-strip strong` — `src/styles/askdaft-frontdoor.css:21`
@@ -352,33 +377,8 @@ _Showing 120 of 189 results._
 - `.askdaft-page .phase-btn` — `src/styles/askdaft-frontdoor.css:136`
 - `.askdaft-page .phase-btn-primary` — `src/styles/askdaft-frontdoor.css:152`
 - `.askdaft-page .phase-btn-secondary` — `src/styles/askdaft-frontdoor.css:159`
-- `.askdaft-page .phase-btn-ghost` — `src/styles/askdaft-frontdoor.css:164`
-- `.askdaft-page .phase-btn:hover` — `src/styles/askdaft-frontdoor.css:168`
-- `.askdaft-page .phase-btn:focus-visible` — `src/styles/askdaft-frontdoor.css:168`
-- `.askdaft-page .phase-btn-primary:hover` — `src/styles/askdaft-frontdoor.css:177`
-- `.askdaft-page .phase-btn-primary:focus-visible` — `src/styles/askdaft-frontdoor.css:177`
-- `.askdaft-page .askdaft-front-door` — `src/styles/askdaft-frontdoor.css:186`
-- `.askdaft-page .askdaft-front-door .phase-section-heading` — `src/styles/askdaft-frontdoor.css:193`
-- `.askdaft-page .askdaft-front-door .phase-section-heading h2` — `src/styles/askdaft-frontdoor.css:199`
-- `.askdaft-page .askdaft-front-door .phase-section-heading p` — `src/styles/askdaft-frontdoor.css:207`
-- `.askdaft-front-door` — `src/styles/askdaft-frontdoor.css:216`
-- `.askdaft-front-door-grid` — `src/styles/askdaft-frontdoor.css:220`
-- `.askdaft-front-door-card` — `src/styles/askdaft-frontdoor.css:226`
-- `.askdaft-front-door-card::after` — `src/styles/askdaft-frontdoor.css:249`
-- `.askdaft-front-door-card:hover` — `src/styles/askdaft-frontdoor.css:261`
-- `.askdaft-front-door-card:focus-visible` — `src/styles/askdaft-frontdoor.css:261`
-- `.askdaft-front-door-icon` — `src/styles/askdaft-frontdoor.css:274`
-- `.askdaft-front-door-card strong` — `src/styles/askdaft-frontdoor.css:292`
-- `.askdaft-front-door-card p` — `src/styles/askdaft-frontdoor.css:302`
-- `.askdaft-front-door-card small` — `src/styles/askdaft-frontdoor.css:312`
-- `.askdaft-support-shortcuts` — `src/styles/askdaft-frontdoor.css:328`
-- `.askdaft-support-shortcuts h3` — `src/styles/askdaft-frontdoor.css:340`
-- `.askdaft-support-shortcut-row` — `src/styles/askdaft-frontdoor.css:348`
-- `.askdaft-support-shortcut` — `src/styles/askdaft-frontdoor.css:354`
-- `.askdaft-support-shortcut:hover` — `src/styles/askdaft-frontdoor.css:372`
-- `.askdaft-support-shortcut:focus-visible` — `src/styles/askdaft-frontdoor.css:372`
 
-_Showing 200 of 615 results._
+_Showing 200 of 649 results._
 
 
 ## Reading Mode / Emphasis Selector Locations
@@ -705,20 +705,6 @@ _Showing 200 of 615 results._
 ## Classes Used in Code but Missing CSS
 
 - `.about-me-section` — `src/pages/about/About.jsx`
-- `.askdaft-current-plan-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-estimates-section` — `src/components/askdaft/AskDaftEstimateSection.jsx`
-- `.askdaft-help-launcher` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-grid` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-help-launcher-heading` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-card-top` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-comparison-card` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-comparison-grid` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-plan-list-block` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.askdaft-pricing-section` — `src/components/askdaft/AskDaftPricingSection.jsx`
-- `.askdaft-read-key` — `src/components/askdaft/AskDaftHero.jsx`
-- `.askdaft-subscribe-section` — `src/components/askdaft/AskDaftSubscribeSection.jsx`
-- `.askdaft-summary-section` — `src/components/askdaft/AskDaftSummarySection.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
 - `.brief-coming-soon` — `src/components/techhub/CaseStudies.jsx`
 - `.brief-excerpt` — `src/components/techhub/CaseStudies.jsx`
@@ -739,7 +725,6 @@ _Showing 200 of 615 results._
 - `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
 - `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
 - `.impact-grid` — `src/components/techhub/CommunityImpact.jsx`
-- `.included` — `src/pages/askdaft/AskDaftDashboard.jsx`
 - `.journey-section` — `src/pages/about/About.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
@@ -763,8 +748,6 @@ _Showing 200 of 615 results._
 - `.modal-title` — `src/components/services/ServiceDetailModal.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
 - `.mode-tool` — `src/components/home/FloatingPageTools.jsx`
-- `.not-included` — `src/pages/askdaft/AskDaftDashboard.jsx`
-- `.phase-hero` — `src/components/askdaft/AskDaftHero.jsx`
 - `.pill` — `src/components/services/ServiceDetailModal.jsx`
 - `.pill-row` — `src/components/services/ServiceDetailModal.jsx`
 - `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`

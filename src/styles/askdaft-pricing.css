@@ -65,3 +65,32 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ======================================================
+   AskDaFT Pricing / Summary Section Wrappers
+====================================================== */
+
+.askdaft-pricing-section,
+.askdaft-estimates-section,
+.askdaft-subscribe-section,
+.askdaft-summary-section {
+  position: relative;
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.askdaft-pricing-section::before,
+.askdaft-estimates-section::before,
+.askdaft-subscribe-section::before,
+.askdaft-summary-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.055);
+  filter: blur(44px);
+  opacity: 0.72;
+}

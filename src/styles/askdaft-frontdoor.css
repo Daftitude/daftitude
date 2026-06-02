@@ -475,3 +475,29 @@
     width: max-content;
   }
 }
+/* ======================================================
+   AskDaFT Frontdoor Hero Details
+====================================================== */
+
+.phase-hero {
+  position: relative;
+  min-height: calc(72svh - var(--navbar-h));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8rem) 1rem clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+
+.askdaft-read-key {
+  color: rgba(125, 255, 178, 0.96);
+  text-shadow: 0 0 34px rgba(125, 255, 178, 0.18);
+}
+
+.phase-hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
