@@ -788,7 +788,7 @@ body .pricing-row > b:last-child {
 ====================================================== */
 
 .mode-cta-copy h2,
-.pricing-chart-intro h2 {
+body .pricing-chart-intro h2 {
   max-width: 900px;
   margin-inline: auto;
   font-size: clamp(2rem, 4vw, 3.25rem) !important;
@@ -801,7 +801,7 @@ body .pricing-row > b:last-child {
   line-height: 1.45 !important;
 }
 
-.pricing-skim-guide--clean {
+body .pricing-skim-guide--clean {
   margin-top: 1.15rem;
 }
 

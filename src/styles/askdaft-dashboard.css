@@ -513,7 +513,7 @@
   cursor: pointer;
 }
 
-.askdaft-add-device-grid button {
+body .askdaft-add-device-grid button {
   padding: 0.48rem 0.62rem;
 }
 
@@ -893,7 +893,7 @@
   min-height: 98px;
 }
 
-.selected-device-details {
+body .selected-device-details {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 

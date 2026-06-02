@@ -186,13 +186,13 @@
   transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
-.jump-to-top-btn {
+body .jump-to-top-btn {
   width: 46px;
   height: 46px;
   font-size: 1.2rem;
 }
 
-.reading-mode-toggle {
+body .reading-mode-toggle {
   flex-direction: row;
   gap: 0.42rem;
   min-width: 132px;

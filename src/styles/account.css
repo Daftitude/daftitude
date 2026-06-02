@@ -247,7 +247,7 @@ body .account-benefit-card {
   margin: 0 auto;
 }
 
-.dashboard-status-grid {
+body .dashboard-status-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 0.9rem;
 }
@@ -286,7 +286,7 @@ body .dashboard-status-card {
   grid-template-columns: 1fr 1fr;
 }
 
-.account-dashboard-panel {
+body .account-dashboard-panel {
   padding: clamp(1rem, 2vw, 1.35rem);
 }
 
