@@ -321,6 +321,10 @@ function isUtilityClass(className) {
     /^(hover|focus|active|disabled|sm|md|lg|xl|2xl):/.test(className) ||
     className === "group" ||
     className === "border" ||
+    className === "rounded" ||
+    className === "shadow" ||
+    className === "transition" ||
+    className === "uppercase" ||
     /^(flex|grid)-/.test(className)
   );
 }

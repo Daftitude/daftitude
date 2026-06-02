@@ -1226,3 +1226,142 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ======================================================
+   About + Contact Page Details
+====================================================== */
+
+.section-container,
+.about-me-section,
+.journey-section,
+.mission-section,
+.values-container,
+.contact-container {
+  width: min(var(--maxw), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.about-me-section,
+.journey-section,
+.mission-section,
+.values-container {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.section-container {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.timeline {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 1.18rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(125, 255, 178, 0.95);
+  box-shadow: 0 0 16px rgba(125, 255, 178, 0.22);
+}
+
+.learn-more-btn,
+.contact-btn,
+.btn-primary,
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-height: 42px;
+  padding: 0.68rem 1rem;
+  border: 1px solid rgba(12, 199, 246, 0.42);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(12, 199, 246, 0.96), rgba(255, 255, 255, 0.9));
+  color: #061017;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 950;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(12, 199, 246, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:focus-visible,
+.contact-btn:hover,
+.contact-btn:focus-visible,
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(12, 199, 246, 0.24);
+}
+
+.compact-contact {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.14);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: 1rem;
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.map-container {
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(12, 199, 246, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.services-hero {
+  position: relative;
+  min-height: calc(70svh - var(--navbar-h));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8rem) 1rem clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

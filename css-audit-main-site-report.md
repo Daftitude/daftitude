@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:33:18 AM
+Generated: 6/2/2026, 1:36:11 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:33:18 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1559 |
-| Unique CSS classes in CSS | 577 |
+| Unique CSS selectors | 1583 |
+| Unique CSS classes in CSS | 591 |
 | Unique classes found in code | 624 |
-| Duplicate selector groups | 19 |
+| Duplicate selector groups | 25 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 48 |
+| Classes found in code but missing CSS | 30 |
 | AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 106 |
 
@@ -51,6 +51,12 @@ Generated: 6/2/2026, 1:33:18 AM
 - `.btn-solid` — 2 times: `src/styles/pages.css:917`, `src/styles/pages.css:933`
 - `.service-details-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1064`
 - `.service-select-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1070`
+- `.section-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1236`
+- `.about-me-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.journey-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.mission-section` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.values-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1229`
+- `.contact-container` — 2 times: `src/styles/pages.css:1219`, `src/styles/pages.css:1321`
 
 
 ## Classes With Many CSS Definitions
@@ -711,23 +717,14 @@ _Showing 200 of 649 results._
 
 ## Classes Used in Code but Missing CSS
 
-- `.about-me-section` — `src/pages/about/About.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.btn-primary` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`
 - `.card` — `src/pages/crypto/Crypto.jsx`
-- `.compact-contact` — `src/components/contact/ContactCTA.jsx`
-- `.contact-btn` — `src/pages/about/About.jsx`
-- `.contact-container` — `src/pages/contact/Contact.jsx`
 - `.container` — `src/pages/crypto/Crypto.jsx`
 - `.crypto-section` — `src/pages/crypto/Crypto.jsx`
 - `.cta-btn--ghost` — `src/components/services/ServicePackages.jsx`
 - `.filter-buttons` — `src/pages/crypto/Crypto.jsx`
-- `.journey-section` — `src/pages/about/About.jsx`
 - `.key` — `src/components/services/ServicesSection.jsx`, `src/pages/askdaft/AskDaftRequest.jsx`
 - `.label` — `src/components/services/ServicePackages.jsx`
-- `.learn-more-btn` — `src/components/about/AboutSection.jsx`
-- `.map-container` — `src/pages/contact/Contact.jsx`
-- `.mission-section` — `src/pages/about/About.jsx`
 - `.modal` — `src/pages/crypto/Crypto.jsx`
 - `.modal-content` — `src/pages/crypto/Crypto.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
@@ -740,25 +737,16 @@ _Showing 200 of 649 results._
 - `.price-label` — `src/components/services/ServicePackages.jsx`
 - `.price-note` — `src/components/services/ServicePackages.jsx`
 - `.price-value` — `src/components/services/ServicePackages.jsx`
-- `.rounded` — `src/pages/crypto/Crypto.jsx`
 - `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
-- `.section-container` — `src/pages/about/About.jsx`
-- `.services-hero` — `src/components/about/AboutHero.jsx`, `src/components/contact/ContactHero.jsx`, `src/components/services/ServicesHero.jsx`, `src/components/techhub/HeroTechHub.jsx`
 - `.services-logo` — `src/components/services/ServicesHero.jsx`
-- `.shadow` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.step` — `src/components/services/ServicePackages.jsx`
-- `.submit-btn` — `src/pages/contact/Contact.jsx`
 - `.system-briefs-header` — `src/components/techhub/CaseStudies.jsx`
 - `.techhub-cta` — `src/pages/techhub/TechHub.jsx`
 - `.techhub-topics` — `src/pages/techhub/TechHub.jsx`
-- `.timeline` — `src/pages/about/About.jsx`
 - `.token-balance-card` — `src/pages/crypto/Crypto.jsx`
 - `.topic` — `src/pages/techhub/TechHub.jsx`
-- `.transition` — `src/components/family/FamilyHero.jsx`, `src/components/family/FamilyNavbar.jsx`, `src/pages/family/Family.jsx`
 - `.tx-table` — `src/pages/crypto/Crypto.jsx`
-- `.uppercase` — `src/pages/family/Family.jsx`
 - `.value` — `src/components/services/ServicePackages.jsx`
-- `.values-container` — `src/pages/about/About.jsx`
 
 
 ## Cleanup Recommendation Order
