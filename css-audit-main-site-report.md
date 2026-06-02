@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:26:48 AM
+Generated: 6/2/2026, 1:30:35 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:26:48 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1493 |
-| Unique CSS classes in CSS | 522 |
+| Unique CSS selectors | 1546 |
+| Unique CSS classes in CSS | 570 |
 | Unique classes found in code | 624 |
-| Duplicate selector groups | 15 |
+| Duplicate selector groups | 19 |
 | Classes defined in CSS but not found in code | 111 |
-| Classes found in code but missing CSS | 103 |
+| Classes found in code but missing CSS | 55 |
 | AskDaFT selector locations | 649 |
 | Reading/emphasis selector locations | 103 |
 
@@ -47,6 +47,10 @@ Generated: 6/2/2026, 1:26:48 AM
 - `.game-start-screen .mobile-hero-ambience` — 2 times: `src/styles/hero.css:35`, `src/styles/mobile.css:358`
 - `.contact-section` — 2 times: `src/styles/pages.css:85`, `src/styles/pages.css:103`
 - `.pkg-card` — 2 times: `src/styles/pages.css:110`, `src/styles/pages.css:175`
+- `.btn-ghost` — 2 times: `src/styles/pages.css:917`, `src/styles/pages.css:927`
+- `.btn-solid` — 2 times: `src/styles/pages.css:917`, `src/styles/pages.css:933`
+- `.service-details-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1064`
+- `.service-select-btn` — 2 times: `src/styles/pages.css:1054`, `src/styles/pages.css:1070`
 
 
 ## Classes With Many CSS Definitions
@@ -126,6 +130,7 @@ Generated: 6/2/2026, 1:26:48 AM
 - `.askdaft-mini-scope` — 7 definitions: `src/styles/askdaft-request.css:236`, `src/styles/askdaft-request.css:248`, `src/styles/askdaft-request.css:256`, `src/styles/askdaft-request.css:266`, `src/styles/askdaft-request.css:271`, `src/styles/askdaft-request.css:276`, `src/styles/askdaft-request.css:281`
 - `.askdaft-submit-checklist` — 7 definitions: `src/styles/askdaft-request.css:504`, `src/styles/askdaft-request.css:511`, `src/styles/askdaft-request.css:520`, `src/styles/askdaft-request.css:528`, `src/styles/askdaft-request.css:528`, `src/styles/askdaft-request.css:539`, `src/styles/askdaft-request.css:539`
 - `.askdaft-dashboard-ticket-list` — 7 definitions: `src/styles/askdaft-tickets.css:11`, `src/styles/askdaft-tickets.css:17`, `src/styles/askdaft-tickets.css:28`, `src/styles/askdaft-tickets.css:28`, `src/styles/askdaft-tickets.css:42`, `src/styles/askdaft-tickets.css:48`, `src/styles/askdaft-tickets.css:53`
+- `.primary` — 7 definitions: `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/cta.css:431`, `src/styles/cta.css:437`, `src/styles/pages.css:437`, `src/styles/pages.css:1194`
 - `.story-mode-section--daftitude` — 7 definitions: `src/styles/cards.css:8`, `src/styles/cards.css:8`, `src/styles/cards.css:13`, `src/styles/cards.css:18`, `src/styles/cards.css:22`, `src/styles/cards.css:26`, `src/styles/cards.css:30`
 - `.story-kicker` — 7 definitions: `src/styles/cards.css:409`, `src/styles/cta.css:17`, `src/styles/cta.css:38`, `src/styles/cta.css:357`, `src/styles/cta.css:381`, `src/styles/utilities.css:19`, `src/styles/utilities.css:107`
 - `.askdaft-issue-card` — 7 definitions: `src/styles/cards.css:895`, `src/styles/cards.css:910`, `src/styles/cards.css:910`, `src/styles/cards.css:910`, `src/styles/cards.css:921`, `src/styles/cards.css:937`, `src/styles/cards.css:947`
@@ -146,7 +151,7 @@ Generated: 6/2/2026, 1:26:48 AM
 - `.askdaft-chip-grid` — 6 definitions: `src/styles/askdaft-request.css:90`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:151`, `src/styles/askdaft-request.css:158`, `src/styles/askdaft-request.css:687`, `src/styles/askdaft-request.css:851`
 - `.btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
 - `.cta-btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
-- `.primary` — 6 definitions: `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/cta.css:431`, `src/styles/cta.css:437`, `src/styles/pages.css:437`
+- `.secondary` — 6 definitions: `src/styles/buttons.css:42`, `src/styles/buttons.css:42`, `src/styles/buttons.css:42`, `src/styles/cta.css:441`, `src/styles/cta.css:447`, `src/styles/pages.css:1188`
 - `.ghost` — 6 definitions: `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/cta.css:451`, `src/styles/cta.css:451`, `src/styles/pages.css:432`
 - `.askdaft-panel` — 6 definitions: `src/styles/cards.css:482`, `src/styles/cards.css:598`, `src/styles/cards.css:615`, `src/styles/cards.css:626`, `src/styles/cards.css:632`, `src/styles/home.css:231`
 - `.hub-select-section` — 6 definitions: `src/styles/cards.css:661`, `src/styles/cards.css:665`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`
@@ -170,7 +175,6 @@ Generated: 6/2/2026, 1:26:48 AM
 - `.askdaft-guided-step-grid` — 5 definitions: `src/styles/askdaft-dashboard.css:1259`, `src/styles/askdaft-dashboard.css:1265`, `src/styles/askdaft-dashboard.css:1273`, `src/styles/askdaft-dashboard.css:1286`, `src/styles/askdaft-dashboard.css:1294`
 - `.askdaft-front-door` — 5 definitions: `src/styles/askdaft-frontdoor.css:186`, `src/styles/askdaft-frontdoor.css:193`, `src/styles/askdaft-frontdoor.css:199`, `src/styles/askdaft-frontdoor.css:207`, `src/styles/askdaft-frontdoor.css:216`
 - `.askdaft-support-shortcut` — 5 definitions: `src/styles/askdaft-frontdoor.css:354`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:372`, `src/styles/askdaft-frontdoor.css:394`, `src/styles/askdaft-frontdoor.css:401`
-- `.askdaft-pricing-truth-grid` — 5 definitions: `src/styles/askdaft-pricing.css:5`, `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:22`, `src/styles/askdaft-pricing.css:32`, `src/styles/askdaft-pricing.css:41`
 
 _Showing 120 of 192 results._
 
@@ -706,11 +710,8 @@ _Showing 200 of 649 results._
 
 - `.about-me-section` — `src/pages/about/About.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.btn-ghost` — `src/components/services/ServiceDetailModal.jsx`
 - `.btn-primary` — `src/components/contact/ContactCTA.jsx`, `src/pages/contact/Contact.jsx`
-- `.btn-solid` — `src/components/services/ServiceDetailModal.jsx`
 - `.card` — `src/pages/crypto/Crypto.jsx`
-- `.checklist` — `src/components/services/ServiceDetailModal.jsx`
 - `.compact-contact` — `src/components/contact/ContactCTA.jsx`
 - `.contact-btn` — `src/pages/about/About.jsx`
 - `.contact-container` — `src/pages/contact/Contact.jsx`
@@ -725,24 +726,9 @@ _Showing 200 of 649 results._
 - `.map-container` — `src/pages/contact/Contact.jsx`
 - `.mission-section` — `src/pages/about/About.jsx`
 - `.modal` — `src/pages/crypto/Crypto.jsx`
-- `.modal-backdrop` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-block` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-block-title` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-body` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-close` — `src/components/services/ServiceDetailModal.jsx`
 - `.modal-content` — `src/pages/crypto/Crypto.jsx`
-- `.modal-eyebrow` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-foot` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-grid` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-head` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-meta` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-sheet` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-subtitle` — `src/components/services/ServiceDetailModal.jsx`
-- `.modal-title` — `src/components/services/ServiceDetailModal.jsx`
 - `.mode-cta-panel` — `src/components/home/ModeCTASection.jsx`
 - `.mode-tool` — `src/components/home/FloatingPageTools.jsx`
-- `.pill` — `src/components/services/ServiceDetailModal.jsx`
-- `.pill-row` — `src/components/services/ServiceDetailModal.jsx`
 - `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag-grid` — `src/components/services/ServicePackages.jsx`
@@ -756,38 +742,8 @@ _Showing 200 of 649 results._
 - `.rounded` — `src/pages/crypto/Crypto.jsx`
 - `.scroll-down` — `src/components/crypto/HeroCrypto.jsx`, `src/components/services/ServicesHero.jsx`
 - `.section-container` — `src/pages/about/About.jsx`
-- `.service-actions` — `src/components/services/ServicesSection.jsx`
-- `.service-card-content` — `src/components/services/ServicesSection.jsx`
-- `.service-details-btn` — `src/components/services/ServicesSection.jsx`
-- `.service-flow-steps` — `src/components/services/ServicesHero.jsx`, `src/components/services/ServicesSection.jsx`
-- `.service-meta` — `src/components/services/ServicesSection.jsx`
-- `.service-select-btn` — `src/components/services/ServicesSection.jsx`
-- `.service-step` — `src/components/services/ServicesHero.jsx`, `src/components/services/ServicesSection.jsx`
-- `.services-booking` — `src/components/services/ServicesSection.jsx`
-- `.services-feature-grid` — `src/components/services/ServicesSection.jsx`
 - `.services-hero` — `src/components/about/AboutHero.jsx`, `src/components/contact/ContactHero.jsx`, `src/components/services/ServicesHero.jsx`, `src/components/techhub/HeroTechHub.jsx`
-- `.services-intro` — `src/components/services/ServicesSection.jsx`
 - `.services-logo` — `src/components/services/ServicesHero.jsx`
-- `.services-mode-badge` — `src/components/services/ServicesSection.jsx`
-- `.services-mode-hint` — `src/components/services/ServicesSection.jsx`
-- `.services-mode-pill` — `src/components/services/ServicesSection.jsx`
-- `.services-section` — `src/components/services/ServicesSection.jsx`
-- `.services-summary` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-actions` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-body` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-btn` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-chip` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-desc` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-empty` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-empty-text` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-empty-title` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-head` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-kicker` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-meta` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-meta-row` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-service` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-subtitle` — `src/components/services/ServicesSection.jsx`
-- `.services-summary-title` — `src/components/services/ServicesSection.jsx`
 - `.shadow` — `src/components/family/FamilyHero.jsx`, `src/pages/crypto/Crypto.jsx`, `src/pages/family/Family.jsx`
 - `.step` — `src/components/services/ServicePackages.jsx`
 - `.submit-btn` — `src/pages/contact/Contact.jsx`
