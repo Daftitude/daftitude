@@ -32,7 +32,8 @@ const INTENTIONAL_DUPLICATE_SELECTORS = new Set([
   ".story-specialties li",
   ".system-chip",
   ".chip",
-  ".panel-buzz-row span",]);
+  ".panel-buzz-row span",
+]);
 
 const IGNORE_DIRS = new Set([
   "node_modules",
