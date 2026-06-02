@@ -165,3 +165,530 @@
 
 
 
+
+/* ======================================================
+   Service Package Modal + Booking Cart
+====================================================== */
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+  align-items: stretch;
+}
+
+.pkg-card {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  min-height: 100%;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.pkg-card:hover,
+.pkg-card:focus-visible,
+.pkg-card.is-selected {
+  transform: translateY(-3px);
+  border-color: rgba(125, 255, 178, 0.32);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(125, 255, 178, 0.09), transparent 46%),
+    var(--panel);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28), 0 0 28px rgba(125, 255, 178, 0.08);
+}
+
+.pkg-card-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(12, 199, 246, 0.22);
+  border-radius: 18px;
+  background: rgba(12, 199, 246, 0.08);
+  font-size: 1.35rem;
+}
+
+.pkg-card-top {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pkg-card-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  font-weight: 1000;
+  letter-spacing: -0.035em;
+}
+
+.pkg-card-sub {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.pkg-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(2, 6, 14, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.pkg-modal-card {
+  width: min(860px, 100%);
+  max-height: min(86vh, 920px);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(12, 199, 246, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(5, 9, 18, 0.94);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42);
+}
+
+.pkg-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.pkg-modal-kicker {
+  color: rgba(125, 255, 178, 0.9);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pkg-modal-title {
+  margin: 0.25rem 0 0;
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  font-weight: 1000;
+  letter-spacing: -0.05em;
+}
+
+.pkg-modal-sub {
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.pkg-close {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.86);
+  cursor: pointer;
+}
+
+.pkg-form {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+}
+
+.pkg-choice {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.pkg-choice-label,
+.pkg-field-label {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pkg-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.pkg-chip,
+.pkg-choice-row button {
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.065);
+  color: rgba(220, 248, 255, 0.95);
+  padding: 0.55rem 0.8rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.pkg-chip:hover,
+.pkg-chip:focus-visible,
+.pkg-choice-row button:hover,
+.pkg-choice-row button:focus-visible,
+.pkg-chip.is-selected,
+.pkg-choice-row button.is-selected {
+  transform: translateY(-1px);
+  border-color: rgba(125, 255, 178, 0.34);
+  background: rgba(125, 255, 178, 0.09);
+  box-shadow: 0 0 24px rgba(125, 255, 178, 0.08);
+}
+
+.pkg-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.pkg-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.booking-cart {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(125, 255, 178, 0.16);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(125, 255, 178, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.booking-cart-left,
+.booking-cart-right {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.booking-cart-title {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 1000;
+}
+
+.booking-cart-lines {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.booking-cart-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.booking-cart-price {
+  color: rgba(125, 255, 178, 0.95);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 1000;
+  text-align: right;
+}
+
+.booking-cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.booking-cart-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 0.62rem 0.9rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.booking-cart-btn.ghost {
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.booking-cart-btn.primary {
+  border-color: rgba(125, 255, 178, 0.38);
+  background: linear-gradient(135deg, rgba(125, 255, 178, 0.95), rgba(255, 255, 255, 0.88));
+  color: #061017;
+}
+
+.booking-cart-hint {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-cart {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-cart-price,
+  .booking-cart-hint {
+    text-align: left;
+  }
+
+  .booking-cart-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* ======================================================
+   Service Package Detail States + Review Flow
+====================================================== */
+
+.pkg-section {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.pkg-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pkg-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(12, 199, 246, 0.18);
+  border-radius: 999px;
+  background: rgba(12, 199, 246, 0.06);
+}
+
+.pkg-mode.is-advanced {
+  border-color: rgba(125, 255, 178, 0.22);
+  background: rgba(125, 255, 178, 0.075);
+}
+
+.pkg-mode-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pkg-mode-hint {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.pkg-popular {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(255, 220, 90, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 220, 90, 0.1);
+  color: rgba(255, 238, 170, 0.96);
+  font-size: 0.68rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pkg-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pkg-price-label {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pkg-price-val {
+  color: rgba(125, 255, 178, 0.96);
+  font-size: 1.05rem;
+  font-weight: 1000;
+}
+
+.pkg-points {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pkg-points li {
+  position: relative;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.pkg-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(125, 255, 178, 0.95);
+  font-weight: 1000;
+}
+
+.pkg-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+.pkg-backdrop {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.pkg-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.pkg-stepper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.pkg-step {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-align: center;
+}
+
+.pkg-step.is-active {
+  border-color: rgba(12, 199, 246, 0.28);
+  background: rgba(12, 199, 246, 0.075);
+  color: rgba(220, 248, 255, 0.96);
+}
+
+.pkg-step.is-done {
+  border-color: rgba(125, 255, 178, 0.22);
+  background: rgba(125, 255, 178, 0.065);
+  color: rgba(218, 255, 232, 0.94);
+}
+
+.pkg-step-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.pkg-muted {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.pkg-review {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.pkg-review-row {
+  display: flex;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.pkg-review-row b {
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 1000;
+}
+
+@media (max-width: 760px) {
+  .pkg-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pkg-row,
+  .pkg-stepper {
+    grid-template-columns: 1fr;
+  }
+
+  .pkg-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

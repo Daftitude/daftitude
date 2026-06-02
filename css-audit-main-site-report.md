@@ -1,6 +1,6 @@
 # CSS Audit Report
 
-Generated: 6/2/2026, 1:16:16 AM
+Generated: 6/2/2026, 1:22:11 AM
 
 ## Summary
 
@@ -8,12 +8,12 @@ Generated: 6/2/2026, 1:16:16 AM
 |---|---:|
 | CSS files scanned | 22 |
 | Code files scanned | 78 |
-| Unique CSS selectors | 1378 |
-| Unique CSS classes in CSS | 447 |
+| Unique CSS selectors | 1445 |
+| Unique CSS classes in CSS | 498 |
 | Unique classes found in code | 624 |
-| Duplicate selector groups | 14 |
-| Classes defined in CSS but not found in code | 109 |
-| Classes found in code but missing CSS | 176 |
+| Duplicate selector groups | 15 |
+| Classes defined in CSS but not found in code | 111 |
+| Classes found in code but missing CSS | 127 |
 | AskDaFT selector locations | 615 |
 | Reading/emphasis selector locations | 103 |
 
@@ -46,6 +46,7 @@ Generated: 6/2/2026, 1:16:16 AM
 - `.mode-cta-lead-stack > span:first-child` — 2 times: `src/styles/cta.css:182`, `src/styles/pricing.css:781`
 - `.game-start-screen .mobile-hero-ambience` — 2 times: `src/styles/hero.css:35`, `src/styles/mobile.css:358`
 - `.contact-section` — 2 times: `src/styles/pages.css:85`, `src/styles/pages.css:103`
+- `.pkg-card` — 2 times: `src/styles/pages.css:110`, `src/styles/pages.css:175`
 
 
 ## Classes With Many CSS Definitions
@@ -61,10 +62,10 @@ Generated: 6/2/2026, 1:16:16 AM
 - `.askdaft-request-page` — 20 definitions: `src/styles/askdaft-request.css:5`, `src/styles/askdaft-request.css:16`, `src/styles/askdaft-request.css:49`, `src/styles/askdaft-request.css:82`, `src/styles/askdaft-request.css:86`, `src/styles/askdaft-request.css:101`, `src/styles/askdaft-request.css:101`, `src/styles/askdaft-request.css:199`, `src/styles/askdaft-request.css:199`, `src/styles/askdaft-request.css:205`, +10 more
 - `.story-card` — 20 definitions: `src/styles/cards.css:8`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:225`, `src/styles/cards.css:244`, `src/styles/cards.css:262`, `src/styles/home.css:37`, `src/styles/home.css:53`, `src/styles/home.css:62`, +10 more
 - `.pricing-row` — 20 definitions: `src/styles/pricing.css:58`, `src/styles/pricing.css:66`, `src/styles/pricing.css:70`, `src/styles/pricing.css:74`, `src/styles/pricing.css:74`, `src/styles/pricing.css:79`, `src/styles/pricing.css:84`, `src/styles/pricing.css:84`, `src/styles/pricing.css:84`, `src/styles/pricing.css:127`, +10 more
+- `.is-active` — 19 definitions: `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, `src/styles/askdaft-dashboard.css:783`, `src/styles/askdaft-dashboard.css:1007`, `src/styles/askdaft-request.css:735`, `src/styles/askdaft-request.css:749`, `src/styles/askdaft-request.css:757`, `src/styles/askdaft-request.css:761`, `src/styles/askdaft-request.css:766`, +9 more
 - `.active` — 19 definitions: `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:109`, `src/styles/cards.css:364`, `src/styles/cards.css:910`, `src/styles/cards.css:921`, `src/styles/cards.css:1015`, `src/styles/cards.css:1023`, `src/styles/cards.css:1259`, `src/styles/cta.css:518`, +9 more
 - `.game-path` — 19 definitions: `src/styles/hero.css:51`, `src/styles/hero.css:75`, `src/styles/hero.css:97`, `src/styles/hero.css:109`, `src/styles/hero.css:109`, `src/styles/hero.css:115`, `src/styles/hero.css:115`, `src/styles/hero.css:122`, `src/styles/hero.css:145`, `src/styles/hero.css:154`, +9 more
 - `.askdaft-client-layout` — 18 definitions: `src/styles/askdaft-dashboard.css:99`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:110`, `src/styles/askdaft-dashboard.css:350`, `src/styles/askdaft-dashboard.css:402`, `src/styles/askdaft-dashboard.css:407`, `src/styles/askdaft-dashboard.css:415`, `src/styles/askdaft-dashboard.css:425`, `src/styles/askdaft-dashboard.css:1040`, +8 more
-- `.is-active` — 18 definitions: `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, `src/styles/askdaft-dashboard.css:783`, `src/styles/askdaft-dashboard.css:1007`, `src/styles/askdaft-request.css:735`, `src/styles/askdaft-request.css:749`, `src/styles/askdaft-request.css:757`, `src/styles/askdaft-request.css:761`, `src/styles/askdaft-request.css:766`, +8 more
 - `.home-game-page` — 18 definitions: `src/styles/hero.css:3`, `src/styles/mobile.css:66`, `src/styles/mobile.css:71`, `src/styles/mobile.css:76`, `src/styles/mobile.css:80`, `src/styles/mobile.css:84`, `src/styles/mobile.css:88`, `src/styles/mobile.css:92`, `src/styles/reading-mode.css:26`, `src/styles/reading-mode.css:36`, +8 more
 - `.askdaft-dashboard-page` — 17 definitions: `src/styles/askdaft-dashboard.css:296`, `src/styles/askdaft-dashboard.css:300`, `src/styles/askdaft-dashboard.css:304`, `src/styles/askdaft-dashboard.css:311`, `src/styles/askdaft-dashboard.css:315`, `src/styles/askdaft-dashboard.css:321`, `src/styles/askdaft-dashboard.css:362`, `src/styles/askdaft-dashboard.css:397`, `src/styles/askdaft-dashboard.css:411`, `src/styles/askdaft-dashboard.css:415`, +7 more
 - `.tech-tree-node` — 14 definitions: `src/styles/askdaft-dashboard.css:561`, `src/styles/askdaft-dashboard.css:578`, `src/styles/askdaft-dashboard.css:588`, `src/styles/askdaft-dashboard.css:588`, `src/styles/askdaft-dashboard.css:595`, `src/styles/askdaft-dashboard.css:605`, `src/styles/askdaft-dashboard.css:612`, `src/styles/askdaft-dashboard.css:621`, `src/styles/askdaft-dashboard.css:628`, `src/styles/askdaft-dashboard.css:635`, +4 more
@@ -143,6 +144,8 @@ Generated: 6/2/2026, 1:16:16 AM
 - `.askdaft-chip-grid` — 6 definitions: `src/styles/askdaft-request.css:90`, `src/styles/askdaft-request.css:109`, `src/styles/askdaft-request.css:151`, `src/styles/askdaft-request.css:158`, `src/styles/askdaft-request.css:687`, `src/styles/askdaft-request.css:851`
 - `.btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
 - `.cta-btn` — 6 definitions: `src/styles/buttons.css:5`, `src/styles/buttons.css:23`, `src/styles/buttons.css:23`, `src/styles/buttons.css:33`, `src/styles/buttons.css:42`, `src/styles/buttons.css:49`
+- `.primary` — 6 definitions: `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/buttons.css:33`, `src/styles/cta.css:431`, `src/styles/cta.css:437`, `src/styles/pages.css:437`
+- `.ghost` — 6 definitions: `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/buttons.css:49`, `src/styles/cta.css:451`, `src/styles/cta.css:451`, `src/styles/pages.css:432`
 - `.askdaft-panel` — 6 definitions: `src/styles/cards.css:482`, `src/styles/cards.css:598`, `src/styles/cards.css:615`, `src/styles/cards.css:626`, `src/styles/cards.css:632`, `src/styles/home.css:231`
 - `.hub-select-section` — 6 definitions: `src/styles/cards.css:661`, `src/styles/cards.css:665`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`, `src/styles/cards.css:671`
 - `.askdaft-typical-panel` — 6 definitions: `src/styles/cards.css:1268`, `src/styles/cards.css:1276`, `src/styles/cards.css:1284`, `src/styles/cards.css:1290`, `src/styles/cards.css:1299`, `src/styles/cards.css:1306`
@@ -168,10 +171,8 @@ Generated: 6/2/2026, 1:16:16 AM
 - `.askdaft-pricing-truth-grid` — 5 definitions: `src/styles/askdaft-pricing.css:5`, `src/styles/askdaft-pricing.css:12`, `src/styles/askdaft-pricing.css:22`, `src/styles/askdaft-pricing.css:32`, `src/styles/askdaft-pricing.css:41`
 - `.askdaft-discovery-promise` — 5 definitions: `src/styles/askdaft-request.css:75`, `src/styles/askdaft-request.css:286`, `src/styles/askdaft-request.css:290`, `src/styles/askdaft-request.css:297`, `src/styles/askdaft-request.css:304`
 - `.askdaft-inline-check` — 5 definitions: `src/styles/askdaft-request.css:177`, `src/styles/askdaft-request.css:219`, `src/styles/askdaft-request.css:230`, `src/styles/askdaft-request.css:704`, `src/styles/askdaft-request.css:857`
-- `.askdaft-agreement-list` — 5 definitions: `src/styles/askdaft-request.css:230`, `src/styles/askdaft-request.css:312`, `src/styles/askdaft-request.css:318`, `src/styles/askdaft-request.css:328`, `src/styles/askdaft-request.css:857`
-- `.askdaft-detail-chip` — 5 definitions: `src/styles/askdaft-request.css:687`, `src/styles/cards.css:1241`, `src/styles/cards.css:1259`, `src/styles/cards.css:1259`, `src/styles/cards.css:1259`
 
-_Showing 120 of 185 results._
+_Showing 120 of 189 results._
 
 
 ## AskDaFT Selector Locations
@@ -632,11 +633,13 @@ _Showing 200 of 615 results._
 - `.in-progress` `src/styles/askdaft-request.css:500`
 - `.info-card` `src/styles/home.css:37`
 - `.is-active` `src/styles/askdaft-dashboard.css:621`
+- `.is-advanced` `src/styles/pages.css:495`
 - `.is-askdaft` `src/styles/hero.css:126`
 - `.is-collapsed` `src/styles/askdaft-request.css:761`
 - `.is-complete` `src/styles/askdaft-request.css:757`
 - `.is-daftitude` `src/styles/hero.css:126`
 - `.is-default` `src/styles/hero.css:122`
+- `.is-done` `src/styles/pages.css:631`
 - `.is-open` `src/styles/navbar.css:202`
 - `.is-pro-view` `src/styles/askdaft-dashboard.css:1058`
 - `.is-secondary` `src/styles/cta.css:110`
@@ -717,16 +720,6 @@ _Showing 200 of 615 results._
 - `.askdaft-subscribe-section` — `src/components/askdaft/AskDaftSubscribeSection.jsx`
 - `.askdaft-summary-section` — `src/components/askdaft/AskDaftSummarySection.jsx`
 - `.balance-grid` — `src/pages/crypto/Crypto.jsx`
-- `.booking-cart` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-actions` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-btn` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-hint` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-left` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-line` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-lines` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-price` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-right` — `src/components/services/ServicePackages.jsx`
-- `.booking-cart-title` — `src/components/services/ServicePackages.jsx`
 - `.brief-coming-soon` — `src/components/techhub/CaseStudies.jsx`
 - `.brief-excerpt` — `src/components/techhub/CaseStudies.jsx`
 - `.brief-link` — `src/components/techhub/CaseStudies.jsx`
@@ -774,45 +767,6 @@ _Showing 200 of 615 results._
 - `.phase-hero` — `src/components/askdaft/AskDaftHero.jsx`
 - `.pill` — `src/components/services/ServiceDetailModal.jsx`
 - `.pill-row` — `src/components/services/ServiceDetailModal.jsx`
-- `.pkg-actions` — `src/components/services/ServicePackages.jsx`
-- `.pkg-backdrop` — `src/components/services/ServicePackages.jsx`
-- `.pkg-card-icon` — `src/components/services/ServicePackages.jsx`
-- `.pkg-card-sub` — `src/components/services/ServicePackages.jsx`
-- `.pkg-card-title` — `src/components/services/ServicePackages.jsx`
-- `.pkg-card-top` — `src/components/services/ServicePackages.jsx`
-- `.pkg-chip` — `src/components/services/ServicePackages.jsx`
-- `.pkg-choice` — `src/components/services/ServicePackages.jsx`
-- `.pkg-choice-label` — `src/components/services/ServicePackages.jsx`
-- `.pkg-choice-row` — `src/components/services/ServicePackages.jsx`
-- `.pkg-close` — `src/components/services/ServicePackages.jsx`
-- `.pkg-field` — `src/components/services/ServicePackages.jsx`
-- `.pkg-field-label` — `src/components/services/ServicePackages.jsx`
-- `.pkg-form` — `src/components/services/ServicePackages.jsx`
-- `.pkg-form-actions` — `src/components/services/ServicePackages.jsx`
-- `.pkg-grid` — `src/components/services/ServicePackages.jsx`
-- `.pkg-head` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal-card` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal-head` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal-kicker` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal-sub` — `src/components/services/ServicePackages.jsx`
-- `.pkg-modal-title` — `src/components/services/ServicePackages.jsx`
-- `.pkg-mode` — `src/components/services/ServicePackages.jsx`
-- `.pkg-mode-hint` — `src/components/services/ServicePackages.jsx`
-- `.pkg-mode-pill` — `src/components/services/ServicePackages.jsx`
-- `.pkg-muted` — `src/components/services/ServicePackages.jsx`
-- `.pkg-points` — `src/components/services/ServicePackages.jsx`
-- `.pkg-popular` — `src/components/services/ServicePackages.jsx`
-- `.pkg-price` — `src/components/services/ServicePackages.jsx`
-- `.pkg-price-label` — `src/components/services/ServicePackages.jsx`
-- `.pkg-price-val` — `src/components/services/ServicePackages.jsx`
-- `.pkg-review` — `src/components/services/ServicePackages.jsx`
-- `.pkg-review-row` — `src/components/services/ServicePackages.jsx`
-- `.pkg-row` — `src/components/services/ServicePackages.jsx`
-- `.pkg-section` — `src/components/services/ServicePackages.jsx`
-- `.pkg-step` — `src/components/services/ServicePackages.jsx`
-- `.pkg-step-panel` — `src/components/services/ServicePackages.jsx`
-- `.pkg-stepper` — `src/components/services/ServicePackages.jsx`
 - `.pkg-subtitle` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag` — `src/components/services/ServicePackages.jsx`
 - `.pkg-tag-grid` — `src/components/services/ServicePackages.jsx`
