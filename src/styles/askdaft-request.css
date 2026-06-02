@@ -288,7 +288,7 @@ body .askdaft-chip-grid button {
   border: 1px solid rgba(255, 112, 112, 0.22);
 }
 
-.askdaft-discovery-promise {
+body .askdaft-discovery-promise {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -739,7 +739,7 @@ body .askdaft-chip-grid button {
    AskDaFT Guided Step App Feel
 ====================================================== */
 
-.askdaft-request-progress-step {
+body .askdaft-request-progress-step {
   position: relative;
   border-radius: 16px;
   cursor: pointer;

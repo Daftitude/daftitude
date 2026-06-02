@@ -393,13 +393,13 @@ body .askdaft-ticket-summary-block strong {
   color: rgba(125, 255, 178, 0.95);
 }
 
-.askdaft-ticket-detail-actions {
+body .askdaft-ticket-detail-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.askdaft-ticket-list-card {
+body .askdaft-ticket-list-card {
   grid-template-columns: 1fr auto;
   align-items: center;
 }
