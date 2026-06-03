@@ -1,10 +1,117 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import HeroCrypto from "../../components/crypto/HeroCrypto";
-import TokenData from "../../assets/crypto-data.json";
 import { format } from "date-fns";
 
-const Crypto = () => {
+import HeroCrypto from "../../components/crypto/HeroCrypto";
+import TokenData from "../../assets/crypto-data.json";
+
+const commandCards = [
+  {
+    label: "Public Portfolio",
+    title: "Transparent holdings mirror",
+    text: "Show what is public, what is tracked, and what changed without pretending this is financial advice.",
+  },
+  {
+    label: "Market Awareness",
+    title: "Current prices and context",
+    text: "Use market cards as awareness, not as a buy button. Price is information, not permission.",
+  },
+  {
+    label: "Research Links",
+    title: "Learning before action",
+    text: "Point visitors toward Coinbase, CoinMarketCap, chain explorers, and future DaFTitude research tools.",
+  },
+  {
+    label: "Risk Notes",
+    title: "No gambling cosplay",
+    text: "Separate tracking, research, investing, and trading so people know which game they are actually playing.",
+  },
+];
+
+const lockedTools = [
+  "Personal watchlist",
+  "Portfolio import",
+  "Price and risk alerts",
+  "Advanced calculators",
+  "Transaction tagging",
+  "Private dashboards",
+  "AI market summaries",
+  "Saved research notes",
+];
+
+const riskNotes = [
+  {
+    title: "This is not a buy page",
+    text: "Crypto on DaFTitude should teach, track, explain, and organize. It should not pressure users into buying anything.",
+  },
+  {
+    title: "Public does not mean complete",
+    text: "A public portfolio mirror can show selected holdings and transactions while private data stays behind login later.",
+  },
+  {
+    title: "Tools should slow bad decisions down",
+    text: "Good crypto tools should expose risk, sizing, assumptions, and history before someone acts on emotion.",
+  },
+];
+
+const schoolModules = [
+  {
+    id: "orientation",
+    code: "M0",
+    title: "Orientation: What Game Am I Playing?",
+    text: "Trade vs invest, spot vs derivatives, and what it means to put real money at risk in each environment.",
+  },
+  {
+    id: "market-types",
+    code: "M1",
+    title: "Spot vs Futures vs Perpetual Futures",
+    text: "Who owns what, what expires, what can be liquidated, and how the three market types connect.",
+  },
+  {
+    id: "price-moves",
+    code: "M2",
+    title: "How Price Actually Moves",
+    text: "Order books, market orders, and how futures flows and arbitrage push spot price around.",
+  },
+  {
+    id: "leverage-risk",
+    code: "M3",
+    title: "Leverage, Profit and Loss, and Liquidation",
+    text: "How position size, leverage, and liquidation interact — and how sizing wrong blows accounts up.",
+  },
+];
+
+const getCategory = (tx) => {
+  const desc = tx.description?.toLowerCase() || "";
+  if (desc.includes("stake")) return "Stake";
+  if (desc.includes("reward")) return "Reward";
+  if (desc.includes("transfer")) return "Transfer";
+  if (tx.type === "buy") return "Buy";
+  if (tx.type === "sell") return "Sell";
+  return "Other";
+};
+
+const buildBalances = (txList) => {
+  const totals = {};
+
+  txList.forEach((tx) => {
+    const symbol = tx.symbol.toUpperCase();
+    const amount = parseFloat(tx.amount);
+
+    if (!totals[symbol]) totals[symbol] = 0;
+
+    if (["Buy", "Reward", "Stake"].includes(tx.category)) {
+      totals[symbol] += amount;
+    } else if (["Sell", "Transfer"].includes(tx.category)) {
+      totals[symbol] -= amount;
+    }
+  });
+
+  return totals;
+};
+
+export default function Crypto() {
   const asOfDate = "July 21, 2025";
   const portfolioAge = "2y 6m 20d";
 
@@ -14,22 +121,30 @@ const Crypto = () => {
     usdc: 1.0,
     usd: 1.0,
   });
-
-  const [transactions, setTransactions] = useState([]);
-  const [filtered, setFiltered] = useState([]);
   const [filterType, setFilterType] = useState("All");
-  const [balances, setBalances] = useState({});
-
-  // Which education modal is open (null = none)
   const [activeModal, setActiveModal] = useState(null);
 
-  // Fetch live prices
+  const transactions = useMemo(() => {
+    return TokenData.transactions.map((tx) => ({
+      ...tx,
+      category: getCategory(tx),
+    }));
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (filterType === "All") return transactions;
+    return transactions.filter((tx) => tx.category === filterType);
+  }, [filterType, transactions]);
+
+  const balances = useMemo(() => buildBalances(transactions), [transactions]);
+
   useEffect(() => {
     const fetchPrices = async () => {
       try {
         const response = await axios.get(
           "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,solana,usd-coin&vs_currencies=usd"
         );
+
         setPrices({
           eth: response.data.ethereum.usd,
           sol: response.data.solana.usd,
@@ -44,167 +159,90 @@ const Crypto = () => {
     fetchPrices();
   }, []);
 
-  // Load token history and categorize
-  useEffect(() => {
-    const categorized = TokenData.transactions.map((tx) => ({
-      ...tx,
-      category: getCategory(tx),
-    }));
-    setTransactions(categorized);
-    setFiltered(categorized);
-    updateBalances(categorized);
-  }, []);
-
-  const getCategory = (tx) => {
-    const desc = tx.description?.toLowerCase() || "";
-    if (desc.includes("stake")) return "Stake";
-    if (desc.includes("reward")) return "Reward";
-    if (desc.includes("transfer")) return "Transfer";
-    if (tx.type === "buy") return "Buy";
-    if (tx.type === "sell") return "Sell";
-    return "Other";
-  };
-
-  const updateBalances = (txList) => {
-    const totals = {};
-    txList.forEach((tx) => {
-      const symbol = tx.symbol.toUpperCase();
-      const amount = parseFloat(tx.amount);
-      if (!totals[symbol]) totals[symbol] = 0;
-      if (
-        tx.category === "Buy" ||
-        tx.category === "Reward" ||
-        tx.category === "Stake"
-      ) {
-        totals[symbol] += amount;
-      } else if (tx.category === "Sell" || tx.category === "Transfer") {
-        totals[symbol] -= amount;
-      }
-    });
-    setBalances(totals);
-  };
-
-  const handleFilter = (type) => {
-    setFilterType(type);
-    if (type === "All") {
-      setFiltered(transactions);
-    } else {
-      setFiltered(transactions.filter((tx) => tx.category === type));
-    }
-  };
-
   const closeModal = () => setActiveModal(null);
 
   return (
     <section className="crypto-section">
       <HeroCrypto />
 
-      {/* ========= EDUCATION: CRYPTO GROUND SCHOOL ========= */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-slate-900/90 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-xl text-slate-50">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-            <div className="text-left">
-              <h2 className="text-2xl md:text-3xl font-semibold">
-                🎓 Crypto Ground School
-              </h2>
-              <p className="text-slate-300 text-sm md:text-base mt-1">
-                Learn the core concepts of crypto, spot trading, and futures so
-                you always know exactly where you are in the market “ocean”.
-              </p>
-            </div>
-            <div className="text-xs md:text-sm text-slate-400 md:text-right">
-              <p>Audience: beginners to early-intermediate traders</p>
-              <p>Style: clear, no-hype explanations</p>
-            </div>
+      <section className="crypto-command-section" aria-label="Crypto command center overview">
+        <div className="crypto-command-head">
+          <p className="section-kicker">Crypto Command Center</p>
+          <h2>Coinbase-style structure. DaFTitude-style purpose.</h2>
+          <p>
+            This page is not for buying. It is for tracking, learning, researching, showing selected public portfolio context, and previewing tools that can become private behind login later.
+          </p>
+        </div>
+
+        <div className="crypto-command-grid">
+          {commandCards.map((card) => (
+            <article className="crypto-command-card" key={card.title}>
+              <span>{card.label}</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="crypto-prices-section" aria-label="Crypto market snapshot">
+        <div className="crypto-section-head">
+          <p className="section-kicker">Market Snapshot</p>
+          <h2>Current prices for awareness, not impulse.</h2>
+          <p>Live price cards give context. They should support research and risk review, not push a buy decision.</p>
+        </div>
+
+        <div className="price-grid">
+          <div className="price-card">
+            <h3>ETH</h3>
+            <p>{prices.eth ? `$${prices.eth.toFixed(2)}` : "Loading..."}</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            {/* Module 0 – Orientation */}
-            <button
-              type="button"
-              onClick={() => setActiveModal("orientation")}
-              className="group bg-slate-800/80 border border-slate-700 hover:border-indigo-400 hover:bg-slate-800/90 rounded-xl p-4 text-left transition-all duration-150 cursor-pointer"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-700 text-xs font-semibold">
-                  M0
-                </span>
-                <h3 className="font-semibold text-sm md:text-base">
-                  Orientation: What Game Am I Playing?
-                </h3>
-              </div>
-              <p className="text-xs md:text-sm text-slate-300 group-hover:text-slate-100">
-                Trade vs invest, spot vs derivatives, and what it means to put
-                real money at risk in each environment.
-              </p>
-            </button>
-
-            {/* Module 1 – Spot vs Futures vs Perps */}
-            <button
-              type="button"
-              onClick={() => setActiveModal("market-types")}
-              className="group bg-slate-800/80 border border-slate-700 hover:border-indigo-400 hover:bg-slate-800/90 rounded-xl p-4 text-left transition-all duration-150 cursor-pointer"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-700 text-xs font-semibold">
-                  M1
-                </span>
-                <h3 className="font-semibold text-sm md:text-base">
-                  Spot vs Futures vs Perpetual Futures
-                </h3>
-              </div>
-              <p className="text-xs md:text-sm text-slate-300 group-hover:text-slate-100">
-                Who owns what, what expires, what can be liquidated, and how the
-                three market types connect.
-              </p>
-            </button>
-
-            {/* Module 2 – How Price Moves */}
-            <button
-              type="button"
-              onClick={() => setActiveModal("price-moves")}
-              className="group bg-slate-800/80 border border-slate-700 hover:border-indigo-400 hover:bg-slate-800/90 rounded-xl p-4 text-left transition-all duration-150 cursor-pointer"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-700 text-xs font-semibold">
-                  M2
-                </span>
-                <h3 className="font-semibold text-sm md:text-base">
-                  How Price Actually Moves
-                </h3>
-              </div>
-              <p className="text-xs md:text-sm text-slate-300 group-hover:text-slate-100">
-                Order books, market orders, and how futures flows and arbitrage
-                push spot price around.
-              </p>
-            </button>
-
-            {/* Module 3 – Leverage & Risk */}
-            <button
-              type="button"
-              onClick={() => setActiveModal("leverage-risk")}
-              className="group bg-slate-800/80 border border-slate-700 hover:border-rose-400 hover:bg-slate-800/90 rounded-xl p-4 text-left transition-all duration-150 cursor-pointer"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-700 text-xs font-semibold">
-                  M3
-                </span>
-                <h3 className="font-semibold text-sm md:text-base">
-                  Leverage, Profit and Loss, and Liquidation
-                </h3>
-              </div>
-              <p className="text-xs md:text-sm text-slate-300 group-hover:text-slate-100">
-                How position size, leverage, and liquidation interact – and how
-                “sizing wrong” blows accounts up.
-              </p>
-            </button>
+          <div className="price-card">
+            <h3>SOL</h3>
+            <p>{prices.sol ? `$${prices.sol.toFixed(2)}` : "Loading..."}</p>
+          </div>
+          <div className="price-card">
+            <h3>USDC</h3>
+            <p>{`$${prices.usdc.toFixed(2)}`}</p>
+          </div>
+          <div className="price-card">
+            <h3>USD</h3>
+            <p>{`$${prices.usd.toFixed(2)}`}</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ========= EXISTING PORTFOLIO + HISTORY ========= */}
-      <div className="container">
-        <h1>📊 My Crypto Portfolio</h1>
+      <section className="crypto-ground-school" aria-label="Crypto Ground School">
+        <div className="crypto-section-head">
+          <p className="section-kicker">Crypto Ground School</p>
+          <h2>Learn the market before you swim in it.</h2>
+          <p>
+            Plain-English lessons for beginners to early-intermediate traders: spot, futures, perpetuals, price movement, leverage, liquidation, and risk.
+          </p>
+        </div>
+
+        <div className="crypto-ground-grid">
+          {schoolModules.map((module) => (
+            <button
+              type="button"
+              className="crypto-school-card"
+              onClick={() => setActiveModal(module.id)}
+              key={module.id}
+            >
+              <span>{module.code}</span>
+              <h3>{module.title}</h3>
+              <p>{module.text}</p>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="crypto-portfolio-section" aria-label="Public portfolio overview">
+        <div className="crypto-section-head">
+          <p className="section-kicker">Public Portfolio Mirror</p>
+          <h2>Selected holdings and transaction history.</h2>
+          <p>As of: {asOfDate} · Portfolio age: {portfolioAge}</p>
+        </div>
 
         <div className="balance-grid">
           {Object.entries(balances).map(([symbol, amount]) => (
@@ -212,7 +250,9 @@ const Crypto = () => {
               <img
                 src={`/icons/${symbol.toLowerCase()}.svg`}
                 alt={`${symbol} icon`}
-                onError={(e) => (e.target.style.display = "none")}
+                onError={(event) => {
+                  event.currentTarget.style.display = "none";
+                }}
               />
               <h3>{symbol}</h3>
               <p>{amount.toFixed(4)}</p>
@@ -220,13 +260,12 @@ const Crypto = () => {
           ))}
         </div>
 
-        <h2>💸 Transaction History</h2>
-
-        <div className="filter-buttons">
+        <div className="crypto-filter-buttons">
           {["All", "Buy", "Sell", "Stake", "Reward", "Transfer"].map((type) => (
             <button
+              type="button"
               key={type}
-              onClick={() => handleFilter(type)}
+              onClick={() => setFilterType(type)}
               className={filterType === type ? "active" : ""}
             >
               {type}
@@ -256,99 +295,71 @@ const Crypto = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </section>
 
-      {/* ========= EXISTING PRICE SNAPSHOT ========= */}
-      <div className="container mx-auto px-4 text-center pb-8">
-        <h2 className="text-3xl font-semibold mb-4">Portfolio Overview</h2>
-        <p className="mb-2">As of: {asOfDate}</p>
-        <p className="mb-4">Portfolio Age: {portfolioAge}</p>
-        <div className="price-grid grid grid-cols-2 gap-4 max-w-md mx-auto">
-          <div className="price-card bg-gray-100 p-4 rounded shadow">
-            <h3 className="text-xl font-semibold">ETH</h3>
-            <p>{prices.eth ? `$${prices.eth.toFixed(2)}` : "Loading..."}</p>
-          </div>
-          <div className="price-card bg-gray-100 p-4 rounded shadow">
-            <h3 className="text-xl font-semibold">SOL</h3>
-            <p>{prices.sol ? `$${prices.sol.toFixed(2)}` : "Loading..."}</p>
-          </div>
-          <div className="price-card bg-gray-100 p-4 rounded shadow">
-            <h3 className="text-xl font-semibold">USDC</h3>
-            <p>{`$${prices.usdc.toFixed(2)}`}</p>
-          </div>
-          <div className="price-card bg-gray-100 p-4 rounded shadow">
-            <h3 className="text-xl font-semibold">USD</h3>
-            <p>{`$${prices.usd.toFixed(2)}`}</p>
+      <section className="crypto-locked-section" aria-label="Locked crypto tool previews">
+        <div className="crypto-locked-copy">
+          <p className="section-kicker">See It Before Login</p>
+          <h2>Public users can see the tools. Logged-in users will eventually use them.</h2>
+          <p>
+            This is the same “see but cannot touch” pattern as the rest of DaFTitude: educate publicly, save private context behind login.
+          </p>
+          <div className="crypto-action-row">
+            <Link className="booking-btn booking-btn-primary" to="/login?source=crypto-tools">
+              Log In for Tools
+            </Link>
+            <Link className="booking-btn booking-btn-secondary" to="/booking/services?source=crypto-tools">
+              Build a Crypto Tool
+            </Link>
           </div>
         </div>
-      </div>
 
-      {/* ========= MODALS (USING GLOBAL .modal + .modal-content) ========= */}
+        <div className="crypto-tool-grid">
+          {lockedTools.map((tool) => (
+            <div className="crypto-tool-card" key={tool}>
+              <span>Locked Preview</span>
+              <strong>{tool}</strong>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="crypto-risk-section" aria-label="Crypto risk notes">
+        <div className="crypto-risk-copy">
+          <p className="section-kicker">Risk Notes</p>
+          <h2>Good crypto pages should slow bad decisions down.</h2>
+          <p>
+            DaFTitude should make the difference between research, tracking, investing, and trading obvious.
+          </p>
+        </div>
+
+        <div className="crypto-risk-grid">
+          {riskNotes.map((note) => (
+            <article className="crypto-risk-card" key={note.title}>
+              <span>Risk Awareness</span>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {activeModal && (
         <div className="modal" onClick={closeModal}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={closeModal}
-              style={{
-                position: "absolute",
-                top: "0.75rem",
-                right: "1rem",
-                background: "transparent",
-                border: "none",
-                color: "#666",
-                fontSize: "1.5rem",
-                cursor: "pointer",
-              }}
-              aria-label="Close"
-            >
+          <div className="modal-content" onClick={(event) => event.stopPropagation()}>
+            <button type="button" onClick={closeModal} className="crypto-modal-close" aria-label="Close">
               ×
             </button>
 
             {activeModal === "orientation" && (
               <>
                 <h2>Orientation: What Game Am I Playing?</h2>
-                <p>
-                  Trading is placing a bet on future price using real money.
-                  Every time you press buy or sell, you are taking a position
-                  against other humans and algorithms.
-                </p>
+                <p>Trading is placing a bet on future price using real money. Every time you press buy or sell, you are taking a position against other humans and algorithms.</p>
                 <h3>Three things you actually control</h3>
                 <ul>
-                  <li>
-                    <strong>Direction</strong> – long (betting up) or short
-                    (betting down).
-                  </li>
-                  <li>
-                    <strong>Position size</strong> – how many dollars of coin
-                    you control. This decides how big each move hits your
-                    account.
-                  </li>
-                  <li>
-                    <strong>Exits</strong> – where you take profit and where you
-                    admit you are wrong (your stop loss).
-                  </li>
-                </ul>
-                <h3>Spot vs futures vs perpetual futures</h3>
-                <ul>
-                  <li>
-                    <strong>Spot trading</strong> – you own the actual coin; no
-                    built-in leverage; no liquidation.
-                  </li>
-                  <li>
-                    <strong>Futures trading</strong> – you trade a contract
-                    about future price with an expiration date, using margin and
-                    leverage.
-                  </li>
-                  <li>
-                    <strong>Perpetual futures trading</strong> – similar to
-                    futures but with no expiry; a{" "}
-                    <strong>funding rate</strong> (periodic payments between
-                    long traders and short traders) keeps price near spot.
-                  </li>
+                  <li><strong>Direction</strong> — long or short.</li>
+                  <li><strong>Position size</strong> — how many dollars of coin you control.</li>
+                  <li><strong>Exits</strong> — where you take profit and where you admit you are wrong.</li>
                 </ul>
               </>
             )}
@@ -356,46 +367,11 @@ const Crypto = () => {
             {activeModal === "market-types" && (
               <>
                 <h2>Spot vs Futures vs Perpetual Futures</h2>
-                <p>
-                  All three let you bet on price, but they handle ownership,
-                  leverage, and risk differently.
-                </p>
-                <h3>Spot trading</h3>
+                <p>All three let you bet on price, but they handle ownership, leverage, and risk differently.</p>
                 <ul>
-                  <li>You own the real coin in your account.</li>
-                  <li>No built-in leverage; 1 unit of cash buys 1 unit of coin.</li>
-                  <li>No liquidation; if price drops, you just hold a losing
-                    position until you sell.</li>
-                </ul>
-                <h3>Futures trading</h3>
-                <ul>
-                  <li>
-                    You trade a <strong>contract</strong> about future price,
-                    not the coin itself.
-                  </li>
-                  <li>
-                    The contract has an <strong>expiration date</strong> chosen
-                    by the exchange.
-                  </li>
-                  <li>
-                    You post <strong>margin</strong> and can use{" "}
-                    <strong>leverage</strong> to control more than your cash.
-                  </li>
-                  <li>
-                    If unrealized losses get too large, you can be{" "}
-                    <strong>liquidated</strong> (forced closed).
-                  </li>
-                </ul>
-                <h3>Perpetual futures trading</h3>
-                <ul>
-                  <li>No expiry; you can hold the position indefinitely.</li>
-                  <li>
-                    A regular <strong>funding rate</strong> is paid between long
-                    traders and short traders to keep perp price near spot.
-                  </li>
-                  <li>
-                    Same leverage and liquidation concepts as regular futures.
-                  </li>
+                  <li><strong>Spot:</strong> you own the real coin.</li>
+                  <li><strong>Futures:</strong> you trade a contract with expiration, margin, and leverage.</li>
+                  <li><strong>Perpetual futures:</strong> no expiry; funding rates help keep perp price near spot.</li>
                 </ul>
               </>
             )}
@@ -403,56 +379,12 @@ const Crypto = () => {
             {activeModal === "price-moves" && (
               <>
                 <h2>How Price Actually Moves</h2>
-                <p>
-                  Price moves when orders hit the{" "}
-                  <strong>order book</strong>, not because of magic indicators.
-                </p>
-                <h3>Order book basics</h3>
+                <p>Price moves when orders hit the order book, not because of magic indicators.</p>
                 <ul>
-                  <li>
-                    <strong>Bid</strong> – buyers and their prices.
-                  </li>
-                  <li>
-                    <strong>Ask</strong> – sellers and their prices.
-                  </li>
-                  <li>
-                    <strong>Spread</strong> – best ask minus best bid.
-                  </li>
-                  <li>
-                    <strong>Last price</strong> – the price of the most recent
-                    trade.
-                  </li>
-                </ul>
-                <h3>Price moving up</h3>
-                <ul>
-                  <li>Market buy orders consume sell orders on the ask side.</li>
-                  <li>
-                    As higher asks get filled, the last traded price moves up
-                    and the chart prints green candles.
-                  </li>
-                </ul>
-                <h3>Price moving down</h3>
-                <ul>
-                  <li>Market sell orders consume buy orders on the bid side.</li>
-                  <li>
-                    As lower bids get hit, the last traded price moves down and
-                    the chart prints red candles.
-                  </li>
-                </ul>
-                <h3>Futures flows and spot</h3>
-                <ul>
-                  <li>
-                    Perpetual futures markets often have more leverage and
-                    volume than spot.
-                  </li>
-                  <li>
-                    Big futures trades and liquidations can push futures price
-                    away from spot.
-                  </li>
-                  <li>
-                    Arbitrage (traders long one market, short the other) drags
-                    spot and futures prices back together.
-                  </li>
+                  <li><strong>Bid:</strong> buyers and their prices.</li>
+                  <li><strong>Ask:</strong> sellers and their prices.</li>
+                  <li><strong>Spread:</strong> best ask minus best bid.</li>
+                  <li><strong>Last price:</strong> the price of the most recent trade.</li>
                 </ul>
               </>
             )}
@@ -460,56 +392,13 @@ const Crypto = () => {
             {activeModal === "leverage-risk" && (
               <>
                 <h2>Leverage, Profit and Loss, and Liquidation</h2>
-                <p>
-                  Leverage is just a multiplier between your{" "}
-                  <strong>margin</strong> (your own money in the trade) and
-                  your <strong>position size</strong> (total dollars of coin you
-                  control.
-                </p>
-                <h3>Core math</h3>
-                <p>
-                  If margin is <strong>I</strong> and leverage is{" "}
-                  <strong>L</strong>, then:
-                </p>
-                <p className="card">
-                  Position size = I × L
-                </p>
-                <p>
-                  If price moves by a percentage <strong>%ΔP</strong> in your
-                  direction:
-                </p>
-                <p className="card">
-                  Profit and loss (PnL) = Position size × %ΔP
-                </p>
-                <p>
-                  Your return on your own money is approximately:
-                </p>
-                <p className="card">
-                  Return (%) ≈ Leverage × %ΔP
-                </p>
-                <h3>Why this can destroy accounts</h3>
+                <p>Leverage is a multiplier between your margin and your position size.</p>
+                <p className="card">Position size = margin × leverage</p>
+                <p className="card">PnL = position size × price move</p>
                 <ul>
-                  <li>
-                    Use $100 as margin at 10× leverage → $1,000 position size.
-                  </li>
-                  <li>A 10 percent move against you on the coin = 100 percent loss on your margin.</li>
-                  <li>
-                    That is liquidation: the position is closed before your
-                    account balance can go negative.
-                  </li>
-                </ul>
-                <h3>The safe way to think about leverage</h3>
-                <ul>
-                  <li>Decide your maximum dollar loss for the trade first.</li>
-                  <li>Choose entry and stop loss based on logic.</li>
-                  <li>
-                    Compute position size so loss at the stop ≈ your chosen
-                    dollar risk.
-                  </li>
-                  <li>
-                    Use leverage only to reach that position size, not to chase
-                    bigger risk.
-                  </li>
+                  <li>Use $100 margin at 10× leverage and you control a $1,000 position.</li>
+                  <li>A 10 percent move against you can wipe out the margin.</li>
+                  <li>Leverage should support risk sizing, not gambling.</li>
                 </ul>
               </>
             )}
@@ -518,6 +407,4 @@ const Crypto = () => {
       )}
     </section>
   );
-};
-
-export default Crypto;
+}

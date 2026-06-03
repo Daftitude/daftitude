@@ -26,6 +26,8 @@ export default function Footer() {
           <h4>Explore</h4>
           <nav className="footer-nav" aria-label="Footer navigation">
             <Link to="/askdaft">AskDaFT Help</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/booking">Booking</Link>
             <Link to="/tech">Tech Hub</Link>
             <Link to="/crypto">Crypto</Link>
             <Link to="/mission">Mission</Link>

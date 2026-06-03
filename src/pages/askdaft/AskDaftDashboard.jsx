@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { DashboardStatusCard } from "../../components/account";
-import { loadAskDaftTickets } from "../../utils/askDaftTickets";
 
 const helpLauncherOptions = [
   {
@@ -11,7 +10,7 @@ const helpLauncherOptions = [
     title: "Something is not working",
     text: "Device, app, Wi-Fi, printer, TV, console, or account issue.",
     action: "Start troubleshooting",
-    route: "/askdaft#start-request",
+    route: "/booking/askdaft",
   },
   {
     id: "safety-check",
@@ -19,7 +18,7 @@ const helpLauncherOptions = [
     title: "Paste message / safety check",
     text: "Texts, emails, popups, links, payment requests, or account warnings.",
     action: "Check before clicking",
-    route: "/askdaft#start-request",
+    route: "/booking/askdaft",
   },
   {
     id: "setup-help",
@@ -27,7 +26,7 @@ const helpLauncherOptions = [
     title: "Set it up for me",
     text: "New device, app, account, AI tool, smart-home, or streaming setup.",
     action: "Start setup request",
-    route: "/askdaft#start-request",
+    route: "/booking/askdaft",
   },
   {
     id: "book-help",
@@ -35,7 +34,7 @@ const helpLauncherOptions = [
     title: "Book a call / remote help",
     text: "Talk through the issue or get guided support without guessing.",
     action: "Choose support path",
-    route: "/contact?source=askdaft-dashboard-help-launcher",
+    route: "/booking/askdaft",
   },
 ];
 
@@ -396,11 +395,6 @@ const statusLabels = {
   upgrade: "Wants Upgrade",
 };
 
-const statusTone = {
-  good: "green",
-  "not-working": "red",
-  upgrade: "yellow",
-};
 
 export default function AskDaftDashboard() {
   const [selectedDeviceId, setSelectedDeviceId] = useState("xbox");
@@ -435,11 +429,11 @@ export default function AskDaftDashboard() {
         </div>
 
         <div className="account-dashboard-actions">
-          <Link className="phase-btn phase-btn-primary" to="/askdaft">
+          <Link className="phase-btn phase-btn-primary" to="/booking/askdaft">
             Start New Request
           </Link>
-          <Link className="phase-btn phase-btn-secondary" to="/contact?source=askdaft-dashboard">
-            Contact AskDaFT
+          <Link className="phase-btn phase-btn-secondary" to="/booking/askdaft">
+            Book AskDaFT
           </Link>
         </div>
       </section>
@@ -527,7 +521,7 @@ export default function AskDaftDashboard() {
               Device: Xbox • Issue: Not working • Location: Living room • Suggested path: Remote help or call.
             </p>
           </div>
-          <Link className="phase-btn phase-btn-primary" to="/askdaft#start-request">
+          <Link className="phase-btn phase-btn-primary" to="/booking/askdaft">
             Start Guided Request
           </Link>
         </div>
@@ -799,10 +793,10 @@ export default function AskDaftDashboard() {
           </p>
 
           <div className="account-dashboard-actions">
-            <Link className="phase-btn phase-btn-primary" to="/askdaft#start-request">
+            <Link className="phase-btn phase-btn-primary" to="/booking/askdaft">
               Add Details
             </Link>
-            <Link className="phase-btn phase-btn-ghost" to={`/contact?source=dashboard-device&device=${encodeURIComponent(selectedDevice.label)}`}>
+            <Link className="phase-btn phase-btn-ghost" to={`/booking/askdaft?device=${encodeURIComponent(selectedDevice.label)}`}>
               Ask for Help
             </Link>
           </div>
@@ -889,8 +883,8 @@ export default function AskDaftDashboard() {
             <Link className="phase-btn phase-btn-primary" to="/signup">
               Create Account
             </Link>
-            <Link className="phase-btn phase-btn-ghost" to="/askdaft">
-              Back to AskDaFT
+            <Link className="phase-btn phase-btn-ghost" to="/booking/askdaft">
+              Book AskDaFT
             </Link>
           </div>
         </article>

@@ -66,7 +66,7 @@ export default function Navbar() {
               </button>
 
               <div className={`nav-dropdown-menu ${techOpen ? "is-open" : ""}`}>
-                <Link to="/tech" onClick={closeMenu}>Tech Overview</Link>
+                <Link to="/tech-hub" onClick={closeMenu}>Tech Overview</Link>
                 <Link to="/ai" onClick={closeMenu}>AI Hub</Link>
                 <Link to="/crypto" onClick={closeMenu}>Crypto</Link>
                 <Link to="/privacy" onClick={closeMenu}>Privacy</Link>
@@ -78,7 +78,8 @@ export default function Navbar() {
               AskDaFT
             </Link>
 
-            <Link to="/contact" onClick={closeMenu}>Booking</Link>
+            <Link to="/services" onClick={closeMenu}>Services</Link>
+            <Link to="/booking" onClick={closeMenu}>Booking</Link>
           </div>
 
           <div className="navbar-menu-right">
@@ -100,7 +101,7 @@ export default function Navbar() {
                 <Link to="/contact" onClick={closeMenu}>Contact DaFTitude</Link>
                 <Link to="/mission" onClick={closeMenu}>Mission</Link>
                 <Link to="/about" onClick={closeMenu}>About DaFTitude</Link>
-                <Link to="/services" onClick={closeMenu}>Legacy Services</Link>
+                <Link to="/booking" onClick={closeMenu}>Book Help</Link>
               </div>
             </div>
 

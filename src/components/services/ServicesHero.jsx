@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import serviceLogo from "../../images/logos/logo-service.png";
-import { motion } from "framer-motion";
-import "../../index.css";
 
 const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
   const isAdvanced = taskType === "advanced";
@@ -64,39 +63,27 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
       <div id="services-particles"></div>
 
       <div className="hero-content">
-        <motion.img
+        <img
           src={serviceLogo}
           alt="Services"
           className="services-logo"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
         />
-        <motion.h1
+        <h1
           className="hero-title"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
         >
           <span role="img" aria-label="toolbox">
             🧰
           </span>{" "}
           Services
-        </motion.h1>
+        </h1>
 
-        <motion.p
+        <p
           className="hero-subtitle"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
         >
           {subtitle}
-        </motion.p>
-        <motion.div
+        </p>
+        <div
           className="service-flow-steps"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.5 }}
         >
           <div className="service-step">
             <span className="step-number">1</span>
@@ -112,14 +99,11 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
             <span className="step-number">3</span>
             <span>Request Help</span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Mode Switch */}
-        <motion.div
+        <div
           className="hero-actions"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.45 }}
         >
           <button
             type="button"
@@ -138,26 +122,25 @@ const ServicesHero = ({ taskType = "basic", onTaskTypeChange }) => {
           >
             Advanced Mode
           </button>
-        </motion.div>
+        </div>
 
-        <motion.a
-          href="#pricing-reality"
-          className="cta-btn"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.65 }}
+        <div
+          className="hero-actions"
         >
-          View Pricing Plans
-        </motion.a>
+          <a href="#pricing-reality" className="cta-btn cta-btn--ghost">
+            View Packages
+          </a>
 
-        <motion.div
+          <Link to="/booking/services" className="cta-btn">
+            Book Services
+          </Link>
+        </div>
+
+        <div
           className="scroll-down"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          transition={{ delay: 1.2 }}
         >
           ↓ scroll to explore ↓
-        </motion.div>
+        </div>
       </div>
     </section>
   );

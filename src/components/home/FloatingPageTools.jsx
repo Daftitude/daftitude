@@ -55,7 +55,7 @@ export default function FloatingPageTools({
       <button
         type="button"
         className={`floating-tool-btn reading-tool ${readingImpairmentMode ? "active" : ""}`}
-        onClick={() => setReadingImpairmentMode((current) => !current)}
+        onClick={() => setReadingImpairmentMode?.((current) => !current)}
         aria-label={readingImpairmentMode ? "Turn reading mode off" : "Turn reading mode on"}
         aria-pressed={readingImpairmentMode}
         title={readingImpairmentMode ? "Reading Mode: On" : "Reading Mode: Off"}

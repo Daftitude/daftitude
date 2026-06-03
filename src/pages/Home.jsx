@@ -124,16 +124,17 @@ export default function Home() {
     const serviceName = row.service || row.tier;
     const audience = pricingAudience === "business" ? "business" : "askdaft";
     const pricingType = subscriptionBilling === "oneTime" ? "one-time" : "monthly";
-    const target = action === "book" ? "availability" : "checkout";
+    const bookingLane = audience === "business" ? "services" : "askdaft";
 
     const params = new URLSearchParams({
       service: serviceName,
       audience,
       type: pricingType,
       action,
+      source: "home-pricing",
     });
 
-    return `/askdaft?${params.toString()}#${target}`;
+    return `/booking/${bookingLane}?${params.toString()}`;
   }, [pricingAudience, subscriptionBilling]);
 
   const previewStoryMode = useCallback((mode) => {

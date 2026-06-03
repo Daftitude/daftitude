@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Wifi,
   Home,
@@ -422,6 +423,13 @@ export default function ServicePackages({ taskType = "basic", selectedService = 
                 <button type="button" className="cta-btn" onClick={() => openRequest(card)}>
                   Request details →
                 </button>
+
+                <Link
+                  className="cta-btn cta-btn--ghost"
+                  to={`/booking/services?package=${encodeURIComponent(card.id)}${selectedService ? `&service=${encodeURIComponent(selectedService)}` : ""}`}
+                >
+                  Book →
+                </Link>
               </div>
             </article>
           );

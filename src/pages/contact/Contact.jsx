@@ -1,10 +1,33 @@
 // src/pages/Contact.jsx
+import { Link } from 'react-router-dom';
 import ContactHero from '../../components/contact/ContactHero';
 
 export default function Contact() {
   return (
     <>
       <ContactHero />
+
+      <section className="contact-route-strip page-shell" aria-label="Choose the right contact path">
+        <div className="booking-path-grid contact-booking-grid">
+          <Link to="/booking/askdaft" className="booking-path-card">
+            <span>Tech Help</span>
+            <strong>Book AskDaFT</strong>
+            <small>Use this for devices, accounts, Wi-Fi, printers, scams, setup, and home or small business tech help.</small>
+          </Link>
+
+          <Link to="/booking/services" className="booking-path-card">
+            <span>Business</span>
+            <strong>Book Services</strong>
+            <small>Use this for automation, AI workflows, privacy reviews, creator systems, and premium consulting.</small>
+          </Link>
+
+          <Link to="/booking" className="booking-path-card">
+            <span>Not Sure</span>
+            <strong>Start at Booking</strong>
+            <small>Use this when you know you need help, but you are not sure which DaFTitude path fits.</small>
+          </Link>
+        </div>
+      </section>
 
       <section id="contact" className="contact-section">
         <div className="contact-container">

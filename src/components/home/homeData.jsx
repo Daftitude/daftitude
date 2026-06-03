@@ -44,7 +44,7 @@ export const daftitudeSystems = {
     { label: "Privacy awareness", to: "/privacy" },
     { label: "Cybersecurity education", to: "/cybersecurity" },
     { label: "Crypto education", to: "/crypto" },
-    { label: "Business systems", to: "/contact" },
+    { label: "Business systems", to: "/booking/services" },
     { label: "Creator systems", to: "/tech" },
     { label: "Software planning", to: "/tech" },
     { label: "Research & learning", to: "/mission" },
@@ -56,7 +56,7 @@ export const daftitudeSystems = {
     { label: "Protect your privacy", to: "/privacy" },
     { label: "Avoid scams and hackers", to: "/cybersecurity" },
     { label: "Learn crypto safely", to: "/crypto" },
-    { label: "Organize your business tech", to: "/contact" },
+    { label: "Organize your business tech", to: "/booking/services" },
     { label: "Creator setup help", to: "/tech" },
     { label: "Plan an app or website", to: "/tech" },
     { label: "Learn what to do next", to: "/mission" },
@@ -82,7 +82,7 @@ export const hubCards = [
         <span className="pricing-emphasis-blue">Digital systems</span>, <span className="pricing-emphasis-green">tools</span>, project updates, and technology explained without the <span className="pricing-emphasis-yellow">noise</span>.
       </>
     ),
-    to: "/tech",
+    to: "/tech-hub",
   },
   {
     icon: "📈",
@@ -147,10 +147,10 @@ export const modeCtas = {
         </span>
       </span>
     ),
-    primaryText: "View Pricing Chart",
-    secondaryText: "Business Form",
+    primaryText: "Compare Pricing",
+    secondaryText: "Book Services",
     primaryAction: "average",
-    secondaryTo: "/contact",
+    secondaryTo: "/booking/services",
     highlights: ["business systems", "AI workflows", "automation cleanup", "tech stack review"],
   },
   askdaft: {
@@ -172,10 +172,10 @@ export const modeCtas = {
         </span>
       </span>
     ),
-    primaryText: "View Pricing Chart",
-    secondaryText: "AskDaFT Pricing",
+    primaryText: "Compare Pricing",
+    secondaryText: "Book Tech Help",
     primaryAction: "askdaft-table",
-    secondaryAction: "askdaft-table",
+    secondaryTo: "/booking/askdaft",
     highlights: ["home tech help", "smart-home & IOT setup", "AI tool help", "account safety"],
   },
 };

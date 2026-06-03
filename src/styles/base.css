@@ -50,3 +50,60 @@ button {
 main {
   min-height: 100vh;
 }
+
+/* ======================================================
+   Global Shell Utilities
+====================================================== */
+
+:root {
+  --navbar-h: 84px;
+}
+
+body.reading-impairment-mode {
+  letter-spacing: 0.01em;
+}
+
+body.reading-impairment-mode p,
+body.reading-impairment-mode li,
+body.reading-impairment-mode a,
+body.reading-impairment-mode button,
+body.reading-impairment-mode input,
+body.reading-impairment-mode textarea {
+  font-size: 1.08em;
+  line-height: 1.85;
+}
+
+.page-shell {
+  position: relative;
+  padding-top: calc(var(--navbar-h) + 3rem);
+  padding-inline: clamp(1.25rem, 3vw, 4rem);
+}
+
+.global-particles-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.44;
+}
+
+.global-particles-layer canvas {
+  display: block;
+}
+
+.navbar,
+main,
+.footer,
+.floating-page-tools {
+  position: relative;
+}
+
+.navbar,
+.footer,
+.floating-page-tools {
+  z-index: 2;
+}
+
+main {
+  z-index: 1;
+}

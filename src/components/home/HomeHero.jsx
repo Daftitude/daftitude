@@ -57,19 +57,19 @@ export default function HomeHero({
 
         <div className="game-actions game-actions-main">
           <button type="button" className="game-btn primary" onClick={() => selectStoryMode("daftitude")}>
-            View Business Pricing
+            Explore Business Systems
           </button>
           <button type="button" className="game-btn secondary" onClick={() => selectStoryMode("askdaft")}>
-            View AskDaFT Pricing
+            Explore Tech Help
           </button>
         </div>
 
         <button type="button" className="game-more-info" onClick={() => selectStoryMode(storyMode)}>
-          View pricing ↓
+          Compare paths ↓
         </button>
       </div>
 
-      <div className="game-bottom-hint">Move left or right. Pick a path. Jump to pricing.</div>
+      <div className="game-bottom-hint">Move left or right. Pick a path. Then route into Booking when ready.</div>
     </section>
   );
 }

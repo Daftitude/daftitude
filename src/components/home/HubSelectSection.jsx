@@ -4,7 +4,7 @@ export default function HubSelectSection({ hubCards }) {
   return (
     <section className="story-mode-section hub-select-section">
       <div className="story-mode-header compact">
-        <p className="story-kicker step-pill-kicker">Step 5: Keep Learning</p>
+        <p className="story-kicker step-pill-kicker">Keep Learning</p>
         <h2>
           Pick a <span className="pricing-emphasis-blue">hub</span>. Learn what <span className="pricing-emphasis-green">matters</span>.
         </h2>

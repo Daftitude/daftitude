@@ -300,13 +300,36 @@
    AskDaFT Dashboard Hierarchy Polish
 ====================================================== */
 
+.askdaft-dashboard-page {
+  padding-top: calc(var(--navbar-h) + clamp(2rem, 4vw, 4rem));
+  padding-inline: clamp(1.25rem, 4vw, 5rem);
+}
+
+.askdaft-dashboard-page .account-dashboard-hero,
+.askdaft-dashboard-page .dashboard-status-grid,
+.askdaft-dashboard-page .askdaft-help-launcher,
+.askdaft-dashboard-page .askdaft-guided-request-preview,
+.askdaft-dashboard-page .askdaft-view-mode-strip,
+.askdaft-dashboard-page .askdaft-plan-comparison,
+.askdaft-dashboard-page .askdaft-tech-board,
+.askdaft-dashboard-page .askdaft-client-layout {
+  width: min(1500px, 100%);
+  margin-inline: auto;
+}
+
 .askdaft-dashboard-page .account-dashboard-hero {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .askdaft-dashboard-page .account-dashboard-hero > div:first-child {
   max-width: 760px;
 }
+
 
 .askdaft-dashboard-page .account-dashboard-actions {
   position: relative;
@@ -315,7 +338,18 @@
   justify-content: flex-start;
 }
 
+.askdaft-dashboard-page .account-dashboard-hero .account-dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+}
+
 .askdaft-dashboard-page .dashboard-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -1994,5 +2028,54 @@ body .askdaft-tech-board.is-simple-view .selected-device-status {
   .askdaft-help-launcher-grid,
   .askdaft-plan-comparison-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================
+   AskDaFT Dashboard Action + Stat Containment
+   Keeps hero buttons and stat labels from running together.
+====================================================== */
+
+.askdaft-dashboard-page .account-dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+}
+
+.askdaft-dashboard-page .account-dashboard-actions .phase-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.askdaft-dashboard-page .dashboard-status-grid article,
+.askdaft-dashboard-page .dashboard-status-grid .dashboard-status-card {
+  min-height: 132px;
+  padding: 1.1rem;
+}
+
+.askdaft-dashboard-page .dashboard-status-grid strong,
+.askdaft-dashboard-page .dashboard-status-grid b,
+.askdaft-dashboard-page .dashboard-status-grid [class*="value"] {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+.askdaft-dashboard-page .dashboard-status-grid p {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 980px) {
+  .askdaft-dashboard-page .account-dashboard-actions {
+    justify-content: flex-start;
   }
 }

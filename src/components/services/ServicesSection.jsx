@@ -9,6 +9,7 @@ import advancedSecurity from "../../images/services/advanced-security.png";
 import advancedSupport from "../../images/services/advanced-support.png";
 
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ServiceDetailModal from "./ServiceDetailModal";
 
 export default function ServicesSection({ taskType = "basic", onSelectService, selectedService }) {
@@ -127,14 +128,18 @@ export default function ServicesSection({ taskType = "basic", onSelectService, s
     // Persist for refresh/share
     try {
       localStorage.setItem("daftitude:selectedService", key);
-    } catch {}
+    } catch (error) {
+      console.warn("Unable to persist selected service:", error);
+    }
 
     // Reflect selection in URL without navigation
     try {
       const url = new URL(window.location.href);
       url.searchParams.set("service", key);
       window.history.replaceState({}, "", url.toString());
-    } catch {}
+    } catch (error) {
+      console.warn("Unable to update service selection URL:", error);
+    }
 
     // Allow other components to react (packages, CTA, etc.)
     try {
@@ -143,7 +148,9 @@ export default function ServicesSection({ taskType = "basic", onSelectService, s
           detail: { service: key },
         })
       );
-    } catch {}
+    } catch (error) {
+      console.warn("Unable to dispatch service selection event:", error);
+    }
 
     if (opts.autoContinue) {
       const delay = typeof opts.delay === "number" ? opts.delay : 160;
@@ -160,18 +167,22 @@ export default function ServicesSection({ taskType = "basic", onSelectService, s
     try {
       const url = new URL(window.location.href);
       candidate = url.searchParams.get("service");
-    } catch {}
+    } catch {
+      candidate = null;
+    }
 
     if (!candidate) {
       try {
         candidate = localStorage.getItem("daftitude:selectedService");
-      } catch {}
+      } catch {
+        candidate = null;
+      }
     }
 
     if (candidate && serviceDetails[candidate]) {
       onSelectService?.(candidate);
     }
-  }, [selectedService, onSelectService]);
+  }, [selectedService, onSelectService, serviceDetails]);
 
   return (
     <section id="services" className="services-section">
@@ -331,9 +342,12 @@ export default function ServicesSection({ taskType = "basic", onSelectService, s
                 <button className="services-summary-btn secondary" onClick={() => openDetails(selected.id)} type="button">
                   View details
                 </button>
-                <button className="services-summary-btn primary" onClick={scrollToPricing} type="button">
+                <button className="services-summary-btn secondary" onClick={scrollToPricing} type="button">
                   Choose a package
                 </button>
+                <Link className="services-summary-btn primary" to={`/booking/services?service=${encodeURIComponent(selected.id)}`}>
+                  Book this service
+                </Link>
               </div>
             </div>
           )}
