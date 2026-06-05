@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FinalStartSection, HomeHero, HubSelectSection, IdentitySplitSection, ModeCTASection, PricingSection, QuickContactCTA, StoryStepsSection, SystemMapSection } from "../components/home";
+import { FinalStartSection, FloatingReadingTools, HomeHero, HubSelectSection, IdentitySplitSection, ModeCTASection, PricingSection, QuickContactCTA, StoryStepsSection, SystemMapSection } from "../components/home";
 import { askDaftMonthlyRows, askDaftQuickRows, businessMonthlyRows, businessPricingRows } from "../components/home/pricingData";
 import { daftitudeSystems, heroMessages, hubCards, modeCtas } from "../components/home/homeData";
 import daftitudeBusinessHero from "../images/hero/daftitude-business-blue-object.png";
@@ -18,6 +18,7 @@ export default function Home() {
   const [subscriptionBilling, setSubscriptionBilling] = useState("oneTime");
   const [pricingAudience, setPricingAudience] = useState("business");
   const [systemResourceView, setSystemResourceView] = useState("businessResources");
+  const [readingImpairmentMode, setReadingImpairmentMode] = useState(false);
   const heroSectionRef = useRef(null);
   const heroPointerFrameRef = useRef(null);
 
@@ -178,6 +179,10 @@ export default function Home() {
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const resetStoryPreview = useCallback(() => {
     if (heroPointerFrameRef.current) {
       window.cancelAnimationFrame(heroPointerFrameRef.current);
@@ -211,7 +216,7 @@ export default function Home() {
   }, [activePath, previewStoryMode]);
 
   return (
-    <main className="home-game-page">
+    <main className={`home-game-page ${readingImpairmentMode ? "" : "reading-impairment-mode"}`}>
       <div id="particles-js" className="home-particles" aria-hidden="true" />
 
       <HomeHero
@@ -303,6 +308,11 @@ export default function Home() {
 
       <FinalStartSection />
 
+      <FloatingReadingTools
+        readingImpairmentMode={readingImpairmentMode}
+        setReadingImpairmentMode={setReadingImpairmentMode}
+        scrollToTop={scrollToTop}
+      />
     </main>
   );
 }

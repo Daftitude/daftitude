@@ -76,31 +76,24 @@ const supportShortcuts = [
   },
 ];
 
-const withRequestMode = (to, mode) => to.replace(/([?&])mode=[^&]*/, `$1mode=${mode}`);
-
-export default function AskDaftFrontDoor({ mode = "basic" }) {
-  const requestMode = mode === "advanced" ? "advanced" : "basic";
-  const isAdvanced = requestMode === "advanced";
-
+export default function AskDaftFrontDoor() {
   return (
     <section id="start-request" className="phase-section askdaft-front-door">
       <div className="phase-section-heading">
-        <p className="phase-kicker">{isAdvanced ? "Advanced Mode" : "Basic Mode"}</p>
+        <p className="phase-kicker">Start Here</p>
         <h2>
-          <ReadingHighlighter>{isAdvanced ? "Build a stronger request." : "What do you need today?"}</ReadingHighlighter>
+          <ReadingHighlighter>What do you need today?</ReadingHighlighter>
         </h2>
         <p>
           <ReadingHighlighter>
-            {isAdvanced
-              ? "Pick the closest option. AskDaFT will collect more detail before the estimate."
-              : "Pick the closest option. You do not need the perfect tech words."}
+            Pick the closest option. You do not need the perfect tech words.
           </ReadingHighlighter>
         </p>
       </div>
 
       <div className="askdaft-front-door-grid" aria-label="AskDaFT help options">
         {frontDoorOptions.map((option) => (
-          <Link className="askdaft-front-door-card" to={withRequestMode(option.to, requestMode)} key={option.id}>
+          <Link className="askdaft-front-door-card" to={option.to} key={option.id}>
             <span className="askdaft-front-door-icon" aria-hidden="true">{option.badge}</span>
             <strong>
               <ReadingHighlighter>{option.title}</ReadingHighlighter>
@@ -125,7 +118,7 @@ export default function AskDaftFrontDoor({ mode = "basic" }) {
 
         <div className="askdaft-support-shortcut-row">
           {supportShortcuts.map((shortcut) => (
-            <Link className="askdaft-support-shortcut" to={withRequestMode(shortcut.to, requestMode)} key={shortcut.id}>
+            <Link className="askdaft-support-shortcut" to={shortcut.to} key={shortcut.id}>
               <span className="askdaft-shortcut-badge" aria-hidden="true">{shortcut.badge}</span>
               <strong>
                 <ReadingHighlighter>{shortcut.title}</ReadingHighlighter>

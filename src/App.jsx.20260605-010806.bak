@@ -293,9 +293,9 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Phase 1 public brand architecture */}
-        <Route path="/askdaft" element={<AskDaft viewMode={globalMode} />} />
+        <Route path="/askdaft" element={<AskDaft />} />
         <Route path="/askdaft/dashboard" element={<AskDaftDashboard />} />
-        <Route path="/askdaft/request" element={<AskDaftRequest viewMode={globalMode} setViewMode={setGlobalMode} />} />
+        <Route path="/askdaft/request" element={<AskDaftRequest />} />
         <Route path="/askdaft/tickets" element={<AskDaftTickets />} />
         <Route path="/askdaft/tickets/:ticketId" element={<AskDaftTicketDetail />} />
         <Route path="/login" element={<Login />} />

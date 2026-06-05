@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { FloatingPageTools } from "../../components/home";
 import { createAskDaftTicket, saveAskDaftTicket } from "../../utils/askDaftTickets";
 
 const requestModes = {
@@ -34,9 +35,6 @@ const requestModes = {
     discountNote: "Can reduce back-and-forth.",
   },
 };
-
-const normalizeRequestMode = (value) => (requestModes[value] ? value : "basic");
-const normalizeGlobalMode = (value) => (value === "advanced" ? "advanced" : "basic");
 
 const requestTypes = [
   {
@@ -203,17 +201,15 @@ function getScopeLevel({ requestType, issue, multipleDevices, supportPath }) {
   };
 }
 
-export default function AskDaftRequest({ viewMode = "basic", setViewMode }) {
+export default function AskDaftRequest() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const requestedIntent = searchParams.get("intent") || "not-sure";
-  const hasRequestedMode = searchParams.has("mode");
-  const requestedMode = searchParams.get("mode") || normalizeGlobalMode(viewMode);
+  const requestedMode = searchParams.get("mode") || "simple";
   const requestedSupport = searchParams.get("support");
   const preset = intentPresets[requestedIntent] || intentPresets["not-sure"];
-  const initialMode = normalizeRequestMode(hasRequestedMode ? requestedMode : normalizeGlobalMode(viewMode));
-  const queryModeAppliedRef = useRef(false);
-  const [mode, setLocalMode] = useState(initialMode);
+  const [readingImpairmentMode, setReadingImpairmentMode] = useState(false);
+  const [mode, setMode] = useState(requestModes[requestedMode] ? requestedMode : "simple");
   const [activeStep, setActiveStep] = useState("mode");
   const [requestType, setRequestType] = useState(preset.requestType);
   const [issue, setIssue] = useState(preset.issue);
@@ -238,25 +234,6 @@ export default function AskDaftRequest({ viewMode = "basic", setViewMode }) {
   const [agreementSafety, setAgreementSafety] = useState(false);
   const [submittedTicket, setSubmittedTicket] = useState(null);
   const submittedPanelRef = useRef(null);
-
-  useEffect(() => {
-    if (hasRequestedMode && !queryModeAppliedRef.current) {
-      queryModeAppliedRef.current = true;
-      setViewMode?.(normalizeGlobalMode(initialMode));
-      return;
-    }
-
-    const nextMode = normalizeRequestMode(normalizeGlobalMode(viewMode));
-    setLocalMode((current) => (current === nextMode ? current : nextMode));
-  }, [hasRequestedMode, initialMode, setViewMode, viewMode]);
-
-  const setMode = (nextMode) => {
-    const resolvedMode = typeof nextMode === "function" ? nextMode(mode) : nextMode;
-    const normalizedMode = normalizeRequestMode(resolvedMode);
-
-    setLocalMode(normalizedMode);
-    setViewMode?.(normalizeGlobalMode(normalizedMode));
-  };
 
   const selectedMode = requestModes[mode];
   const selectedType = requestTypes.find((type) => type.id === requestType) || requestTypes[1];
@@ -438,6 +415,12 @@ export default function AskDaftRequest({ viewMode = "basic", setViewMode }) {
     }));
   };
 
+  const scrollToTop = useCallback(() => {
+    setTimeout(() => {
+      submittedPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }, []);
+
   const handleSubmitPreview = () => {
     if (!canSubmit) return;
 
@@ -474,7 +457,7 @@ export default function AskDaftRequest({ viewMode = "basic", setViewMode }) {
   };
 
   return (
-    <main className="account-page askdaft-request-page askdaft-compact-copy">
+    <main className={`account-page askdaft-request-page askdaft-compact-copy ${readingImpairmentMode ? "" : "reading-impairment-mode"}`}>
       {submittedTicket && (
         <section ref={submittedPanelRef} className="askdaft-ticket-submitted-panel">
           <div>
@@ -1065,6 +1048,15 @@ export default function AskDaftRequest({ viewMode = "basic", setViewMode }) {
           </small>
         </aside>
       </section>
+      <FloatingPageTools
+        mode={mode}
+        setMode={setMode}
+        readingImpairmentMode={readingImpairmentMode}
+        setReadingImpairmentMode={setReadingImpairmentMode}
+        scrollToTop={scrollToTop}
+        basicHref="/askdaft"
+      />
+
     </main>
   );
 }

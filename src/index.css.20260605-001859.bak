@@ -40,40 +40,28 @@
 /* 12. Generic non-home page templates: page heroes, sections, forms. */
 @import "./styles/pages.css";
 
-/* 13. TechHub page-specific learning hub layouts. */
-@import "./styles/techhub.css";
-
-/* 14. Services page-specific package, modal, and booking helpers. */
-@import "./styles/services.css";
-
-/* 15. Account, login, signup, and dashboard auth styles. */
-@import "./styles/account.css";
-
-/* 16. Booking route shell, path cards, intake preview, and summary styles. */
-@import "./styles/booking.css";
-
-/* 17. Footer layout and social link styling. */
+/* 13. Footer layout and social link styling. */
 @import "./styles/footer.css";
 
-/* 18. AskDaFT shared base page, panel, callout, and section styles. */
+/* 14. AskDaFT shared base page, panel, callout, and section styles. */
 @import "./styles/askdaft-base.css";
 
-/* 19. AskDaFT homepage front-door intake styles. */
+/* 15. AskDaFT homepage front-door intake styles. */
 @import "./styles/askdaft-frontdoor.css";
 
-/* 20. AskDaFT dashboard, client dashboard, and tech board styles. */
+/* 16. AskDaFT dashboard, client dashboard, and tech board styles. */
 @import "./styles/askdaft-dashboard.css";
 
-/* 21. AskDaFT request intake, ticket builder, and submitted ticket flow. */
+/* 17. AskDaFT request intake, ticket builder, and submitted ticket flow. */
 @import "./styles/askdaft-request.css";
 
-/* 22. AskDaFT ticket lists, ticket status pages, and ticket dashboard styles. */
+/* 18. AskDaFT ticket lists, ticket status pages, and ticket dashboard styles. */
 @import "./styles/askdaft-tickets.css";
 
-/* 23. AskDaFT pricing transparency and service pricing helpers. */
+/* 19. AskDaFT pricing transparency and service pricing helpers. */
 @import "./styles/askdaft-pricing.css";
 
-/* 24. Centralized reading-mode semantic color system. */
+/* 20. Centralized reading-mode semantic color system. */
 @import "./styles/reading-mode.css";
 
 @tailwind base;
